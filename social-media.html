@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Social Media Management & Mediendesign von Julia Bergles - Content, Branding, Design für Firmen und Privatpersonen">
+  <title>Social Media & Mediendesign | Smacado</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --wine: #bf6b6b; --cream: #faf4eb; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --gold: #c9a96e; --rose: #df8585; --blush: #f0d5d0; --sage: #b8d4c8;
+      --white: #fffdf9; --linen: #f5ece0; --gray: #b5a99a; --terracotta: #c4704b;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-d1 { transition-delay: 0.1s; }
+    .fade-up-d2 { transition-delay: 0.2s; }
+    .fade-up-d3 { transition-delay: 0.3s; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 18px; }
+    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--wine); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-links a.active { color: var(--wine); font-weight: 600; }
+    .nav-cta { background: var(--wine); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(191,107,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(191,107,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* HERO */
+    .sm-hero { padding: 160px 24px 80px; text-align: center; position: relative; overflow: hidden; }
+    .sm-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 0%, rgba(201,169,110,0.08) 0%, transparent 70%); pointer-events: none; }
+    .sm-hero .label { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+    .sm-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: var(--charcoal); line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; }
+    .sm-hero h1 span { color: var(--wine); }
+    .sm-hero .subtitle { font-size: 18px; color: var(--cocoa); max-width: 560px; margin: 0 auto 40px; line-height: 1.8; font-weight: 300; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* BUTTONS */
+    .btn-primary { background: var(--wine); color: var(--white); padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all 0.3s; box-shadow: 0 6px 20px rgba(191,107,107,0.2); display: inline-block; border: none; cursor: pointer; font-family: inherit; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(191,107,107,0.3); }
+    .btn-outline { background: transparent; color: var(--wine); padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; border: 2px solid var(--wine); transition: all 0.3s; display: inline-block; }
+    .btn-outline:hover { background: var(--wine); color: var(--white); }
+    .btn-gold { background: var(--gold); color: var(--white); padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all 0.3s; box-shadow: 0 6px 20px rgba(201,169,110,0.25); display: inline-block; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,169,110,0.35); }
+    .btn-sm { padding: 12px 28px; font-size: 14px; }
+    .btn-white { background: var(--white); color: var(--wine); padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all 0.3s; display: inline-block; }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+
+    /* STATS BAR */
+    .stats-bar { background: var(--white); padding: 40px 24px; border-top: 1px solid rgba(201,169,110,0.1); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--wine); }
+    .stat-label { font-size: 11px; color: var(--cocoa); margin-top: 4px; letter-spacing: 0.5px; }
+
+    /* SECTIONS */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+    .section-sub { font-size: 16px; color: var(--cocoa); margin-bottom: 48px; max-width: 550px; line-height: 1.7; }
+
+    /* THEMEN DETAIL */
+    .themen-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+    .themen-detail-card { background: var(--linen); border-radius: 20px; padding: 28px; transition: all 0.3s; }
+    .themen-detail-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(201,169,110,0.1); }
+    .themen-detail-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--charcoal); }
+    .themen-detail-card p { font-size: 13px; color: var(--cocoa); line-height: 1.6; }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card { background: var(--white); border-radius: 24px; padding: 40px 28px; transition: all 0.4s; box-shadow: 0 2px 12px rgba(201,169,110,0.06); position: relative; overflow: hidden; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(201,169,110,0.14); }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .service-card.rose::before { background: linear-gradient(90deg, var(--rose), var(--blush)); }
+    .service-card.gold::before { background: linear-gradient(90deg, var(--gold), #e0c88a); }
+    .service-card.sage::before { background: linear-gradient(90deg, var(--sage), #d4e8df); }
+    .service-icon { width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+    .service-icon.rose { background: rgba(223,133,133,0.12); }
+    .service-icon.gold { background: rgba(201,169,110,0.12); }
+    .service-icon.sage { background: rgba(184,212,200,0.12); }
+    .service-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: var(--cocoa); line-height: 1.7; }
+    .service-list { list-style: none; margin-top: 16px; }
+    .service-list li { font-size: 13px; color: var(--cocoa); padding: 5px 0; padding-left: 16px; position: relative; }
+    .service-list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 3px; background: var(--gold); }
+
+    /* PROCESS */
+    .process-section { background: var(--charcoal); }
+    .process-section .section-label { color: var(--gold); }
+    .process-section .section-title { color: var(--white); }
+    .process-section .section-sub { color: var(--gray); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .process-step { text-align: center; padding: 28px 16px; }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--gold); margin-bottom: 12px; opacity: 0.6; }
+    .process-step h4 { font-size: 15px; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+    .process-step p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* PRICING TABS */
+    .pricing-section { background: var(--linen); }
+    .pricing-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 40px; }
+    .pricing-tab { background: var(--white); border: 2px solid transparent; border-radius: 50px; padding: 12px 28px; font-size: 14px; font-weight: 600; color: var(--cocoa); cursor: pointer; transition: all 0.3s; font-family: inherit; }
+    .pricing-tab:hover { border-color: var(--wine); color: var(--wine); }
+    .pricing-tab.active { background: var(--wine); color: var(--white); border-color: var(--wine); }
+    .pricing-panel { display: none; }
+    .pricing-panel.active { display: block; }
+
+    /* EINZELPREISE */
+    .einzel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .einzel-card { background: var(--white); border-radius: 20px; padding: 32px 24px; text-align: center; transition: all 0.3s; }
+    .einzel-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(201,169,110,0.1); }
+    .einzel-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .einzel-price { font-size: 28px; font-weight: 700; color: var(--wine); margin: 12px 0; }
+    .einzel-card ul { list-style: none; text-align: left; margin-top: 16px; }
+    .einzel-card ul li { font-size: 13px; color: var(--cocoa); padding: 5px 0; padding-left: 14px; position: relative; }
+    .einzel-card ul li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 8px; top: 8px; }
+
+    /* PAKETE */
+    .pakete-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .paket-card { background: var(--white); border-radius: 20px; padding: 32px 20px; text-align: center; border: 2px solid transparent; transition: all 0.4s; }
+    .paket-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(201,169,110,0.1); }
+    .paket-card.featured { border-color: var(--wine); box-shadow: 0 8px 32px rgba(191,107,107,0.08); }
+    .paket-badge { background: var(--wine); color: var(--white); font-size: 10px; font-weight: 700; padding: 4px 14px; border-radius: 50px; display: inline-block; margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    .paket-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; margin-bottom: 4px; }
+    .paket-price { font-size: 32px; font-weight: 700; color: var(--wine); margin: 12px 0 4px; }
+    .paket-card ul { list-style: none; text-align: left; margin: 16px 0; }
+    .paket-card ul li { font-size: 13px; color: var(--cocoa); padding: 6px 0; border-bottom: 1px solid var(--linen); padding-left: 14px; position: relative; }
+    .paket-card ul li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 8px; top: 9px; }
+
+    /* COMMUNITY */
+    .community-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .community-bubble { background: var(--white); border-radius: 50px; padding: 16px 28px; font-size: 13px; font-weight: 500; color: var(--charcoal); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+
+    /* REFERENZEN */
+    .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .ref-card { background: var(--white); border-radius: 20px; padding: 32px; transition: all 0.3s; border: 1px solid rgba(201,169,110,0.08); }
+    .ref-card:hover { box-shadow: 0 8px 24px rgba(201,169,110,0.1); transform: translateY(-2px); }
+    .ref-quote { font-size: 14px; color: var(--cocoa); line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+    .ref-name { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+    .ref-role { font-size: 12px; color: var(--gray); }
+
+    /* COLLAB BANNER */
+    .collab-banner { background: linear-gradient(135deg, var(--charcoal) 0%, #2a231c 100%); border-radius: 24px; padding: 48px; display: flex; align-items: center; gap: 40px; margin-top: 60px; }
+    .collab-banner h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--white); margin-bottom: 12px; }
+    .collab-banner p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+    .collab-banner .collab-cta { flex-shrink: 0; }
+
+    /* CTA */
+    .cta-section { background: var(--charcoal); text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 100%, rgba(201,169,110,0.06) 0%, transparent 70%); }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--white); margin-bottom: 16px; position: relative; }
+    .cta-section p { font-size: 16px; color: var(--gray); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+    /* MEDIAKIT DOWNLOAD */
+    .download-bar { background: var(--white); border-radius: 20px; padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; margin-top: 48px; box-shadow: 0 4px 20px rgba(201,169,110,0.08); }
+    .download-bar p { font-size: 15px; font-weight: 500; }
+    .download-bar span { font-size: 13px; color: var(--cocoa); }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); color: var(--gray); padding: 60px 24px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .sm-hero h1 { font-size: 36px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .services-grid, .ref-grid, .themen-detail-grid { grid-template-columns: 1fr; }
+      .einzel-grid, .pakete-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .collab-banner { flex-direction: column; text-align: center; padding: 32px; }
+      .download-bar { flex-direction: column; gap: 16px; text-align: center; }
+      .section-title { font-size: 28px; }
+      .pricing-tabs { flex-wrap: wrap; }
+    }
+    @media (max-width: 480px) {
+      .einzel-grid, .pakete-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo-cropped.png" alt="TerraLuna">
+      <span>Smacado</span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#preise">Preise</a>
+      <a href="index.html#geschichte">Meine Geschichte</a>
+      <a href="index.html#coaching">Coaching</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="social-media.html" class="active">Social Media</a>
+      <a href="index.html#partner">Partner</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="index.html" class="nav-cta">Zur App</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="sm-hero">
+  <p class="label fade-up">Social Media Management & Mediendesign</p>
+  <h1 class="fade-up">Ich helfe dir, <span>Kunden zu gewinnen.</span></h1>
+  <p class="subtitle fade-up">Content-Erstellung, Branding und komplettes Social-Media-Management. Für Firmen und Privatpersonen, die sich etwas aufbauen wollen.</p>
+  <div class="hero-buttons fade-up">
+    <a href="#preise" class="btn-primary">Pakete & Preise</a>
+    <a href="mailto:julia@bergles.net?subject=Anfrage Social Media / Mediendesign" class="btn-outline">Kostenlos anfragen</a>
+  </div>
+</div>
+
+<!-- STATS from Mediakit -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="fade-up">
+      <div class="stat-num">4.822</div>
+      <div class="stat-label">Social Media Follower</div>
+    </div>
+    <div class="fade-up fade-up-d1">
+      <div class="stat-num">1,45 Mio</div>
+      <div class="stat-label">Erreichte Konten</div>
+    </div>
+    <div class="fade-up fade-up-d2">
+      <div class="stat-num">70,2%</div>
+      <div class="stat-label">Weibliche Zielgruppe</div>
+    </div>
+    <div class="fade-up fade-up-d3">
+      <div class="stat-num">25–34</div>
+      <div class="stat-label">Hauptzielgruppe Alter</div>
+    </div>
+    <div class="fade-up fade-up-d3">
+      <div class="stat-num">87,7%</div>
+      <div class="stat-label">Deutsch</div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTAGRAM EMBED -->
+<section style="background: var(--white); padding-bottom: 60px;">
+  <div class="section-inner" style="text-align: center;">
+    <p class="section-label fade-up">Mein Instagram</p>
+    <h2 class="section-title fade-up">@julia_bergles</h2>
+    <p class="section-sub fade-up" style="margin-left: auto; margin-right: auto;">Aktueller Content, Einblicke und Community.</p>
+    <div class="fade-up" style="max-width: 540px; margin: 0 auto;">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/julia_bergles/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.06); margin: 0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+      <script async src="https://www.instagram.com/embed.js"></script>
+    </div>
+    <a href="https://www.instagram.com/julia_bergles/" target="_blank" class="btn-outline btn-sm fade-up" style="margin-top: 24px;">Auf Instagram ansehen</a>
+  </div>
+</section>
+
+<!-- ÜBER MICH -->
+<section>
+  <div class="section-inner">
+    <p class="section-label fade-up">Über mich</p>
+    <h2 class="section-title fade-up">Julia Bergles, 20 Jahre</h2>
+    <p class="section-sub fade-up">Fachabitur im Fachbereich Gestaltung. Seit Oktober 2024 Gründerin von einem Food Start-up. Selbstständige Social Media Managerin. Athletin. Künstlerin.</p>
+
+    <p class="section-label fade-up" style="margin-top: 48px;">Meine Themen</p>
+    <div class="themen-detail-grid fade-up">
+      <div class="themen-detail-card">
+        <h4>Darmgesundheit</h4>
+        <p>Aufklärung über Unverträglichkeiten, Darmprobleme und meine persönliche Erfahrung mit einem Darmverschluss.</p>
+      </div>
+      <div class="themen-detail-card">
+        <h4>ES-Recovery</h4>
+        <p>Essstörungs-Recovery. Einblicke in meine Vergangenheit mit einer Essstörung und deren Folgen.</p>
+      </div>
+      <div class="themen-detail-card">
+        <h4>Sport / Calisthenics</h4>
+        <p>Ich nehme meine Community bei meinem Muskelaufbau mit. Calisthenics, Training und viel Fahrradfahren.</p>
+      </div>
+      <div class="themen-detail-card">
+        <h4>Alltag als Selbstständige</h4>
+        <p>Einblicke in mein Leben als 20-jährige Gründerin, Unternehmerin und Freelancerin.</p>
+      </div>
+      <div class="themen-detail-card">
+        <h4>Künstlerin</h4>
+        <p>Kreatives Chaos vorprogrammiert: Ich fokussiere mich kaum auf eine Sache, sondern liebe alles was kreativ ist.</p>
+      </div>
+      <div class="themen-detail-card">
+        <h4>Mental Health</h4>
+        <p>Ehrliche Gespräche über Stress, Überforderung, mentale Gesundheit und persönliche Entwicklung.</p>
+      </div>
+    </div>
+
+    <p class="section-label fade-up">Meine Community</p>
+    <div class="community-grid fade-up">
+      <span class="community-bubble">Gesundheitsinteressierte</span>
+      <span class="community-bubble">Betroffene von Essstörung</span>
+      <span class="community-bubble">Menschen mit Darmproblemen</span>
+      <span class="community-bubble">Betroffene von mentalen Krankheiten</span>
+      <span class="community-bubble">Interessierte an Ernährung und Sport</span>
+      <span class="community-bubble">Informativer & authentischer Content</span>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section style="background: var(--white);">
+  <div class="section-inner">
+    <p class="section-label fade-up">Was ich anbiete</p>
+    <h2 class="section-title fade-up">Alles aus einer Hand</h2>
+    <p class="section-sub fade-up">Kein KI-Design, kein generischer Look. Sondern künstlerisch, verspielt und authentisch.</p>
+
+    <div class="services-grid">
+      <div class="service-card rose fade-up">
+        <div class="service-icon rose">&#9998;</div>
+        <h3>Content Creation</h3>
+        <p>Von der Idee bis zum fertigen Post. Professioneller Content der Kunden bringt.</p>
+        <ul class="service-list">
+          <li>Reels & Videos</li>
+          <li>Feed-Beiträge & Karussells</li>
+          <li>Stories & Highlights</li>
+          <li>Texte & Captions</li>
+          <li>Content-Planung</li>
+        </ul>
+      </div>
+      <div class="service-card gold fade-up fade-up-d1">
+        <div class="service-icon gold">&#9881;</div>
+        <h3>Account-Management</h3>
+        <p>Ich übernehme deinen kompletten Social-Media-Auftritt. Du lehnst dich zurück.</p>
+        <ul class="service-list">
+          <li>Instagram, TikTok, Facebook</li>
+          <li>Community-Management</li>
+          <li>Hashtag-Strategie</li>
+          <li>Vor & hinter der Kamera</li>
+          <li>Crossposting</li>
+        </ul>
+      </div>
+      <div class="service-card sage fade-up fade-up-d2">
+        <div class="service-icon sage">&#10022;</div>
+        <h3>Mediendesign</h3>
+        <p>Visuelles Branding das dich einzigartig macht. Alles in Canva gestaltet.</p>
+        <ul class="service-list">
+          <li>Logo & Corporate Design</li>
+          <li>Flyer & Broschüren</li>
+          <li>Präsentationen</li>
+          <li>Verpackungsdesign</li>
+          <li>Visitenkarten</li>
+        </ul>
+        <p style="margin-top: 16px; font-size: 20px; font-weight: 700; color: var(--wine);">20 € <span style="font-size: 13px; font-weight: 400; color: var(--cocoa);">/ Stunde</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS -->
+<section class="process-section">
+  <div class="section-inner">
+    <p class="section-label fade-up">So läuft es ab</p>
+    <h2 class="section-title fade-up">In 4 Schritten zum Ergebnis</h2>
+    <p class="section-sub fade-up" style="color: var(--gray);">Unkompliziert, persönlich und effizient.</p>
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="step-num">01</div>
+        <h4>Kennenlernen</h4>
+        <p>Kostenloses Erstgespräch. Was brauchst du? Was ist dein Ziel?</p>
+      </div>
+      <div class="process-step fade-up fade-up-d1">
+        <div class="step-num">02</div>
+        <h4>Konzept</h4>
+        <p>Individuelles Konzept. Strategie, Stil, Zeitplan und Budget.</p>
+      </div>
+      <div class="process-step fade-up fade-up-d2">
+        <div class="step-num">03</div>
+        <h4>Umsetzung</h4>
+        <p>Content-Produktion, Design und Management. Feedback-Schleifen bis es passt.</p>
+      </div>
+      <div class="process-step fade-up fade-up-d3">
+        <div class="step-num">04</div>
+        <h4>Kunden gewinnen</h4>
+        <p>Analyse und Optimierung. Dein Account wächst. Du gewinnst Kunden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREISE -->
+<section id="preise" class="pricing-section">
+  <div class="section-inner">
+    <p class="section-label fade-up" style="text-align: center;">Pakete & Preise</p>
+    <h2 class="section-title fade-up" style="text-align: center;">Transparent und fair</h2>
+    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">Erstgespräch ist immer kostenlos. Alle Preise individuell anpassbar.</p>
+
+    <!-- TABS -->
+    <div class="pricing-tabs fade-up">
+      <button class="pricing-tab active" onclick="showTab('einzel')">Einzelpreise</button>
+      <button class="pricing-tab" onclick="showTab('starter')">Starterpakete</button>
+      <button class="pricing-tab" onclick="showTab('collab')">Collab-Pakete</button>
+    </div>
+
+    <!-- TAB 1: Einzelpreise -->
+    <div class="pricing-panel active" id="panel-einzel">
+      <p style="text-align: center; font-size: 14px; color: var(--cocoa); margin-bottom: 24px;">Content-Erstellung direkt auf dem Account der Firma posten (ohne Collab)</p>
+      <div class="einzel-grid">
+        <div class="einzel-card fade-up">
+          <h4>Beitrag</h4>
+          <div class="einzel-price">35 €</div>
+          <ul>
+            <li>Bilder aus Canva oder fotografiert</li>
+            <li>Aufpreis Fotografie: +10 €</li>
+            <li>Text erstellen</li>
+            <li>Caption erstellen</li>
+            <li>Hochladen</li>
+          </ul>
+        </div>
+        <div class="einzel-card fade-up fade-up-d1">
+          <h4>Reel (aufwendig)</h4>
+          <div class="einzel-price">55 €</div>
+          <ul>
+            <li>Eigene Aufnahmen und Text</li>
+            <li>Schneiden</li>
+            <li>Caption erstellen</li>
+            <li>Videosequenzen erstellen</li>
+            <li>Hochladen</li>
+          </ul>
+        </div>
+        <div class="einzel-card fade-up fade-up-d2">
+          <h4>Reel (einfach)</h4>
+          <div class="einzel-price">45 €</div>
+          <ul>
+            <li>Videosequenzen aus Canva</li>
+            <li>Text Overlays</li>
+            <li>Schneiden</li>
+            <li>Caption erstellen</li>
+            <li>Hochladen</li>
+          </ul>
+        </div>
+        <div class="einzel-card fade-up fade-up-d3">
+          <h4>Story</h4>
+          <div class="einzel-price">30 €</div>
+          <ul>
+            <li>1 Minute erzählen</li>
+            <li>In mein Alltagsgeschehen einbauen</li>
+            <li>Sehr authentisch</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Starterpakete -->
+    <div class="pricing-panel" id="panel-starter">
+      <p style="text-align: center; font-size: 14px; color: var(--cocoa); margin-bottom: 24px;">Content-Erstellung direkt auf dem Account der Firma posten (ohne Collab)</p>
+      <div class="pakete-grid">
+        <div class="paket-card fade-up">
+          <div class="paket-name">Starter</div>
+          <div class="paket-price">100 €</div>
+          <ul>
+            <li>2 Beiträge</li>
+            <li>1 Reel</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Starter-Paket" class="btn-outline btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+        <div class="paket-card fade-up fade-up-d1">
+          <div class="paket-name">Wachstum</div>
+          <div class="paket-price">150 €</div>
+          <ul>
+            <li>2 Beiträge</li>
+            <li>2 Reels</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Wachstum-Paket" class="btn-outline btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+        <div class="paket-card featured fade-up fade-up-d2">
+          <span class="paket-badge">Beliebt</span>
+          <div class="paket-name">Premium</div>
+          <div class="paket-price">280 €</div>
+          <ul>
+            <li>4 Reels</li>
+            <li>4 Beiträge</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Premium-Paket" class="btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+        <div class="paket-card fade-up fade-up-d3">
+          <div class="paket-name">Werbung</div>
+          <div class="paket-price">300 €</div>
+          <ul>
+            <li>1 Reel</li>
+            <li>3 Storys auf meinem Account</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Werbung-Paket" class="btn-outline btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: Collab-Pakete -->
+    <div class="pricing-panel" id="panel-collab">
+      <p style="text-align: center; font-size: 14px; color: var(--cocoa); margin-bottom: 8px;">Content-Erstellung mit Verlinkung in meiner BIO</p>
+      <p style="text-align: center; font-size: 13px; color: var(--gray); margin-bottom: 24px;">Crossposting: Unternehmeraccount + @julia_bergles</p>
+
+      <!-- Collab Einzelpreise -->
+      <div class="einzel-grid" style="margin-bottom: 40px;">
+        <div class="einzel-card fade-up">
+          <h4>Reel</h4>
+          <div class="einzel-price">250 €</div>
+          <ul>
+            <li>Eigene Aufnahmen (mit meinem Gesicht)</li>
+            <li>Text Overlays</li>
+            <li>Caption erstellen</li>
+            <li>Schneiden</li>
+            <li>Hochladen (Crossposting)</li>
+          </ul>
+        </div>
+        <div class="einzel-card fade-up fade-up-d1">
+          <h4>Beitrag</h4>
+          <div class="einzel-price">190 €</div>
+          <ul>
+            <li>Eigene Bilder oder Canva</li>
+            <li>Text Overlays</li>
+            <li>Caption erstellen</li>
+            <li>Hochladen (Crossposting)</li>
+          </ul>
+        </div>
+        <div class="einzel-card fade-up fade-up-d2">
+          <h4>Story</h4>
+          <div class="einzel-price">100 €</div>
+          <ul>
+            <li>1 Minute</li>
+            <li>Vorgegebenes Manuskript oder frei</li>
+            <li>Verlinkung in meiner Bio</li>
+          </ul>
+        </div>
+        <div class="einzel-card fade-up fade-up-d3" style="background: var(--linen); border: 2px solid var(--gold);">
+          <h4>Bezahlt wird:</h4>
+          <ul style="margin-top: 12px;">
+            <li>Meine Reichweite</li>
+            <li>Meine Community</li>
+            <li>Meine Nische (Darm, Ernährung, Gesundheit)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Collab Pakete -->
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; text-align: center; margin-bottom: 24px;">Collab-Pakete</h3>
+      <div class="pakete-grid">
+        <div class="paket-card fade-up">
+          <div class="paket-name">Starter</div>
+          <div class="paket-price">290 €</div>
+          <ul>
+            <li>1 Reel</li>
+            <li>2 Storys</li>
+            <li>Verlinkung der Marke</li>
+            <li>Story-Highlight</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Collab Starter" class="btn-outline btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+        <div class="paket-card fade-up fade-up-d1">
+          <div class="paket-name">Wachstum</div>
+          <div class="paket-price">490 €</div>
+          <ul>
+            <li>1 Beitrag</li>
+            <li>1 Reel</li>
+            <li>3 Storys (mit Highlight)</li>
+            <li>Verlinkung in der Bio</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Collab Wachstum" class="btn-outline btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+        <div class="paket-card featured fade-up fade-up-d2">
+          <span class="paket-badge">Beliebt</span>
+          <div class="paket-name">Premium</div>
+          <div class="paket-price">790 €</div>
+          <ul>
+            <li>2 Beiträge</li>
+            <li>3 Reels</li>
+            <li>5 Storys (mit Highlight)</li>
+            <li>Verlinkung in der Bio</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Collab Premium" class="btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+        <div class="paket-card fade-up fade-up-d3">
+          <div class="paket-name">Werbung</div>
+          <div class="paket-price">990 €</div>
+          <ul>
+            <li>3 Reels</li>
+            <li>8 Storys (mit Highlight)</li>
+            <li>3 Beiträge</li>
+            <li>Verlinkung in der Bio</li>
+          </ul>
+          <a href="mailto:julia@bergles.net?subject=Anfrage Collab Werbung" class="btn-gold btn-sm" style="width: 100%; text-align: center; margin-top: 16px;">Anfragen</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mediakit Download -->
+    <div class="download-bar fade-up">
+      <div>
+        <p>Mein komplettes Angebot als PDF</p>
+        <span>Portfolio, Preise, Beispiele und Mediakit</span>
+      </div>
+      <a href="Social Media AngebotJulia Bergles.pdf" download class="btn-primary btn-sm">PDF herunterladen</a>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN -->
+<section>
+  <div class="section-inner">
+    <p class="section-label fade-up">Bisherige Zusammenarbeiten</p>
+    <h2 class="section-title fade-up">Meine Kunden</h2>
+    <p class="section-sub fade-up">Branchen-übergreifend. Immer persönlich.</p>
+    <div class="ref-grid">
+      <div class="ref-card fade-up">
+        <div class="ref-quote">Ganzheitliche mediale Lebensberatung. Content-Erstellung, Beiträge und Präsentationen.</div>
+        <div class="ref-name">Nicole Schleer</div>
+        <div class="ref-role">Lebensberatung</div>
+      </div>
+      <div class="ref-card fade-up fade-up-d1">
+        <div class="ref-quote">Collab-Posts, Reels und Werbung. Vor der Kamera als Werbegesicht im Showroom.</div>
+        <div class="ref-name">Bruckner</div>
+        <div class="ref-role">Einrichtungshaus</div>
+      </div>
+      <div class="ref-card fade-up fade-up-d2">
+        <div class="ref-quote">Reel-Produktion und authentischer Content. Crossposting auf beiden Accounts.</div>
+        <div class="ref-name">YamatoGast</div>
+        <div class="ref-role">Collab-Partner</div>
+      </div>
+    </div>
+
+    <div class="collab-banner fade-up">
+      <div>
+        <h3>Community-Kooperation</h3>
+        <p>Es besteht die Möglichkeit, meine bestehende Community aktiv einzubeziehen und gemeinsame Collab-Posts zu erstellen. Dadurch profitierst du von meiner Reichweite und einer authentischen Empfehlung an eine gesundheitsbewusste Zielgruppe.</p>
+      </div>
+      <div class="collab-cta">
+        <a href="mailto:julia@bergles.net?subject=Anfrage Kooperation" class="btn-white btn-sm">Kooperation anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="fade-up">Lass uns zusammenarbeiten</h2>
+  <p class="fade-up">Erstgespräch ist immer kostenlos. Schreib mir und wir finden das richtige Paket für dich.</p>
+  <div class="cta-buttons fade-up">
+    <a href="mailto:julia@bergles.net?subject=Anfrage Social Media / Mediendesign" class="btn-white">julia@bergles.net</a>
+    <a href="https://www.instagram.com/julia_bergles/" target="_blank" class="btn-gold btn-sm">@julia_bergles</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smacado</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerrufsbelehrung</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </div>
+    <div class="footer-disclaimer">
+      Alle Preise individuell anpassbar. Erstgespräch kostenlos.<br>
+      © 2024–2026 Smacado · Julia Bergles
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Pricing tabs
+function showTab(tab) {
+  document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TerraLuna - Dein smarter Ernährungsbegleiter für Darmprobleme, Histaminintoleranz, Zöliakie, Allergien und Zyklusbeschwerden.">
+  <title>Smacado | TerraLuna App</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --wine: #bf6b6b; --cream: #faf4eb; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --gold: #c9a96e; --rose: #df8585; --blush: #f0d5d0; --sage: #b8d4c8;
+      --white: #fffdf9; --linen: #f5ece0; --gray: #b5a99a; --terracotta: #c4704b;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+
+    /* SCROLL ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay { transition-delay: 0.15s; }
+    .fade-up-delay2 { transition-delay: 0.3s; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 18px; }
+    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--wine); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-cta { background: var(--wine); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(191,107,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(191,107,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* HERO */
+    .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('images/1.png'); background-size: cover; background-position: center; background-attachment: fixed; }
+    .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(250,244,235,0.5) 0%, rgba(250,244,235,0.85) 100%); }
+    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 650px; padding: 0 24px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 62px; font-weight: 300; color: var(--charcoal); line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero h1 span { color: var(--wine); }
+    .hero .claim { font-size: 17px; color: var(--cocoa); margin-bottom: 36px; line-height: 1.8; font-weight: 300; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--wine); color: var(--white); padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all 0.3s; box-shadow: 0 6px 20px rgba(191,107,107,0.2); display: inline-block; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(191,107,107,0.3); }
+    .btn-secondary { background: transparent; color: var(--wine); padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; border: 2px solid var(--wine); transition: all 0.3s; display: inline-block; }
+    .btn-secondary:hover { background: var(--wine); color: var(--white); }
+    .btn-small { padding: 10px 24px; font-size: 14px; }
+
+    /* IMAGE DIVIDERS */
+    .img-divider { height: 350px; background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
+    .img-divider::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(61,50,42,0.15); }
+    .img-divider-text { position: relative; z-index: 1; height: 100%; display: flex; align-items: center; justify-content: center; }
+    .img-divider-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--white); text-shadow: 0 2px 12px rgba(0,0,0,0.25); text-align: center; padding: 0 24px; letter-spacing: 0.5px; font-style: italic; }
+
+    /* SECTIONS */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 500; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+    .section-sub { font-size: 16px; color: var(--cocoa); margin-bottom: 48px; max-width: 550px; line-height: 1.7; }
+
+    /* FEATURE SHOWCASE — alternating image+text rows */
+    .feature-showcase { margin-bottom: 80px; }
+    .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+    .feature-row.reverse { direction: rtl; }
+    .feature-row.reverse > * { direction: ltr; }
+    .feature-row-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; }
+    .feature-row-text p { font-size: 15px; color: var(--cocoa); line-height: 1.8; margin-bottom: 16px; }
+    .feature-row-text .feature-tag { display: inline-block; font-size: 11px; font-weight: 600; color: var(--wine); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .feature-screenshots { display: flex; gap: 12px; justify-content: center; align-items: flex-end; }
+    .feature-screenshots img { width: 180px; border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .feature-screenshots img:hover { transform: translateY(-4px); }
+    .feature-screenshots img.tilted-left { transform: rotate(-3deg); }
+    .feature-screenshots img.tilted-right { transform: rotate(3deg); }
+    .feature-screenshots img.tilted-left:hover { transform: rotate(-3deg) translateY(-4px); }
+    .feature-screenshots img.tilted-right:hover { transform: rotate(3deg) translateY(-4px); }
+
+    /* FEATURE OVERVIEW CARDS (small grid) */
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature-card { background: var(--white); border-radius: 24px; padding: 36px 28px; transition: all 0.4s; box-shadow: 0 2px 12px rgba(201,169,110,0.06); }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(201,169,110,0.12); }
+    .feature-dot { width: 8px; height: 8px; border-radius: 4px; background: var(--gold); margin-bottom: 20px; }
+    .feature-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: var(--cocoa); line-height: 1.6; }
+
+    /* RECIPE GALLERY */
+    .recipe-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+    .recipe-img { width: 100%; height: 220px; object-fit: cover; border-radius: 20px; transition: all 0.4s; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .recipe-img:hover { transform: scale(1.03); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+    .recipe-caption { font-size: 13px; color: var(--cocoa); margin-top: 8px; text-align: center; }
+
+    /* PREISE */
+    .pricing-section { background: var(--white); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .price-card { background: var(--cream); border-radius: 24px; padding: 36px 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s; }
+    .price-card.popular { border-color: var(--wine); box-shadow: 0 8px 40px rgba(191,107,107,0.08); transform: scale(1.03); background: var(--white); }
+    .price-badge { background: var(--wine); color: var(--white); font-size: 10px; font-weight: 600; padding: 4px 14px; border-radius: 50px; display: inline-block; margin-bottom: 16px; letter-spacing: 1px; }
+    .price-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .price-amount { font-size: 36px; font-weight: 700; color: var(--wine); }
+    .price-period { font-size: 12px; color: var(--gray); margin-bottom: 24px; }
+    .price-features { list-style: none; text-align: left; }
+    .price-features li { font-size: 13px; color: var(--cocoa); padding: 8px 0; border-bottom: 1px solid var(--linen); }
+    .price-features li::before { content: '✦ '; color: var(--gold); font-size: 10px; }
+
+    /* MEINE GESCHICHTE */
+    .story-section { background: var(--linen); }
+    .story-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .story-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--charcoal); margin-bottom: 20px; }
+    .story-text p { font-size: 15px; color: var(--cocoa); margin-bottom: 16px; line-height: 1.8; }
+    .story-img-container { text-align: center; }
+    .story-img { width: 320px; height: 420px; object-fit: cover; border-radius: 200px 200px 24px 24px; box-shadow: 0 12px 40px rgba(223,133,133,0.15); }
+    .story-expanded { display: none; margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(201,169,110,0.2); }
+    .story-expanded.open { display: block; }
+    .story-expanded h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); margin-bottom: 16px; margin-top: 32px; }
+    .story-expanded h3:first-child { margin-top: 0; }
+    .story-expanded p { font-size: 15px; color: var(--cocoa); line-height: 1.8; margin-bottom: 14px; }
+    .story-conditions { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+    .story-condition { background: var(--white); padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 500; color: var(--charcoal); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .story-toggle { background: none; border: 2px solid var(--wine); color: var(--wine); padding: 12px 32px; border-radius: 50px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s; margin-top: 24px; font-family: 'Inter', sans-serif; }
+    .story-toggle:hover { background: var(--wine); color: var(--white); }
+    .story-disclaimer { background: rgba(255,255,255,0.6); border-radius: 16px; padding: 24px; margin-top: 32px; border-left: 3px solid var(--gold); }
+    .story-disclaimer p { font-size: 13px; color: var(--cocoa); margin-bottom: 0; }
+
+    /* ABOUT (short) */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text p { font-size: 15px; color: var(--cocoa); margin-bottom: 16px; line-height: 1.8; }
+    .about-img { width: 100%; height: 400px; border-radius: 200px 200px 24px 24px; object-fit: cover; box-shadow: 0 12px 40px rgba(223,133,133,0.15); }
+
+    /* GANZHEITLICH */
+    .dark-section { background: var(--charcoal); color: var(--white); }
+    .dark-section .section-label { color: var(--gold); }
+    .dark-section .section-title { color: var(--white); }
+    .dark-section .section-sub { color: var(--gray); }
+    .verbindung-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .verbindung-card { background: rgba(255,255,255,0.04); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s; }
+    .verbindung-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .verbindung-card h3 { font-size: 15px; margin-bottom: 8px; color: var(--gold); font-weight: 600; }
+    .verbindung-card p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* PARTNER */
+    .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .partner-card { background: var(--white); border-radius: 20px; padding: 28px; text-align: center; transition: all 0.3s; }
+    .partner-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(201,169,110,0.1); }
+    .partner-card h3 { font-size: 16px; margin-bottom: 4px; font-weight: 600; }
+    .partner-card p { font-size: 13px; color: var(--cocoa); }
+    .partner-code { font-size: 11px; color: var(--wine); font-weight: 600; margin-top: 10px; letter-spacing: 1px; }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); color: var(--gray); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-contact { font-size: 13px; margin-bottom: 16px; line-height: 1.8; }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .hero h1 { font-size: 36px; }
+      .hero { min-height: 500px; }
+      .feature-row { grid-template-columns: 1fr; gap: 32px; }
+      .feature-row.reverse { direction: ltr; }
+      .feature-screenshots img { width: 140px; }
+      .features-grid, .verbindung-grid, .partner-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-card.popular { transform: scale(1); }
+      .about-grid, .story-hero { grid-template-columns: 1fr; }
+      .story-img { width: 260px; height: 340px; }
+      .recipe-gallery { grid-template-columns: 1fr 1fr; }
+      .img-divider { height: 250px; background-attachment: scroll; }
+      .section-title { font-size: 28px; }
+      .story-text h2 { font-size: 28px; }
+      .feature-row-text h3 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/Logo-cropped.png" alt="TerraLuna">
+      <span>Smacado</span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#preise">Preise</a>
+      <a href="#geschichte">Meine Geschichte</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="#partner">Partner</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#" class="nav-cta">App laden</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="section-label" style="color: var(--wine);">Dein smarter Ernährungsbegleiter</p>
+    <h1>Iss dich <span>stabil.</span></h1>
+    <p class="claim">
+      Für Darmprobleme, Histaminintoleranz, Zöliakie, Allergien und Zyklusbeschwerden.<br>
+      Entwickelt von einer Betroffenen, für Betroffene.
+    </p>
+    <div class="hero-buttons">
+      <a href="#" class="btn-primary">Bald im App Store</a>
+      <a href="#features" class="btn-secondary">Entdecken</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES OVERVIEW -->
+<section id="features">
+  <div class="section-inner">
+    <p class="section-label fade-up">Was TerraLuna kann</p>
+    <h2 class="section-title fade-up">Eine App die sich an dich anpasst</h2>
+    <p class="section-sub fade-up">Du stellst im Profil ein was dich betrifft. Alles andere wird ausgeblendet.</p>
+
+    <!-- FEATURE 1: Profil & Personalisierung -->
+    <div class="feature-row fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_5098.PNG" alt="Profil Geschlecht" class="tilted-left">
+        <img src="images/IMG_5111.PNG" alt="Profil Filter">
+        <img src="images/IMG_5117.PNG" alt="Allergien" class="tilted-right">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Personalisierung</span>
+        <h3>Dein Profil. Deine Regeln.</h3>
+        <p>Histamin, Darm, Zöliakie, Sellerie-Allergie, Stoffwechsel, Zyklus. Stelle ein was dich betrifft. Die gesamte App passt sich an. Auch für Männer.</p>
+        <p>23 Allergien, 8 Pollenallergien, Kreuzreaktionen. Alles wird berücksichtigt.</p>
+      </div>
+    </div>
+
+    <!-- FEATURE 2: Scanner -->
+    <div class="feature-row reverse fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_4716.PNG" alt="Barcode Kamera" class="tilted-left">
+        <img src="images/IMG_4711.PNG" alt="Food Check rot">
+        <img src="images/IMG_4718.PNG" alt="Verträglich grün" class="tilted-right">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Scanner</span>
+        <h3>Verträglichkeits-Scanner & Barcode</h3>
+        <p>Fotografiere dein Essen und erfahre in Sekunden ob es verträglich ist. Oder scanne den Barcode im Supermarkt.</p>
+        <p>Erkennt versteckte Allergene, Sellerie-Synonyme wie Liebstöckel und Maggi, Glutenquellen und Histamin-Trigger. Personalisiert auf dein Profil.</p>
+      </div>
+    </div>
+
+    <!-- FEATURE 3: Home & Zyklus -->
+    <div class="feature-row fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_5106.PNG" alt="Home Zyklus" class="tilted-left">
+        <img src="images/IMG_5108.PNG" alt="Wetter Pollen">
+        <img src="images/IMG_4708.PNG" alt="Feature Bubbles" class="tilted-right">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Startseite</span>
+        <h3>Alles auf einen Blick</h3>
+        <p>Zyklusphase, Kalender, Wetter, Pollenbelastung, Kreuzallergien und dein persönlicher Tipp des Tages. Alles was du brauchst, direkt morgens.</p>
+        <p>PMS-Hinweise, Erinnerungen an Supplemente und Wasser. Auch bei Amenorrhoe und in den Wechseljahren.</p>
+      </div>
+    </div>
+
+    <!-- FEATURE 4: Reisen -->
+    <div class="feature-row reverse fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_5121.PNG" alt="Restaurant Sprachen" class="tilted-left">
+        <img src="images/IMG_5124.PNG" alt="Zöliakie Englisch">
+        <img src="images/IMG_5123.PNG" alt="Sellerie Sätze" class="tilted-right">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Auf Reisen</span>
+        <h3>Sicher unterwegs. In 8 Sprachen.</h3>
+        <p>Restaurant-Texte zum Vorzeigen. Schnelle Sätze zum Antippen. Eigene Nachricht übersetzen lassen. Für Histamin, Zöliakie und Sellerie-Allergie.</p>
+        <p>Dazu ein kompletter Reise-Guide mit Vorbereitung, Unterkunft, sichere Lebensmittel und Notfall-Snacks.</p>
+      </div>
+    </div>
+
+    <!-- FEATURE 5: Einkaufen -->
+    <div class="feature-row fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_5112.PNG" alt="Märkte" class="tilted-left">
+        <img src="images/IMG_5114.PNG" alt="REWE Detail" class="tilted-right">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Einkaufen</span>
+        <h3>Sicher einkaufen. In 13 Märkten.</h3>
+        <p>REWE, EDEKA, ALDI, Lidl, Kaufland, Penny, Netto, Norma, dm, Rossmann, Müller, Alnatura und Denn's Biomarkt. Geprüfte Produkte nach Markt sortiert.</p>
+        <p>Einkaufslisten erstellen. Google Maps Integration. Alles glutenfrei und ohne Industriezucker.</p>
+      </div>
+    </div>
+
+    <!-- FEATURE 6: Rezepte -->
+    <div class="feature-row reverse fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_5113.PNG" alt="Rezepte" style="width: 220px;">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Rezepte</span>
+        <h3>120+ Rezepte. Alle sicher.</h3>
+        <p>Glutenfrei und ohne Industriezucker. Von Frühstück bis Abendessen. Filter nach Histamin, Darm, Vegan und mehr. Mit Allergie-Warnung wenn etwas nicht zu deinem Profil passt.</p>
+      </div>
+    </div>
+
+    <!-- Recipe food gallery -->
+    <div class="fade-up" style="margin-top: 20px; margin-bottom: 60px;">
+      <div class="recipe-gallery">
+        <div>
+          <img src="images/IMG_4933.jpeg" alt="Kuchen mit Blüten" class="recipe-img">
+        </div>
+        <div>
+          <img src="images/IMG_4803.jpeg" alt="Bowl" class="recipe-img">
+        </div>
+        <div>
+          <img src="images/IMG_4798.jpeg" alt="Frühstücksbowl" class="recipe-img">
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 16px; font-size: 13px; color: var(--cocoa); font-style: italic;">Alle Rezepte: glutenfrei, ohne Industriezucker, mit Liebe gemacht.</p>
+    </div>
+
+    <!-- FEATURE 7: Lebensmittel & Food Tools -->
+    <div class="feature-row fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_5115.PNG" alt="Lebensmittel" class="tilted-left">
+        <img src="images/IMG_4722.PNG" alt="Histamin-Fass" class="tilted-right">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Food Tools</span>
+        <h3>250+ Lebensmittel. Dein Histamin-Fass.</h3>
+        <p>Jedes Lebensmittel bewertet nach Histamin, Darm und Zyklusphase. Ampel-System in Grün, Gelb und Rot.</p>
+        <p>Das Histamin-Fass zeigt dir wie voll dein Fass heute ist. Frische-Timer und Tausch-Vorschläge inklusive.</p>
+      </div>
+    </div>
+
+    <!-- FEATURE 8: Onboarding & Lernen -->
+    <div class="feature-row reverse fade-up">
+      <div class="feature-screenshots">
+        <img src="images/IMG_5118.PNG" alt="Onboarding Histamin" class="tilted-left">
+        <img src="images/IMG_5119.PNG" alt="Wechseljahre" class="tilted-right">
+      </div>
+      <div class="feature-row-text">
+        <span class="feature-tag">Wissen & Lernen</span>
+        <h3>Verstehen was in deinem Körper passiert.</h3>
+        <p>Interaktive Einführungen zu Histaminintoleranz, Wechseljahren, Amenorrhoe und Stoffwechselstörungen. Lernbibliothek mit Artikeln, die du wirklich verstehst.</p>
+        <p>Kein Fachchinesisch. Einfach erklärt. Mit Empathie.</p>
+      </div>
+    </div>
+
+    <!-- More features as small cards -->
+    <h3 class="fade-up" style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; margin-bottom: 24px; margin-top: 20px;">Und noch mehr</h3>
+    <div class="features-grid">
+      <div class="feature-card fade-up"><div class="feature-dot"></div><h3>Stress & Nervensystem</h3><p>Die Verbindung zwischen Darm, Stress und Hormonen. Vagusnerv-Regulation. Atemübungen.</p></div>
+      <div class="feature-card fade-up"><div class="feature-dot" style="background:var(--sage)"></div><h3>Wetter & Pollen</h3><p>Aktuelle Pollenbelastung. Kreuzallergien automatisch erkennen. Wetterbasierte Hinweise.</p></div>
+      <div class="feature-card fade-up"><div class="feature-dot" style="background:var(--rose)"></div><h3>Tagebuch & Muster</h3><p>Symptome tracken. Verbindungen erkennen. Dein Körper zeigt dir Muster wenn du hinschaust.</p></div>
+      <div class="feature-card fade-up"><div class="feature-dot"></div><h3>SOS-Karten</h3><p>Soforthilfe bei akuten Beschwerden. Was tun bei Histaminschub, Bauchkrämpfen, Übelkeit.</p></div>
+      <div class="feature-card fade-up"><div class="feature-dot" style="background:var(--sage)"></div><h3>Bewegung</h3><p>Workouts angepasst an deine Zyklusphase. Sanft in der Menstruation, aktiv in der Follikelphase.</p></div>
+      <div class="feature-card fade-up"><div class="feature-dot" style="background:var(--rose)"></div><h3>Auch für Männer</h3><p>Einfach im Profil umstellen. Eigene Farben, kein Zyklustracking. Alle anderen Features verfügbar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX DIVIDER 1 -->
+<div class="img-divider" style="background-image: url('images/16.png')">
+  <div class="img-divider-text">
+    <h2>Die Gabe, deinen Körper wirklich zu kennen.</h2>
+  </div>
+</div>
+
+<!-- GANZHEITLICH -->
+<section class="dark-section">
+  <div class="section-inner">
+    <p class="section-label fade-up">Der ganzheitliche Ansatz</p>
+    <h2 class="section-title fade-up">Alles hängt zusammen</h2>
+    <p class="section-sub fade-up">Dein Körper ist ein System. TerraLuna betrachtet das Gesamtbild.</p>
+    <div class="verbindung-grid">
+      <div class="verbindung-card fade-up"><h3>Darm</h3><p>Der Großteil deines Immungewebes sitzt im Darm. Ca. 90% deines Serotonins werden hier produziert.</p></div>
+      <div class="verbindung-card fade-up"><h3>Hormone</h3><p>Dein Zyklus beeinflusst deine Verträglichkeit. Östrogen und Histamin sind direkt verbunden.</p></div>
+      <div class="verbindung-card fade-up"><h3>Nervensystem</h3><p>Stress stoppt die Verdauung. Der Vagusnerv verbindet Darm und Gehirn. Regulation ist der Schlüssel.</p></div>
+      <div class="verbindung-card fade-up"><h3>Ernährung</h3><p>Frisch kochen. Die richtigen Lebensmittel. Zur richtigen Zeit. Kein Raten mehr.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX DIVIDER 2 -->
+<div class="img-divider" style="background-image: url('images/9.png')">
+  <div class="img-divider-text">
+    <h2>Dein Körper arbeitet für dich. Nicht gegen dich.</h2>
+  </div>
+</div>
+
+<!-- PREISE -->
+<section id="preise" class="pricing-section">
+  <div class="section-inner">
+    <p class="section-label fade-up">Mondphasen-Preise</p>
+    <h2 class="section-title fade-up">Weniger als ein Kaffee pro Woche</h2>
+    <p class="section-sub fade-up">Jederzeit kündbar. Keine versteckten Kosten.</p>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <div class="price-name">Neumond</div>
+        <div class="price-amount">0 €</div>
+        <div class="price-period">Kostenlos</div>
+        <ul class="price-features">
+          <li>SOS-Karten</li>
+          <li>Täglicher Check-in</li>
+          <li>Profil-Einstellung</li>
+          <li>Tipp des Tages</li>
+          <li>3 Lernartikel</li>
+          <li>Lebensmittel-Ampel (Basis)</li>
+        </ul>
+      </div>
+      <div class="price-card fade-up">
+        <div class="price-name">Halbmond</div>
+        <div class="price-amount">4,99 €</div>
+        <div class="price-period">pro Monat oder 39,99 €/Jahr</div>
+        <ul class="price-features">
+          <li>Alles aus Neumond</li>
+          <li>250+ Lebensmittel</li>
+          <li>120+ Rezepte</li>
+          <li>Barcode-Scanner</li>
+          <li>Food Tools</li>
+          <li>Reisen (8 Sprachen)</li>
+          <li>Einkaufslisten</li>
+          <li>Alle Workouts</li>
+        </ul>
+      </div>
+      <div class="price-card popular fade-up">
+        <span class="price-badge">BELIEBTESTE WAHL</span>
+        <div class="price-name">Vollmond</div>
+        <div class="price-amount">7,99 €</div>
+        <div class="price-period">pro Monat oder 59,99 €/Jahr</div>
+        <ul class="price-features">
+          <li>Alles aus Halbmond</li>
+          <li>Verträglichkeits-Scanner (Foto)</li>
+          <li>Tagebuch + Muster-Erkennung</li>
+          <li>Zyklus-Tracking</li>
+          <li>Wetter + Pollenbelastung</li>
+          <li>Komplett Allergie-System</li>
+          <li>Stress & Nervensystem</li>
+          <li>Alle zukünftigen Updates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX DIVIDER 3 -->
+<div class="img-divider" style="background-image: url('images/8.png')">
+  <div class="img-divider-text">
+    <h2>Du machst das wunderbar.</h2>
+  </div>
+</div>
+
+<!-- MEINE GESCHICHTE -->
+<section id="geschichte" class="story-section">
+  <div class="section-inner">
+    <div class="story-hero fade-up">
+      <div class="story-text">
+        <p class="section-label">Meine Geschichte</p>
+        <h2>Hey, ich bin Julia.</h2>
+        <p>20 Jahre und seit zwei Jahren selbstständig. Wirklich Freizeit kenne ich nicht. Ich arbeite an meinen Träumen und mache unendlich viel Sport.</p>
+        <p>Seit ich denken kann bin ich kreativ und jemand, der schon immer lieber gemacht als gewartet hat. Doch meine Geschichte beginnt nicht mit einem großen Plan, sondern mit einem gesundheitlichen Tiefpunkt.</p>
+        <button class="story-toggle" onclick="toggleStory()">Meine ganze Geschichte lesen</button>
+      </div>
+      <div class="story-img-container fade-up fade-up-delay">
+        <img src="images/IMG_4679.jpeg" alt="Julia Bergles" class="story-img">
+      </div>
+    </div>
+
+    <!-- Expanded Story -->
+    <div class="story-expanded" id="storyExpanded">
+      <h3>Ich habe meine Jugend verpasst</h3>
+      <p>Mit ca. 16 Jahren habe ich eine Essstörung entwickelt. Ich habe immer mehr Lebensmittel vermieden. Keine Kohlenhydrate, keine Fette, fast nur Gemüse und Light Produkte.</p>
+      <p>Meine Ernährung bestand aus Salat, Gurke und High Protein Joghurt.</p>
+      <p>Ich habe extrem viel Sport gemacht, um alles Essen wieder zu kompensieren (mache immer noch viel Sport, aber nicht weil ich muss, sondern weil ich es liebe).</p>
+      <p>Irgendwann habe ich keine Geburtstage mehr wahrgenommen, aus Angst ich muss was essen und kann mich nicht bewegen. Keine Freunde mehr besucht, aus Angst mich erklären zu müssen.</p>
+      <p>Ich habe meine Großeltern vernachlässigt und war unglaublich ungerecht zu meiner Familie.</p>
+      <p>Permanent gereizt, gestresst und schlecht gelaunt. Ich habe 24/7 ans Essen gedacht aber nicht gegessen.</p>
+      <p>Ich wurde immer depressiver, weil mein Körper einfach nicht mehr genug Energiereserven hatte. Meine Leistungen wurden schlechter, weil mein Körper im Überlebensmodus war.</p>
+      <p>Ich habe permanent gegen meinen Körper gearbeitet, bin ans Limit gegangen ohne Rücksicht auf Verluste.</p>
+
+      <h3>Der erste Wendepunkt</h3>
+      <p>Irgendwann habe ich gemerkt, so will ich nicht mehr weitermachen. Also bin ich in Recovery gegangen, aber nur für kurze Zeit, denn dann wurde es schlimmer denn je.</p>
+      <p>In meiner Recovery war ich geplagt von permanenten Bauchschmerzen, Übelkeit und Durchfall. Ich konnte nichts mehr in mir behalten.</p>
+      <p>Ich nahm immer mehr und mehr ab, bis ich so untergewichtig war, dass es schon tödlich war. Ich wog nur noch 30kg und hatte kaum noch Kraft.</p>
+      <p>Dann kam noch die Diagnose Histaminintoleranz dazu. Kein Arzt konnte mir helfen. Ich wurde ständig weitergeschickt. Mir wurde 20 Mal Blut abgenommen und immer hieß es: "Ist nichts auffällig".</p>
+      <p>Irgendwann wollte ich auch nicht mehr zum Arzt gehen, weil es mir mehr Stress gemacht hat, als zu helfen.</p>
+      <p>In dieser Zeit habe ich mich in die Arbeit gestürzt und daran gearbeitet, dass meine Firma vorangeht. Ich habe mich immer weiter überfordert. Zwei Minijobs. Kaum Schlaf.</p>
+      <p>Ich dachte mir: "Wenn ich sterben muss, dann habe ich wenigstens noch was geschafft." (Ich weiß es klingt absurd, aber so war es).</p>
+      <p>Irgendwann hat mein Körper dann aber ganz klar STOP geschrien.</p>
+
+      <h3>Als mein Körper STOP sagte</h3>
+      <p>Mein Darm spielte immer mehr verrückt, ich entwickelte immer mehr Unverträglichkeiten, Angst vor dem Essen und habe am Ende des Tages fast nichts mehr gegessen. Aus Angst vor Nebenwirkungen.</p>
+      <p>An einem Abend hatte ich aus dem Nichts einen Darmverschluss. Schmerzen so heftig, dass ich dachte ich sterbe wirklich gleich. Im Krankenhaus konnte mir niemand so wirklich sagen, was los ist.</p>
+      <p>Bis dann der Oberarzt kam und gesagt hat: "Sie hatten wirklich Glück. Beim nächsten mal werden sie das nicht mehr mitmachen." — dieser Satz hat sich in mein Gehirn gebrannt.</p>
+      <p>Erst Tage später habe ich erfahren, dass ich nur durch die Abführung noch am Leben bin. Eine OP wäre in meinem Untergewicht tödlich geendet, weil ich nach der Narkose nicht mehr aufgewacht wäre.</p>
+      <p>Nach dem Krankenhausaufenthalt habe ich mich für das Leben entschieden und gegessen. Es war unglaublich schmerzhaft. Ich habe gekämpft wieder zuzunehmen, dass ich im Notfall operiert werden kann.</p>
+      <p>Mein Blähbauch war extrem und so unglaublich schmerzhaft, dass ich jeden Abend im Bett vor Schmerzen geweint habe.</p>
+      <p>Aber ich musste da durch. Für mich.</p>
+
+      <h3>Ich habe meinen Weg gefunden</h3>
+      <p>Ich habe experimentiert und am Ende sind genau noch fünf Lebensmittel übrig geblieben, die ich ohne starke Beschwerden essen konnte. Klingt verrückt — war es auch.</p>
+      <p>Ich habe mich an diese Lebensmittel geklammert und früh, mittags und abends genau das gegessen. Ein halbes Jahr lang.</p>
+      <p>Mittlerweile kann ich wieder beschwerdefrei essen. Nicht perfekt, aber ich habe meine Lebensfreude zurück.</p>
+      <p>Die Histaminintoleranz bleibt mir als "Andenken" erhalten, aber auch davon lasse ich mich nicht kleinmachen.</p>
+      <p>Ich habe gelernt, dass das Leben viel zu wertvoll ist, als ständig immer nur an Nebenwirkungen zu denken.</p>
+
+      <h3>Gesunde Ernährung darf nicht kompliziert sein</h3>
+      <p>Genau in dieser schwierigen Zeit wurde mir eines klar: Gesunde Ernährung darf nicht kompliziert sein. Sie sollte uns unterstützen — nicht einschränken.</p>
+      <p>So entstand zuerst Smacado — aus Not, Mut und einer großen Portion Kreativität. Eigene Backmischungen: natürlich, glutenfrei, ohne Industriezucker, reich an Ballaststoffen und Proteinen.</p>
+
+      <h3>Was mich antreibt</h3>
+      <p>Ich bin kein klassischer "Business-Mensch". Ich bin ein Herzmensch. Ein kreativer Kopf. Ein Quatschkopf.</p>
+      <p>Ich liebe Natur, Sport, Bewegung und ehrliche Arbeit.</p>
+      <p>Ich möchte zeigen, dass man ohne Ausbildung, ohne perfekten Lebenslauf, aber mit Leidenschaft, Mut und Neugier etwas Großes aufbauen kann.</p>
+
+      <h3>Mein neues Herzensprojekt: TerraLuna</h3>
+      <p><em>Terra</em> steht für Erde — für Erdung, Stabilität und Boden unter den Füßen. <em>Luna</em> steht für den Mond — für den Zyklus, den weiblichen Rhythmus und die Kraft die darin liegt.</p>
+      <p>TerraLuna ist meine App für Menschen mit Darmproblemen, Zyklusbeschwerden und Histaminintoleranz. Ich gebe meine Erfahrungen weiter und habe innovative Tools eingebaut, die das Leben um einiges erleichtern werden. Vor allem wenn man am Anfang seiner Diagnose steht.</p>
+
+      <h3>Dabei begleitet dich TerraLuna</h3>
+      <div class="story-conditions">
+        <span class="story-condition">Histaminintoleranz</span>
+        <span class="story-condition">Reizdarm</span>
+        <span class="story-condition">Zöliakie</span>
+        <span class="story-condition">Fructoseintoleranz</span>
+        <span class="story-condition">Laktoseintoleranz</span>
+        <span class="story-condition">Sellerie-Allergie</span>
+        <span class="story-condition">PMS</span>
+        <span class="story-condition">PCOS</span>
+        <span class="story-condition">Endometriose</span>
+        <span class="story-condition">Wechseljahre</span>
+        <span class="story-condition">Amenorrhoe</span>
+        <span class="story-condition">Stoffwechselstörungen</span>
+        <span class="story-condition">Kreuzallergien</span>
+        <span class="story-condition">Nahrungsmittelallergien</span>
+      </div>
+
+      <div class="story-disclaimer">
+        <p><strong>Wichtiger Hinweis:</strong> TerraLuna ersetzt keine ärztliche Diagnose, keine medizinische Behandlung und keinen Arztbesuch. Die Inhalte basieren auf persönlichen Erfahrungen und sind allgemeine Orientierungshilfen. Die App ist eine Lebensbegleitung, keine medizinische Beratung. Bei Beschwerden wende dich bitte immer an eine Ärztin oder einen Arzt.</p>
+      </div>
+
+      <p style="margin-top: 24px;"><a href="https://www.instagram.com/julia_bergles/" style="color: var(--wine); font-weight: 600; text-decoration: none;">@julia_bergles auf Instagram</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- THERESA -->
+<section style="background: var(--linen)">
+  <div class="section-inner" style="text-align: center;">
+    <p class="section-label fade-up">Expertin</p>
+    <h2 class="section-title fade-up">Stress & Nervensystem</h2>
+    <p class="section-sub fade-up" style="margin-left: auto; margin-right: auto;">In Zusammenarbeit mit Theresa Ross, zertifizierte Gesundheitsberaterin. Dein Nervensystem regulieren und die Darm-Hirn-Achse stärken.</p>
+    <a href="https://www.theresa-ross.com" class="btn-secondary btn-small" target="_blank">Mehr erfahren</a>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section id="partner">
+  <div class="section-inner">
+    <p class="section-label fade-up">Meine Partner</p>
+    <h2 class="section-title fade-up">Produkte die ich selbst nutze</h2>
+    <p class="section-sub fade-up">Ehrlich ausgewählt. Nur was ich selbst verwende.</p>
+    <div class="partner-grid">
+      <a href="https://nigela.de?sca_ref=10960285.t5W9j-LLKpfk3vt" target="_blank" class="partner-card fade-up" style="text-decoration: none; color: inherit;"><h3>Nigela</h3><p>Histaminarme Gewürze</p><div class="partner-code">Code: SMACADO10</div></a>
+      <a href="https://aho.bio/smacado10" target="_blank" class="partner-card fade-up" style="text-decoration: none; color: inherit;"><h3>Aho.bio</h3><p>Sprossenmehle und Nudeln</p><div class="partner-code">Code: SMACADO10</div></a>
+      <a href="https://histafood.eu/discount/smacado10" target="_blank" class="partner-card fade-up" style="text-decoration: none; color: inherit;"><h3>HistaFood</h3><p>Histaminarme Fertiggerichte</p><div class="partner-code">Code: SMACADO10</div></a>
+      <a href="https://histaminikus.de/?ref=cyxjbwzy" target="_blank" class="partner-card fade-up" style="text-decoration: none; color: inherit;"><h3>Histaminikus</h3><p>Histaminarme Lebensmittel</p><div class="partner-code">Code: JULIA10734</div></a>
+    </div>
+    <p style="text-align: center; margin-top: 16px; font-size: 11px; color: var(--gray);">Partnerempfehlungen. Wir erhalten eine kleine Provision. Dein Preis bleibt gleich.</p>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" style="background: var(--linen)">
+  <div class="section-inner" style="text-align: center;">
+    <p class="section-label fade-up">Kontakt</p>
+    <h2 class="section-title fade-up">Schreib mir</h2>
+    <p style="font-size: 18px; margin-bottom: 12px;" class="fade-up"><a href="mailto:info@smacado.de" style="color: var(--wine); font-weight: 600; text-decoration: none;">info@smacado.de</a></p>
+    <p class="fade-up"><a href="https://www.instagram.com/julia_bergles/" style="color: var(--wine); text-decoration: none;">@julia_bergles</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smacado</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerrufsbelehrung</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </div>
+    <div class="footer-contact">Julia Bergles · Singoldstraße 5a · 86517 Wehringen</div>
+    <div class="footer-disclaimer">
+      TerraLuna ersetzt keine ärztliche Beratung. Alle Empfehlungen sind Orientierungshilfen.<br>
+      © 2024–2026 Smacado
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Story toggle
+function toggleStory() {
+  const expanded = document.getElementById('storyExpanded');
+  const btn = document.querySelector('.story-toggle');
+  if (expanded.classList.contains('open')) {
+    expanded.classList.remove('open');
+    btn.textContent = 'Meine ganze Geschichte lesen';
+  } else {
+    expanded.classList.add('open');
+    btn.textContent = 'Weniger anzeigen';
+    expanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>
+
+</body>
+</html>

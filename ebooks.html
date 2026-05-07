@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Books von Julia Bergles - Darmfreundlich Reisen, Iss dich stabil, Seelenbauch">
+  <title>E-Books | Smacado</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --wine: #bf6b6b; --cream: #faf4eb; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --gold: #c9a96e; --rose: #df8585; --blush: #f0d5d0; --sage: #b8d4c8;
+      --white: #fffdf9; --linen: #f5ece0; --gray: #b5a99a; --terracotta: #c4704b;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 18px; }
+    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--wine); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-links a.active { color: var(--wine); font-weight: 600; }
+    .nav-cta { background: var(--wine); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(191,107,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(191,107,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* PAGE HERO */
+    .page-hero { padding-top: 140px; padding-bottom: 60px; text-align: center; }
+    .section-label { font-size: 11px; font-weight: 500; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+    .section-sub { font-size: 16px; color: var(--cocoa); max-width: 550px; margin: 0 auto; line-height: 1.7; }
+
+    /* EBOOK CARDS */
+    .ebooks-grid { max-width: 1000px; margin: 0 auto; padding: 40px 24px 100px; display: flex; flex-direction: column; gap: 40px; }
+    .ebook-card { background: var(--white); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; box-shadow: 0 4px 20px rgba(201,169,110,0.08); transition: all 0.4s; }
+    .ebook-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(201,169,110,0.12); }
+    .ebook-card.reverse { direction: rtl; }
+    .ebook-card.reverse > * { direction: ltr; }
+    .ebook-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; }
+    .ebook-info p { font-size: 15px; color: var(--cocoa); line-height: 1.8; margin-bottom: 12px; }
+    .ebook-price { font-size: 32px; font-weight: 700; color: var(--wine); margin: 20px 0; }
+    .ebook-details { list-style: none; margin-bottom: 24px; }
+    .ebook-details li { font-size: 14px; color: var(--cocoa); padding: 6px 0; }
+    .ebook-details li::before { content: '✦ '; color: var(--gold); font-size: 10px; }
+    .ebook-visual { background: var(--linen); border-radius: 20px; height: 300px; display: flex; align-items: center; justify-content: center; }
+    .ebook-icon { font-size: 80px; opacity: 0.3; }
+    .btn-primary { background: var(--wine); color: var(--white); padding: 14px 36px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; box-shadow: 0 6px 20px rgba(191,107,107,0.2); display: inline-block; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(191,107,107,0.3); }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); color: var(--gray); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .section-title { font-size: 32px; }
+      .ebook-card { grid-template-columns: 1fr; padding: 32px; }
+      .ebook-card.reverse { direction: ltr; }
+      .ebook-visual { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo-cropped.png" alt="TerraLuna">
+      <span>Smacado</span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#preise">Preise</a>
+      <a href="index.html#geschichte">Meine Geschichte</a>
+      <a href="index.html#coaching">Coaching</a>
+      <a href="ebooks.html" class="active">E-Books</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="index.html#partner">Partner</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="#" class="nav-cta">App laden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label">E-Books</p>
+  <h1 class="section-title">Wissen zum Mitnehmen</h1>
+  <p class="section-sub">Meine Erfahrungen und Recherchen, kompakt zusammengefasst. Für unterwegs, zum Nachlesen und als Begleitung im Alltag.</p>
+</div>
+
+<div class="ebooks-grid">
+
+  <!-- Reise-Guide -->
+  <div class="ebook-card fade-up">
+    <div class="ebook-info">
+      <h3>Darmfreundlich Reisen</h3>
+      <p>Ein praktischer Reise-Guide für Menschen mit Histaminintoleranz oder empfindlichem Darm.</p>
+      <ul class="ebook-details">
+        <li>Welche Lebensmittel histaminarm und darmfreundlich sind</li>
+        <li>Was du im Restaurant bestellen kannst</li>
+        <li>Snacklisten für unterwegs</li>
+        <li>Restaurantkarten in mehreren Sprachen</li>
+        <li>Packlisten und Notfall-Listen</li>
+      </ul>
+      <div class="ebook-price">10,00 €</div>
+      <a href="mailto:julia@bergles.net?subject=E-Book: Darmfreundlich Reisen" class="btn-primary">Jetzt anfragen</a>
+    </div>
+    <div class="ebook-visual">
+      <div class="ebook-icon">&#9992;</div>
+    </div>
+  </div>
+
+  <!-- Iss dich stabil -->
+  <div class="ebook-card reverse fade-up">
+    <div class="ebook-info">
+      <h3>Iss dich stabil</h3>
+      <p>Ein umfassender Ernährungsleitfaden für alle, die verstehen wollen was in ihrem Körper passiert.</p>
+      <ul class="ebook-details">
+        <li>Warum der Darm manchmal aus dem Gleichgewicht gerät</li>
+        <li>Was Histaminintoleranz und Unverträglichkeiten wirklich sind</li>
+        <li>Wie Stress und psychische Faktoren die Verdauung beeinflussen</li>
+        <li>Praktische Ernährungstipps und Lebensmittel-Listen</li>
+      </ul>
+      <div class="ebook-price">25,00 €</div>
+      <a href="mailto:julia@bergles.net?subject=E-Book: Iss dich stabil" class="btn-primary">Jetzt anfragen</a>
+    </div>
+    <div class="ebook-visual">
+      <div class="ebook-icon">&#9733;</div>
+    </div>
+  </div>
+
+  <!-- Seelenbauch -->
+  <div class="ebook-card fade-up">
+    <div class="ebook-info">
+      <h3>Seelenbauch</h3>
+      <p>138 Seiten über die Verbindung zwischen Körper und Seele. Für alle, die Angst vor dem Essen entwickelt haben.</p>
+      <ul class="ebook-details">
+        <li>Verständliche Erklärungen zu Darm, Verdauung und Nervensystem</li>
+        <li>Persönliche Geschichten und Erfahrungen</li>
+        <li>Übungen und Reflexionen</li>
+        <li>Wege aus der Angst vor dem Essen</li>
+      </ul>
+      <div class="ebook-price">15,00 €</div>
+      <a href="mailto:julia@bergles.net?subject=E-Book: Seelenbauch" class="btn-primary">Jetzt anfragen</a>
+    </div>
+    <div class="ebook-visual">
+      <div class="ebook-icon">&#9825;</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smacado</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerrufsbelehrung</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </div>
+    <div class="footer-disclaimer">
+      Alle E-Books sind digitale Produkte. Kein Rückgaberecht nach Download.<br>
+      © 2024–2026 Smacado
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Datenschutzerklärung - Smacado / TerraLuna App & Website">
+  <title>Datenschutzerklärung | Smacado</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --wine: #bf6b6b; --cream: #faf4eb; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --gold: #c9a96e; --rose: #df8585; --blush: #f0d5d0; --sage: #b8d4c8;
+      --white: #fffdf9; --linen: #f5ece0; --gray: #b5a99a; --terracotta: #c4704b;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 18px; }
+    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--wine); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-links a.active { color: var(--wine); font-weight: 600; }
+    .nav-cta { background: var(--wine); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(191,107,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(191,107,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* PAGE HERO */
+    .page-hero { padding-top: 140px; padding-bottom: 60px; text-align: center; }
+    .section-label { font-size: 11px; font-weight: 500; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+    .section-sub { font-size: 16px; color: var(--cocoa); max-width: 550px; margin: 0 auto; line-height: 1.7; }
+
+    /* LEGAL CONTENT */
+    .legal-content { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+    .legal-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); margin: 40px 0 16px; }
+    .legal-content h3 { font-size: 18px; font-weight: 600; color: var(--charcoal); margin: 28px 0 12px; }
+    .legal-content p { font-size: 15px; color: var(--charcoal); line-height: 1.8; margin-bottom: 14px; }
+    .legal-content ul, .legal-content ol { margin: 12px 0 16px 24px; }
+    .legal-content li { font-size: 14px; color: var(--charcoal); line-height: 1.7; margin-bottom: 6px; }
+    .legal-content strong { font-weight: 600; }
+    .legal-content table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .legal-content th, .legal-content td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--linen); font-size: 14px; }
+    .legal-content th { font-weight: 600; background: var(--linen); }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); color: var(--gray); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .section-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo-cropped.png" alt="TerraLuna">
+      <span>Smacado</span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#preise">Preise</a>
+      <a href="index.html#geschichte">Meine Geschichte</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="index.html#partner">Partner</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="#" class="nav-cta">App laden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label">Rechtliches</p>
+  <h1 class="section-title">Datenschutzerklärung</h1>
+  <p class="section-sub">TerraLuna App & Website — Stand: April 2026</p>
+</div>
+
+<div class="legal-content fade-up">
+
+  <h2>1. Verantwortliche</h2>
+  <p>Julia Bergles<br>
+  Singoldstraße 5a, 86517 Wehringen<br>
+  E-Mail: info@smacado.de<br>
+  Website: www.smacado.de</p>
+
+  <h2>2. Geltungsbereich</h2>
+  <p>Diese Datenschutzerklärung gilt für die Website smacado.de und die mobile App „TerraLuna" (iOS/Android).</p>
+
+  <h2>3. Datenerhebung</h2>
+
+  <h3>3.1 Lokal gespeicherte Daten (nur auf dem Gerät)</h3>
+  <p>Folgende Daten werden ausschließlich auf dem Smartphone gespeichert:</p>
+  <ul>
+    <li><strong>Profildaten:</strong> Name, Ernährungspräferenzen, ausgewählte Filter, Gewicht, Größe, Aktivitätslevel, persönliche Ziele</li>
+    <li><strong>Zyklusdaten:</strong> Zykluslänge, Periodenlänge, letzter Periodenstart, tägliche Stimmungs-/Energie-/Symptomeinträge</li>
+    <li><strong>Tagebucheinträge:</strong> Tägliche Notizen, Stimmung, Verträglichkeit, Bewegung, Fotos, eigene Felder</li>
+    <li><strong>Einkaufslisten:</strong> Erstellte Listen und abgehakte Produkte</li>
+    <li><strong>Scan-Verlauf:</strong> Barcode-Scans und Analyseergebnisse</li>
+    <li><strong>Favoriten:</strong> Gespeicherte Rezepte</li>
+    <li><strong>Lernfortschritt:</strong> Abgeschlossene Lernkarten</li>
+    <li><strong>Briefe:</strong> Persönliche Briefe an das zukünftige Ich</li>
+  </ul>
+  <p><strong>Speichermethode:</strong> AsyncStorage-Technologie. Daten werden beim Deinstallieren der App gelöscht.</p>
+
+  <h3>3.2 Besondere Datenkategorien (Art. 9 DSGVO)</h3>
+  <p>Die App verarbeitet Gesundheitsdaten (Zyklusdaten, Symptome, Verträglichkeiten, Ernährung). Die Verarbeitung erfolgt auf Grundlage der ausdrücklichen Einwilligung der Nutzerin während des App-Onboardings.</p>
+
+  <h3>3.3 Datenübermittlung an Dritte</h3>
+  <ul>
+    <li><strong>Barcode-Scanner:</strong> EAN-Nummern werden an Open Food Facts (openfoodfacts.org) zur Produktabfrage übermittelt</li>
+    <li><strong>Verträglichkeits-Scanner (Premium):</strong> Essensfotos werden an die Anthropic API zur Analyse übermittelt; Fotos werden nicht gespeichert</li>
+    <li><strong>Reise-Übersetzer:</strong> Texte werden an MyMemory (mymemory.translated.net) zur Live-Übersetzung übermittelt</li>
+    <li><strong>YouTube-Videos:</strong> Workouts leiten zu YouTube weiter; es gelten die Datenschutzbestimmungen von Google/YouTube</li>
+    <li><strong>Partner-Links:</strong> HistaFood, Histaminikus, Aho.bio, Nigela, Yamato®Gast leiten auf die jeweiligen Websites weiter</li>
+  </ul>
+
+  <h3>3.4 Daten, die NICHT erhoben werden</h3>
+  <p>Es werden keine Tracking-Cookies, Werbe-IDs, Standortdaten, Telefonkontakte, Social-Media-Profile oder Werbedaten an Partner übermittelt.</p>
+
+  <h2>4. Kamerazugriff</h2>
+  <p>Erforderlich für: Barcode-Scannen, Essensfotografie (Verträglichkeits-Scanner), Tagebuch-Fotos.</p>
+  <p>Zugriff nur mit ausdrücklicher Erlaubnis. Fotos werden lokal gespeichert (außer beim Verträglichkeits-Scanner).</p>
+
+  <h2>5. Fotobibliothek-Zugriff</h2>
+  <p>Ermöglicht das Einfügen von Fotos in Tagebucheinträge. Zugriff nur mit ausdrücklicher Erlaubnis. Ausgewählte Fotos werden lokal gespeichert, nicht übermittelt.</p>
+
+  <h2>6. Rechtsgrundlagen</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Verarbeitung</th>
+        <th>Rechtsgrundlage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lokale Datenspeicherung</td>
+        <td>Art. 6 Abs. 1 lit. b DSGVO</td>
+      </tr>
+      <tr>
+        <td>Gesundheitsdaten</td>
+        <td>Art. 9 Abs. 2 lit. a DSGVO</td>
+      </tr>
+      <tr>
+        <td>Barcode-Abfragen</td>
+        <td>Art. 6 Abs. 1 lit. b DSGVO</td>
+      </tr>
+      <tr>
+        <td>Foto-Analyse (KI)</td>
+        <td>Art. 6 Abs. 1 lit. a DSGVO</td>
+      </tr>
+      <tr>
+        <td>Partner-Links</td>
+        <td>Art. 6 Abs. 1 lit. f DSGVO</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>7. Affiliate-Links und Werbung</h2>
+  <p><strong>Partner:</strong> HistaFood/HistaNutri, Histaminikus, Aho.bio, Nigela, Yamato®Gast. Gekennzeichnet als „✦ Partnerempfehlung". Provisionen möglich. Es werden keine personenbezogenen Daten an Partner übermittelt.</p>
+
+  <h2>8. Rechte der Nutzerinnen</h2>
+  <ul>
+    <li>Auskunft (Art. 15 DSGVO)</li>
+    <li>Berichtigung (Art. 16 DSGVO)</li>
+    <li>Löschung (Art. 17 DSGVO)</li>
+    <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+    <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+    <li>Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
+    <li>Beschwerde bei der Aufsichtsbehörde (Art. 77 DSGVO)</li>
+  </ul>
+  <p>Alle lokalen Daten können durch Deinstallation der App gelöscht werden.</p>
+
+  <h2>9. Datenlöschung</h2>
+  <ul>
+    <li><strong>Lokale Daten:</strong> Gelöscht bei Deinstallation der App</li>
+    <li><strong>Barcode-Anfragen:</strong> Open Food Facts speichert keine personenbezogenen Daten</li>
+    <li><strong>Verträglichkeits-Scanner:</strong> Anthropic speichert Fotos nicht dauerhaft (siehe deren Datenschutzrichtlinie)</li>
+  </ul>
+
+  <h2>10. Datensicherheit</h2>
+  <p>Lokale Daten werden durch die Betriebssystem-Sicherheit (iOS/Android) geschützt. Externe Kommunikation erfolgt über HTTPS-Verschlüsselung.</p>
+
+  <h2>11. Minderjährige</h2>
+  <p>Die App richtet sich an Erwachsene. Nutzerinnen unter 16 Jahren benötigen die Einwilligung der Erziehungsberechtigten.</p>
+
+  <h2>12. Änderungen</h2>
+  <p>Die Anbieterin behält sich vor, diese Datenschutzerklärung bei neuen Funktionen oder rechtlichen Änderungen anzupassen. Die aktuelle Version ist jederzeit online und in der App einsehbar.</p>
+
+  <h2>13. Kontakt</h2>
+  <p>Julia Bergles<br>
+  E-Mail: info@smacado.de<br>
+  Website: www.smacado.de</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smacado</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerrufsbelehrung</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </div>
+    <div class="footer-disclaimer">
+      © 2024–2026 Smacado
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Allgemeine Geschäftsbedingungen - Smacado / TerraLuna App, Coaching & digitale Produkte">
+  <title>AGB | Smacado</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --wine: #bf6b6b; --cream: #faf4eb; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --gold: #c9a96e; --rose: #df8585; --blush: #f0d5d0; --sage: #b8d4c8;
+      --white: #fffdf9; --linen: #f5ece0; --gray: #b5a99a; --terracotta: #c4704b;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 18px; }
+    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--wine); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-links a.active { color: var(--wine); font-weight: 600; }
+    .nav-cta { background: var(--wine); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(191,107,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(191,107,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* PAGE HERO */
+    .page-hero { padding-top: 140px; padding-bottom: 60px; text-align: center; }
+    .section-label { font-size: 11px; font-weight: 500; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
+    .section-sub { font-size: 16px; color: var(--cocoa); max-width: 550px; margin: 0 auto; line-height: 1.7; }
+
+    /* LEGAL CONTENT */
+    .legal-content { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+    .legal-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); margin: 40px 0 16px; }
+    .legal-content h3 { font-size: 18px; font-weight: 600; color: var(--charcoal); margin: 28px 0 12px; }
+    .legal-content p { font-size: 15px; color: var(--charcoal); line-height: 1.8; margin-bottom: 14px; }
+    .legal-content ul, .legal-content ol { margin: 12px 0 16px 24px; }
+    .legal-content li { font-size: 14px; color: var(--charcoal); line-height: 1.7; margin-bottom: 6px; }
+    .legal-content strong { font-weight: 600; }
+    .legal-content table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .legal-content th, .legal-content td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--linen); font-size: 14px; }
+    .legal-content th { font-weight: 600; background: var(--linen); }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); color: var(--gray); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .section-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo-cropped.png" alt="TerraLuna">
+      <span>Smacado</span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#preise">Preise</a>
+      <a href="index.html#geschichte">Meine Geschichte</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="index.html#partner">Partner</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="#" class="nav-cta">App laden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="section-label">Rechtliches</p>
+  <h1 class="section-title">Allgemeine Geschäftsbedingungen</h1>
+  <p class="section-sub">TerraLuna App, Coaching & digitale Produkte — Stand: April 2026</p>
+</div>
+
+<div class="legal-content fade-up">
+
+  <h2>§ 1 Geltungsbereich</h2>
+  <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der App „TerraLuna", das Coaching-Angebot „Seelenbauch" sowie alle digitalen Produkte (E-Books, Affirmationskarten) der Anbieterin Julia Bergles, Singoldstraße 5a, 86517 Wehringen (nachfolgend „Anbieterin").</p>
+  <p>Die AGB gelten für alle Nutzerinnen und Nutzer, unabhängig davon, ob die kostenlose oder eine kostenpflichtige Version genutzt wird. Mit der Nutzung der App oder der Buchung eines Coachings erklärt die Nutzerin ihr Einverständnis mit diesen AGB.</p>
+
+  <h2>§ 2 Leistungsbeschreibung</h2>
+
+  <h3>2.1 App „TerraLuna"</h3>
+  <p>Die App bietet unter anderem:</p>
+  <ul>
+    <li>Lebensmittel-Datenbank mit Verträglichkeitsbewertungen</li>
+    <li>Rezepte (glutenfrei, ohne Industriezucker)</li>
+    <li>Barcode-Scanner</li>
+    <li>Verträglichkeits-Scanner (Foto-Analyse)</li>
+    <li>Zyklustracker</li>
+    <li>Tagebuch</li>
+    <li>Workout-Empfehlungen</li>
+    <li>Supplement-Empfehlungen</li>
+    <li>Einkaufslisten</li>
+    <li>Restaurant-Kommunikation</li>
+    <li>SOS-Karten</li>
+    <li>Lernbibliothek</li>
+  </ul>
+  <p><strong>Wichtig:</strong> Die App stellt keine medizinische Beratung, Diagnose oder Therapie dar. Alle Inhalte sind Orientierungshilfen.</p>
+
+  <h3>2.2 Coaching „Seelenbauch"</h3>
+  <p>Das Coaching umfasst eine 1:1-Begleitung zu den Themen Histaminintoleranz und Unverträglichkeiten, Angst vor dem Essen (Food Anxiety) und Inneres Kind. Das Coaching ist keine medizinische Behandlung, Psychotherapie oder Heilbehandlung.</p>
+
+  <h3>2.3 Digitale Produkte</h3>
+  <p>E-Books und Affirmationskarten werden über den Online-Shop verkauft.</p>
+
+  <h2>§ 3 Vertragsschluss und Registrierung</h2>
+  <p>Der Vertrag kommt durch Download und erstmalige Nutzung der App zustande. Kostenpflichtige Funktionen erfordern ein Abonnement. Mindestalter: 16 Jahre (unter 16 mit Einverständnis der Erziehungsberechtigten).</p>
+
+  <h2>§ 4 Kostenlose Nutzung (Neumond-Tarif)</h2>
+  <p>Der kostenlose Tarif umfasst:</p>
+  <ul>
+    <li>SOS-Karten</li>
+    <li>Täglicher Check-in</li>
+    <li>Profil-Einstellung</li>
+    <li>Tipp des Tages</li>
+    <li>3 Lernartikel</li>
+    <li>Lebensmittel-Ampel (Basis)</li>
+    <li>Medizinische Hinweise</li>
+  </ul>
+  <p>SOS-Karten und medizinische Hinweise sind dauerhaft kostenlos in allen Tarifen.</p>
+
+  <h2>§ 5 Kostenpflichtige Tarife (Abonnements)</h2>
+  <p><strong>Halbmond:</strong> 4,99 €/Monat oder 39,99 €/Jahr</p>
+  <p><strong>Vollmond:</strong> 7,99 €/Monat oder 59,99 €/Jahr</p>
+  <p>Die Zahlung erfolgt über den Apple App Store oder Google Play Store. Abonnements verlängern sich automatisch, sofern nicht rechtzeitig gekündigt wird. Alle Preise verstehen sich inklusive Mehrwertsteuer.</p>
+
+  <h2>§ 6 Kündigung</h2>
+  <p><strong>Kostenloser Tarif:</strong> Jederzeit durch Löschen der App.</p>
+  <p><strong>Kostenpflichtige Abonnements:</strong> Kündigung über die Plattform-Einstellungen (iOS: Einstellungen → Apple-ID → Abonnements; Android: Play Store → Abonnements). Die Kündigung muss mindestens 24 Stunden vor Verlängerung erfolgen. Der Zugang bleibt bis zum Ende des bezahlten Zeitraums bestehen.</p>
+
+  <h2>§ 7 Widerrufsrecht</h2>
+  <p>Es besteht ein 14-tägiges Widerrufsrecht ab Vertragsschluss ohne Angabe von Gründen. Der Widerruf erfolgt per E-Mail an info@smacado.de. Das Widerrufsrecht erlischt vorzeitig, wenn die Anbieterin mit der Ausführung des Vertrags begonnen hat und die Nutzerin dem ausdrücklich zugestimmt hat. Für In-App-Käufe gelten die Bedingungen des jeweiligen App Stores.</p>
+
+  <h2>§ 8 Coaching — Buchung und Stornierung</h2>
+  <p>Die Buchung erfolgt per Kontaktformular, E-Mail oder WhatsApp. Ein kostenloses Erstgespräch ist unverbindlich.</p>
+  <p><strong>Stornierungsbedingungen:</strong></p>
+  <ul>
+    <li>Mehr als 48 Stunden vorher: kostenlose Stornierung</li>
+    <li>Weniger als 48 Stunden vorher: voller Betrag wird fällig, sofern keine Verschiebung möglich ist</li>
+    <li>Bei Krankheit: Verschiebung möglich</li>
+  </ul>
+  <p>Die Anbieterin kann bei triftigem Grund (z.B. Krankheit) absagen; es wird ein Ersatztermin angeboten oder erstattet. Das Coaching findet standardmäßig per Online-Videogespräch statt.</p>
+
+  <h2>§ 9 Coaching — Haftungsausschluss</h2>
+  <p>Das Coaching „Seelenbauch" ist kein Ersatz für:</p>
+  <ul>
+    <li>Ärztliche Behandlung oder Diagnose</li>
+    <li>Psychotherapie oder psychiatrische Behandlung</li>
+    <li>Ernährungsberatung durch zertifizierte Fachkräfte</li>
+    <li>Heilpraktische Behandlungen</li>
+  </ul>
+  <p>Die Anbieterin ist keine Ärztin, Therapeutin oder zertifizierte Ernährungsberaterin. Empfehlungen basieren auf persönlicher Erfahrung. Das Coaching ersetzt keine laufende medizinische oder therapeutische Behandlung. Die Anbieterin übernimmt keine Haftung für gesundheitliche oder psychische Folgen aus dem Coaching. Coaching-Inhalte sind vertraulich und werden nicht an Dritte weitergegeben.</p>
+
+  <h2>§ 10 Medizinischer Haftungsausschluss</h2>
+  <p>TerraLuna ist keine medizinische Anwendung. Die App ersetzt keine ärztliche Diagnose, Beratung oder Therapie. Alle Informationen sind Orientierungshilfen basierend auf persönlicher Erfahrung und öffentlich zugänglichen Quellen. Verträglichkeiten sind individuell verschieden; die Ampelbewertungen (grün/gelb/rot) sind Richtwerte, keine Garantien. Nutzerinnen sind eigenverantwortlich und sollten bei gesundheitlichen Beschwerden eine Ärztin oder einen Arzt aufsuchen. Die Anbieterin übernimmt keine Haftung für gesundheitliche Folgen. Supplement-Empfehlungen sind als Partnerempfehlungen gekennzeichnet und sollten nur nach Rücksprache mit einer Ärztin eingenommen werden.</p>
+
+  <h2>§ 11 Partnerempfehlungen und Affiliate-Links</h2>
+  <p>Die App enthält Partnerempfehlungen (Affiliate-Links), die mit „✦ Partnerempfehlung" gekennzeichnet sind. Die Anbieterin erhält Provisionen; der Preis für die Nutzerin bleibt gleich.</p>
+  <p><strong>Aktuelle Partner:</strong> HistaFood/HistaNutri, Histaminikus, Aho.bio, Nigela, Yamato Gast/C4 health GmbH.</p>
+  <p>Die Anbieterin empfiehlt ausschließlich selbst verwendete Produkte; ehrliche und kritische Bewertungen sind möglich.</p>
+
+  <h2>§ 12 Geistiges Eigentum</h2>
+  <p>Alle Inhalte der App (Texte, Rezepte, Bewertungen, Grafiken, Datenbanken, Software) sind urheberrechtlich geschützt. Nutzerinnen erhalten ein nicht übertragbares Nutzungsrecht für persönliche, nicht-kommerzielle Nutzung.</p>
+  <p>Untersagt ist: Kopieren, Reproduzieren oder Teilen von Inhalten; kommerzielle Nutzung der Rezepte oder Datenbank; Reverse Engineering. Rezeptfotos und Texte von Julia Bergles/Smacado bedürfen einer Genehmigung.</p>
+
+  <h2>§ 13 Datenschutz</h2>
+  <p>Die Datenverarbeitung erfolgt gemäß der <a href="datenschutz.html" style="color: var(--wine);">Datenschutzerklärung</a> (einsehbar in der App und auf der Website). Gesundheitsdaten (Zyklus, Symptome, Verträglichkeiten) werden ausschließlich lokal auf dem Gerät gespeichert.</p>
+
+  <h2>§ 14 Haftungsbeschränkung</h2>
+  <p>Die Anbieterin haftet für Schäden an Leben, Körper oder Gesundheit aus fahrlässiger oder vorsätzlicher Pflichtverletzung. Bei sonstigen Schäden haftet die Anbieterin nur bei Vorsatz oder grober Fahrlässigkeit.</p>
+  <p>Keine Gewähr für: ununterbrochene App-Verfügbarkeit, Richtigkeit der Lebensmittelbewertungen, Aktualität der Supermarkt-Sortimente und Restaurant-Informationen, Ergebnisse des Verträglichkeits-Scanners.</p>
+  <p>Bei leichter Fahrlässigkeit ist die Haftung auf vorhersehbare, vertragstypische Schäden begrenzt, soweit gesetzlich zulässig.</p>
+
+  <h2>§ 15 Verfügbarkeit und Änderungen</h2>
+  <p>Die Anbieterin bemüht sich um unterbrechungsfreie App-Verfügbarkeit, kann diese jedoch nicht garantieren. Es besteht das Recht, die App jederzeit zu ändern, zu erweitern oder einzustellen. Bei wesentlichen Änderungen kostenpflichtiger Funktionen erfolgt eine vorherige Benachrichtigung.</p>
+
+  <h2>§ 16 Schlussbestimmungen</h2>
+  <p>Es gilt deutsches Recht. Salvatorische Klausel: Die Unwirksamkeit einzelner Bestimmungen berührt nicht die Wirksamkeit der übrigen. AGB können zukünftig geändert werden; die weitere Nutzung gilt als Zustimmung. Gerichtsstand ist der Wohnsitz der Anbieterin, soweit gesetzlich zulässig.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smacado</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerrufsbelehrung</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </div>
+    <div class="footer-disclaimer">
+      © 2024–2026 Smacado
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
