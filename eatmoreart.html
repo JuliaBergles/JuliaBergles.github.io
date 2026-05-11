@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eatmore Art — Wear Your Healing. Handgemachte Food-Charms für deinen Heilungsweg.">
+  <title>Eatmore Art | Wear Your Healing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blush: #f2d5cf; --strawberry: #e8a0a0; --cream: #fdf6f0; --warmwhite: #fffbf7;
+      --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #5c5047; --soft: #b8a99a;
+      --honey: #dbb88a; --sage: #c5d5c0; --lavender: #d5c8e0; --peach: #f0c4a8;
+      --glossy: #f8e8e0; --white: #ffffff;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fd1 { transition-delay: 0.1s; } .fd2 { transition-delay: 0.2s; } .fd3 { transition-delay: 0.3s; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,246,240,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,144,138,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--soft); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--rosegold); }
+    .nav-cta { background: var(--rosegold); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(201,144,138,0.2); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,144,138,0.3); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(242,213,207,0.4) 0%, transparent 70%); border-radius: 50%; }
+    .hero::after { content: ''; position: absolute; bottom: -10%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,160,160,0.2) 0%, transparent 70%); border-radius: 50%; }
+    .hero-content { position: relative; z-index: 1; max-width: 650px; }
+    .hero-label { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: var(--charcoal); line-height: 1.1; margin-bottom: 8px; letter-spacing: -1px; }
+    .hero h1 em { font-style: italic; color: var(--rosegold); }
+    .hero .tagline { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--rosegold); font-style: italic; margin-bottom: 28px; letter-spacing: 1px; }
+    .hero .subtitle { font-size: 16px; color: var(--soft); max-width: 480px; margin: 0 auto 40px; line-height: 1.8; font-weight: 300; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
+    .btn-rose { background: var(--rosegold); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); }
+    .btn-rose:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,144,138,0.35); }
+    .btn-outline { background: transparent; color: var(--rosegold); border: 2px solid var(--rosegold); }
+    .btn-outline:hover { background: var(--rosegold); color: var(--white); }
+    .btn-sm { padding: 12px 28px; font-size: 14px; }
+
+    /* SECTIONS */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--soft); margin-bottom: 48px; max-width: 520px; line-height: 1.8; }
+
+    /* WEAR YOUR HEALING ERKLÄRUNG */
+    .meaning-section { background: var(--warmwhite); }
+    .meaning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .meaning-text p { font-size: 15px; color: var(--charcoal); line-height: 1.9; margin-bottom: 16px; }
+    .meaning-visual { background: linear-gradient(135deg, var(--blush) 0%, var(--glossy) 100%); border-radius: 200px 200px 24px 24px; height: 400px; display: flex; align-items: center; justify-content: center; }
+    .meaning-emoji { font-size: 80px; opacity: 0.5; }
+
+    /* PRODUKT KATEGORIEN */
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .product-card { background: var(--warmwhite); border-radius: 24px; padding: 40px 28px; text-align: center; transition: all 0.4s; border: 1px solid rgba(201,144,138,0.08); }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(201,144,138,0.12); }
+    .product-icon { width: 80px; height: 80px; border-radius: 50%; background: var(--glossy); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; }
+    .product-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; margin-bottom: 8px; }
+    .product-card p { font-size: 14px; color: var(--soft); line-height: 1.7; margin-bottom: 16px; }
+    .product-price { font-size: 13px; color: var(--rosegold); font-weight: 600; margin-bottom: 20px; }
+    .product-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 20px; }
+    .product-tag { background: var(--glossy); border-radius: 50px; padding: 6px 14px; font-size: 11px; color: var(--rosegold); font-weight: 500; }
+
+    /* FEAR FOOD SEKTION */
+    .fearfood-section { background: linear-gradient(180deg, var(--warmwhite) 0%, var(--cream) 100%); }
+    .fearfood-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .fearfood-steps { list-style: none; counter-reset: steps; }
+    .fearfood-steps li { counter-increment: steps; padding: 20px 0; border-bottom: 1px solid rgba(201,144,138,0.1); font-size: 15px; color: var(--charcoal); padding-left: 48px; position: relative; }
+    .fearfood-steps li::before { content: counter(steps); position: absolute; left: 0; top: 20px; width: 32px; height: 32px; border-radius: 50%; background: var(--glossy); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--rosegold); font-weight: 600; }
+
+    /* HEALING COLLECTION (App) */
+    .app-section { background: var(--charcoal); color: var(--white); }
+    .app-section .section-label { color: var(--honey); }
+    .app-section .section-title { color: var(--white); }
+    .app-section .section-sub { color: var(--sand); }
+    .app-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .app-feature { background: rgba(255,255,255,0.04); border-radius: 20px; padding: 32px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s; }
+    .app-feature:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .app-feature h4 { font-size: 16px; color: var(--honey); font-weight: 600; margin-bottom: 8px; }
+    .app-feature p { font-size: 13px; color: var(--sand); line-height: 1.7; }
+
+    /* VERPACKUNG & EXTRAS */
+    .extras-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .extra-card { background: var(--warmwhite); border-radius: 20px; padding: 32px; border: 1px solid rgba(201,144,138,0.06); }
+    .extra-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--charcoal); }
+    .extra-card p { font-size: 14px; color: var(--soft); line-height: 1.7; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text p { font-size: 15px; color: var(--charcoal); line-height: 1.9; margin-bottom: 16px; }
+    .about-img { width: 100%; height: 450px; border-radius: 200px 200px 24px 24px; object-fit: cover; box-shadow: 0 12px 40px rgba(201,144,138,0.15); }
+
+    /* SOCIAL IDEAS */
+    .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .social-card { background: var(--warmwhite); border-radius: 20px; padding: 28px; transition: all 0.3s; }
+    .social-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(201,144,138,0.1); }
+    .social-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: var(--rosegold); }
+    .social-card p { font-size: 13px; color: var(--soft); line-height: 1.6; }
+
+    /* BRAND IDENTITY */
+    .colors-row { display: flex; gap: 12px; margin: 24px 0; flex-wrap: wrap; }
+    .color-swatch { width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, var(--blush) 0%, var(--glossy) 50%, var(--cream) 100%); text-align: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; }
+    .cta-section p { font-size: 16px; color: var(--soft); margin-bottom: 36px; max-width: 450px; margin-left: auto; margin-right: auto; }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); color: var(--sand); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--sand); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(253,246,240,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .hero h1 { font-size: 38px; }
+      .products-grid, .app-features, .social-grid { grid-template-columns: 1fr; }
+      .meaning-grid, .fearfood-grid, .about-grid { grid-template-columns: 1fr; }
+      .extras-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 28px; }
+      .meaning-visual { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="eatmoreart.html" class="nav-logo">
+      <span>Eatmore Art</span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="#produkte">Produkte</a>
+      <a href="#fearfood">Fear Food Anfrage</a>
+      <a href="#collection">Healing Collection</a>
+      <a href="#about">Über mich</a>
+      <a href="index.html">TerraLuna App</a>
+      <a href="mailto:julia@bergles.net?subject=Eatmore Art Anfrage" class="nav-cta">Anfragen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-label fade-up">Handmade with love</p>
+    <h1 class="fade-up">Wear Your <em>Healing.</em></h1>
+    <p class="tagline fade-up">tiny wearable art for your healing journey</p>
+    <p class="subtitle fade-up">Handgemachte Food-Charms, die dich an deinen Weg erinnern. An die Lebensmittel, die du dir zurückgeholt hast. An die Angst, die du überwunden hast. An alles, was du geschafft hast.</p>
+    <div class="hero-buttons fade-up">
+      <a href="#produkte" class="btn btn-rose">Produkte entdecken</a>
+      <a href="#fearfood" class="btn btn-outline">Dein Fear Food anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- WEAR YOUR HEALING ERKLÄRUNG -->
+<section class="meaning-section">
+  <div class="section-inner">
+    <div class="meaning-grid">
+      <div class="fade-up">
+        <p class="section-label">Die Idee</p>
+        <h2 class="section-title">Was "Wear Your Healing" bedeutet</h2>
+        <p>Jeder Charm erzählt eine Geschichte. Deine Geschichte.</p>
+        <p>Vielleicht ist es die Erdbeere, vor der du monatelang Angst hattest. Die Banane, die du zum ersten Mal seit der Diagnose wieder gegessen hast. Oder das Brot, das du dir selbst gebacken hast, als du endlich ein glutenfreies Rezept gefunden hast, das schmeckt.</p>
+        <p>Eatmore Art macht aus diesen Momenten etwas Greifbares. Ein kleiner Anhänger, den du tragen kannst. Der dich jeden Tag daran erinnert: Du hast das geschafft. Du holst dir dein Leben zurück. Ein Lebensmittel nach dem anderen.</p>
+        <p>Das ist kein Schmuck. Das sind Erinnerungen, die du tragen kannst.</p>
+      </div>
+      <div class="meaning-visual fade-up fd1">
+        <div class="meaning-emoji">&#127853;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUKTE -->
+<section id="produkte">
+  <div class="section-inner">
+    <p class="section-label fade-up" style="text-align: center;">Produkte</p>
+    <h2 class="section-title fade-up" style="text-align: center;">Deine Healing Collection beginnt hier</h2>
+    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">Jedes Stück wird von Hand gemacht. Kein Charm ist wie der andere. Genau wie dein Weg.</p>
+
+    <div class="products-grid">
+      <!-- Mini Charms -->
+      <div class="product-card fade-up">
+        <div class="product-icon">&#127835;</div>
+        <h3>Mini Charms</h3>
+        <p>Kleine Anhänger für Armbänder. Tiny collectible foods. Sammelbare Fortschritts-Symbole, die deinen Heilungsweg sichtbar machen.</p>
+        <div class="product-tags">
+          <span class="product-tag">Armbänder</span>
+          <span class="product-tag">Sammelbar</span>
+          <span class="product-tag">Tiny Art</span>
+        </div>
+        <div class="product-price">ab 12,00 €</div>
+        <a href="mailto:julia@bergles.net?subject=Anfrage Mini Charms" class="btn btn-outline btn-sm">Anfragen</a>
+      </div>
+
+      <!-- Kettenanhänger -->
+      <div class="product-card fade-up fd1">
+        <div class="product-icon">&#127834;</div>
+        <h3>Kettenanhänger</h3>
+        <p>Statement Pieces mit emotionaler Bedeutung. Foods die du dir zurückgeholt hast. Tragbare Reminder an deinen Mut und deine Stärke.</p>
+        <div class="product-tags">
+          <span class="product-tag">Statement</span>
+          <span class="product-tag">Emotional</span>
+          <span class="product-tag">Reminder</span>
+        </div>
+        <div class="product-price">ab 18,00 €</div>
+        <a href="mailto:julia@bergles.net?subject=Anfrage Kettenanhänger" class="btn btn-outline btn-sm">Anfragen</a>
+      </div>
+
+      <!-- Schlüsselanhänger -->
+      <div class="product-card fade-up fd2">
+        <div class="product-icon">&#127822;</div>
+        <h3>Schlüsselanhänger</h3>
+        <p>Größere Alltagsbegleiter. Sichtbare Healing Objects, die dich durch den Tag begleiten. Dein Reminder, den du immer dabei hast.</p>
+        <div class="product-tags">
+          <span class="product-tag">Alltagsbegleiter</span>
+          <span class="product-tag">Sichtbar</span>
+          <span class="product-tag">Healing Object</span>
+        </div>
+        <div class="product-price">ab 16,00 €</div>
+        <a href="mailto:julia@bergles.net?subject=Anfrage Schlüsselanhänger" class="btn btn-outline btn-sm">Anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEAR FOOD ANFRAGE -->
+<section id="fearfood" class="fearfood-section">
+  <div class="section-inner">
+    <div class="fearfood-grid">
+      <div class="fade-up">
+        <p class="section-label">Individuell</p>
+        <h2 class="section-title">Dein persönliches Fear Food</h2>
+        <p style="font-size: 15px; color: var(--charcoal); line-height: 1.8; margin-bottom: 24px;">Du hast ein Lebensmittel, das eine besondere Bedeutung für dich hat? Eines, vor dem du Angst hattest? Oder eines, das du dir zurückgeholt hast? Ich mache daraus deinen persönlichen Charm.</p>
+        <ol class="fearfood-steps">
+          <li>Schreib mir, welches Lebensmittel dein Fear Food ist oder war</li>
+          <li>Erzähl mir, wenn du magst, was es für dich bedeutet</li>
+          <li>Ich forme es von Hand, nur für dich</li>
+          <li>Du bekommst ein Unikat mit deiner Geschichte</li>
+        </ol>
+        <a href="mailto:julia@bergles.net?subject=Mein persönliches Fear Food&body=Hi Julia,%0A%0Amein Fear Food ist/war: %0A%0AEs bedeutet mir etwas, weil: %0A%0AIch hätte gerne: (Mini Charm / Kettenanhänger / Schlüsselanhänger)%0A%0ALiebe Grüße" class="btn btn-rose btn-sm" style="margin-top: 24px;">Dein Fear Food anfragen</a>
+      </div>
+      <div class="fade-up fd1" style="background: linear-gradient(135deg, var(--blush), var(--glossy)); border-radius: 24px; padding: 48px; text-align: center;">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--charcoal); font-style: italic; line-height: 1.5;">"Die Erdbeere, vor der ich ein Jahr lang Angst hatte, trage ich jetzt als Anhänger. Jeden Tag."</p>
+        <p style="font-size: 13px; color: var(--rosegold); margin-top: 16px;">So könnte deine Geschichte klingen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALING COLLECTION (App) -->
+<section id="collection" class="app-section">
+  <div class="section-inner">
+    <p class="section-label fade-up" style="text-align: center;">In der TerraLuna App</p>
+    <h2 class="section-title fade-up" style="text-align: center;">Deine digitale Healing Collection</h2>
+    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">Sammle die Lebensmittel, die du dir zurückgeholt hast. Digital in der App. Physisch an deinem Armband.</p>
+    <div class="app-features">
+      <div class="app-feature fade-up">
+        <h4>Foods sammeln</h4>
+        <p>Jedes Lebensmittel, das du wieder verträgst, wird Teil deiner persönlichen Sammlung. Ein digitaler Safe Space für deinen Fortschritt.</p>
+      </div>
+      <div class="app-feature fade-up fd1">
+        <h4>Fortschritt sehen</h4>
+        <p>Deine Collection wächst mit dir. Sieh auf einen Blick, wie viele Lebensmittel du dir zurückgeholt hast. Woche für Woche.</p>
+      </div>
+      <div class="app-feature fade-up fd2">
+        <h4>Charm freischalten</h4>
+        <p>Zu jedem gesammelten Food kannst du den passenden Charm bestellen. Dein digitaler Fortschritt wird zu etwas, das du tragen kannst.</p>
+      </div>
+      <div class="app-feature fade-up">
+        <h4>Meilensteine feiern</h4>
+        <p>5 Foods zurück? 10? 20? Die App feiert mit dir. Kleine Momente, die Großes bedeuten.</p>
+      </div>
+      <div class="app-feature fade-up fd1">
+        <h4>Deine Geschichte teilen</h4>
+        <p>Wenn du möchtest, teile deinen Fortschritt. Inspiriere andere. Zeig, dass es besser wird.</p>
+      </div>
+      <div class="app-feature fade-up fd2">
+        <h4>Erinnerungen schreiben</h4>
+        <p>Zu jedem Food kannst du eine Notiz hinterlassen. Wie es sich angefühlt hat. Was du gedacht hast. Worauf du stolz bist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERPACKUNG & EXTRAS -->
+<section>
+  <div class="section-inner">
+    <p class="section-label fade-up" style="text-align: center;">Das Erlebnis</p>
+    <h2 class="section-title fade-up" style="text-align: center;">Mehr als nur ein Paket</h2>
+    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">Jede Bestellung soll sich anfühlen wie ein Geschenk an dich selbst.</p>
+    <div class="extras-grid">
+      <div class="extra-card fade-up">
+        <h4>Handgeschriebene Karte</h4>
+        <p>In jeder Bestellung liegt eine persönliche Karte. Mit einer kleinen Botschaft von mir an dich. Weil du es verdient hast, dass jemand sagt: Ich bin stolz auf dich.</p>
+      </div>
+      <div class="extra-card fade-up fd1">
+        <h4>Healing Sticker</h4>
+        <p>Kleine Aufkleber für dein Tagebuch, deine Wasserflasche oder deinen Laptop. "Wear Your Healing", "One Food at a Time", "Brave Enough to Eat".</p>
+      </div>
+      <div class="extra-card fade-up">
+        <h4>Sammelkarte</h4>
+        <p>Eine Karte, auf der du abhaken kannst, welche Charms du schon hast. Wie ein Sammelalbum für deinen Heilungsweg.</p>
+      </div>
+      <div class="extra-card fade-up fd1">
+        <h4>Geschenk-Option</h4>
+        <p>Perfekt als Geschenk für jemanden, der gerade einen schwierigen Weg geht. Mit persönlicher Widmung und besonderer Verpackung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--warmwhite);">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="fade-up">
+        <p class="section-label">Über mich</p>
+        <h2 class="section-title">Ich kenne diesen Weg.</h2>
+        <p style="font-size: 15px; color: var(--charcoal); line-height: 1.9; margin-bottom: 16px;">Vor anderthalb Jahren konnte ich nur noch fünf Lebensmittel essen. Sieben Monate lang. Jeden Tag das Gleiche. Nach einem Darmverschluss, einer Histaminintoleranz-Diagnose und Monaten voller Angst vor dem Essen.</p>
+        <p style="font-size: 15px; color: var(--charcoal); line-height: 1.9; margin-bottom: 16px;">Heute kann ich wieder essen. Nicht perfekt, aber mit Freude. Jedes Lebensmittel, das ich mir zurückgeholt habe, war ein kleiner Sieg. Und ich wollte, dass diese Siege sichtbar werden.</p>
+        <p style="font-size: 15px; color: var(--charcoal); line-height: 1.9; margin-bottom: 16px;">Deshalb mache ich Eatmore Art. Weil dein Fortschritt es verdient, getragen zu werden.</p>
+        <p style="font-size: 15px; color: var(--charcoal); line-height: 1.9; margin-bottom: 24px;">Jeder Charm ist handgemacht. Von mir. Mit Liebe und dem Wissen, wie sich dieser Weg anfühlt.</p>
+        <p><a href="https://www.instagram.com/julia_bergles/" style="color: var(--rosegold); font-weight: 600; text-decoration: none;">@julia_bergles auf Instagram</a></p>
+      </div>
+      <div class="fade-up fd1">
+        <img src="images/IMG_4679.jpeg" alt="Julia Bergles" class="about-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA IDEAS -->
+<section>
+  <div class="section-inner">
+    <p class="section-label fade-up" style="text-align: center;">Community</p>
+    <h2 class="section-title fade-up" style="text-align: center;">Werde Teil der Healing Community</h2>
+    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">Teile deinen Weg. Feiere deine Siege. Inspiriere andere.</p>
+    <div class="social-grid">
+      <div class="social-card fade-up">
+        <h4>#WearYourHealing</h4>
+        <p>Zeig deinen Charm und erzähl die Geschichte dahinter. Jeder Post inspiriert jemanden, der gerade am Anfang steht.</p>
+      </div>
+      <div class="social-card fade-up fd1">
+        <h4>#OneFoodAtATime</h4>
+        <p>Teile das Lebensmittel, das du dir diese Woche zurückgeholt hast. Klein anfangen. Groß feiern.</p>
+      </div>
+      <div class="social-card fade-up fd2">
+        <h4>#HealingCollection</h4>
+        <p>Zeig deine wachsende Sammlung. Armband, Kette, Schlüsselanhänger. Jeder Charm erzählt ein Kapitel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner" style="text-align: center;">
+    <h2 class="fade-up">Dein Heilungsweg verdient es, sichtbar zu sein.</h2>
+    <p class="fade-up">Handgemacht. Einzigartig. Wie du.</p>
+    <div class="fade-up" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="mailto:julia@bergles.net?subject=Eatmore Art Anfrage" class="btn btn-rose">Jetzt anfragen</a>
+      <a href="index.html" class="btn btn-outline">TerraLuna App entdecken</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Eatmore Art</div>
+    <div class="footer-links">
+      <a href="index.html">TerraLuna App</a>
+      <a href="eatmoreart.html">Eatmore Art</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </div>
+    <div class="footer-disclaimer">
+      Eatmore Art ist eine Handmade-Brand von Julia Bergles. Alle Charms sind handgefertigt und Unikate.<br>
+      Die Produkte ersetzen keine medizinische Behandlung oder Therapie. Eatmore Art ist ein emotionales Begleitkonzept.<br>
+      © 2026 Eatmore Art · Julia Bergles
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
