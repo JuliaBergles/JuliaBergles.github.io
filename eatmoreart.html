@@ -13,6 +13,7 @@
       --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #5c5047; --soft: #b8a99a;
       --honey: #dbb88a; --sage: #c5d5c0; --lavender: #d5c8e0; --peach: #f0c4a8;
       --glossy: #f8e8e0; --white: #ffffff;
+      --navy: #2c3e6b;
     }
     body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
     .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
@@ -27,8 +28,8 @@
     .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--soft); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rosegold); }
-    .nav-cta { background: var(--rosegold); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(201,144,138,0.2); transition: all 0.3s; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,144,138,0.3); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.2); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,62,107,0.3); }
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
 
     /* HERO */
@@ -43,7 +44,7 @@
     .hero .subtitle { font-size: 16px; color: var(--soft); max-width: 480px; margin: 0 auto 40px; line-height: 1.8; font-weight: 300; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
-    .btn-rose { background: var(--rosegold); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); }
+    .btn-rose { background: linear-gradient(135deg, var(--rosegold) 0%, #d4a0a0 50%, var(--rosegold) 100%); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); }
     .btn-rose:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,144,138,0.35); }
     .btn-outline { background: transparent; color: var(--rosegold); border: 2px solid var(--rosegold); }
     .btn-outline:hover { background: var(--rosegold); color: var(--white); }
@@ -52,7 +53,7 @@
     /* SECTIONS */
     section { padding: 100px 24px; }
     .section-inner { max-width: 1000px; margin: 0 auto; }
-    .section-label { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
     .section-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--soft); margin-bottom: 48px; max-width: 520px; line-height: 1.8; }
 
@@ -82,7 +83,7 @@
     .fearfood-steps li::before { content: counter(steps); position: absolute; left: 0; top: 20px; width: 32px; height: 32px; border-radius: 50%; background: var(--glossy); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--rosegold); font-weight: 600; }
 
     /* HEALING COLLECTION (App) */
-    .app-section { background: var(--charcoal); color: var(--white); }
+    .app-section { background: var(--navy); color: var(--white); }
     .app-section .section-label { color: var(--honey); }
     .app-section .section-title { color: var(--white); }
     .app-section .section-sub { color: var(--sand); }
@@ -120,7 +121,7 @@
     .cta-section p { font-size: 16px; color: var(--soft); margin-bottom: 36px; max-width: 450px; margin-left: auto; margin-right: auto; }
 
     /* FOOTER */
-    footer { background: var(--charcoal); color: var(--sand); padding: 60px 24px; }
+    footer { background: var(--navy); color: var(--sand); padding: 60px 24px; }
     .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
     .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
