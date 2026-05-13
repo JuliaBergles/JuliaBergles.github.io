@@ -389,63 +389,74 @@ function showResult() {
   if (severity === 'neu' || severity === 'undiagnostiziert') beratungScore += 2;
   if (icps.includes('recovery')) { shopScore += 2; beratungScore += 1; }
 
-  // Build result cards
+  // Build result cards — App always first, then Video, then Beratung, then Shop
   let cards = [];
 
-  // Always show app if any score
-  if (appScore > 0 || result === 'kombi') {
-    let appText = 'TerraLuna begleitet dich im Alltag. ';
-    if (icps.includes('histamin')) appText += 'Der Scanner erkennt Histamin-Trigger in deinem Essen. ';
-    if (icps.includes('darm')) appText += '250+ Lebensmittel bewertet nach Darmverträglichkeit. ';
-    if (icps.includes('zoeliakie')) appText += '120+ glutenfreie Rezepte ohne Industriezucker. ';
-    if (icps.includes('zyklus')) appText += 'Ernährung angepasst an deine Zyklusphase. ';
-    if (icps.includes('allergie')) appText += '23 Allergien und Kreuzreaktionen werden automatisch erkannt. ';
+  // 1. ALWAYS show App first
+  let appText = 'TerraLuna begleitet dich im Alltag. ';
+  if (icps.includes('histamin')) appText += 'Der Scanner erkennt Histamin-Trigger in deinem Essen. ';
+  if (icps.includes('darm')) appText += '250+ Lebensmittel bewertet nach Darmverträglichkeit. ';
+  if (icps.includes('zoeliakie')) appText += '120+ glutenfreie Rezepte ohne Industriezucker. ';
+  if (icps.includes('zyklus')) appText += 'Ernährung angepasst an deine Zyklusphase. ';
+  if (icps.includes('allergie')) appText += '23 Allergien und Kreuzreaktionen werden automatisch erkannt. ';
+  if (icps.includes('recovery')) appText += 'Ein sicherer Begleiter, der dir zeigt was du essen kannst. ';
 
-    let appFeatures = [];
-    if (icps.includes('histamin')) appFeatures.push('Histamin-Scanner');
-    if (icps.includes('darm')) appFeatures.push('Darm-Ampel');
-    if (icps.includes('zoeliakie')) appFeatures.push('Glutenfrei-Filter');
-    if (icps.includes('zyklus')) appFeatures.push('Zyklustracking');
-    if (icps.includes('allergie')) appFeatures.push('Allergie-System');
-    appFeatures.push('Barcode-Scanner', 'Rezepte', 'Einkaufslisten');
+  let appFeatures = [];
+  if (icps.includes('histamin')) appFeatures.push('Histamin-Scanner');
+  if (icps.includes('darm')) appFeatures.push('Darm-Ampel');
+  if (icps.includes('zoeliakie')) appFeatures.push('Glutenfrei-Filter');
+  if (icps.includes('zyklus')) appFeatures.push('Zyklustracking');
+  if (icps.includes('allergie')) appFeatures.push('Allergie-System');
+  appFeatures.push('Barcode-Scanner', 'Rezepte', 'Einkaufslisten');
 
-    cards.push({
-      type: 'app',
-      badge: appScore >= beratungScore && appScore >= shopScore ? 'Beste Empfehlung für dich' : 'Empfohlen',
-      highlight: appScore >= beratungScore && appScore >= shopScore,
-      title: 'TerraLuna App',
-      text: appText,
-      features: appFeatures,
-      btnText: 'App im App Store laden',
-      btnClass: 'btn-app',
-      btnLink: '#'
-    });
-  }
+  cards.push({
+    type: 'app',
+    badge: 'Beste Empfehlung für dich',
+    highlight: true,
+    title: 'TerraLuna App',
+    text: appText,
+    features: appFeatures,
+    btnText: 'App im App Store laden',
+    btnClass: 'btn-app',
+    btnLink: '#'
+  });
 
-  // Beratung
-  if (beratungScore > 0 || result === 'kombi') {
-    let beratungText = '30 Minuten nur für dich. ';
-    if (severity === 'neu') beratungText += 'Gerade am Anfang ist es wichtig, jemanden zu haben der den Weg kennt. ';
-    if (severity === 'undiagnostiziert') beratungText += 'Auch ohne Diagnose verdienst du Unterstützung. ';
-    if (icps.includes('recovery')) beratungText += 'Ich kenne den Weg zurück zu einem entspannten Verhältnis mit Essen. ';
-    beratungText += 'Ich stelle dir die App vor, lerne dich kennen und wir schauen gemeinsam, was dir helfen kann.';
+  // 2. ALWAYS show Video — Julia erklärt die App
+  cards.push({
+    type: 'video',
+    badge: 'Schau dir die App an',
+    highlight: false,
+    title: 'So funktioniert TerraLuna',
+    text: 'In einem kurzen Video zeige ich dir, wie die App funktioniert und wie sie dir im Alltag helfen kann. Ganz persönlich und ehrlich.',
+    features: ['App-Vorstellung', 'Funktionen erklärt', 'Persönlich von Julia'],
+    btnText: 'Video ansehen',
+    btnClass: 'btn-beratung',
+    btnLink: '#video',
+    showVideo: true
+  });
 
-    cards.push({
-      type: 'beratung',
-      badge: beratungScore > appScore && beratungScore > shopScore ? 'Beste Empfehlung für dich' : 'Persönlich',
-      highlight: beratungScore > appScore && beratungScore > shopScore,
-      title: 'Persönliche Beratung',
-      text: beratungText,
-      features: ['30-Minuten-Call', 'App-Vorstellung', 'Persönlicher Austausch', 'Kostenlos kennenlernen'],
-      btnText: 'Termin buchen',
-      btnClass: 'btn-beratung',
-      btnLink: '#calendly',
-      showCalendly: true
-    });
-  }
+  // 3. ALWAYS show Coaching
+  let beratungText = 'Persönliche 1:1 Begleitung. ';
+  if (severity === 'neu') beratungText += 'Gerade am Anfang ist es wichtig, jemanden zu haben der den Weg kennt. ';
+  if (severity === 'undiagnostiziert') beratungText += 'Auch ohne Diagnose verdienst du Unterstützung. ';
+  if (icps.includes('recovery')) beratungText += 'Ich kenne den Weg zurück zu einem entspannten Verhältnis mit Essen. ';
+  beratungText += 'Ich stelle dir die App vor, lerne dich kennen und begleite dich persönlich auf deinem Weg. Kein Ersatz für eine Ärztin, aber eine ehrliche Unterstützung von jemandem der es selbst erlebt hat.';
 
-  // Shop
-  if (shopScore > 0 || icps.includes('recovery') || result === 'kombi') {
+  cards.push({
+    type: 'beratung',
+    badge: 'Coaching',
+    highlight: false,
+    title: 'Seelenbauch Coaching',
+    text: beratungText,
+    features: ['Persönliche 1:1 Begleitung', 'App-Einrichtung zusammen', 'Individuelle Ernährungshilfe', 'Angst vor dem Essen verstehen'],
+    btnText: 'Coaching anfragen',
+    btnClass: 'btn-beratung',
+    btnLink: '#calendly',
+    showCalendly: true
+  });
+
+  // 4. Shop — wenn relevant
+  if (shopScore > 0 || icps.includes('recovery') || result === 'kombi' || result === 'shop') {
     let shopText = 'Handgemachte Food-Charms, die deinen Fortschritt sichtbar machen. ';
     if (icps.includes('recovery')) shopText += 'Jeder Charm steht für einen Moment, in dem du mutig warst. Eine kleine Belohnung für dich selbst.';
     else if (icps.includes('histamin') || icps.includes('darm')) shopText += 'Jeder Charm steht für ein Lebensmittel, das du wieder in deinen Alltag integriert hast.';
@@ -453,19 +464,16 @@ function showResult() {
 
     cards.push({
       type: 'shop',
-      badge: shopScore > appScore && shopScore > beratungScore ? 'Beste Empfehlung für dich' : 'Wear Your Healing',
-      highlight: shopScore > appScore && shopScore > beratungScore,
+      badge: 'Wear Your Healing',
+      highlight: false,
       title: 'Wear Your Healing Shop',
       text: shopText,
-      features: ['Mini Charms ab 9 €', 'Kettenanhänger ab 14 €', 'Individuell anfertigen', 'Inkl. Versand'],
+      features: ['Wunsch-Charms ab 9 €', 'Kettenanhänger ab 14 €', 'Individuell angefertigt', 'Inkl. Versand'],
       btnText: 'Zum Shop',
       btnClass: 'btn-shop',
       btnLink: 'eatmoreart.html'
     });
   }
-
-  // Sort: highlight first
-  cards.sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0));
 
   // Render
   const container = document.getElementById('resultCards');
@@ -477,10 +485,16 @@ function showResult() {
       <p>${card.text}</p>
       <div class="result-features">${card.features.map(f => '<span class="result-feature">' + f + '</span>').join('')}</div>
       <a href="${card.btnLink}" class="btn-result ${card.btnClass}">${card.btnText}</a>`;
+    if (card.showVideo) {
+      html += `<div class="calendly-embed" id="video">
+        <p class="calendly-placeholder">Hier wird dein Video eingebettet.<br>
+        <span style="font-size: 12px; color: var(--text-faint);">YouTube oder Vimeo Link einfügen</span></p>
+      </div>`;
+    }
     if (card.showCalendly) {
       html += `<div class="calendly-embed" id="calendly">
         <p class="calendly-placeholder">Hier wird der Calendly-Kalender eingebettet.<br>
-        <a href="mailto:julia@bergles.net?subject=Beratungstermin anfragen" style="color: var(--navy); font-weight: 600;">Oder schreib mir direkt: julia@bergles.net</a></p>
+        <a href="mailto:julia@bergles.net?subject=Coaching anfragen" style="color: var(--navy); font-weight: 600;">Oder schreib mir direkt: julia@bergles.net</a></p>
       </div>`;
     }
     html += '</div>';
