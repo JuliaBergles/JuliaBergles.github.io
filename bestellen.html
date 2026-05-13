@@ -211,7 +211,7 @@
             <div style="font-size: 28px; color: var(--rosegold); margin-bottom: 10px;">&#10022;</div>
             <div class="opt-title">Mini Charm</div>
             <div class="opt-desc">Für Armbänder</div>
-            <div class="opt-price">9,00 €</div>
+            <div class="opt-price">10,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -220,7 +220,7 @@
             <div style="font-size: 28px; color: var(--gold); margin-bottom: 10px;">&#10047;</div>
             <div class="opt-title">Kettenanhänger</div>
             <div class="opt-desc">Statement Piece</div>
-            <div class="opt-price">14,00 €</div>
+            <div class="opt-price">12,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -229,7 +229,7 @@
             <div style="font-size: 28px; color: var(--rosegold); margin-bottom: 10px;">&#9825;</div>
             <div class="opt-title">Schlüsselanhänger</div>
             <div class="opt-desc">Alltagsbegleiter</div>
-            <div class="opt-price">17,00 €</div>
+            <div class="opt-price">14,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -283,21 +283,53 @@
     </div>
   </div>
 
-  <!-- STEP 3: DRAHT -->
+  <!-- STEP 3: BEFESTIGUNG -->
   <div class="order-block">
     <div class="order-header">
-      <div class="order-step step-blue">3</div>
-      <h3>Welcher Draht?</h3>
-      <span class="order-hint">Befestigung</span>
+      <div class="order-step step-blue">3a</div>
+      <h3>Mit oder ohne Kette/Armband?</h3>
     </div>
     <div class="order-body">
-      <div class="opt-grid">
+      <div class="opt-grid opt-grid-3">
+        <div class="opt-card">
+          <input type="radio" name="befestigung" id="mit-kette" value="Mit Kette" onchange="update()">
+          <label class="opt-label" for="mit-kette">
+            <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9734;</div>
+            <div class="opt-title">Mit Kette</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="befestigung" id="mit-armband" value="Mit Armband" onchange="update()">
+          <label class="opt-label" for="mit-armband">
+            <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9675;</div>
+            <div class="opt-title">Mit Armband</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="befestigung" id="ohne" value="Nur Charm" onchange="update()">
+          <label class="opt-label" for="ohne">
+            <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#10022;</div>
+            <div class="opt-title">Nur Charm</div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3b: FARBE -->
+  <div class="order-block">
+    <div class="order-header">
+      <div class="order-step step-blue">3b</div>
+      <h3>Welche Farbe?</h3>
+      <span class="order-hint">Draht / Kette / Armband</span>
+    </div>
+    <div class="order-body">
+      <div class="opt-grid opt-grid-3">
         <div class="opt-card">
           <input type="radio" name="draht" id="gold" value="Gold" onchange="update()">
           <label class="opt-label" for="gold">
             <div class="draht-circle draht-gold"></div>
             <div class="opt-title">Gold</div>
-            <div class="opt-desc">Goldfarbener Draht</div>
           </label>
         </div>
         <div class="opt-card">
@@ -305,7 +337,13 @@
           <label class="opt-label" for="silber">
             <div class="draht-circle draht-silber"></div>
             <div class="opt-title">Silber</div>
-            <div class="opt-desc">Silberfarbener Draht</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="draht" id="rose" value="Rosé" onchange="update()">
+          <label class="opt-label" for="rose">
+            <div class="draht-circle" style="background: linear-gradient(135deg, #c9908a, #e8c4bc, #c9908a);"></div>
+            <div class="opt-title">Rosé</div>
           </label>
         </div>
       </div>
@@ -382,9 +420,25 @@
           </select>
         </div>
       </div>
-      <div class="field">
-        <label class="field-label">Lieferadresse</label>
-        <textarea id="adresse" placeholder="Straße, Hausnummer&#10;PLZ, Ort" style="min-height: 70px;"></textarea>
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label">Straße</label>
+          <input type="text" id="strasse" placeholder="Musterstraße">
+        </div>
+        <div class="field">
+          <label class="field-label">Hausnummer</label>
+          <input type="text" id="hausnummer" placeholder="12a">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label">PLZ</label>
+          <input type="text" id="plz" placeholder="86517">
+        </div>
+        <div class="field">
+          <label class="field-label">Ort</label>
+          <input type="text" id="ort" placeholder="Wehringen">
+        </div>
       </div>
       <div class="field">
         <label class="field-label">Anmerkungen <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
@@ -399,7 +453,8 @@
       <div class="label-light" style="font-size: 11px; letter-spacing: 3px; margin-bottom: 16px;">Zusammenfassung</div>
       <div class="summary-row"><span>Produkt</span><span id="s-produkt">Noch nicht gewählt</span></div>
       <div class="summary-row"><span>Größe</span><span id="s-groesse">Noch nicht gewählt</span></div>
-      <div class="summary-row"><span>Draht</span><span id="s-draht">Noch nicht gewählt</span></div>
+      <div class="summary-row"><span>Befestigung</span><span id="s-befestigung">Noch nicht gewählt</span></div>
+      <div class="summary-row"><span>Farbe</span><span id="s-draht">Noch nicht gewählt</span></div>
       <div class="summary-row"><span>Lebensmittel</span><span id="s-lebensmittel">-</span></div>
       <div class="summary-row"><span>Geschenk</span><span id="s-geschenk">Nein</span></div>
       <div class="summary-total"><span>Gesamtpreis inkl. Versand</span><span id="s-preis">-</span></div>
@@ -438,7 +493,7 @@
 </footer>
 
 <script>
-const preise = { 'Mini Charm': 9, 'Kettenanhänger': 14, 'Schlüsselanhänger': 17, 'Individuell': 0 };
+const preise = { 'Mini Charm': 10, 'Kettenanhänger': 12, 'Schlüsselanhänger': 14, 'Individuell': 0 };
 
 // Datenschutz checkbox enables submit
 document.getElementById('datenschutz').addEventListener('change', function() {
@@ -448,12 +503,14 @@ document.getElementById('datenschutz').addEventListener('change', function() {
 function update() {
   const p = document.querySelector('input[name="produkt"]:checked');
   const g = document.querySelector('input[name="groesse"]:checked');
+  const bf = document.querySelector('input[name="befestigung"]:checked');
   const d = document.querySelector('input[name="draht"]:checked');
   const l = document.getElementById('lebensmittel').value;
   const ge = document.getElementById('geschenk').value;
 
   document.getElementById('s-produkt').textContent = p ? p.value : 'Noch nicht gewählt';
   document.getElementById('s-groesse').textContent = g ? g.value : 'Noch nicht gewählt';
+  document.getElementById('s-befestigung').textContent = bf ? bf.value : 'Noch nicht gewählt';
   document.getElementById('s-draht').textContent = d ? d.value : 'Noch nicht gewählt';
   document.getElementById('s-lebensmittel').textContent = l || '-';
   document.getElementById('s-geschenk').textContent = ge;
@@ -491,17 +548,22 @@ function previewImage(input) {
 function submitOrder() {
   const p = document.querySelector('input[name="produkt"]:checked');
   const g = document.querySelector('input[name="groesse"]:checked');
+  const bf = document.querySelector('input[name="befestigung"]:checked');
   const d = document.querySelector('input[name="draht"]:checked');
   const l = document.getElementById('lebensmittel').value;
   const b = document.getElementById('bedeutung').value;
   const n = document.getElementById('name').value;
   const e = document.getElementById('email').value;
   const t = document.getElementById('telefon').value;
-  const a = document.getElementById('adresse').value;
+  const strasse = document.getElementById('strasse').value;
+  const hausnr = document.getElementById('hausnummer').value;
+  const plz = document.getElementById('plz').value;
+  const ort = document.getElementById('ort').value;
   const an = document.getElementById('anmerkungen').value;
   const ge = document.getElementById('geschenk').value;
+  const a = strasse + ' ' + hausnr + ', ' + plz + ' ' + ort;
 
-  if (!p || !g || !d || !l || !n || !e || !a) { alert('Bitte fülle alle Pflichtfelder aus.'); return; }
+  if (!p || !g || !bf || !d || !l || !n || !e || !strasse || !hausnr || !plz || !ort) { alert('Bitte fülle alle Pflichtfelder aus.'); return; }
   if (!document.getElementById('datenschutz').checked) { alert('Bitte stimme der Datenschutzerklärung zu.'); return; }
 
   const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
@@ -513,7 +575,7 @@ function submitOrder() {
     id: 'EA-' + Date.now().toString(36).toUpperCase(),
     datum: new Date().toLocaleDateString('de-DE'),
     zeit: new Date().toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'}),
-    produkt: p.value, groesse: g.value, draht: d.value,
+    produkt: p.value, groesse: g.value, befestigung: bf.value, draht: d.value,
     lebensmittel: l, bedeutung: b, geschenk: ge,
     preis: pr, preisText: preisText,
     name: n, email: e, telefon: t, adresse: a, anmerkungen: an,
@@ -523,7 +585,7 @@ function submitOrder() {
   orders.push(order);
   localStorage.setItem('eatmoreart-orders', JSON.stringify(orders));
 
-  const body = `Neue Bestellung bei EatMoreArt\n\nBestellnummer: ${order.id}\nDatum: ${order.datum} ${order.zeit}\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nDraht: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}\nPreis: ${preisText}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}\n\nDatenschutz: Zugestimmt`;
+  const body = `Neue Bestellung bei EatMoreArt\n\nBestellnummer: ${order.id}\nDatum: ${order.datum} ${order.zeit}\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nBefestigung: ${bf.value}\nFarbe: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}\nPreis: ${preisText}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}\n\nDatenschutz: Zugestimmt`;
 
   window.location.href = 'mailto:julia@bergles.net?subject=' + encodeURIComponent('Bestellung ' + order.id + ': ' + p.value + ' - ' + l) + '&body=' + encodeURIComponent(body);
 
