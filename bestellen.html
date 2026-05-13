@@ -3,412 +3,469 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Eatmore Art — Bestelle deinen persönlichen Food-Charm">
+  <meta name="description" content="Eatmore Art — Bestelle deinen persönlichen Food-Charm. Wear Your Healing.">
   <title>Bestellen | Eatmore Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --blush: #f2d5cf; --strawberry: #e8a0a0; --cream: #fdf6f0; --warmwhite: #fffbf7;
-      --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #5c5047; --soft: #b8a99a;
-      --honey: #dbb88a; --sage: #c5d5c0; --glossy: #f8e8e0; --white: #ffffff;
-      --navy: #2c3e6b;
+      --bg: #FDF6F0; --bg-warm: #F5ECE0; --bg-dark: #2c3e6b; --bg-dark-light: #354a7a;
+      --border: #E0DCD6; --border-light: #EBE6DE;
+      --accent: #2c3e6b; --rosegold: #c9908a; --rosegold-hover: #b07e78;
+      --rosegold-light: #d4a49e; --copper: #C48B6C;
+      --rosegold-gradient: linear-gradient(135deg, #b07e78, #d4a49e, #e8c4bc, #d4a49e, #c9908a);
+      --rosegold-gradient-text: linear-gradient(135deg, #b07e78, #e8c4bc, #d4a49e, #f2d9d0, #c9908a);
+      --text-dark: #3d322a; --text: #5c5047; --text-medium: #7a6d62;
+      --text-light: #a89b8e; --text-faint: #c4b5a6;
+      --white: #FFFFFF; --cream: #fffdf9;
+      --green: #7fb174; --green-bg: #f0f7ee;
+      --blue: #6ba3c7; --blue-bg: #edf4f9;
+      --gold: #c9a96e; --gold-bg: #faf3e8;
+      --red: #c45454; --red-bg: #faeeed;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-serif: 'DM Serif Display', Georgia, serif;
     }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
-    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,246,240,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,144,138,0.1); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
-    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--soft); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--rosegold); }
-    .nav-links a.active { color: var(--rosegold); font-weight: 600; }
-    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.2); transition: all 0.3s; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,62,107,0.3); }
-    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-    /* PAGE HERO */
-    .page-hero { padding: 140px 24px 40px; text-align: center; }
-    .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--charcoal); margin-bottom: 12px; line-height: 1.2; }
-    .section-sub { font-size: 16px; color: var(--soft); max-width: 500px; margin: 0 auto; line-height: 1.7; }
+    /* HEADER */
+    .header { background: var(--bg-dark); padding: 80px 40px; text-align: center; }
+    .header-label { font-size: 11px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--rosegold-light); margin-bottom: 20px; }
+    .header h1 { font-family: var(--font-serif); font-size: 44px; font-weight: 400; color: var(--white); margin-bottom: 16px; }
+    .header h1 em { font-style: italic; background: var(--rosegold-gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .header p { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 550px; margin: 0 auto; font-weight: 300; line-height: 1.8; }
 
-    /* FORM */
-    .order-form { max-width: 680px; margin: 40px auto 80px; padding: 0 24px; }
-    .form-section { background: var(--warmwhite); border-radius: 24px; padding: 36px; margin-bottom: 24px; border: 1px solid rgba(201,144,138,0.08); }
-    .form-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
-    .form-section .form-hint { font-size: 13px; color: var(--soft); margin-bottom: 20px; }
-    .form-step { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    /* NAV BACK */
+    .nav-back { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(44,62,107,0.95); backdrop-filter: blur(12px); padding: 0 40px; height: 56px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-back a { color: var(--rosegold-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-back a:hover { color: white; }
+    .nav-logo { font-family: var(--font-serif); font-size: 18px; color: white; }
+    .nav-step { font-size: 12px; color: rgba(255,255,255,0.4); }
 
-    /* INPUTS */
-    label { font-size: 14px; font-weight: 500; color: var(--charcoal); display: block; margin-bottom: 6px; margin-top: 16px; }
-    label:first-of-type { margin-top: 0; }
+    /* PROGRESS */
+    .progress { position: fixed; top: 56px; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.06); z-index: 100; }
+    .progress-fill { height: 100%; background: var(--rosegold-gradient); border-radius: 0 2px 2px 0; transition: width 0.5s ease; }
+
+    /* SECTIONS */
+    .section { padding: 60px 40px; max-width: 800px; margin: 0 auto; }
+    .section-warm { background: var(--bg-warm); padding: 60px 40px; }
+    .section-warm .inner { max-width: 800px; margin: 0 auto; }
+    .section-dark { background: var(--bg-dark); padding: 60px 40px; }
+    .section-dark .inner { max-width: 800px; margin: 0 auto; }
+
+    .label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--rosegold); margin-bottom: 14px; }
+    .label-light { color: var(--rosegold-light); }
+    .title { font-family: var(--font-serif); font-size: 30px; font-weight: 400; color: var(--text-dark); margin-bottom: 10px; }
+    .title-light { color: var(--white); }
+    .subtitle { font-size: 15px; color: var(--text-medium); max-width: 500px; margin-bottom: 36px; font-weight: 300; }
+
+    /* ORDER BLOCKS */
+    .order-block { background: var(--white); border: 1px solid var(--border-light); border-radius: 14px; overflow: hidden; margin-bottom: 24px; }
+    .order-header { padding: 22px 28px; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 14px; }
+    .order-step { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+    .step-rose { background: rgba(201,144,138,0.1); color: var(--rosegold); }
+    .step-gold { background: var(--gold-bg); color: var(--gold); }
+    .step-blue { background: var(--blue-bg); color: var(--blue); }
+    .step-green { background: var(--green-bg); color: var(--green); }
+    .order-header h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 400; color: var(--accent); }
+    .order-header .order-hint { margin-left: auto; font-size: 12px; color: var(--text-light); }
+    .order-body { padding: 24px 28px; }
+
+    /* OPTION GRID */
+    .opt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .opt-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .opt-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .opt-card { position: relative; cursor: pointer; }
+    .opt-card input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .opt-label { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 16px; border-radius: 12px; border: 2px solid var(--border-light); background: var(--bg); transition: all 0.25s; cursor: pointer; }
+    .opt-card input:checked + .opt-label { border-color: var(--rosegold); background: rgba(201,144,138,0.06); box-shadow: 0 4px 16px rgba(201,144,138,0.1); }
+    .opt-label:hover { border-color: var(--rosegold-light); }
+    .opt-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 20px; }
+    .opt-icon.rose { background: rgba(201,144,138,0.1); color: var(--rosegold); }
+    .opt-icon.gold { background: var(--gold-bg); color: var(--gold); }
+    .opt-icon.blue { background: var(--blue-bg); color: var(--blue); }
+    .opt-icon.green { background: var(--green-bg); color: var(--green); }
+    .opt-title { font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
+    .opt-desc { font-size: 12px; color: var(--text-light); }
+    .opt-price { font-size: 16px; font-weight: 700; color: var(--rosegold); margin-top: 8px; }
+
+    /* DRAHT VISUALS */
+    .draht-circle { width: 44px; height: 44px; border-radius: 50%; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .draht-gold { background: linear-gradient(135deg, #d4a76a, #f0d4a0, #d4a76a); }
+    .draht-silber { background: linear-gradient(135deg, #c0c0c0, #e8e8e8, #c0c0c0); }
+
+    /* SIZE VISUALS */
+    .size-circle { border-radius: 50%; border: 2px solid var(--rosegold); margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--rosegold); font-weight: 700; }
+    .sz-s { width: 38px; height: 38px; }
+    .sz-m { width: 46px; height: 46px; }
+    .sz-l { width: 54px; height: 54px; }
+
+    /* FIELDS */
+    .field { margin-bottom: 20px; }
+    .field:last-child { margin-bottom: 0; }
+    .field-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+    .field-hint { font-size: 12px; color: var(--text-light); margin-bottom: 6px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
     input[type="text"], input[type="email"], input[type="tel"], textarea, select {
-      width: 100%; padding: 14px 18px; border: 1.5px solid var(--glossy); border-radius: 14px;
-      font-size: 15px; font-family: inherit; color: var(--charcoal); background: var(--white);
-      transition: border-color 0.2s; outline: none;
+      width: 100%; padding: 13px 16px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; font-family: var(--font-sans); font-size: 14px; color: var(--text); transition: all 0.3s; outline: none;
     }
-    input:focus, textarea:focus, select:focus { border-color: var(--rosegold); }
-    textarea { resize: vertical; min-height: 100px; }
-    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23b8a99a' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
+    input:focus, textarea:focus, select:focus { border-color: var(--rosegold); box-shadow: 0 0 0 3px rgba(201,144,138,0.08); background: var(--white); }
+    textarea { min-height: 90px; resize: vertical; }
 
-    /* RADIO/OPTION CARDS */
-    .option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
-    .option-grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .option-card { position: relative; }
-    .option-card input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
-    .option-card label.card-label {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 20px 16px; border-radius: 16px; border: 2px solid var(--glossy);
-      cursor: pointer; transition: all 0.3s; text-align: center; margin: 0;
-      background: var(--white);
-    }
-    .option-card input[type="radio"]:checked + label.card-label {
-      border-color: var(--rosegold); background: rgba(201,144,138,0.06);
-      box-shadow: 0 4px 16px rgba(201,144,138,0.12);
-    }
-    .option-card label.card-label:hover { border-color: var(--rosegold); }
-    .card-label .card-title { font-size: 15px; font-weight: 600; color: var(--charcoal); margin-bottom: 2px; }
-    .card-label .card-detail { font-size: 12px; color: var(--soft); }
-    .card-label .card-price { font-size: 16px; font-weight: 700; color: var(--rosegold); margin-top: 6px; }
-    .card-label .card-icon { font-size: 24px; margin-bottom: 8px; }
-
-    /* SIZE VISUAL */
-    .size-circle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--rosegold); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--rosegold); font-weight: 600; }
-    .size-s { width: 36px; height: 36px; }
-    .size-m { width: 42px; height: 42px; }
-    .size-l { width: 48px; height: 48px; }
-
-    /* FILE UPLOAD */
-    .upload-area {
-      border: 2px dashed var(--glossy); border-radius: 16px; padding: 32px; text-align: center;
-      cursor: pointer; transition: all 0.3s; margin-top: 8px; position: relative;
-    }
-    .upload-area:hover { border-color: var(--rosegold); background: rgba(201,144,138,0.03); }
+    /* UPLOAD */
+    .upload-area { border: 2px dashed var(--border); border-radius: 12px; padding: 36px; text-align: center; cursor: pointer; transition: all 0.3s; position: relative; }
+    .upload-area:hover { border-color: var(--rosegold); background: rgba(201,144,138,0.02); }
     .upload-area input[type="file"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
-    .upload-icon { font-size: 32px; color: var(--soft); margin-bottom: 8px; }
-    .upload-text { font-size: 14px; color: var(--soft); }
-    .upload-hint { font-size: 12px; color: var(--sand); margin-top: 4px; }
-    #preview-container { margin-top: 12px; display: none; }
-    #preview-img { max-width: 200px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .upload-icon { font-size: 28px; color: var(--text-light); margin-bottom: 8px; }
+    .upload-text { font-size: 14px; color: var(--text-light); font-weight: 500; }
+    .upload-hint { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
+    #preview-container { margin-top: 16px; display: none; }
+    #preview-img { max-width: 200px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
 
     /* SUMMARY */
-    .summary-box { background: var(--glossy); border-radius: 16px; padding: 24px; margin-top: 24px; }
-    .summary-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid rgba(201,144,138,0.1); }
-    .summary-row:last-child { border-bottom: none; }
-    .summary-total { font-size: 20px; font-weight: 700; color: var(--rosegold); }
-    .summary-note { font-size: 12px; color: var(--soft); margin-top: 12px; }
+    .summary-card { background: var(--bg-dark); border-radius: 14px; padding: 32px; }
+    .summary-row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 14px; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .summary-row:last-of-type { border-bottom: none; }
+    .summary-row span:last-child { color: var(--white); font-weight: 500; }
+    .summary-total { display: flex; justify-content: space-between; padding: 16px 0 0; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .summary-total span:first-child { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8); }
+    .summary-total span:last-child { font-size: 24px; font-weight: 700; background: var(--rosegold-gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .summary-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.6; }
 
     /* SUBMIT */
-    .btn-submit {
-      width: 100%; padding: 18px; border: none; border-radius: 50px; font-size: 16px;
-      font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.3s;
-      background: linear-gradient(135deg, var(--rosegold) 0%, #d4a0a0 50%, var(--rosegold) 100%);
-      color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); margin-top: 24px;
-    }
+    .btn-submit { width: 100%; padding: 18px; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; font-family: var(--font-sans); cursor: pointer; transition: all 0.3s; background: var(--rosegold-gradient); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); margin-top: 24px; letter-spacing: 0.5px; }
     .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,144,138,0.35); }
-    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn-submit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
 
-    .success-message { display: none; text-align: center; padding: 48px 24px; }
-    .success-message h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; margin-bottom: 12px; }
-    .success-message p { font-size: 15px; color: var(--soft); margin-bottom: 8px; }
+    /* TIP */
+    .tip { background: var(--white); border: 1px solid var(--rosegold); border-radius: 12px; padding: 20px 24px; margin-top: 20px; display: flex; gap: 12px; align-items: flex-start; }
+    .tip-icon { width: 26px; height: 26px; min-width: 26px; border-radius: 6px; background: var(--gold-bg); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
+    .tip p { font-size: 13px; color: var(--text-medium); line-height: 1.7; }
+
+    /* SUCCESS */
+    .success { display: none; text-align: center; padding: 80px 40px; max-width: 500px; margin: 0 auto; }
+    .success h2 { font-family: var(--font-serif); font-size: 34px; color: var(--text-dark); margin-bottom: 12px; }
+    .success p { font-size: 15px; color: var(--text-medium); margin-bottom: 8px; }
+    .success a { color: var(--rosegold); text-decoration: none; font-weight: 600; }
 
     /* FOOTER */
-    footer { background: var(--navy); color: var(--sand); padding: 60px 24px; }
-    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-    .footer-links a { color: var(--sand); text-decoration: none; font-size: 13px; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--white); }
-    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+    footer { background: var(--bg-dark); color: rgba(255,255,255,0.3); padding: 48px 40px; text-align: center; }
+    .footer-logo { font-family: var(--font-serif); font-size: 20px; color: white; margin-bottom: 16px; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; margin: 0 12px; }
+    footer a:hover { color: white; }
+    .footer-note { font-size: 11px; margin-top: 16px; }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .menu-toggle { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(253,246,240,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
-      .section-title { font-size: 32px; }
-      .option-grid { grid-template-columns: 1fr; }
-      .option-grid-3 { grid-template-columns: 1fr; }
+      .header { padding: 80px 24px 60px; }
+      .header h1 { font-size: 32px; }
+      .section, .section-warm, .section-dark { padding: 40px 20px; }
+      .opt-grid, .opt-grid-3, .opt-grid-4, .field-row { grid-template-columns: 1fr; }
+      .order-header { flex-wrap: wrap; }
+      .order-header .order-hint { margin-left: 48px; }
+      .nav-back { padding: 0 20px; }
     }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="eatmoreart.html" class="nav-logo">
-      <span>Eatmore Art</span>
-    </a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <div class="nav-links">
-      <a href="onboarding.html">Für dich</a>
-      <a href="eatmoreart.html">Produkte</a>
-      <a href="bestellen.html" class="active">Bestellen</a>
-      <a href="index.html">TerraLuna App</a>
-      <a href="mailto:julia@bergles.net" class="nav-cta">Kontakt</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="page-hero">
-  <p class="section-label fade-up">Bestellung aufgeben</p>
-  <h1 class="section-title fade-up">Dein persönlicher Charm</h1>
-  <p class="section-sub fade-up">Fülle das Formular aus und ich melde mich bei dir mit einer Bestätigung und Zahlungsdetails.</p>
+<div class="nav-back">
+  <a href="eatmoreart.html">&#8592; Zurück</a>
+  <span class="nav-logo">Eatmore Art</span>
+  <span class="nav-step" id="navStep">Bestellung</span>
 </div>
 
-<!-- ORDER FORM -->
-<div class="order-form" id="orderForm">
+<!-- PROGRESS -->
+<div class="progress">
+  <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+</div>
 
-  <!-- STEP 1: Produkt -->
-  <div class="form-section fade-up">
-    <div class="form-step">Schritt 1</div>
-    <h3>Was möchtest du?</h3>
-    <p class="form-hint">Wähle die Art deines Charms.</p>
-    <div class="option-grid">
-      <div class="option-card">
-        <input type="radio" name="produkt" id="mini" value="Mini Charm" required onchange="updateSummary()">
-        <label class="card-label" for="mini">
-          <span class="card-icon">&#10022;</span>
-          <span class="card-title">Mini Charm</span>
-          <span class="card-detail">Für Armbänder</span>
-          <span class="card-price">9,00 €</span>
-        </label>
-      </div>
-      <div class="option-card">
-        <input type="radio" name="produkt" id="kette" value="Kettenanhänger" onchange="updateSummary()">
-        <label class="card-label" for="kette">
-          <span class="card-icon">&#10047;</span>
-          <span class="card-title">Kettenanhänger</span>
-          <span class="card-detail">Statement Piece</span>
-          <span class="card-price">14,00 €</span>
-        </label>
-      </div>
-      <div class="option-card">
-        <input type="radio" name="produkt" id="schluessel" value="Schlüsselanhänger" onchange="updateSummary()">
-        <label class="card-label" for="schluessel">
-          <span class="card-icon">&#9825;</span>
-          <span class="card-title">Schlüsselanhänger</span>
-          <span class="card-detail">Alltagsbegleiter</span>
-          <span class="card-price">17,00 €</span>
-        </label>
-      </div>
-      <div class="option-card">
-        <input type="radio" name="produkt" id="individuell" value="Individuell" onchange="updateSummary()">
-        <label class="card-label" for="individuell">
-          <span class="card-icon">&#9733;</span>
-          <span class="card-title">Individuell</span>
-          <span class="card-detail">Dein Wunsch-Charm</span>
-          <span class="card-price">20 €/Std.</span>
-        </label>
+<!-- HEADER -->
+<div class="header" style="padding-top: 120px;">
+  <div class="header-label">Wear Your Healing</div>
+  <h1>Dein persönlicher <em>Charm</em></h1>
+  <p>Fülle die Schritte aus. Ich melde mich innerhalb von 24 Stunden mit einer Bestätigung und den Zahlungsdetails.</p>
+</div>
+
+<!-- FORM -->
+<div id="orderForm">
+
+<!-- STEP 1: PRODUKT -->
+<div class="section">
+  <div class="order-block">
+    <div class="order-header">
+      <div class="order-step step-rose">1</div>
+      <h3>Was darf es sein?</h3>
+      <span class="order-hint">Wähle eine Option</span>
+    </div>
+    <div class="order-body">
+      <div class="opt-grid">
+        <div class="opt-card">
+          <input type="radio" name="produkt" id="mini" value="Mini Charm" onchange="update()">
+          <label class="opt-label" for="mini">
+            <div class="opt-icon rose">&#10022;</div>
+            <div class="opt-title">Mini Charm</div>
+            <div class="opt-desc">Für Armbänder</div>
+            <div class="opt-price">9,00 €</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="produkt" id="kette" value="Kettenanhänger" onchange="update()">
+          <label class="opt-label" for="kette">
+            <div class="opt-icon gold">&#10047;</div>
+            <div class="opt-title">Kettenanhänger</div>
+            <div class="opt-desc">Statement Piece</div>
+            <div class="opt-price">14,00 €</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="produkt" id="schluessel" value="Schlüsselanhänger" onchange="update()">
+          <label class="opt-label" for="schluessel">
+            <div class="opt-icon blue">&#9825;</div>
+            <div class="opt-title">Schlüsselanhänger</div>
+            <div class="opt-desc">Alltagsbegleiter</div>
+            <div class="opt-price">17,00 €</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="produkt" id="individuell" value="Individuell" onchange="update()">
+          <label class="opt-label" for="individuell">
+            <div class="opt-icon green">&#9733;</div>
+            <div class="opt-title">Individuell</div>
+            <div class="opt-desc">Dein Wunsch</div>
+            <div class="opt-price">20 €/Std.</div>
+          </label>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- STEP 2: Größe -->
-  <div class="form-section fade-up">
-    <div class="form-step">Schritt 2</div>
-    <h3>Welche Größe?</h3>
-    <p class="form-hint">Wähle den Durchmesser deines Charms.</p>
-    <div class="option-grid option-grid-3">
-      <div class="option-card">
-        <input type="radio" name="groesse" id="klein" value="Klein (1,8 cm)" required onchange="updateSummary()">
-        <label class="card-label" for="klein">
-          <div class="size-circle size-s">S</div>
-          <span class="card-title">Klein</span>
-          <span class="card-detail">1,8 cm</span>
-        </label>
-      </div>
-      <div class="option-card">
-        <input type="radio" name="groesse" id="mittel" value="Mittel (2,0 cm)" onchange="updateSummary()">
-        <label class="card-label" for="mittel">
-          <div class="size-circle size-m">M</div>
-          <span class="card-title">Mittel</span>
-          <span class="card-detail">2,0 cm</span>
-        </label>
-      </div>
-      <div class="option-card">
-        <input type="radio" name="groesse" id="gross" value="Groß (2,2 cm)" onchange="updateSummary()">
-        <label class="card-label" for="gross">
-          <div class="size-circle size-l">L</div>
-          <span class="card-title">Groß</span>
-          <span class="card-detail">2,2 cm</span>
-        </label>
+  <!-- STEP 2: GRÖSSE -->
+  <div class="order-block">
+    <div class="order-header">
+      <div class="order-step step-gold">2</div>
+      <h3>Welche Größe?</h3>
+      <span class="order-hint">Durchmesser</span>
+    </div>
+    <div class="order-body">
+      <div class="opt-grid opt-grid-3">
+        <div class="opt-card">
+          <input type="radio" name="groesse" id="klein" value="Klein (1,8 cm)" onchange="update()">
+          <label class="opt-label" for="klein">
+            <div class="size-circle sz-s">S</div>
+            <div class="opt-title">Klein</div>
+            <div class="opt-desc">1,8 cm</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="groesse" id="mittel" value="Mittel (2,0 cm)" onchange="update()">
+          <label class="opt-label" for="mittel">
+            <div class="size-circle sz-m">M</div>
+            <div class="opt-title">Mittel</div>
+            <div class="opt-desc">2,0 cm</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="groesse" id="gross" value="Groß (2,2 cm)" onchange="update()">
+          <label class="opt-label" for="gross">
+            <div class="size-circle sz-l">L</div>
+            <div class="opt-title">Groß</div>
+            <div class="opt-desc">2,2 cm</div>
+          </label>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- STEP 3: Draht -->
-  <div class="form-section fade-up">
-    <div class="form-step">Schritt 3</div>
-    <h3>Welcher Draht?</h3>
-    <p class="form-hint">Zum Befestigen an Kette, Armband oder Schlüsselring.</p>
-    <div class="option-grid">
-      <div class="option-card">
-        <input type="radio" name="draht" id="gold" value="Gold" required onchange="updateSummary()">
-        <label class="card-label" for="gold">
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #d4a76a, #f0d4a0, #d4a76a); margin-bottom: 8px; box-shadow: 0 2px 8px rgba(212,167,106,0.3);"></div>
-          <span class="card-title">Gold</span>
-          <span class="card-detail">Goldfarbener Draht</span>
-        </label>
+  <!-- STEP 3: DRAHT -->
+  <div class="order-block">
+    <div class="order-header">
+      <div class="order-step step-blue">3</div>
+      <h3>Welcher Draht?</h3>
+      <span class="order-hint">Befestigung</span>
+    </div>
+    <div class="order-body">
+      <div class="opt-grid">
+        <div class="opt-card">
+          <input type="radio" name="draht" id="gold" value="Gold" onchange="update()">
+          <label class="opt-label" for="gold">
+            <div class="draht-circle draht-gold"></div>
+            <div class="opt-title">Gold</div>
+            <div class="opt-desc">Goldfarbener Draht</div>
+          </label>
+        </div>
+        <div class="opt-card">
+          <input type="radio" name="draht" id="silber" value="Silber" onchange="update()">
+          <label class="opt-label" for="silber">
+            <div class="draht-circle draht-silber"></div>
+            <div class="opt-title">Silber</div>
+            <div class="opt-desc">Silberfarbener Draht</div>
+          </label>
+        </div>
       </div>
-      <div class="option-card">
-        <input type="radio" name="draht" id="silber" value="Silber" onchange="updateSummary()">
-        <label class="card-label" for="silber">
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #c0c0c0, #e8e8e8, #c0c0c0); margin-bottom: 8px; box-shadow: 0 2px 8px rgba(192,192,192,0.3);"></div>
-          <span class="card-title">Silber</span>
-          <span class="card-detail">Silberfarbener Draht</span>
-        </label>
+    </div>
+  </div>
+
+  <!-- STEP 4: LEBENSMITTEL -->
+  <div class="order-block">
+    <div class="order-header">
+      <div class="order-step step-green">4</div>
+      <h3>Dein Lebensmittel</h3>
+    </div>
+    <div class="order-body">
+      <div class="field">
+        <label class="field-label">Was soll ich für dich formen?</label>
+        <input type="text" id="lebensmittel" placeholder="z.B. Croissant, Kuchen, Pizza, Brezel..." oninput="update()">
+      </div>
+      <div class="field">
+        <label class="field-label">Was bedeutet es dir? <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
+        <div class="field-hint">Erzähl mir, wenn du magst, warum dieses Lebensmittel besonders ist.</div>
+        <textarea id="bedeutung" placeholder="z.B. Das war das erste Essen, das ich nach meiner Diagnose wieder genießen konnte..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- STEP 4: Lebensmittel -->
-  <div class="form-section fade-up">
-    <div class="form-step">Schritt 4</div>
-    <h3>Welches Lebensmittel?</h3>
-    <p class="form-hint">Beschreibe, was ich für dich formen soll.</p>
-    <label for="lebensmittel">Lebensmittel</label>
-    <input type="text" id="lebensmittel" name="lebensmittel" placeholder="z.B. Croissant, Kuchen, Pizza, Brezel..." required oninput="updateSummary()">
-
-    <label for="bedeutung">Was bedeutet es dir? (optional)</label>
-    <textarea id="bedeutung" name="bedeutung" placeholder="Erzähl mir, wenn du magst, warum dieses Lebensmittel besonders ist..."></textarea>
-  </div>
-
-  <!-- STEP 5: Foto -->
-  <div class="form-section fade-up">
-    <div class="form-step">Schritt 5</div>
-    <h3>Referenzfoto (optional)</h3>
-    <p class="form-hint">Hast du ein Foto von dem Lebensmittel? Das hilft mir beim Formen.</p>
-    <div class="upload-area">
-      <input type="file" id="foto" name="foto" accept="image/*" onchange="previewImage(this)">
-      <div class="upload-icon">&#128247;</div>
-      <div class="upload-text">Foto hierher ziehen oder klicken</div>
-      <div class="upload-hint">JPG, PNG oder HEIC. Max. 10 MB.</div>
+  <!-- STEP 5: FOTO -->
+  <div class="order-block">
+    <div class="order-header">
+      <div class="order-step step-rose">5</div>
+      <h3>Referenzfoto</h3>
+      <span class="order-hint">Optional</span>
     </div>
-    <div id="preview-container">
-      <img id="preview-img" alt="Vorschau">
+    <div class="order-body">
+      <div class="field-hint" style="margin-bottom: 12px;">Hast du ein Foto von dem Lebensmittel? Das hilft mir beim Formen.</div>
+      <div class="upload-area">
+        <input type="file" id="foto" accept="image/*" onchange="previewImage(this)">
+        <div class="upload-icon">&#128247;</div>
+        <div class="upload-text">Foto hierher ziehen oder klicken</div>
+        <div class="upload-hint">JPG, PNG oder HEIC. Max. 10 MB.</div>
+      </div>
+      <div id="preview-container">
+        <img id="preview-img" alt="Vorschau">
+      </div>
     </div>
   </div>
 
-  <!-- STEP 6: Kontakt -->
-  <div class="form-section fade-up">
-    <div class="form-step">Schritt 6</div>
-    <h3>Deine Daten</h3>
-    <p class="form-hint">Damit ich dich kontaktieren kann.</p>
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Dein Name" required>
-
-    <label for="email">E-Mail</label>
-    <input type="email" id="email" name="email" placeholder="deine@email.de" required>
-
-    <label for="telefon">Telefon / WhatsApp (optional)</label>
-    <input type="tel" id="telefon" name="telefon" placeholder="+49...">
-
-    <label for="adresse">Lieferadresse</label>
-    <textarea id="adresse" name="adresse" placeholder="Straße, Hausnummer&#10;PLZ, Ort" required style="min-height: 80px;"></textarea>
-
-    <label for="anmerkungen">Sonstige Anmerkungen (optional)</label>
-    <textarea id="anmerkungen" name="anmerkungen" placeholder="Geschenkverpackung? Besondere Wünsche?" style="min-height: 60px;"></textarea>
+  <!-- STEP 6: KONTAKT -->
+  <div class="order-block">
+    <div class="order-header">
+      <div class="order-step step-gold">6</div>
+      <h3>Deine Daten</h3>
+    </div>
+    <div class="order-body">
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label">Name</label>
+          <input type="text" id="name" placeholder="Dein Name">
+        </div>
+        <div class="field">
+          <label class="field-label">E-Mail</label>
+          <input type="email" id="email" placeholder="deine@email.de">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label">Telefon / WhatsApp <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
+          <input type="tel" id="telefon" placeholder="+49...">
+        </div>
+        <div class="field">
+          <label class="field-label">Geschenkverpackung?</label>
+          <select id="geschenk" onchange="update()">
+            <option value="Nein">Nein, für mich selbst</option>
+            <option value="Ja">Ja, als Geschenk</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">Lieferadresse</label>
+        <textarea id="adresse" placeholder="Straße, Hausnummer&#10;PLZ, Ort" style="min-height: 70px;"></textarea>
+      </div>
+      <div class="field">
+        <label class="field-label">Anmerkungen <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
+        <textarea id="anmerkungen" placeholder="Besondere Wünsche? Widmungstext für Geschenk?" style="min-height: 60px;"></textarea>
+      </div>
+    </div>
   </div>
 
   <!-- SUMMARY -->
-  <div class="form-section fade-up">
-    <div class="form-step">Zusammenfassung</div>
-    <h3>Deine Bestellung</h3>
-    <div class="summary-box">
-      <div class="summary-row">
-        <span>Produkt</span>
-        <span id="sum-produkt">Noch nicht gewählt</span>
-      </div>
-      <div class="summary-row">
-        <span>Größe</span>
-        <span id="sum-groesse">Noch nicht gewählt</span>
-      </div>
-      <div class="summary-row">
-        <span>Draht</span>
-        <span id="sum-draht">Noch nicht gewählt</span>
-      </div>
-      <div class="summary-row">
-        <span>Lebensmittel</span>
-        <span id="sum-lebensmittel">-</span>
-      </div>
-      <div class="summary-row" style="border-bottom: none; padding-top: 12px;">
-        <span style="font-weight: 600;">Gesamtpreis</span>
-        <span class="summary-total" id="sum-preis">-</span>
-      </div>
+  <div class="order-block" style="border: none; background: transparent;">
+    <div class="summary-card">
+      <div class="label-light" style="font-size: 11px; letter-spacing: 3px; margin-bottom: 16px;">Zusammenfassung</div>
+      <div class="summary-row"><span>Produkt</span><span id="s-produkt">Noch nicht gewählt</span></div>
+      <div class="summary-row"><span>Größe</span><span id="s-groesse">Noch nicht gewählt</span></div>
+      <div class="summary-row"><span>Draht</span><span id="s-draht">Noch nicht gewählt</span></div>
+      <div class="summary-row"><span>Lebensmittel</span><span id="s-lebensmittel">-</span></div>
+      <div class="summary-row"><span>Geschenk</span><span id="s-geschenk">Nein</span></div>
+      <div class="summary-total"><span>Gesamtpreis inkl. Versand</span><span id="s-preis">-</span></div>
+      <div class="summary-note">Alle Preise inkl. Versand innerhalb Deutschlands. Du erhältst eine Bestätigung per E-Mail mit Zahlungsdetails (PayPal oder Überweisung). Der Charm wird nach Zahlungseingang angefertigt. Lieferzeit ca. 5-10 Werktage.</div>
     </div>
-    <p class="summary-note">Alle Preise inkl. Versand innerhalb Deutschlands. Du erhältst eine Bestätigung per E-Mail mit Zahlungsdetails (PayPal oder Überweisung). Der Charm wird nach Zahlungseingang angefertigt.</p>
-
-    <button type="button" class="btn-submit" onclick="submitOrder()">Bestellung absenden</button>
+    <button class="btn-submit" onclick="submitOrder()">Bestellung absenden</button>
+    <div class="tip">
+      <div class="tip-icon">!</div>
+      <p>Nach dem Absenden öffnet sich dein E-Mail-Programm mit allen Details. Ich melde mich innerhalb von 24 Stunden bei dir mit einer Bestätigung und den Zahlungsdaten.</p>
+    </div>
   </div>
-
+</div>
 </div>
 
 <!-- SUCCESS -->
-<div class="success-message" id="successMessage">
+<div class="success" id="successMsg">
   <h2>Danke für deine Bestellung!</h2>
   <p>Ich habe deine Anfrage erhalten und melde mich innerhalb von 24 Stunden bei dir.</p>
   <p>Du bekommst eine Bestätigung an deine E-Mail-Adresse.</p>
-  <p style="margin-top: 24px;"><a href="eatmoreart.html" style="color: var(--rosegold); font-weight: 600; text-decoration: none;">Zurück zu Eatmore Art</a></p>
+  <p style="margin-top: 24px;"><a href="eatmoreart.html">Zurück zu Eatmore Art</a></p>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Eatmore Art</div>
-    <div class="footer-links">
-      <a href="index.html">TerraLuna App</a>
-      <a href="eatmoreart.html">Eatmore Art</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="agb.html">AGB</a>
-      <a href="datenschutz.html">Datenschutzerklärung</a>
-    </div>
-    <div class="footer-disclaimer">
-      Handgemachte Unikate. Lieferzeit ca. 5-10 Werktage nach Zahlungseingang.<br>
-      © 2026 Eatmore Art · Julia Bergles
-    </div>
-  </div>
+  <div class="footer-logo">Eatmore Art</div>
+  <a href="index.html">TerraLuna App</a>
+  <a href="eatmoreart.html">Eatmore Art</a>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+  <div class="footer-note">Handgemachte Unikate. © 2026 Eatmore Art · Julia Bergles</div>
 </footer>
 
 <script>
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-// Prices
 const preise = { 'Mini Charm': 9, 'Kettenanhänger': 14, 'Schlüsselanhänger': 17, 'Individuell': 0 };
+let progress = 0;
 
-// Update summary
-function updateSummary() {
-  const produkt = document.querySelector('input[name="produkt"]:checked');
-  const groesse = document.querySelector('input[name="groesse"]:checked');
-  const draht = document.querySelector('input[name="draht"]:checked');
-  const lebensmittel = document.getElementById('lebensmittel').value;
+function update() {
+  const p = document.querySelector('input[name="produkt"]:checked');
+  const g = document.querySelector('input[name="groesse"]:checked');
+  const d = document.querySelector('input[name="draht"]:checked');
+  const l = document.getElementById('lebensmittel').value;
+  const ge = document.getElementById('geschenk').value;
 
-  document.getElementById('sum-produkt').textContent = produkt ? produkt.value : 'Noch nicht gewählt';
-  document.getElementById('sum-groesse').textContent = groesse ? groesse.value : 'Noch nicht gewählt';
-  document.getElementById('sum-draht').textContent = draht ? draht.value : 'Noch nicht gewählt';
-  document.getElementById('sum-lebensmittel').textContent = lebensmittel || '-';
+  document.getElementById('s-produkt').textContent = p ? p.value : 'Noch nicht gewählt';
+  document.getElementById('s-groesse').textContent = g ? g.value : 'Noch nicht gewählt';
+  document.getElementById('s-draht').textContent = d ? d.value : 'Noch nicht gewählt';
+  document.getElementById('s-lebensmittel').textContent = l || '-';
+  document.getElementById('s-geschenk').textContent = ge;
 
-  if (produkt) {
-    const preis = preise[produkt.value];
-    document.getElementById('sum-preis').textContent = preis > 0 ? preis.toFixed(2) + ' €' : 'Auf Anfrage';
+  if (p) {
+    const pr = preise[p.value];
+    document.getElementById('s-preis').textContent = pr > 0 ? pr.toFixed(2) + ' €' : 'Auf Anfrage';
   }
+
+  // Progress
+  let filled = 0;
+  if (p) filled++;
+  if (g) filled++;
+  if (d) filled++;
+  if (l) filled++;
+  document.getElementById('progressFill').style.width = (filled / 6 * 100) + '%';
 }
 
-// Image preview
 function previewImage(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = e => {
       document.getElementById('preview-img').src = e.target.result;
       document.getElementById('preview-container').style.display = 'block';
     };
@@ -416,53 +473,29 @@ function previewImage(input) {
   }
 }
 
-// Submit order via email
 function submitOrder() {
-  const produkt = document.querySelector('input[name="produkt"]:checked');
-  const groesse = document.querySelector('input[name="groesse"]:checked');
-  const draht = document.querySelector('input[name="draht"]:checked');
-  const lebensmittel = document.getElementById('lebensmittel').value;
-  const bedeutung = document.getElementById('bedeutung').value;
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const telefon = document.getElementById('telefon').value;
-  const adresse = document.getElementById('adresse').value;
-  const anmerkungen = document.getElementById('anmerkungen').value;
+  const p = document.querySelector('input[name="produkt"]:checked');
+  const g = document.querySelector('input[name="groesse"]:checked');
+  const d = document.querySelector('input[name="draht"]:checked');
+  const l = document.getElementById('lebensmittel').value;
+  const b = document.getElementById('bedeutung').value;
+  const n = document.getElementById('name').value;
+  const e = document.getElementById('email').value;
+  const t = document.getElementById('telefon').value;
+  const a = document.getElementById('adresse').value;
+  const an = document.getElementById('anmerkungen').value;
+  const ge = document.getElementById('geschenk').value;
 
-  if (!produkt || !groesse || !draht || !lebensmittel || !name || !email || !adresse) {
-    alert('Bitte fülle alle Pflichtfelder aus.');
-    return;
-  }
+  if (!p || !g || !d || !l || !n || !e || !a) { alert('Bitte fülle alle Pflichtfelder aus.'); return; }
 
-  const preis = preise[produkt.value];
-  const preisText = preis > 0 ? preis.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)';
+  const pr = preise[p.value];
+  const body = `Neue Bestellung bei Eatmore Art\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nDraht: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}\nPreis: ${pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)'}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}`;
 
-  const body = `Neue Bestellung bei Eatmore Art
+  window.location.href = 'mailto:julia@bergles.net?subject=' + encodeURIComponent('Neue Bestellung: ' + p.value + ' - ' + l) + '&body=' + encodeURIComponent(body);
 
-BESTELLUNG:
-Produkt: ${produkt.value}
-Größe: ${groesse.value}
-Draht: ${draht.value}
-Lebensmittel: ${lebensmittel}
-${bedeutung ? 'Bedeutung: ' + bedeutung : ''}
-Preis: ${preisText}
-
-KUNDENDATEN:
-Name: ${name}
-E-Mail: ${email}
-${telefon ? 'Telefon: ' + telefon : ''}
-Adresse: ${adresse}
-${anmerkungen ? 'Anmerkungen: ' + anmerkungen : ''}`;
-
-  const mailtoLink = 'mailto:julia@bergles.net?subject=' +
-    encodeURIComponent('Neue Bestellung: ' + produkt.value + ' - ' + lebensmittel) +
-    '&body=' + encodeURIComponent(body);
-
-  window.location.href = mailtoLink;
-
-  // Show success
   document.getElementById('orderForm').style.display = 'none';
-  document.getElementById('successMessage').style.display = 'block';
+  document.getElementById('successMsg').style.display = 'block';
+  document.querySelector('.header').style.display = 'none';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
