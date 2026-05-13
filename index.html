@@ -72,8 +72,21 @@
 
     /* ZIELGRUPPE — condition chips */
     .condition-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 40px; }
-    .condition-chip { background: var(--white); padding: 12px 24px; border-radius: 50px; font-size: 14px; font-weight: 500; color: var(--charcoal); box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: all 0.3s; border: 1px solid rgba(201,169,110,0.12); }
-    .condition-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(191,107,107,0.1); border-color: var(--wine); }
+    .condition-chip { background: var(--white); padding: 14px 28px; border-radius: 50px; font-size: 14px; font-weight: 500; color: var(--charcoal); box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: all 0.3s; border: 1px solid rgba(201,169,110,0.12); cursor: pointer; text-decoration: none; display: inline-block; }
+    .condition-chip:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(191,107,107,0.12); border-color: var(--wine); background: var(--wine); color: white; }
+    /* Empfehlung Overlay */
+    .empfehlung-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 200; align-items: center; justify-content: center; padding: 24px; }
+    .empfehlung-overlay.open { display: flex; }
+    .empfehlung-card { background: var(--white); border-radius: 24px; max-width: 480px; width: 100%; padding: 40px; text-align: center; position: relative; animation: empfSlideUp 0.3s ease; }
+    @keyframes empfSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .empfehlung-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--charcoal); margin-bottom: 12px; }
+    .empfehlung-card p { font-size: 14px; color: var(--cocoa); line-height: 1.7; margin-bottom: 16px; }
+    .empfehlung-close { position: absolute; top: 16px; right: 20px; font-size: 20px; color: var(--cocoa); cursor: pointer; background: none; border: none; }
+    .empfehlung-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .empfehlung-btn { padding: 14px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: block; }
+    .empfehlung-btn-primary { background: linear-gradient(135deg, var(--wine) 0%, #d4868a 50%, var(--wine) 100%); color: white; }
+    .empfehlung-btn-secondary { background: var(--linen); color: var(--charcoal); }
+    .empfehlung-btn:hover { transform: translateY(-1px); }
 
     /* ANGEBOTE — 2x2 cards */
     .angebote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -220,24 +233,24 @@
     <p class="section-label fade-up">Dein Körper. Deine Regeln.</p>
     <h2 class="section-title fade-up" style="margin-left: auto; margin-right: auto;">Für dich, wenn du...</h2>
     <div class="condition-grid fade-up">
-      <span class="condition-chip">Histaminintoleranz</span>
-      <span class="condition-chip">Reizdarm</span>
-      <span class="condition-chip">Zöliakie</span>
-      <span class="condition-chip">PMS</span>
-      <span class="condition-chip">PCOS</span>
-      <span class="condition-chip">Endometriose</span>
-      <span class="condition-chip">Laktoseintoleranz</span>
-      <span class="condition-chip">Fructoseintoleranz</span>
-      <span class="condition-chip">Sellerie-Allergie</span>
-      <span class="condition-chip">Nahrungsmittelallergien</span>
-      <span class="condition-chip">Kreuzallergien</span>
-      <span class="condition-chip">Pollenallergien</span>
-      <span class="condition-chip">Wechseljahre</span>
-      <span class="condition-chip">Amenorrhoe</span>
-      <span class="condition-chip">Angst vor dem Essen</span>
-      <span class="condition-chip">Essstörung Recovery</span>
-      <span class="condition-chip">Orthorexie</span>
-      <span class="condition-chip">Stoffwechselstörungen</span>
+      <span class="condition-chip" onclick="showEmpfehlung('histamin')">Histaminintoleranz</span>
+      <span class="condition-chip" onclick="showEmpfehlung('darm')">Reizdarm</span>
+      <span class="condition-chip" onclick="showEmpfehlung('zoeliakie')">Zöliakie</span>
+      <span class="condition-chip" onclick="showEmpfehlung('zyklus')">PMS</span>
+      <span class="condition-chip" onclick="showEmpfehlung('zyklus')">PCOS</span>
+      <span class="condition-chip" onclick="showEmpfehlung('zyklus')">Endometriose</span>
+      <span class="condition-chip" onclick="showEmpfehlung('darm')">Laktoseintoleranz</span>
+      <span class="condition-chip" onclick="showEmpfehlung('darm')">Fructoseintoleranz</span>
+      <span class="condition-chip" onclick="showEmpfehlung('allergie')">Sellerie-Allergie</span>
+      <span class="condition-chip" onclick="showEmpfehlung('allergie')">Nahrungsmittelallergien</span>
+      <span class="condition-chip" onclick="showEmpfehlung('allergie')">Kreuzallergien</span>
+      <span class="condition-chip" onclick="showEmpfehlung('allergie')">Pollenallergien</span>
+      <span class="condition-chip" onclick="showEmpfehlung('zyklus')">Wechseljahre</span>
+      <span class="condition-chip" onclick="showEmpfehlung('zyklus')">Amenorrhoe</span>
+      <span class="condition-chip" onclick="showEmpfehlung('recovery')">Angst vor dem Essen</span>
+      <span class="condition-chip" onclick="showEmpfehlung('recovery')">Essstörung Recovery</span>
+      <span class="condition-chip" onclick="showEmpfehlung('recovery')">Orthorexie</span>
+      <span class="condition-chip" onclick="showEmpfehlung('darm')">Stoffwechselstörungen</span>
     </div>
     <p class="fade-up" style="font-size: 17px; color: var(--cocoa); max-width: 500px; margin: 0 auto; line-height: 1.8; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 22px;">
       Du bist nicht allein. Und du musst das nicht alleine durchstehen.
@@ -518,7 +531,70 @@ function toggleStory() {
     expanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+
+// Empfehlungs-Overlay
+const empfehlungen = {
+  histamin: {
+    title: 'Histaminintoleranz',
+    text: 'Ich kenne das. Die Unsicherheit bei jeder Mahlzeit. Das ständige Googeln. TerraLuna zeigt dir genau, was du essen kannst. Der Scanner erkennt Histamin-Trigger in Sekunden. 250+ Lebensmittel bewertet. Und wenn du im Restaurant bist, hast du Texte in 8 Sprachen zum Vorzeigen.',
+    app: true, video: true, coaching: true, shop: false
+  },
+  darm: {
+    title: 'Darmprobleme',
+    text: 'Dein Darm verdient Aufmerksamkeit. TerraLuna bewertet jedes Lebensmittel nach Darmverträglichkeit. Mit dem Barcode-Scanner weißt du im Supermarkt sofort, was drin ist. Und mit dem Tagebuch erkennst du Muster, die dir vorher nicht aufgefallen sind.',
+    app: true, video: true, coaching: true, shop: false
+  },
+  zoeliakie: {
+    title: 'Zöliakie',
+    text: 'Glutenfrei leben kann leichter sein. Alle 120+ Rezepte in TerraLuna sind glutenfrei und ohne Industriezucker. Der Scanner erkennt versteckte Glutenquellen. Und im Urlaub hast du Restaurant-Texte in 8 Sprachen dabei.',
+    app: true, video: true, coaching: false, shop: false
+  },
+  zyklus: {
+    title: 'Zyklusbeschwerden',
+    text: 'Dein Zyklus beeinflusst mehr als du denkst. TerraLuna passt deine Ernährung an deine Phase an. Mit Tracking, Empfehlungen und dem Wissen, warum du dich gerade so fühlst. Auch bei Amenorrhoe und in den Wechseljahren.',
+    app: true, video: true, coaching: false, shop: false
+  },
+  allergie: {
+    title: 'Allergien',
+    text: 'Von Sellerie bis Pollenallergie. TerraLuna erkennt 23 Allergien und alle Kreuzreaktionen automatisch. Der Barcode-Scanner findet versteckte Allergene. Und die Pollenbelastung siehst du jeden Morgen auf deiner Startseite.',
+    app: true, video: true, coaching: false, shop: false
+  },
+  recovery: {
+    title: 'Dein Weg zurück zum Essen',
+    text: 'Ich weiß, wie sich das anfühlt. Die Angst vor jeder Mahlzeit. Nicht zu wissen, was sicher ist. TerraLuna gibt dir Sicherheit. Und im Wear Your Healing Shop kannst du deinen Fortschritt sichtbar machen. Jeder Charm steht für einen Moment, in dem du mutig warst.',
+    app: true, video: true, coaching: true, shop: true
+  }
+};
+
+function showEmpfehlung(key) {
+  const e = empfehlungen[key];
+  if (!e) return;
+  const overlay = document.getElementById('empfehlungOverlay');
+  const card = document.getElementById('empfehlungContent');
+
+  let btns = '';
+  if (e.app) btns += '<a href="onboarding.html" class="empfehlung-btn empfehlung-btn-primary">Was passt zu mir?</a>';
+  if (e.video) btns += '<a href="#" class="empfehlung-btn empfehlung-btn-secondary">Video: So funktioniert die App</a>';
+  if (e.coaching) btns += '<a href="onboarding.html" class="empfehlung-btn empfehlung-btn-secondary">Persönliches Coaching</a>';
+  if (e.shop) btns += '<a href="eatmoreart.html" class="empfehlung-btn empfehlung-btn-secondary">Wear Your Healing Shop</a>';
+
+  card.innerHTML = '<button class="empfehlung-close" onclick="closeEmpfehlung()">&times;</button>' +
+    '<h3>' + e.title + '</h3>' +
+    '<p>' + e.text + '</p>' +
+    '<div class="empfehlung-btns">' + btns + '</div>';
+
+  overlay.classList.add('open');
+}
+
+function closeEmpfehlung() {
+  document.getElementById('empfehlungOverlay').classList.remove('open');
+}
 </script>
+
+<!-- Empfehlung Overlay -->
+<div class="empfehlung-overlay" id="empfehlungOverlay" onclick="if(event.target===this)closeEmpfehlung()">
+  <div class="empfehlung-card" id="empfehlungContent"></div>
+</div>
 
 </body>
 </html>
