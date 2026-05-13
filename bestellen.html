@@ -413,11 +413,27 @@
           <input type="tel" id="telefon" placeholder="+49...">
         </div>
         <div class="field">
-          <label class="field-label">Geschenkverpackung?</label>
-          <select id="geschenk" onchange="update()">
+          <label class="field-label">Geschenkverpackung? (+1 €)</label>
+          <select id="geschenk" onchange="toggleGeschenkOptionen(); update()">
             <option value="Nein">Nein, für mich selbst</option>
             <option value="Ja">Ja, als Geschenk</option>
           </select>
+        </div>
+      </div>
+      <div id="geschenkOptionen" style="display: none;">
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Für wen ist das Geschenk?</label>
+            <select id="geschenkFuer">
+              <option value="Weiblich">Weiblich</option>
+              <option value="Männlich">Männlich</option>
+              <option value="Divers">Divers</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Widmungstext <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
+            <input type="text" id="widmung" placeholder="z.B. Für Lisa, du schaffst das!">
+          </div>
         </div>
       </div>
       <div class="field-row">
@@ -500,6 +516,11 @@ document.getElementById('datenschutz').addEventListener('change', function() {
   document.getElementById('submitBtn').disabled = !this.checked;
 });
 
+function toggleGeschenkOptionen() {
+  const ge = document.getElementById('geschenk').value;
+  document.getElementById('geschenkOptionen').style.display = ge === 'Ja' ? 'block' : 'none';
+}
+
 function update() {
   const p = document.querySelector('input[name="produkt"]:checked');
   const g = document.querySelector('input[name="groesse"]:checked');
@@ -513,7 +534,8 @@ function update() {
   document.getElementById('s-befestigung').textContent = bf ? bf.value : 'Noch nicht gewählt';
   document.getElementById('s-draht').textContent = d ? d.value : 'Noch nicht gewählt';
   document.getElementById('s-lebensmittel').textContent = l || '-';
-  document.getElementById('s-geschenk').textContent = ge;
+  const geFuer = ge === 'Ja' ? document.getElementById('geschenkFuer').value : '';
+  document.getElementById('s-geschenk').textContent = ge === 'Ja' ? 'Ja (' + geFuer + ')' : 'Nein';
 
   if (p) {
     let pr = preise[p.value];
@@ -577,6 +599,8 @@ function submitOrder() {
     zeit: new Date().toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'}),
     produkt: p.value, groesse: g.value, befestigung: bf.value, draht: d.value,
     lebensmittel: l, bedeutung: b, geschenk: ge,
+    geschenkFuer: ge === 'Ja' ? document.getElementById('geschenkFuer').value : '',
+    widmung: ge === 'Ja' ? (document.getElementById('widmung').value || '') : '',
     preis: pr, preisText: preisText,
     name: n, email: e, telefon: t, adresse: a, anmerkungen: an,
     status: 'Neu', bezahlt: false
@@ -585,7 +609,7 @@ function submitOrder() {
   orders.push(order);
   localStorage.setItem('eatmoreart-orders', JSON.stringify(orders));
 
-  const body = `Neue Bestellung bei EatMoreArt\n\nBestellnummer: ${order.id}\nDatum: ${order.datum} ${order.zeit}\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nBefestigung: ${bf.value}\nFarbe: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}\nPreis: ${preisText}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}\n\nDatenschutz: Zugestimmt`;
+  const body = `Neue Bestellung bei EatMoreArt\n\nBestellnummer: ${order.id}\nDatum: ${order.datum} ${order.zeit}\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nBefestigung: ${bf.value}\nFarbe: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}${ge === 'Ja' ? ' (für: ' + document.getElementById('geschenkFuer').value + ')' : ''}${document.getElementById('widmung').value ? '\nWidmung: ' + document.getElementById('widmung').value : ''}\nPreis: ${preisText}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}\n\nDatenschutz: Zugestimmt`;
 
   window.location.href = 'mailto:julia@bergles.net?subject=' + encodeURIComponent('Bestellung ' + order.id + ': ' + p.value + ' - ' + l) + '&body=' + encodeURIComponent(body);
 
