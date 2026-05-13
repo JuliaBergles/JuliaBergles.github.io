@@ -435,21 +435,21 @@ function showResult() {
     showVideo: true
   });
 
-  // 3. ALWAYS show Coaching
-  let beratungText = 'Persönliche 1:1 Begleitung. ';
+  // 3. ALWAYS show Live Call
+  let beratungText = '25 Minuten nur für dich. ';
   if (severity === 'neu') beratungText += 'Gerade am Anfang ist es wichtig, jemanden zu haben der den Weg kennt. ';
   if (severity === 'undiagnostiziert') beratungText += 'Auch ohne Diagnose verdienst du Unterstützung. ';
   if (icps.includes('recovery')) beratungText += 'Ich kenne den Weg zurück zu einem entspannten Verhältnis mit Essen. ';
-  beratungText += 'Ich stelle dir die App vor, lerne dich kennen und begleite dich persönlich auf deinem Weg. Kein Ersatz für eine Ärztin, aber eine ehrliche Unterstützung von jemandem der es selbst erlebt hat.';
+  beratungText += 'Ich stelle dir die App vor, gebe dir individuelle Empfehlungen aus meiner eigenen Erfahrung und es gibt Raum für all deine Fragen. Kein Ersatz für eine Ärztin, aber eine ehrliche Unterstützung von jemandem der es selbst erlebt hat.';
 
   cards.push({
     type: 'beratung',
     badge: 'Coaching',
     highlight: false,
-    title: 'Seelenbauch Coaching',
+    title: 'Live Call mit Julia',
     text: beratungText,
-    features: ['Persönliche 1:1 Begleitung', 'App-Einrichtung zusammen', 'Individuelle Ernährungshilfe', 'Angst vor dem Essen verstehen'],
-    btnText: 'Coaching anfragen',
+    features: ['25 Minuten persönlich', 'App-Vorstellung', 'Individuelle Empfehlungen', 'Raum für deine Fragen', '10 €'],
+    btnText: 'Call buchen — 10 €',
     btnClass: 'btn-beratung',
     btnLink: '#calendly',
     showCalendly: true
