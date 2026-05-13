@@ -459,8 +459,13 @@ function update() {
   document.getElementById('s-geschenk').textContent = ge;
 
   if (p) {
-    const pr = preise[p.value];
-    document.getElementById('s-preis').textContent = pr > 0 ? pr.toFixed(2) + ' €' : 'Auf Anfrage';
+    let pr = preise[p.value];
+    const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
+    if (pr > 0) {
+      document.getElementById('s-preis').textContent = (pr + geschenkAufpreis).toFixed(2) + ' €' + (geschenkAufpreis ? ' (inkl. 1 € Geschenk)' : '');
+    } else {
+      document.getElementById('s-preis').textContent = 'Auf Anfrage';
+    }
   }
 
   // Progress
@@ -499,8 +504,9 @@ function submitOrder() {
   if (!p || !g || !d || !l || !n || !e || !a) { alert('Bitte fülle alle Pflichtfelder aus.'); return; }
   if (!document.getElementById('datenschutz').checked) { alert('Bitte stimme der Datenschutzerklärung zu.'); return; }
 
-  const pr = preise[p.value];
-  const preisText = pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)';
+  const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
+  const pr = preise[p.value] + geschenkAufpreis;
+  const preisText = pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' + (geschenkAufpreis ? ' (inkl. Geschenkverpackung)' : '') : 'Auf Anfrage (20 €/Std. + Material)';
 
   // Save order to localStorage for dashboard
   const order = {
