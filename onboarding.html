@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finde heraus, wie TerraLuna dir helfen kann. Persönliches Quiz in 60 Sekunden.">
+  <title>Für dich | TerraLuna</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --wine: #bf6b6b; --cream: #faf4eb; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --gold: #c9a96e; --rose: #df8585; --blush: #f0d5d0; --sage: #b8d4c8;
+      --white: #fffdf9; --linen: #f5ece0; --gray: #b5a99a; --navy: #2c3e6b;
+      --copper: #C48B6C;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; min-height: 100vh; }
+
+    /* PROGRESS BAR */
+    .progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 4px; background: var(--linen); z-index: 200; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--wine), var(--copper), var(--gold)); border-radius: 0 2px 2px 0; transition: width 0.5s ease; }
+
+    /* NAV */
+    .quiz-nav { position: fixed; top: 4px; left: 0; right: 0; z-index: 100; background: rgba(250,244,235,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .quiz-nav-inner { max-width: 700px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 24px; }
+    .quiz-nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--navy); text-decoration: none; }
+    .quiz-nav-step { font-size: 13px; color: var(--cocoa); font-weight: 500; }
+    .quiz-nav-close { text-decoration: none; font-size: 20px; color: var(--cocoa); transition: color 0.2s; }
+    .quiz-nav-close:hover { color: var(--charcoal); }
+
+    /* QUIZ CONTAINER */
+    .quiz-container { max-width: 620px; margin: 0 auto; padding: 100px 24px 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+
+    /* STEPS */
+    .step { display: none; animation: fadeIn 0.4s ease; }
+    .step.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    .step-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .step h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--charcoal); line-height: 1.2; margin-bottom: 8px; }
+    .step .step-sub { font-size: 15px; color: var(--cocoa); margin-bottom: 32px; line-height: 1.7; }
+
+    /* OPTION CARDS */
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 16px; border: 2px solid var(--linen); background: var(--white); cursor: pointer; transition: all 0.25s; user-select: none; }
+    .option:hover { border-color: var(--wine); background: rgba(191,107,107,0.03); }
+    .option.selected { border-color: var(--wine); background: rgba(191,107,107,0.06); box-shadow: 0 4px 16px rgba(191,107,107,0.1); }
+    .option-check { width: 24px; height: 24px; border-radius: 8px; border: 2px solid var(--linen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; font-size: 14px; color: transparent; }
+    .option.selected .option-check { background: var(--wine); border-color: var(--wine); color: white; }
+    .option-radio .option-check { border-radius: 50%; }
+    .option-text { flex: 1; }
+    .option-title { font-size: 15px; font-weight: 600; color: var(--charcoal); }
+    .option-desc { font-size: 13px; color: var(--cocoa); margin-top: 2px; }
+
+    /* BUTTONS */
+    .btn-row { display: flex; gap: 12px; margin-top: 36px; }
+    .btn { padding: 16px 36px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
+    .btn-next { background: linear-gradient(135deg, var(--wine) 0%, #d4868a 50%, var(--wine) 100%); color: var(--white); box-shadow: 0 6px 24px rgba(191,107,107,0.2); flex: 1; text-align: center; }
+    .btn-next:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(191,107,107,0.3); }
+    .btn-next:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-back { background: transparent; color: var(--cocoa); border: 2px solid var(--linen); }
+    .btn-back:hover { border-color: var(--cocoa); color: var(--charcoal); }
+
+    /* RESULT PAGE */
+    .result-section { display: none; animation: fadeIn 0.6s ease; }
+    .result-section.active { display: block; }
+    .result-header { text-align: center; margin-bottom: 40px; }
+    .result-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--charcoal); margin-bottom: 8px; }
+    .result-header p { font-size: 15px; color: var(--cocoa); }
+    .result-card { background: var(--white); border-radius: 24px; padding: 36px; margin-bottom: 20px; border: 1px solid rgba(201,169,110,0.08); transition: all 0.3s; }
+    .result-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+    .result-card.highlight { border: 2px solid var(--wine); box-shadow: 0 8px 32px rgba(191,107,107,0.1); }
+    .result-badge { font-size: 10px; font-weight: 700; color: var(--wine); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .result-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
+    .result-card p { font-size: 14px; color: var(--cocoa); line-height: 1.7; margin-bottom: 16px; }
+    .result-features { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .result-feature { background: var(--linen); border-radius: 50px; padding: 6px 16px; font-size: 12px; color: var(--charcoal); font-weight: 500; }
+    .btn-result { display: inline-block; padding: 14px 32px; border-radius: 50px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s; }
+    .btn-app { background: linear-gradient(135deg, var(--wine) 0%, #d4868a 50%, var(--wine) 100%); color: var(--white); box-shadow: 0 4px 16px rgba(191,107,107,0.2); }
+    .btn-shop { background: linear-gradient(135deg, var(--copper) 0%, #d4a48a 50%, var(--copper) 100%); color: var(--white); box-shadow: 0 4px 16px rgba(196,139,108,0.2); }
+    .btn-beratung { background: var(--navy); color: var(--white); box-shadow: 0 4px 16px rgba(44,62,107,0.2); }
+    .btn-result:hover { transform: translateY(-2px); }
+
+    /* CALENDLY EMBED */
+    .calendly-embed { background: var(--linen); border-radius: 16px; padding: 24px; margin-top: 16px; text-align: center; min-height: 200px; }
+    .calendly-placeholder { font-size: 14px; color: var(--cocoa); }
+
+    /* FOOTER MINI */
+    .quiz-footer { text-align: center; padding: 32px 24px; font-size: 12px; color: var(--cocoa); }
+    .quiz-footer a { color: var(--wine); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .step h2 { font-size: 28px; }
+      .result-header h2 { font-size: 30px; }
+      .quiz-container { padding-top: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar">
+  <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+</div>
+
+<!-- NAV -->
+<div class="quiz-nav">
+  <div class="quiz-nav-inner">
+    <a href="index.html" class="quiz-nav-logo">TerraLuna</a>
+    <span class="quiz-nav-step" id="stepIndicator">Schritt 1 von 4</span>
+    <a href="index.html" class="quiz-nav-close">&#10005;</a>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="quiz-container">
+
+  <!-- INTRO -->
+  <div class="step active" id="step-intro">
+    <p class="step-label">In 60 Sekunden</p>
+    <h2>Finde heraus, wie ich dir helfen kann.</h2>
+    <p class="step-sub">Beantworte 4 kurze Fragen. Ich zeige dir dann, was am besten zu dir passt. Ganz ehrlich, ganz persönlich.</p>
+    <div class="btn-row">
+      <button class="btn btn-next" onclick="goToStep(1)">Los geht's</button>
+    </div>
+  </div>
+
+  <!-- STEP 1: Was beschreibt dich? -->
+  <div class="step" id="step-1">
+    <p class="step-label">Schritt 1 von 4</p>
+    <h2>Was beschreibt dich am besten?</h2>
+    <p class="step-sub">Du kannst mehrere auswählen.</p>
+    <div class="options" id="options-1">
+      <div class="option" onclick="toggleOption(this, 'icp', 'histamin')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Histaminintoleranz</div>
+          <div class="option-desc">Kopfschmerzen, Hautreaktionen, Verdauungsprobleme nach bestimmten Lebensmitteln</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'icp', 'darm')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Darmprobleme</div>
+          <div class="option-desc">Reizdarm, Blähungen, Unverträglichkeiten, empfindliche Verdauung</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'icp', 'zoeliakie')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Zöliakie / Glutensensitivität</div>
+          <div class="option-desc">Glutenunverträglichkeit, glutenfreie Ernährung</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'icp', 'zyklus')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Zyklusbeschwerden</div>
+          <div class="option-desc">PMS, PCOS, Endometriose, Wechseljahre, Amenorrhoe</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'icp', 'allergie')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Allergien</div>
+          <div class="option-desc">Sellerie, Nüsse, Pollen, Kreuzallergien, Nahrungsmittelallergien</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'icp', 'recovery')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Entspannteres Verhältnis mit Essen</div>
+          <div class="option-desc">Unsicherheit beim Essen, Fortschritt feiern, Mut finden</div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goToStep(0)">Zurück</button>
+      <button class="btn btn-next" id="btn-1" onclick="goToStep(2)" disabled>Weiter</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: Was suchst du? -->
+  <div class="step" id="step-2">
+    <p class="step-label">Schritt 2 von 4</p>
+    <h2>Was suchst du gerade am meisten?</h2>
+    <p class="step-sub">Du kannst mehrere auswählen.</p>
+    <div class="options" id="options-2">
+      <div class="option" onclick="toggleOption(this, 'need', 'app')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Wissen, was ich essen kann</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'need', 'app')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Beim Einkaufen sicher sein</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'need', 'app')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Rezepte und Inspiration</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'need', 'shop')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Meinen Fortschritt feiern</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'need', 'beratung')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Persönliche Unterstützung</div>
+        </div>
+      </div>
+      <div class="option" onclick="toggleOption(this, 'need', 'beratung')">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Ich fühle mich allein damit</div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goToStep(1)">Zurück</button>
+      <button class="btn btn-next" id="btn-2" onclick="goToStep(3)" disabled>Weiter</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Wie lange? -->
+  <div class="step" id="step-3">
+    <p class="step-label">Schritt 3 von 4</p>
+    <h2>Wie lange lebst du schon damit?</h2>
+    <p class="step-sub">Wähle eine Option.</p>
+    <div class="options" id="options-3">
+      <div class="option option-radio" onclick="selectOne(this, 'severity', 'neu', 3)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Frisch diagnostiziert</div>
+          <div class="option-desc">0 bis 6 Monate</div>
+        </div>
+      </div>
+      <div class="option option-radio" onclick="selectOne(this, 'severity', 'mittel', 3)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Schon eine Weile</div>
+          <div class="option-desc">6 bis 24 Monate</div>
+        </div>
+      </div>
+      <div class="option option-radio" onclick="selectOne(this, 'severity', 'erfahren', 3)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Schon mehrere Jahre</div>
+        </div>
+      </div>
+      <div class="option option-radio" onclick="selectOne(this, 'severity', 'undiagnostiziert', 3)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Keine Diagnose, aber Beschwerden</div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goToStep(2)">Zurück</button>
+      <button class="btn btn-next" id="btn-3" onclick="goToStep(4)" disabled>Weiter</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: Was wünschst du dir? -->
+  <div class="step" id="step-4">
+    <p class="step-label">Schritt 4 von 4</p>
+    <h2>Was wünschst du dir?</h2>
+    <p class="step-sub">Wähle eine Option.</p>
+    <div class="options" id="options-4">
+      <div class="option option-radio" onclick="selectOne(this, 'result', 'app', 4)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Eine App die mich im Alltag begleitet</div>
+          <div class="option-desc">Scanner, Rezepte, Einkaufslisten, Tracking</div>
+        </div>
+      </div>
+      <div class="option option-radio" onclick="selectOne(this, 'result', 'shop', 4)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Etwas Greifbares für meinen Fortschritt</div>
+          <div class="option-desc">Handgemachte Charms als Erinnerung</div>
+        </div>
+      </div>
+      <div class="option option-radio" onclick="selectOne(this, 'result', 'beratung', 4)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Jemanden der mich versteht und begleitet</div>
+          <div class="option-desc">Persönliches Gespräch, individuelle Unterstützung</div>
+        </div>
+      </div>
+      <div class="option option-radio" onclick="selectOne(this, 'result', 'kombi', 4)">
+        <div class="option-check">&#10003;</div>
+        <div class="option-text">
+          <div class="option-title">Am liebsten alles</div>
+          <div class="option-desc">App, Shop und persönliche Begleitung</div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goToStep(3)">Zurück</button>
+      <button class="btn btn-next" id="btn-4" onclick="showResult()" disabled>Mein Ergebnis sehen</button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-section" id="resultSection">
+    <div class="result-header">
+      <p class="step-label">Dein persönliches Ergebnis</p>
+      <h2 id="resultTitle">Das passt zu dir.</h2>
+      <p id="resultSub"></p>
+    </div>
+    <div id="resultCards"></div>
+    <div class="quiz-footer">
+      <a href="index.html">Zurück zur Startseite</a> · <a href="mailto:julia@bergles.net">Fragen? Schreib mir</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// State
+const answers = { icp: [], need: [], severity: null, result: null };
+
+// Toggle multi-select option
+function toggleOption(el, key, value) {
+  el.classList.toggle('selected');
+  if (el.classList.contains('selected')) {
+    if (!answers[key].includes(value)) answers[key].push(value);
+  } else {
+    answers[key] = answers[key].filter(v => v !== value);
+  }
+  // Enable next button if at least one selected
+  const stepNum = el.closest('.step').id.split('-')[1];
+  const btn = document.getElementById('btn-' + stepNum);
+  if (btn) btn.disabled = answers[key].length === 0;
+}
+
+// Single select
+function selectOne(el, key, value, stepNum) {
+  el.closest('.options').querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[key] = value;
+  document.getElementById('btn-' + stepNum).disabled = false;
+}
+
+// Navigation
+function goToStep(num) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  if (num === 0) {
+    document.getElementById('step-intro').classList.add('active');
+    document.getElementById('stepIndicator').textContent = '';
+    document.getElementById('progressFill').style.width = '0%';
+  } else {
+    document.getElementById('step-' + num).classList.add('active');
+    document.getElementById('stepIndicator').textContent = 'Schritt ' + num + ' von 4';
+    document.getElementById('progressFill').style.width = (num * 25) + '%';
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Show result
+function showResult() {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('stepIndicator').textContent = 'Dein Ergebnis';
+
+  const icps = answers.icp;
+  const needs = answers.need;
+  const severity = answers.severity;
+  const result = answers.result;
+
+  // Score calculation
+  let appScore = needs.filter(n => n === 'app').length;
+  let shopScore = needs.filter(n => n === 'shop').length;
+  let beratungScore = needs.filter(n => n === 'beratung').length;
+
+  if (result === 'app') appScore += 3;
+  if (result === 'shop') shopScore += 3;
+  if (result === 'beratung') beratungScore += 3;
+  if (result === 'kombi') { appScore += 2; shopScore += 1; beratungScore += 2; }
+
+  if (severity === 'neu' || severity === 'undiagnostiziert') beratungScore += 2;
+  if (icps.includes('recovery')) { shopScore += 2; beratungScore += 1; }
+
+  // Build result cards
+  let cards = [];
+
+  // Always show app if any score
+  if (appScore > 0 || result === 'kombi') {
+    let appText = 'TerraLuna begleitet dich im Alltag. ';
+    if (icps.includes('histamin')) appText += 'Der Scanner erkennt Histamin-Trigger in deinem Essen. ';
+    if (icps.includes('darm')) appText += '250+ Lebensmittel bewertet nach Darmverträglichkeit. ';
+    if (icps.includes('zoeliakie')) appText += '120+ glutenfreie Rezepte ohne Industriezucker. ';
+    if (icps.includes('zyklus')) appText += 'Ernährung angepasst an deine Zyklusphase. ';
+    if (icps.includes('allergie')) appText += '23 Allergien und Kreuzreaktionen werden automatisch erkannt. ';
+
+    let appFeatures = [];
+    if (icps.includes('histamin')) appFeatures.push('Histamin-Scanner');
+    if (icps.includes('darm')) appFeatures.push('Darm-Ampel');
+    if (icps.includes('zoeliakie')) appFeatures.push('Glutenfrei-Filter');
+    if (icps.includes('zyklus')) appFeatures.push('Zyklustracking');
+    if (icps.includes('allergie')) appFeatures.push('Allergie-System');
+    appFeatures.push('Barcode-Scanner', 'Rezepte', 'Einkaufslisten');
+
+    cards.push({
+      type: 'app',
+      badge: appScore >= beratungScore && appScore >= shopScore ? 'Beste Empfehlung für dich' : 'Empfohlen',
+      highlight: appScore >= beratungScore && appScore >= shopScore,
+      title: 'TerraLuna App',
+      text: appText,
+      features: appFeatures,
+      btnText: 'App im App Store laden',
+      btnClass: 'btn-app',
+      btnLink: '#'
+    });
+  }
+
+  // Beratung
+  if (beratungScore > 0 || result === 'kombi') {
+    let beratungText = '30 Minuten nur für dich. ';
+    if (severity === 'neu') beratungText += 'Gerade am Anfang ist es wichtig, jemanden zu haben der den Weg kennt. ';
+    if (severity === 'undiagnostiziert') beratungText += 'Auch ohne Diagnose verdienst du Unterstützung. ';
+    if (icps.includes('recovery')) beratungText += 'Ich kenne den Weg zurück zu einem entspannten Verhältnis mit Essen. ';
+    beratungText += 'Ich stelle dir die App vor, lerne dich kennen und wir schauen gemeinsam, was dir helfen kann.';
+
+    cards.push({
+      type: 'beratung',
+      badge: beratungScore > appScore && beratungScore > shopScore ? 'Beste Empfehlung für dich' : 'Persönlich',
+      highlight: beratungScore > appScore && beratungScore > shopScore,
+      title: 'Persönliche Beratung',
+      text: beratungText,
+      features: ['30-Minuten-Call', 'App-Vorstellung', 'Persönlicher Austausch', 'Kostenlos kennenlernen'],
+      btnText: 'Termin buchen',
+      btnClass: 'btn-beratung',
+      btnLink: '#calendly',
+      showCalendly: true
+    });
+  }
+
+  // Shop
+  if (shopScore > 0 || icps.includes('recovery') || result === 'kombi') {
+    let shopText = 'Handgemachte Food-Charms, die deinen Fortschritt sichtbar machen. ';
+    if (icps.includes('recovery')) shopText += 'Jeder Charm steht für einen Moment, in dem du mutig warst. Eine kleine Belohnung für dich selbst.';
+    else if (icps.includes('histamin') || icps.includes('darm')) shopText += 'Jeder Charm steht für ein Lebensmittel, das du wieder in deinen Alltag integriert hast.';
+    else shopText += 'Jedes Stück ein Unikat. Jeder Charm erzählt deine Geschichte.';
+
+    cards.push({
+      type: 'shop',
+      badge: shopScore > appScore && shopScore > beratungScore ? 'Beste Empfehlung für dich' : 'Wear Your Healing',
+      highlight: shopScore > appScore && shopScore > beratungScore,
+      title: 'Wear Your Healing Shop',
+      text: shopText,
+      features: ['Mini Charms ab 9 €', 'Kettenanhänger ab 14 €', 'Individuell anfertigen', 'Inkl. Versand'],
+      btnText: 'Zum Shop',
+      btnClass: 'btn-shop',
+      btnLink: 'eatmoreart.html'
+    });
+  }
+
+  // Sort: highlight first
+  cards.sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0));
+
+  // Render
+  const container = document.getElementById('resultCards');
+  container.innerHTML = '';
+  cards.forEach(card => {
+    let html = `<div class="result-card ${card.highlight ? 'highlight' : ''}">
+      <div class="result-badge">${card.badge}</div>
+      <h3>${card.title}</h3>
+      <p>${card.text}</p>
+      <div class="result-features">${card.features.map(f => '<span class="result-feature">' + f + '</span>').join('')}</div>
+      <a href="${card.btnLink}" class="btn-result ${card.btnClass}">${card.btnText}</a>`;
+    if (card.showCalendly) {
+      html += `<div class="calendly-embed" id="calendly">
+        <p class="calendly-placeholder">Hier wird der Calendly-Kalender eingebettet.<br>
+        <a href="mailto:julia@bergles.net?subject=Beratungstermin anfragen" style="color: var(--navy); font-weight: 600;">Oder schreib mir direkt: julia@bergles.net</a></p>
+      </div>`;
+    }
+    html += '</div>';
+    container.innerHTML += html;
+  });
+
+  // Update header
+  const mainIcp = icps[0] || 'allgemein';
+  const titles = {
+    histamin: 'Ich verstehe dich. Histamin ist herausfordernd.',
+    darm: 'Dein Darm verdient Aufmerksamkeit.',
+    zoeliakie: 'Glutenfrei leben kann leichter sein.',
+    zyklus: 'Dein Zyklus beeinflusst mehr als du denkst.',
+    allergie: 'Sicher essen trotz Allergien.',
+    recovery: 'Du bist mutiger als du denkst.',
+    allgemein: 'Das habe ich für dich gefunden.'
+  };
+  document.getElementById('resultTitle').textContent = titles[mainIcp] || titles.allgemein;
+  document.getElementById('resultSub').textContent = 'Basierend auf deinen Antworten habe ich ' + cards.length + ' Empfehlung' + (cards.length > 1 ? 'en' : '') + ' für dich.';
+
+  document.getElementById('resultSection').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
