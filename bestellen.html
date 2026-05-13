@@ -210,8 +210,8 @@
           <label class="opt-label" for="mini">
             <div style="font-size: 28px; color: var(--rosegold); margin-bottom: 10px;">&#10022;</div>
             <div class="opt-title">Mini Charm</div>
-            <div class="opt-desc">Für Armbänder</div>
-            <div class="opt-price">10,00 €</div>
+            <div class="opt-desc">Kleinster Charm</div>
+            <div class="opt-price">ab 10,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -220,7 +220,7 @@
             <div style="font-size: 28px; color: var(--gold); margin-bottom: 10px;">&#10047;</div>
             <div class="opt-title">Kettenanhänger</div>
             <div class="opt-desc">Statement Piece</div>
-            <div class="opt-price">12,00 €</div>
+            <div class="opt-price">ab 12,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -229,7 +229,7 @@
             <div style="font-size: 28px; color: var(--rosegold); margin-bottom: 10px;">&#9825;</div>
             <div class="opt-title">Schlüsselanhänger</div>
             <div class="opt-desc">Alltagsbegleiter</div>
-            <div class="opt-price">14,00 €</div>
+            <div class="opt-price">ab 14,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -296,6 +296,7 @@
           <label class="opt-label" for="mit-kette">
             <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9734;</div>
             <div class="opt-title">Mit Kette</div>
+            <div class="opt-desc">+8,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -303,6 +304,7 @@
           <label class="opt-label" for="mit-armband">
             <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9675;</div>
             <div class="opt-title">Mit Armband</div>
+            <div class="opt-desc">+6,00 €</div>
           </label>
         </div>
         <div class="opt-card">
@@ -310,6 +312,7 @@
           <label class="opt-label" for="ohne">
             <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#10022;</div>
             <div class="opt-title">Nur Charm</div>
+            <div class="opt-desc">Ohne Kette/Armband</div>
           </label>
         </div>
       </div>
@@ -474,7 +477,7 @@
       <div class="summary-row"><span>Lebensmittel</span><span id="s-lebensmittel">-</span></div>
       <div class="summary-row"><span>Geschenk</span><span id="s-geschenk">Nein</span></div>
       <div class="summary-total"><span>Gesamtpreis inkl. Versand</span><span id="s-preis">-</span></div>
-      <div class="summary-note">Alle Preise inkl. Versand innerhalb Deutschlands. Du erhältst eine Bestätigung per E-Mail mit Zahlungsdetails (PayPal oder Überweisung). Der Charm wird nach Zahlungseingang angefertigt. Lieferzeit ca. 5-10 Werktage.</div>
+      <div class="summary-note">Alle Metallteile (Ketten, Armbänder, Verschlüsse, Ösen) sind nickelfrei und hautverträglich.<br><br>Alle Preise inkl. Versand innerhalb Deutschlands. Du erhältst eine Bestätigung per E-Mail mit Zahlungsdetails (PayPal oder Überweisung). Der Charm wird nach Zahlungseingang angefertigt. Lieferzeit ca. 5-10 Werktage.</div>
     </div>
     <!-- Datenschutz -->
     <div style="margin-top: 24px; display: flex; align-items: flex-start; gap: 12px;">
@@ -510,6 +513,7 @@
 
 <script>
 const preise = { 'Mini Charm': 10, 'Kettenanhänger': 12, 'Schlüsselanhänger': 14, 'Individuell': 0 };
+const befestigungAufpreis = { 'Mit Kette': 8, 'Mit Armband': 6, 'Nur Charm': 0 };
 
 // Datenschutz checkbox enables submit
 document.getElementById('datenschutz').addEventListener('change', function() {
@@ -539,9 +543,14 @@ function update() {
 
   if (p) {
     let pr = preise[p.value];
+    const bfAufpreis = bf ? (befestigungAufpreis[bf.value] || 0) : 0;
     const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
+    const total = pr + bfAufpreis + geschenkAufpreis;
     if (pr > 0) {
-      document.getElementById('s-preis').textContent = (pr + geschenkAufpreis).toFixed(2) + ' €' + (geschenkAufpreis ? ' (inkl. 1 € Geschenk)' : '');
+      let details = [];
+      if (bfAufpreis > 0) details.push(bf.value + ' +' + bfAufpreis + ' €');
+      if (geschenkAufpreis > 0) details.push('Geschenk +1 €');
+      document.getElementById('s-preis').textContent = total.toFixed(2) + ' €' + (details.length ? ' (' + details.join(', ') + ')' : '');
     } else {
       document.getElementById('s-preis').textContent = 'Auf Anfrage';
     }
@@ -588,9 +597,10 @@ function submitOrder() {
   if (!p || !g || !bf || !d || !l || !n || !e || !strasse || !hausnr || !plz || !ort) { alert('Bitte fülle alle Pflichtfelder aus.'); return; }
   if (!document.getElementById('datenschutz').checked) { alert('Bitte stimme der Datenschutzerklärung zu.'); return; }
 
+  const bfAufpreis = befestigungAufpreis[bf.value] || 0;
   const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
-  const pr = preise[p.value] + geschenkAufpreis;
-  const preisText = pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' + (geschenkAufpreis ? ' (inkl. Geschenkverpackung)' : '') : 'Auf Anfrage (20 €/Std. + Material)';
+  const pr = preise[p.value] + bfAufpreis + geschenkAufpreis;
+  const preisText = pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)';
 
   // Save order to localStorage for dashboard
   const order = {
