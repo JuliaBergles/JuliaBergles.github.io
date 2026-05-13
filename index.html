@@ -89,7 +89,7 @@
     .empfehlung-btn:hover { transform: translateY(-1px); }
 
     /* ANGEBOTE — 2x2 cards */
-    .angebote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .angebote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .angebot-card { background: var(--white); border-radius: 28px; padding: 40px 32px; transition: all 0.4s; box-shadow: 0 2px 16px rgba(201,169,110,0.06); display: flex; flex-direction: column; }
     .angebot-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(201,169,110,0.12); }
     .angebot-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 24px; }
@@ -200,7 +200,6 @@
       <a href="onboarding.html">Für dich</a>
       <a href="app.html">TerraLuna App</a>
       <a href="eatmoreart.html">Shop</a>
-      <a href="ebooks.html">E-Books</a>
       <a href="social-media.html">Social Media</a>
       <a href="#geschichte">Meine Geschichte</a>
       <a href="#kontakt">Kontakt</a>
@@ -316,20 +315,6 @@
         <a href="onboarding.html" class="btn-gold btn-small">Termin buchen</a>
       </div>
 
-      <!-- Card 4: E-Books & Wissen -->
-      <div class="angebot-card fade-up fade-up-delay">
-        <div class="angebot-icon sage">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </div>
-        <h3>E-Books und Wissen</h3>
-        <p class="angebot-desc">Meine Erfahrungen zum Mitnehmen</p>
-        <ul class="angebot-features sage">
-          <li>Darmfreundlich Reisen — 10 Euro</li>
-          <li>Iss dich stabil — 25 Euro</li>
-          <li>Seelenbauch — 15 Euro</li>
-        </ul>
-        <a href="ebooks.html" class="btn-sage btn-small">E-Books ansehen</a>
-      </div>
     </div>
   </div>
 </section>
@@ -495,7 +480,6 @@
     <div class="footer-links">
       <a href="app.html">TerraLuna App</a>
       <a href="eatmoreart.html">Shop</a>
-      <a href="ebooks.html">E-Books</a>
       <a href="social-media.html">Social Media</a>
       <a href="impressum.html">Impressum</a>
       <a href="agb.html">AGB</a>
