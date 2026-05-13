@@ -292,19 +292,19 @@
     <div class="order-body">
       <div class="opt-grid opt-grid-3">
         <div class="opt-card">
-          <input type="radio" name="befestigung" id="mit-kette" value="Mit Kette" onchange="update()">
+          <input type="radio" name="befestigung" id="mit-kette" value="Mit Halskette" onchange="update()">
           <label class="opt-label" for="mit-kette">
             <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9734;</div>
-            <div class="opt-title">Mit Kette</div>
-            <div class="opt-desc">+8,00 €</div>
+            <div class="opt-title">Mit Halskette</div>
+            <div class="opt-desc">Metall, nickelfrei</div>
           </label>
         </div>
         <div class="opt-card">
-          <input type="radio" name="befestigung" id="mit-armband" value="Mit Armband" onchange="update()">
+          <input type="radio" name="befestigung" id="mit-armband" value="Mit Armkette" onchange="update()">
           <label class="opt-label" for="mit-armband">
             <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9675;</div>
-            <div class="opt-title">Mit Armband</div>
-            <div class="opt-desc">+6,00 €</div>
+            <div class="opt-title">Mit Armkette</div>
+            <div class="opt-desc">Metall, nickelfrei</div>
           </label>
         </div>
         <div class="opt-card">
@@ -312,7 +312,7 @@
           <label class="opt-label" for="ohne">
             <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#10022;</div>
             <div class="opt-title">Nur Charm</div>
-            <div class="opt-desc">Ohne Kette/Armband</div>
+            <div class="opt-desc">Ohne Kette</div>
           </label>
         </div>
       </div>
@@ -513,7 +513,7 @@
 
 <script>
 const preise = { 'Mini Charm': 10, 'Kettenanhänger': 12, 'Schlüsselanhänger': 14, 'Individuell': 0 };
-const befestigungAufpreis = { 'Mit Kette': 8, 'Mit Armband': 6, 'Nur Charm': 0 };
+const befestigungAufpreis = { 'Mit Halskette': 8, 'Mit Armkette': 6, 'Nur Charm': 0 };
 
 // Datenschutz checkbox enables submit
 document.getElementById('datenschutz').addEventListener('change', function() {
@@ -547,10 +547,7 @@ function update() {
     const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
     const total = pr + bfAufpreis + geschenkAufpreis;
     if (pr > 0) {
-      let details = [];
-      if (bfAufpreis > 0) details.push(bf.value + ' +' + bfAufpreis + ' €');
-      if (geschenkAufpreis > 0) details.push('Geschenk +1 €');
-      document.getElementById('s-preis').textContent = total.toFixed(2) + ' €' + (details.length ? ' (' + details.join(', ') + ')' : '');
+      document.getElementById('s-preis').textContent = total.toFixed(2) + ' €';
     } else {
       document.getElementById('s-preis').textContent = 'Auf Anfrage';
     }
