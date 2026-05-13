@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Eatmore Art — Bestelle deinen persönlichen Food-Charm. Wear Your Healing.">
-  <title>Bestellen | Eatmore Art</title>
+  <meta name="description" content="EatMoreArt — Bestelle deinen persönlichen Food-Charm. Wear Your Healing.">
+  <title>Bestellen | EatMoreArt</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -176,7 +176,7 @@
 <!-- NAV -->
 <div class="nav-back">
   <a href="eatmoreart.html">&#8592; Zurück</a>
-  <span class="nav-logo">Eatmore Art</span>
+  <span class="nav-logo">EatMoreArt</span>
   <span class="nav-step" id="navStep">Bestellung</span>
 </div>
 
@@ -188,8 +188,8 @@
 <!-- HEADER -->
 <div class="header" style="padding-top: 120px;">
   <div class="header-label">Wear Your Healing</div>
-  <h1>Dein persönlicher <em>Charm</em></h1>
-  <p>Fülle die Schritte aus. Ich melde mich innerhalb von 24 Stunden mit einer Bestätigung und den Zahlungsdetails.</p>
+  <h1>Dein <em>Wunsch-Charm</em></h1>
+  <p>Jeder Charm wird individuell für dich angefertigt. Beschreibe dein Wunsch-Lebensmittel und ich forme es von Hand. Ich melde mich innerhalb von 24 Stunden mit einer Bestätigung.</p>
 </div>
 
 <!-- FORM -->
@@ -250,35 +250,36 @@
     <div class="order-header">
       <div class="order-step step-gold">2</div>
       <h3>Welche Größe?</h3>
-      <span class="order-hint">Durchmesser</span>
+      <span class="order-hint">Handarbeit, leichte Abweichungen möglich</span>
     </div>
     <div class="order-body">
       <div class="opt-grid opt-grid-3">
         <div class="opt-card">
-          <input type="radio" name="groesse" id="klein" value="Klein (1,8 cm)" onchange="update()">
+          <input type="radio" name="groesse" id="klein" value="Klein (ca. 1,8 cm)" onchange="update()">
           <label class="opt-label" for="klein">
             <div class="size-circle sz-s">S</div>
             <div class="opt-title">Klein</div>
-            <div class="opt-desc">1,8 cm</div>
+            <div class="opt-desc">ca. 1,8 cm</div>
           </label>
         </div>
         <div class="opt-card">
-          <input type="radio" name="groesse" id="mittel" value="Mittel (2,0 cm)" onchange="update()">
+          <input type="radio" name="groesse" id="mittel" value="Mittel (ca. 2,0 cm)" onchange="update()">
           <label class="opt-label" for="mittel">
             <div class="size-circle sz-m">M</div>
             <div class="opt-title">Mittel</div>
-            <div class="opt-desc">2,0 cm</div>
+            <div class="opt-desc">ca. 2,0 cm</div>
           </label>
         </div>
         <div class="opt-card">
-          <input type="radio" name="groesse" id="gross" value="Groß (2,2 cm)" onchange="update()">
+          <input type="radio" name="groesse" id="gross" value="Groß (ca. 2,2 cm)" onchange="update()">
           <label class="opt-label" for="gross">
             <div class="size-circle sz-l">L</div>
             <div class="opt-title">Groß</div>
-            <div class="opt-desc">2,2 cm</div>
+            <div class="opt-desc">ca. 2,2 cm</div>
           </label>
         </div>
       </div>
+      <p style="font-size: 12px; color: var(--text-faint); margin-top: 12px; text-align: center;">Jeder Charm ist Handarbeit. Es kann zu leichten Abweichungen in Größe und Form kommen.</p>
     </div>
   </div>
 
@@ -404,7 +405,12 @@
       <div class="summary-total"><span>Gesamtpreis inkl. Versand</span><span id="s-preis">-</span></div>
       <div class="summary-note">Alle Preise inkl. Versand innerhalb Deutschlands. Du erhältst eine Bestätigung per E-Mail mit Zahlungsdetails (PayPal oder Überweisung). Der Charm wird nach Zahlungseingang angefertigt. Lieferzeit ca. 5-10 Werktage.</div>
     </div>
-    <button class="btn-submit" onclick="submitOrder()">Bestellung absenden</button>
+    <!-- Datenschutz -->
+    <div style="margin-top: 24px; display: flex; align-items: flex-start; gap: 12px;">
+      <input type="checkbox" id="datenschutz" style="margin-top: 4px; width: 18px; height: 18px; accent-color: var(--rosegold); cursor: pointer; flex-shrink: 0;">
+      <label for="datenschutz" style="font-size: 13px; color: var(--text-medium); cursor: pointer; line-height: 1.6;">Ich habe die <a href="datenschutz.html" target="_blank" style="color: var(--rosegold); text-decoration: underline;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bestellabwicklung zu. Meine Daten werden ausschließlich für diese Bestellung verwendet und nicht an Dritte weitergegeben.</label>
+    </div>
+    <button class="btn-submit" id="submitBtn" onclick="submitOrder()" disabled>Bestellung absenden</button>
     <div class="tip">
       <div class="tip-icon">!</div>
       <p>Nach dem Absenden öffnet sich dein E-Mail-Programm mit allen Details. Ich melde mich innerhalb von 24 Stunden bei dir mit einer Bestätigung und den Zahlungsdaten.</p>
@@ -418,22 +424,26 @@
   <h2>Danke für deine Bestellung!</h2>
   <p>Ich habe deine Anfrage erhalten und melde mich innerhalb von 24 Stunden bei dir.</p>
   <p>Du bekommst eine Bestätigung an deine E-Mail-Adresse.</p>
-  <p style="margin-top: 24px;"><a href="eatmoreart.html">Zurück zu Eatmore Art</a></p>
+  <p style="margin-top: 24px;"><a href="eatmoreart.html">Zurück zu EatMoreArt</a></p>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Eatmore Art</div>
+  <div class="footer-logo">EatMoreArt</div>
   <a href="index.html">TerraLuna App</a>
-  <a href="eatmoreart.html">Eatmore Art</a>
+  <a href="eatmoreart.html">EatMoreArt</a>
   <a href="impressum.html">Impressum</a>
   <a href="datenschutz.html">Datenschutz</a>
-  <div class="footer-note">Handgemachte Unikate. © 2026 Eatmore Art · Julia Bergles</div>
+  <div class="footer-note">Handgemachte Unikate. © 2026 EatMoreArt · Julia Bergles</div>
 </footer>
 
 <script>
 const preise = { 'Mini Charm': 9, 'Kettenanhänger': 14, 'Schlüsselanhänger': 17, 'Individuell': 0 };
-let progress = 0;
+
+// Datenschutz checkbox enables submit
+document.getElementById('datenschutz').addEventListener('change', function() {
+  document.getElementById('submitBtn').disabled = !this.checked;
+});
 
 function update() {
   const p = document.querySelector('input[name="produkt"]:checked');
@@ -487,11 +497,29 @@ function submitOrder() {
   const ge = document.getElementById('geschenk').value;
 
   if (!p || !g || !d || !l || !n || !e || !a) { alert('Bitte fülle alle Pflichtfelder aus.'); return; }
+  if (!document.getElementById('datenschutz').checked) { alert('Bitte stimme der Datenschutzerklärung zu.'); return; }
 
   const pr = preise[p.value];
-  const body = `Neue Bestellung bei Eatmore Art\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nDraht: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}\nPreis: ${pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)'}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}`;
+  const preisText = pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)';
 
-  window.location.href = 'mailto:julia@bergles.net?subject=' + encodeURIComponent('Neue Bestellung: ' + p.value + ' - ' + l) + '&body=' + encodeURIComponent(body);
+  // Save order to localStorage for dashboard
+  const order = {
+    id: 'EA-' + Date.now().toString(36).toUpperCase(),
+    datum: new Date().toLocaleDateString('de-DE'),
+    zeit: new Date().toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'}),
+    produkt: p.value, groesse: g.value, draht: d.value,
+    lebensmittel: l, bedeutung: b, geschenk: ge,
+    preis: pr, preisText: preisText,
+    name: n, email: e, telefon: t, adresse: a, anmerkungen: an,
+    status: 'Neu', bezahlt: false
+  };
+  const orders = JSON.parse(localStorage.getItem('eatmoreart-orders') || '[]');
+  orders.push(order);
+  localStorage.setItem('eatmoreart-orders', JSON.stringify(orders));
+
+  const body = `Neue Bestellung bei EatMoreArt\n\nBestellnummer: ${order.id}\nDatum: ${order.datum} ${order.zeit}\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nDraht: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}\nPreis: ${preisText}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}\n\nDatenschutz: Zugestimmt`;
+
+  window.location.href = 'mailto:julia@bergles.net?subject=' + encodeURIComponent('Bestellung ' + order.id + ': ' + p.value + ' - ' + l) + '&body=' + encodeURIComponent(body);
 
   document.getElementById('orderForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';

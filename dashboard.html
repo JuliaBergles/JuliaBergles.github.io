@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EatMoreArt — Bestell-Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F4F3F1; --bg-warm: #ECEAE6; --bg-dark: #2c3e6b; --bg-dark-light: #354a7a;
+      --border: #D5D0C8; --border-light: #E0DCD6;
+      --rosegold: #c9908a; --rosegold-light: #d4a49e; --copper: #C48B6C;
+      --text-dark: #141414; --text: #2A2A2A; --text-medium: #505050; --text-light: #808080;
+      --white: #FFFFFF;
+      --green: #3A7D5C; --green-bg: #EDF5F0;
+      --blue: #2D5A8E; --blue-bg: #EBF0F7;
+      --orange: #C4793A; --orange-bg: #FBF3EB;
+      --red: #B04A4A; --red-bg: #FAEEEE;
+      --gold: #c9a96e; --gold-bg: #FAF3E8;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-serif: 'DM Serif Display', Georgia, serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* TOP BAR */
+    .topbar { background: var(--bg-dark); padding: 16px 32px; display: flex; align-items: center; gap: 20px; position: sticky; top: 0; z-index: 100; }
+    .topbar-logo { font-family: var(--font-serif); font-size: 18px; color: white; margin-right: auto; }
+    .topbar-badge { font-size: 11px; font-weight: 600; color: var(--rosegold-light); letter-spacing: 1px; padding: 4px 12px; border: 1px solid rgba(201,144,138,0.3); border-radius: 6px; }
+    .topbar a { color: var(--rosegold-light); text-decoration: none; font-size: 13px; font-weight: 500; }
+    .topbar a:hover { color: white; }
+
+    /* HEADER */
+    .header { background: var(--bg-dark); padding: 40px 32px 50px; }
+    .header h1 { font-family: var(--font-serif); font-size: 32px; color: white; margin-bottom: 8px; }
+    .header p { font-size: 14px; color: rgba(255,255,255,0.4); }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0 32px; margin-top: -30px; position: relative; z-index: 10; }
+    .stat-card { background: var(--white); border: 1px solid var(--border-light); border-radius: 12px; padding: 24px; text-align: center; }
+    .stat-num { font-family: var(--font-serif); font-size: 32px; color: var(--text-dark); }
+    .stat-label { font-size: 12px; color: var(--text-light); margin-top: 4px; letter-spacing: 0.5px; }
+    .stat-card.green .stat-num { color: var(--green); }
+    .stat-card.orange .stat-num { color: var(--orange); }
+    .stat-card.blue .stat-num { color: var(--blue); }
+    .stat-card.rose .stat-num { color: var(--rosegold); }
+
+    /* MAIN */
+    .main { padding: 32px; }
+    .section-title { font-family: var(--font-serif); font-size: 22px; color: var(--text-dark); margin-bottom: 16px; }
+
+    /* FILTER */
+    .filter-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .filter-btn { padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 500; border: 1px solid var(--border); background: var(--white); color: var(--text-medium); cursor: pointer; transition: all 0.2s; font-family: var(--font-sans); }
+    .filter-btn:hover { border-color: var(--rosegold); color: var(--rosegold); }
+    .filter-btn.active { background: var(--bg-dark); color: white; border-color: var(--bg-dark); }
+
+    /* TABLE */
+    .table-wrap { background: var(--white); border: 1px solid var(--border-light); border-radius: 14px; overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: var(--bg-warm); padding: 14px 18px; font-size: 11px; font-weight: 600; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; text-align: left; border-bottom: 1px solid var(--border); }
+    td { padding: 16px 18px; font-size: 14px; color: var(--text); border-bottom: 1px solid var(--border-light); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover { background: rgba(201,144,138,0.02); }
+
+    /* BADGES */
+    .badge { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; display: inline-block; }
+    .badge-neu { background: var(--blue-bg); color: var(--blue); }
+    .badge-inarbeit { background: var(--orange-bg); color: var(--orange); }
+    .badge-fertig { background: var(--green-bg); color: var(--green); }
+    .badge-versendet { background: var(--gold-bg); color: var(--gold); }
+    .badge-bezahlt { background: var(--green-bg); color: var(--green); }
+    .badge-offen { background: var(--red-bg); color: var(--red); }
+
+    /* ACTIONS */
+    .action-btn { padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); background: var(--white); cursor: pointer; transition: all 0.2s; font-family: var(--font-sans); margin-right: 4px; }
+    .action-btn:hover { border-color: var(--rosegold); color: var(--rosegold); }
+    .action-btn.green { border-color: var(--green); color: var(--green); }
+    .action-btn.green:hover { background: var(--green); color: white; }
+
+    /* DETAIL MODAL */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 200; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--white); border-radius: 16px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; padding: 36px; }
+    .modal h2 { font-family: var(--font-serif); font-size: 24px; color: var(--text-dark); margin-bottom: 20px; }
+    .modal-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-light); font-size: 14px; }
+    .modal-row span:first-child { color: var(--text-light); }
+    .modal-row span:last-child { color: var(--text-dark); font-weight: 500; }
+    .modal-close { background: var(--bg-dark); color: white; border: none; padding: 12px 28px; border-radius: 8px; font-family: var(--font-sans); font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 24px; width: 100%; }
+    .modal-actions { display: flex; gap: 8px; margin-top: 16px; }
+
+    /* EMPTY */
+    .empty { text-align: center; padding: 80px 40px; }
+    .empty h3 { font-family: var(--font-serif); font-size: 22px; color: var(--text-light); margin-bottom: 8px; }
+    .empty p { font-size: 14px; color: var(--text-light); }
+
+    @media (max-width: 768px) {
+      .stats { grid-template-columns: repeat(2, 1fr); padding: 0 16px; }
+      .main { padding: 20px 16px; }
+      .topbar { padding: 12px 16px; }
+      .header { padding: 30px 16px 40px; }
+      table { font-size: 13px; }
+      td, th { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span class="topbar-badge">INTERN</span>
+  <span class="topbar-logo">EatMoreArt Dashboard</span>
+  <a href="index.html">Zur Website</a>
+  <a href="bestellen.html">Bestell-Seite</a>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Bestellungen</h1>
+  <p>Alle Charm-Bestellungen auf einen Blick. Daten werden lokal in deinem Browser gespeichert.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-card blue">
+    <div class="stat-num" id="stat-total">0</div>
+    <div class="stat-label">Gesamt</div>
+  </div>
+  <div class="stat-card orange">
+    <div class="stat-num" id="stat-offen">0</div>
+    <div class="stat-label">Offen</div>
+  </div>
+  <div class="stat-card green">
+    <div class="stat-num" id="stat-bezahlt">0</div>
+    <div class="stat-label">Bezahlt</div>
+  </div>
+  <div class="stat-card rose">
+    <div class="stat-num" id="stat-umsatz">0 €</div>
+    <div class="stat-label">Umsatz</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="section-title">Alle Bestellungen</div>
+
+  <!-- FILTER -->
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterOrders('alle')">Alle</button>
+    <button class="filter-btn" onclick="filterOrders('Neu')">Neu</button>
+    <button class="filter-btn" onclick="filterOrders('In Arbeit')">In Arbeit</button>
+    <button class="filter-btn" onclick="filterOrders('Fertig')">Fertig</button>
+    <button class="filter-btn" onclick="filterOrders('Versendet')">Versendet</button>
+    <button class="filter-btn" onclick="filterOrders('offen')">Zahlung offen</button>
+    <button class="filter-btn" onclick="filterOrders('bezahlt')">Bezahlt</button>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nr.</th>
+          <th>Datum</th>
+          <th>Kunde</th>
+          <th>Charm</th>
+          <th>Preis</th>
+          <th>Status</th>
+          <th>Zahlung</th>
+          <th>Aktionen</th>
+        </tr>
+      </thead>
+      <tbody id="orderTable">
+      </tbody>
+    </table>
+    <div class="empty" id="emptyState" style="display: none;">
+      <h3>Noch keine Bestellungen</h3>
+      <p>Sobald Bestellungen über die Website eingehen, erscheinen sie hier.</p>
+    </div>
+  </div>
+
+  <!-- MANUELL HINZUFÜGEN -->
+  <div style="margin-top: 24px; text-align: right;">
+    <button class="action-btn" onclick="addManualOrder()" style="padding: 10px 20px; font-size: 13px;">+ Bestellung manuell hinzufügen</button>
+    <button class="action-btn" onclick="exportCSV()" style="padding: 10px 20px; font-size: 13px;">CSV Export</button>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+let currentFilter = 'alle';
+
+function getOrders() {
+  return JSON.parse(localStorage.getItem('eatmoreart-orders') || '[]');
+}
+
+function saveOrders(orders) {
+  localStorage.setItem('eatmoreart-orders', JSON.stringify(orders));
+}
+
+function updateStats() {
+  const orders = getOrders();
+  const bezahlt = orders.filter(o => o.bezahlt);
+  const offen = orders.filter(o => !o.bezahlt && o.status !== 'Storniert');
+  const umsatz = bezahlt.reduce((s, o) => s + (o.preis || 0), 0);
+
+  document.getElementById('stat-total').textContent = orders.length;
+  document.getElementById('stat-offen').textContent = offen.length;
+  document.getElementById('stat-bezahlt').textContent = bezahlt.length;
+  document.getElementById('stat-umsatz').textContent = umsatz.toFixed(2) + ' €';
+}
+
+function renderOrders() {
+  const orders = getOrders();
+  const tbody = document.getElementById('orderTable');
+  const empty = document.getElementById('emptyState');
+
+  let filtered = orders;
+  if (currentFilter === 'offen') filtered = orders.filter(o => !o.bezahlt);
+  else if (currentFilter === 'bezahlt') filtered = orders.filter(o => o.bezahlt);
+  else if (currentFilter !== 'alle') filtered = orders.filter(o => o.status === currentFilter);
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = filtered.map((o, i) => {
+    const statusClass = { 'Neu': 'badge-neu', 'In Arbeit': 'badge-inarbeit', 'Fertig': 'badge-fertig', 'Versendet': 'badge-versendet' }[o.status] || 'badge-neu';
+    const zahlClass = o.bezahlt ? 'badge-bezahlt' : 'badge-offen';
+    const zahlText = o.bezahlt ? 'Bezahlt' : 'Offen';
+    return `<tr>
+      <td style="font-weight: 600; color: var(--text-light); font-size: 12px;">${o.id || '-'}</td>
+      <td>${o.datum || '-'}</td>
+      <td><strong>${o.name || '-'}</strong><br><span style="font-size: 12px; color: var(--text-light);">${o.email || ''}</span></td>
+      <td>${o.lebensmittel || '-'}<br><span style="font-size: 12px; color: var(--text-light);">${o.produkt} · ${o.groesse} · ${o.draht}</span></td>
+      <td style="font-weight: 600;">${o.preisText || '-'}</td>
+      <td><span class="badge ${statusClass}">${o.status}</span></td>
+      <td><span class="badge ${zahlClass}">${zahlText}</span></td>
+      <td>
+        <button class="action-btn" onclick="showDetail(${orders.indexOf(o)})">Details</button>
+        <button class="action-btn green" onclick="toggleBezahlt(${orders.indexOf(o)})">${o.bezahlt ? 'Offen' : 'Bezahlt'}</button>
+        <button class="action-btn" onclick="nextStatus(${orders.indexOf(o)})">Status &rarr;</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function filterOrders(filter) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderOrders();
+}
+
+function toggleBezahlt(idx) {
+  const orders = getOrders();
+  orders[idx].bezahlt = !orders[idx].bezahlt;
+  if (orders[idx].bezahlt) orders[idx].bezahltAm = new Date().toLocaleDateString('de-DE');
+  saveOrders(orders);
+  updateStats();
+  renderOrders();
+}
+
+function nextStatus(idx) {
+  const flow = ['Neu', 'In Arbeit', 'Fertig', 'Versendet'];
+  const orders = getOrders();
+  const current = flow.indexOf(orders[idx].status);
+  if (current < flow.length - 1) orders[idx].status = flow[current + 1];
+  saveOrders(orders);
+  renderOrders();
+}
+
+function showDetail(idx) {
+  const o = getOrders()[idx];
+  document.getElementById('modalContent').innerHTML = `
+    <h2>Bestellung ${o.id}</h2>
+    <div class="modal-row"><span>Datum</span><span>${o.datum} ${o.zeit || ''}</span></div>
+    <div class="modal-row"><span>Produkt</span><span>${o.produkt}</span></div>
+    <div class="modal-row"><span>Größe</span><span>${o.groesse}</span></div>
+    <div class="modal-row"><span>Draht</span><span>${o.draht}</span></div>
+    <div class="modal-row"><span>Lebensmittel</span><span>${o.lebensmittel}</span></div>
+    ${o.bedeutung ? '<div class="modal-row"><span>Bedeutung</span><span>' + o.bedeutung + '</span></div>' : ''}
+    <div class="modal-row"><span>Geschenk</span><span>${o.geschenk || 'Nein'}</span></div>
+    <div class="modal-row"><span>Preis</span><span style="font-weight:700; color:var(--rosegold);">${o.preisText}</span></div>
+    <div class="modal-row"><span>Status</span><span>${o.status}</span></div>
+    <div class="modal-row"><span>Bezahlt</span><span>${o.bezahlt ? 'Ja (' + (o.bezahltAm || '-') + ')' : 'Nein'}</span></div>
+    <hr style="border:none; border-top:1px solid var(--border-light); margin: 16px 0;">
+    <div class="modal-row"><span>Name</span><span>${o.name}</span></div>
+    <div class="modal-row"><span>E-Mail</span><span>${o.email}</span></div>
+    ${o.telefon ? '<div class="modal-row"><span>Telefon</span><span>' + o.telefon + '</span></div>' : ''}
+    <div class="modal-row"><span>Adresse</span><span>${o.adresse}</span></div>
+    ${o.anmerkungen ? '<div class="modal-row"><span>Anmerkungen</span><span>' + o.anmerkungen + '</span></div>' : ''}
+    <div class="modal-actions">
+      <button class="action-btn green" onclick="toggleBezahlt(${idx}); showDetail(${idx});">${o.bezahlt ? 'Als offen markieren' : 'Als bezahlt markieren'}</button>
+      <button class="action-btn" onclick="nextStatus(${idx}); showDetail(${idx});">Status weiter</button>
+      <button class="action-btn" onclick="deleteOrder(${idx})" style="color:var(--red); border-color:var(--red);">Löschen</button>
+    </div>
+    <button class="modal-close" onclick="closeModal()">Schließen</button>
+  `;
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  renderOrders();
+  updateStats();
+}
+
+function deleteOrder(idx) {
+  if (!confirm('Bestellung wirklich löschen?')) return;
+  const orders = getOrders();
+  orders.splice(idx, 1);
+  saveOrders(orders);
+  closeModal();
+}
+
+function addManualOrder() {
+  const name = prompt('Kundenname:');
+  if (!name) return;
+  const email = prompt('E-Mail:');
+  const lebensmittel = prompt('Welches Lebensmittel?');
+  const produkt = prompt('Produkt (Mini Charm / Kettenanhänger / Schlüsselanhänger / Individuell):') || 'Mini Charm';
+  const preis = { 'Mini Charm': 9, 'Kettenanhänger': 14, 'Schlüsselanhänger': 17 }[produkt] || 0;
+
+  const order = {
+    id: 'EA-' + Date.now().toString(36).toUpperCase(),
+    datum: new Date().toLocaleDateString('de-DE'),
+    zeit: new Date().toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'}),
+    produkt, groesse: 'Mittel (ca. 2,0 cm)', draht: 'Gold',
+    lebensmittel: lebensmittel || '-', bedeutung: '', geschenk: 'Nein',
+    preis, preisText: preis > 0 ? preis.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage',
+    name, email: email || '', telefon: '', adresse: '', anmerkungen: 'Manuell hinzugefügt',
+    status: 'Neu', bezahlt: false
+  };
+  const orders = getOrders();
+  orders.push(order);
+  saveOrders(orders);
+  updateStats();
+  renderOrders();
+}
+
+function exportCSV() {
+  const orders = getOrders();
+  if (orders.length === 0) { alert('Keine Bestellungen vorhanden.'); return; }
+  const headers = ['Nr', 'Datum', 'Name', 'E-Mail', 'Produkt', 'Größe', 'Draht', 'Lebensmittel', 'Preis', 'Status', 'Bezahlt'];
+  const rows = orders.map(o => [o.id, o.datum, o.name, o.email, o.produkt, o.groesse, o.draht, o.lebensmittel, o.preisText, o.status, o.bezahlt ? 'Ja' : 'Nein']);
+  const csv = [headers, ...rows].map(r => r.map(c => '"' + (c || '').replace(/"/g, '""') + '"').join(',')).join('\n');
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'eatmoreart-bestellungen.csv'; a.click();
+}
+
+// Init
+updateStats();
+renderOrders();
+</script>
+
+</body>
+</html>
