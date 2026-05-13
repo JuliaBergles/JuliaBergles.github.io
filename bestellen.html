@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eatmore Art — Bestelle deinen persönlichen Food-Charm">
+  <title>Bestellen | Eatmore Art</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blush: #f2d5cf; --strawberry: #e8a0a0; --cream: #fdf6f0; --warmwhite: #fffbf7;
+      --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #5c5047; --soft: #b8a99a;
+      --honey: #dbb88a; --sage: #c5d5c0; --glossy: #f8e8e0; --white: #ffffff;
+      --navy: #2c3e6b;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,246,240,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,144,138,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--soft); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--rosegold); }
+    .nav-links a.active { color: var(--rosegold); font-weight: 600; }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.2); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,62,107,0.3); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 140px 24px 40px; text-align: center; }
+    .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--charcoal); margin-bottom: 12px; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--soft); max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+    /* FORM */
+    .order-form { max-width: 680px; margin: 40px auto 80px; padding: 0 24px; }
+    .form-section { background: var(--warmwhite); border-radius: 24px; padding: 36px; margin-bottom: 24px; border: 1px solid rgba(201,144,138,0.08); }
+    .form-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
+    .form-section .form-hint { font-size: 13px; color: var(--soft); margin-bottom: 20px; }
+    .form-step { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+
+    /* INPUTS */
+    label { font-size: 14px; font-weight: 500; color: var(--charcoal); display: block; margin-bottom: 6px; margin-top: 16px; }
+    label:first-of-type { margin-top: 0; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width: 100%; padding: 14px 18px; border: 1.5px solid var(--glossy); border-radius: 14px;
+      font-size: 15px; font-family: inherit; color: var(--charcoal); background: var(--white);
+      transition: border-color 0.2s; outline: none;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--rosegold); }
+    textarea { resize: vertical; min-height: 100px; }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23b8a99a' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
+
+    /* RADIO/OPTION CARDS */
+    .option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
+    .option-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .option-card { position: relative; }
+    .option-card input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .option-card label.card-label {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 20px 16px; border-radius: 16px; border: 2px solid var(--glossy);
+      cursor: pointer; transition: all 0.3s; text-align: center; margin: 0;
+      background: var(--white);
+    }
+    .option-card input[type="radio"]:checked + label.card-label {
+      border-color: var(--rosegold); background: rgba(201,144,138,0.06);
+      box-shadow: 0 4px 16px rgba(201,144,138,0.12);
+    }
+    .option-card label.card-label:hover { border-color: var(--rosegold); }
+    .card-label .card-title { font-size: 15px; font-weight: 600; color: var(--charcoal); margin-bottom: 2px; }
+    .card-label .card-detail { font-size: 12px; color: var(--soft); }
+    .card-label .card-price { font-size: 16px; font-weight: 700; color: var(--rosegold); margin-top: 6px; }
+    .card-label .card-icon { font-size: 24px; margin-bottom: 8px; }
+
+    /* SIZE VISUAL */
+    .size-circle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--rosegold); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--rosegold); font-weight: 600; }
+    .size-s { width: 36px; height: 36px; }
+    .size-m { width: 42px; height: 42px; }
+    .size-l { width: 48px; height: 48px; }
+
+    /* FILE UPLOAD */
+    .upload-area {
+      border: 2px dashed var(--glossy); border-radius: 16px; padding: 32px; text-align: center;
+      cursor: pointer; transition: all 0.3s; margin-top: 8px; position: relative;
+    }
+    .upload-area:hover { border-color: var(--rosegold); background: rgba(201,144,138,0.03); }
+    .upload-area input[type="file"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+    .upload-icon { font-size: 32px; color: var(--soft); margin-bottom: 8px; }
+    .upload-text { font-size: 14px; color: var(--soft); }
+    .upload-hint { font-size: 12px; color: var(--sand); margin-top: 4px; }
+    #preview-container { margin-top: 12px; display: none; }
+    #preview-img { max-width: 200px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+    /* SUMMARY */
+    .summary-box { background: var(--glossy); border-radius: 16px; padding: 24px; margin-top: 24px; }
+    .summary-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid rgba(201,144,138,0.1); }
+    .summary-row:last-child { border-bottom: none; }
+    .summary-total { font-size: 20px; font-weight: 700; color: var(--rosegold); }
+    .summary-note { font-size: 12px; color: var(--soft); margin-top: 12px; }
+
+    /* SUBMIT */
+    .btn-submit {
+      width: 100%; padding: 18px; border: none; border-radius: 50px; font-size: 16px;
+      font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.3s;
+      background: linear-gradient(135deg, var(--rosegold) 0%, #d4a0a0 50%, var(--rosegold) 100%);
+      color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); margin-top: 24px;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,144,138,0.35); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .success-message { display: none; text-align: center; padding: 48px 24px; }
+    .success-message h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; margin-bottom: 12px; }
+    .success-message p { font-size: 15px; color: var(--soft); margin-bottom: 8px; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: var(--sand); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--sand); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(253,246,240,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .section-title { font-size: 32px; }
+      .option-grid { grid-template-columns: 1fr; }
+      .option-grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="eatmoreart.html" class="nav-logo">
+      <span>Eatmore Art</span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="eatmoreart.html">Produkte</a>
+      <a href="bestellen.html" class="active">Bestellen</a>
+      <a href="index.html">TerraLuna App</a>
+      <a href="mailto:julia@bergles.net" class="nav-cta">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <p class="section-label fade-up">Bestellung aufgeben</p>
+  <h1 class="section-title fade-up">Dein persönlicher Charm</h1>
+  <p class="section-sub fade-up">Fülle das Formular aus und ich melde mich bei dir mit einer Bestätigung und Zahlungsdetails.</p>
+</div>
+
+<!-- ORDER FORM -->
+<div class="order-form" id="orderForm">
+
+  <!-- STEP 1: Produkt -->
+  <div class="form-section fade-up">
+    <div class="form-step">Schritt 1</div>
+    <h3>Was möchtest du?</h3>
+    <p class="form-hint">Wähle die Art deines Charms.</p>
+    <div class="option-grid">
+      <div class="option-card">
+        <input type="radio" name="produkt" id="mini" value="Mini Charm" required onchange="updateSummary()">
+        <label class="card-label" for="mini">
+          <span class="card-icon">&#10022;</span>
+          <span class="card-title">Mini Charm</span>
+          <span class="card-detail">Für Armbänder</span>
+          <span class="card-price">9,00 €</span>
+        </label>
+      </div>
+      <div class="option-card">
+        <input type="radio" name="produkt" id="kette" value="Kettenanhänger" onchange="updateSummary()">
+        <label class="card-label" for="kette">
+          <span class="card-icon">&#10047;</span>
+          <span class="card-title">Kettenanhänger</span>
+          <span class="card-detail">Statement Piece</span>
+          <span class="card-price">14,00 €</span>
+        </label>
+      </div>
+      <div class="option-card">
+        <input type="radio" name="produkt" id="schluessel" value="Schlüsselanhänger" onchange="updateSummary()">
+        <label class="card-label" for="schluessel">
+          <span class="card-icon">&#9825;</span>
+          <span class="card-title">Schlüsselanhänger</span>
+          <span class="card-detail">Alltagsbegleiter</span>
+          <span class="card-price">17,00 €</span>
+        </label>
+      </div>
+      <div class="option-card">
+        <input type="radio" name="produkt" id="individuell" value="Individuell" onchange="updateSummary()">
+        <label class="card-label" for="individuell">
+          <span class="card-icon">&#9733;</span>
+          <span class="card-title">Individuell</span>
+          <span class="card-detail">Dein Wunsch-Charm</span>
+          <span class="card-price">20 €/Std.</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Größe -->
+  <div class="form-section fade-up">
+    <div class="form-step">Schritt 2</div>
+    <h3>Welche Größe?</h3>
+    <p class="form-hint">Wähle den Durchmesser deines Charms.</p>
+    <div class="option-grid option-grid-3">
+      <div class="option-card">
+        <input type="radio" name="groesse" id="klein" value="Klein (1,8 cm)" required onchange="updateSummary()">
+        <label class="card-label" for="klein">
+          <div class="size-circle size-s">S</div>
+          <span class="card-title">Klein</span>
+          <span class="card-detail">1,8 cm</span>
+        </label>
+      </div>
+      <div class="option-card">
+        <input type="radio" name="groesse" id="mittel" value="Mittel (2,0 cm)" onchange="updateSummary()">
+        <label class="card-label" for="mittel">
+          <div class="size-circle size-m">M</div>
+          <span class="card-title">Mittel</span>
+          <span class="card-detail">2,0 cm</span>
+        </label>
+      </div>
+      <div class="option-card">
+        <input type="radio" name="groesse" id="gross" value="Groß (2,2 cm)" onchange="updateSummary()">
+        <label class="card-label" for="gross">
+          <div class="size-circle size-l">L</div>
+          <span class="card-title">Groß</span>
+          <span class="card-detail">2,2 cm</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: Draht -->
+  <div class="form-section fade-up">
+    <div class="form-step">Schritt 3</div>
+    <h3>Welcher Draht?</h3>
+    <p class="form-hint">Zum Befestigen an Kette, Armband oder Schlüsselring.</p>
+    <div class="option-grid">
+      <div class="option-card">
+        <input type="radio" name="draht" id="gold" value="Gold" required onchange="updateSummary()">
+        <label class="card-label" for="gold">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #d4a76a, #f0d4a0, #d4a76a); margin-bottom: 8px; box-shadow: 0 2px 8px rgba(212,167,106,0.3);"></div>
+          <span class="card-title">Gold</span>
+          <span class="card-detail">Goldfarbener Draht</span>
+        </label>
+      </div>
+      <div class="option-card">
+        <input type="radio" name="draht" id="silber" value="Silber" onchange="updateSummary()">
+        <label class="card-label" for="silber">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #c0c0c0, #e8e8e8, #c0c0c0); margin-bottom: 8px; box-shadow: 0 2px 8px rgba(192,192,192,0.3);"></div>
+          <span class="card-title">Silber</span>
+          <span class="card-detail">Silberfarbener Draht</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: Lebensmittel -->
+  <div class="form-section fade-up">
+    <div class="form-step">Schritt 4</div>
+    <h3>Welches Lebensmittel?</h3>
+    <p class="form-hint">Beschreibe, was ich für dich formen soll.</p>
+    <label for="lebensmittel">Lebensmittel</label>
+    <input type="text" id="lebensmittel" name="lebensmittel" placeholder="z.B. Croissant, Kuchen, Pizza, Brezel..." required oninput="updateSummary()">
+
+    <label for="bedeutung">Was bedeutet es dir? (optional)</label>
+    <textarea id="bedeutung" name="bedeutung" placeholder="Erzähl mir, wenn du magst, warum dieses Lebensmittel besonders ist..."></textarea>
+  </div>
+
+  <!-- STEP 5: Foto -->
+  <div class="form-section fade-up">
+    <div class="form-step">Schritt 5</div>
+    <h3>Referenzfoto (optional)</h3>
+    <p class="form-hint">Hast du ein Foto von dem Lebensmittel? Das hilft mir beim Formen.</p>
+    <div class="upload-area">
+      <input type="file" id="foto" name="foto" accept="image/*" onchange="previewImage(this)">
+      <div class="upload-icon">&#128247;</div>
+      <div class="upload-text">Foto hierher ziehen oder klicken</div>
+      <div class="upload-hint">JPG, PNG oder HEIC. Max. 10 MB.</div>
+    </div>
+    <div id="preview-container">
+      <img id="preview-img" alt="Vorschau">
+    </div>
+  </div>
+
+  <!-- STEP 6: Kontakt -->
+  <div class="form-section fade-up">
+    <div class="form-step">Schritt 6</div>
+    <h3>Deine Daten</h3>
+    <p class="form-hint">Damit ich dich kontaktieren kann.</p>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Dein Name" required>
+
+    <label for="email">E-Mail</label>
+    <input type="email" id="email" name="email" placeholder="deine@email.de" required>
+
+    <label for="telefon">Telefon / WhatsApp (optional)</label>
+    <input type="tel" id="telefon" name="telefon" placeholder="+49...">
+
+    <label for="adresse">Lieferadresse</label>
+    <textarea id="adresse" name="adresse" placeholder="Straße, Hausnummer&#10;PLZ, Ort" required style="min-height: 80px;"></textarea>
+
+    <label for="anmerkungen">Sonstige Anmerkungen (optional)</label>
+    <textarea id="anmerkungen" name="anmerkungen" placeholder="Geschenkverpackung? Besondere Wünsche?" style="min-height: 60px;"></textarea>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="form-section fade-up">
+    <div class="form-step">Zusammenfassung</div>
+    <h3>Deine Bestellung</h3>
+    <div class="summary-box">
+      <div class="summary-row">
+        <span>Produkt</span>
+        <span id="sum-produkt">Noch nicht gewählt</span>
+      </div>
+      <div class="summary-row">
+        <span>Größe</span>
+        <span id="sum-groesse">Noch nicht gewählt</span>
+      </div>
+      <div class="summary-row">
+        <span>Draht</span>
+        <span id="sum-draht">Noch nicht gewählt</span>
+      </div>
+      <div class="summary-row">
+        <span>Lebensmittel</span>
+        <span id="sum-lebensmittel">-</span>
+      </div>
+      <div class="summary-row" style="border-bottom: none; padding-top: 12px;">
+        <span style="font-weight: 600;">Gesamtpreis</span>
+        <span class="summary-total" id="sum-preis">-</span>
+      </div>
+    </div>
+    <p class="summary-note">Alle Preise inkl. Versand innerhalb Deutschlands. Du erhältst eine Bestätigung per E-Mail mit Zahlungsdetails (PayPal oder Überweisung). Der Charm wird nach Zahlungseingang angefertigt.</p>
+
+    <button type="button" class="btn-submit" onclick="submitOrder()">Bestellung absenden</button>
+  </div>
+
+</div>
+
+<!-- SUCCESS -->
+<div class="success-message" id="successMessage">
+  <h2>Danke für deine Bestellung!</h2>
+  <p>Ich habe deine Anfrage erhalten und melde mich innerhalb von 24 Stunden bei dir.</p>
+  <p>Du bekommst eine Bestätigung an deine E-Mail-Adresse.</p>
+  <p style="margin-top: 24px;"><a href="eatmoreart.html" style="color: var(--rosegold); font-weight: 600; text-decoration: none;">Zurück zu Eatmore Art</a></p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Eatmore Art</div>
+    <div class="footer-links">
+      <a href="index.html">TerraLuna App</a>
+      <a href="eatmoreart.html">Eatmore Art</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </div>
+    <div class="footer-disclaimer">
+      Handgemachte Unikate. Lieferzeit ca. 5-10 Werktage nach Zahlungseingang.<br>
+      © 2026 Eatmore Art · Julia Bergles
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Prices
+const preise = { 'Mini Charm': 9, 'Kettenanhänger': 14, 'Schlüsselanhänger': 17, 'Individuell': 0 };
+
+// Update summary
+function updateSummary() {
+  const produkt = document.querySelector('input[name="produkt"]:checked');
+  const groesse = document.querySelector('input[name="groesse"]:checked');
+  const draht = document.querySelector('input[name="draht"]:checked');
+  const lebensmittel = document.getElementById('lebensmittel').value;
+
+  document.getElementById('sum-produkt').textContent = produkt ? produkt.value : 'Noch nicht gewählt';
+  document.getElementById('sum-groesse').textContent = groesse ? groesse.value : 'Noch nicht gewählt';
+  document.getElementById('sum-draht').textContent = draht ? draht.value : 'Noch nicht gewählt';
+  document.getElementById('sum-lebensmittel').textContent = lebensmittel || '-';
+
+  if (produkt) {
+    const preis = preise[produkt.value];
+    document.getElementById('sum-preis').textContent = preis > 0 ? preis.toFixed(2) + ' €' : 'Auf Anfrage';
+  }
+}
+
+// Image preview
+function previewImage(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('preview-img').src = e.target.result;
+      document.getElementById('preview-container').style.display = 'block';
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+// Submit order via email
+function submitOrder() {
+  const produkt = document.querySelector('input[name="produkt"]:checked');
+  const groesse = document.querySelector('input[name="groesse"]:checked');
+  const draht = document.querySelector('input[name="draht"]:checked');
+  const lebensmittel = document.getElementById('lebensmittel').value;
+  const bedeutung = document.getElementById('bedeutung').value;
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const telefon = document.getElementById('telefon').value;
+  const adresse = document.getElementById('adresse').value;
+  const anmerkungen = document.getElementById('anmerkungen').value;
+
+  if (!produkt || !groesse || !draht || !lebensmittel || !name || !email || !adresse) {
+    alert('Bitte fülle alle Pflichtfelder aus.');
+    return;
+  }
+
+  const preis = preise[produkt.value];
+  const preisText = preis > 0 ? preis.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)';
+
+  const body = `Neue Bestellung bei Eatmore Art
+
+BESTELLUNG:
+Produkt: ${produkt.value}
+Größe: ${groesse.value}
+Draht: ${draht.value}
+Lebensmittel: ${lebensmittel}
+${bedeutung ? 'Bedeutung: ' + bedeutung : ''}
+Preis: ${preisText}
+
+KUNDENDATEN:
+Name: ${name}
+E-Mail: ${email}
+${telefon ? 'Telefon: ' + telefon : ''}
+Adresse: ${adresse}
+${anmerkungen ? 'Anmerkungen: ' + anmerkungen : ''}`;
+
+  const mailtoLink = 'mailto:julia@bergles.net?subject=' +
+    encodeURIComponent('Neue Bestellung: ' + produkt.value + ' - ' + lebensmittel) +
+    '&body=' + encodeURIComponent(body);
+
+  window.location.href = mailtoLink;
+
+  // Show success
+  document.getElementById('orderForm').style.display = 'none';
+  document.getElementById('successMessage').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
