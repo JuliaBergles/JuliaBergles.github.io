@@ -184,6 +184,65 @@
     <button class="action-btn" onclick="addManualOrder()" style="padding: 10px 20px; font-size: 13px;">+ Bestellung manuell hinzufügen</button>
     <button class="action-btn" onclick="exportCSV()" style="padding: 10px 20px; font-size: 13px;">CSV Export</button>
   </div>
+
+  <!-- FLOHMARKT MANAGEMENT -->
+  <div style="margin-top: 48px;">
+    <div class="section-title">Charm Flohmarkt</div>
+    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">Fertig modellierte Charms einstellen. Diese erscheinen auf der EatMoreArt Seite.</p>
+
+    <div class="table-wrap" style="margin-bottom: 16px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Beschreibung</th>
+            <th>Preis</th>
+            <th>Original</th>
+            <th>Größe</th>
+            <th>Draht</th>
+            <th>Status</th>
+            <th>Aktionen</th>
+          </tr>
+        </thead>
+        <tbody id="flohmarktTable"></tbody>
+      </table>
+      <div class="empty" id="flohmarktEmpty" style="display: none;">
+        <h3>Noch keine Flohmarkt-Charms</h3>
+        <p>Füge fertig modellierte Charms hinzu, die sofort verfügbar sind.</p>
+      </div>
+    </div>
+
+    <button class="action-btn" onclick="addFlohmarktItem()" style="padding: 10px 20px; font-size: 13px;">+ Charm zum Flohmarkt hinzufügen</button>
+  </div>
+
+  <!-- LEADS -->
+  <div style="margin-top: 48px;">
+    <div class="section-title">E-Mail Funnel Leads</div>
+    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">Alle Eintragungen über den kostenlosen Guide. <a href="funnel.html?admin" target="_blank" style="color: var(--rosegold);">Funnel-Seite anzeigen (mit E-Mail-Vorlagen)</a></p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Datum</th>
+            <th>Quelle</th>
+            <th>Status</th>
+            <th>Aktionen</th>
+          </tr>
+        </thead>
+        <tbody id="leadsTable"></tbody>
+      </table>
+      <div class="empty" id="leadsEmpty" style="display: none;">
+        <h3>Noch keine Leads</h3>
+        <p>Teile den Funnel-Link: juliabergles.de/funnel.html</p>
+      </div>
+    </div>
+    <div style="margin-top: 12px; text-align: right;">
+      <button class="action-btn" onclick="exportLeadsCSV()" style="padding: 10px 20px; font-size: 13px;">Leads CSV Export</button>
+    </div>
+  </div>
 </div>
 
 <!-- DETAIL MODAL -->
@@ -358,9 +417,122 @@ function exportCSV() {
   a.href = url; a.download = 'eatmoreart-bestellungen.csv'; a.click();
 }
 
+// =====================
+// FLOHMARKT MANAGEMENT
+// =====================
+function getFlohmarkt() { return JSON.parse(localStorage.getItem('eatmoreart-flohmarkt') || '[]'); }
+function saveFlohmarkt(items) { localStorage.setItem('eatmoreart-flohmarkt', JSON.stringify(items)); }
+
+function renderFlohmarkt() {
+  const items = getFlohmarkt();
+  const tbody = document.getElementById('flohmarktTable');
+  const empty = document.getElementById('flohmarktEmpty');
+
+  if (items.length === 0) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = items.map((item, i) => `<tr>
+    <td><strong>${item.name}</strong></td>
+    <td style="font-size: 13px; color: var(--text-light);">${item.beschreibung || '-'}</td>
+    <td style="font-weight: 600; color: var(--rosegold);">${item.preis.toFixed(2)} €</td>
+    <td style="font-size: 13px; color: var(--text-light); text-decoration: line-through;">${item.originalPreis ? item.originalPreis.toFixed(2) + ' €' : '-'}</td>
+    <td style="font-size: 13px;">${item.groesse || '-'}</td>
+    <td style="font-size: 13px;">${item.draht || '-'}</td>
+    <td><span class="badge ${item.verkauft ? 'badge-bezahlt' : 'badge-neu'}">${item.verkauft ? 'Verkauft' : 'Verfügbar'}</span></td>
+    <td>
+      <button class="action-btn" onclick="toggleFlohmarktVerkauft(${i})">${item.verkauft ? 'Wieder anbieten' : 'Als verkauft'}</button>
+      <button class="action-btn" onclick="deleteFlohmarktItem(${i})" style="color: var(--red);">X</button>
+    </td>
+  </tr>`).join('');
+}
+
+function addFlohmarktItem() {
+  const name = prompt('Charm-Name (z.B. "Croissant Mini"):');
+  if (!name) return;
+  const beschreibung = prompt('Kurze Beschreibung (optional):') || '';
+  const preis = parseFloat(prompt('Verkaufspreis (z.B. 7):') || '0');
+  const originalPreis = parseFloat(prompt('Originalpreis (z.B. 9, leer wenn kein Rabatt):') || '0');
+  const groesse = prompt('Größe (z.B. "ca. 1,8 cm"):') || '';
+  const draht = prompt('Draht (Gold / Silber):') || 'Gold';
+
+  if (!preis) { alert('Bitte einen Preis eingeben.'); return; }
+
+  const item = { id: 'fm-' + Date.now(), name, beschreibung, preis, originalPreis: originalPreis || null, groesse, draht, verkauft: false, bild: null };
+  const items = getFlohmarkt();
+  items.push(item);
+  saveFlohmarkt(items);
+  renderFlohmarkt();
+}
+
+function toggleFlohmarktVerkauft(idx) {
+  const items = getFlohmarkt();
+  items[idx].verkauft = !items[idx].verkauft;
+  saveFlohmarkt(items);
+  renderFlohmarkt();
+}
+
+function deleteFlohmarktItem(idx) {
+  if (!confirm('Charm vom Flohmarkt entfernen?')) return;
+  const items = getFlohmarkt();
+  items.splice(idx, 1);
+  saveFlohmarkt(items);
+  renderFlohmarkt();
+}
+
+// =====================
+// LEADS MANAGEMENT
+// =====================
+function renderLeads() {
+  const leads = JSON.parse(localStorage.getItem('eatmoreart-leads') || '[]');
+  const tbody = document.getElementById('leadsTable');
+  const empty = document.getElementById('leadsEmpty');
+
+  if (leads.length === 0) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = leads.map((l, i) => `<tr>
+    <td><strong>${l.name}</strong></td>
+    <td>${l.email}</td>
+    <td>${l.datum}</td>
+    <td style="font-size: 12px; color: var(--text-light);">${l.quelle || '-'}</td>
+    <td><span class="badge badge-neu">${l.status || 'Neu'}</span></td>
+    <td>
+      <button class="action-btn" onclick="updateLeadStatus(${i})">Status &rarr;</button>
+      <button class="action-btn" onclick="deleteLead(${i})" style="color: var(--red);">X</button>
+    </td>
+  </tr>`).join('');
+}
+
+function updateLeadStatus(idx) {
+  const flow = ['Tag 1', 'Tag 3', 'Tag 7', 'Tag 14', 'Tag 21', 'Abgeschlossen'];
+  const leads = JSON.parse(localStorage.getItem('eatmoreart-leads') || '[]');
+  const current = flow.indexOf(leads[idx].status);
+  if (current < flow.length - 1) leads[idx].status = flow[current + 1];
+  localStorage.setItem('eatmoreart-leads', JSON.stringify(leads));
+  renderLeads();
+}
+
+function deleteLead(idx) {
+  if (!confirm('Lead entfernen?')) return;
+  const leads = JSON.parse(localStorage.getItem('eatmoreart-leads') || '[]');
+  leads.splice(idx, 1);
+  localStorage.setItem('eatmoreart-leads', JSON.stringify(leads));
+  renderLeads();
+}
+
+function exportLeadsCSV() {
+  const leads = JSON.parse(localStorage.getItem('eatmoreart-leads') || '[]');
+  if (leads.length === 0) { alert('Keine Leads vorhanden.'); return; }
+  const csv = [['Name', 'E-Mail', 'Datum', 'Quelle', 'Status'], ...leads.map(l => [l.name, l.email, l.datum, l.quelle, l.status])].map(r => r.map(c => '"' + (c||'') + '"').join(',')).join('\n');
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'eatmoreart-leads.csv'; a.click();
+}
+
 // Init
 updateStats();
 renderOrders();
+renderFlohmarkt();
+renderLeads();
 </script>
 
 </body>

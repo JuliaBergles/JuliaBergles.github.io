@@ -267,6 +267,25 @@
   </div>
 </section>
 
+<!-- FLOHMARKT -->
+<section id="flohmarkt" style="background: var(--warmwhite);">
+  <div class="section-inner">
+    <p class="section-label fade-up" style="text-align: center;">Sofort verfügbar</p>
+    <h2 class="section-title fade-up" style="text-align: center;">Charm Flohmarkt</h2>
+    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">Bereits fertig modellierte Charms zu reduzierten Preisen. Jedes Stück ein Unikat. Wenn es weg ist, ist es weg.</p>
+
+    <div id="flohmarktGrid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+    </div>
+
+    <div id="flohmarktEmpty" class="fade-up" style="text-align: center; padding: 48px; background: var(--glossy); border-radius: 20px;">
+      <p style="font-size: 15px; color: var(--soft);">Gerade sind keine Charms auf dem Flohmarkt.</p>
+      <p style="font-size: 13px; color: var(--rosegold); margin-top: 8px;">Schau bald wieder vorbei oder bestelle deinen Wunsch-Charm.</p>
+    </div>
+
+    <p class="fade-up" style="text-align: center; margin-top: 24px; font-size: 12px; color: var(--soft);">Neue Charms werden regelmäßig hinzugefügt. Folge mir auf <a href="https://www.instagram.com/julia_bergles/" style="color: var(--rosegold); text-decoration: none; font-weight: 600;">Instagram</a> für Updates.</p>
+  </div>
+</section>
+
 <!-- FEAR FOOD ANFRAGE -->
 <section id="fearfood" class="fearfood-section">
   <div class="section-inner">
@@ -434,6 +453,39 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Flohmarkt System
+function renderFlohmarkt() {
+  const items = JSON.parse(localStorage.getItem('eatmoreart-flohmarkt') || '[]');
+  const available = items.filter(i => !i.verkauft);
+  const grid = document.getElementById('flohmarktGrid');
+  const empty = document.getElementById('flohmarktEmpty');
+
+  if (available.length === 0) {
+    grid.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  grid.style.display = 'grid';
+  empty.style.display = 'none';
+
+  grid.innerHTML = available.map(item => `
+    <div class="fade-up" style="background: var(--white); border-radius: 20px; overflow: hidden; transition: all 0.3s; border: 1px solid rgba(201,144,138,0.08);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(201,144,138,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+      ${item.bild ? '<img src="' + item.bild + '" style="width: 100%; height: 160px; object-fit: cover;" alt="' + item.name + '">' : '<div style="width: 100%; height: 160px; background: linear-gradient(135deg, var(--blush), var(--glossy)); display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--rosegold);">&#10022;</div>'}
+      <div style="padding: 18px;">
+        <div style="font-size: 15px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px;">${item.name}</div>
+        <div style="font-size: 12px; color: var(--soft); margin-bottom: 8px;">${item.beschreibung || ''}</div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          ${item.originalPreis ? '<span style="font-size: 13px; color: var(--soft); text-decoration: line-through;">' + item.originalPreis.toFixed(2) + ' €</span>' : ''}
+          <span style="font-size: 18px; font-weight: 700; color: var(--rosegold);">${item.preis.toFixed(2)} €</span>
+        </div>
+        <div style="font-size: 11px; color: var(--soft);">${item.groesse || ''} · ${item.draht || ''}</div>
+        <a href="mailto:julia@bergles.net?subject=Flohmarkt: ${encodeURIComponent(item.name)}&body=${encodeURIComponent('Hi Julia,\\n\\nich möchte gerne den Flohmarkt-Charm \"' + item.name + '\" für ' + item.preis.toFixed(2) + ' € kaufen.\\n\\nMein Name:\\nMeine Adresse:\\n\\nLiebe Grüße')}" style="display: block; text-align: center; margin-top: 12px; padding: 10px; border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--white); background: linear-gradient(135deg, var(--rosegold), #d4a0a0, var(--rosegold)); text-decoration: none;">Kaufen</a>
+      </div>
+    </div>
+  `).join('');
+}
+renderFlohmarkt();
 </script>
 
 </body>

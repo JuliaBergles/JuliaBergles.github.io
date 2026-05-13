@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kostenloser Guide: Die 5 größten Fehler bei Histaminintoleranz und wie du sie vermeidest.">
+  <title>Kostenloser Guide | EatMoreArt</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --wine: #bf6b6b; --cream: #faf4eb; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --gold: #c9a96e; --rosegold: #c9908a; --white: #fffdf9; --linen: #f5ece0;
+      --navy: #2c3e6b; --soft: #b8a99a;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* HERO */
+    .funnel-hero { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 24px; }
+    .funnel-card { background: var(--white); border-radius: 28px; max-width: 520px; width: 100%; padding: 48px 40px; box-shadow: 0 12px 48px rgba(0,0,0,0.06); text-align: center; }
+    .funnel-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+    .funnel-card h1 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--charcoal); line-height: 1.2; margin-bottom: 12px; }
+    .funnel-card h1 em { color: var(--wine); font-style: italic; }
+    .funnel-sub { font-size: 15px; color: var(--cocoa); margin-bottom: 28px; line-height: 1.7; }
+    .funnel-benefits { text-align: left; margin-bottom: 28px; }
+    .funnel-benefit { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; font-size: 14px; color: var(--charcoal); }
+    .funnel-check { color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .funnel-input { width: 100%; padding: 16px 20px; border: 2px solid var(--linen); border-radius: 14px; font-size: 15px; font-family: inherit; color: var(--charcoal); outline: none; transition: border-color 0.2s; margin-bottom: 10px; background: var(--cream); }
+    .funnel-input:focus { border-color: var(--wine); }
+    .funnel-input::placeholder { color: var(--soft); }
+    .funnel-submit { width: 100%; padding: 18px; border: none; border-radius: 14px; font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, var(--wine) 0%, #d4868a 50%, var(--wine) 100%); color: white; box-shadow: 0 6px 24px rgba(191,107,107,0.25); margin-top: 8px; letter-spacing: 0.3px; }
+    .funnel-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(191,107,107,0.35); }
+    .funnel-privacy { font-size: 11px; color: var(--soft); margin-top: 12px; }
+    .funnel-privacy a { color: var(--wine); text-decoration: none; }
+    .funnel-by { font-size: 12px; color: var(--soft); margin-top: 20px; }
+    .funnel-by a { color: var(--wine); text-decoration: none; font-weight: 600; }
+
+    /* SUCCESS */
+    .funnel-success { display: none; text-align: center; }
+    .funnel-success h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 12px; }
+    .funnel-success p { font-size: 15px; color: var(--cocoa); margin-bottom: 8px; }
+    .success-links { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+    .success-links a { color: var(--wine); text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px; border-radius: 10px; transition: background 0.2s; }
+    .success-links a:hover { background: var(--linen); }
+
+    /* SEQUENCE PREVIEW (nur für Julia) */
+    .sequence-preview { display: none; margin-top: 32px; text-align: left; }
+    .sequence-preview h3 { font-size: 16px; font-weight: 600; color: var(--charcoal); margin-bottom: 16px; }
+    .seq-mail { background: var(--cream); border-radius: 12px; padding: 16px; margin-bottom: 10px; border-left: 3px solid var(--gold); }
+    .seq-day { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 1px; text-transform: uppercase; }
+    .seq-subject { font-size: 14px; font-weight: 600; color: var(--charcoal); margin-top: 2px; }
+    .seq-body { font-size: 13px; color: var(--cocoa); margin-top: 4px; }
+
+    @media (max-width: 480px) {
+      .funnel-card { padding: 32px 24px; }
+      .funnel-card h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="funnel-hero">
+  <div class="funnel-card">
+
+    <!-- FORM -->
+    <div id="funnelForm">
+      <div class="funnel-label">Kostenlos</div>
+      <h1>Die 5 größten Fehler bei <em>Histaminintoleranz</em></h1>
+      <p class="funnel-sub">Und wie du sie ab heute vermeiden kannst. Ein kurzer Guide von jemandem, der es selbst durchgemacht hat.</p>
+
+      <div class="funnel-benefits">
+        <div class="funnel-benefit"><span class="funnel-check">&#10003;</span><span>Welche Lebensmittel wirklich sicher sind</span></div>
+        <div class="funnel-benefit"><span class="funnel-check">&#10003;</span><span>Warum die meisten Listen im Internet falsch sind</span></div>
+        <div class="funnel-benefit"><span class="funnel-check">&#10003;</span><span>Der eine Fehler, den fast alle am Anfang machen</span></div>
+        <div class="funnel-benefit"><span class="funnel-check">&#10003;</span><span>Wie du im Restaurant sicher bestellst</span></div>
+        <div class="funnel-benefit"><span class="funnel-check">&#10003;</span><span>Mein persönlicher Tipp der mir am meisten geholfen hat</span></div>
+      </div>
+
+      <input type="text" class="funnel-input" id="funnelName" placeholder="Dein Vorname" required>
+      <input type="email" class="funnel-input" id="funnelEmail" placeholder="Deine E-Mail-Adresse" required>
+      <button class="funnel-submit" onclick="submitFunnel()">Kostenlosen Guide erhalten</button>
+
+      <p class="funnel-privacy">Kein Spam. Du kannst dich jederzeit abmelden. <a href="datenschutz.html">Datenschutz</a></p>
+      <p class="funnel-by">Von <a href="index.html">Julia Bergles</a> · EatMoreArt</p>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="funnel-success" id="funnelSuccess">
+      <h2>Danke, <span id="successName">du</span>!</h2>
+      <p>Dein Guide ist auf dem Weg zu deinem Postfach.</p>
+      <p style="font-size: 13px;">Schau auch im Spam-Ordner nach, falls du nichts siehst.</p>
+      <div class="success-links">
+        <a href="index.html">EatMoreArt entdecken</a>
+        <a href="onboarding.html">Finde heraus, was zu dir passt</a>
+        <a href="eatmoreart.html">Wear Your Healing Shop</a>
+      </div>
+
+      <!-- E-Mail Sequenz Preview (nur für Julia zum Kopieren) -->
+      <div class="sequence-preview" id="sequencePreview">
+        <h3>E-Mail Sequenz (zum Versenden)</h3>
+
+        <div class="seq-mail">
+          <div class="seq-day">Tag 1 — Sofort</div>
+          <div class="seq-subject">Betreff: Dein Guide: Die 5 größten Fehler bei Histaminintoleranz</div>
+          <div class="seq-body">Hi [Name], hier ist dein Guide. [PDF-Anhang oder Link] Ich bin Julia, 20 Jahre, und habe selbst Histaminintoleranz. Ich weiß wie überfordernd der Anfang ist. Wenn du Fragen hast, schreib mir einfach. Liebe Grüße, Julia</div>
+        </div>
+
+        <div class="seq-mail">
+          <div class="seq-day">Tag 3</div>
+          <div class="seq-subject">Betreff: Hast du den Guide schon gelesen?</div>
+          <div class="seq-body">Hi [Name], ich wollte kurz nachfragen ob du den Guide schon lesen konntest. Mein persönlicher Favorit ist Fehler Nr. 3, weil ich den selbst monatelang gemacht habe. Übrigens: Ich habe eine App gebaut die dir im Alltag hilft. Sie heißt TerraLuna und zeigt dir genau was du essen kannst. Hier ein kurzes Video wo ich sie dir zeige: [Video-Link]. Liebe Grüße, Julia</div>
+        </div>
+
+        <div class="seq-mail">
+          <div class="seq-day">Tag 7</div>
+          <div class="seq-subject">Betreff: Was ich gerne früher gewusst hätte</div>
+          <div class="seq-body">Hi [Name], als ich meine Diagnose bekommen habe, wusste ich nicht wohin. Kein Arzt konnte mir wirklich helfen. Deshalb habe ich TerraLuna gebaut. Eine App die alles kann was ich mir damals gewünscht hätte: Scanner, Rezepte, Einkaufslisten, Reise-Texte in 8 Sprachen. Schau sie dir an: [App-Store-Link]. Wenn du persönliche Unterstützung brauchst, biete ich auch Coaching an. Liebe Grüße, Julia</div>
+        </div>
+
+        <div class="seq-mail">
+          <div class="seq-day">Tag 14</div>
+          <div class="seq-subject">Betreff: 10% auf deinen ersten Charm</div>
+          <div class="seq-body">Hi [Name], ich wollte dir noch von etwas erzählen, das mir sehr am Herzen liegt. Ich forme kleine Food-Charms von Hand. Jeder Charm steht für ein Lebensmittel, das man sich zurückgeholt hat. Als kleine Belohnung für den eigenen Fortschritt. Wenn du magst, bekommst du mit dem Code WELCOME10 10% auf deine erste Bestellung. Schau mal rein: juliabergles.de/eatmoreart.html. Liebe Grüße, Julia</div>
+        </div>
+
+        <div class="seq-mail">
+          <div class="seq-day">Tag 21</div>
+          <div class="seq-subject">Betreff: Wie geht es dir?</div>
+          <div class="seq-body">Hi [Name], ich schreibe dir heute einfach nur um zu fragen: Wie geht es dir? Ich weiß, dieser Weg ist nicht leicht. Aber du bist nicht allein. Wenn du mal reden willst oder Fragen hast, ich bin da. Einfach auf diese E-Mail antworten. Du machst das wunderbar. Liebe Grüße, Julia</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function submitFunnel() {
+  const name = document.getElementById('funnelName').value.trim();
+  const email = document.getElementById('funnelEmail').value.trim();
+
+  if (!name || !email) { alert('Bitte Name und E-Mail eingeben.'); return; }
+  if (!email.includes('@')) { alert('Bitte eine gültige E-Mail eingeben.'); return; }
+
+  // Save lead
+  const leads = JSON.parse(localStorage.getItem('eatmoreart-leads') || '[]');
+  leads.push({
+    name, email,
+    datum: new Date().toLocaleDateString('de-DE'),
+    quelle: 'funnel-histamin',
+    status: 'Tag 1'
+  });
+  localStorage.setItem('eatmoreart-leads', JSON.stringify(leads));
+
+  // Show success
+  document.getElementById('funnelForm').style.display = 'none';
+  document.getElementById('funnelSuccess').style.display = 'block';
+  document.getElementById('successName').textContent = name;
+
+  // Show sequence preview for Julia (shift+click or add ?admin to URL)
+  if (window.location.search.includes('admin')) {
+    document.getElementById('sequencePreview').style.display = 'block';
+  }
+
+  // Open mailto for Julia to send the guide
+  const body = `Neuer Lead im E-Mail Funnel\n\nName: ${name}\nE-Mail: ${email}\nDatum: ${new Date().toLocaleDateString('de-DE')}\n\nBitte den Guide senden und E-Mail-Sequenz starten.`;
+  window.location.href = 'mailto:julia@bergles.net?subject=' + encodeURIComponent('Neuer Lead: ' + name) + '&body=' + encodeURIComponent(body);
+}
+</script>
+
+</body>
+</html>
