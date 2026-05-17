@@ -3,637 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EatMoreArt — Bestelle deinen persönlichen Food-Charm. Wear Your Healing.">
-  <title>Bestellen | EatMoreArt</title>
+  <meta name="description" content="Wear Your Healing — Bestelle deinen persönlichen Food-Charm. Handgemacht von Julia Bergles.">
+  <title>Bestellen | Wear Your Healing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FDF6F0; --bg-warm: #F5ECE0; --bg-dark: #2c3e6b; --bg-dark-light: #354a7a;
-      --border: #E0DCD6; --border-light: #EBE6DE;
-      --accent: #2c3e6b; --rosegold: #c9908a; --rosegold-hover: #b07e78;
-      --rosegold-light: #d4a49e; --copper: #C48B6C;
-      --rosegold-gradient: linear-gradient(135deg, #b07e78, #d4a49e, #e8c4bc, #d4a49e, #c9908a);
-      --rosegold-gradient-text: linear-gradient(135deg, #b07e78, #e8c4bc, #d4a49e, #f2d9d0, #c9908a);
-      --text-dark: #3d322a; --text: #5c5047; --text-medium: #7a6d62;
-      --text-light: #a89b8e; --text-faint: #c4b5a6;
-      --white: #FFFFFF; --cream: #fffdf9;
-      --green: #c9a96e; --green-bg: #FAF3E8;
-      --blue: #6ba3c7; --blue-bg: #edf4f9;
-      --gold: #c9a96e; --gold-bg: #faf3e8;
-      --red: #c45454; --red-bg: #faeeed;
-      --font-sans: 'Inter', -apple-system, sans-serif;
-      --font-serif: 'DM Serif Display', Georgia, serif;
+      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #5c5047;
+      --cocoa: #c4b5a6; --rosegold: #c9908a; --wine: #bf6b6b;
+      --navy: #2c3e6b; --gold: #c9a96e; --linen: #f5ece0;
+      --white: #fffdf9; --gray: #b5a99a;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,62,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
 
     /* HEADER */
-    .header { background: var(--bg-dark); padding: 80px 40px; text-align: center; }
-    .header-label { font-size: 11px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--rosegold-light); margin-bottom: 20px; }
-    .header h1 { font-family: var(--font-serif); font-size: 44px; font-weight: 400; color: var(--white); margin-bottom: 16px; }
-    .header h1 em { font-style: italic; background: var(--rosegold-gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .header p { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 550px; margin: 0 auto; font-weight: 300; line-height: 1.8; }
+    .page-header { padding: 140px 24px 60px; text-align: center; max-width: 700px; margin: 0 auto; }
+    .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; }
+    .page-header p { font-size: 16px; color: var(--cocoa); line-height: 1.8; margin-bottom: 12px; }
 
-    /* NAV BACK */
-    .nav-back { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(44,62,107,0.95); backdrop-filter: blur(12px); padding: 0 40px; height: 56px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .nav-back a { color: var(--rosegold-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-    .nav-back a:hover { color: white; }
-    .nav-logo { font-family: var(--font-serif); font-size: 18px; color: white; }
-    .nav-step { font-size: 12px; color: rgba(255,255,255,0.4); }
+    /* FORM CONTAINER */
+    .form-container { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; min-height: 400px; }
 
-    /* PROGRESS */
-    .progress { position: fixed; top: 56px; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.06); z-index: 100; }
-    .progress-fill { height: 100%; background: var(--rosegold-gradient); border-radius: 0 2px 2px 0; transition: width 0.5s ease; }
-
-    /* SECTIONS */
-    .section { padding: 60px 40px; max-width: 800px; margin: 0 auto; }
-    .section-warm { background: var(--bg-warm); padding: 60px 40px; }
-    .section-warm .inner { max-width: 800px; margin: 0 auto; }
-    .section-dark { background: var(--bg-dark); padding: 60px 40px; }
-    .section-dark .inner { max-width: 800px; margin: 0 auto; }
-
-    .label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--rosegold); margin-bottom: 14px; }
-    .label-light { color: var(--rosegold-light); }
-    .title { font-family: var(--font-serif); font-size: 30px; font-weight: 400; color: var(--text-dark); margin-bottom: 10px; }
-    .title-light { color: var(--white); }
-    .subtitle { font-size: 15px; color: var(--text-medium); max-width: 500px; margin-bottom: 36px; font-weight: 300; }
-
-    /* ORDER BLOCKS */
-    .order-block { background: var(--white); border: 1px solid var(--border-light); border-radius: 14px; overflow: hidden; margin-bottom: 24px; }
-    .order-header { padding: 22px 28px; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 14px; }
-    .order-step { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
-    .step-rose { background: rgba(201,144,138,0.1); color: var(--rosegold); }
-    .step-gold { background: var(--gold-bg); color: var(--gold); }
-    .step-blue { background: var(--blue-bg); color: var(--blue); }
-    .step-green { background: var(--green-bg); color: var(--green); }
-    .order-header h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 400; color: var(--accent); }
-    .order-header .order-hint { margin-left: auto; font-size: 12px; color: var(--text-light); }
-    .order-body { padding: 24px 28px; }
-
-    /* OPTION GRID */
-    .opt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .opt-grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .opt-grid-4 { grid-template-columns: repeat(4, 1fr); }
-    .opt-card { position: relative; cursor: pointer; }
-    .opt-card input { position: absolute; opacity: 0; width: 0; height: 0; }
-    .opt-label { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 16px; border-radius: 12px; border: 2px solid var(--border-light); background: var(--bg); transition: all 0.25s; cursor: pointer; }
-    .opt-card input:checked + .opt-label { border-color: var(--rosegold); background: rgba(201,144,138,0.06); box-shadow: 0 4px 16px rgba(201,144,138,0.1); }
-    .opt-label:hover { border-color: var(--rosegold-light); }
-    .opt-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 20px; }
-    .opt-icon.rose { background: rgba(201,144,138,0.1); color: var(--rosegold); }
-    .opt-icon.gold { background: var(--gold-bg); color: var(--gold); }
-    .opt-icon.blue { background: var(--blue-bg); color: var(--blue); }
-    .opt-icon.green { background: var(--green-bg); color: var(--green); }
-    .opt-title { font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
-    .opt-desc { font-size: 12px; color: var(--text-light); }
-    .opt-price { font-size: 16px; font-weight: 700; color: var(--rosegold); margin-top: 8px; }
-
-    /* DRAHT VISUALS */
-    .draht-circle { width: 44px; height: 44px; border-radius: 50%; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .draht-gold { background: linear-gradient(135deg, #d4a76a, #f0d4a0, #d4a76a); }
-    .draht-silber { background: linear-gradient(135deg, #c0c0c0, #e8e8e8, #c0c0c0); }
-
-    /* SIZE VISUALS */
-    .size-circle { border-radius: 50%; border: 2px solid var(--rosegold); margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--rosegold); font-weight: 700; }
-    .sz-s { width: 38px; height: 38px; }
-    .sz-m { width: 46px; height: 46px; }
-    .sz-l { width: 54px; height: 54px; }
-
-    /* FIELDS */
-    .field { margin-bottom: 20px; }
-    .field:last-child { margin-bottom: 0; }
-    .field-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
-    .field-hint { font-size: 12px; color: var(--text-light); margin-bottom: 6px; }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
-      width: 100%; padding: 13px 16px; background: var(--bg); border: 1px solid var(--border);
-      border-radius: 10px; font-family: var(--font-sans); font-size: 14px; color: var(--text); transition: all 0.3s; outline: none;
-    }
-    input:focus, textarea:focus, select:focus { border-color: var(--rosegold); box-shadow: 0 0 0 3px rgba(201,144,138,0.08); background: var(--white); }
-    textarea { min-height: 90px; resize: vertical; }
-
-    /* UPLOAD */
-    .upload-area { border: 2px dashed var(--border); border-radius: 12px; padding: 36px; text-align: center; cursor: pointer; transition: all 0.3s; position: relative; }
-    .upload-area:hover { border-color: var(--rosegold); background: rgba(201,144,138,0.02); }
-    .upload-area input[type="file"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
-    .upload-icon { font-size: 28px; color: var(--text-light); margin-bottom: 8px; }
-    .upload-text { font-size: 14px; color: var(--text-light); font-weight: 500; }
-    .upload-hint { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
-    #preview-container { margin-top: 16px; display: none; }
-    #preview-img { max-width: 200px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-
-    /* SUMMARY */
-    .summary-card { background: var(--bg-dark); border-radius: 14px; padding: 32px; }
-    .summary-row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 14px; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .summary-row:last-of-type { border-bottom: none; }
-    .summary-row span:last-child { color: var(--white); font-weight: 500; }
-    .summary-total { display: flex; justify-content: space-between; padding: 16px 0 0; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .summary-total span:first-child { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.8); }
-    .summary-total span:last-child { font-size: 24px; font-weight: 700; background: var(--rosegold-gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .summary-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.6; }
-
-    /* SUBMIT */
-    .btn-submit { width: 100%; padding: 18px; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; font-family: var(--font-sans); cursor: pointer; transition: all 0.3s; background: var(--rosegold-gradient); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); margin-top: 24px; letter-spacing: 0.5px; }
-    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,144,138,0.35); }
-    .btn-submit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
-
-    /* TIP */
-    .tip { background: var(--white); border: 1px solid var(--rosegold); border-radius: 12px; padding: 20px 24px; margin-top: 20px; display: flex; gap: 12px; align-items: flex-start; }
-    .tip-icon { width: 26px; height: 26px; min-width: 26px; border-radius: 6px; background: var(--gold-bg); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
-    .tip p { font-size: 13px; color: var(--text-medium); line-height: 1.7; }
-
-    /* SUCCESS */
-    .success { display: none; text-align: center; padding: 80px 40px; max-width: 500px; margin: 0 auto; }
-    .success h2 { font-family: var(--font-serif); font-size: 34px; color: var(--text-dark); margin-bottom: 12px; }
-    .success p { font-size: 15px; color: var(--text-medium); margin-bottom: 8px; }
-    .success a { color: var(--rosegold); text-decoration: none; font-weight: 600; }
+    /* ZAHLUNGS-HINWEIS */
+    .zahlungs-hinweis { max-width: 700px; margin: 0 auto; padding: 48px 24px; border-top: 1px solid rgba(201,169,110,0.15); }
+    .zahlungs-hinweis h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); margin-bottom: 20px; }
+    .zahlungs-hinweis p { font-size: 15px; color: var(--charcoal); line-height: 1.8; margin-bottom: 14px; }
+    .zahlungs-hinweis em { color: var(--wine); font-style: normal; font-weight: 600; }
 
     /* FOOTER */
-    footer { background: var(--bg-dark); color: rgba(255,255,255,0.3); padding: 48px 40px; text-align: center; }
-    .footer-logo { font-family: var(--font-serif); font-size: 20px; color: white; margin-bottom: 16px; }
-    footer a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; margin: 0 12px; }
-    footer a:hover { color: white; }
-    .footer-note { font-size: 11px; margin-top: 16px; }
+    footer { background: var(--navy); color: var(--gray); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
 
     @media (max-width: 768px) {
-      .header { padding: 80px 24px 60px; }
-      .header h1 { font-size: 32px; }
-      .section, .section-warm, .section-dark { padding: 40px 20px; }
-      .opt-grid, .opt-grid-3, .opt-grid-4, .field-row { grid-template-columns: 1fr; }
-      .order-header { flex-wrap: wrap; }
-      .order-header .order-hint { margin-left: 48px; }
-      .nav-back { padding: 0 20px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .page-header h1 { font-size: 34px; }
+      .page-header { padding: 120px 20px 40px; }
     }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<div class="nav-back">
-  <a href="eatmoreart.html">&#8592; Zurück</a>
-  <span class="nav-logo" style="letter-spacing: 4px; font-weight: 600;">EMA</span>
-  <span class="nav-step" id="navStep">Bestellung</span>
-</div>
-
-<!-- PROGRESS -->
-<div class="progress">
-  <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
-</div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa);">EatMoreArt</span></span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="onboarding.html">Für dich</a>
+      <a href="app.html">TerraLuna App</a>
+      <a href="eatmoreart.html">Shop</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="index.html#geschichte">Meine Geschichte</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="onboarding.html" class="nav-cta">Für dich</a>
+    </div>
+  </div>
+</nav>
 
 <!-- HEADER -->
-<div class="header" style="padding-top: 120px;">
-  <div class="header-label">Wear Your Healing</div>
-  <h1>Dein <em>Wunsch-Charm</em></h1>
-  <p>Jeder Charm wird individuell für dich angefertigt. Beschreibe dein Wunsch-Lebensmittel und ich forme es von Hand. Ich melde mich innerhalb von 24 Stunden mit einer Bestätigung.</p>
+<div class="page-header">
+  <h1>Deine Bestellung</h1>
+  <p>Schön, dass du einen Charm bei mir bestellen möchtest.</p>
+  <p>Jeder Charm wird von Hand modelliert.</p>
+  <p>Bitte gib mir 1–3 Wochen Zeit nach Zahlungseingang.</p>
 </div>
 
-<!-- FORM -->
-<div id="orderForm">
-
-<!-- STEP 1: PRODUKT -->
-<div class="section">
-  <div class="order-block">
-    <div class="order-header">
-      <div class="order-step step-rose">1</div>
-      <h3>Was darf es sein?</h3>
-      <span class="order-hint">Wähle eine Option</span>
-    </div>
-    <div class="order-body">
-      <div class="opt-grid">
-        <div class="opt-card">
-          <input type="radio" name="produkt" id="mini" value="Mini Charm" onchange="update()">
-          <label class="opt-label" for="mini">
-            <div style="font-size: 28px; color: var(--rosegold); margin-bottom: 10px;">&#10022;</div>
-            <div class="opt-title">Mini Charm</div>
-            <div class="opt-desc">Kleinster Charm</div>
-            <div class="opt-price">ab 10,00 €</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="produkt" id="kette" value="Kettenanhänger" onchange="update()">
-          <label class="opt-label" for="kette">
-            <div style="font-size: 28px; color: var(--gold); margin-bottom: 10px;">&#10047;</div>
-            <div class="opt-title">Kettenanhänger</div>
-            <div class="opt-desc">Statement Piece</div>
-            <div class="opt-price">ab 12,00 €</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="produkt" id="schluessel" value="Schlüsselanhänger" onchange="update()">
-          <label class="opt-label" for="schluessel">
-            <div style="font-size: 28px; color: var(--rosegold); margin-bottom: 10px;">&#9825;</div>
-            <div class="opt-title">Schlüsselanhänger</div>
-            <div class="opt-desc">Alltagsbegleiter</div>
-            <div class="opt-price">ab 14,00 €</div>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP 2: GRÖSSE -->
-  <div class="order-block">
-    <div class="order-header">
-      <div class="order-step step-gold">2</div>
-      <h3>Welche Größe?</h3>
-      <span class="order-hint">Handarbeit, leichte Abweichungen möglich</span>
-    </div>
-    <div class="order-body">
-      <div class="opt-grid opt-grid-3">
-        <div class="opt-card">
-          <input type="radio" name="groesse" id="klein" value="Klein (ca. 1,8 cm)" onchange="update()">
-          <label class="opt-label" for="klein">
-            <div class="size-circle sz-s">S</div>
-            <div class="opt-title">Klein</div>
-            <div class="opt-desc">ca. 1,8 cm</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="groesse" id="mittel" value="Mittel (ca. 2,0 cm)" onchange="update()">
-          <label class="opt-label" for="mittel">
-            <div class="size-circle sz-m">M</div>
-            <div class="opt-title">Mittel</div>
-            <div class="opt-desc">ca. 2,0 cm</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="groesse" id="gross" value="Groß (ca. 2,2 cm)" onchange="update()">
-          <label class="opt-label" for="gross">
-            <div class="size-circle sz-l">L</div>
-            <div class="opt-title">Groß</div>
-            <div class="opt-desc">ca. 2,2 cm</div>
-          </label>
-        </div>
-      </div>
-      <p style="font-size: 12px; color: var(--text-faint); margin-top: 12px; text-align: center;">Jeder Charm ist Handarbeit. Es kann zu leichten Abweichungen in Größe und Form kommen.</p>
-    </div>
-  </div>
-
-  <!-- STEP 3: BEFESTIGUNG -->
-  <div class="order-block">
-    <div class="order-header">
-      <div class="order-step step-blue">3a</div>
-      <h3>Mit oder ohne Kette/Armband?</h3>
-    </div>
-    <div class="order-body">
-      <div class="opt-grid opt-grid-3">
-        <div class="opt-card">
-          <input type="radio" name="befestigung" id="mit-kette" value="Mit Halskette" onchange="update()">
-          <label class="opt-label" for="mit-kette">
-            <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9734;</div>
-            <div class="opt-title">Mit Halskette</div>
-            <div class="opt-desc">Metall, nickelfrei</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="befestigung" id="mit-armband" value="Mit Armkette" onchange="update()">
-          <label class="opt-label" for="mit-armband">
-            <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#9675;</div>
-            <div class="opt-title">Mit Armkette</div>
-            <div class="opt-desc">Metall, nickelfrei</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="befestigung" id="ohne" value="Nur Charm" onchange="update()">
-          <label class="opt-label" for="ohne">
-            <div style="font-size: 24px; color: var(--rosegold); margin-bottom: 8px;">&#10022;</div>
-            <div class="opt-title">Nur Charm</div>
-            <div class="opt-desc">Ohne Kette</div>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP 3b: FARBE -->
-  <div class="order-block">
-    <div class="order-header">
-      <div class="order-step step-blue">3b</div>
-      <h3>Welche Farbe?</h3>
-      <span class="order-hint">Draht / Kette / Armband</span>
-    </div>
-    <div class="order-body">
-      <div class="opt-grid opt-grid-3">
-        <div class="opt-card">
-          <input type="radio" name="draht" id="gold" value="Gold" onchange="update()">
-          <label class="opt-label" for="gold">
-            <div class="draht-circle draht-gold"></div>
-            <div class="opt-title">Gold</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="draht" id="silber" value="Silber" onchange="update()">
-          <label class="opt-label" for="silber">
-            <div class="draht-circle draht-silber"></div>
-            <div class="opt-title">Silber</div>
-          </label>
-        </div>
-        <div class="opt-card">
-          <input type="radio" name="draht" id="rose" value="Rosé" onchange="update()">
-          <label class="opt-label" for="rose">
-            <div class="draht-circle" style="background: linear-gradient(135deg, #c9908a, #e8c4bc, #c9908a);"></div>
-            <div class="opt-title">Rosé</div>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP 4: LEBENSMITTEL -->
-  <div class="order-block">
-    <div class="order-header">
-      <div class="order-step step-green">4</div>
-      <h3>Dein Lebensmittel</h3>
-    </div>
-    <div class="order-body">
-      <div class="field">
-        <label class="field-label">Was soll ich für dich formen?</label>
-        <input type="text" id="lebensmittel" placeholder="z.B. Croissant, Kuchen, Pizza, Brezel..." oninput="update()">
-      </div>
-      <div class="field">
-        <label class="field-label">Was bedeutet es dir? <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
-        <div class="field-hint">Erzähl mir, wenn du magst, warum dieses Lebensmittel besonders ist.</div>
-        <textarea id="bedeutung" placeholder="z.B. Das war das erste Essen, das ich nach meiner Diagnose wieder genießen konnte..."></textarea>
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP 5: FOTO -->
-  <div class="order-block">
-    <div class="order-header">
-      <div class="order-step step-rose">5</div>
-      <h3>Referenzfoto</h3>
-      <span class="order-hint">Optional</span>
-    </div>
-    <div class="order-body">
-      <div class="field-hint" style="margin-bottom: 12px;">Hast du ein Foto von dem Lebensmittel? Das hilft mir beim Formen.</div>
-      <div class="upload-area">
-        <input type="file" id="foto" accept="image/*" onchange="previewImage(this)">
-        <div class="upload-icon">&#128247;</div>
-        <div class="upload-text">Foto hierher ziehen oder klicken</div>
-        <div class="upload-hint">JPG, PNG oder HEIC. Max. 10 MB.</div>
-      </div>
-      <div id="preview-container">
-        <img id="preview-img" alt="Vorschau">
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP 6: KONTAKT -->
-  <div class="order-block">
-    <div class="order-header">
-      <div class="order-step step-gold">6</div>
-      <h3>Deine Daten</h3>
-    </div>
-    <div class="order-body">
-      <div class="field-row">
-        <div class="field">
-          <label class="field-label">Name</label>
-          <input type="text" id="name" placeholder="Dein Name">
-        </div>
-        <div class="field">
-          <label class="field-label">E-Mail</label>
-          <input type="email" id="email" placeholder="deine@email.de">
-        </div>
-      </div>
-      <div class="field-row">
-        <div class="field">
-          <label class="field-label">Telefon / WhatsApp <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
-          <input type="tel" id="telefon" placeholder="+49...">
-        </div>
-        <div class="field">
-          <label class="field-label">Geschenkverpackung? (+1 €)</label>
-          <select id="geschenk" onchange="toggleGeschenkOptionen(); update()">
-            <option value="Nein">Nein, für mich selbst</option>
-            <option value="Ja">Ja, als Geschenk</option>
-          </select>
-        </div>
-      </div>
-      <div id="geschenkOptionen" style="display: none;">
-        <div class="field-row">
-          <div class="field">
-            <label class="field-label">Für wen ist das Geschenk?</label>
-            <select id="geschenkFuer">
-              <option value="Weiblich">Weiblich</option>
-              <option value="Männlich">Männlich</option>
-              <option value="Divers">Divers</option>
-            </select>
-          </div>
-          <div class="field">
-            <label class="field-label">Widmungstext <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
-            <input type="text" id="widmung" placeholder="z.B. Für Lisa, du schaffst das!">
-          </div>
-        </div>
-      </div>
-      <div class="field-row">
-        <div class="field">
-          <label class="field-label">Straße</label>
-          <input type="text" id="strasse" placeholder="Musterstraße">
-        </div>
-        <div class="field">
-          <label class="field-label">Hausnummer</label>
-          <input type="text" id="hausnummer" placeholder="12a">
-        </div>
-      </div>
-      <div class="field-row">
-        <div class="field">
-          <label class="field-label">PLZ</label>
-          <input type="text" id="plz" placeholder="86517">
-        </div>
-        <div class="field">
-          <label class="field-label">Ort</label>
-          <input type="text" id="ort" placeholder="Wehringen">
-        </div>
-      </div>
-      <div class="field">
-        <label class="field-label">Anmerkungen <span style="font-weight: 400; color: var(--text-light);">(optional)</span></label>
-        <textarea id="anmerkungen" placeholder="Besondere Wünsche? Widmungstext für Geschenk?" style="min-height: 60px;"></textarea>
-      </div>
-    </div>
-  </div>
-
-  <!-- SUMMARY -->
-  <div class="order-block" style="border: none; background: transparent;">
-    <div class="summary-card">
-      <div class="label-light" style="font-size: 11px; letter-spacing: 3px; margin-bottom: 16px;">Zusammenfassung</div>
-      <div class="summary-row"><span>Produkt</span><span id="s-produkt">Noch nicht gewählt</span></div>
-      <div class="summary-row"><span>Größe</span><span id="s-groesse">Noch nicht gewählt</span></div>
-      <div class="summary-row"><span>Befestigung</span><span id="s-befestigung">Noch nicht gewählt</span></div>
-      <div class="summary-row"><span>Farbe</span><span id="s-draht">Noch nicht gewählt</span></div>
-      <div class="summary-row"><span>Lebensmittel</span><span id="s-lebensmittel">-</span></div>
-      <div class="summary-row"><span>Geschenk</span><span id="s-geschenk">Nein</span></div>
-      <div class="summary-total"><span>Gesamtpreis inkl. Versand</span><span id="s-preis">-</span></div>
-      <div class="summary-note">Alle Metallteile (Ketten, Armbänder, Verschlüsse, Ösen) sind nickelfrei und hautverträglich.<br><br>Alle Preise inkl. Versand innerhalb Deutschlands. Du erhältst eine Bestätigung per E-Mail mit Zahlungsdetails (PayPal oder Überweisung). Der Charm wird nach Zahlungseingang angefertigt. Lieferzeit ca. 2-7 Werktage nach Zahlungseingang. Halsketten und Armketten werden auf Bestellung beschafft, daher kann es in Einzelfällen etwas länger dauern.</div>
-    </div>
-    <!-- Datenschutz -->
-    <div style="margin-top: 24px; display: flex; align-items: flex-start; gap: 12px;">
-      <input type="checkbox" id="datenschutz" style="margin-top: 4px; width: 18px; height: 18px; accent-color: var(--rosegold); cursor: pointer; flex-shrink: 0;">
-      <label for="datenschutz" style="font-size: 13px; color: var(--text-medium); cursor: pointer; line-height: 1.6;">Ich habe die <a href="datenschutz.html" target="_blank" style="color: var(--rosegold); text-decoration: underline;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bestellabwicklung zu. Meine Daten werden ausschließlich für diese Bestellung verwendet und nicht an Dritte weitergegeben.</label>
-    </div>
-    <button class="btn-submit" id="submitBtn" onclick="submitOrder()" disabled>Bestellung absenden</button>
-    <div class="tip">
-      <div class="tip-icon">!</div>
-      <p>Nach dem Absenden öffnet sich dein E-Mail-Programm mit allen Details. Ich melde mich innerhalb von 24 Stunden bei dir mit einer Bestätigung und den Zahlungsdaten.</p>
-    </div>
-  </div>
-</div>
+<!-- TALLY FORMULAR -->
+<div class="form-container">
+  <iframe
+    data-tally-src="https://tally.so/embed/lbY7oW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    loading="lazy"
+    width="100%"
+    height="500"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    title="Wear Your Healing Bestellung"
+    style="border: none;">
+  </iframe>
+  <script src="https://tally.so/widgets/embed.js"></script>
 </div>
 
-<!-- SUCCESS -->
-<div class="success" id="successMsg">
-  <h2>Danke für deine Bestellung!</h2>
-  <p>Ich habe deine Anfrage erhalten und melde mich innerhalb von 24 Stunden bei dir.</p>
-  <p>Du bekommst eine Bestätigung an deine E-Mail-Adresse.</p>
-
-  <!-- BONUSKARTE HINWEIS -->
-  <div style="background: var(--bg-dark); border-radius: 16px; padding: 28px; margin-top: 32px; text-align: center;">
-    <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rosegold-light); margin-bottom: 10px;">Bonuskarte</div>
-    <h3 style="font-family: var(--font-serif); font-size: 22px; color: white; margin-bottom: 8px;">Dein 6. Charm ist geschenkt!</h3>
-    <p style="font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 16px; line-height: 1.7;">Jede Bestellung = 1 Stempel. Bei 5 Stempeln bekommst du einen Charm deiner Wahl kostenlos. Lade dir die TerraLuna App herunter und sammle deine Stempel digital.</p>
-    <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 16px;">
-      <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--rosegold); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 700;">1</div>
-      <div style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 700;">2</div>
-      <div style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 700;">3</div>
-      <div style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 700;">4</div>
-      <div style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 700;">5</div>
-      <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #dbb88a); display: flex; align-items: center; justify-content: center; color: white; font-size: 16px;">&#9733;</div>
-    </div>
-    <p style="font-size: 12px; color: rgba(255,255,255,0.3);">Deine digitale Bonuskarte findest du in der TerraLuna App unter "Healing Collection".</p>
-  </div>
-
-  <p style="margin-top: 24px;"><a href="eatmoreart.html" style="color: var(--rosegold); text-decoration: none; font-weight: 600;">Zurück zu EatMoreArt</a></p>
+<!-- ZAHLUNGS-HINWEIS -->
+<div class="zahlungs-hinweis">
+  <h2>Zur Bezahlung</h2>
+  <p>Bezahlt wird per Vorkasse-Überweisung oder PayPal.</p>
+  <p>Vorkasse ist mir am liebsten — sie ist einfach und sicher für uns beide.</p>
+  <p><em>Hinweis:</em> In den letzten Monaten gab es leider vermehrt Zahlungsschwierigkeiten. Deshalb produziere ich erst nach Zahlungseingang. Vielen Dank für dein Verständnis.</p>
+  <p>Wenn dir Vorkasse unangenehm ist, wähle gerne PayPal.</p>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><span style="letter-spacing: 4px; font-weight: 600;">EMA</span> <span style="font-size: 14px; font-weight: 300; opacity: 0.6;">EatMoreArt</span></div>
-  <a href="index.html">TerraLuna App</a>
-  <a href="eatmoreart.html">EatMoreArt</a>
-  <a href="impressum.html">Impressum</a>
-  <a href="datenschutz.html">Datenschutz</a>
-  <div class="footer-note">Handgemachte Unikate. © 2026 EatMoreArt · Julia Bergles</div>
+  <div class="footer-inner">
+    <div class="footer-logo"><span style="letter-spacing: 4px; font-weight: 600;">EMA</span> <span style="font-size: 14px; font-weight: 300; opacity: 0.6;">EatMoreArt</span></div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="eatmoreart.html">Shop</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="widerruf.html">Widerruf</a>
+    </div>
+    <p style="font-size: 13px; margin-top: 16px; color: var(--gray);">Mit deiner Bestellung akzeptierst du meine <a href="datenschutz.html" style="color: var(--white); text-decoration: underline;">Datenschutzerklärung</a> und das <a href="impressum.html" style="color: var(--white); text-decoration: underline;">Impressum</a>.</p>
+    <div class="footer-disclaimer">Handgemachte Unikate. © 2026 EatMoreArt · Julia Bergles</div>
+  </div>
 </footer>
-
-<script>
-const preise = { 'Mini Charm': 10, 'Kettenanhänger': 12, 'Schlüsselanhänger': 14, 'Individuell': 0 };
-const befestigungAufpreis = { 'Mit Halskette': 11, 'Mit Armkette': 9, 'Nur Charm': 0 };
-
-// Datenschutz checkbox enables submit
-document.getElementById('datenschutz').addEventListener('change', function() {
-  document.getElementById('submitBtn').disabled = !this.checked;
-});
-
-function toggleGeschenkOptionen() {
-  const ge = document.getElementById('geschenk').value;
-  document.getElementById('geschenkOptionen').style.display = ge === 'Ja' ? 'block' : 'none';
-}
-
-function update() {
-  const p = document.querySelector('input[name="produkt"]:checked');
-  const g = document.querySelector('input[name="groesse"]:checked');
-  const bf = document.querySelector('input[name="befestigung"]:checked');
-  const d = document.querySelector('input[name="draht"]:checked');
-  const l = document.getElementById('lebensmittel').value;
-  const ge = document.getElementById('geschenk').value;
-
-  document.getElementById('s-produkt').textContent = p ? p.value : 'Noch nicht gewählt';
-  document.getElementById('s-groesse').textContent = g ? g.value : 'Noch nicht gewählt';
-  document.getElementById('s-befestigung').textContent = bf ? bf.value : 'Noch nicht gewählt';
-  document.getElementById('s-draht').textContent = d ? d.value : 'Noch nicht gewählt';
-  document.getElementById('s-lebensmittel').textContent = l || '-';
-  const geFuer = ge === 'Ja' ? document.getElementById('geschenkFuer').value : '';
-  document.getElementById('s-geschenk').textContent = ge === 'Ja' ? 'Ja (' + geFuer + ')' : 'Nein';
-
-  if (p) {
-    let pr = preise[p.value];
-    const bfAufpreis = bf ? (befestigungAufpreis[bf.value] || 0) : 0;
-    const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
-    const total = pr + bfAufpreis + geschenkAufpreis;
-    if (pr > 0) {
-      document.getElementById('s-preis').textContent = total.toFixed(2) + ' €';
-    } else {
-      document.getElementById('s-preis').textContent = 'Auf Anfrage';
-    }
-  }
-
-  // Progress
-  let filled = 0;
-  if (p) filled++;
-  if (g) filled++;
-  if (d) filled++;
-  if (l) filled++;
-  document.getElementById('progressFill').style.width = (filled / 6 * 100) + '%';
-}
-
-function previewImage(input) {
-  if (input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      document.getElementById('preview-img').src = e.target.result;
-      document.getElementById('preview-container').style.display = 'block';
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
-function submitOrder() {
-  const p = document.querySelector('input[name="produkt"]:checked');
-  const g = document.querySelector('input[name="groesse"]:checked');
-  const bf = document.querySelector('input[name="befestigung"]:checked');
-  const d = document.querySelector('input[name="draht"]:checked');
-  const l = document.getElementById('lebensmittel').value;
-  const b = document.getElementById('bedeutung').value;
-  const n = document.getElementById('name').value;
-  const e = document.getElementById('email').value;
-  const t = document.getElementById('telefon').value;
-  const strasse = document.getElementById('strasse').value;
-  const hausnr = document.getElementById('hausnummer').value;
-  const plz = document.getElementById('plz').value;
-  const ort = document.getElementById('ort').value;
-  const an = document.getElementById('anmerkungen').value;
-  const ge = document.getElementById('geschenk').value;
-  const a = strasse + ' ' + hausnr + ', ' + plz + ' ' + ort;
-
-  if (!p || !g || !bf || !d || !l || !n || !e || !strasse || !hausnr || !plz || !ort) { alert('Bitte fülle alle Pflichtfelder aus.'); return; }
-  if (!document.getElementById('datenschutz').checked) { alert('Bitte stimme der Datenschutzerklärung zu.'); return; }
-
-  const bfAufpreis = befestigungAufpreis[bf.value] || 0;
-  const geschenkAufpreis = ge === 'Ja' ? 1 : 0;
-  const pr = preise[p.value] + bfAufpreis + geschenkAufpreis;
-  const preisText = pr > 0 ? pr.toFixed(2) + ' € inkl. Versand' : 'Auf Anfrage (20 €/Std. + Material)';
-
-  // Save order to localStorage for dashboard
-  const order = {
-    id: 'EA-' + Date.now().toString(36).toUpperCase(),
-    datum: new Date().toLocaleDateString('de-DE'),
-    zeit: new Date().toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'}),
-    produkt: p.value, groesse: g.value, befestigung: bf.value, draht: d.value,
-    lebensmittel: l, bedeutung: b, geschenk: ge,
-    geschenkFuer: ge === 'Ja' ? document.getElementById('geschenkFuer').value : '',
-    widmung: ge === 'Ja' ? (document.getElementById('widmung').value || '') : '',
-    preis: pr, preisText: preisText,
-    name: n, email: e, telefon: t, adresse: a, anmerkungen: an,
-    status: 'Neu', bezahlt: false
-  };
-  const orders = JSON.parse(localStorage.getItem('eatmoreart-orders') || '[]');
-  orders.push(order);
-  localStorage.setItem('eatmoreart-orders', JSON.stringify(orders));
-
-  const body = `Neue Bestellung bei EatMoreArt\n\nBestellnummer: ${order.id}\nDatum: ${order.datum} ${order.zeit}\n\nBESTELLUNG:\nProdukt: ${p.value}\nGröße: ${g.value}\nBefestigung: ${bf.value}\nFarbe: ${d.value}\nLebensmittel: ${l}\n${b ? 'Bedeutung: ' + b + '\n' : ''}Geschenk: ${ge}${ge === 'Ja' ? ' (für: ' + document.getElementById('geschenkFuer').value + ')' : ''}${document.getElementById('widmung').value ? '\nWidmung: ' + document.getElementById('widmung').value : ''}\nPreis: ${preisText}\n\nKUNDENDATEN:\nName: ${n}\nE-Mail: ${e}\n${t ? 'Telefon: ' + t + '\n' : ''}Adresse: ${a}\n${an ? 'Anmerkungen: ' + an : ''}\n\nDatenschutz: Zugestimmt`;
-
-  window.location.href = 'mailto:julia@bergles.net?subject=' + encodeURIComponent('Bestellung ' + order.id + ': ' + p.value + ' - ' + l) + '&body=' + encodeURIComponent(body);
-
-  document.getElementById('orderForm').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  document.querySelector('.header').style.display = 'none';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
 
 </body>
 </html>
