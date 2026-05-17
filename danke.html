@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Danke für deine Bestellung bei Wear Your Healing.">
+  <title>Danke! | Wear Your Healing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #5c5047;
+      --cocoa: #c4b5a6; --rosegold: #c9908a; --wine: #bf6b6b;
+      --navy: #2c3e6b; --gold: #c9a96e; --linen: #f5ece0;
+      --white: #fffdf9; --gray: #b5a99a; --honey: #dbb88a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,62,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* MAIN */
+    .danke-page { padding: 140px 24px 80px; max-width: 600px; margin: 0 auto; text-align: center; }
+    .danke-page h1 { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; }
+    .danke-page .subtitle { font-size: 16px; color: var(--cocoa); line-height: 1.8; margin-bottom: 12px; }
+
+    /* BONUSKARTE */
+    .bonuskarte { background: var(--navy); border-radius: 24px; padding: 36px 32px; margin-top: 40px; text-align: center; }
+    .bonuskarte-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .bonuskarte h2 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--white); margin-bottom: 10px; }
+    .bonuskarte .beschreibung { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 24px; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .stempel-reihe { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .stempel { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
+    .stempel-aktiv { background: var(--rosegold); color: var(--white); }
+    .stempel-leer { border: 2px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.3); }
+    .stempel-geschenk { background: linear-gradient(135deg, var(--gold), var(--honey)); color: var(--white); font-size: 18px; }
+    .bonuskarte .hinweis { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.6; }
+    .bonuskarte .code-hinweis { background: rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 20px; margin-top: 20px; border: 1px solid rgba(255,255,255,0.08); }
+    .bonuskarte .code-hinweis p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .bonuskarte .code-hinweis strong { color: var(--gold); }
+
+    /* WEITER-LINKS */
+    .weiter-links { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .weiter-links a { color: var(--rosegold); text-decoration: none; font-weight: 600; font-size: 15px; transition: color 0.2s; }
+    .weiter-links a:hover { color: var(--wine); }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: var(--gray); padding: 60px 24px; margin-top: 80px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .danke-page h1 { font-size: 34px; }
+      .danke-page { padding: 120px 20px 60px; }
+      .stempel { width: 38px; height: 38px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa);">EatMoreArt</span></span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="onboarding.html">Für dich</a>
+      <a href="app.html">TerraLuna App</a>
+      <a href="eatmoreart.html">Shop</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="index.html#geschichte">Meine Geschichte</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="onboarding.html" class="nav-cta">Für dich</a>
+    </div>
+  </div>
+</nav>
+
+<!-- DANKE -->
+<div class="danke-page">
+  <h1>Danke, dass du dir einen Charm wünschst.</h1>
+  <p class="subtitle">Deine Bestellung ist bei mir angekommen.</p>
+  <p class="subtitle">Ich schaue mir alles in Ruhe an und melde mich persönlich bei dir — spätestens innerhalb von 24 Stunden.</p>
+  <p class="subtitle">In deinem Postfach findest du gleich eine Bestätigung mit allen Details.</p>
+
+  <!-- BONUSKARTE -->
+  <div class="bonuskarte">
+    <div class="bonuskarte-label">Bonuskarte</div>
+    <h2>Dein 6. Charm ist geschenkt.</h2>
+    <p class="beschreibung">Jede Bestellung bringt dir einen Stempel. Bei 5 Stempeln bekommst du einen Charm deiner Wahl kostenlos.</p>
+
+    <div class="stempel-reihe">
+      <div class="stempel stempel-aktiv">1</div>
+      <div class="stempel stempel-leer">2</div>
+      <div class="stempel stempel-leer">3</div>
+      <div class="stempel stempel-leer">4</div>
+      <div class="stempel stempel-leer">5</div>
+      <div class="stempel stempel-geschenk">&#9733;</div>
+    </div>
+
+    <div class="code-hinweis">
+      <p>Du bekommst mit deiner Bestellung einen <strong>persönlichen Stempel-Code</strong>.</p>
+      <p>Gib ihn in der TerraLuna App ein und sieh deinen Fortschritt jederzeit.</p>
+    </div>
+
+    <p class="hinweis" style="margin-top: 16px;">Deine digitale Bonuskarte findest du in der TerraLuna App unter "Healing Collection".</p>
+  </div>
+
+  <!-- WEITER -->
+  <div class="weiter-links">
+    <a href="eatmoreart.html">Zurück zum Shop</a>
+    <a href="index.html">Zur Startseite</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span style="letter-spacing: 4px; font-weight: 600;">EMA</span> <span style="font-size: 14px; font-weight: 300; opacity: 0.6;">EatMoreArt</span></div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="eatmoreart.html">Shop</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="widerruf.html">Widerruf</a>
+    </div>
+    <div class="footer-disclaimer">Handgemachte Unikate. © 2026 EatMoreArt · Julia Bergles</div>
+  </div>
+</footer>
+
+</body>
+</html>
