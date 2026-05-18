@@ -8,89 +8,101 @@
   <style>
     @page { size: A4; margin: 0; }
     :root {
-      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #5c5047;
-      --cocoa: #c4b5a6; --rosegold: #c9908a; --wine: #bf6b6b;
-      --navy: #2c3e6b; --gold: #c9a96e; --linen: #f5ece0;
-      --white: #fffdf9; --gray: #b5a99a; --honey: #dbb88a;
+      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #3d322a;
+      --text: #5c5047; --cocoa: #c4b5a6; --rosegold: #c9908a;
+      --wine: #bf6b6b; --navy: #2c3e6b; --gold: #c9a96e;
+      --linen: #f5ece0; --white: #fffdf9; --gray: #b5a99a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.8; font-size: 14px; }
+    body { font-family: 'Inter', sans-serif; background: #e8e0d4; color: var(--text); line-height: 1.8; font-size: 13.5px; -webkit-font-smoothing: antialiased; }
 
-    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 48px; background: var(--cream); page-break-after: always; position: relative; overflow: hidden; }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 64px 72px; background: var(--cream); page-break-after: always; position: relative; overflow: hidden; }
     .page:last-child { page-break-after: auto; }
 
+    /* DECORATIVE LINE */
+    .page::after { content: ''; position: absolute; top: 56px; right: 56px; width: 1px; height: calc(100% - 112px); background: linear-gradient(180deg, transparent, var(--cocoa), transparent); opacity: 0.2; }
+
     /* COVER */
-    .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--navy); color: var(--white); }
-    .cover-label { font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
-    .cover h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; line-height: 1.15; margin-bottom: 12px; }
+    .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--navy); color: var(--white); padding: 80px 60px; }
+    .cover::after { display: none; }
+    .cover-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+    .cover-label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .cover h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
     .cover h1 em { color: var(--gold); font-style: italic; }
-    .cover .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: rgba(255,255,255,0.5); font-style: italic; margin-bottom: 40px; }
-    .cover .author { font-size: 13px; color: rgba(255,255,255,0.4); letter-spacing: 2px; }
-    .cover .brand { position: absolute; bottom: 48px; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 2px; }
+    .cover .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 48px; letter-spacing: 0.5px; }
+    .cover .cover-line-bottom { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
+    .cover .author { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: uppercase; }
+    .cover .brand { position: absolute; bottom: 52px; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 3px; text-transform: uppercase; }
 
     /* HEADINGS */
-    h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
-    h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--navy); margin: 28px 0 10px; }
-    h4 { font-size: 14px; font-weight: 600; color: var(--charcoal); margin: 20px 0 8px; }
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 18px; line-height: 1.25; letter-spacing: -0.3px; }
+    h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--navy); margin: 28px 0 10px; }
+    h4 { font-size: 12px; font-weight: 600; color: var(--charcoal); margin: 18px 0 6px; letter-spacing: 0.5px; text-transform: uppercase; }
 
-    p { margin-bottom: 12px; }
-    .lead { font-size: 15px; color: var(--cocoa); line-height: 1.9; margin-bottom: 20px; }
+    p { margin-bottom: 11px; color: var(--text); }
+    .lead { font-size: 14px; color: var(--cocoa); line-height: 1.9; margin-bottom: 20px; }
 
     /* PAGE LABEL */
-    .page-label { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
-    .page-number { position: absolute; bottom: 32px; right: 48px; font-size: 11px; color: var(--cocoa); }
+    .page-label { font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .page-number { position: absolute; bottom: 48px; right: 72px; font-size: 10px; color: var(--cocoa); font-weight: 300; }
+
+    /* DIVIDER */
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 8px 0 24px; }
 
     /* INFO BOX */
-    .info-box { background: var(--navy); border-radius: 16px; padding: 28px 24px; color: var(--white); margin: 24px 0; }
-    .info-box h3 { color: var(--gold); margin-top: 0; }
-    .info-box p { color: rgba(255,255,255,0.7); font-size: 13px; }
-    .info-box ul { color: rgba(255,255,255,0.7); font-size: 13px; margin-left: 16px; }
-    .info-box li { margin-bottom: 4px; }
+    .info-box { background: var(--navy); border-radius: 14px; padding: 28px 26px; color: var(--white); margin: 24px 0; }
+    .info-box h3 { color: var(--gold); margin-top: 0; font-size: 18px; }
+    .info-box p { color: rgba(255,255,255,0.65); font-size: 12.5px; line-height: 1.8; }
+    .info-box ul { color: rgba(255,255,255,0.65); font-size: 12.5px; margin-left: 16px; line-height: 1.8; }
+    .info-box li { margin-bottom: 3px; }
 
     /* HIGHLIGHT BOX */
-    .highlight-box { background: var(--linen); border-radius: 12px; padding: 24px; margin: 20px 0; border-left: 4px solid var(--gold); }
-    .highlight-box p { margin-bottom: 6px; font-size: 13px; }
+    .highlight-box { background: var(--linen); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--gold); }
+    .highlight-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
     .highlight-box strong { color: var(--navy); }
 
     /* WARN BOX */
-    .warn-box { background: rgba(191,107,107,0.06); border-radius: 12px; padding: 24px; margin: 20px 0; border-left: 4px solid var(--wine); }
-    .warn-box p { margin-bottom: 6px; font-size: 13px; }
+    .warn-box { background: rgba(44,62,107,0.04); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--wine); }
+    .warn-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
 
     /* LISTS */
-    .ampel { list-style: none; margin: 16px 0; }
-    .ampel li { padding: 8px 12px; border-radius: 8px; margin-bottom: 6px; font-size: 13px; }
-    .ampel .gruen { background: rgba(127,177,116,0.12); border-left: 4px solid #7fb174; }
-    .ampel .gelb { background: rgba(232,169,82,0.12); border-left: 4px solid #e8a952; }
-    .ampel .rot { background: rgba(196,84,84,0.1); border-left: 4px solid #c45454; }
-
-    ul { margin: 12px 0 16px 20px; }
-    li { margin-bottom: 6px; font-size: 13px; }
+    ul { margin: 10px 0 14px 18px; }
+    li { margin-bottom: 5px; font-size: 12.5px; color: var(--text); }
 
     /* TWO COLUMNS */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 16px 0; }
-    .col-box { background: var(--warmwhite); border-radius: 12px; padding: 20px; border: 1px solid rgba(201,169,110,0.1); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+    .col-box { background: var(--warmwhite); border-radius: 10px; padding: 20px; border: 1px solid rgba(201,169,110,0.08); }
     .col-box h4 { margin-top: 0; color: var(--navy); }
 
+    /* FOOD SECTION */
+    .food-section { margin: 20px 0; }
+    .food-section h3 { font-size: 18px; margin-bottom: 12px; }
+    .food-label { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+    .food-label.meiden { background: rgba(191,107,107,0.1); color: var(--wine); }
+    .food-label.vorsicht { background: rgba(201,169,110,0.15); color: #a8884d; }
+    .food-label.safe { background: rgba(44,62,107,0.08); color: var(--navy); }
+
     /* QUOTE */
-    .quote { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--wine); text-align: center; padding: 32px 24px; line-height: 1.6; }
+    .quote { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--navy); text-align: center; padding: 28px 20px; line-height: 1.6; }
 
     /* CTA */
-    .cta-box { background: var(--navy); border-radius: 20px; padding: 36px; text-align: center; color: var(--white); margin: 32px 0; }
-    .cta-box h3 { color: var(--gold); font-size: 26px; margin: 0 0 12px; }
-    .cta-box p { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 8px; }
-    .cta-box .app-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin: 16px 0 8px; }
+    .cta-box { background: var(--navy); border-radius: 16px; padding: 36px 32px; text-align: center; color: var(--white); margin: 28px 0; }
+    .cta-box h3 { color: var(--gold); font-size: 24px; margin: 0 0 12px; }
+    .cta-box p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 7px; }
+    .cta-box .app-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); margin: 14px 0 8px; font-style: italic; }
 
     /* DISCLAIMER */
-    .disclaimer { background: var(--linen); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .disclaimer { background: var(--linen); border-radius: 10px; padding: 20px; margin-top: 24px; }
     .disclaimer p { font-size: 11px; color: var(--cocoa); margin-bottom: 4px; }
 
     /* PRINT */
     @media print {
       body { background: white; }
       .page { box-shadow: none; margin: 0; }
+      .page::after { display: none; }
     }
     @media screen {
-      .page { box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin: 24px auto; border-radius: 4px; }
+      .page { box-shadow: 0 2px 40px rgba(0,0,0,0.06); margin: 32px auto; }
     }
   </style>
 </head>
@@ -98,16 +110,19 @@
 
 <!-- SEITE 1: COVER -->
 <div class="page cover">
-  <div class="cover-label">Starter-Guide</div>
-  <h1>Histamin&shy;intoleranz<br><em>verstehen</em></h1>
+  <div class="cover-label">Starter Guide</div>
+  <div class="cover-line"></div>
+  <h1>Histamin<wbr>intoleranz<br><em>verstehen</em></h1>
   <p class="subtitle">Dein erster Schritt zu mehr Klarheit</p>
-  <p class="author">JULIA BERGLES</p>
-  <p class="brand">EATMOREART / TERRALUNA</p>
+  <div class="cover-line-bottom"></div>
+  <p class="author">Julia Bergles</p>
+  <p class="brand">EatMoreArt &middot; TerraLuna</p>
 </div>
 
 <!-- SEITE 2: VORWORT -->
 <div class="page">
   <p class="page-label">Vorwort</p>
+  <div class="divider"></div>
   <h2>Hey, ich bin Julia.</h2>
   <p class="lead">Mein Interesse für das Thema Ernährung ist nicht theoretisch entstanden, sondern aus meiner eigenen Geschichte.</p>
   <p>Über viele Jahre war mein Verhältnis zu Ernährung sehr schwierig. Ich habe mich stark mit Essen, Regeln und verschiedenen Ernährungsformen beschäftigt und immer wieder versucht, "die richtige" Ernährung zu finden.</p>
@@ -116,7 +131,7 @@
   <p>Mittlerweile kann ich wieder fast alles essen, was histaminarm ist. Und genau aus dieser Erfahrung heraus ist dieser Guide entstanden.</p>
 
   <div class="highlight-box">
-    <p><strong>Dieser Guide soll dir helfen,</strong> Histaminintoleranz zu verstehen — ohne Druck, ohne Extreme, ohne starre Regeln. Einfach Klarheit.</p>
+    <p><strong>Dieser Guide soll dir helfen,</strong> Histaminintoleranz zu verstehen. Ohne Druck, ohne Extreme, ohne starre Regeln. Einfach Klarheit.</p>
   </div>
 
   <div class="disclaimer">
@@ -128,15 +143,16 @@
 <!-- SEITE 3: WAS IST HIT -->
 <div class="page">
   <p class="page-label">Kapitel 1</p>
+  <div class="divider"></div>
   <h2>Was ist Histaminintoleranz?</h2>
 
   <p>Histaminintoleranz (HIT) ist ein <strong>Ungleichgewicht</strong> zwischen der Histamin-Aufnahme und dem Histamin-Abbau.</p>
 
   <div class="info-box">
-    <h3>Histamin — kurz erklärt</h3>
+    <h3>Histamin, kurz erklärt</h3>
     <ul>
       <li>Ein körpereigener Botenstoff (Immunreaktion, Magensäure, Nervensystem)</li>
-      <li>Wird über die Nahrung aufgenommen — vor allem in gereiften, fermentierten oder lange gelagerten Produkten</li>
+      <li>Wird über die Nahrung aufgenommen, vor allem in gereiften, fermentierten oder lange gelagerten Produkten</li>
       <li>Wird normalerweise vom Enzym <strong>DAO</strong> (Diaminoxidase) im Darm abgebaut</li>
     </ul>
     <p style="margin-top: 12px;"><strong>Das Problem:</strong> Bei HIT ist der Abbau vermindert. Es staut sich Histamin an.</p>
@@ -159,17 +175,17 @@
     <div class="col-box">
       <h4>Ganzer Körper</h4>
       <ul style="margin-left: 16px;">
-        <li>Kopfschmerzen / Migräne</li>
-        <li>Hautreaktionen / Flush</li>
+        <li>Kopfschmerzen, Migräne</li>
+        <li>Hautreaktionen, Flush</li>
         <li>Herzklopfen</li>
-        <li>Müdigkeit / Brain Fog</li>
+        <li>Müdigkeit, Brain Fog</li>
         <li>PMS-Beschwerden</li>
       </ul>
     </div>
   </div>
 
   <div class="highlight-box">
-    <p><strong>Wichtig:</strong> Nicht jeder hat alle Symptome. Und die Verträglichkeit schwankt — sie hängt nicht nur vom Lebensmittel ab, sondern auch von Stress, Schlaf, Zyklus und Darmgesundheit.</p>
+    <p><strong>Wichtig:</strong> Nicht jeder hat alle Symptome. Und die Verträglichkeit schwankt. Sie hängt nicht nur vom Lebensmittel ab, sondern auch von Stress, Schlaf, Zyklus und Darmgesundheit.</p>
   </div>
   <span class="page-number">3</span>
 </div>
@@ -177,28 +193,29 @@
 <!-- SEITE 4: BELASTUNGSMODELL -->
 <div class="page">
   <p class="page-label">Kapitel 2</p>
-  <h2>HIT ist keine feste Liste — sondern ein Belastungsmodell</h2>
+  <div class="divider"></div>
+  <h2>HIT ist keine feste Liste, sondern ein Belastungsmodell</h2>
 
   <p>Das ist das Wichtigste, was du über Histaminintoleranz verstehen musst:</p>
 
   <div class="quote">"Es geht nicht darum, welches Lebensmittel du isst. Es geht darum, wie voll dein Fass gerade ist."</div>
 
-  <p>Dein Körper hat ein "Histamin-Fass". Solange es nicht überläuft, verträgst du vieles. Aber wenn das Fass voll ist — durch Stress, schlechten Schlaf, Zyklusphase, Darmprobleme — reicht schon eine kleine Menge Histamin für eine Reaktion.</p>
+  <p>Dein Körper hat ein "Histamin-Fass". Solange es nicht überläuft, verträgst du vieles. Aber wenn das Fass voll ist, durch Stress, schlechten Schlaf, Zyklusphase oder Darmprobleme, reicht schon eine kleine Menge Histamin für eine Reaktion.</p>
 
   <h3>Was das Fass füllt</h3>
   <ul>
     <li><strong>Histaminreiche Lebensmittel</strong> (gereift, fermentiert, lange gelagert)</li>
     <li><strong>Histaminliberatoren</strong> (setzen körpereigenes Histamin frei: Erdbeeren, Zitrusfrüchte, Schokolade)</li>
     <li><strong>DAO-Hemmer</strong> (blockieren den Abbau: Alkohol, Kaffee, schwarzer Tee)</li>
-    <li><strong>Stress & Schlafmangel</strong></li>
-    <li><strong>Hormonelle Schwankungen</strong> (Östrogen erhöht Histamin — rund um den Eisprung)</li>
+    <li><strong>Stress und Schlafmangel</strong></li>
+    <li><strong>Hormonelle Schwankungen</strong> (Östrogen erhöht Histamin, besonders rund um den Eisprung)</li>
     <li><strong>Darmprobleme</strong> (Leaky Gut, SIBO, gestörte Flora)</li>
   </ul>
 
   <div class="info-box">
     <h3>Merksatz</h3>
-    <p style="font-size: 15px; color: var(--white);">Je frischer, unverarbeiteter und simpler — desto besser für den Histaminhaushalt.</p>
-    <p style="margin-top: 8px;">Menge + Kombination entscheiden oft mehr als das einzelne Lebensmittel.</p>
+    <p style="font-size: 14px; color: var(--white);">Je frischer, unverarbeiteter und simpler, desto besser für den Histaminhaushalt.</p>
+    <p style="margin-top: 8px;">Menge und Kombination entscheiden oft mehr als das einzelne Lebensmittel.</p>
   </div>
 
   <h3>Warum du mal verträgst und mal nicht</h3>
@@ -207,111 +224,119 @@
   <span class="page-number">4</span>
 </div>
 
-<!-- SEITE 5: AMPEL-LISTE -->
+<!-- SEITE 5: LEBENSMITTEL -->
 <div class="page">
   <p class="page-label">Kapitel 3</p>
-  <h2>Lebensmittel — die Ampel</h2>
+  <div class="divider"></div>
+  <h2>Lebensmittel: Was meiden, was geht</h2>
 
-  <h3 style="color: #c45454;">Meiden (histaminreich)</h3>
-  <div class="two-col">
-    <div>
-      <h4>Gereifte & fermentierte Produkte</h4>
-      <ul>
-        <li>Hartkäse (Parmesan, Emmentaler)</li>
-        <li>Blauschimmelkäse, Camembert, Brie</li>
-        <li>Sauerkraut, Kimchi, Kombucha</li>
-        <li>Sojasauce, Miso</li>
-      </ul>
-      <h4>Fleisch & Fisch</h4>
-      <ul>
-        <li>Geräuchertes Fleisch, Salami, Schinken</li>
-        <li>Thunfisch (Dose), geräucherter Fisch</li>
-        <li>Fisch der nicht fangfrisch ist</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Gemüse (histaminreich)</h4>
-      <ul>
-        <li>Tomaten (auch Passata, Ketchup)</li>
-        <li>Auberginen, Spinat, Avocado</li>
-        <li>Oliven, Pilze</li>
-      </ul>
-      <h4>Alkohol (sehr kritisch)</h4>
-      <ul>
-        <li>Rotwein, Weißwein, Bier, Sekt</li>
-        <li>Alkohol hemmt DAO = doppelt problematisch</li>
-      </ul>
-      <h4>Sonstiges</h4>
-      <ul>
-        <li>Schokolade/Kakao, Essig, Hefe</li>
-        <li>Nüsse (v.a. Walnüsse, Cashews)</li>
-        <li>Fertigprodukte / stark verarbeitet</li>
-      </ul>
+  <div class="food-section">
+    <span class="food-label meiden">Meiden</span>
+    <div class="two-col">
+      <div>
+        <h4>Gereifte und fermentierte Produkte</h4>
+        <ul>
+          <li>Hartkäse (Parmesan, Emmentaler)</li>
+          <li>Blauschimmelkäse, Camembert, Brie</li>
+          <li>Sauerkraut, Kimchi, Kombucha</li>
+          <li>Sojasauce, Miso</li>
+        </ul>
+        <h4>Fleisch und Fisch</h4>
+        <ul>
+          <li>Geräuchertes Fleisch, Salami, Schinken</li>
+          <li>Thunfisch (Dose), geräucherter Fisch</li>
+          <li>Fisch der nicht fangfrisch ist</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gemüse (histaminreich)</h4>
+        <ul>
+          <li>Tomaten (auch Passata, Ketchup)</li>
+          <li>Auberginen, Spinat, Avocado</li>
+          <li>Oliven, Pilze</li>
+        </ul>
+        <h4>Alkohol (sehr kritisch)</h4>
+        <ul>
+          <li>Rotwein, Weißwein, Bier, Sekt</li>
+          <li>Alkohol hemmt DAO, also doppelt problematisch</li>
+        </ul>
+        <h4>Sonstiges</h4>
+        <ul>
+          <li>Schokolade, Kakao, Essig, Hefe</li>
+          <li>Nüsse (v.a. Walnüsse, Cashews)</li>
+          <li>Fertigprodukte, stark verarbeitet</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <h3 style="color: #e8a952;">Vorsicht (Histaminliberatoren)</h3>
-  <p>Diese Lebensmittel enthalten nicht viel Histamin, setzen aber körpereigenes Histamin frei:</p>
-  <ul>
-    <li>Erdbeeren, Zitrusfrüchte, Bananen (sehr reif), Ananas, Kiwi, Papaya</li>
-  </ul>
+  <div class="food-section">
+    <span class="food-label vorsicht">Vorsicht: Histaminliberatoren</span>
+    <p>Diese Lebensmittel enthalten nicht viel Histamin, setzen aber körpereigenes Histamin frei:</p>
+    <ul>
+      <li>Erdbeeren, Zitrusfrüchte, Bananen (sehr reif), Ananas, Kiwi, Papaya</li>
+    </ul>
+  </div>
 
-  <h3 style="color: #7fb174;">Safe Foods zum Starten</h3>
-  <div class="two-col">
-    <div class="col-box">
-      <h4>Kohlenhydrate</h4>
-      <ul style="margin-left: 16px;">
-        <li>Reis (frisch gekocht)</li>
-        <li>Kartoffeln, Süßkartoffel</li>
-        <li>Haferflocken</li>
-      </ul>
-      <h4>Gemüse (mild & darmfreundlich)</h4>
-      <ul style="margin-left: 16px;">
-        <li>Zucchini (gedünstet)</li>
-        <li>Kürbis, Gurke</li>
-        <li>Karotten (gekocht)</li>
-        <li>Pastinaken, Radieschen</li>
-      </ul>
-    </div>
-    <div class="col-box">
-      <h4>Eiweiß (sanft & stabil)</h4>
-      <ul style="margin-left: 16px;">
-        <li>Quark, Hüttenkäse (frisch)</li>
-        <li>Frische Eier (wenn verträglich)</li>
-        <li>Hähnchen (frisch, gegart)</li>
-      </ul>
-      <h4>Fette & Snacks</h4>
-      <ul style="margin-left: 16px;">
-        <li>Olivenöl (kalt), Kokosöl</li>
-        <li>Reiswaffeln, Maiswaffeln</li>
-        <li>Frische Kräuter</li>
-      </ul>
+  <div class="food-section">
+    <span class="food-label safe">Safe Foods zum Starten</span>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>Kohlenhydrate</h4>
+        <ul style="margin-left: 16px;">
+          <li>Reis (frisch gekocht)</li>
+          <li>Kartoffeln, Süßkartoffel</li>
+          <li>Haferflocken</li>
+        </ul>
+        <h4>Gemüse (mild und darmfreundlich)</h4>
+        <ul style="margin-left: 16px;">
+          <li>Zucchini (gedünstet)</li>
+          <li>Kürbis, Gurke</li>
+          <li>Karotten (gekocht)</li>
+          <li>Pastinaken, Radieschen</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h4>Eiweiß (sanft und stabil)</h4>
+        <ul style="margin-left: 16px;">
+          <li>Quark, Hüttenkäse (frisch)</li>
+          <li>Frische Eier (wenn verträglich)</li>
+          <li>Hähnchen (frisch, gegart)</li>
+        </ul>
+        <h4>Fette und Snacks</h4>
+        <ul style="margin-left: 16px;">
+          <li>Olivenöl (kalt), Kokosöl</li>
+          <li>Reiswaffeln, Maiswaffeln</li>
+          <li>Frische Kräuter</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div class="highlight-box">
-    <p><strong>Tipp:</strong> Gekocht oder gedünstet starten — roh erst später testen. Frische ist entscheidender als die Sorte.</p>
+    <p><strong>Tipp:</strong> Gekocht oder gedünstet starten, roh erst später testen. Frische ist entscheidender als die Sorte.</p>
   </div>
   <span class="page-number">5</span>
 </div>
 
-<!-- SEITE 6: DARM-HISTAMIN-CONNECTION -->
+<!-- SEITE 6: DARM -->
 <div class="page">
   <p class="page-label">Kapitel 4</p>
+  <div class="divider"></div>
   <h2>Der Darm ist der Schlüssel</h2>
 
   <p>Das DAO-Enzym, das Histamin abbaut, sitzt im Darm. Wenn dein Darm nicht gesund ist, funktioniert der Abbau schlechter.</p>
 
   <div class="info-box">
     <h3>Der Teufelskreis</h3>
-    <p>Geschädigter Darm → weniger DAO → mehr Histamin → mehr Entzündung → noch mehr Darmschäden → noch weniger DAO → ...</p>
-    <p style="margin-top: 8px; color: var(--gold);"><strong>Deshalb: Nicht nur Histamin meiden, sondern den Darm aufbauen.</strong></p>
+    <p>Geschädigter Darm &rarr; weniger DAO &rarr; mehr Histamin &rarr; mehr Entzündung &rarr; noch mehr Darmschäden &rarr; noch weniger DAO</p>
+    <p style="margin-top: 10px; color: var(--gold);"><strong>Deshalb: Nicht nur Histamin meiden, sondern den Darm aufbauen.</strong></p>
   </div>
 
   <h3>Was den Darm schädigt</h3>
   <ul>
     <li>Chronischer Stress (Nervensystem im Alarmmodus)</li>
-    <li>Sehr restriktive Ernährung / zu wenig Essen</li>
+    <li>Sehr restriktive Ernährung, zu wenig Essen</li>
     <li>Stark verarbeitete Lebensmittel</li>
     <li>Alkohol, bestimmte Medikamente</li>
     <li>Angst vor dem Essen (der Darm lernt: Essen = Gefahr)</li>
@@ -319,16 +344,16 @@
 
   <h3>Warum Weglassen langfristig schadet</h3>
   <div class="warn-box">
-    <p>Immer mehr Lebensmittel zu meiden fühlt sich kurzfristig besser an — aber langfristig verschlechtert es alles:</p>
+    <p>Immer mehr Lebensmittel zu meiden fühlt sich kurzfristig besser an, aber langfristig verschlechtert es alles:</p>
     <p>Der Darm bekommt keine Reize mehr. Enzyme werden noch weniger. Die Flora verarmt. Das Nervensystem bleibt im Alarmzustand.</p>
     <p><strong>Die Unverträglichkeit verstärkt sich.</strong></p>
   </div>
 
-  <h3>Darm-Hirn-Achse & Vagusnerv</h3>
+  <h3>Darm-Hirn-Achse und Vagusnerv</h3>
   <p>Der Vagusnerv ist die wichtigste Verbindung zwischen Gehirn und Darm. Wenn er nicht gut arbeitet:</p>
   <ul>
     <li>Verdauung läuft langsamer oder verkrampft</li>
-    <li>Magensäure & Enzyme werden schlechter produziert</li>
+    <li>Magensäure und Enzyme werden schlechter produziert</li>
     <li>Schmerzempfinden ist erhöht</li>
     <li>Symptome verstärken sich bei Stress oder Angst</li>
   </ul>
@@ -339,12 +364,13 @@
   <span class="page-number">6</span>
 </div>
 
-<!-- SEITE 7: ÖSTROGEN-HISTAMIN -->
+<!-- SEITE 7: ÖSTROGEN -->
 <div class="page">
   <p class="page-label">Kapitel 5</p>
-  <h2>Östrogen & Histamin — die vergessene Verbindung</h2>
+  <div class="divider"></div>
+  <h2>Östrogen und Histamin: die vergessene Verbindung</h2>
 
-  <p>Wenn du eine Frau bist und merkst, dass deine Symptome zyklusabhängig sind — das ist kein Zufall.</p>
+  <p>Wenn du eine Frau bist und merkst, dass deine Symptome zyklusabhängig sind, das ist kein Zufall.</p>
 
   <div class="info-box">
     <h3>Die Östrogen-Histamin-Connection</h3>
@@ -356,15 +382,15 @@
     </ul>
   </div>
 
-  <h3>Wann es am schlimmsten ist</h3>
+  <h3>Wann es am stärksten ist</h3>
   <div class="two-col">
     <div class="col-box">
       <h4>Rund um den Eisprung</h4>
-      <p style="font-size: 13px;">Östrogen ist am höchsten → Histamin-Empfindlichkeit steigt. Viele Frauen reagieren hier stärker auf histaminreiche Lebensmittel.</p>
+      <p style="font-size: 12.5px;">Östrogen ist am höchsten, die Histamin-Empfindlichkeit steigt. Viele Frauen reagieren hier stärker auf histaminreiche Lebensmittel.</p>
     </div>
     <div class="col-box">
       <h4>Vor der Periode (PMS)</h4>
-      <p style="font-size: 13px;">Östrogen fällt ab, Progesteron steigt — kann Symptome lindern. Aber der Umschwung selbst kann Beschwerden auslösen.</p>
+      <p style="font-size: 12.5px;">Östrogen fällt ab, Progesteron steigt, das kann Symptome lindern. Aber der Umschwung selbst kann Beschwerden auslösen.</p>
     </div>
   </div>
 
@@ -372,19 +398,20 @@
   <ul>
     <li>In der Eisprung-Phase besonders <strong>histaminarm essen</strong></li>
     <li>Stress reduzieren (füllt das Histaminfass zusätzlich)</li>
-    <li><strong>Symptom-Tagebuch</strong> führen — Zusammenhänge erkennen</li>
+    <li><strong>Symptom-Tagebuch</strong> führen, Zusammenhänge erkennen</li>
     <li>Regelmäßig essen, nicht zu viel auf einmal</li>
   </ul>
 
   <div class="highlight-box">
-    <p><strong>Die TerraLuna App</strong> hilft dir dabei: Zyklustracking + Verträglichkeits-Ampel + Symptom-Tagebuch — alles an einem Ort. So erkennst du deine persönlichen Muster.</p>
+    <p><strong>Die TerraLuna App</strong> hilft dir dabei: Zyklustracking, Verträglichkeits-Ampel und Symptom-Tagebuch. Alles an einem Ort. So erkennst du deine persönlichen Muster.</p>
   </div>
   <span class="page-number">7</span>
 </div>
 
-<!-- SEITE 8: WAS TUN -->
+<!-- SEITE 8: ERSTE SCHRITTE -->
 <div class="page">
   <p class="page-label">Kapitel 6</p>
+  <div class="divider"></div>
   <h2>Was du jetzt tun kannst</h2>
 
   <p class="lead">Du musst nicht alles auf einmal ändern. Fang klein an. Hier sind deine ersten Schritte:</p>
@@ -393,7 +420,7 @@
   <ul>
     <li><strong>Symptom-Tagebuch</strong> führen (was gegessen, wie gefühlt)</li>
     <li><strong>DAO im Blut</strong> messen lassen (nicht allein aussagekräftig)</li>
-    <li><strong>Auslassdiät</strong> — 2 Wochen histaminarm, dann schrittweise testen</li>
+    <li><strong>Auslassdiät:</strong> 2 Wochen histaminarm, dann schrittweise testen</li>
   </ul>
 
   <h3>2. Ernährungsstruktur aufbauen</h3>
@@ -401,7 +428,7 @@
   <ul>
     <li>Frisch kochen (nicht aufwärmen, nicht lange lagern)</li>
     <li>Simple Mahlzeiten: Reis + Gemüse + Protein</li>
-    <li>Regelmäßig essen — alle 3–4 Stunden</li>
+    <li>Regelmäßig essen, alle 3 bis 4 Stunden</li>
     <li>Kein Kaffee auf nüchternen Magen</li>
   </ul>
 
@@ -422,7 +449,7 @@
   </ul>
 
   <div class="highlight-box">
-    <p><strong>Genau dafür gibt es die TerraLuna App:</strong> Scanner, Ampel-System, Symptom-Tagebuch, Zyklustracking. Alles was du brauchst, um deine Muster zu erkennen — an einem Ort.</p>
+    <p><strong>Genau dafür gibt es die TerraLuna App:</strong> Scanner, Ampel-System, Symptom-Tagebuch, Zyklustracking. Alles was du brauchst, um deine Muster zu erkennen.</p>
   </div>
   <span class="page-number">8</span>
 </div>
@@ -430,11 +457,12 @@
 <!-- SEITE 9: CTA -->
 <div class="page">
   <p class="page-label">Dein nächster Schritt</p>
+  <div class="divider"></div>
   <h2>Du musst das nicht alleine durchstehen.</h2>
 
   <p class="lead">Ich weiß wie es sich anfühlt, wenn dir niemand helfen kann. Wenn du googelst und nur widersprüchliche Antworten findest. Wenn du nicht mehr weißt, was du essen kannst.</p>
 
-  <p>Genau dafür habe ich die TerraLuna App und EatMoreArt gebaut — aus eigener Erfahrung, für Menschen wie dich.</p>
+  <p>Genau dafür habe ich die TerraLuna App und EatMoreArt gebaut. Aus eigener Erfahrung, für Menschen wie dich.</p>
 
   <div class="cta-box">
     <h3>TerraLuna App</h3>
@@ -445,24 +473,27 @@
     <p>Zyklustracking und Symptom-Tagebuch</p>
     <p>Reise-Texte in 8 Sprachen</p>
     <p style="margin-top: 16px; color: var(--gold); font-weight: 600;">Bald im App Store und Google Play</p>
-    <p style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 8px;">juliabergles.de/app</p>
+    <p style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 8px;">juliabergles.de/app</p>
   </div>
 
-  <div style="text-align: center; margin-top: 32px;">
-    <p style="font-size: 15px; color: var(--cocoa);">Mehr von mir:</p>
-    <p style="margin-top: 8px;">
+  <div style="text-align: center; margin-top: 28px;">
+    <p style="font-size: 13px; color: var(--cocoa); margin-bottom: 12px;">Mehr von mir:</p>
+    <p style="font-size: 13px;">
       <strong>Instagram:</strong> @julia_bergles<br>
       <strong>Website:</strong> juliabergles.de<br>
-      <strong>Shop:</strong> Wear Your Healing — handgemachte Food-Charms<br>
+      <strong>Shop:</strong> Wear Your Healing<br>
       <strong>E-Mail:</strong> julia@bergles.net
     </p>
   </div>
 
-  <div class="quote" style="margin-top: 32px;">
-    "Du bist nicht falsch. Das ist keine Einbildung. Dein Körper ist auch nicht kaputt. Du musst diesen Weg nicht mehr alleine gehen."
+  <div class="quote" style="margin-top: 28px;">
+    "Du bist nicht falsch.<br>
+    Das ist keine Einbildung.<br>
+    Dein Körper ist auch nicht kaputt.<br>
+    Du musst diesen Weg nicht mehr alleine gehen."
   </div>
 
-  <p style="text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--wine); margin-top: 16px;">Alles Liebe, Julia</p>
+  <p style="text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--rosegold); margin-top: 12px; font-style: italic;">Alles Liebe, Julia</p>
   <span class="page-number">9</span>
 </div>
 
@@ -470,26 +501,28 @@
 <div class="page" style="display: flex; flex-direction: column; justify-content: space-between;">
   <div>
     <p class="page-label">Rechtliches</p>
-    <h2>Impressum & Hinweise</h2>
+    <div class="divider"></div>
+    <h2>Impressum und Hinweise</h2>
 
     <h3>Autorin</h3>
     <p>Julia Bergles<br>Singoldstraße 5a, 86517 Wehringen<br>julia@bergles.net<br>juliabergles.de</p>
 
     <h3>Medizinischer Disclaimer</h3>
-    <p>Dieser Starter-Guide dient ausschließlich der allgemeinen Information und Aufklärung. Die Inhalte basieren auf persönlichen Erfahrungen und allgemein zugänglichem Wissen.</p>
+    <p>Dieser Starter Guide dient ausschließlich der allgemeinen Information und Aufklärung. Die Inhalte basieren auf persönlichen Erfahrungen und allgemein zugänglichem Wissen.</p>
     <p>Dieser Guide ersetzt keine ärztliche Diagnose, keine medizinische Behandlung und keinen Arztbesuch. Bei gesundheitlichen Beschwerden oder individuellen Fragen zur Ernährung wende dich immer an qualifiziertes medizinisches Fachpersonal.</p>
     <p>Es werden keine Heilversprechen gemacht.</p>
 
     <h3>Urheberrecht</h3>
     <p>Alle Inhalte und Texte sind geistiges Eigentum von Julia Bergles. Das Weitergeben des Guides ist erlaubt. Kopieren oder Verkaufen einzelner Inhalte nicht.</p>
 
-    <h3>Quellen & Grundlagen</h3>
+    <h3>Quellen und Grundlagen</h3>
     <p>Die medizinischen Informationen in diesem Guide basieren auf etabliertem Wissen zu Histaminintoleranz, Darmgesundheit und hormonellen Zusammenhängen. Keine der Aussagen ist als individuelle medizinische Empfehlung zu verstehen.</p>
   </div>
 
   <div style="text-align: center; padding: 24px 0;">
-    <p style="font-size: 11px; color: var(--cocoa);">© 2026 Julia Bergles / EatMoreArt</p>
-    <p style="font-size: 11px; color: var(--cocoa);">Starter-Guide Histaminintoleranz — Version 1.0, Mai 2026</p>
+    <div style="width: 30px; height: 1px; background: var(--gold); margin: 0 auto 16px;"></div>
+    <p style="font-size: 10px; color: var(--cocoa); letter-spacing: 1px;">Julia Bergles / EatMoreArt</p>
+    <p style="font-size: 10px; color: var(--cocoa); letter-spacing: 1px;">Starter Guide Histaminintoleranz, Mai 2026</p>
   </div>
   <span class="page-number">10</span>
 </div>
