@@ -35,16 +35,16 @@
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
 
     /* HERO */
-    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
-    .hero-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 30%, rgba(242,213,207,0.3) 0%, transparent 70%); }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, var(--cream) 0%, rgba(253,246,240,0.7) 50%, var(--cream) 100%); z-index: 0; }
-    .hero::after { content: ''; position: absolute; bottom: -10%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,160,160,0.15) 0%, transparent 70%); border-radius: 50%; }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; background: var(--navy); }
+    .hero-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 30%, rgba(107,163,199,0.15) 0%, transparent 70%); }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, var(--navy) 0%, rgba(44,62,107,0.9) 50%, var(--navy) 100%); z-index: 0; }
+    .hero::after { content: ''; position: absolute; bottom: -10%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,169,110,0.1) 0%, transparent 70%); border-radius: 50%; }
     .hero-content { position: relative; z-index: 1; max-width: 650px; }
-    .hero-label { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: var(--charcoal); line-height: 1.1; margin-bottom: 8px; letter-spacing: -1px; }
-    .hero h1 em { font-style: italic; color: var(--rosegold); }
-    .hero .tagline { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--rosegold); font-style: italic; margin-bottom: 28px; letter-spacing: 1px; }
-    .hero .subtitle { font-size: 16px; color: var(--soft); max-width: 480px; margin: 0 auto 40px; line-height: 1.8; font-weight: 300; }
+    .hero-label { font-size: 11px; font-weight: 600; color: var(--honey); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 8px; letter-spacing: -1px; }
+    .hero h1 em { font-style: italic; color: var(--honey); }
+    .hero .tagline { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--honey); font-style: italic; margin-bottom: 28px; letter-spacing: 1px; }
+    .hero .subtitle { font-size: 16px; color: var(--sand); max-width: 480px; margin: 0 auto 40px; line-height: 1.8; font-weight: 300; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
     .btn-rose { background: linear-gradient(135deg, var(--rosegold) 0%, #d4a0a0 50%, var(--rosegold) 100%); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); }
@@ -177,8 +177,8 @@
     <p class="tagline fade-up">tiny wearable art for your healing journey</p>
     <p class="subtitle fade-up">Handgemachte Food-Charms, die deinen Fortschritt sichtbar machen. Kleine Belohnungen für jeden Schritt auf deinem Weg. Für alle, die mit Histaminintoleranz, Reizdarm oder Unverträglichkeiten leben und sich Stück für Stück mehr zutrauen.</p>
     <div class="hero-buttons fade-up">
-      <a href="#produkte" class="btn btn-rose">Produkte entdecken</a>
-      <a href="#fearfood" class="btn btn-outline">Dein Fear Food anfragen</a>
+      <a href="#produkte" class="btn" style="background: var(--white); color: var(--navy); box-shadow: 0 6px 24px rgba(255,255,255,0.15);">Produkte entdecken</a>
+      <a href="#fearfood" class="btn" style="background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.3);">Dein Fear Food anfragen</a>
     </div>
   </div>
 </section>
