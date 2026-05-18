@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wear Your Healing — Deine Möglichkeiten. Handgemachte Food-Charms von Julia Bergles.">
+  <title>Deine Möglichkeiten | Wear Your Healing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #5c5047;
+      --cocoa: #c4b5a6; --rosegold: #c9908a; --wine: #bf6b6b;
+      --navy: #2c3e6b; --navy-light: #354a7a; --gold: #c9a96e;
+      --linen: #f5ece0; --white: #fffdf9; --gray: #b5a99a;
+      --honey: #dbb88a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fd1 { transition-delay: 0.1s; } .fd2 { transition-delay: 0.2s; } .fd3 { transition-delay: 0.3s; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--wine); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,62,107,0.25); }
+    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+
+    /* HERO */
+    .page-hero { padding: 140px 24px 60px; text-align: center; max-width: 750px; margin: 0 auto; }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
+    .page-hero h1 em { color: var(--navy); font-style: italic; }
+    .page-hero p { font-size: 16px; color: var(--cocoa); line-height: 1.8; margin-bottom: 12px; max-width: 550px; margin-left: auto; margin-right: auto; }
+
+    /* SECTIONS */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+
+    /* OPTION CARDS */
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+    .option-card { background: var(--warmwhite); border-radius: 24px; padding: 36px 28px; border: 1px solid rgba(201,169,110,0.08); transition: all 0.3s; }
+    .option-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(44,62,107,0.08); }
+    .option-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 24px; }
+    .option-icon.navy { background: rgba(44,62,107,0.08); color: var(--navy); }
+    .option-icon.rose { background: rgba(201,144,138,0.1); color: var(--rosegold); }
+    .option-icon.gold { background: rgba(201,169,110,0.12); color: var(--gold); }
+    .option-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
+    .option-card p { font-size: 14px; color: var(--cocoa); line-height: 1.7; }
+    .option-price { font-size: 14px; font-weight: 600; color: var(--navy); margin-top: 12px; }
+
+    /* BLUE INFO BOX */
+    .info-box { background: var(--navy); border-radius: 24px; padding: 48px 40px; color: var(--white); text-align: center; margin-top: 60px; }
+    .info-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; margin-bottom: 16px; }
+    .info-box p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 550px; margin: 0 auto 12px; }
+    .info-box .highlight { color: var(--gold); font-weight: 600; }
+
+    /* FARBEN VISUAL */
+    .farben-row { display: flex; justify-content: center; gap: 20px; margin: 24px 0; }
+    .farbe-item { text-align: center; }
+    .farbe-circle { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 8px; box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+    .farbe-gold { background: linear-gradient(135deg, #d4a76a, #f0d4a0, #d4a76a); }
+    .farbe-silber { background: linear-gradient(135deg, #c0c0c0, #e8e8e8, #c0c0c0); }
+    .farbe-rose { background: linear-gradient(135deg, #c9908a, #e8c4bc, #c9908a); }
+    .farbe-name { font-size: 13px; color: var(--cocoa); font-weight: 500; }
+
+    /* GROESSEN */
+    .groessen-row { display: flex; justify-content: center; gap: 24px; margin: 24px 0; align-items: flex-end; }
+    .groesse-item { text-align: center; }
+    .groesse-circle { border-radius: 50%; border: 2px solid var(--navy); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--navy); font-weight: 700; }
+    .gz-s { width: 40px; height: 40px; }
+    .gz-m { width: 50px; height: 50px; }
+    .gz-l { width: 60px; height: 60px; }
+    .groesse-name { font-size: 13px; color: var(--cocoa); font-weight: 500; }
+    .groesse-detail { font-size: 11px; color: var(--gray); }
+
+    /* CTA SECTION */
+    .cta-section { text-align: center; padding: 80px 24px; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; }
+    .cta-section p { font-size: 15px; color: var(--cocoa); margin-bottom: 32px; max-width: 450px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+    .btn-bestellen { display: inline-block; padding: 18px 48px; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; background: var(--navy); color: var(--white); box-shadow: 0 6px 24px rgba(44,62,107,0.2); transition: all 0.3s; }
+    .btn-bestellen:hover { background: #1F2D52; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(44,62,107,0.3); }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: var(--gray); padding: 60px 24px; }
+    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
+      .page-hero h1 { font-size: 34px; }
+      .page-hero { padding: 120px 20px 40px; }
+      .options-grid { grid-template-columns: 1fr; }
+      .info-box { padding: 36px 24px; }
+      .info-box h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa);">EatMoreArt</span></span>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="onboarding.html">Für dich</a>
+      <a href="app.html">TerraLuna App</a>
+      <a href="eatmoreart.html">Shop</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="index.html#geschichte">Meine Geschichte</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="onboarding.html" class="nav-cta">Für dich</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <h1 class="fade-up">Das sind deine <em>Möglichkeiten</em></h1>
+  <p class="fade-up">Jeder Charm wird von Hand modelliert — genau nach deinen Wünschen. Hier siehst du, was du alles auswählen kannst.</p>
+</div>
+
+<!-- OPTIONEN -->
+<section style="padding-top: 0;">
+  <div class="section-inner">
+
+    <!-- Charm-Typen -->
+    <div class="options-grid fade-up">
+      <div class="option-card">
+        <div class="option-icon navy">&#10047;</div>
+        <h3>Kettenanhänger</h3>
+        <p>Ein Statement-Piece nah an deinem Herzen. Perfekt als tägliche Erinnerung an deinen Fortschritt.</p>
+        <div class="option-price">ab 11 €</div>
+      </div>
+      <div class="option-card">
+        <div class="option-icon navy">&#9825;</div>
+        <h3>Schlüsselanhänger</h3>
+        <p>Dein Alltagsbegleiter. Immer dabei, immer sichtbar. An deinem Schlüsselbund oder deiner Tasche.</p>
+        <div class="option-price">ab 12 €</div>
+      </div>
+    </div>
+
+    <!-- Größen -->
+    <div class="fade-up" style="margin-top: 60px; text-align: center;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px;">Wähle deine Größe</h2>
+      <p style="font-size: 14px; color: var(--cocoa); margin-bottom: 24px;">Jeder Charm ist Handarbeit — leichte Abweichungen machen ihn einzigartig.</p>
+      <div class="groessen-row">
+        <div class="groesse-item">
+          <div class="groesse-circle gz-s">S</div>
+          <div class="groesse-name">Klein</div>
+          <div class="groesse-detail">ca. 1,8 cm</div>
+        </div>
+        <div class="groesse-item">
+          <div class="groesse-circle gz-m">M</div>
+          <div class="groesse-name">Mittel</div>
+          <div class="groesse-detail">ca. 2,0 cm</div>
+        </div>
+        <div class="groesse-item">
+          <div class="groesse-circle gz-l">L</div>
+          <div class="groesse-name">Groß</div>
+          <div class="groesse-detail">ca. 2,2 cm</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Farben -->
+    <div class="fade-up" style="margin-top: 60px; text-align: center;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px;">Wähle deine Farbe</h2>
+      <p style="font-size: 14px; color: var(--cocoa); margin-bottom: 24px;">Draht, Kette und Verschluss — alles in deiner Wunschfarbe. Nickelfrei und hautverträglich.</p>
+      <div class="farben-row">
+        <div class="farbe-item">
+          <div class="farbe-circle farbe-gold"></div>
+          <div class="farbe-name">Gold</div>
+        </div>
+        <div class="farbe-item">
+          <div class="farbe-circle farbe-silber"></div>
+          <div class="farbe-name">Silber</div>
+        </div>
+        <div class="farbe-item">
+          <div class="farbe-circle farbe-rose"></div>
+          <div class="farbe-name">Rosé</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extras -->
+    <div class="options-grid fade-up" style="margin-top: 60px;">
+      <div class="option-card">
+        <div class="option-icon gold">&#9734;</div>
+        <h3>Dein Lebensmittel</h3>
+        <p>Sag mir, welches Lebensmittel oder welches Wort auf deinem Charm sein soll. Ich forme es von Hand — ganz nach deinen Wünschen.</p>
+      </div>
+      <div class="option-card">
+        <div class="option-icon rose">&#128247;</div>
+        <h3>Foto hochladen (optional)</h3>
+        <p>Du hast eine genaue Vorstellung? Schick mir ein Referenzfoto und ich orientiere mich daran beim Modellieren.</p>
+      </div>
+    </div>
+
+    <!-- Zusätzliche Optionen -->
+    <div class="options-grid fade-up" style="margin-top: 24px;">
+      <div class="option-card">
+        <div class="option-icon navy">&#9675;</div>
+        <h3>Mit Armkette</h3>
+        <p>Eine passende Armkette in deiner Wunschfarbe dazu. Nickelfrei und hautverträglich.</p>
+        <div class="option-price">+ 14 €</div>
+      </div>
+      <div class="option-card">
+        <div class="option-icon navy">&#9734;</div>
+        <h3>Mit Halskette</h3>
+        <p>Eine passende Halskette in deiner Wunschfarbe dazu. Nickelfrei und hautverträglich.</p>
+        <div class="option-price">+ 18 €</div>
+      </div>
+    </div>
+
+    <!-- BLUE INFO BOX -->
+    <div class="info-box fade-up">
+      <h2>So läuft deine Bestellung ab</h2>
+      <p>Du füllst das Bestellformular aus — das dauert nur 2 Minuten.</p>
+      <p>Ich melde mich <span class="highlight">innerhalb von 24 Stunden</span> persönlich bei dir mit den Zahlungsdetails.</p>
+      <p>Nach Zahlungseingang beginne ich mit deinem Charm. Bitte gib mir <span class="highlight">1–3 Wochen</span> Zeit.</p>
+      <p style="margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.4);">Bezahlung per Vorkasse-Überweisung oder PayPal.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section fade-up">
+  <h2>Bereit für deinen Charm?</h2>
+  <p>Im nächsten Schritt gibst du mir alle Details zu deinem Wunsch-Charm.</p>
+  <a href="bestellen.html" class="btn-bestellen">Jetzt zur Bestellung</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span style="letter-spacing: 4px; font-weight: 600;">EMA</span> <span style="font-size: 14px; font-weight: 300; opacity: 0.6;">EatMoreArt</span></div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="eatmoreart.html">Shop</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="widerruf.html">Widerruf</a>
+    </div>
+    <div class="footer-disclaimer">Handgemachte Unikate. © 2026 EatMoreArt · Julia Bergles</div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
