@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starter-Guide Reizdarm | EatMoreArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #3d322a;
+      --text: #5c5047; --cocoa: #c4b5a6; --rosegold: #c9908a;
+      --wine: #bf6b6b; --navy: #2c3e6b; --gold: #c9a96e;
+      --linen: #f5ece0; --white: #fffdf9; --gray: #b5a99a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #e8e0d4; color: var(--text); line-height: 1.8; font-size: 13.5px; -webkit-font-smoothing: antialiased; }
+
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 64px 72px; background: var(--cream); page-break-after: always; position: relative; overflow: hidden; }
+    .page:last-child { page-break-after: auto; }
+    .page::after { content: ''; position: absolute; top: 56px; right: 56px; width: 1px; height: calc(100% - 112px); background: linear-gradient(180deg, transparent, var(--cocoa), transparent); opacity: 0.2; }
+
+    /* COVER */
+    .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--navy); color: var(--white); padding: 80px 60px; }
+    .cover::after { display: none; }
+    .cover-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+    .cover-label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .cover h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .cover h1 em { color: var(--gold); font-style: italic; }
+    .cover .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 48px; letter-spacing: 0.5px; }
+    .cover .cover-line-bottom { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
+    .cover .author { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: uppercase; }
+    .cover .brand { position: absolute; bottom: 52px; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 3px; text-transform: uppercase; }
+
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 18px; line-height: 1.25; letter-spacing: -0.3px; }
+    h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--navy); margin: 28px 0 10px; }
+    h4 { font-size: 12px; font-weight: 600; color: var(--charcoal); margin: 18px 0 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    p { margin-bottom: 11px; color: var(--text); }
+    .lead { font-size: 14px; color: var(--cocoa); line-height: 1.9; margin-bottom: 20px; }
+
+    .page-label { font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .page-number { position: absolute; bottom: 48px; right: 72px; font-size: 10px; color: var(--cocoa); font-weight: 300; }
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 8px 0 24px; }
+
+    .info-box { background: var(--navy); border-radius: 14px; padding: 28px 26px; color: var(--white); margin: 24px 0; }
+    .info-box h3 { color: var(--gold); margin-top: 0; font-size: 18px; }
+    .info-box p { color: rgba(255,255,255,0.65); font-size: 12.5px; line-height: 1.8; }
+    .info-box ul { color: rgba(255,255,255,0.65); font-size: 12.5px; margin-left: 16px; line-height: 1.8; }
+    .info-box li { margin-bottom: 3px; }
+
+    .highlight-box { background: var(--linen); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--gold); }
+    .highlight-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+    .highlight-box strong { color: var(--navy); }
+
+    .warn-box { background: rgba(44,62,107,0.04); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--wine); }
+    .warn-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+
+    ul { margin: 10px 0 14px 18px; }
+    li { margin-bottom: 5px; font-size: 12.5px; color: var(--text); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+    .col-box { background: var(--warmwhite); border-radius: 10px; padding: 20px; border: 1px solid rgba(201,169,110,0.08); }
+    .col-box h4 { margin-top: 0; color: var(--navy); }
+
+    .quote { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--navy); text-align: center; padding: 28px 20px; line-height: 1.6; }
+
+    .cta-box { background: var(--navy); border-radius: 16px; padding: 36px 32px; text-align: center; color: var(--white); margin: 28px 0; }
+    .cta-box h3 { color: var(--gold); font-size: 24px; margin: 0 0 12px; }
+    .cta-box p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 7px; }
+    .cta-box .app-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); margin: 14px 0 8px; font-style: italic; }
+
+    .disclaimer { background: var(--linen); border-radius: 10px; padding: 20px; margin-top: 24px; }
+    .disclaimer p { font-size: 11px; color: var(--cocoa); margin-bottom: 4px; }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; }
+      .page::after { display: none; }
+    }
+    @media screen {
+      .page { box-shadow: 0 2px 40px rgba(0,0,0,0.06); margin: 32px auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEITE 1: COVER -->
+<div class="page cover">
+  <div class="cover-label">Starter Guide</div>
+  <div class="cover-line"></div>
+  <h1>Reizdarm<br><em>verstehen</em></h1>
+  <p class="subtitle">Wenn dein Bauch dein Leben bestimmt</p>
+  <div class="cover-line-bottom"></div>
+  <p class="author">Julia Bergles</p>
+  <p class="brand">EatMoreArt &middot; TerraLuna</p>
+</div>
+
+<!-- SEITE 2: VORWORT -->
+<div class="page">
+  <p class="page-label">Vorwort</p>
+  <div class="divider"></div>
+  <h2>Dieses Buch ist für dich.</h2>
+  <p>Wenn dein Bauch dein Leben bestimmt.</p>
+  <p>Wenn Essen Angst macht.</p>
+  <p>Wenn du dich unverstanden fühlst.</p>
+  <p>Und wenn du das Gefühl hast, dass dich niemand wirklich an die Hand nimmt.</p>
+
+  <p style="margin-top: 20px;">Vielleicht hast du schon viele Arztbesuche hinter dir. Vielleicht war deine Diagnose: Einbildung. Irgendwann hast du vielleicht aufgehört zu fragen.</p>
+
+  <p>Dieses Buch sagt dir nicht, was du essen musst. Es verspricht auch keine Wunderheilung.</p>
+
+  <p>Es hilft dir aber zu verstehen:</p>
+  <ul>
+    <li>warum dein Darm so reagiert</li>
+    <li>warum Angst und Stress Beschwerden verstärken</li>
+    <li>warum weniger Essen oft alles schlimmer macht</li>
+    <li>wie du Schritt für Schritt wieder Sicherheit aufbauen kannst</li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><strong>Ich teile in diesem Guide nicht nur Wissen,</strong> sondern auch meinen eigenen Weg. Mit all den Umwegen, der Überforderung und den Erkenntnissen, die mir geholfen haben, meinem Körper wieder zu vertrauen.</p>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Wichtiger Hinweis:</strong> Die Inhalte dienen ausschließlich der allgemeinen Information und Aufklärung. Sie ersetzen keine medizinische, ernährungsmedizinische oder therapeutische Beratung. Bei gesundheitlichen Beschwerden wende dich immer an qualifiziertes medizinisches Fachpersonal.</p>
+  </div>
+  <span class="page-number">2</span>
+</div>
+
+<!-- SEITE 3: WAS IST REIZDARM -->
+<div class="page">
+  <p class="page-label">Kapitel 1</p>
+  <div class="divider"></div>
+  <h2>Was ist Reizdarm?</h2>
+
+  <p>Das Reizdarmsyndrom (RDS) ist eine <strong>Ausschlussdiagnose</strong>: Wenn organisch nichts gefunden wird, aber die Symptome real sind.</p>
+
+  <div class="info-box">
+    <h3>Das Wichtigste zuerst</h3>
+    <p style="font-size: 14px; color: var(--white);"><strong>Reizdarm ist keine Einbildung.</strong></p>
+    <p>Es ist eine Störung der Darm-Hirn-Achse. Dein Nervensystem und dein Darm kommunizieren nicht mehr richtig. Das verursacht echte, körperliche Beschwerden.</p>
+  </div>
+
+  <h3>Typische Symptome</h3>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>Im Bauch</h4>
+      <ul style="margin-left: 16px;">
+        <li>Chronische Bauchschmerzen</li>
+        <li>Blähbauch</li>
+        <li>Durchfall, Verstopfung oder beides im Wechsel</li>
+        <li>Völlegefühl trotz wenig Essen</li>
+        <li>Besserung nach Stuhlgang</li>
+      </ul>
+    </div>
+    <div class="col-box">
+      <h4>Im ganzen Körper</h4>
+      <ul style="margin-left: 16px;">
+        <li>Müdigkeit, Brain Fog</li>
+        <li>Kopfschmerzen</li>
+        <li>Hautprobleme</li>
+        <li>Angst vor dem Essen</li>
+        <li>Depressive Verstimmung</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Was oft dahintersteckt</h3>
+  <p>Reizdarm kommt selten allein. Häufig spielen mehrere Faktoren zusammen:</p>
+  <ul>
+    <li><strong>SIBO</strong> (Dünndarmfehlbesiedlung): Bakterien siedeln sich an, wo sie nicht hingehören</li>
+    <li><strong>Leaky Gut</strong> (durchlässiger Darm): Die Darmschleimhaut ist geschwächt</li>
+    <li><strong>Träger Darm:</strong> Verlangsamte Darmbewegung, Nahrungsreste bleiben zu lange</li>
+    <li><strong>Gestörte Darmflora:</strong> Zu wenig gute Bakterien</li>
+    <li><strong>Nervensystem im Dauerstress</strong></li>
+  </ul>
+  <span class="page-number">3</span>
+</div>
+
+<!-- SEITE 4: VERDAUUNG VERSTEHEN -->
+<div class="page">
+  <p class="page-label">Kapitel 2</p>
+  <div class="divider"></div>
+  <h2>Wie deine Verdauung wirklich funktioniert</h2>
+
+  <p class="lead">Viele Menschen bekommen Angst, wenn der Bauch Probleme macht. Sie denken, etwas sei "kaputt" oder "nicht heilbar". Doch dein Verdauungssystem ist unglaublich intelligent. Es reagiert immer mit einem Grund.</p>
+
+  <h3>Die Stationen deiner Verdauung</h3>
+
+  <div class="two-col">
+    <div class="col-box">
+      <h4>1. Mund</h4>
+      <p style="font-size: 12.5px;">Kauen zerkleinert die Nahrung, Speichel beginnt die Verdauung. Je besser du kaust, desto weniger Arbeit hat dein Magen.</p>
+    </div>
+    <div class="col-box">
+      <h4>2. Magen</h4>
+      <p style="font-size: 12.5px;">Magensäure und Enzyme spalten die Nahrung. Zu wenig Säure = schlechtere Verdauung = mehr Blähbauch. Der Magen reagiert stark auf Stress.</p>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>3. Dünndarm</h4>
+      <p style="font-size: 12.5px;">Hier werden die Nährstoffe aufgenommen. Wenn du wenig isst, fehlen Baustoffe. Die Schleimhaut wird empfindlicher.</p>
+    </div>
+    <div class="col-box">
+      <h4>4. Dickdarm</h4>
+      <p style="font-size: 12.5px;">Wasser wird entzogen, Darmbakterien verarbeiten Reste. Gase entstehen (das ist normal!). Blähbauch kommt oft von hier.</p>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>Die wichtigste Erkenntnis</h3>
+    <p style="font-size: 14px; color: var(--white);"><strong>Die Verdauung wird vom Nervensystem gesteuert.</strong></p>
+    <p>Dein Körper hat zwei Modi:</p>
+    <ul>
+      <li><strong>Ruhe-Modus</strong> = gute Verdauung</li>
+      <li><strong>Stress-Modus</strong> = Verdauung wird gebremst</li>
+    </ul>
+    <p style="margin-top: 8px;">Nicht nur was du isst ist wichtig, sondern wie ruhig dein Körper dabei ist.</p>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Verdauung ist Bewegung, Arbeit und Anpassung.</strong> Nicht jedes Gefühl bedeutet Rückschritt, Schaden oder Unverträglichkeit. Viele Gefühle bedeuten einfach, dass dein Darm arbeitet und dein Nervensystem sensibel ist.</p>
+  </div>
+  <span class="page-number">4</span>
+</div>
+
+<!-- SEITE 5: WARUM SCHMERZEN -->
+<div class="page">
+  <p class="page-label">Kapitel 3</p>
+  <div class="divider"></div>
+  <h2>Warum Schmerzen entstehen</h2>
+
+  <p>Schmerzen im Bauch fühlen sich oft schlimm an. Sie machen Angst. Sie lassen uns denken, etwas wäre vollkommen falsch mit uns.</p>
+
+  <p>Aber Bauchschmerzen bedeuten nicht, dass du "kaputt" bist. Sie bedeuten nicht, dass du etwas nicht richtig machst. Und sie bedeuten nicht, dass du nie wieder normal essen kannst.</p>
+
+  <div class="quote">"Bauchschmerzen sind eine Sprache.<br>Dein Körper spricht mit dir.<br>Nicht um dich zu bestrafen, sondern um dich zu schützen."</div>
+
+  <h3>Warum dein Darm so reagiert</h3>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>Die Darmwand ist gereizt</h4>
+      <p style="font-size: 12.5px;">Wenn du zu wenig isst, zu viel Angst verspürst oder Lebensmittel wechselst, kann die Schleimhaut empfindlicher werden. Das bedeutet: schneller Schmerzen.</p>
+    </div>
+    <div class="col-box">
+      <h4>Dein Nervensystem ist angespannt</h4>
+      <p style="font-size: 12.5px;">Essen im Stress = Verdauung im Stress. Angst vor Beschwerden = Körper im Alarmmodus. Dein Darm reagiert dann stärker, schneller und intensiver.</p>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>Gasbildung</h4>
+      <p style="font-size: 12.5px;">Blähungen sind kein "Fehler", sondern ein ganz normaler Prozess. Aber wenn die Darmwand empfindlich ist, spürst du jedes kleine Gasbläschen.</p>
+    </div>
+    <div class="col-box">
+      <h4>Zu wenig Magensäure</h4>
+      <p style="font-size: 12.5px;">Zu wenig Säure, zu schnelles Essen, zu wenig Kauen. All das kann Druck oder Krämpfe verursachen. Symptome: frühes Sättigungsgefühl, Aufstoßen.</p>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <p><strong>Beschwerden sind nicht "gegen dich".</strong> Sie sind ein Signal: "Ich bin überfordert. Bitte langsamer." oder "Ich bekomme nicht genug Nahrung." oder "Ich bin gestresst."</p>
+    <p>Das zu verstehen, nimmt unglaublich viel Druck.</p>
+  </div>
+  <span class="page-number">5</span>
+</div>
+
+<!-- SEITE 6: NERVENSYSTEM -->
+<div class="page">
+  <p class="page-label">Kapitel 4</p>
+  <div class="divider"></div>
+  <h2>Dein Nervensystem ist der Schlüssel</h2>
+
+  <p>Der Vagusnerv ist die wichtigste Verbindung zwischen Gehirn und Darm. Verdauung funktioniert nur im <strong>parasympathischen Modus</strong> (Ruhe-Modus).</p>
+
+  <div class="info-box">
+    <h3>Was passiert bei Stress</h3>
+    <ul>
+      <li>Magen produziert weniger Säure</li>
+      <li>Bauchspeicheldrüse produziert weniger Enzyme</li>
+      <li>Darmbewegung wird chaotisch (zu schnell oder zu langsam)</li>
+      <li>Schmerzempfinden ist erhöht</li>
+    </ul>
+    <p style="margin-top: 10px;">Selbst "perfekte" Ernährung verpufft, wenn der Körper im Alarmzustand ist.</p>
+  </div>
+
+  <h3>Der Darm und die Psyche</h3>
+  <p>Dein Darm besitzt ein eigenes Nervensystem, oft auch "Bauchhirn" genannt. Es steht im ständigen Austausch mit deinem Kopf (über Nerven, Hormone und Stressreaktionen).</p>
+
+  <p>Lange dachte ich, mein größtes Problem sei mein Darm. Die Schmerzen. Der Blähbauch. Die Angst vor dem Essen. Aber dann habe ich gemerkt, es war nicht nur mein Bauch der gelitten hat. Es war mein ganzes Leben.</p>
+
+  <h3>Der Teufelskreis der Angst</h3>
+  <div class="warn-box">
+    <p>Angst vor Schmerzen &rarr; Essen vermeiden &rarr; Darm bekommt keine Reize &rarr; Enzyme sinken &rarr; mehr Symptome &rarr; noch mehr Angst &rarr; noch mehr vermeiden</p>
+    <p style="margin-top: 8px;"><strong>Der Darm lernt: Essen = Gefahr. Und die Unverträglichkeit verstärkt sich.</strong></p>
+  </div>
+
+  <h3>Was mir geholfen hat</h3>
+  <ul>
+    <li>Meinen Körper zuzuhören</li>
+    <li>Regelmäßig zu essen</li>
+    <li>Sicherheit aufzubauen</li>
+    <li>Ehrlich zu meinem Umfeld zu sein</li>
+    <li>Mir Hilfe zu erlauben</li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><strong>Je ruhiger mein Darm wurde, desto ruhiger wurde mein Kopf.</strong> Je mehr Vertrauen ich meinem Körper gegeben habe, desto mehr Vertrauen kam in mein Leben zurück.</p>
+  </div>
+  <span class="page-number">6</span>
+</div>
+
+<!-- SEITE 7: ERNÄHRUNG -->
+<div class="page">
+  <p class="page-label">Kapitel 5</p>
+  <div class="divider"></div>
+  <h2>Ernährung bei Reizdarm</h2>
+
+  <p class="lead">Es geht nicht um die "perfekte" Ernährung. Es geht um Verlässlichkeit und Sicherheit für deinen Darm.</p>
+
+  <h3>Grundprinzipien</h3>
+  <ul>
+    <li><strong>Regelmäßig essen:</strong> Alle 3 bis 4 Stunden, nicht hungern</li>
+    <li><strong>Frisch kochen:</strong> So unverarbeitet wie möglich</li>
+    <li><strong>Gekocht statt roh:</strong> Gedünstetes Gemüse ist leichter verdaulich</li>
+    <li><strong>Langsam essen:</strong> Gut kauen, in Ruhe</li>
+    <li><strong>Nicht zu viel auf einmal:</strong> Lieber kleinere Portionen</li>
+  </ul>
+
+  <h3>Darmfreundliche Lebensmittel</h3>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>Kohlenhydrate</h4>
+      <ul style="margin-left: 16px;">
+        <li>Reis (frisch gekocht)</li>
+        <li>Kartoffeln, Süßkartoffel</li>
+        <li>Haferflocken (eingeweicht)</li>
+        <li>Maiswaffeln, Reiswaffeln</li>
+      </ul>
+      <h4>Gemüse (gedünstet)</h4>
+      <ul style="margin-left: 16px;">
+        <li>Zucchini</li>
+        <li>Karotten</li>
+        <li>Kürbis</li>
+        <li>Pastinaken</li>
+        <li>Gurke</li>
+      </ul>
+    </div>
+    <div class="col-box">
+      <h4>Eiweiß</h4>
+      <ul style="margin-left: 16px;">
+        <li>Hähnchen (frisch, gegart)</li>
+        <li>Quark, Hüttenkäse</li>
+        <li>Frische Eier</li>
+      </ul>
+      <h4>Fette</h4>
+      <ul style="margin-left: 16px;">
+        <li>Olivenöl (kalt)</li>
+        <li>Kokosöl (kleine Mengen)</li>
+      </ul>
+      <h4>Kräuter</h4>
+      <ul style="margin-left: 16px;">
+        <li>Basilikum, Schnittlauch</li>
+        <li>Petersilie, Dill</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Was oft Probleme macht</h3>
+  <ul>
+    <li>Rohkost in großen Mengen (Salat, rohes Gemüse)</li>
+    <li>Hülsenfrüchte (in der Anfangsphase)</li>
+    <li>Fertigprodukte, stark verarbeitetes Essen</li>
+    <li>Kaffee auf nüchternen Magen</li>
+    <li>Alkohol</li>
+    <li>Zuckeralkohole (Xylit, Erythrit, Sorbit)</li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><strong>Merksatz:</strong> Je frischer, simpler und regelmäßiger, desto besser. Dein Darm braucht Nahrung als Trainingsreiz. Zu wenig Essen bedeutet: Enzyme sinken, mehr Symptome.</p>
+  </div>
+  <span class="page-number">7</span>
+</div>
+
+<!-- SEITE 8: ERSTE SCHRITTE -->
+<div class="page">
+  <p class="page-label">Kapitel 6</p>
+  <div class="divider"></div>
+  <h2>Was du jetzt tun kannst</h2>
+
+  <p class="lead">Du musst nicht alles auf einmal ändern. Fang mit einem Schritt an.</p>
+
+  <h3>1. Verstehen statt bekämpfen</h3>
+  <p>Dein Darm will dich schützen, nicht bestrafen. Wenn du verstehst, wie dein Verdauungssystem funktioniert, hörst du auf, Angst zu haben, und fängst an, mit deinem Körper zu arbeiten statt gegen ihn.</p>
+
+  <h3>2. Regelmäßig essen</h3>
+  <ul>
+    <li>Alle 3 bis 4 Stunden eine Mahlzeit</li>
+    <li>Nicht hungern, nicht überfüllen</li>
+    <li>Feste Essenszeiten geben dem Darm Sicherheit</li>
+  </ul>
+
+  <h3>3. Nervensystem regulieren</h3>
+  <ul>
+    <li>Vor dem Essen: 3 tiefe Atemzüge</li>
+    <li>In Ruhe essen, nicht im Stehen oder Gehen</li>
+    <li>Vagusnerv-Übungen (Summen, kaltes Wasser, Atemübungen)</li>
+    <li>Bewegung (Spaziergänge aktivieren die Darmbewegung)</li>
+  </ul>
+
+  <h3>4. Symptome tracken</h3>
+  <ul>
+    <li>Was hast du gegessen?</li>
+    <li>Wie hast du dich gefühlt?</li>
+    <li>Stress-Level? Schlaf?</li>
+    <li>Welche Zyklusphase? (Progesteron verlangsamt den Darm)</li>
+  </ul>
+
+  <h3>5. Nicht immer mehr weglassen</h3>
+  <div class="warn-box">
+    <p>Der Instinkt ist: Wenn etwas wehtut, lass es weg. Aber langfristig verarmt der Darm. Enzyme werden weniger. Die Flora leidet.</p>
+    <p><strong>Stattdessen:</strong> Langsam wieder einführen. Kleine Mengen. Gekocht. In Ruhe.</p>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Die TerraLuna App</strong> hilft dir dabei: Symptom-Tagebuch, Verträglichkeits-Scanner, Zyklustracking, darmfreundliche Rezepte. Alles an einem Ort, damit du deine Muster erkennst.</p>
+  </div>
+  <span class="page-number">8</span>
+</div>
+
+<!-- SEITE 9: CTA -->
+<div class="page">
+  <p class="page-label">Dein nächster Schritt</p>
+  <div class="divider"></div>
+  <h2>Du musst diesen Weg nicht mehr alleine gehen.</h2>
+
+  <p class="lead">Ich weiß wie es sich anfühlt. Die Angst vor jeder Mahlzeit. Nicht zu wissen, was sicher ist. Das Gefühl, dass niemand dich versteht.</p>
+
+  <p>Bei mir war es fast zu spät. Und das kann ich einfach nicht zulassen, dass das jemand anderem passiert.</p>
+  <p>Du bist nicht falsch. Das ist keine Einbildung. Dein Körper ist auch nicht kaputt.</p>
+
+  <div class="cta-box">
+    <h3>TerraLuna App</h3>
+    <p class="app-name">Dein smarter Ernährungsbegleiter für Darm, Histamin und Zyklus</p>
+    <p>250+ Lebensmittel mit Verträglichkeits-Ampel</p>
+    <p>Verträglichkeits-Scanner mit Foto und Barcode</p>
+    <p>120+ glutenfreie Rezepte ohne Industriezucker</p>
+    <p>Symptom-Tagebuch und Zyklustracking</p>
+    <p>Reise-Texte in 8 Sprachen</p>
+    <p style="margin-top: 16px; color: var(--gold); font-weight: 600;">Bald im App Store und Google Play</p>
+    <p style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 8px;">juliabergles.de/app</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 28px;">
+    <p style="font-size: 13px; color: var(--cocoa); margin-bottom: 12px;">Mehr von mir:</p>
+    <p style="font-size: 13px;">
+      <strong>Instagram:</strong> @julia_bergles<br>
+      <strong>Website:</strong> juliabergles.de<br>
+      <strong>Shop:</strong> Wear Your Healing<br>
+      <strong>E-Mail:</strong> julia@bergles.net
+    </p>
+  </div>
+
+  <div class="quote" style="margin-top: 28px;">
+    "Als mein Darm anfangen durfte zu heilen,<br>
+    durfte auch ich wieder leben.<br>
+    Und genau das wünsche ich dir auch."
+  </div>
+
+  <p style="text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--rosegold); margin-top: 12px; font-style: italic;">Alles Liebe, Julia</p>
+  <span class="page-number">9</span>
+</div>
+
+<!-- SEITE 10: LEGAL -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: space-between;">
+  <div>
+    <p class="page-label">Rechtliches</p>
+    <div class="divider"></div>
+    <h2>Impressum und Hinweise</h2>
+
+    <h3>Autorin</h3>
+    <p>Julia Bergles<br>Singoldstraße 5a, 86517 Wehringen<br>julia@bergles.net<br>juliabergles.de</p>
+
+    <h3>Medizinischer Disclaimer</h3>
+    <p>Dieser Starter Guide dient ausschließlich der allgemeinen Information und Aufklärung. Die Inhalte basieren auf persönlichen Erfahrungen und allgemein zugänglichem Wissen.</p>
+    <p>Dieser Guide ersetzt keine ärztliche Diagnose, keine medizinische Behandlung und keinen Arztbesuch. Bei gesundheitlichen Beschwerden oder individuellen Fragen zur Ernährung wende dich immer an qualifiziertes medizinisches Fachpersonal.</p>
+    <p>Es werden keine Heilversprechen gemacht.</p>
+
+    <h3>Urheberrecht</h3>
+    <p>Alle Inhalte und Texte sind geistiges Eigentum von Julia Bergles. Das Weitergeben des Guides ist erlaubt. Kopieren oder Verkaufen einzelner Inhalte nicht.</p>
+
+    <h3>Quellen und Grundlagen</h3>
+    <p>Die medizinischen Informationen basieren auf etabliertem Wissen zu Reizdarmsyndrom, Darmgesundheit, Darm-Hirn-Achse und Vagusnerv-Forschung. Keine der Aussagen ist als individuelle medizinische Empfehlung zu verstehen.</p>
+  </div>
+
+  <div style="text-align: center; padding: 24px 0;">
+    <div style="width: 30px; height: 1px; background: var(--gold); margin: 0 auto 16px;"></div>
+    <p style="font-size: 10px; color: var(--cocoa); letter-spacing: 1px;">Julia Bergles / EatMoreArt</p>
+    <p style="font-size: 10px; color: var(--cocoa); letter-spacing: 1px;">Starter Guide Reizdarm, Mai 2026</p>
+  </div>
+  <span class="page-number">10</span>
+</div>
+
+</body>
+</html>
