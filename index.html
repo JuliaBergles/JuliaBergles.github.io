@@ -31,8 +31,8 @@
     .nav-links { display: flex; gap: 6px; align-items: center; }
     .nav-links a { font-size: 13px; font-weight: 400; color: var(--cocoa); text-decoration: none; transition: all 0.2s; padding: 8px 16px; border-radius: 50px; background: transparent; }
     .nav-links a:hover { background: rgba(255,255,255,0.6); color: var(--charcoal); box-shadow: 0 2px 8px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8); }
-    .nav-cta { background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.4)) !important; color: var(--charcoal) !important; padding: 8px 22px !important; border-radius: 50px !important; font-weight: 500 !important; box-shadow: 0 2px 12px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(8px); transition: all 0.2s !important; }
-    .nav-cta:hover { background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)) !important; box-shadow: 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,1); }
+    .nav-cta { background: linear-gradient(135deg, var(--wine), #B87272) !important; color: white !important; padding: 8px 22px !important; border-radius: 50px !important; font-weight: 500 !important; box-shadow: 0 3px 12px rgba(155,91,85,0.2); transition: all 0.2s !important; border: none !important; }
+    .nav-cta:hover { box-shadow: 0 5px 16px rgba(155,91,85,0.3) !important; transform: translateY(-1px); }
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
 
     /* HERO */
@@ -45,19 +45,19 @@
     .hero h1 span { color: var(--wine); }
     .hero .claim { font-size: 1.125rem; color: var(--cocoa); margin-bottom: 48px; line-height: 1.8; font-weight: 300; max-width: 520px; margin-left: auto; margin-right: auto; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--charcoal); color: var(--white); padding: 14px 36px; border-radius: 4px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; letter-spacing: 0.03em; }
-    .btn-primary:hover { background: #1A1510; }
-    .btn-secondary { background: transparent; color: var(--charcoal); padding: 14px 36px; border-radius: 4px; font-weight: 500; font-size: 0.875rem; text-decoration: none; border: 1px solid rgba(44,40,32,0.2); transition: all 0.2s; display: inline-block; }
-    .btn-secondary:hover { border-color: var(--charcoal); }
+    .btn-primary { background: linear-gradient(135deg, var(--wine), #B87272); color: white; padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; letter-spacing: 0.03em; box-shadow: 0 4px 16px rgba(155,91,85,0.2); }
+    .btn-primary:hover { box-shadow: 0 6px 20px rgba(155,91,85,0.3); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--wine); padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; border: 1.5px solid var(--wine); transition: all 0.2s; display: inline-block; }
+    .btn-secondary:hover { background: var(--wine); color: white; }
     .btn-small { padding: 10px 24px; font-size: 0.8125rem; }
-    .btn-navy { background: var(--charcoal); color: var(--white); padding: 12px 28px; border-radius: 4px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; border: none; cursor: pointer; }
-    .btn-navy:hover { background: #1A1510; }
-    .btn-gold { background: var(--wine); color: var(--white); padding: 12px 28px; border-radius: 4px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; }
-    .btn-gold:hover { background: #7A4440; }
-    .btn-sage { background: transparent; color: var(--charcoal); padding: 12px 28px; border-radius: 4px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; border: 1px solid rgba(44,40,32,0.2); }
-    .btn-sage:hover { border-color: var(--charcoal); }
-    .btn-wyh { background: var(--charcoal); color: var(--white); padding: 12px 28px; border-radius: 4px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; }
-    .btn-wyh:hover { background: #1A1510; }
+    .btn-navy { background: linear-gradient(135deg, var(--wine), #B87272); color: white; padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(155,91,85,0.2); }
+    .btn-navy:hover { box-shadow: 0 6px 20px rgba(155,91,85,0.3); transform: translateY(-1px); }
+    .btn-gold { background: linear-gradient(135deg, var(--wine), #B87272); color: white; padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; box-shadow: 0 4px 16px rgba(155,91,85,0.2); }
+    .btn-gold:hover { box-shadow: 0 6px 20px rgba(155,91,85,0.3); transform: translateY(-1px); }
+    .btn-sage { background: transparent; color: var(--wine); padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; border: 1.5px solid var(--wine); }
+    .btn-sage:hover { background: var(--wine); color: white; }
+    .btn-wyh { background: linear-gradient(135deg, var(--wine), #B87272); color: white; padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; display: inline-block; box-shadow: 0 4px 16px rgba(155,91,85,0.2); }
+    .btn-wyh:hover { box-shadow: 0 6px 20px rgba(155,91,85,0.3); transform: translateY(-1px); }
 
     /* IMAGE DIVIDERS */
     .img-divider { height: 350px; background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
@@ -75,7 +75,7 @@
     /* ZIELGRUPPE — condition chips */
     .condition-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 40px; }
     .condition-chip { background: var(--blush); padding: 12px 24px; border-radius: 4px; font-size: 0.875rem; font-weight: 400; color: var(--charcoal); transition: all 0.2s; border: 1px solid rgba(44,40,32,0.06); cursor: pointer; text-decoration: none; display: inline-block; }
-    .condition-chip:hover { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
+    .condition-chip:hover { background: var(--wine); color: white; border-color: var(--wine); }
     /* Empfehlung Overlay */
     .empfehlung-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 200; align-items: center; justify-content: center; padding: 24px; }
     .empfehlung-overlay.open { display: flex; }
@@ -86,7 +86,7 @@
     .empfehlung-close { position: absolute; top: 16px; right: 20px; font-size: 20px; color: var(--cocoa); cursor: pointer; background: none; border: none; }
     .empfehlung-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
     .empfehlung-btn { padding: 14px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: block; }
-    .empfehlung-btn-primary { background: linear-gradient(135deg, var(--wine) 0%, #d4868a 50%, var(--wine) 100%); color: white; }
+    .empfehlung-btn-primary { background: linear-gradient(135deg, var(--wine), #B87272); color: white; border-radius: 50px; }
     .empfehlung-btn-secondary { background: var(--linen); color: var(--charcoal); }
     .empfehlung-btn:hover { transform: translateY(-1px); }
 
@@ -134,7 +134,7 @@
     .story-expanded p { font-size: 15px; color: var(--cocoa); line-height: 1.8; margin-bottom: 14px; }
     .story-conditions { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
     .story-condition { background: var(--white); padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 500; color: var(--charcoal); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    .story-toggle { background: none; border: 2px solid var(--wine); color: var(--wine); padding: 12px 32px; border-radius: 50px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s; margin-top: 24px; font-family: 'Inter', sans-serif; }
+    .story-toggle { background: none; border: 1.5px solid var(--wine); color: var(--wine); padding: 12px 32px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; cursor: pointer; transition: all 0.2s; margin-top: 24px; font-family: 'Inter', sans-serif; }
     .story-toggle:hover { background: var(--wine); color: var(--white); }
     .story-disclaimer { background: rgba(255,255,255,0.6); border-radius: 16px; padding: 24px; margin-top: 32px; border-left: 3px solid var(--gold); }
     .story-disclaimer p { font-size: 13px; color: var(--cocoa); margin-bottom: 0; }
