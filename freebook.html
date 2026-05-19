@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kostenloses E-Book: Histaminintoleranz oder Reizdarm verstehen. Starter-Guide von Julia Bergles.">
+  <title>Kostenloses E-Book | EatMoreArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #F5EDE4; --bg-elevated: #FAF4EB; --bg-dark: #2C2820;
+      --text: #3D3530; --text-muted: #7A6F65; --text-light: #B5AC9E;
+      --accent: #8B5E5A; --accent-light: #C9908A;
+      --border: rgba(44,40,32,0.1); --white: #FFFDF9;
+      --navy: #2c3e6b; --gold: #c9a96e;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; font-weight: 300; line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-height: 1.15; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,237,228,0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 2rem; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--text); text-decoration: none; letter-spacing: 0.5px; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { font-size: 0.8125rem; font-weight: 400; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--bg-dark); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 500 !important; }
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text); }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 8rem 2rem 6rem; }
+    .hero-inner { max-width: 600px; text-align: center; }
+    .eyebrow { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 2rem; }
+    .hero h1 { font-size: 3.5rem; color: var(--text); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+    .hero h1 em { color: var(--accent); font-style: italic; }
+    .hero .subtitle { font-size: 1.125rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 3.5rem; font-weight: 300; max-width: 440px; margin-left: auto; margin-right: auto; }
+
+    /* GUIDE CHOICE */
+    .guide-choice { display: flex; gap: 0; justify-content: center; margin-bottom: 2.5rem; }
+    .guide-btn { padding: 0.875rem 2rem; font-size: 0.875rem; font-weight: 500; font-family: inherit; cursor: pointer; transition: all 0.2s; border: 1px solid var(--border); background: transparent; color: var(--text-muted); }
+    .guide-btn:first-child { border-radius: 4px 0 0 4px; }
+    .guide-btn:last-child { border-radius: 0 4px 4px 0; border-left: none; }
+    .guide-btn.active { background: var(--bg-dark); color: var(--white); border-color: var(--bg-dark); }
+
+    /* FORM */
+    .form-container { max-width: 400px; margin: 0 auto; }
+    .form-container input[type="email"] {
+      width: 100%; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 4px;
+      font-size: 1rem; font-family: inherit; font-weight: 300; color: var(--text); background: var(--bg-elevated);
+      outline: none; transition: border-color 0.2s; margin-bottom: 0.75rem;
+    }
+    .form-container input[type="email"]:focus { border-color: var(--accent); }
+    .form-container input[type="email"]::placeholder { color: var(--text-light); }
+    .btn-download {
+      width: 100%; padding: 1rem; border: none; border-radius: 4px;
+      font-size: 0.875rem; font-weight: 500; font-family: inherit; cursor: pointer;
+      background: var(--bg-dark); color: var(--white); transition: all 0.2s;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .btn-download:hover { background: #1A1510; }
+    .form-hint { font-size: 0.75rem; color: var(--text-light); text-align: center; margin-top: 1rem; }
+
+    /* SECTION */
+    .section { padding: 5rem 2rem; }
+    .section--elevated { background: var(--bg-elevated); }
+    .container { max-width: 800px; margin: 0 auto; }
+    .container--narrow { max-width: 560px; margin: 0 auto; }
+    .text-center { text-align: center; }
+    .section h2 { font-size: 2.25rem; color: var(--text); margin-bottom: 1rem; }
+    .section .subtitle-text { font-size: 1rem; color: var(--text-muted); max-width: 420px; margin: 0 auto 3rem; line-height: 1.7; }
+
+    /* THREE COLUMNS */
+    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .col { text-align: center; }
+    .col-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--accent); font-weight: 300; margin-bottom: 0.75rem; }
+    .col h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .col p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* CHAPTER LIST */
+    .tabs { display: flex; gap: 0; justify-content: center; margin-bottom: 2rem; }
+    .tab { padding: 0.75rem 1.5rem; font-size: 0.8125rem; font-weight: 500; font-family: inherit; cursor: pointer; border: none; background: var(--bg); color: var(--text-muted); transition: all 0.2s; }
+    .tab:first-child { border-radius: 4px 0 0 4px; }
+    .tab:last-child { border-radius: 0 4px 4px 0; }
+    .tab.active { background: var(--bg-dark); color: var(--white); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .chapter-list { list-style: none; max-width: 480px; margin: 0 auto; }
+    .chapter-list li { padding: 1.25rem 0; border-bottom: 1px solid var(--border); font-size: 1rem; color: var(--text); display: flex; align-items: center; gap: 1.25rem; font-weight: 400; }
+    .chapter-list li:last-child { border-bottom: none; }
+    .ch-num { width: 2rem; height: 2rem; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: var(--accent); flex-shrink: 0; }
+
+    /* ABOUT */
+    .about p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.75rem; }
+    .about .accent-text { color: var(--accent); font-weight: 500; }
+
+    /* QUOTE */
+    .quote { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--accent); text-align: center; padding: 2rem 1rem; line-height: 1.5; max-width: 480px; margin: 0 auto; }
+
+    /* BOTTOM CTA */
+    .bottom-cta { padding: 5rem 2rem; text-align: center; }
+    .bottom-cta h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1.5rem; }
+
+    /* SUCCESS */
+    .success-msg { display: none; text-align: center; padding: 2rem; background: var(--bg-elevated); border-radius: 4px; border: 1px solid var(--border); }
+    .success-msg h3 { font-size: 1.5rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .success-msg p { font-size: 0.9375rem; color: var(--text-muted); }
+
+    /* FOOTER */
+    footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); }
+    footer a { color: var(--text-light); text-decoration: none; font-size: 0.75rem; margin: 0 0.75rem; letter-spacing: 0.05em; }
+    footer a:hover { color: var(--text); }
+    .footer-copy { font-size: 0.6875rem; color: var(--text-light); margin-top: 1rem; letter-spacing: 0.05em; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: rgba(245,237,228,0.98); padding: 1.5rem; gap: 1rem; backdrop-filter: blur(20px); }
+      .hero h1 { font-size: 2.5rem; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .three-col { grid-template-columns: 1fr; gap: 2rem; }
+      .section h2 { font-size: 1.75rem; }
+      .bottom-cta h2 { font-size: 2rem; }
+      .guide-choice { flex-direction: column; align-items: center; max-width: 280px; margin-left: auto; margin-right: auto; }
+      .guide-btn:first-child { border-radius: 4px 4px 0 0; }
+      .guide-btn:last-child { border-radius: 0 0 4px 4px; border-left: 1px solid var(--border); border-top: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Julia Bergles</a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html">Startseite</a>
+      <a href="eatmoreart.html">Shop</a>
+      <a href="app.html">TerraLuna App</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Kostenloser Starter Guide</span>
+    <h1>Verstehe deinen Körper.<br><em>Ohne Rätselraten.</em></h1>
+    <p class="subtitle">10 Seiten, die dir mehr Klarheit geben als monatelanges Googeln. Medizinisch fundiert, persönlich geschrieben, kostenlos.</p>
+
+    <div class="guide-choice" id="choice1">
+      <button class="guide-btn active" onclick="selectGuide('histamin')">Histaminintoleranz</button>
+      <button class="guide-btn" onclick="selectGuide('reizdarm')">Reizdarm</button>
+    </div>
+
+    <div class="form-container" id="formContainer">
+      <input type="email" id="emailInput" placeholder="Deine E-Mail-Adresse" required>
+      <button class="btn-download" onclick="submitForm('formContainer','successMsg')">E-Book kostenlos sichern</button>
+      <p class="form-hint">Kein Spam, kein Newsletter. Du bekommst nur dein E-Book.</p>
+    </div>
+
+    <div class="success-msg" id="successMsg">
+      <h3>Dein Guide ist unterwegs!</h3>
+      <p>Ich schicke dir dein E-Book in den nächsten Stunden per Mail. Schau auch im Spam-Ordner nach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAS DICH ERWARTET -->
+<section class="section section--elevated">
+  <div class="container text-center">
+    <span class="eyebrow">Was dich erwartet</span>
+    <h2>Klarheit in 10 Seiten</h2>
+    <p class="subtitle-text">Kein Fachchinesisch, keine Extreme. Nur das, was dir wirklich hilft.</p>
+    <div class="three-col">
+      <div class="col">
+        <div class="col-num">01</div>
+        <h3>Verstehen</h3>
+        <p>Was in deinem Körper passiert. Einfach erklärt, auf den Punkt.</p>
+      </div>
+      <div class="col">
+        <div class="col-num">02</div>
+        <h3>Einordnen</h3>
+        <p>Welche Lebensmittel helfen, welche nicht. Und warum es an manchen Tagen besser ist.</p>
+      </div>
+      <div class="col">
+        <div class="col-num">03</div>
+        <h3>Handeln</h3>
+        <p>Konkrete erste Schritte. Sofort umsetzbar. Ohne Druck.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INHALTSVORSCHAU -->
+<section class="section">
+  <div class="container text-center">
+    <span class="eyebrow">Inhaltsverzeichnis</span>
+    <h2>Was drin steht</h2>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('histamin', this)">Histaminintoleranz</button>
+      <button class="tab" onclick="showTab('reizdarm', this)">Reizdarm</button>
+    </div>
+
+    <div class="tab-content active" id="tab-histamin">
+      <ul class="chapter-list">
+        <li><span class="ch-num">1</span> Was ist Histaminintoleranz?</li>
+        <li><span class="ch-num">2</span> Das Belastungsmodell: Dein Histaminfass</li>
+        <li><span class="ch-num">3</span> Lebensmittel: Was meiden, was geht</li>
+        <li><span class="ch-num">4</span> Der Darm ist der Schlüssel</li>
+        <li><span class="ch-num">5</span> Östrogen und Histamin</li>
+        <li><span class="ch-num">6</span> Was du jetzt tun kannst</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="tab-reizdarm">
+      <ul class="chapter-list">
+        <li><span class="ch-num">1</span> Was ist Reizdarm?</li>
+        <li><span class="ch-num">2</span> Wie deine Verdauung funktioniert</li>
+        <li><span class="ch-num">3</span> Warum Schmerzen entstehen</li>
+        <li><span class="ch-num">4</span> Dein Nervensystem ist der Schlüssel</li>
+        <li><span class="ch-num">5</span> Ernährung bei Reizdarm</li>
+        <li><span class="ch-num">6</span> Was du jetzt tun kannst</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section section--elevated">
+  <div class="quote">
+    "Du bist nicht falsch. Das ist keine Einbildung. Dein Körper ist auch nicht kaputt. Du musst diesen Weg nicht mehr alleine gehen."
+  </div>
+</section>
+
+<!-- ÜBER MICH -->
+<section class="section">
+  <div class="container--narrow text-center about">
+    <span class="eyebrow">Wer schreibt das</span>
+    <h2>Hey, ich bin Julia.</h2>
+    <p>20 Jahre. Seit zwei Jahren selbstständig. Histaminintoleranz, Reizdarm, Essstörung Recovery.</p>
+    <p>Nach einem Darmverschluss konnte ich monatelang nur fünf Lebensmittel essen. Kein Arzt konnte mir helfen.</p>
+    <p>Heute kann ich wieder fast alles essen, was histaminarm ist. Aus dieser Erfahrung heraus sind diese Guides entstanden.</p>
+    <p class="accent-text" style="margin-top: 1.5rem;">Keine Theorie. Eigene Erfahrung. Für Menschen wie dich.</p>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <span class="eyebrow">Kostenlos</span>
+  <h2>Bereit für mehr Klarheit?</h2>
+
+  <div class="guide-choice" id="choice2" style="margin-top: 2rem;">
+    <button class="guide-btn active" onclick="selectGuide('histamin')">Histaminintoleranz</button>
+    <button class="guide-btn" onclick="selectGuide('reizdarm')">Reizdarm</button>
+  </div>
+
+  <div class="form-container" id="formContainer2" style="margin-top: 1.5rem;">
+    <input type="email" id="emailInput2" placeholder="Deine E-Mail-Adresse" required>
+    <button class="btn-download" onclick="submitForm('formContainer2','successMsg2')">E-Book kostenlos sichern</button>
+    <p class="form-hint">Kein Spam, kein Newsletter. Du bekommst nur dein E-Book.</p>
+  </div>
+
+  <div class="success-msg" id="successMsg2">
+    <h3>Dein Guide ist unterwegs!</h3>
+    <p>Ich schicke dir dein E-Book in den nächsten Stunden per Mail.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html">Startseite</a>
+  <a href="eatmoreart.html">Shop</a>
+  <a href="app.html">TerraLuna App</a>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+  <p class="footer-copy">Julia Bergles / EatMoreArt</p>
+</footer>
+
+<script>
+let selectedGuide = 'histamin';
+
+function selectGuide(guide) {
+  selectedGuide = guide;
+  document.querySelectorAll('.guide-btn').forEach(b => {
+    b.classList.remove('active');
+    if ((guide === 'histamin' && b.textContent === 'Histaminintoleranz') ||
+        (guide === 'reizdarm' && b.textContent === 'Reizdarm')) {
+      b.classList.add('active');
+    }
+  });
+}
+
+function showTab(guide, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + guide).classList.add('active');
+}
+
+function submitForm(formId, successId) {
+  const form = document.getElementById(formId);
+  const email = form.querySelector('input[type="email"]').value;
+  if (!email || !email.includes('@')) { alert('Bitte gib eine gültige E-Mail-Adresse ein.'); return; }
+
+  const guideName = selectedGuide === 'histamin' ? 'Histaminintoleranz' : 'Reizdarm';
+  const subject = encodeURIComponent('E-Book Anfrage: ' + guideName);
+  const body = encodeURIComponent('Neue E-Book Anfrage!\n\nGuide: ' + guideName + '\nE-Mail: ' + email);
+  window.open('mailto:julia@bergles.net?subject=' + subject + '&body=' + body, '_blank');
+
+  form.style.display = 'none';
+  document.getElementById(successId).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
