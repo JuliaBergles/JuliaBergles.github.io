@@ -6,6 +6,21 @@ Julia Bergles, 20 Jahre, seit 2 Jahren selbstständig.
 Nicht die abgeklärte Expertin, sondern die, die es gerade lebt.
 Nahbar, ehrlich, jung, weiblich. Mittendrin, nicht "drüber".
 
+## Wortmarke
+
+**juliabergles** (alles klein)
+Auf der letzten Slide jedes Karussells: `juliabergles` + `juliabergles.de`
+
+## App
+
+TerraLuna App. Noch nicht im Store. Status: "Bald verfügbar."
+Dezent erwähnen, nicht als Hauptthema.
+
+## E-Book Versand
+
+Manuell per Instagram DM. Kein Manychat.
+Workflow: Kommentar "REIZDARM" oder "HISTAMIN" -> Julia schickt PDF per DM.
+
 ## Tonalität
 
 - Du-Form. Wie zu einer Freundin reden.
