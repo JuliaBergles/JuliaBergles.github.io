@@ -10,10 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --cream: #F4F3F1; --warmwhite: #F4F3F1; --charcoal: #0F1A2E;
-      --cocoa: #8A8580; --rosegold: #C48B6C; --wine: #C48B6C;
-      --navy: #0F1A2E; --navy-light: #162240; --gold: #C48B6C;
-      --linen: #ECEAE6; --white: #F4F3F1; --gray: #8A8580;
+      --cream: #F8F2EE; --warmwhite: #F8F2EE; --charcoal: #955251;
+      --cocoa: #8A7B75; --rosegold: #C48B6C; --wine: #C48B6C;
+      --navy: #955251; --navy-light: #7A3F3F; --gold: #C48B6C;
+      --linen: #F0E8E4; --white: #F8F2EE; --gray: #8A7B75;
       --honey: #D4A48A;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,8 +29,8 @@
     .nav-links { display: flex; gap: 24px; align-items: center; }
     .nav-links a { font-size: 13px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--wine); }
-    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(15,26,46,0.15); transition: all 0.3s; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,26,46,0.25); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(149,82,81,0.15); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(149,82,81,0.25); }
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
 
     /* HERO */
@@ -46,9 +46,9 @@
     /* OPTION CARDS */
     .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
     .option-card { background: var(--warmwhite); border-radius: 24px; padding: 36px 28px; border: 1px solid rgba(201,169,110,0.08); transition: all 0.3s; }
-    .option-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,26,46,0.08); }
+    .option-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(149,82,81,0.08); }
     .option-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 24px; }
-    .option-icon.navy { background: rgba(15,26,46,0.08); color: var(--navy); }
+    .option-icon.navy { background: rgba(149,82,81,0.08); color: var(--navy); }
     .option-icon.rose { background: rgba(201,144,138,0.1); color: var(--rosegold); }
     .option-icon.gold { background: rgba(201,169,110,0.12); color: var(--gold); }
     .option-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
