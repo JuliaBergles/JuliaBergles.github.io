@@ -9,15 +9,15 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #F5EDE4; --white: #FAF4EB; --charcoal: #3D3530;
-      --text: #5c5047; --muted: #7A6F65; --light: #B5AC9E;
-      --accent: #9B5B55; --linen: #EAE0D5;
+      --bg: #F4F3F1; --white: #F4F3F1; --charcoal: #0F1A2E;
+      --text: #0F1A2E; --muted: #8A8580; --light: #8A8580;
+      --accent: #C48B6C; --linen: #ECEAE6;
     }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; font-weight: 300; line-height: 1.7; }
     h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,237,228,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(44,40,32,0.05); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(244,243,241,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(15,26,46,0.05); }
     .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--charcoal); text-decoration: none; }
     .nav-back { font-size: 13px; color: var(--muted); text-decoration: none; }
@@ -28,8 +28,8 @@
     .hero-label { font-size: 11px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
     .hero h1 { font-size: 3rem; color: var(--charcoal); margin-bottom: 16px; line-height: 1.15; }
     .hero p { font-size: 1.1rem; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
-    .btn-start { display: inline-block; padding: 16px 48px; border-radius: 50px; font-weight: 500; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, var(--accent), #B87272); color: white; box-shadow: 0 4px 16px rgba(155,91,85,0.2); transition: all 0.2s; border: none; cursor: pointer; font-family: inherit; }
-    .btn-start:hover { box-shadow: 0 6px 20px rgba(155,91,85,0.3); transform: translateY(-1px); }
+    .btn-start { display: inline-block; padding: 16px 48px; border-radius: 50px; font-weight: 500; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #C48B6C, #D4A48A); color: white; box-shadow: 0 4px 16px rgba(196,139,108,0.25); transition: all 0.2s; border: none; cursor: pointer; font-family: inherit; }
+    .btn-start:hover { box-shadow: 0 6px 20px rgba(196,139,108,0.25); transform: translateY(-1px); }
 
     .disclaimer-top { font-size: 13px; color: var(--muted); text-align: center; margin: 0 auto 32px; max-width: 520px; line-height: 1.7; padding: 16px 20px; background: var(--linen); border-radius: 10px; }
 
@@ -52,13 +52,13 @@
     /* ANTWORTEN */
     .antworten { display: flex; flex-direction: column; gap: 10px; }
     .antwort { background: var(--white); border: 1.5px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: all 0.2s; font-size: 15px; color: var(--charcoal); text-align: left; font-family: inherit; font-weight: 400; }
-    .antwort:hover { border-color: var(--accent); background: rgba(155,91,85,0.03); }
-    .antwort.selected { border-color: var(--accent); background: rgba(155,91,85,0.06); font-weight: 500; }
+    .antwort:hover { border-color: var(--accent); background: rgba(196,139,108,0.03); }
+    .antwort.selected { border-color: var(--accent); background: rgba(196,139,108,0.06); font-weight: 500; }
 
     /* NAVIGATION */
     .quiz-nav { display: flex; justify-content: space-between; margin-top: 32px; }
     .btn-weiter { padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 15px; background: var(--accent); color: white; border: none; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-    .btn-weiter:hover { background: #7A4440; }
+    .btn-weiter:hover { background: #D4A48A; }
     .btn-weiter:disabled { opacity: 0.3; cursor: not-allowed; }
     .btn-zurück { padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 15px; background: transparent; color: var(--muted); border: 1px solid rgba(0,0,0,0.1); cursor: pointer; font-family: inherit; }
 
@@ -74,7 +74,7 @@
     .thema-card h3 { font-size: 1.3rem; color: var(--charcoal); margin-bottom: 10px; }
     .thema-card p { font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 8px; }
     .thema-hinweis { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 8px; line-height: 1.6; }
-    .thema-guide { display: inline-block; margin-top: 12px; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 500; color: var(--accent); background: rgba(155,91,85,0.08); text-decoration: none; }
+    .thema-guide { display: inline-block; margin-top: 12px; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 500; color: var(--accent); background: rgba(196,139,108,0.08); text-decoration: none; }
 
     .empfehlung { background: var(--linen); border-radius: 12px; padding: 24px; margin-bottom: 16px; text-align: left; }
     .empfehlung h3 { font-size: 1.2rem; color: var(--charcoal); margin-bottom: 8px; }
