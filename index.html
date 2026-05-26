@@ -95,27 +95,27 @@
     /* ZIELGRUPPE — condition chips (Glasmorphism) */
     .condition-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 40px; }
     .condition-chip {
-      background: rgba(248,242,238,0.6);
+      background: rgba(255,255,255,0.1);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       padding: 12px 24px;
-      border-radius: 4px;
+      border-radius: 50px;
       font-size: 0.875rem;
       font-weight: 400;
-      color: var(--text-dark);
+      color: rgba(255,255,255,0.85);
       transition: all 0.4s ease;
-      border: 1px solid rgba(255,255,255,0.5);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.1);
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
       transform-style: preserve-3d;
     }
     .condition-chip:hover {
-      background: linear-gradient(135deg, #955251, #7A3F3F);
+      background: linear-gradient(135deg, #C48B6C, #D4A48A);
       color: white;
-      border-color: #955251;
-      box-shadow: 0 8px 24px rgba(149,82,81,0.2);
+      border-color: #C48B6C;
+      box-shadow: 0 8px 24px rgba(196,139,108,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
       transform: translateY(-4px) scale(1.02);
     }
 
@@ -348,12 +348,12 @@
 </section>
 
 <!-- ZIELGRUPPE -->
-<section id="zielgruppe" style="position: relative; overflow: hidden;">
-  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('images/IMG_5738.jpeg'); background-size: cover; background-position: center top; opacity: 0.08;"></div>
-  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, var(--warm-white) 0%, rgba(248,242,238,0.6) 50%, var(--warm-white) 100%);"></div>
+<section id="zielgruppe" style="position: relative; overflow: hidden; background: linear-gradient(160deg, #955251, #7A3F3F, #603030);">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('images/IMG_5738.jpeg'); background-size: cover; background-position: center top; opacity: 0.05;"></div>
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
   <div class="section-inner" style="text-align: center; position: relative; z-index: 1;">
-    <p class="section-label fade-up">Dein Körper. Deine Regeln.</p>
-    <h2 class="section-title fade-up" style="margin-left: auto; margin-right: auto;">Für dich, wenn du...</h2>
+    <p class="section-label fade-up" style="color: #E8C4A8;">Dein Körper. Deine Regeln.</p>
+    <h2 class="section-title fade-up" style="margin-left: auto; margin-right: auto; color: #F8F2EE;">Für dich, wenn du...</h2>
     <div class="condition-grid fade-up">
       <span class="condition-chip" onclick="showEmpfehlung('histamin')">Histaminintoleranz</span>
       <span class="condition-chip" onclick="showEmpfehlung('darm')">Reizdarm</span>
@@ -374,7 +374,7 @@
       <span class="condition-chip" onclick="showEmpfehlung('recovery')">Orthorexie</span>
       <span class="condition-chip" onclick="showEmpfehlung('darm')">Stoffwechselstörungen</span>
     </div>
-    <p class="fade-up" style="font-size: 17px; color: var(--text-muted); max-width: 500px; margin: 0 auto; line-height: 1.8; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 22px;">
+    <p class="fade-up" style="font-size: 17px; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto; line-height: 1.8; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 22px;">
       Du bist nicht allein. Und du musst das nicht alleine durchstehen.
     </p>
   </div>
