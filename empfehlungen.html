@@ -9,9 +9,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --wine: #bf6b6b; --cream: #fdf6f0; --charcoal: #5c5047; --cocoa: #c4b5a6;
+      --wine: #C48B6C; --cream: #F8F2EE; --charcoal: #3D2B2E; --cocoa: #c4b5a6;
       --gold: #c9a96e; --rosegold: #c9908a; --copper: #C48B6C;
-      --white: #fffdf9; --linen: #f5ece0; --gray: #b5a99a; --navy: #2c3e6b;
+      --white: #fffdf9; --linen: #F0E8E4; --gray: #b5a99a; --navy: #955251;
       --blush: #f2d5cf; --glossy: #f8e8e0;
     }
     body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; }
@@ -25,7 +25,7 @@
     .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--wine); }
-    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.15); transition: all 0.3s; }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(149,82,81,0.15); transition: all 0.3s; }
     .nav-cta:hover { transform: translateY(-1px); }
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
 
@@ -93,7 +93,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine, #bf6b6b);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa, #c4b5a6);">EatMoreArt</span></span>
+      <span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine, #C48B6C);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa, #c4b5a6);">EatMoreArt</span></span>
     </a>
     <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <div class="nav-links">

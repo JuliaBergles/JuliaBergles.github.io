@@ -9,11 +9,11 @@
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --blush: #f2d5cf; --strawberry: #e8a0a0; --cream: #fdf6f0; --warmwhite: #fffbf7;
-      --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #5c5047; --soft: #b8a99a;
+      --blush: #f2d5cf; --strawberry: #e8a0a0; --cream: #F8F2EE; --warmwhite: #F8F2EE;
+      --rosegold: #D4A48A; --sand: #d4c4b0; --charcoal: #3D2B2E; --soft: #8A7B75;
       --honey: #dbb88a; --sage: #dbb88a; --lavender: #d5c8e0; --peach: #f0c4a8;
-      --glossy: #f8e8e0; --white: #ffffff;
-      --navy: #2c3e6b;
+      --glossy: #F0E8E4; --white: #ffffff;
+      --navy: #955251;
     }
     body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
     .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
@@ -25,19 +25,19 @@
     .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
     .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
     .nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; display: flex; align-items: baseline; gap: 6px; }
-    .nav-logo .ema { font-size: 22px; font-weight: 600; letter-spacing: 4px; background: linear-gradient(135deg, var(--rosegold), #d4a49e, var(--rosegold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-logo .ema { font-size: 22px; font-weight: 600; letter-spacing: 4px; background: linear-gradient(135deg, var(--rosegold), #D4A48A, var(--rosegold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .nav-logo .ema-full { font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--soft); }
     .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--soft); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rosegold); }
-    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(44,62,107,0.2); transition: all 0.3s; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,62,107,0.3); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(149,82,81,0.2); transition: all 0.3s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(149,82,81,0.3); }
     .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
 
     /* HERO */
     .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; background: var(--navy); }
     .hero-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 30%, rgba(107,163,199,0.15) 0%, transparent 70%); }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, var(--navy) 0%, rgba(44,62,107,0.9) 50%, var(--navy) 100%); z-index: 0; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, var(--navy) 0%, rgba(149,82,81,0.9) 50%, var(--navy) 100%); z-index: 0; }
     .hero::after { content: ''; position: absolute; bottom: -10%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,169,110,0.1) 0%, transparent 70%); border-radius: 50%; }
     .hero-content { position: relative; z-index: 1; max-width: 650px; }
     .hero-label { font-size: 11px; font-weight: 600; color: var(--honey); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
@@ -47,7 +47,7 @@
     .hero .subtitle { font-size: 16px; color: var(--sand); max-width: 480px; margin: 0 auto 40px; line-height: 1.8; font-weight: 300; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
-    .btn-rose { background: linear-gradient(135deg, var(--rosegold) 0%, #d4a0a0 50%, var(--rosegold) 100%); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); }
+    .btn-rose { background: linear-gradient(135deg, var(--rosegold) 0%, #D4A48A 50%, var(--rosegold) 100%); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); }
     .btn-rose:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,144,138,0.35); }
     .btn-outline { background: transparent; color: var(--rosegold); border: 2px solid var(--rosegold); }
     .btn-outline:hover { background: var(--rosegold); color: var(--white); }
@@ -498,7 +498,7 @@ function renderFlohmarkt() {
           <span style="font-size: 18px; font-weight: 700; color: var(--rosegold);">${item.preis.toFixed(2)} €</span>
         </div>
         <div style="font-size: 11px; color: var(--soft);">${item.groesse || ''} · ${item.draht || ''}</div>
-        <a href="mailto:julia@bergles.net?subject=Flohmarkt: ${encodeURIComponent(item.name)}&body=${encodeURIComponent('Hi Julia,\\n\\nich möchte gerne den Flohmarkt-Charm \"' + item.name + '\" für ' + item.preis.toFixed(2) + ' € kaufen.\\n\\nMein Name:\\nMeine Adresse:\\n\\nLiebe Grüße')}" style="display: block; text-align: center; margin-top: 12px; padding: 10px; border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--white); background: linear-gradient(135deg, var(--rosegold), #d4a0a0, var(--rosegold)); text-decoration: none;">Kaufen</a>
+        <a href="mailto:julia@bergles.net?subject=Flohmarkt: ${encodeURIComponent(item.name)}&body=${encodeURIComponent('Hi Julia,\\n\\nich möchte gerne den Flohmarkt-Charm \"' + item.name + '\" für ' + item.preis.toFixed(2) + ' € kaufen.\\n\\nMein Name:\\nMeine Adresse:\\n\\nLiebe Grüße')}" style="display: block; text-align: center; margin-top: 12px; padding: 10px; border-radius: 50px; font-size: 13px; font-weight: 600; color: var(--white); background: linear-gradient(135deg, var(--rosegold), #D4A48A, var(--rosegold)); text-decoration: none;">Kaufen</a>
       </div>
     </div>
   `).join('');
