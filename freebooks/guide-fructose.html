@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Guide Fructosemalabsorption | EatMoreArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #3d322a;
+      --text: #5c5047; --cocoa: #c4b5a6; --rosegold: #c9908a;
+      --wine: #bf6b6b; --navy: #2c3e6b; --gold: #c9a96e;
+      --linen: #f5ece0; --white: #fffdf9; --gray: #b5a99a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #e8e0d4; color: var(--text); line-height: 1.8; font-size: 13.5px; -webkit-font-smoothing: antialiased; }
+
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 64px 72px; background: var(--cream); page-break-after: always; position: relative; overflow: hidden; }
+    .page:last-child { page-break-after: auto; }
+
+    .page::after { content: ''; position: absolute; top: 56px; right: 56px; width: 1px; height: calc(100% - 112px); background: linear-gradient(180deg, transparent, var(--cocoa), transparent); opacity: 0.2; }
+
+    .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--navy); color: var(--white); padding: 80px 60px; }
+    .cover::after { display: none; }
+    .cover-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+    .cover-label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .cover h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .cover h1 em { color: var(--gold); font-style: italic; }
+    .cover .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 48px; letter-spacing: 0.5px; }
+    .cover .cover-line-bottom { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
+    .cover .author { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: uppercase; }
+    .cover .brand { position: absolute; bottom: 52px; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 3px; text-transform: uppercase; }
+
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 18px; line-height: 1.25; letter-spacing: -0.3px; }
+    h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--navy); margin: 28px 0 10px; }
+    h4 { font-size: 12px; font-weight: 600; color: var(--charcoal); margin: 18px 0 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    p { margin-bottom: 11px; color: var(--text); }
+    .lead { font-size: 14px; color: var(--cocoa); line-height: 1.9; margin-bottom: 20px; }
+
+    .page-label { font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .page-number { position: absolute; bottom: 48px; right: 72px; font-size: 10px; color: var(--cocoa); font-weight: 300; }
+
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 8px 0 24px; }
+
+    .info-box { background: var(--navy); border-radius: 14px; padding: 28px 26px; color: var(--white); margin: 24px 0; }
+    .info-box h3 { color: var(--gold); margin-top: 0; font-size: 18px; }
+    .info-box p { color: rgba(255,255,255,0.65); font-size: 12.5px; line-height: 1.8; }
+    .info-box ul { color: rgba(255,255,255,0.65); font-size: 12.5px; margin-left: 16px; line-height: 1.8; }
+    .info-box li { margin-bottom: 3px; }
+
+    .highlight-box { background: var(--linen); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--gold); }
+    .highlight-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+    .highlight-box strong { color: var(--navy); }
+
+    .warn-box { background: rgba(44,62,107,0.04); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--wine); }
+    .warn-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+
+    ul { margin: 10px 0 14px 18px; }
+    li { margin-bottom: 5px; font-size: 12.5px; color: var(--text); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+    .col-box { background: var(--warmwhite); border-radius: 10px; padding: 20px; border: 1px solid rgba(201,169,110,0.08); }
+    .col-box h4 { margin-top: 0; color: var(--navy); }
+
+    .food-section { margin: 20px 0; }
+    .food-label { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+    .food-label.meiden { background: rgba(191,107,107,0.1); color: var(--wine); }
+    .food-label.vorsicht { background: rgba(201,169,110,0.15); color: #a8884d; }
+    .food-label.safe { background: rgba(44,62,107,0.08); color: var(--navy); }
+
+    .quote { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--navy); text-align: center; padding: 28px 20px; line-height: 1.6; }
+
+    .cta-box { background: var(--navy); border-radius: 16px; padding: 36px 32px; text-align: center; color: var(--white); margin: 28px 0; }
+    .cta-box h3 { color: var(--gold); font-size: 24px; margin: 0 0 12px; }
+    .cta-box p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 7px; }
+    .cta-box .app-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); margin: 14px 0 8px; font-style: italic; }
+
+    .disclaimer { background: var(--linen); border-radius: 10px; padding: 20px; margin-top: 24px; }
+    .disclaimer p { font-size: 11px; color: var(--cocoa); margin-bottom: 4px; }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; }
+      .page::after { display: none; }
+    }
+    @media screen {
+      .page { box-shadow: 0 2px 40px rgba(0,0,0,0.06); margin: 32px auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEITE 1: COVER -->
+<div class="page cover">
+  <div class="cover-label">Mini Guide</div>
+  <div class="cover-line"></div>
+  <h1>Fructose<br><em>verstehen</em></h1>
+  <p class="subtitle">Warum Obst manchmal keine gute Idee ist</p>
+  <div class="cover-line-bottom"></div>
+  <p class="author">Julia Bergles</p>
+  <p class="brand">EatMoreArt &middot; TerraLuna</p>
+</div>
+
+<!-- SEITE 2: VORWORT -->
+<div class="page">
+  <p class="page-label">Vorwort</p>
+  <div class="divider"></div>
+  <h2>Hey, ich bin Julia.</h2>
+  <p class="lead">Fructosemalabsorption ist eine der verwirrendsten Unverträglichkeiten überhaupt, weil sie so kontraintuitiv ist: Gesundes Obst macht krank, Traubenzucker hilft.</p>
+  <p>Wenn dein Bauch nach einem Apfel aufbläht, nach Trockenfrüchten rebelliert oder Fruchtsäfte dich schlauchen, bist du nicht allein. Und es hat nichts mit Einbildung zu tun.</p>
+  <p>Fructosemalabsorption ist physiologisch erklärbar. Der GLUT-5-Transporter im Dünndarm kann nicht genug Fructose auf einmal aufnehmen. Was nicht aufgenommen wird, landet im Dickdarm und wird dort von Bakterien vergoren.</p>
+  <p>Dieser Guide gibt dir Orientierung: Was kannst du essen, was solltest du meiden, und was hilft dir im Alltag?</p>
+
+  <div class="highlight-box">
+    <p><strong>Dieser Guide erklärt,</strong> was Fructosemalabsorption bedeutet, wo Fructose versteckt ist und welche Lebensmittel du gut verträgst.</p>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Wichtiger Hinweis:</strong> Die Inhalte dienen ausschließlich der allgemeinen Information und Aufklärung. Sie ersetzen keine medizinische, ernährungsmedizinische oder therapeutische Beratung. Bei gesundheitlichen Beschwerden wende dich immer an qualifiziertes medizinisches Fachpersonal.</p>
+  </div>
+  <span class="page-number">2</span>
+</div>
+
+<!-- SEITE 3: WAS IST FRUCTOSEMALABSORPTION -->
+<div class="page">
+  <p class="page-label">Kapitel 1</p>
+  <div class="divider"></div>
+  <h2>Was ist Fructosemalabsorption?</h2>
+
+  <p>Fructose ist der natürliche Fruchtzucker in Obst, Gemüse und vielen Fertigprodukten. Normalerweise wird Fructose über den <strong>GLUT-5-Transporter</strong> im Dünndarm aufgenommen.</p>
+
+  <div class="info-box">
+    <h3>Malabsorption vs. hereditäre Intoleranz</h3>
+    <ul>
+      <li><strong>Fructosemalabsorption:</strong> häufig, der Dünndarm kann Fructose nicht vollständig aufnehmen. Kleine Mengen sind oft kein Problem.</li>
+      <li><strong>Hereditäre Fructoseintoleranz:</strong> sehr selten, genetisch bedingt, Fructose kann im Stoffwechsel nicht abgebaut werden. Strenge lebenslange Diät nötig.</li>
+    </ul>
+    <p style="margin-top: 12px;"><strong>Die meisten Menschen haben Malabsorption, nicht die hereditäre Form.</strong></p>
+  </div>
+
+  <h3>Typische Symptome</h3>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>Verdauung</h4>
+      <ul style="margin-left: 16px;">
+        <li>Blähungen</li>
+        <li>Bauchschmerzen</li>
+        <li>Durchfall</li>
+        <li>Übelkeit</li>
+        <li>Borborygmen (Magengrummeln)</li>
+      </ul>
+    </div>
+    <div class="col-box">
+      <h4>Wann?</h4>
+      <ul style="margin-left: 16px;">
+        <li>30 bis 90 Minuten nach dem Essen</li>
+        <li>Besonders nach großen Fructosemengen</li>
+        <li>Verschlimmert durch Sorbit</li>
+        <li>Besser, wenn Glucose gleichzeitig gegessen wird</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Der Glucose-Trick:</strong> Glucose und Fructose konkurrieren nicht um denselben Transporter. Wenn du Glucose gleichzeitig isst, wird mehr Fructose aufgenommen. Deshalb sind Lebensmittel mit ausgewogenem Glucose-Fructose-Verhältnis oft gut verträglich.</p>
+  </div>
+  <span class="page-number">3</span>
+</div>
+
+<!-- SEITE 4: LEBENSMITTEL -->
+<div class="page">
+  <p class="page-label">Kapitel 2</p>
+  <div class="divider"></div>
+  <h2>Was meiden, was geht</h2>
+
+  <div class="food-section">
+    <span class="food-label meiden">Meiden oder stark reduzieren</span>
+    <div class="two-col">
+      <div>
+        <h4>Obst mit viel Fructose</h4>
+        <ul>
+          <li>Äpfel, Birnen, Mangos</li>
+          <li>Kirschen, Weintrauben</li>
+          <li>Wassermelone</li>
+          <li>Trockenfrüchte (sehr konzentriert)</li>
+          <li>Fruchtsäfte (jegliche)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Süßungsmittel und Fertigprodukte</h4>
+        <ul>
+          <li>Honig (hoher Fructoseanteil)</li>
+          <li>Agavendicksaft (sehr fructosereich)</li>
+          <li>Glucose-Fructose-Sirup (in vielen Fertigprodukten)</li>
+          <li>Fruchtjoghurt, Fruchtzubereitungen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="food-section">
+    <span class="food-label vorsicht">Vorsicht: Sorbit</span>
+    <p>Sorbit (E420) verschlechtert die Fructoseaufnahme erheblich. Meiden oder stark reduzieren:</p>
+    <ul>
+      <li>Zuckerfreie Kaugummis, Bonbons und Lollys (meist Sorbit)</li>
+      <li>Steinobst: Pflaumen, Pfirsiche, Aprikosen, Kirschen</li>
+      <li>Manche Diätprodukte und Light-Produkte</li>
+    </ul>
+  </div>
+
+  <div class="food-section">
+    <span class="food-label safe">Besser verträglich</span>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>Obst (kleinere Mengen)</h4>
+        <ul style="margin-left: 16px;">
+          <li>Banane (reif)</li>
+          <li>Blaubeeren</li>
+          <li>Erdbeeren</li>
+          <li>Kiwi</li>
+          <li>Zitrone, Orange (in Maßen)</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h4>Süßen ohne Probleme</h4>
+        <ul style="margin-left: 16px;">
+          <li>Traubenzucker (Glucose)</li>
+          <li>Reissirup</li>
+          <li>Ahornsirup (moderat)</li>
+          <li>Kokosblütenzucker (moderat)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Tipp:</strong> Kleine Mengen Fructose werden besser vertragen als große auf einmal. Verteile Obst auf den Tag und iss es nicht auf nüchternen Magen.</p>
+  </div>
+  <span class="page-number">4</span>
+</div>
+
+<!-- SEITE 5: ERSTE SCHRITTE + CTA -->
+<div class="page">
+  <p class="page-label">Erste Schritte</p>
+  <div class="divider"></div>
+  <h2>So startest du</h2>
+
+  <p>Fructosemalabsorption bedeutet nicht, kein Obst mehr zu essen. Es geht um Menge, Kombination und Timing.</p>
+
+  <h3>Schritt 1: Auslassphase</h3>
+  <p>Lass für zwei bis vier Wochen alle fructosereichen Lebensmittel weg. Wenn sich dein Bauch beruhigt, war Fructose ein Faktor.</p>
+
+  <h3>Schritt 2: Wiedereinführen</h3>
+  <p>Führe Lebensmittel einzeln wieder ein. Beginne mit kleinen Mengen und gut verträglichen Sorten wie Blaubeeren oder Banane. Steigere langsam.</p>
+
+  <h3>Schritt 3: Kombination nutzen</h3>
+  <p>Iss fructosehaltiges Obst nicht allein. Kombiniere es mit Haferflocken, Nüssen oder anderen glucosehaltigen Lebensmitteln. Das verbessert die Aufnahme.</p>
+
+  <div class="info-box">
+    <h3>Der Glucose-Fructose-Trick</h3>
+    <p>Wenn ein Lebensmittel mehr Glucose als Fructose enthält, ist es in der Regel gut verträglich. Das erklärt, warum Bananen besser gehen als Äpfel, obwohl beide Fruchtzucker enthalten.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>TerraLuna</h3>
+    <p class="app-name">Dein smarter Ernährungsbegleiter</p>
+    <p>Die TerraLuna App hilft dir, Lebensmittel zu scannen, Unverträglichkeiten zu tracken und passende Rezepte zu finden.</p>
+    <p>TerraLuna App, bald im App Store und Google Play.</p>
+    <p style="margin-top: 12px; color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 1px;">juliabergles.de</p>
+  </div>
+  <span class="page-number">5</span>
+</div>
+
+<!-- SEITE 6: IMPRESSUM -->
+<div class="page">
+  <p class="page-label">Impressum</p>
+  <div class="divider"></div>
+  <h2>Angaben und Hinweise</h2>
+
+  <h3>Herausgeberin</h3>
+  <p>Julia Bergles<br>
+  Singoldstra&szlig;e 5a<br>
+  86517 Wehringen<br>
+  julia@bergles.net<br>
+  juliabergles.de</p>
+
+  <h3>Marke und Projekt</h3>
+  <p>EatMoreArt &middot; TerraLuna</p>
+
+  <div class="warn-box">
+    <p><strong>Medizinischer Disclaimer</strong></p>
+    <p>Alle Inhalte dieses Guides dienen ausschließlich der allgemeinen Information. Sie stellen keine medizinische Beratung, Diagnose oder Behandlungsempfehlung dar und ersetzen nicht das Gespräch mit einer Fachperson.</p>
+    <p>Bei gesundheitlichen Beschwerden, Verdacht auf eine Unverträglichkeit oder Allergie wende dich an eine Ärztin, einen Arzt oder eine qualifizierte Ernährungsberatung.</p>
+  </div>
+
+  <h3>Urheberrecht</h3>
+  <p>Alle Inhalte dieses Guides sind urheberrechtlich geschützt. Die Weitergabe für private, nicht-kommerzielle Zwecke ist ausdrücklich erlaubt und erwünscht.</p>
+
+  <div class="disclaimer">
+    <p>Version 1.0 &middot; Mai 2026 &middot; EatMoreArt / TerraLuna</p>
+    <p>Dieser Guide ist kostenlos. Wenn er dir geholfen hat, empfehle ihn gerne weiter.</p>
+  </div>
+  <span class="page-number">6</span>
+</div>
+
+</body>
+</html>

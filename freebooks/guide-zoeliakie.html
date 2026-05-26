@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Guide Zöliakie | EatMoreArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --cream: #faf4eb; --warmwhite: #fffdf9; --charcoal: #3d322a;
+      --text: #5c5047; --cocoa: #c4b5a6; --rosegold: #c9908a;
+      --wine: #bf6b6b; --navy: #2c3e6b; --gold: #c9a96e;
+      --linen: #f5ece0; --white: #fffdf9; --gray: #b5a99a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #e8e0d4; color: var(--text); line-height: 1.8; font-size: 13.5px; -webkit-font-smoothing: antialiased; }
+
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 64px 72px; background: var(--cream); page-break-after: always; position: relative; overflow: hidden; }
+    .page:last-child { page-break-after: auto; }
+
+    .page::after { content: ''; position: absolute; top: 56px; right: 56px; width: 1px; height: calc(100% - 112px); background: linear-gradient(180deg, transparent, var(--cocoa), transparent); opacity: 0.2; }
+
+    .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--navy); color: var(--white); padding: 80px 60px; }
+    .cover::after { display: none; }
+    .cover-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+    .cover-label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .cover h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .cover h1 em { color: var(--gold); font-style: italic; }
+    .cover .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 48px; letter-spacing: 0.5px; }
+    .cover .cover-line-bottom { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
+    .cover .author { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: uppercase; }
+    .cover .brand { position: absolute; bottom: 52px; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 3px; text-transform: uppercase; }
+
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 18px; line-height: 1.25; letter-spacing: -0.3px; }
+    h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--navy); margin: 28px 0 10px; }
+    h4 { font-size: 12px; font-weight: 600; color: var(--charcoal); margin: 18px 0 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    p { margin-bottom: 11px; color: var(--text); }
+    .lead { font-size: 14px; color: var(--cocoa); line-height: 1.9; margin-bottom: 20px; }
+
+    .page-label { font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .page-number { position: absolute; bottom: 48px; right: 72px; font-size: 10px; color: var(--cocoa); font-weight: 300; }
+
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 8px 0 24px; }
+
+    .info-box { background: var(--navy); border-radius: 14px; padding: 28px 26px; color: var(--white); margin: 24px 0; }
+    .info-box h3 { color: var(--gold); margin-top: 0; font-size: 18px; }
+    .info-box p { color: rgba(255,255,255,0.65); font-size: 12.5px; line-height: 1.8; }
+    .info-box ul { color: rgba(255,255,255,0.65); font-size: 12.5px; margin-left: 16px; line-height: 1.8; }
+    .info-box li { margin-bottom: 3px; }
+
+    .highlight-box { background: var(--linen); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--gold); }
+    .highlight-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+    .highlight-box strong { color: var(--navy); }
+
+    .warn-box { background: rgba(44,62,107,0.04); border-radius: 10px; padding: 22px 24px; margin: 22px 0; border-left: 3px solid var(--wine); }
+    .warn-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+
+    ul { margin: 10px 0 14px 18px; }
+    li { margin-bottom: 5px; font-size: 12.5px; color: var(--text); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+    .col-box { background: var(--warmwhite); border-radius: 10px; padding: 20px; border: 1px solid rgba(201,169,110,0.08); }
+    .col-box h4 { margin-top: 0; color: var(--navy); }
+
+    .food-section { margin: 20px 0; }
+    .food-label { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+    .food-label.meiden { background: rgba(191,107,107,0.1); color: var(--wine); }
+    .food-label.vorsicht { background: rgba(201,169,110,0.15); color: #a8884d; }
+    .food-label.safe { background: rgba(44,62,107,0.08); color: var(--navy); }
+
+    .quote { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--navy); text-align: center; padding: 28px 20px; line-height: 1.6; }
+
+    .cta-box { background: var(--navy); border-radius: 16px; padding: 36px 32px; text-align: center; color: var(--white); margin: 28px 0; }
+    .cta-box h3 { color: var(--gold); font-size: 24px; margin: 0 0 12px; }
+    .cta-box p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 7px; }
+    .cta-box .app-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); margin: 14px 0 8px; font-style: italic; }
+
+    .disclaimer { background: var(--linen); border-radius: 10px; padding: 20px; margin-top: 24px; }
+    .disclaimer p { font-size: 11px; color: var(--cocoa); margin-bottom: 4px; }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; }
+      .page::after { display: none; }
+    }
+    @media screen {
+      .page { box-shadow: 0 2px 40px rgba(0,0,0,0.06); margin: 32px auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEITE 1: COVER -->
+<div class="page cover">
+  <div class="cover-label">Mini Guide</div>
+  <div class="cover-line"></div>
+  <h1>Zöliakie<br><em>verstehen</em></h1>
+  <p class="subtitle">Lebenslang glutenfrei, aber nicht eingeschränkt</p>
+  <div class="cover-line-bottom"></div>
+  <p class="author">Julia Bergles</p>
+  <p class="brand">EatMoreArt &middot; TerraLuna</p>
+</div>
+
+<!-- SEITE 2: VORWORT -->
+<div class="page">
+  <p class="page-label">Vorwort</p>
+  <div class="divider"></div>
+  <h2>Hey, ich bin Julia.</h2>
+  <p class="lead">Zöliakie ist nicht einfach eine Unverträglichkeit. Sie ist eine Autoimmunerkrankung, die ernstgenommen werden muss, auch wenn von außen oft nichts zu sehen ist.</p>
+  <p>Ich begegne immer wieder Menschen, die nach der Diagnose Zöliakie nicht wissen, wo sie anfangen sollen. Die Zutatenlisten werden plötzlich zur Herausforderung, auswärts Essen fühlt sich riskant an, und vieles, was früher selbstverständlich war, stellt sich als glutenhaltig heraus.</p>
+  <p>Gleichzeitig gibt es heute so viele gute, natürlich glutenfreie Alternativen. Glutenfrei muss nicht bedeuten, auf Genuss zu verzichten.</p>
+  <p>Dieser Guide gibt dir einen klaren ersten Überblick: Was ist Zöliakie, was musst du wirklich meiden und wie gelingt der Alltag ohne Gluten?</p>
+
+  <div class="highlight-box">
+    <p><strong>Dieser Guide erklärt,</strong> was Zöliakie von anderen Glutenproblemen unterscheidet, welche Lebensmittel sicher sind und worauf du im Alltag achten musst.</p>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Wichtiger Hinweis:</strong> Die Inhalte dienen ausschließlich der allgemeinen Information und Aufklärung. Sie ersetzen keine medizinische, ernährungsmedizinische oder therapeutische Beratung. Bei gesundheitlichen Beschwerden wende dich immer an qualifiziertes medizinisches Fachpersonal.</p>
+  </div>
+  <span class="page-number">2</span>
+</div>
+
+<!-- SEITE 3: WAS IST ZÖLIAKIE -->
+<div class="page">
+  <p class="page-label">Kapitel 1</p>
+  <div class="divider"></div>
+  <h2>Was ist Zöliakie?</h2>
+
+  <p>Zöliakie ist eine <strong>Autoimmunerkrankung</strong>. Wenn Betroffene Gluten zu sich nehmen, greift das Immunsystem die Schleimhaut des Dünndarms an und schädigt die Darmzotten.</p>
+
+  <div class="info-box">
+    <h3>Drei Glutenprobleme im Vergleich</h3>
+    <ul>
+      <li><strong>Zöliakie:</strong> Autoimmunerkrankung, genetisch bedingt, schädigt den Darm dauerhaft, lebenslang glutenfrei</li>
+      <li><strong>Nicht-Zöliakie-Glutensensitivität:</strong> Beschwerden ohne Darmschäden und ohne Antikörper, Mechanismus noch unklar</li>
+      <li><strong>Weizenallergie:</strong> IgE-vermittelte Immunreaktion auf Weizenproteine (nicht nur Gluten)</li>
+    </ul>
+    <p style="margin-top: 12px;"><strong>Nur die Zöliakie schädigt den Darm dauerhaft, schon bei kleinsten Mengen.</strong></p>
+  </div>
+
+  <h3>Typische Symptome</h3>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>Verdauung</h4>
+      <ul style="margin-left: 16px;">
+        <li>Durchfall</li>
+        <li>Bauchschmerzen</li>
+        <li>Blähungen</li>
+        <li>Gewichtsverlust</li>
+        <li>Fettstuhl</li>
+      </ul>
+    </div>
+    <div class="col-box">
+      <h4>Allgemein</h4>
+      <ul style="margin-left: 16px;">
+        <li>Chronische Müdigkeit</li>
+        <li>Nährstoffmängel (Eisen, Folsäure, B12)</li>
+        <li>Anämie</li>
+        <li>Knochen- und Gelenkschmerzen</li>
+        <li>Hautausschlag (Dermatitis herpetiformis)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <p><strong>Wichtig:</strong> Zöliakie kann sich sehr unterschiedlich äußern. Manche Menschen haben kaum Symptome, obwohl der Darm geschädigt wird. Eine ärztliche Diagnose ist zwingend erforderlich.</p>
+  </div>
+  <span class="page-number">3</span>
+</div>
+
+<!-- SEITE 4: LEBENSMITTEL -->
+<div class="page">
+  <p class="page-label">Kapitel 2</p>
+  <div class="divider"></div>
+  <h2>Was meiden, was geht</h2>
+
+  <div class="food-section">
+    <span class="food-label meiden">Strikt meiden, immer</span>
+    <div class="two-col">
+      <div>
+        <h4>Glutenhaltige Getreide</h4>
+        <ul>
+          <li>Weizen (auch Dinkel, Emmer, Einkorn, Kamut)</li>
+          <li>Roggen</li>
+          <li>Gerste</li>
+          <li>Triticale</li>
+        </ul>
+        <h4>Daraus hergestellt</h4>
+        <ul>
+          <li>Normales Brot, Brötchen, Mehl</li>
+          <li>Pasta, Couscous, Bulgur</li>
+          <li>Bier (aus Gerste)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Verstecktes Gluten</h4>
+        <ul>
+          <li>Sojasauce (enthält meist Weizen)</li>
+          <li>Paniermehl, panierte Produkte</li>
+          <li>Fertigsuppen und Soßen</li>
+          <li>Gewürzmischungen</li>
+          <li>Manche Schokoladen und Süßigkeiten</li>
+          <li>Modifizierte Stärke (aus Weizen)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="food-section">
+    <span class="food-label safe">Natürlich glutenfrei</span>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>Getreide und Pseudogetreide</h4>
+        <ul style="margin-left: 16px;">
+          <li>Reis, Reismehl</li>
+          <li>Mais, Maismehl</li>
+          <li>Buchweizen</li>
+          <li>Quinoa</li>
+          <li>Hirse</li>
+          <li>Teff, Amaranth</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h4>Grundnahrungsmittel</h4>
+        <ul style="margin-left: 16px;">
+          <li>Kartoffeln, Süßkartoffeln</li>
+          <li>Alle frischen Gemüsesorten</li>
+          <li>Alle frischen Obstsorten</li>
+          <li>Fleisch, Fisch (unverarbeitet)</li>
+          <li>Eier, Hülsenfrüchte</li>
+          <li>Nüsse, Samen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Kreuzverunreinigung beachten:</strong> Hafer ist von Natur aus glutenfrei, wird aber häufig in Anlagen verarbeitet, die auch Weizen verarbeiten. Nur zertifiziert glutenfreier Hafer ist sicher.</p>
+  </div>
+  <span class="page-number">4</span>
+</div>
+
+<!-- SEITE 5: ERSTE SCHRITTE + CTA -->
+<div class="page">
+  <p class="page-label">Erste Schritte</p>
+  <div class="divider"></div>
+  <h2>So lebst du glutenfrei im Alltag</h2>
+
+  <p>Glutenfrei klingt am Anfang überwältigend. Aber mit etwas Routine wird es zur Selbstverständlichkeit.</p>
+
+  <h3>Schritt 1: Küche umstellen</h3>
+  <p>Separate Bretter, Messer und Pfannen helfen, Kreuzverunreinigungen zu vermeiden. Besonders Holzbretter und Siebe nehmen Gluten auf und können nicht gründlich genug gereinigt werden.</p>
+
+  <h3>Schritt 2: Etiketten lesen lernen</h3>
+  <p>In der EU müssen alle 14 Hauptallergene auf Verpackungen ausgewiesen sein. Gluten (Weizen, Roggen, Gerste, Dinkel) wird immer fettgedruckt oder hervorgehoben. Das "glutenfrei" Siegel (durchgestrichene Ähre) ist dein verlässlicher Freund.</p>
+
+  <h3>Schritt 3: Auswärts essen</h3>
+  <p>Informiere Personal immer klar über Zöliakie, nicht nur "Glutenunverträglichkeit". Das signalisiert Ernsthaftigkeit. Frage explizit nach Kreuzverunreinigung in der Küche.</p>
+
+  <div class="warn-box">
+    <p><strong>Schon kleinste Mengen zählen.</strong> Bei Zöliakie gibt es keinen Toleranzbereich. Selbst Krümel können den Darm schädigen, auch wenn keine Symptome spürbar sind.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>TerraLuna</h3>
+    <p class="app-name">Dein smarter Ernährungsbegleiter</p>
+    <p>Die TerraLuna App hilft dir, Lebensmittel zu scannen, Unverträglichkeiten zu tracken und passende Rezepte zu finden.</p>
+    <p>TerraLuna App, bald im App Store und Google Play.</p>
+    <p style="margin-top: 12px; color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 1px;">juliabergles.de</p>
+  </div>
+  <span class="page-number">5</span>
+</div>
+
+<!-- SEITE 6: IMPRESSUM -->
+<div class="page">
+  <p class="page-label">Impressum</p>
+  <div class="divider"></div>
+  <h2>Angaben und Hinweise</h2>
+
+  <h3>Herausgeberin</h3>
+  <p>Julia Bergles<br>
+  Singoldstra&szlig;e 5a<br>
+  86517 Wehringen<br>
+  julia@bergles.net<br>
+  juliabergles.de</p>
+
+  <h3>Marke und Projekt</h3>
+  <p>EatMoreArt &middot; TerraLuna</p>
+
+  <div class="warn-box">
+    <p><strong>Medizinischer Disclaimer</strong></p>
+    <p>Alle Inhalte dieses Guides dienen ausschließlich der allgemeinen Information. Sie stellen keine medizinische Beratung, Diagnose oder Behandlungsempfehlung dar und ersetzen nicht das Gespräch mit einer Fachperson.</p>
+    <p>Bei gesundheitlichen Beschwerden, Verdacht auf eine Unverträglichkeit oder Allergie wende dich an eine Ärztin, einen Arzt oder eine qualifizierte Ernährungsberatung.</p>
+  </div>
+
+  <h3>Urheberrecht</h3>
+  <p>Alle Inhalte dieses Guides sind urheberrechtlich geschützt. Die Weitergabe für private, nicht-kommerzielle Zwecke ist ausdrücklich erlaubt und erwünscht.</p>
+
+  <div class="disclaimer">
+    <p>Version 1.0 &middot; Mai 2026 &middot; EatMoreArt / TerraLuna</p>
+    <p>Dieser Guide ist kostenlos. Wenn er dir geholfen hat, empfehle ihn gerne weiter.</p>
+  </div>
+  <span class="page-number">6</span>
+</div>
+
+</body>
+</html>
