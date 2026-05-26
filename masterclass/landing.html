@@ -11,17 +11,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --copper:       #B87333;
-      --copper-light: #D4956A;
-      --rose-gold:    #C9908A;
-      --rose-light:   #E8C4BC;
-      --blush:        #F2D9D0;
-      --cream:        #FAF4EB;
-      --charcoal:     #3D3530;
-      --dark:         #2A2220;
-      --mid:          #4A3530;
-      --muted:        #7A6D65;
-      --linen:        #EAE0D5;
+      --copper:       #C48B6C;
+      --copper-light: #D4A48A;
+      --rose-gold:    #C48B6C;
+      --rose-light:   #E8C4A8;
+      --blush:        #F2D9C4;
+      --cream:        #F4F3F1;
+      --charcoal:     #0F1A2E;
+      --dark:         #0F1A2E;
+      --mid:          #162240;
+      --muted:        #8A8580;
+      --linen:        #ECEAE6;
     }
 
     @keyframes shimmer {
@@ -30,8 +30,8 @@
     }
 
     @keyframes glow-pulse {
-      0%, 100% { box-shadow: 0 6px 28px rgba(184,115,51,0.35), 0 0 0 0 rgba(184,115,51,0); }
-      50%       { box-shadow: 0 8px 36px rgba(184,115,51,0.55), 0 0 20px 4px rgba(212,149,106,0.2); }
+      0%, 100% { box-shadow: 0 6px 28px rgba(196,139,108,0.35), 0 0 0 0 rgba(196,139,108,0); }
+      50%       { box-shadow: 0 8px 36px rgba(196,139,108,0.55), 0 0 20px 4px rgba(212,164,138,0.2); }
     }
 
     html { scroll-behavior: smooth; }
@@ -52,10 +52,10 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(42,34,32,0.88);
+      background: rgba(15,26,46,0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(184,115,51,0.18);
+      border-bottom: 1px solid rgba(196,139,108,0.18);
     }
 
     .nav-inner {
@@ -86,12 +86,12 @@
       font-size: 0.8125rem;
       font-weight: 500;
       text-decoration: none;
-      box-shadow: 0 3px 14px rgba(184,115,51,0.3);
+      box-shadow: 0 3px 14px rgba(196,139,108,0.3);
       transition: all 0.25s;
     }
 
     .nav-cta:hover {
-      box-shadow: 0 5px 20px rgba(184,115,51,0.5);
+      box-shadow: 0 5px 20px rgba(196,139,108,0.5);
       transform: translateY(-1px);
     }
 
@@ -104,7 +104,7 @@
       justify-content: center;
       padding: 120px 28px 96px;
       text-align: center;
-      background: linear-gradient(160deg, var(--dark) 0%, var(--mid) 60%, #3A2520 100%);
+      background: linear-gradient(160deg, var(--dark) 0%, var(--mid) 60%, #162240 100%);
       position: relative;
       overflow: hidden;
     }
@@ -114,8 +114,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(184,115,51,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 80% 100%, rgba(201,144,138,0.08) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(196,139,108,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 100%, rgba(196,139,108,0.08) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -123,8 +123,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(184,115,51,0.12);
-      border: 1px solid rgba(184,115,51,0.3);
+      background: rgba(196,139,108,0.12);
+      border: 1px solid rgba(196,139,108,0.3);
       border-radius: 50px;
       padding: 7px 18px;
       font-size: 0.75rem;
@@ -146,7 +146,7 @@
       max-width: 720px;
       position: relative;
 
-      background: linear-gradient(90deg, #B87333, #E8C4BC, #D4956A, #F2D9D0, #B87333);
+      background: linear-gradient(90deg, #C48B6C, #E8C4A8, #D4A48A, #F2D9C4, #C48B6C);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -159,7 +159,7 @@
       font-size: 1.5rem;
       font-weight: 300;
       font-style: italic;
-      color: rgba(242,217,208,0.7);
+      color: rgba(212,164,138,0.7);
       margin-bottom: 32px;
       position: relative;
     }
@@ -227,7 +227,7 @@
     .hero-stat-divider {
       width: 1px;
       height: 44px;
-      background: rgba(184,115,51,0.2);
+      background: rgba(196,139,108,0.2);
       align-self: center;
     }
 
@@ -308,7 +308,7 @@
 
     .pain-card:hover {
       transform: translateY(-8px) rotateX(2deg);
-      box-shadow: 0 16px 40px rgba(184,115,51,0.14), 0 4px 12px rgba(184,115,51,0.08);
+      box-shadow: 0 16px 40px rgba(196,139,108,0.14), 0 4px 12px rgba(196,139,108,0.08);
     }
 
     .pain-icon {
@@ -383,12 +383,12 @@
     }
 
     .inhalt-detail:hover {
-      box-shadow: 0 4px 20px rgba(184,115,51,0.07);
+      box-shadow: 0 4px 20px rgba(196,139,108,0.07);
     }
 
     .inhalt-detail[open] {
-      box-shadow: 0 6px 28px rgba(184,115,51,0.12);
-      border-color: rgba(184,115,51,0.25);
+      box-shadow: 0 6px 28px rgba(196,139,108,0.12);
+      border-color: rgba(196,139,108,0.25);
     }
 
     .inhalt-summary {
@@ -409,7 +409,7 @@
     }
 
     .inhalt-summary:hover {
-      background: rgba(184,115,51,0.03);
+      background: rgba(196,139,108,0.03);
     }
 
     .inhalt-num {
@@ -502,7 +502,7 @@
 
     .paket-card {
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(184,115,51,0.18);
+      border: 1px solid rgba(196,139,108,0.18);
       border-radius: 20px;
       padding: 40px 32px;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -513,18 +513,18 @@
 
     .paket-card:hover {
       transform: translateY(-8px) rotateX(2deg);
-      box-shadow: 0 20px 50px rgba(184,115,51,0.18);
+      box-shadow: 0 20px 50px rgba(196,139,108,0.18);
     }
 
     .paket-card.featured {
       background: rgba(255,255,255,0.055);
       border: 2px solid var(--copper);
-      box-shadow: 0 8px 40px rgba(184,115,51,0.22), 0 0 0 1px rgba(212,149,106,0.12);
+      box-shadow: 0 8px 40px rgba(196,139,108,0.22), 0 0 0 1px rgba(212,164,138,0.12);
     }
 
     .paket-card.featured:hover {
       transform: translateY(-10px) rotateX(2deg);
-      box-shadow: 0 24px 60px rgba(184,115,51,0.30), 0 0 40px rgba(184,115,51,0.12);
+      box-shadow: 0 24px 60px rgba(196,139,108,0.30), 0 0 40px rgba(196,139,108,0.12);
     }
 
     .paket-badge {
@@ -541,7 +541,7 @@
       padding: 6px 18px;
       border-radius: 50px;
       white-space: nowrap;
-      box-shadow: 0 4px 14px rgba(184,115,51,0.4);
+      box-shadow: 0 4px 14px rgba(196,139,108,0.4);
     }
 
     .paket-name {
@@ -598,7 +598,7 @@
       gap: 10px;
       margin-bottom: 32px;
       padding-top: 20px;
-      border-top: 1px solid rgba(184,115,51,0.14);
+      border-top: 1px solid rgba(196,139,108,0.14);
     }
 
     .paket-features li {
@@ -639,13 +639,13 @@
       font-weight: 500;
       font-size: 0.9rem;
       text-decoration: none;
-      box-shadow: 0 6px 24px rgba(184,115,51,0.3);
+      box-shadow: 0 6px 24px rgba(196,139,108,0.25);
       transition: all 0.25s;
       letter-spacing: 0.02em;
     }
 
     .btn-copper:hover {
-      box-shadow: 0 10px 32px rgba(184,115,51,0.5);
+      box-shadow: 0 10px 32px rgba(196,139,108,0.5);
       transform: translateY(-2px);
     }
 
@@ -659,7 +659,7 @@
       font-weight: 500;
       font-size: 0.9rem;
       text-decoration: none;
-      border: 1.5px solid rgba(184,115,51,0.4);
+      border: 1.5px solid rgba(196,139,108,0.4);
       transition: all 0.25s;
       letter-spacing: 0.02em;
     }
@@ -667,7 +667,7 @@
     .btn-copper-outline:hover {
       border-color: var(--copper);
       color: white;
-      background: rgba(184,115,51,0.12);
+      background: rgba(196,139,108,0.12);
     }
 
     /* Glasmorphism card variant */
@@ -701,7 +701,7 @@
       font-size: 1.5rem;
       font-style: italic;
       color: var(--rose-gold);
-      box-shadow: 0 8px 32px rgba(184,115,51,0.1);
+      box-shadow: 0 8px 32px rgba(196,139,108,0.1);
     }
 
     .julia-photo img {
@@ -767,8 +767,8 @@
     }
 
     .faq-detail[open] {
-      border-color: rgba(184,115,51,0.3);
-      box-shadow: 0 4px 20px rgba(184,115,51,0.08);
+      border-color: rgba(196,139,108,0.3);
+      box-shadow: 0 4px 20px rgba(196,139,108,0.08);
     }
 
     .faq-summary {
@@ -789,7 +789,7 @@
     .faq-summary::-webkit-details-marker { display: none; }
 
     .faq-summary:hover {
-      background: rgba(242,217,208,0.3);
+      background: rgba(212,164,138,0.15);
     }
 
     .faq-detail[open] .faq-summary {
@@ -857,7 +857,7 @@
     footer {
       background: var(--charcoal);
       padding: 44px 28px;
-      border-top: 1px solid rgba(184,115,51,0.1);
+      border-top: 1px solid rgba(196,139,108,0.1);
     }
 
     .footer-inner {
@@ -1274,7 +1274,7 @@
       <!-- VIP -->
       <div class="paket-card fade-up">
         <div class="paket-name">VIP</div>
-        <div class="paket-tagline">Fuer alle, die persönliche Begleitung wollen.</div>
+        <div class="paket-tagline">Für alle, die persönliche Begleitung wollen.</div>
         <div class="paket-price">
           <span class="paket-price-currency">&euro;</span>
           <span class="paket-price-num">699</span>
@@ -1335,7 +1335,7 @@
 
       <details class="faq-detail">
         <summary class="faq-summary">
-          Fuer wen ist die Seelenbauch Masterclass?
+          Für wen ist die Seelenbauch Masterclass?
           <span class="faq-icon">&#8964;</span>
         </summary>
         <div class="faq-body">
@@ -1379,7 +1379,7 @@
           <span class="faq-icon">&#8964;</span>
         </summary>
         <div class="faq-body">
-          Nein. Alle Inhalte der Seelenbauch Masterclass dienen zur Orientierung und persönlichen Unterstuetzung im Alltag. Sie ersetzen keine aerztliche Diagnose, medizinische Behandlung oder professionelle Ernährungsberatung. Bei ernsthaften Beschwerden bitte immer eine Ärztin oder einen Arzt aufsuchen.
+          Nein. Alle Inhalte der Seelenbauch Masterclass dienen zur Orientierung und persönlichen Unterstuetzung im Alltag. Sie ersetzen keine ärztliche Diagnose, medizinische Behandlung oder professionelle Ernährungsberatung. Bei ernsthaften Beschwerden bitte immer eine Ärztin oder einen Arzt aufsuchen.
         </div>
       </details>
 
@@ -1417,7 +1417,7 @@
       <a href="mailto:julia@bergles.net">Kontakt</a>
     </div>
     <p class="footer-disclaimer">
-      Alle Inhalte der Seelenbauch Masterclass dienen zur Orientierung und persönlichen Unterstuetzung im Alltag mit Lebensmittelunverträglichkeiten. Sie ersetzen keine aerztliche Diagnose, medizinische Behandlung oder professionelle Ernährungsberatung. Die individuellen Ergebnisse koennen variieren. Diese Seite enthaelt Partnerlinks zu ausgewaehlten Produkten (Nigela, Aho.bio, HistaFood, Histaminikus). &copy; 2026 Julia Bergles / EatMoreArt
+      Alle Inhalte der Seelenbauch Masterclass dienen zur Orientierung und persönlichen Unterstuetzung im Alltag mit Lebensmittelunverträglichkeiten. Sie ersetzen keine ärztliche Diagnose, medizinische Behandlung oder professionelle Ernährungsberatung. Die individuellen Ergebnisse koennen variieren. Diese Seite enthaelt Partnerlinks zu ausgewaehlten Produkten (Nigela, Aho.bio, HistaFood, Histaminikus). &copy; 2026 Julia Bergles / EatMoreArt
     </p>
   </div>
 </footer>
