@@ -67,20 +67,17 @@
     .hero .claim { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 48px; line-height: 1.8; font-weight: 300; max-width: 520px; margin-left: auto; margin-right: auto; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-    /* BUTTONS — Kupfer-Gradient */
-    .btn-primary { background: linear-gradient(135deg, #C48B6C, #D4A48A); color: white; padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.3s; display: inline-block; letter-spacing: 0.03em; box-shadow: 0 4px 20px rgba(196,139,108,0.25); }
-    .btn-primary:hover { box-shadow: 0 8px 30px rgba(196,139,108,0.35); transform: translateY(-2px); }
-    .btn-secondary { background: transparent; color: var(--copper); padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; border: 1.5px solid var(--copper); transition: all 0.3s; display: inline-block; }
-    .btn-secondary:hover { background: var(--copper); color: white; transform: translateY(-2px); }
+    /* SHIMMER SHINE ANIMATION */
+    @keyframes btnShine { 0%, 100% { transform: translateX(-100%) rotate(25deg); } 50% { transform: translateX(100%) rotate(25deg); } }
+    @keyframes glowPulse { 0%, 100% { box-shadow: 0 4px 20px rgba(196,139,108,0.25); } 50% { box-shadow: 0 8px 32px rgba(196,139,108,0.4); } }
+
+    /* BUTTONS — Kupfer-Gradient mit Glanz */
+    .btn-primary, .btn-navy, .btn-gold, .btn-wyh { background: linear-gradient(135deg, #C48B6C, #D4A48A, #E8C4A8, #D4A48A); background-size: 300% 100%; color: white; padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.4s; display: inline-block; letter-spacing: 0.03em; box-shadow: 0 6px 24px rgba(196,139,108,0.3), inset 0 1px 0 rgba(255,255,255,0.2); position: relative; overflow: hidden; border: none; cursor: pointer; animation: glowPulse 3s ease-in-out infinite; }
+    .btn-primary::after, .btn-navy::after, .btn-gold::after, .btn-wyh::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%); animation: btnShine 3s ease-in-out infinite; }
+    .btn-primary:hover, .btn-navy:hover, .btn-gold:hover, .btn-wyh:hover { box-shadow: 0 12px 40px rgba(196,139,108,0.45), inset 0 1px 0 rgba(255,255,255,0.3); transform: translateY(-3px) scale(1.02); background-position: 100% 0; }
+    .btn-secondary, .btn-sage { background: transparent; color: var(--copper); padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; border: 1.5px solid var(--copper); transition: all 0.3s; display: inline-block; position: relative; overflow: hidden; }
+    .btn-secondary:hover, .btn-sage:hover { background: linear-gradient(135deg, #C48B6C, #D4A48A); color: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,139,108,0.3); border-color: transparent; }
     .btn-small { padding: 10px 24px; font-size: 0.8125rem; }
-    .btn-navy { background: linear-gradient(135deg, #C48B6C, #D4A48A); color: white; padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(196,139,108,0.25); }
-    .btn-navy:hover { box-shadow: 0 8px 30px rgba(196,139,108,0.35); transform: translateY(-2px); }
-    .btn-gold { background: linear-gradient(135deg, #C48B6C, #D4A48A); color: white; padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.3s; display: inline-block; box-shadow: 0 4px 20px rgba(196,139,108,0.25); }
-    .btn-gold:hover { box-shadow: 0 8px 30px rgba(196,139,108,0.35); transform: translateY(-2px); }
-    .btn-sage { background: transparent; color: var(--copper); padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.3s; display: inline-block; border: 1.5px solid var(--copper); }
-    .btn-sage:hover { background: var(--copper); color: white; transform: translateY(-2px); }
-    .btn-wyh { background: linear-gradient(135deg, #C48B6C, #D4A48A); color: white; padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.875rem; text-decoration: none; transition: all 0.3s; display: inline-block; box-shadow: 0 4px 20px rgba(196,139,108,0.25); }
-    .btn-wyh:hover { box-shadow: 0 8px 30px rgba(196,139,108,0.35); transform: translateY(-2px); }
 
     /* IMAGE DIVIDERS */
     .img-divider { height: 350px; background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
