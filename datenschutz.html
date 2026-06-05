@@ -91,7 +91,7 @@
 <div class="page-hero">
   <p class="section-label">Rechtliches</p>
   <h1 class="section-title">Datenschutzerklärung</h1>
-  <p class="section-sub">EatMoreArt / TerraLuna — Stand: Mai 2026</p>
+  <p class="section-sub">EatMoreArt / TerraLuna — Stand: Juni 2026</p>
 </div>
 
 <div class="legal-content fade-up">
@@ -170,14 +170,27 @@
   <h3>5.3 Datenübermittlung an Dritte (App)</h3>
   <ul>
     <li><strong>Barcode-Scanner:</strong> EAN-Nummern werden an Open Food Facts (openfoodfacts.org) zur Produktabfrage übermittelt</li>
-    <li><strong>Verträglichkeits-Scanner (Premium):</strong> Essensfotos werden an die Anthropic API zur Analyse übermittelt; Fotos werden nicht gespeichert</li>
+    <li><strong>KI-Verträglichkeits-Scanner:</strong> Beim Barcode-Scan werden der Produktname, die Marke und die Zutatenliste (aus Open Food Facts) an die Anthropic API (Anthropic PBC, USA) zur Analyse übermittelt. Bei der manuellen Produkt-Eingabe wird ausschließlich der von dir eingegebene Produktname übermittelt. Es werden keine personenbezogenen Daten mitgesendet. Anthropic speichert die Inhalte nicht dauerhaft.</li>
+    <li><strong>Abo-Verwaltung (RevenueCat):</strong> Für die Verwaltung der kostenpflichtigen Abos (Halbmond, Vollmond, Supermond) nutzen wir den Dienst RevenueCat, Inc. (USA). RevenueCat erhält eine anonyme Geräte-Kennung von Apple zur Prüfung des Abo-Status. Es werden keine Klarnamen oder Zahlungsdaten übermittelt; die Zahlung erfolgt direkt über deinen Apple-Account.</li>
     <li><strong>Reise-Übersetzer:</strong> Texte werden an MyMemory (mymemory.translated.net) zur Live-Übersetzung übermittelt</li>
     <li><strong>YouTube-Videos:</strong> Workouts leiten zu YouTube weiter; es gelten die Datenschutzbestimmungen von Google/YouTube</li>
-    <li><strong>Partner-Links:</strong> HistaFood, Histaminikus, Aho.bio, Nigela leiten auf die jeweiligen Websites weiter</li>
+    <li><strong>Partner-Links:</strong> HistaFood, Histaminikus, Aho.bio, Nigela, baelanse und Linisbites leiten auf die jeweiligen Websites weiter</li>
   </ul>
 
   <h3>5.4 Kamerazugriff</h3>
-  <p>Erforderlich für: Barcode-Scannen, Essensfotografie (Verträglichkeits-Scanner), Tagebuch-Fotos. Zugriff nur mit ausdrücklicher Erlaubnis.</p>
+  <p>Erforderlich für: Barcode-Scannen und optionale Tagebuch-Fotos. Zugriff nur mit ausdrücklicher Erlaubnis. Die Kamera wird nur lokal für die Bildverarbeitung verwendet — Live-Bilder werden nicht an unsere Server oder Dritte übertragen.</p>
+
+  <h3>5.5 Standortzugriff (optional)</h3>
+  <p>Wenn du Wetter- und Pollenflug-Informationen nutzen möchtest, fragt die App nach Zugriff auf deinen ungefähren Standort. Die Standortdaten werden nur lokal zur Wetterabfrage genutzt und nicht auf unseren Servern gespeichert. Der Zugriff kann jederzeit in den iPhone-Einstellungen widerrufen werden.</p>
+
+  <h3>5.6 Tägliches Quiz</h3>
+  <p>Die App fragt einmal täglich nach deinem Befinden (Bauch, Schlaf, Energie, Stress, Stimmung). Diese Angaben werden ausschließlich auf deinem Gerät gespeichert und genutzt, um dir passendere Tipps und eine personalisierte Schnellzugriff-Sortierung anzuzeigen. Es findet keine Übertragung auf unsere Server statt.</p>
+
+  <h3>5.7 WhatsApp-Community (optional)</h3>
+  <p>Im Profil-Bereich kannst du freiwillig auf einen Button „Zur WhatsApp-Community beitreten" klicken. Dieser Klick öffnet die WhatsApp-App bzw. den Browser und leitet dich auf einen externen Gruppen-Link von WhatsApp (Betreiber: WhatsApp Ireland Limited / Meta Platforms, Irland und USA) weiter. Sobald du dem Chat beitrittst, gilt die Datenschutzerklärung von WhatsApp/Meta. TerraLuna selbst speichert keine Informationen über deine Teilnahme oder Inhalte des Chats. Der Beitritt ist freiwillig und kann jederzeit durch Verlassen der Gruppe widerrufen werden.</p>
+
+  <h3>5.8 Manuelle Produkt-Eingabe im Scanner</h3>
+  <p>Wenn du im Scanner ein Produkt manuell eingibst (z. B. „Apfel", „Räucherlachs"), wird ausschließlich dieser Produktname an die Anthropic API zur KI-gestützten Bewertung übermittelt. Dein Profil (aktive Unverträglichkeiten und Allergien) wird mitgesendet, damit die Bewertung passend ist — jedoch ohne Namen, Geräte-ID oder andere identifizierende Daten. Anthropic speichert die Anfragen nicht dauerhaft.</p>
 
   <h2>6. Rechtsgrundlagen</h2>
   <table>
@@ -220,9 +233,13 @@
     <li><strong>Tally</strong> (tally.so) — Formularverarbeitung, EU-Server</li>
     <li><strong>GitHub Inc.</strong> — Website-Hosting, USA (Standardvertragsklauseln vorhanden)</li>
     <li><strong>PayPal</strong> — Zahlungsabwicklung (nur bei Wahl von PayPal)</li>
+    <li><strong>Anthropic, PBC</strong> — KI-Analyse von Produktnamen, Zutatenlisten und manuellen Produkteingaben im Verträglichkeits-Scanner, USA</li>
+    <li><strong>RevenueCat, Inc.</strong> — Abo-Verwaltung in der App, USA</li>
+    <li><strong>Apple Inc.</strong> — Zahlungsabwicklung der App-Abos, USA</li>
+    <li><strong>OpenWeatherMap</strong> — Wetter- und Pollenflug-Daten (nur bei Standortfreigabe)</li>
     <li><strong>Versanddienstleister</strong> (Deutsche Post/DHL) — Zustellung der Bestellung</li>
     <li><strong>Dein E-Mail-Anbieter</strong> — Zustellung der Bestätigungsmail</li>
-    <li><strong>WhatsApp (Meta)</strong> — Community-Chat der Seelenbauch Masterclass (nur bei Kauf)</li>
+    <li><strong>WhatsApp (Meta)</strong> — Community-Chats: Seelenbauch Masterclass (bei Kauf) und TerraLuna-Community (freiwillig über Profil-Button)</li>
     <li><strong>Zoom</strong> — Coaching-Calls und Live-Sessions (nur bei Masterclass/VIP)</li>
   </ul>
 
@@ -230,11 +247,15 @@
   <ul>
     <li><strong>GitHub Pages:</strong> USA. Es bestehen Standardvertragsklauseln.</li>
     <li><strong>PayPal:</strong> USA/Luxemburg. DSGVO-konform.</li>
+    <li><strong>Anthropic:</strong> USA. Datenverarbeitungsvereinbarung (DPA) und Standardvertragsklauseln.</li>
+    <li><strong>RevenueCat:</strong> USA. Standardvertragsklauseln.</li>
+    <li><strong>Apple:</strong> USA/Irland. DSGVO-konform.</li>
     <li><strong>Tally:</strong> EU (Deutschland). Keine Drittland-Übermittlung.</li>
   </ul>
 
   <h2>9. Affiliate-Links und Werbung</h2>
   <p><strong>Partner:</strong> HistaFood, Histaminikus, Aho.bio, Nigela. Gekennzeichnet als „Partnerempfehlung". Provisionen möglich. Es werden keine personenbezogenen Daten an Partner übermittelt.</p>
+  <p><strong>Persönliche Empfehlungen (ohne Affiliate):</strong> baelanse, Linisbites. Externe Links ohne Provision oder Datenübermittlung.</p>
 
   <h2>10. Deine Rechte</h2>
   <ul>
@@ -265,7 +286,7 @@
 
   <h2>14. Änderungen dieser Datenschutzerklärung</h2>
   <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich die Dienste oder die Rechtslage ändern. Die aktuelle Version ist jederzeit auf dieser Seite einsehbar.</p>
-  <p><strong>Stand:</strong> Mai 2026</p>
+  <p><strong>Stand:</strong> Juni 2026</p>
 
   <h2>15. Kontakt</h2>
   <p>Julia Bergles<br>
