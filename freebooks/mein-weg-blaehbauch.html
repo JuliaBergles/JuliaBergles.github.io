@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mein Weg aus dem Blähbauch | EatMoreArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --cream: #F8F2EE; --warmwhite: #F8F2EE; --charcoal: #955251;
+      --text: #5e4640; --textstrong: #3d322a; --cocoa: #8A7B75; --rosegold: #D4A48A;
+      --wine: #C48B6C; --navy: #955251; --gold: #C48B6C;
+      --linen: #F0E8E4; --white: #F8F2EE; --gray: #b5a99a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #e8e0d4; color: var(--text); line-height: 1.75; font-size: 13.5px; -webkit-font-smoothing: antialiased; }
+
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 60px 70px; background: var(--cream); page-break-after: always; position: relative; overflow: hidden; }
+    .page:last-child { page-break-after: auto; }
+    .page::after { content: ''; position: absolute; top: 56px; right: 56px; width: 1px; height: calc(100% - 112px); background: linear-gradient(180deg, transparent, var(--cocoa), transparent); opacity: 0.2; }
+
+    /* COVER */
+    .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--navy); color: var(--white); padding: 80px 60px; }
+    .cover::after { display: none; }
+    .cover-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+    .cover-label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .cover h1 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .cover h1 em { color: var(--gold); font-style: italic; }
+    .cover .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: rgba(255,255,255,0.9); font-style: italic; margin-bottom: 40px; letter-spacing: 0.5px; }
+    .cover .cover-illu { margin: 0 auto 36px; opacity: 0.9; }
+    .cover .cover-line-bottom { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
+    .cover .author { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: uppercase; }
+    .cover .brand { position: absolute; bottom: 52px; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 3px; text-transform: uppercase; }
+
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 14px; line-height: 1.25; letter-spacing: -0.3px; }
+    h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; color: var(--navy); margin: 24px 0 8px; }
+    h4 { font-size: 11.5px; font-weight: 700; color: var(--charcoal); margin: 14px 0 6px; letter-spacing: 0.6px; text-transform: uppercase; }
+
+    p { margin-bottom: 9px; color: var(--text); }
+    p strong, li strong { color: var(--textstrong); font-weight: 700; }
+    .lead { font-size: 14px; color: var(--cocoa); line-height: 1.85; margin-bottom: 16px; font-weight: 400; }
+
+    /* Kapitel-Header mit Icon */
+    .kapitel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+    .kapitel-head .kapitel-meta { flex: 1; }
+    .kapitel-head .kapitel-illu { width: 64px; height: 64px; flex-shrink: 0; opacity: 0.85; }
+    .page-label { font-size: 9px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .page-number { position: absolute; bottom: 44px; right: 70px; font-size: 10px; color: var(--cocoa); font-weight: 400; }
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 8px 0 22px; }
+
+    /* Boxen */
+    .info-box { background: var(--navy); border-radius: 14px; padding: 24px 24px; color: var(--white); margin: 18px 0; }
+    .info-box h3 { color: var(--gold); margin-top: 0; font-size: 17px; margin-bottom: 10px; }
+    .info-box p { color: #ffffff; font-size: 12.5px; line-height: 1.75; }
+    .info-box ul { color: #ffffff; font-size: 12.5px; margin-left: 16px; line-height: 1.75; }
+    .info-box li { margin-bottom: 5px; color: #ffffff; }
+    .info-box strong { color: var(--gold); }
+
+    .highlight-box { background: var(--linen); border-radius: 10px; padding: 18px 22px; margin: 18px 0; border-left: 3px solid var(--gold); }
+    .highlight-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+    .highlight-box strong { color: var(--navy); font-weight: 700; }
+
+    .warn-box { background: rgba(149,82,81,0.05); border-radius: 10px; padding: 18px 22px; margin: 18px 0; border-left: 3px solid var(--wine); }
+    .warn-box p { margin-bottom: 4px; font-size: 12.5px; color: var(--text); }
+    .warn-box strong { color: var(--wine); font-weight: 700; }
+
+    /* Listen */
+    ul { margin: 8px 0 14px 0; list-style: none; padding-left: 0; }
+    li { margin-bottom: 6px; font-size: 12.5px; color: var(--text); padding-left: 18px; position: relative; }
+    li::before { content: ''; position: absolute; left: 4px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    li ul { margin: 6px 0 0 0; }
+    li ul li { font-size: 12px; color: var(--cocoa); padding-left: 16px; margin-bottom: 3px; }
+    li ul li::before { background: transparent; border: 1px solid var(--gold); width: 4px; height: 4px; top: 9px; }
+
+    /* Tipp-Zeile mit Häkchen */
+    .tip-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; font-size: 12.5px; color: var(--text); }
+    .tip-row .tip-check { flex-shrink: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; margin-top: 2px; }
+    .tip-row strong { color: var(--textstrong); font-weight: 700; }
+
+    /* Spalten */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0; }
+    .col-box { background: var(--warmwhite); border-radius: 10px; padding: 18px 18px; border: 1px solid rgba(201,169,110,0.12); }
+    .col-box h4 { margin-top: 0; color: var(--navy); margin-bottom: 6px; }
+    .col-box p { font-size: 12.5px; margin-bottom: 0; }
+    .col-box .col-illu { width: 28px; height: 28px; margin-bottom: 6px; opacity: 0.7; }
+
+    /* Vergleichs-Karten (z.B. Kürbis vs Süßkartoffel) */
+    .vs-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: stretch; margin: 14px 0; }
+    .vs-card { background: var(--warmwhite); border-radius: 10px; padding: 16px; border: 1px solid rgba(201,169,110,0.12); text-align: center; }
+    .vs-card.bad { border-left: 3px solid var(--wine); }
+    .vs-card.good { border-left: 3px solid var(--gold); }
+    .vs-card .vs-illu { width: 40px; height: 40px; margin: 0 auto 8px; opacity: 0.85; }
+    .vs-card h4 { margin: 0 0 6px; color: var(--textstrong); }
+    .vs-card p { font-size: 11.5px; margin: 0; line-height: 1.55; color: var(--cocoa); }
+    .vs-arrow { display: flex; align-items: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); font-style: italic; }
+
+    /* Rezept */
+    .recipe-box { background: var(--warmwhite); border: 1px solid rgba(201,169,110,0.2); border-radius: 12px; padding: 22px 24px; margin: 16px 0; }
+    .recipe-box h4 { margin-top: 0; color: var(--navy); font-size: 12px; }
+    .recipe-box h4:not(:first-child) { margin-top: 18px; }
+    .recipe-box ul { margin-left: 0; }
+    .recipe-box li { font-size: 12.5px; margin-bottom: 4px; }
+
+    .step-list { counter-reset: step; list-style: none; margin-left: 0; padding-left: 0; }
+    .step-list li { counter-increment: step; position: relative; padding-left: 36px; margin-bottom: 10px; font-size: 12.5px; }
+    .step-list li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; padding-left: 0; }
+
+    /* Pflanzen-Liste für YamatoGast */
+    .plant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+    .plant-card { background: var(--warmwhite); border-radius: 8px; padding: 12px 14px; border: 1px solid rgba(201,169,110,0.12); display: flex; gap: 10px; align-items: flex-start; }
+    .plant-card .plant-illu { flex-shrink: 0; width: 22px; height: 22px; opacity: 0.75; margin-top: 2px; }
+    .plant-card h4 { margin: 0 0 3px; color: var(--navy); font-size: 11px; }
+    .plant-card p { font-size: 11.5px; margin: 0; line-height: 1.5; color: var(--cocoa); }
+
+    /* Übungen */
+    .exercise { background: var(--warmwhite); border: 1px solid rgba(201,169,110,0.12); border-radius: 10px; padding: 16px 18px; margin: 12px 0; display: flex; gap: 16px; align-items: flex-start; }
+    .exercise .exercise-illu { flex-shrink: 0; width: 56px; height: 56px; opacity: 0.85; }
+    .exercise .exercise-body { flex: 1; }
+    .exercise h3 { margin-top: 0; margin-bottom: 6px; }
+    .exercise ul { margin-top: 6px; margin-bottom: 0; }
+    .exercise li { font-size: 12px; }
+
+    /* Quote */
+    .quote { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--navy); text-align: center; padding: 22px 20px; line-height: 1.6; }
+
+    /* CTA */
+    .cta-box { background: var(--navy); border-radius: 16px; padding: 32px 32px; text-align: center; color: var(--white); margin: 24px 0; }
+    .cta-box h3 { color: var(--gold); font-size: 24px; margin: 0 0 12px; }
+    .cta-box p { color: rgba(255,255,255,0.95); font-size: 13px; margin-bottom: 7px; }
+    .cta-box .app-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); margin: 14px 0 12px; font-style: italic; }
+    .cta-box ul { display: inline-block; text-align: left; margin: 0 auto; }
+    .cta-box li { color: rgba(255,255,255,0.95); font-size: 13px; padding-left: 18px; }
+    .cta-box li::before { background: var(--gold); }
+
+    .disclaimer { background: var(--linen); border-radius: 10px; padding: 18px; margin-top: 22px; }
+    .disclaimer p { font-size: 11px; color: var(--cocoa); margin-bottom: 4px; }
+
+    /* SVG-Helfer */
+    .stroke-gold { stroke: var(--gold); }
+    .stroke-navy { stroke: var(--navy); }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; }
+      .page::after { display: none; }
+    }
+    @media screen {
+      .page { box-shadow: 0 2px 40px rgba(0,0,0,0.06); margin: 32px auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEITE 1: COVER -->
+<div class="page cover">
+  <div class="cover-label">Mein Weg</div>
+  <div class="cover-line"></div>
+  <h1>Blähbauch<br><em>loswerden</em></h1>
+  <p class="subtitle">Was bei mir wirklich geholfen hat</p>
+
+  <!-- Cover Illustration: Mond + Pflanzen-Lineart -->
+  <svg class="cover-illu" width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="34" stroke="#C48B6C" stroke-width="0.8" opacity="0.55"/>
+    <path d="M60 30 Q72 48 60 60 Q48 72 60 90" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.45"/>
+    <path d="M30 60 Q48 48 60 60 Q72 72 90 60" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.45"/>
+    <circle cx="60" cy="60" r="2" fill="#C48B6C" opacity="0.7"/>
+    <circle cx="22" cy="32" r="0.8" fill="#C48B6C" opacity="0.6"/>
+    <circle cx="98" cy="40" r="0.8" fill="#C48B6C" opacity="0.6"/>
+    <circle cx="100" cy="88" r="0.8" fill="#C48B6C" opacity="0.6"/>
+    <circle cx="20" cy="92" r="0.8" fill="#C48B6C" opacity="0.6"/>
+  </svg>
+
+  <div class="cover-line-bottom"></div>
+  <p class="author">Julia Bergles</p>
+  <p class="brand">EatMoreArt &middot; TerraLuna</p>
+</div>
+
+<!-- SEITE 2: VORWORT -->
+<div class="page">
+  <p class="page-label">Vorwort</p>
+  <div class="divider"></div>
+  <h2>Mein Bauch war nicht immer mein Freund.</h2>
+
+  <p>Lange Zeit habe ich morgens noch <strong>normal</strong> ausgesehen. Und abends war mein Bauch <strong>hart, gespannt und so aufgebläht</strong>, dass keine Hose mehr gepasst hat.</p>
+
+  <p>Ich habe alles probiert: Salate. Smoothies. Mehr Ballaststoffe. Rohkost. Alles, was als „gesund" gilt.</p>
+
+  <p><strong>Und mein Bauch ist immer dicker geworden.</strong></p>
+
+  <p style="margin-top: 14px;">Was wirklich geholfen hat, waren <em>kleine, fast unscheinbare Veränderungen</em>. Und sie haben so viel verändert.</p>
+
+  <div class="info-box">
+    <h3>Was du in diesem Guide findest</h3>
+    <ul>
+      <li><strong>Volumen und Wasser reduzieren</strong> — der größte Hebel</li>
+      <li><strong>Ein sättigendes Protein-Brot</strong> — mein Rezept zum Nachbacken</li>
+      <li><strong>Sanfte Pflanzenhilfe</strong> — YamatoGast und seine 8 Heilpflanzen</li>
+      <li><strong>Drei einfache Übungen</strong> — die wirklich etwas bringen</li>
+      <li><strong>Rhythmus statt Druck</strong> — wie ich essen gelernt habe</li>
+    </ul>
+  </div>
+
+  <div class="quote">„Dieser Guide ist kein Plan.<br>Er ist mein Weg — aufgeschrieben für dich."</div>
+
+  <div class="disclaimer">
+    <p><strong>Wichtiger Hinweis:</strong> Die Inhalte basieren auf meiner persönlichen Erfahrung und allgemein zugänglichem Wissen. Sie ersetzen keine medizinische, ernährungsmedizinische oder therapeutische Beratung. Bei anhaltenden Beschwerden wende dich bitte an qualifiziertes medizinisches Fachpersonal.</p>
+  </div>
+  <span class="page-number">2</span>
+</div>
+
+<!-- SEITE 3: WAS EIN BLÄHBAUCH WIRKLICH IST -->
+<div class="page">
+  <div class="kapitel-head">
+    <div class="kapitel-meta">
+      <p class="page-label">Kapitel 1</p>
+      <div class="divider"></div>
+      <h2>Was ein Blähbauch wirklich ist</h2>
+    </div>
+    <!-- Bauch-Lineart -->
+    <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
+      <path d="M20 14 Q32 8 44 14 Q54 24 50 40 Q44 56 32 56 Q20 56 14 40 Q10 24 20 14 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <circle cx="32" cy="36" r="2" stroke="#C48B6C" stroke-width="0.8" fill="none"/>
+      <path d="M22 28 Q26 32 24 36" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M42 26 Q38 30 40 34" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <circle cx="26" cy="22" r="0.8" fill="#C48B6C" opacity="0.6"/>
+      <circle cx="40" cy="20" r="0.8" fill="#C48B6C" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <p class="lead">Ein Blähbauch ist nicht einfach Fett. Es ist meistens <strong>Luft, Wasser und unverdaute Nahrung</strong> im Darm — alles auf einmal.</p>
+
+  <div class="info-box">
+    <h3>Drei Dinge passieren gleichzeitig</h3>
+    <ul>
+      <li><strong>Gase entstehen</strong> — Darmbakterien verarbeiten Ballaststoffe. Normal, aber bei empfindlichem Darm fühlst du jedes Bläschen.</li>
+      <li><strong>Wasser sammelt sich</strong> — Rohkost und wasserreiches Gemüse brauchen lange, um transportiert zu werden.</li>
+      <li><strong>Volumen drückt</strong> — viel auf einmal dehnt den Magen, der Darm wird überfordert.</li>
+    </ul>
+  </div>
+
+  <h3>Warum „gesund" nicht immer leicht ist</h3>
+  <ul>
+    <li>Ein großer <strong>Salat</strong> — viele Ballaststoffe, viel Wasser, viel Arbeit für den Darm.</li>
+    <li>Eine Schüssel <strong>rohes Gemüse</strong> — die Zellwände müssen erst aufgebrochen werden.</li>
+    <li>Ein <strong>Smoothie</strong> mit Kürbis, Apfel und Spinat — viel Volumen auf einen Schluck.</li>
+  </ul>
+  <p>Alles wertvoll. Alles gesund. Aber wenn dein Darm gereizt ist — <strong>zu viel auf einmal</strong>.</p>
+
+  <div class="highlight-box">
+    <p><strong>Mein Lernen:</strong> Es geht nicht darum, weniger zu essen. Es geht darum, weniger <em>Volumen</em> und weniger <em>Wasser</em> in den Bauch zu schieben — aber gleichzeitig <strong>sättigend</strong> zu bleiben.</p>
+  </div>
+
+  <div class="quote">„Nicht jeder Bauch reagiert gleich.<br>Mein Weg ist nicht dein Weg.<br>Aber vielleicht ein Anfang."</div>
+  <span class="page-number">3</span>
+</div>
+
+<!-- SEITE 4: VOLUMEN UND WASSER REDUZIEREN -->
+<div class="page">
+  <div class="kapitel-head">
+    <div class="kapitel-meta">
+      <p class="page-label">Kapitel 2</p>
+      <div class="divider"></div>
+      <h2>Volumen und Wasser reduzieren</h2>
+    </div>
+    <!-- Dampf-Lineart -->
+    <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
+      <path d="M16 50 L48 50 L46 54 L18 54 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <ellipse cx="32" cy="46" rx="18" ry="3" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M22 30 Q24 36 22 42" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M32 26 Q34 34 32 42" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M42 30 Q44 36 42 42" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M22 22 Q24 26 22 30" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M32 18 Q34 22 32 26" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M42 22 Q44 26 42 30" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <p class="lead">Das war für mich die <strong>größte Veränderung</strong>. Nicht <em>was</em> ich gegessen habe, sondern wie viel Wasser in jedem Bissen steckte.</p>
+
+  <h3>Tipp 1 &middot; Weniger Rohkost, mehr gedünstet</h3>
+  <div class="tip-row"><div class="tip-check">✓</div><div><strong>Gedünstetes Gemüse ist „vorverdaut"</strong> — die Hitze macht die Zellwände weicher, der Darm muss weniger arbeiten.</div></div>
+  <div class="tip-row"><div class="tip-check">✓</div><div>Rohes Gemüse vor allem <strong>abends weglassen</strong> — da ist die Verdauung am langsamsten.</div></div>
+  <div class="tip-row"><div class="tip-check">✓</div><div>Stattdessen <strong>dämpfen, dünsten oder im Ofen backen</strong> — alles wird leichter.</div></div>
+
+  <h3>Tipp 2 &middot; Kürbis durch Süßkartoffel ersetzen</h3>
+  <div class="vs-row">
+    <div class="vs-card bad">
+      <!-- Kürbis-Lineart -->
+      <svg class="vs-illu" viewBox="0 0 40 40" fill="none">
+        <ellipse cx="20" cy="24" rx="14" ry="10" stroke="#C48B6C" stroke-width="1" fill="none"/>
+        <path d="M12 22 Q12 30 16 32" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <path d="M20 14 Q20 28 20 32" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <path d="M28 22 Q28 30 24 32" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <path d="M20 14 Q18 10 16 10" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      </svg>
+      <h4>Kürbis</h4>
+      <p><strong>Viel Wasser</strong>, viel Volumen. Füllt den Magen, ohne wirklich zu sättigen.</p>
+    </div>
+    <div class="vs-arrow">→</div>
+    <div class="vs-card good">
+      <!-- Süßkartoffel-Lineart -->
+      <svg class="vs-illu" viewBox="0 0 40 40" fill="none">
+        <path d="M10 22 Q8 14 16 12 Q26 10 32 18 Q36 28 28 32 Q18 36 12 30 Q8 26 10 22 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
+        <path d="M14 18 Q18 20 22 18" stroke="#C48B6C" stroke-width="0.7" fill="none" opacity="0.5"/>
+        <path d="M18 26 Q22 28 26 26" stroke="#C48B6C" stroke-width="0.7" fill="none" opacity="0.5"/>
+      </svg>
+      <h4>Süßkartoffel</h4>
+      <p><strong>Weniger Wasser, mehr Energie pro Bissen.</strong> Sättigender, leichter im Magen.</p>
+    </div>
+  </div>
+
+  <h3>Tipp 3 &middot; Zucchini raspeln statt grob schneiden</h3>
+  <ul>
+    <li><strong>Raspeln</strong> und <strong>kurz anbraten</strong> — die Zucchini verliert viel Wasser.</li>
+    <li>Was übrig bleibt: konzentriert, leichter verdaulich, <strong>liegt nicht schwer im Magen</strong>.</li>
+    <li>Bei groben Stücken bleibt das Wasser <em>im</em> Gemüse drin — und dann in dir.</li>
+  </ul>
+
+  <h3>Tipp 4 &middot; Weniger Ballaststoffe — vorübergehend</h3>
+  <div class="warn-box">
+    <p><strong>Wichtig:</strong> Ballaststoffe sind langfristig wertvoll. Ich rede <strong>nicht</strong> von „nie wieder". Sondern von <em>vorübergehend reduzieren</em>, bis dein Bauch zur Ruhe kommt — und dann langsam wieder einführen.</p>
+  </div>
+  <span class="page-number">4</span>
+</div>
+
+<!-- SEITE 5: PROTEIN-BROT REZEPT -->
+<div class="page">
+  <div class="kapitel-head">
+    <div class="kapitel-meta">
+      <p class="page-label">Kapitel 3</p>
+      <div class="divider"></div>
+      <h2>Mein Protein-Brot</h2>
+    </div>
+    <!-- Brot-Lineart -->
+    <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
+      <path d="M12 32 Q12 22 22 22 L42 22 Q52 22 52 32 L52 46 Q52 50 48 50 L16 50 Q12 50 12 46 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M20 22 Q20 16 26 16 Q32 16 32 22" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M32 22 Q32 16 38 16 Q44 16 44 22" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M18 36 L26 36" stroke="#C48B6C" stroke-width="0.8" opacity="0.5"/>
+      <path d="M18 42 L24 42" stroke="#C48B6C" stroke-width="0.8" opacity="0.5"/>
+      <circle cx="34" cy="36" r="1" fill="#C48B6C" opacity="0.5"/>
+      <circle cx="40" cy="42" r="1" fill="#C48B6C" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <p class="lead">Wenn man weniger Volumen isst, muss man trotzdem <strong>satt werden</strong>. Sonst hält man es nicht durch. Dafür habe ich mir dieses Brot überlegt.</p>
+
+  <div class="highlight-box">
+    <p><strong>Warum es funktioniert:</strong> wenig Volumen, viel Protein, lange Sättigung. <strong>Glutenfrei, ohne Industriezucker, ohne Hefe.</strong> Eine Scheibe morgens — und ich bin bis Mittag ruhig.</p>
+  </div>
+
+  <div class="recipe-box">
+    <h4>Zutaten</h4>
+    <ul>
+      <li><strong>350 g</strong> Haferflocken, glutenfrei — am besten <strong>Bio und gekeimt</strong></li>
+      <li><strong>50 g</strong> Chiasamen</li>
+      <li><strong>30 g</strong> Leinsamen</li>
+      <li><strong>200 g</strong> Kürbiskerne</li>
+      <li><strong>1 TL</strong> Salz</li>
+      <li><strong>1 TL</strong> Akazienfasern</li>
+      <li><strong>800 g</strong> Magerquark</li>
+    </ul>
+
+    <h4>Zubereitung</h4>
+    <ol class="step-list">
+      <li><strong>Trockene Zutaten mixen.</strong> Haferflocken, Chia-, Leinsamen, Kürbiskerne, Salz und Akazienfasern im Hochleistungsmixer fein schreddern.</li>
+      <li><strong>Quark dazu.</strong> Magerquark zugeben und gut vermischen, bis ein geschmeidiger Teig entsteht.</li>
+      <li><strong>In die Form.</strong> Teig in eine Kastenform geben und glatt streichen.</li>
+      <li><strong>Backen.</strong> 60 – 65 Minuten bei <strong>200 °C Ober-/Unterhitze</strong>. Im Airfryer geht es auch — gleiche Temperatur, ähnliche Zeit.</li>
+      <li><strong>Auskühlen lassen.</strong> Vollständig, sonst zerfällt es beim Schneiden.</li>
+    </ol>
+  </div>
+
+  <div class="warn-box">
+    <p><strong>Wenn du Kasein, Laktose oder Hafer nicht verträgst</strong>, ist das nicht dein Rezept. Bei Histaminintoleranz kann Magerquark je nach Reife problematisch sein.</p>
+    <p><strong>Alternativen:</strong> Skyr (laktosearm), pflanzliches Eiweißpulver, oder ein anderes proteinreiches Grundrezept.</p>
+  </div>
+  <span class="page-number">5</span>
+</div>
+
+<!-- SEITE 6: YAMATOGAST -->
+<div class="page">
+  <div class="kapitel-head">
+    <div class="kapitel-meta">
+      <p class="page-label">Kapitel 4</p>
+      <div class="divider"></div>
+      <h2>Sanfte Pflanzenhilfe</h2>
+    </div>
+    <!-- Heilpflanze-Lineart -->
+    <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
+      <path d="M32 54 L32 24" stroke="#C48B6C" stroke-width="1"/>
+      <path d="M32 36 Q22 32 18 22 Q28 22 32 30" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M32 30 Q42 26 46 16 Q36 16 32 24" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M32 44 Q24 42 22 36 Q30 36 32 40" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M32 40 Q40 38 42 32 Q34 32 32 36" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <ellipse cx="32" cy="56" rx="10" ry="2" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <p class="lead">Es gibt Phasen, da reicht Ernährung allein nicht. Mein Darm war so gereizt, dass selbst die ruhigsten Mahlzeiten unangenehm waren.</p>
+
+  <div class="info-box">
+    <h3>Was YamatoGast ist</h3>
+    <p>Ein <strong>traditionelles pflanzliches Arzneimittel</strong> auf Basis der japanischen Heilpflanzen-Rezeptur <em>Rikkunshito</em>. In Japan seit über <strong>40 Jahren</strong> als Arzneimittel eingesetzt.</p>
+    <p style="margin-top: 8px;"><strong>Anwendung:</strong> leichte Magen-Darm-Beschwerden, Völlegefühl, Blähungen, Appetitlosigkeit.</p>
+  </div>
+
+  <h3>Die 8 Heilpflanzen</h3>
+  <div class="plant-grid">
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 8 Q7 8 5 12 M11 8 Q15 8 17 12" stroke="#C48B6C" stroke-width="0.9"/></svg>
+      <div><h4>Ginsengwurzelstock</h4><p>Fördert die Durchblutung der Magenschleimhaut. Traditionelles Tonikum.</p></div>
+    </div>
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 10 Q7 10 5 14 M11 10 Q15 10 17 14 M11 6 Q9 6 8 8 M11 6 Q13 6 14 8" stroke="#C48B6C" stroke-width="0.9"/></svg>
+      <div><h4>Atractylodes</h4><p>In der ostasiatischen Medizin zur Unterstützung der Verdauung.</p></div>
+    </div>
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><ellipse cx="11" cy="13" rx="6" ry="4" stroke="#C48B6C" stroke-width="0.9" fill="none"/><path d="M11 9 Q11 6 13 5" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <div><h4>Poria-Fruchtkörper</h4><p>Ein Pilz — traditionell bei Wasseransammlungen und Verdauungsbeschwerden.</p></div>
+    </div>
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 Q5 8 5 14 Q5 18 11 18 Q17 18 17 14 Q17 8 11 4" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <div><h4>Pinellia-Rhizom</h4><p>In der TCM gegen Übelkeit und Magenbeschwerden bekannt.</p></div>
+    </div>
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="6" stroke="#C48B6C" stroke-width="0.9" fill="none"/><path d="M11 5 Q14 8 14 11 Q14 14 11 17" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/></svg>
+      <div><h4>Citrus-Unshiu-Schale</h4><p>Getrocknete Mandarinenschale — ätherische Öle wirken verdauungsanregend.</p></div>
+    </div>
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><ellipse cx="11" cy="12" rx="4" ry="6" stroke="#C48B6C" stroke-width="0.9" fill="none"/><path d="M11 6 Q11 4 13 3" stroke="#C48B6C" stroke-width="0.9"/></svg>
+      <div><h4>Jujube-Früchte</h4><p>Chinesische Datteln — traditionell zur Harmonisierung und als sanftes Tonikum.</p></div>
+    </div>
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 9 Q8 9 6 12 M11 12 Q14 12 16 15" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <div><h4>Süßholzwurzel</h4><p>Aus westlicher Kräuterkunde und TCM — traditionell krampflösend und magenberuhigend.</p></div>
+    </div>
+    <div class="plant-card">
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M6 14 Q8 8 14 8 Q18 8 18 12 Q18 16 14 16 Q10 16 6 14 Z" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <div><h4>Ingwerwurzelstock</h4><p>Entzündungshemmend, regt die Darmtätigkeit an, lindert Übelkeit.</p></div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <p><strong>Wichtig:</strong> YamatoGast ist ein registriertes Arzneimittel und in jeder Apotheke erhältlich. Wirksamkeit traditionell überliefert.</p>
+    <p><strong>Vorsicht:</strong> Süßholzwurzel kann bei <strong>Bluthochdruck, Schwangerschaft</strong> oder bestimmten Medikamenten problematisch sein — bitte vorher mit Apotheker oder Arzt sprechen. Ich teile hier meine Erfahrung, keine medizinische Empfehlung.</p>
+  </div>
+  <span class="page-number">6</span>
+</div>
+
+<!-- SEITE 7: BEWEGUNG -->
+<div class="page">
+  <div class="kapitel-head">
+    <div class="kapitel-meta">
+      <p class="page-label">Kapitel 5</p>
+      <div class="divider"></div>
+      <h2>Sanfte Bewegung für den Bauch</h2>
+    </div>
+    <!-- Yoga-Lineart -->
+    <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="16" r="4" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M32 20 L32 36" stroke="#C48B6C" stroke-width="1"/>
+      <path d="M32 28 Q24 28 18 34 Q14 38 12 42" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M32 28 Q40 28 46 34 Q50 38 52 42" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M32 36 Q26 40 22 50" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M32 36 Q38 40 42 50" stroke="#C48B6C" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+
+  <p class="lead">Wenn der Bauch hart und voll ist, will man sich nicht bewegen. Verständlich. Aber genau das ist oft das Beste, was du tun kannst.</p>
+
+  <div class="exercise">
+    <svg class="exercise-illu" viewBox="0 0 56 56" fill="none">
+      <!-- Katze-Kuh: Person im Vierfüßlerstand -->
+      <path d="M10 36 L46 36" stroke="#C48B6C" stroke-width="1" opacity="0.4"/>
+      <path d="M12 36 L12 28 Q14 24 18 24" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
+      <path d="M44 36 L44 28 Q42 24 38 24" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
+      <path d="M18 24 Q28 18 38 24" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
+      <circle cx="14" cy="22" r="3" stroke="#C48B6C" stroke-width="1" fill="none"/>
+    </svg>
+    <div class="exercise-body">
+      <h3>1 &middot; Katze-Kuh</h3>
+      <p>Vierfüßlerstand. Hände unter den Schultern, Knie unter den Hüften.</p>
+      <ul>
+        <li><strong>Einatmen:</strong> Kopf in den Nacken, leichtes Hohlkreuz, Brust nach vorne.</li>
+        <li><strong>Ausatmen:</strong> Kopf zum Bauch, Rücken rund, Bauchnabel zur Wirbelsäule.</li>
+        <li><strong>8 – 12 Mal</strong>, ruhig im Rhythmus deines Atems.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <svg class="exercise-illu" viewBox="0 0 56 56" fill="none">
+      <!-- Knie zur Brust -->
+      <path d="M6 42 L50 42" stroke="#C48B6C" stroke-width="1" opacity="0.4"/>
+      <ellipse cx="28" cy="38" rx="20" ry="4" stroke="#C48B6C" stroke-width="0.6" fill="none" opacity="0.3"/>
+      <circle cx="14" cy="34" r="3" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M17 34 Q22 32 28 30 Q34 28 38 24 Q40 22 38 18" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
+      <path d="M28 30 Q32 36 36 38" stroke="#C48B6C" stroke-width="1" fill="none"/>
+    </svg>
+    <div class="exercise-body">
+      <h3>2 &middot; Knie zur Brust</h3>
+      <p>Auf den Rücken legen, beide Knie zur Brust ziehen, sanft mit den Armen umarmen.</p>
+      <ul>
+        <li><strong>30 Sekunden halten</strong>, tief in den Bauch atmen.</li>
+        <li>Loslassen, kurz strecken, <strong>wiederholen</strong>.</li>
+        <li>Hilft Gasen, sich zu lösen.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <svg class="exercise-illu" viewBox="0 0 56 56" fill="none">
+      <!-- Bauchmassage im Uhrzeigersinn -->
+      <circle cx="28" cy="28" r="16" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M28 12 A16 16 0 0 1 44 28" stroke="#C48B6C" stroke-width="1.4" fill="none"/>
+      <path d="M40 22 L44 28 L38 30" stroke="#C48B6C" stroke-width="1.4" fill="none"/>
+      <circle cx="28" cy="28" r="2" fill="#C48B6C" opacity="0.7"/>
+    </svg>
+    <div class="exercise-body">
+      <h3>3 &middot; Bauchmassage im Uhrzeigersinn</h3>
+      <p>Hand auf den Bauch, sanfter Druck — <strong>immer im Uhrzeigersinn</strong> um den Bauchnabel.</p>
+      <ul>
+        <li>Folgt dem natürlichen Verlauf des <strong>Dickdarms</strong>.</li>
+        <li><strong>2 – 3 Minuten</strong>, ruhig und gleichmäßig.</li>
+        <li>Am besten morgens nach dem Aufwachen oder abends im Bett.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Und ein Spaziergang.</strong> 15 – 20 Minuten nach dem Essen. Kein Sport, kein Ehrgeiz. Einfach langsam gehen — die <strong>unspektakulärste und gleichzeitig wirksamste „Übung"</strong> für deinen Darm.</p>
+  </div>
+  <span class="page-number">7</span>
+</div>
+
+<!-- SEITE 8: RHYTHMUS UND STRESS -->
+<div class="page">
+  <div class="kapitel-head">
+    <div class="kapitel-meta">
+      <p class="page-label">Kapitel 6</p>
+      <div class="divider"></div>
+      <h2>Rhythmus, Ruhe und kein Druck</h2>
+    </div>
+    <!-- Mond/Atem-Lineart -->
+    <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
+      <path d="M42 14 Q26 22 26 32 Q26 42 42 50 Q30 50 22 42 Q14 34 14 32 Q14 22 22 14 Q30 14 42 14 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <circle cx="50" cy="22" r="0.8" fill="#C48B6C" opacity="0.6"/>
+      <circle cx="54" cy="32" r="0.8" fill="#C48B6C" opacity="0.6"/>
+      <circle cx="50" cy="44" r="0.8" fill="#C48B6C" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <p class="lead">Das Letzte, was ich gelernt habe, ist gleichzeitig <strong>das Wichtigste</strong>.</p>
+
+  <h3>Regelmäßig essen — aber nicht zu viel</h3>
+  <div class="tip-row"><div class="tip-check">✓</div><div><strong>3 Mahlzeiten am Tag</strong> — mit etwa <strong>3 – 4 Stunden Pause</strong> dazwischen.</div></div>
+  <div class="tip-row"><div class="tip-check">✓</div><div>Lange genug, dass der Darm <strong>aufräumen</strong> kann.</div></div>
+  <div class="tip-row"><div class="tip-check">✓</div><div>Nicht so lange, dass du dann <strong>alles auf einmal verschlingst</strong>.</div></div>
+
+  <p style="margin-top: 12px;">Früher habe ich den ganzen Tag gesnackt. <strong>Mein Darm hatte keine Pause.</strong> Er kam nie wirklich zur Ruhe — und damit auch ich nicht.</p>
+
+  <div class="info-box">
+    <h3>Wichtig: jeder Bauch ist anders</h3>
+    <p>Bei mir war <strong>Dauersnacken</strong> das Hauptproblem.</p>
+    <p style="margin-top: 8px;">Aber wenn du beim Snacken <strong>keinen Unterschied</strong> merkst, darfst du das auch. Manchmal ist es sogar <em>hilfreich</em> — weil man bei den Hauptmahlzeiten dann nicht so viel isst und der Magen sich weniger dehnt.</p>
+    <p style="margin-top: 8px;"><strong>Es gibt keinen richtigen Weg. Es gibt nur deinen Weg.</strong></p>
+  </div>
+
+  <h3>Weniger Stress beim Essen</h3>
+  <p>Verdauung passiert <strong>nur im Ruhemodus</strong>. Im Stress, am Handy, zwischen Tür und Angel — dein Darm macht zu.</p>
+  <div class="tip-row"><div class="tip-check">✓</div><div><strong>Drei tiefe Bauchatemzüge</strong> vor jeder Mahlzeit.</div></div>
+  <div class="tip-row"><div class="tip-check">✓</div><div><strong>Hinsetzen.</strong> Nicht im Stehen essen.</div></div>
+  <div class="tip-row"><div class="tip-check">✓</div><div><strong>Langsam kauen.</strong> Wirklich. Es klingt banal — aber es ändert alles.</div></div>
+
+  <div class="quote">„Ich habe meinen Bauch nicht mit einer Diät beruhigt.<br>Ich habe ihn beruhigt, indem ich selbst ruhiger geworden bin."</div>
+  <span class="page-number">8</span>
+</div>
+
+<!-- SEITE 9: CTA -->
+<div class="page">
+  <p class="page-label">Dein nächster Schritt</p>
+  <div class="divider"></div>
+  <h2>Wenn du tiefer einsteigen möchtest.</h2>
+
+  <p class="lead">Dieser Guide ist ein Anfang. Aber dein Bauch braucht oft mehr als ein paar Tipps — er braucht eine Begleitung, die dich versteht.</p>
+
+  <p>Genau dafür habe ich <strong>TerraLuna</strong> gebaut. Eine App, die dich nicht überfordert, sondern dich an die Hand nimmt.</p>
+
+  <div class="cta-box">
+    <h3>TerraLuna App</h3>
+    <p class="app-name">Dein smarter Ernährungsbegleiter für Darm, Histamin und Zyklus</p>
+    <ul>
+      <li>250+ Lebensmittel mit Verträglichkeits-Ampel</li>
+      <li>Verträglichkeits-Scanner mit Foto und Barcode</li>
+      <li>120+ glutenfreie Rezepte ohne Industriezucker</li>
+      <li>Symptom-Tagebuch und Zyklustracking</li>
+      <li>Reise-Texte in 8 Sprachen</li>
+    </ul>
+    <p style="margin-top: 18px; color: var(--gold); font-weight: 700;">Bald im App Store und Google Play</p>
+    <p style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 6px;">juliabergles.de/app</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 24px;">
+    <p style="font-size: 13px; color: var(--cocoa); margin-bottom: 10px;"><strong>Mehr von mir:</strong></p>
+    <p style="font-size: 13px;">
+      <strong>Instagram:</strong> @julia_bergles<br>
+      <strong>Website:</strong> juliabergles.de<br>
+      <strong>Shop:</strong> Wear Your Healing<br>
+      <strong>E-Mail:</strong> julia@bergles.net
+    </p>
+  </div>
+
+  <div class="quote" style="margin-top: 24px;">
+    „Mein Bauch ist ruhiger geworden,<br>
+    als ich aufgehört habe, ihn zu bekämpfen.<br>
+    Und genau das wünsche ich dir auch."
+  </div>
+
+  <p style="text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--rosegold); margin-top: 8px; font-style: italic;">Alles Liebe, Julia</p>
+  <span class="page-number">9</span>
+</div>
+
+<!-- SEITE 10: LEGAL -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: space-between;">
+  <div>
+    <p class="page-label">Rechtliches</p>
+    <div class="divider"></div>
+    <h2>Impressum und Hinweise</h2>
+
+    <h3>Autorin</h3>
+    <p>Julia Bergles<br>Singoldstraße 5a, 86517 Wehringen<br>julia@bergles.net<br>juliabergles.de</p>
+
+    <h3>Medizinischer Disclaimer</h3>
+    <p>Dieser Guide dient ausschließlich der allgemeinen Information und Aufklärung. Die Inhalte basieren auf persönlichen Erfahrungen und allgemein zugänglichem Wissen.</p>
+    <p>Dieser Guide <strong>ersetzt keine ärztliche Diagnose, keine medizinische Behandlung und keinen Arztbesuch</strong>. Bei gesundheitlichen Beschwerden, bestehenden Vorerkrankungen, Schwangerschaft oder bei Einnahme von Medikamenten wende dich immer an qualifiziertes medizinisches Fachpersonal.</p>
+    <p>Es werden <strong>keine Heilversprechen</strong> gemacht. Die Erwähnung von YamatoGast erfolgt aus persönlicher Erfahrung und ist keine produktspezifische Empfehlung — bitte informiere dich vor jeder Anwendung in deiner Apotheke über Wechselwirkungen und Gegenanzeigen.</p>
+
+    <h3>Urheberrecht</h3>
+    <p>Alle Inhalte und Texte sind geistiges Eigentum von Julia Bergles. Das Weitergeben des Guides ist erlaubt. Kopieren oder Verkaufen einzelner Inhalte nicht.</p>
+
+    <h3>Quellen und Grundlagen</h3>
+    <p>Die Informationen zu YamatoGast basieren auf der öffentlich verfügbaren Produktinformation (traditionell registriertes pflanzliches Arzneimittel auf Basis der japanischen Rikkunshito-Formulierung). Die Übungen folgen etablierten Yoga- und Physiotherapie-Praktiken zur Unterstützung der Verdauung. Keine der Aussagen ist als individuelle medizinische Empfehlung zu verstehen.</p>
+  </div>
+
+  <div style="text-align: center; padding: 24px 0;">
+    <div style="width: 30px; height: 1px; background: var(--gold); margin: 0 auto 16px;"></div>
+    <p style="font-size: 10px; color: var(--cocoa); letter-spacing: 1px;">Julia Bergles / EatMoreArt</p>
+    <p style="font-size: 10px; color: var(--cocoa); letter-spacing: 1px;">Mein Weg aus dem Blähbauch, Juni 2026</p>
+  </div>
+  <span class="page-number">10</span>
+</div>
+
+</body>
+</html>
