@@ -208,72 +208,152 @@
     .verbindung-card h3 { font-size: 1rem; margin-bottom: 8px; color: #E8C4A8; font-weight: 500; }
     .verbindung-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
 
-    /* APP SCREENSHOTS */
-    .app-screens-section { background: var(--warm-grey); }
-    .screens-scroll {
+    /* APP SCREENSHOTS — Carousel mit iPhone-Mockups */
+    .app-screens-section {
+      background: linear-gradient(180deg, var(--warm-white) 0%, var(--warm-grey) 35%, #EAD9CB 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .app-screens-section::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(196,139,108,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .screens-carousel {
+      position: relative;
+      margin: 40px -24px 0;
+    }
+    .screens-track {
       display: flex;
-      gap: 28px;
+      gap: 32px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding: 40px 24px 56px;
-      margin: 32px -24px 0;
-      scroll-padding-left: 24px;
+      scroll-behavior: smooth;
+      padding: 48px 24px 64px;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(196,139,108,0.4) transparent;
+      scrollbar-width: none;
     }
-    .screens-scroll::-webkit-scrollbar { height: 8px; }
-    .screens-scroll::-webkit-scrollbar-track { background: transparent; }
-    .screens-scroll::-webkit-scrollbar-thumb { background: rgba(196,139,108,0.3); border-radius: 4px; }
-    .screens-scroll::-webkit-scrollbar-thumb:hover { background: rgba(196,139,108,0.5); }
+    .screens-track::-webkit-scrollbar { display: none; }
     .screen-item {
-      flex: 0 0 220px;
+      flex: 0 0 280px;
       scroll-snap-align: center;
       text-align: center;
+      transition: opacity 0.5s ease;
     }
-    .screen-frame {
-      border-radius: 36px;
-      overflow: hidden;
-      background: #1a1410;
-      padding: 6px;
-      margin-bottom: 18px;
-      box-shadow: 0 16px 48px rgba(149,82,81,0.18), 0 4px 12px rgba(149,82,81,0.08);
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+    /* iPhone Frame */
+    .iphone-frame {
+      position: relative;
+      width: 280px;
+      height: 580px;
+      margin: 0 auto 24px;
+      background: linear-gradient(145deg, #2a1f1a 0%, #1a1410 50%, #0f0a08 100%);
+      border-radius: 48px;
+      padding: 12px;
+      box-shadow:
+        0 28px 80px rgba(149,82,81,0.22),
+        0 8px 24px rgba(149,82,81,0.12),
+        inset 0 1px 2px rgba(255,255,255,0.08),
+        inset 0 -1px 2px rgba(0,0,0,0.4);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
     }
-    .screen-frame img {
+    .iphone-frame::before {
+      /* Notch / Dynamic Island */
+      content: '';
+      position: absolute;
+      top: 18px; left: 50%;
+      transform: translateX(-50%);
+      width: 96px; height: 26px;
+      background: #050302;
+      border-radius: 14px;
+      z-index: 2;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .iphone-frame::after {
+      /* Side button (right) */
+      content: '';
+      position: absolute;
+      top: 130px; right: -3px;
+      width: 4px; height: 80px;
+      background: linear-gradient(180deg, #1a1410, #2a1f1a, #1a1410);
+      border-radius: 0 2px 2px 0;
+    }
+    .iphone-frame img {
       width: 100%;
-      height: auto;
-      border-radius: 30px;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 36px;
       display: block;
     }
-    .screen-item:hover .screen-frame {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 28px 64px rgba(149,82,81,0.28), 0 8px 20px rgba(149,82,81,0.12);
+    .screen-item:hover .iphone-frame {
+      transform: translateY(-12px) rotate(-1deg);
+      box-shadow:
+        0 40px 100px rgba(149,82,81,0.32),
+        0 12px 32px rgba(196,139,108,0.18),
+        inset 0 1px 2px rgba(255,255,255,0.08),
+        inset 0 -1px 2px rgba(0,0,0,0.4);
     }
     .screen-label {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 400;
       color: var(--text-dark);
       margin-bottom: 4px;
       letter-spacing: 0.2px;
     }
     .screen-desc {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-muted);
       letter-spacing: 0.04em;
       line-height: 1.5;
     }
+    /* Carousel-Pfeile */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 24px rgba(149,82,81,0.18), 0 2px 6px rgba(149,82,81,0.08);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--copper);
+      transition: all 0.3s ease;
+      z-index: 5;
+    }
+    .carousel-btn:hover {
+      background: linear-gradient(135deg, #C48B6C, #D4A48A);
+      color: white;
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 12px 32px rgba(196,139,108,0.32);
+    }
+    .carousel-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: translateY(-50%);
+    }
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
+    .carousel-btn svg { width: 22px; height: 22px; }
     .screens-hint {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-muted);
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      margin-top: 16px;
-      opacity: 0.7;
+      margin-top: 8px;
+      opacity: 0.6;
     }
 
     /* MEINE GESCHICHTE */
@@ -365,8 +445,14 @@
       .condition-chip { font-size: 13px; padding: 10px 18px; }
       .angebot-card:hover { transform: translateY(-4px); }
       .verbindung-card:hover { transform: translateY(-3px); }
-      .screen-item { flex-basis: 200px; }
-      .screen-label { font-size: 19px; }
+      .screen-item { flex-basis: 240px; }
+      .iphone-frame { width: 240px; height: 500px; border-radius: 42px; padding: 10px; }
+      .iphone-frame::before { width: 80px; height: 22px; top: 16px; }
+      .iphone-frame img { border-radius: 32px; }
+      .screen-label { font-size: 20px; }
+      .carousel-btn { width: 44px; height: 44px; }
+      .carousel-btn.prev { left: 4px; }
+      .carousel-btn.next { right: 4px; }
     }
 
     @media (max-width: 480px) {
@@ -517,60 +603,68 @@
     <h2 class="section-title fade-up" style="margin-left: auto; margin-right: auto;">TerraLuna von innen</h2>
     <p class="section-sub fade-up" style="margin-left: auto; margin-right: auto;">Acht Bereiche. Eine App. Für dich gebaut, wenn dein Körper besondere Aufmerksamkeit braucht.</p>
 
-    <div class="screens-scroll fade-up">
+    <div class="screens-carousel fade-up">
+      <button class="carousel-btn prev" id="screensPrev" aria-label="Voriges Bild">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="screens-track" id="screensTrack">
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/01-heute.png" alt="Heute-Tab: Tagesphase, Tipp, Nährstoffe" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/01-heute.png" alt="Heute-Tab: Tagesphase, Tipp, Nährstoffe" loading="lazy" width="280" height="580"></div>
         <p class="screen-label">Heute</p>
         <p class="screen-desc">Dein Tag, deine Phase</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/02-lebensmittel.png" alt="Lebensmittel-Datenbank mit Verträglichkeitssymbolen" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/02-lebensmittel.png" alt="Lebensmittel-Datenbank mit Verträglichkeitssymbolen" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">Lebensmittel</p>
         <p class="screen-desc">250+ mit Verträglichkeits-Check</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/03-rezepte.png" alt="Rezepte-Browser glutenfrei, ohne Industriezucker" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/03-rezepte.png" alt="Rezepte-Browser glutenfrei, ohne Industriezucker" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">Rezepte</p>
         <p class="screen-desc">120+ glutenfrei, ohne Industriezucker</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/04-zyklus.png" alt="Zyklustracker mit Phasen und Symptomen" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/04-zyklus.png" alt="Zyklustracker mit Phasen und Symptomen" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">Zyklus</p>
         <p class="screen-desc">4 Phasen, Symptome, Seed Cycling</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/05-einkauf.png" alt="Einkaufslisten pro Supermarkt" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/05-einkauf.png" alt="Einkaufslisten pro Supermarkt" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">Einkauf</p>
         <p class="screen-desc">Pro Supermarkt sortiert</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/06-scanner.png" alt="Scanner für Barcode und Foto" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/06-scanner.png" alt="Scanner für Barcode und Foto" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">Scanner</p>
         <p class="screen-desc">Foto, Barcode, manuell</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/07-lernen.png" alt="Lernbibliothek mit Karten zu Histamin, Darm, Zyklus" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/07-lernen.png" alt="Lernbibliothek mit Karten zu Histamin, Darm, Zyklus" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">Lernen</p>
         <p class="screen-desc">Verstehen statt raten</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/08-reisen.png" alt="Reise-Guide mit Übersetzer und Notfall-Tipps" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/08-reisen.png" alt="Reise-Guide mit Übersetzer und Notfall-Tipps" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">Reisen</p>
         <p class="screen-desc">Übersetzer in 8 Sprachen</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/09-sos.png" alt="SOS-Karten für akute Situationen" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/09-sos.png" alt="SOS-Karten für akute Situationen" loading="lazy" width="220" height="476"></div>
         <p class="screen-label">SOS</p>
         <p class="screen-desc">Wenn akut etwas ist</p>
       </div>
       <div class="screen-item">
-        <div class="screen-frame"><img src="images/app-v1.2/10-profil.png" alt="Profil mit Welten und Ernährungsform" loading="lazy" width="220" height="476"></div>
+        <div class="iphone-frame"><img src="images/app-v1.2/10-profil.png" alt="Profil mit Welten und Ernährungsform" loading="lazy" width="280" height="580"></div>
         <p class="screen-label">Profil</p>
         <p class="screen-desc">Welten + dein Setup</p>
       </div>
+      </div>
+      <button class="carousel-btn next" id="screensNext" aria-label="Nächstes Bild">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
 
-    <div class="screens-hint">← Wischen zum Stöbern →</div>
+    <div class="screens-hint">Wischen oder Pfeile</div>
 
     <div style="margin-top: 40px;">
       <a href="app.html" class="btn-navy btn-small">App entdecken</a>
@@ -791,6 +885,32 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// App-Screenshot-Carousel: Pfeile + Disabled-States
+(function () {
+  const track = document.getElementById('screensTrack');
+  const prev = document.getElementById('screensPrev');
+  const next = document.getElementById('screensNext');
+  if (!track || !prev || !next) return;
+
+  function scrollStep() {
+    const item = track.querySelector('.screen-item');
+    if (!item) return 320;
+    const style = window.getComputedStyle(track);
+    const gap = parseInt(style.columnGap || style.gap || 32, 10);
+    return item.getBoundingClientRect().width + gap;
+  }
+  function updateButtons() {
+    const max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+  prev.addEventListener('click', () => track.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+  updateButtons();
+})();
 
 // E-Book
 let ebookGuide = 'histamin';
