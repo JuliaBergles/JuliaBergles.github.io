@@ -113,6 +113,112 @@
     .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--white); margin-bottom: 16px; }
     .cta-section p { font-size: 16px; color: var(--sand); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
+    /* APP SCREENSHOTS — Carousel mit iPhone-Mockups */
+    .app-screens-section {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--linen) 35%, #EAD9CB 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 24px;
+    }
+    .app-screens-section::before {
+      content: ''; position: absolute; top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(196,139,108,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .screens-carousel { position: relative; margin: 40px -24px 0; }
+    .screens-track {
+      display: flex; gap: 32px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 48px 24px 64px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .screens-track::-webkit-scrollbar { display: none; }
+    .screen-item {
+      flex: 0 0 280px;
+      scroll-snap-align: center;
+      text-align: center;
+    }
+    .iphone-frame {
+      position: relative;
+      width: 280px; height: 580px;
+      margin: 0 auto 24px;
+      background: linear-gradient(145deg, #2a1f1a 0%, #1a1410 50%, #0f0a08 100%);
+      border-radius: 48px;
+      padding: 12px;
+      box-shadow:
+        0 28px 80px rgba(149,82,81,0.22),
+        0 8px 24px rgba(149,82,81,0.12),
+        inset 0 1px 2px rgba(255,255,255,0.08),
+        inset 0 -1px 2px rgba(0,0,0,0.4);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+    }
+    .iphone-frame::before {
+      content: ''; position: absolute;
+      top: 18px; left: 50%; transform: translateX(-50%);
+      width: 96px; height: 26px;
+      background: #050302; border-radius: 14px;
+      z-index: 2;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .iphone-frame::after {
+      content: ''; position: absolute;
+      top: 130px; right: -3px;
+      width: 4px; height: 80px;
+      background: linear-gradient(180deg, #1a1410, #2a1f1a, #1a1410);
+      border-radius: 0 2px 2px 0;
+    }
+    .iphone-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 36px;
+      display: block;
+    }
+    .screen-item:hover .iphone-frame {
+      transform: translateY(-12px) rotate(-1deg);
+      box-shadow:
+        0 40px 100px rgba(149,82,81,0.32),
+        0 12px 32px rgba(196,139,108,0.18),
+        inset 0 1px 2px rgba(255,255,255,0.08),
+        inset 0 -1px 2px rgba(0,0,0,0.4);
+    }
+    .screen-label { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.2px; }
+    .screen-desc { font-size: 13px; color: var(--soft); letter-spacing: 0.04em; line-height: 1.5; }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 56px; height: 56px;
+      border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 24px rgba(149,82,81,0.18), 0 2px 6px rgba(149,82,81,0.08);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--wine);
+      transition: all 0.3s ease;
+      z-index: 5;
+    }
+    .carousel-btn:hover {
+      background: linear-gradient(135deg, #C48B6C, #D4A48A);
+      color: white;
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 12px 32px rgba(196,139,108,0.32);
+    }
+    .carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: translateY(-50%); }
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
+    .carousel-btn svg { width: 22px; height: 22px; }
+    .screens-hint {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; color: var(--soft);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-top: 8px; opacity: 0.6;
+    }
+
     /* FOOTER */
     footer { background: var(--navy); color: var(--sand); padding: 60px 24px; border-top: 1px solid rgba(255,255,255,0.06); }
     .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
@@ -137,6 +243,17 @@
       .pricing-grid { grid-template-columns: 1fr; }
       .section-title { font-size: 28px; }
       .cta-section h2 { font-size: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .screen-item { flex-basis: 240px; }
+      .iphone-frame { width: 240px; height: 500px; border-radius: 42px; padding: 10px; }
+      .iphone-frame::before { width: 80px; height: 22px; top: 16px; }
+      .iphone-frame img { border-radius: 32px; }
+      .screen-label { font-size: 20px; }
+      .carousel-btn { width: 44px; height: 44px; }
+      .carousel-btn.prev { left: 4px; }
+      .carousel-btn.next { right: 4px; }
     }
 
     @media (max-width: 480px) {
@@ -181,6 +298,38 @@
   </div>
 </section>
 
+<!-- APP SCREENSHOTS — Carousel -->
+<section id="app-screens" class="app-screens-section">
+  <div class="section-inner" style="text-align: center; max-width: 1100px;">
+    <p class="section-label fade-up">Ein Blick in die App</p>
+    <h2 class="section-title fade-up" style="margin-left: auto; margin-right: auto;">TerraLuna von innen</h2>
+    <p class="section-sub fade-up" style="margin-left: auto; margin-right: auto;">Acht Bereiche. Eine App. Für dich gebaut, wenn dein Körper besondere Aufmerksamkeit braucht.</p>
+
+    <div class="screens-carousel fade-up">
+      <button class="carousel-btn prev" id="screensPrev" aria-label="Voriges Bild">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="screens-track" id="screensTrack">
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/01-heute.png" alt="Heute" loading="lazy" width="280" height="580"></div><p class="screen-label">Heute</p><p class="screen-desc">Dein Tag, deine Phase</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/02-lebensmittel.png" alt="Lebensmittel" loading="lazy" width="280" height="580"></div><p class="screen-label">Lebensmittel</p><p class="screen-desc">250+ mit Verträglichkeits-Check</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/03-rezepte.png" alt="Rezepte" loading="lazy" width="280" height="580"></div><p class="screen-label">Rezepte</p><p class="screen-desc">120+ glutenfrei, ohne Industriezucker</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/04-zyklus.png" alt="Zyklus" loading="lazy" width="280" height="580"></div><p class="screen-label">Zyklus</p><p class="screen-desc">4 Phasen, Symptome, Seed Cycling</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/05-einkauf.png" alt="Einkauf" loading="lazy" width="280" height="580"></div><p class="screen-label">Einkauf</p><p class="screen-desc">Pro Supermarkt sortiert</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/06-scanner.png" alt="Scanner" loading="lazy" width="280" height="580"></div><p class="screen-label">Scanner</p><p class="screen-desc">Foto, Barcode, manuell</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/07-lernen.png" alt="Lernen" loading="lazy" width="280" height="580"></div><p class="screen-label">Lernen</p><p class="screen-desc">Verstehen statt raten</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/08-reisen.png" alt="Reisen" loading="lazy" width="280" height="580"></div><p class="screen-label">Reisen</p><p class="screen-desc">Übersetzer in 8 Sprachen</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/09-sos.png" alt="SOS" loading="lazy" width="280" height="580"></div><p class="screen-label">SOS</p><p class="screen-desc">Wenn akut etwas ist</p></div>
+        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/10-profil.png" alt="Profil" loading="lazy" width="280" height="580"></div><p class="screen-label">Profil</p><p class="screen-desc">Welten + dein Setup</p></div>
+      </div>
+      <button class="carousel-btn next" id="screensNext" aria-label="Nächstes Bild">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="screens-hint">Wischen oder Pfeile</div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section id="features">
   <div class="section-inner">
@@ -191,9 +340,9 @@
     <!-- Feature 1: Home & Mini-Julia -->
     <div class="feature-row fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_01.png" alt="Home Screen" class="tilted-left">
-        <img src="images/screenshot_02.png" alt="Mini-Julia Menü" style="margin-bottom: 16px;">
-        <img src="images/screenshot_03.png" alt="Kalender und Wetter" class="tilted-right">
+        <img src="images/app-v1.2/01-heute.png" alt="Home Screen" class="tilted-left">
+        <img src="images/app-v1.2/09-sos.png" alt="Mini-Julia Menü" style="margin-bottom: 16px;">
+        <img src="images/app-v1.2/04-zyklus.png" alt="Kalender und Wetter" class="tilted-right">
       </div>
       <div class="feature-text">
         <p class="feature-number">01 — Home</p>
@@ -211,8 +360,8 @@
     <!-- Feature 2: Scanner + Food Tracker -->
     <div class="feature-row reverse fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_04.png" alt="Scanner und Tracker" class="tilted-left">
-        <img src="images/screenshot_07.png" alt="Rezepte" class="tilted-right">
+        <img src="images/app-v1.2/06-scanner.png" alt="Scanner und Tracker" class="tilted-left">
+        <img src="images/app-v1.2/03-rezepte.png" alt="Rezepte" class="tilted-right">
       </div>
       <div class="feature-text">
         <p class="feature-number">02 — Scanner und Food Tracker</p>
@@ -231,9 +380,9 @@
     <!-- Feature 3: Profil & Welten -->
     <div class="feature-row fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_09.png" alt="Profil" class="tilted-left">
-        <img src="images/screenshot_10.png" alt="Welten" style="margin-bottom: 16px;">
-        <img src="images/screenshot_11.png" alt="Einstellungen" class="tilted-right">
+        <img src="images/app-v1.2/10-profil.png" alt="Profil" class="tilted-left">
+        <img src="images/app-v1.2/02-lebensmittel.png" alt="Welten" style="margin-bottom: 16px;">
+        <img src="images/app-v1.2/10-profil.png" alt="Einstellungen" class="tilted-right">
       </div>
       <div class="feature-text">
         <p class="feature-number">03 — Profil und Welten</p>
@@ -251,8 +400,8 @@
     <!-- Feature 4: Reisen -->
     <div class="feature-row reverse fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_05.png" alt="Reisen Sprachen" class="tilted-left">
-        <img src="images/screenshot_06.png" alt="Reise-Guide" class="tilted-right">
+        <img src="images/app-v1.2/08-reisen.png" alt="Reisen Sprachen" class="tilted-left">
+        <img src="images/app-v1.2/08-reisen.png" alt="Reise-Guide" class="tilted-right">
       </div>
       <div class="feature-text">
         <p class="feature-number">04 — Reisen</p>
@@ -270,7 +419,7 @@
     <!-- Feature 5: Einkaufen -->
     <div class="feature-row fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_08.png" alt="Einkaufen" style="margin-bottom: 0;">
+        <img src="images/app-v1.2/05-einkauf.png" alt="Einkaufen" style="margin-bottom: 0;">
       </div>
       <div class="feature-text">
         <p class="feature-number">05 — Einkaufen</p>
@@ -288,7 +437,7 @@
     <!-- Feature 6: Rezepte -->
     <div class="feature-row reverse fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_07.png" alt="Rezepte" style="margin-bottom: 0;">
+        <img src="images/app-v1.2/03-rezepte.png" alt="Rezepte" style="margin-bottom: 0;">
       </div>
       <div class="feature-text">
         <p class="feature-number">06 — Rezepte</p>
@@ -306,8 +455,8 @@
     <!-- Feature 7: Lernbibliothek -->
     <div class="feature-row fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_12.png" alt="Lerninhalte" class="tilted-left">
-        <img src="images/screenshot_13.png" alt="Lernkarten" class="tilted-right">
+        <img src="images/app-v1.2/07-lernen.png" alt="Lerninhalte" class="tilted-left">
+        <img src="images/app-v1.2/07-lernen.png" alt="Lernkarten" class="tilted-right">
       </div>
       <div class="feature-text">
         <p class="feature-number">07 — Lernbibliothek</p>
@@ -325,7 +474,7 @@
     <!-- Feature 8: SOS-Karten -->
     <div class="feature-row reverse fade-up">
       <div class="feature-screenshots">
-        <img src="images/screenshot_14.png" alt="SOS-Karten" style="margin-bottom: 0;">
+        <img src="images/app-v1.2/09-sos.png" alt="SOS-Karten" style="margin-bottom: 0;">
       </div>
       <div class="feature-text">
         <p class="feature-number">08 — SOS-Hilfe</p>
@@ -500,6 +649,31 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// App-Screenshot-Carousel: Pfeile + Disabled-States
+(function () {
+  const track = document.getElementById('screensTrack');
+  const prev = document.getElementById('screensPrev');
+  const next = document.getElementById('screensNext');
+  if (!track || !prev || !next) return;
+  function scrollStep() {
+    const item = track.querySelector('.screen-item');
+    if (!item) return 320;
+    const style = window.getComputedStyle(track);
+    const gap = parseInt(style.columnGap || style.gap || 32, 10);
+    return item.getBoundingClientRect().width + gap;
+  }
+  function updateButtons() {
+    const max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+  prev.addEventListener('click', () => track.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+  updateButtons();
+})();
 </script>
 
 </body>
