@@ -43,19 +43,20 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      /* Julias Palette — weich & lieblich */
-      --beige:      #ded0c2;   /* Hintergrund warm */
-      --pink:       #c74873;   /* Statement-Akzent */
+      /* Julias Palette — hell, weich, kein Schwarz mehr */
+      --beige:      #ded0c2;   /* Hintergrund warm + ehemals dunkle Blöcke */
+      --beige-hi:   #e8ddd0;
+      --pink:       #c74873;   /* Statement + TerraLuna */
       --gold:       #e2ae61;   /* Wärme */
       --rose:       #f1d2cb;   /* Weiches Rosé/Peach */
-      --lavender:   #c3cfe6;   /* Weiches Blau/Lavendel */
-      --malaga:     #520b23;   /* Nur für Text & Featured (dezent) */
-      --cream:      #faf3ea;   /* Heller Cream Hintergrund */
-      --cream-hi:   #fdf9f2;   /* Fast weiß, warm */
-      --ink:        #4a3236;   /* Weicher warmer Grauton für Text */
+      --lavender:   #c3cfe6;   /* Weiches Lavendel */
+      --cream:      #faf3ea;   /* Heller Cream */
+      --cream-hi:   #fdf9f2;
+      --ink:        #1a1418;   /* Fast schwarz, warm — nur Text */
       /* Alias für bestehendes CSS */
-      --bordeaux:      #520b23;
-      --bordeaux-hi:   #6d1a30;
+      --malaga:        #1a1418;
+      --bordeaux:      #1a1418;
+      --bordeaux-hi:   #2b1e21;
       --orange:        #e2ae61;
       --orange-hi:     #eec287;
       --blue:          #c3cfe6;
@@ -65,9 +66,9 @@
       --warm-cream:    #f1d2cb;
       --warm-beige:    #ded0c2;
       --warm-sand:     #e6d6c3;
-      --text-dark:     #4a3236;
-      --text-muted:    #8a7075;
-      --line:          rgba(82,11,35,0.10);
+      --text-dark:     #1a1418;
+      --text-muted:    #6b5459;
+      --line:          rgba(26,20,24,0.10);
     }
     html { scroll-behavior: smooth; }
     body {
@@ -87,8 +88,8 @@
 
     /* ────────── TOP-BAR ────────── */
     .topbar {
-      background: var(--text-dark);
-      color: var(--warm-white);
+      background: var(--beige);
+      color: var(--ink);
       font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 10.5px; font-weight: 600;
       letter-spacing: 0.28em; text-transform: uppercase;
@@ -1272,6 +1273,9 @@
 
       <div class="lo-chips">
         <a href="blog/blaehbauch-in-griff/" class="lo-chip">Blähbauch</a>
+        <a href="reizdarm.html" class="lo-chip">Bauchschmerzen</a>
+        <a href="reizdarm.html" class="lo-chip">Krämpfe</a>
+        <a href="mcas.html" class="lo-chip">Übelkeit</a>
         <a href="reizdarm.html" class="lo-chip">Reizdarm</a>
         <a href="blog/darmverschluss/" class="lo-chip">Darmverschluss</a>
         <a href="#app" class="lo-chip" data-in-page>PMS &middot; Zyklus</a>
@@ -1286,19 +1290,19 @@
       <p class="lo-choice-divider">— oder schau dir das an —</p>
 
       <div class="lo-choice-grid">
-        <a href="#app" class="lo-c-card lo-c-image" data-in-page style="background-image: url('images/app-v1.2/01-heute.png');">
+        <a href="#app" class="lo-c-card lo-c-pink" data-in-page>
           <h3>TerraLuna App</h3>
         </a>
         <a href="ueber-mich.html" class="lo-c-card lo-c-gold">
           <h3>Meine Geschichte</h3>
         </a>
-        <a href="blog/" class="lo-c-card lo-c-pink">
+        <a href="blog/" class="lo-c-card lo-c-rose">
           <h3>Blog</h3>
         </a>
-        <a href="#app" class="lo-c-card lo-c-rose" data-in-page>
+        <a href="#app" class="lo-c-card lo-c-lavender" data-in-page>
           <h3>Rezepte</h3>
         </a>
-        <a href="#" class="lo-c-card lo-c-lavender" data-explore>
+        <a href="#" class="lo-c-card lo-c-beige" data-explore>
           <h3>Erst mal stöbern</h3>
         </a>
       </div>
