@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Julia Bergles — TerraLuna App, Aufklärung zu Histaminintoleranz, MCAS & Reizdarm und ein ehrlicher Blog aus eigener Erfahrung.">
+  <meta name="description" content="Julia Bergles. TerraLuna App, Aufklärung zu Histaminintoleranz, MCAS & Reizdarm und ein ehrlicher Blog aus eigener Erfahrung.">
   <title>Julia Bergles</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&display=swap">
 
   <style>
-    /* Sunborn + Neue Montreal — Datei-Drop in /fonts/ genügt */
+    /* Sunborn + Neue Montreal. Datei-Drop in /fonts/ genügt */
     @font-face {
       font-family: 'Sunborn';
       src: url('fonts/Sunborn-SansOne.woff2') format('woff2'),
@@ -43,7 +43,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      /* Julias Palette — hell, weich, kein Schwarz mehr */
+      /* Julias Palette. hell, weich, kein Schwarz mehr */
       --beige:      #ded0c2;   /* Hintergrund warm + ehemals dunkle Blöcke */
       --beige-hi:   #e8ddd0;
       --pink:       #c74873;   /* Statement + TerraLuna */
@@ -52,7 +52,7 @@
       --lavender:   #c3cfe6;   /* Weiches Lavendel */
       --cream:      #faf3ea;   /* Heller Cream */
       --cream-hi:   #fdf9f2;
-      --ink:        #1a1418;   /* Fast schwarz, warm — nur Text */
+      --ink:        #1a1418;   /* Fast schwarz, warm. nur Text */
       /* Alias für bestehendes CSS */
       --malaga:        #1a1418;
       --bordeaux:      #1a1418;
@@ -110,7 +110,7 @@
     }
     .topbar-social a:hover { color: var(--copper-light); }
 
-    /* ────────── NAV — transparent over hero, solid on scroll ────────── */
+    /* ────────── NAV. transparent over hero, solid on scroll ────────── */
     nav {
       position: absolute;
       top: 34px; left: 0; right: 0; z-index: 50;
@@ -174,7 +174,7 @@
     }
     nav.scrolled .menu-toggle { color: var(--text-dark); }
 
-    /* ────────── HERO — full-bleed editorial ────────── */
+    /* ────────── HERO. full-bleed editorial ────────── */
     .hero {
       position: relative;
       min-height: 92vh;
@@ -580,7 +580,7 @@
       transition: transform 0.35s;
     }
     .blog-card:hover { transform: translateY(-4px); }
-    /* No-image variant — Farb-Kachel mit Titel */
+    /* No-image variant. Farb-Kachel mit Titel */
     .blog-card.no-img {
       padding: 40px 32px 34px;
       min-height: 260px;
@@ -754,7 +754,7 @@
     .footer-contact { font-size: 13px; margin-bottom: 12px; line-height: 1.7; }
     .footer-disclaimer { font-size: 10.5px; color: rgba(253,251,249,0.35); margin-top: 22px; letter-spacing: 0.08em; line-height: 1.6; }
 
-    /* ══════════ LANDING OVERLAY — Cream↔Farbe Invert (nach Agentur-Spec) ══════════ */
+    /* ══════════ LANDING OVERLAY. Cream↔Farbe Invert (nach Agentur-Spec) ══════════ */
     html.overlay-open, body.overlay-open { overflow: hidden; }
     #landing-overlay {
       position: fixed; inset: 0; z-index: 9999;
@@ -799,7 +799,7 @@
       transition: color 0.5s, opacity 0.5s;
     }
 
-    /* Stage-Wrapper — hier läuft der Farb-Wechsel */
+    /* Stage-Wrapper. hier läuft der Farb-Wechsel */
     #lo-stage-wrap {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
@@ -816,7 +816,7 @@
       background: linear-gradient(135deg, #d69a48 0%, #e2ae61 25%, #f2cf8f 45%, #e2ae61 65%, #c99048 100%);
     }
 
-    /* Kicker/Brand Farb-Invert bei pastelligen BGs — Malaga für Kontrast */
+    /* Kicker/Brand Farb-Invert bei pastelligen BGs. Malaga für Kontrast */
     #lo-stage-wrap.state-1b ~ .lo-kicker,
     #lo-stage-wrap.state-1b ~ .lo-brand-mark,
     #lo-stage-wrap.state-1b ~ .lo-mobile-tag { color: var(--malaga); opacity: 0.85; }
@@ -1062,7 +1062,7 @@
       z-index: 2;
     }
 
-    /* Farb-Variants — Text immer weiß */
+    /* Farb-Variants. Text immer weiß */
     .lo-c-malaga   { background: var(--malaga);   color: #ffffff; }
     .lo-c-pink     { background: var(--pink);     color: #ffffff; }
     .lo-c-rose     { background: var(--rose);     color: #ffffff; }
@@ -1079,7 +1079,7 @@
     /* h3 in Cards immer weiß, kein Metallic-Overlay */
     .lo-c-card h3 { color: #ffffff !important; -webkit-text-fill-color: #ffffff; }
 
-    /* Metallic Sheen on hover — läuft einmal durch */
+    /* Metallic Sheen on hover. läuft einmal durch */
     .lo-c-card::after {
       content: '';
       position: absolute; top: 0; left: -75%;
@@ -1092,7 +1092,7 @@
     }
     .lo-c-card:hover::after { left: 125%; }
 
-    /* TerraLuna Card mit App-Screenshot — malaga Overlay + gold Metallic-Rand */
+    /* TerraLuna Card mit App-Screenshot. malaga Overlay + gold Metallic-Rand */
     .lo-c-image {
       background-size: cover;
       background-position: center top;
@@ -1257,14 +1257,14 @@
 </head>
 <body>
 
-<!-- LANDING OVERLAY — Cream↔Farbe Invert Animation + Choice -->
+<!-- LANDING OVERLAY. Cream↔Farbe Invert Animation + Choice -->
 <div id="landing-overlay" role="dialog" aria-label="Willkommen">
 
   <!-- Stage-Wrap: der Farb-Wechsel läuft hier -->
   <div id="lo-stage-wrap" class="state-1a">
     <div class="lo-wordstack">
       <h1 class="lo-word" id="lo-word">Blähbauch?</h1>
-      <p class="lo-word-sub slide in" id="lo-word-sub">Kann Histamin sein — muss aber nicht.</p>
+      <p class="lo-word-sub slide in" id="lo-word-sub">Kann Histamin sein. muss aber nicht.</p>
     </div>
   </div>
 
@@ -1287,8 +1287,6 @@
     <div class="lo-choice-inner">
       <span class="lo-choice-kicker">Was beschäftigt dich?</span>
       <h2 class="lo-choice-h">Wobei kann ich dir <em>helfen</em>?</h2>
-      <p class="lo-choice-sub">Klick, was dich betrifft — oder überspring das und schau dir gleich die ganze Seite an.</p>
-
       <div class="lo-chips">
         <a href="blog/blaehbauch-in-griff/" class="lo-chip">Blähbauch</a>
         <a href="reizdarm.html" class="lo-chip">Bauchschmerzen</a>
@@ -1340,7 +1338,7 @@
 <!-- TOP-BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-msg">Neu · TerraLuna App live — <a href="app.html">jetzt laden</a></div>
+    <div class="topbar-msg">Neu · TerraLuna App live. <a href="app.html">jetzt laden</a></div>
     <div class="topbar-social">
       <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://agentur.juliabergles.de" target="_blank" rel="noopener">On-Point Agentur</a>
@@ -1377,7 +1375,7 @@
       <span class="word2">Unverträglichkeiten.</span>
       <span class="word3">Allergien.</span>
     </h1>
-    <p class="hero-sub">Hier teile ich, was mir geholfen hat — die App, meine Geschichte, mein Blog.</p>
+    <p class="hero-sub">Hier teile ich, was mir geholfen hat. die App, meine Geschichte, mein Blog.</p>
     <div class="hero-ctas">
       <a href="#app" class="btn btn-copper">TerraLuna App</a>
       <a href="ueber-mich.html" class="btn btn-outline-light">Meine Geschichte</a>
@@ -1411,7 +1409,7 @@
     </div>
     <div class="app-section-text">
       <p class="eyebrow">TerraLuna App</p>
-      <h2 class="section-h">Alles, was ich mir <em>gewünscht</em> hätte — in einer App.</h2>
+      <h2 class="section-h">Alles, was ich mir <em>gewünscht</em> hätte. in einer App.</h2>
       <ul class="app-features">
         <li>Verträglichkeits-Scanner für Histamin, Allergene & Zutaten</li>
         <li>250+ Lebensmittel mit Ampel-System</li>
@@ -1474,7 +1472,7 @@
         <div class="diag-card-body">
           <p class="diag-card-label">Diagnose</p>
           <h3>MCAS</h3>
-          <p>Mastzellaktivierungssyndrom — warum es oft übersehen wird und wie sich das anfühlt.</p>
+          <p>Mastzellaktivierungssyndrom. warum es oft übersehen wird und wie sich das anfühlt.</p>
           <span class="diag-card-more">Mehr lesen</span>
         </div>
       </a>
@@ -1498,7 +1496,7 @@
     <div class="feature-text">
       <p class="eyebrow">Über mich</p>
       <h2 class="section-h">Von fünf Lebensmitteln zurück ins <em>Leben</em>.</h2>
-      <p>Mit 19 lag ich mit einem Darmverschluss im Krankenhaus. Danach zwei Jahre nur fünf Lebensmittel vertragen. Heute geht wieder mehr — und ich schreibe hier auf, was mir dabei geholfen hat.</p>
+      <p>Mit 19 lag ich mit einem Darmverschluss im Krankenhaus. Danach zwei Jahre nur fünf Lebensmittel vertragen. Heute geht wieder mehr. und ich schreibe hier auf, was mir dabei geholfen hat.</p>
       <a href="ueber-mich.html" class="btn btn-outline">Meine ganze Geschichte</a>
     </div>
   </div>
@@ -1526,7 +1524,7 @@
     <div class="feature-text">
       <p class="eyebrow">1:1 Peer-Support</p>
       <h2 class="section-h">Wenn du mit jemandem <em>reden</em> willst, der's kennt.</h2>
-      <p>30 Minuten am Telefon. Kein Coaching, keine Beratung. Ehrlicher Erfahrungsaustausch mit mir — von einer Betroffenen an eine Betroffene.</p>
+      <p>30 Minuten am Telefon. Kein Coaching, keine Beratung. Ehrlicher Erfahrungsaustausch mit mir. von einer Betroffenen an eine Betroffene.</p>
       <a href="gespraech.html" class="btn btn-copper">25 € · Termin buchen</a>
     </div>
   </div>
@@ -1539,7 +1537,7 @@
     <div class="feature-text">
       <p class="eyebrow">Meine Empfehlungen</p>
       <h2 class="section-h">Was <em>täglich</em> auf meinem Teller landet.</h2>
-      <p>Lebensmittel und Produkte, die ich selbst nutze — aho.bio (Code Smacado10), Balance Riegel, und alles was bei mir täglich auf dem Teller landet. Ehrlich, mit Warnung wenn was nicht passt.</p>
+      <p>Lebensmittel und Produkte, die ich selbst nutze. aho.bio (Code Smacado10), Balance Riegel, und alles was bei mir täglich auf dem Teller landet. Ehrlich, mit Warnung wenn was nicht passt.</p>
       <a href="empfehlungen.html" class="btn btn-outline">Meine Empfehlungen</a>
     </div>
   </div>
@@ -1568,7 +1566,7 @@
   <div class="newsletter-inner">
     <p class="eyebrow" style="margin-bottom: 14px;">E-Books</p>
     <h2>Meine <em>E-Books</em></h2>
-    <p>Zum Runterladen — Symptomtagebuch, Histaminarme Lebensmittel-Liste und mehr.</p>
+    <p>Zum Runterladen. Symptomtagebuch, Histaminarme Lebensmittel-Liste und mehr.</p>
     <a href="ebooks.html" class="btn" style="margin-top: 8px;">Zu den E-Books</a>
   </div>
 </section>
@@ -1601,11 +1599,11 @@
     <a href="datenschutz.html">Datenschutz</a>
   </div>
   <div class="footer-contact">Julia Bergles · Singoldstrasse 5a · 86517 Wehringen</div>
-  <div class="footer-disclaimer">Ich bin keine Ärztin — ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
+  <div class="footer-disclaimer">Ich bin keine Ärztin. ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
 </footer>
 
 <script>
-  // Landing Overlay — 6 States (Wort × 2 Farb-Invert), dann Choice
+  // Landing Overlay. 6 States (Wort × 2 Farb-Invert), dann Choice
   (function () {
     const overlay   = document.getElementById('landing-overlay');
     const stageWrap = document.getElementById('lo-stage-wrap');
@@ -1621,10 +1619,10 @@
 
     // 6 States: pro Wort 2 (a = cream, b = farbig)
     const STATES = [
-      { cls: 'state-1a', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein — muss aber nicht.',    dot: 0 },
-      { cls: 'state-1b', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein — muss aber nicht.',    dot: 0 },
-      { cls: 'state-2a', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles — auch dich.',  dot: 1 },
-      { cls: 'state-2b', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles — auch dich.',  dot: 1 },
+      { cls: 'state-1a', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein. muss aber nicht.',    dot: 0 },
+      { cls: 'state-1b', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein. muss aber nicht.',    dot: 0 },
+      { cls: 'state-2a', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles. auch dich.',  dot: 1 },
+      { cls: 'state-2b', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles. auch dich.',  dot: 1 },
       { cls: 'state-3a', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',              dot: 2 },
       { cls: 'state-3b', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',              dot: 2 }
     ];
@@ -1704,7 +1702,7 @@
       timer = setTimeout(tick, SLIDE_MS);
     }
 
-    // Immer öffnen — kein sessionStorage-Skip
+    // Immer öffnen. kein sessionStorage-Skip
     openOverlay();
     // State 0 ist schon aus HTML gerendert; nur den Sub einmalig triggern
     requestAnimationFrame(() => {

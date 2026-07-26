@@ -6,7 +6,7 @@
   <meta name="description" content="Finde heraus, wie TerraLuna dir helfen kann. Persönliches Quiz in 60 Sekunden.">
   <title>Für dich | TerraLuna</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --wine: #C48B6C; --cream: #F8F2EE; --charcoal: #3D2B2E; --cocoa: #c4b5a6;
@@ -23,7 +23,7 @@
     /* NAV */
     .quiz-nav { position: fixed; top: 4px; left: 0; right: 0; z-index: 100; background: rgba(250,244,235,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
     .quiz-nav-inner { max-width: 700px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 24px; }
-    .quiz-nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--navy); text-decoration: none; }
+    .quiz-nav-logo { font-family: 'Sunborn', 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--navy); text-decoration: none; }
     .quiz-nav-step { font-size: 13px; color: var(--cocoa); font-weight: 500; }
     .quiz-nav-close { text-decoration: none; font-size: 20px; color: var(--cocoa); transition: color 0.2s; }
     .quiz-nav-close:hover { color: var(--charcoal); }
@@ -37,7 +37,7 @@
     @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
     .step-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
-    .step h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--charcoal); line-height: 1.2; margin-bottom: 8px; }
+    .step h2 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 36px; font-weight: 300; color: var(--charcoal); line-height: 1.2; margin-bottom: 8px; }
     .step .step-sub { font-size: 15px; color: var(--cocoa); margin-bottom: 32px; line-height: 1.7; }
 
     /* OPTION CARDS */
@@ -65,13 +65,13 @@
     .result-section { display: none; animation: fadeIn 0.6s ease; }
     .result-section.active { display: block; }
     .result-header { text-align: center; margin-bottom: 40px; }
-    .result-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: var(--charcoal); margin-bottom: 8px; }
+    .result-header h2 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 38px; font-weight: 300; color: var(--charcoal); margin-bottom: 8px; }
     .result-header p { font-size: 15px; color: var(--cocoa); }
     .result-card { background: var(--white); border-radius: 24px; padding: 36px; margin-bottom: 20px; border: 1px solid rgba(201,169,110,0.08); transition: all 0.3s; }
     .result-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
     .result-card.highlight { border: 2px solid var(--wine); box-shadow: 0 8px 32px rgba(191,107,107,0.1); }
     .result-badge { font-size: 10px; font-weight: 700; color: var(--wine); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-    .result-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
+    .result-card h3 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
     .result-card p { font-size: 14px; color: var(--cocoa); line-height: 1.7; margin-bottom: 16px; }
     .result-features { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
     .result-feature { background: var(--linen); border-radius: 50px; padding: 6px 16px; font-size: 12px; color: var(--charcoal); font-weight: 500; }
@@ -106,7 +106,7 @@
 <!-- NAV -->
 <div class="quiz-nav">
   <div class="quiz-nav-inner">
-    <a href="index.html" class="quiz-nav-logo"><span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine, #C48B6C);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa, #c4b5a6);">EatMoreArt</span></span></a>
+    <a href="index.html" class="quiz-nav-logo"><span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Sunborn', 'Fraunces', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine, #C48B6C);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa, #c4b5a6);">EatMoreArt</span></span></a>
     <span class="quiz-nav-step" id="stepIndicator">Schritt 1 von 4</span>
     <a href="index.html" class="quiz-nav-close">&#10005;</a>
   </div>
@@ -389,7 +389,7 @@ function showResult() {
   if (severity === 'neu' || severity === 'undiagnostiziert') beratungScore += 2;
   if (icps.includes('recovery')) { shopScore += 2; beratungScore += 1; }
 
-  // Build result cards — App always first, then Video, then Beratung, then Shop
+  // Build result cards. App always first, then Video, then Beratung, then Shop
   let cards = [];
 
   // 1. ALWAYS show App first
@@ -421,7 +421,7 @@ function showResult() {
     btnLink: '#'
   });
 
-  // 2. ALWAYS show Video — Julia erklärt die App
+  // 2. ALWAYS show Video. Julia erklärt die App
   cards.push({
     type: 'video',
     badge: 'Schau dir die App an',
@@ -449,13 +449,13 @@ function showResult() {
     title: 'Live Call mit Julia',
     text: beratungText,
     features: ['25 Minuten persönlich', 'App-Vorstellung', 'Individuelle Empfehlungen', 'Raum für deine Fragen', '10 €'],
-    btnText: 'Call buchen — 10 €',
+    btnText: 'Call buchen. 10 €',
     btnClass: 'btn-beratung',
     btnLink: '#calendly',
     showCalendly: true
   });
 
-  // 4. Shop — wenn relevant
+  // 4. Shop. wenn relevant
   if (shopScore > 0 || icps.includes('recovery') || result === 'kombi' || result === 'shop') {
     let shopText = 'Handgemachte Food-Charms, die deinen Fortschritt sichtbar machen. ';
     if (icps.includes('recovery')) shopText += 'Jeder Charm steht für einen Moment, in dem du mutig warst. Eine kleine Belohnung für dich selbst.';

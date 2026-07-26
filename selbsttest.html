@@ -112,7 +112,7 @@
     .thema-card { background: var(--white); border-radius: 16px; padding: 28px 24px; margin-bottom: 16px; border: 1px solid rgba(0,0,0,0.04); }
     .thema-card h3 { font-size: 1.3rem; color: var(--charcoal); margin-bottom: 10px; }
     .thema-card p { font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 8px; }
-    .thema-hinweis { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 8px; line-height: 1.6; }
+    .thema-hinweis { font-size: 13px; color: var(--muted); font-style: normal; margin-top: 8px; line-height: 1.6; }
     .thema-guide { display: inline-block; margin-top: 12px; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 500; color: var(--accent); background: rgba(196,139,108,0.08); text-decoration: none; }
 
     .empfehlung { background: var(--linen); border-radius: 12px; padding: 24px; margin-bottom: 16px; text-align: left; }
@@ -545,7 +545,7 @@ function zeigeErgebnis() {
     );
   }
 
-  // Rule: B hoch (systemisch) — show as separate card if not already covered
+  // Rule: B hoch (systemisch). show as separate card if not already covered
   if (cluster.B >= HOCH && cluster.A < HOCH) {
     hatThema = true;
     themenDiv.innerHTML += themaKarte(
