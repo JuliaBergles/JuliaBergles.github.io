@@ -32,18 +32,22 @@
 </head>
 <body>
 
-<nav>
+<div class="topbar">Neu · TerraLuna App ist live im App Store — <a href="../../app.html">jetzt laden</a></div>
+
+<nav id="mainNav">
   <div class="nav-inner">
-    <a href="../../index.html" class="nav-logo">Julia <em>Bergles</em></a>
-    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <div class="nav-links">
-      <a href="../../index.html#app">TerraLuna App</a>
-      <a href="../">Blog</a>
-      <a href="../../index.html#geschichte">Meine Geschichte</a>
-      <a href="../../index.html#telefonat">Gespräch</a>
-      <a href="../../index.html#kontakt">Kontakt</a>
-      <a href="../../app.html" class="nav-cta">App laden</a>
+    <div class="nav-left">
+      <a href="../../ueber-mich.html">Über mich</a>
+      <a href="../../blog/">Blog</a>
+      <a href="../../app.html">TerraLuna App</a>
     </div>
+    <a href="../../index.html" class="nav-logo">Julia</a>
+    <div class="nav-right">
+      <a href="../../gespraech.html">Gespräch</a>
+      <a href="../../empfehlungen.html">Empfehlungen</a>
+      <a href="../../index.html#kontakt">Kontakt</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
   </div>
 </nav>
 
@@ -82,29 +86,26 @@
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Julia <em>Bergles</em></div>
-    <div class="footer-links">
-      <a href="../../index.html#app">TerraLuna App</a>
-      <a href="../">Blog</a>
-      <a href="../../histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="../../mcas.html">MCAS</a>
-      <a href="../../reizdarm.html">Reizdarm</a>
-      <a href="../../index.html#empfehlungen">Empfehlungen</a>
-      <a href="../../impressum.html">Impressum</a>
-      <a href="../../datenschutz.html">Datenschutz</a>
-    </div>
-    <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
-    <div class="footer-disclaimer">
-      Meine Inhalte sind Erfahrungsberichte, kein Ersatz für ärztliche Beratung.<br>
-      &copy; 2024–2026 Julia Bergles
-    </div>
+  <a href="../../index.html" class="footer-logo">Julia</a>
+  <div class="footer-links">
+    <a href="../../ueber-mich.html">Über mich</a>
+    <a href="../../app.html">TerraLuna App</a>
+    <a href="../../histaminintoleranz.html">Histamin</a>
+    <a href="../../mcas.html">MCAS</a>
+    <a href="../../reizdarm.html">Reizdarm</a>
+    <a href="../../blog/">Blog</a>
+    <a href="../../gespraech.html">Gespräch</a>
+    <a href="../../empfehlungen.html">Empfehlungen</a>
+    <a href="../../impressum.html">Impressum</a>
+    <a href="../../datenschutz.html">Datenschutz</a>
   </div>
+  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
+  <div class="footer-disclaimer">Meine Inhalte sind Erfahrungsberichte, kein Ersatz für ärztliche Beratung. &copy; 2024–2026</div>
 </footer>
 
 <script>
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+  document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
   });
 </script>
 

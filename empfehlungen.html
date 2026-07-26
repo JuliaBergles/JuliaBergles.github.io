@@ -3,323 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Was mir persönlich geholfen hat — Julias Empfehlungen bei Histaminintoleranz und Darmproblemen.">
-  <title>Meine Empfehlungen | EatMoreArt</title>
+  <meta name="description" content="Julias Empfehlungen — Produkte, die sie selbst nutzt. Aho.bio (gekeimte Lebensmittel), histaminarme Gewürze und Fertiggerichte.">
+  <title>Empfehlungen — Julia Bergles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+  <link rel="stylesheet" href="assets/site.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --wine: #C48B6C; --cream: #F8F2EE; --charcoal: #3D2B2E; --cocoa: #c4b5a6;
-      --gold: #c9a96e; --rosegold: #c9908a; --copper: #C48B6C;
-      --white: #fffdf9; --linen: #F0E8E4; --gray: #b5a99a; --navy: #955251;
-      --blush: #f2d5cf; --glossy: #f8e8e0;
+    .empfehlungen-list {
+      max-width: 900px; margin: 0 auto;
+      padding: 60px 32px 100px;
     }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; }
-    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .empfehlung {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center;
+      padding: 60px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .empfehlung:last-child { border-bottom: none; }
+    .empfehlung.reverse .empf-visual { order: 2; }
+    .empfehlung.reverse .empf-text { order: 1; }
+    .empf-visual {
+      aspect-ratio: 4/5;
+      background: var(--warm-cream);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-style: italic;
+      color: var(--bordeaux);
+      background-size: cover; background-position: center;
+    }
+    .empf-eyebrow {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 16px;
+    }
+    .empf-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .empf-text h3 em { font-style: italic; color: var(--bordeaux); }
+    .empf-text p { color: var(--text-muted); font-size: 1.0625rem; line-height: 1.75; margin-bottom: 20px; max-width: 400px; }
+    .empf-code {
+      display: inline-block;
+      background: var(--warm-cream);
+      color: var(--bordeaux);
+      padding: 10px 18px;
+      font-family: 'Object Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.2em;
+      margin: 8px 0 24px;
+    }
+    .empf-disclaimer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      padding: 40px 32px;
+    }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,246,240,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--wine); }
-    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(149,82,81,0.15); transition: all 0.3s; }
-    .nav-cta:hover { transform: translateY(-1px); }
-    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
-
-    /* HERO */
-    .hero { padding: 140px 24px 60px; text-align: center; }
-    .hero-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--charcoal); line-height: 1.2; margin-bottom: 16px; }
-    .hero p { font-size: 16px; color: var(--cocoa); max-width: 520px; margin: 0 auto; line-height: 1.8; }
-
-    /* SECTIONS */
-    section { padding: 80px 24px; }
-    .section-inner { max-width: 800px; margin: 0 auto; }
-    .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--charcoal); margin-bottom: 20px; line-height: 1.3; }
-
-    /* EMPFEHLUNG CARDS */
-    .empfehlung-card { background: var(--white); border-radius: 20px; padding: 32px; margin-bottom: 20px; border: 1px solid rgba(201,169,110,0.08); transition: all 0.3s; }
-    .empfehlung-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.04); }
-    .empfehlung-nr { font-size: 11px; font-weight: 600; color: var(--copper); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-    .empfehlung-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 10px; }
-    .empfehlung-card p { font-size: 15px; color: var(--charcoal); line-height: 1.8; margin-bottom: 12px; }
-    .empfehlung-card .detail { font-size: 14px; color: var(--cocoa); line-height: 1.7; }
-
-    /* PRODUKT EMPFEHLUNG */
-    .produkt-section { background: var(--linen); }
-    .produkt-card { background: var(--white); border-radius: 20px; padding: 28px; margin-bottom: 16px; display: flex; gap: 24px; align-items: center; border: 1px solid rgba(201,169,110,0.08); transition: all 0.3s; }
-    .produkt-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.04); transform: translateY(-2px); }
-    .produkt-info { flex: 1; }
-    .produkt-info h4 { font-size: 17px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
-    .produkt-info p { font-size: 14px; color: var(--cocoa); line-height: 1.7; }
-    .produkt-tag { display: inline-block; font-size: 11px; font-weight: 600; color: var(--copper); letter-spacing: 1px; text-transform: uppercase; margin-top: 8px; }
-    .produkt-link { flex-shrink: 0; padding: 12px 24px; border-radius: 50px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.3s; background: linear-gradient(135deg, var(--wine) 0%, #d4868a 50%, var(--wine) 100%); color: white; }
-    .produkt-link:hover { transform: translateY(-1px); }
-
-    /* DISCLAIMER */
-    .disclaimer { background: var(--glossy); border-radius: 16px; padding: 24px 28px; margin-top: 40px; border-left: 3px solid var(--copper); }
-    .disclaimer p { font-size: 13px; color: var(--cocoa); line-height: 1.7; }
-
-    /* MENTAL */
-    .mental-card { background: var(--navy); border-radius: 20px; padding: 36px; color: white; margin-bottom: 20px; }
-    .mental-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: white; margin-bottom: 12px; }
-    .mental-card p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; }
-
-    /* FOOTER */
-    footer { background: var(--navy); color: rgba(255,255,255,0.3); padding: 60px 24px; }
-    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: white; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-    .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; }
-    .footer-links a:hover { color: white; }
-    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.2); margin-top: 24px; line-height: 1.6; }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .menu-toggle { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(253,246,240,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
-      .hero h1 { font-size: 32px; }
-      .produkt-card { flex-direction: column; text-align: center; }
+    @media (max-width: 900px) {
+      .empfehlung, .empfehlung.reverse { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+      .empfehlung.reverse .empf-visual, .empfehlung.reverse .empf-text { order: 0; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
+<div class="topbar">Neu · TerraLuna App ist live im App Store — <a href="app.html">jetzt laden</a></div>
+
+<nav id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <span style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--wine, #C48B6C);">EMA</span><span style="font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--cocoa, #c4b5a6);">EatMoreArt</span></span>
-    </a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <div class="nav-links">
-      <a href="onboarding.html">Für dich</a>
+    <div class="nav-left">
+      <a href="ueber-mich.html">Über mich</a>
+      <a href="blog/">Blog</a>
       <a href="app.html">TerraLuna App</a>
-      <a href="eatmoreart.html">Shop</a>
-      <a href="social-media.html">Social Media</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="index.html#geschichte">Meine Geschichte</a>
-      <a href="index.html#kontakt">Kontakt</a>
-      <a href="onboarding.html" class="nav-cta">Für dich</a>
     </div>
+    <a href="index.html" class="nav-logo">Julia</a>
+    <div class="nav-right">
+      <a href="gespraech.html">Gespräch</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <p class="hero-label fade-up">Persönliche Erfahrungen</p>
-  <h1 class="fade-up">Was mir wirklich geholfen hat</h1>
-  <p class="fade-up">Das hier sind keine medizinischen Empfehlungen. Das sind meine persönlichen Erfahrungen. Was bei mir funktioniert hat, muss nicht bei dir funktionieren. Aber vielleicht gibt es dir eine Richtung.</p>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-tag">Empfehlungen</span>
+    <h1>Was ich <em>selbst</em> nutze.</h1>
+    <p class="lead">Ehrlich ausgewählt. Nur Produkte, die bei mir wirklich auf dem Tisch stehen. Partnerempfehlungen — ich bekomme eine kleine Provision, dein Preis bleibt gleich.</p>
+  </div>
+</section>
+
+<section class="empfehlungen-list">
+
+  <div class="empfehlung">
+    <div class="empf-visual">Aho.bio</div>
+    <div class="empf-text">
+      <p class="empf-eyebrow">Gekeimte Lebensmittel</p>
+      <h3>Aho.bio</h3>
+      <p>Sprossenmehle und Nudeln, die mein Darm gut verträgt. Gekeimt heißt: leichter verdaulich, weniger Antinährstoffe, milder für den Bauch. Nutze ich täglich.</p>
+      <div class="empf-code">Code: SMACADO10 · 10 % Rabatt</div>
+      <div>
+        <a href="https://aho.bio/smacado10" target="_blank" rel="noopener" class="btn btn-copper">Zu Aho.bio</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="empfehlung reverse">
+    <div class="empf-visual">Nigela</div>
+    <div class="empf-text">
+      <p class="empf-eyebrow">Histaminarme Gewürze</p>
+      <h3>Nigela</h3>
+      <p>Gewürze, mit denen ich kochen kann, ohne dass mein Körper reagiert. Für alle, die Geschmack nicht aufgeben wollen.</p>
+      <div class="empf-code">Code: SMACADO10</div>
+      <div>
+        <a href="https://nigela.de?sca_ref=10960285.t5W9j-LLKpfk3vt" target="_blank" rel="noopener" class="btn btn-outline">Zu Nigela</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="empfehlung">
+    <div class="empf-visual">HistaFood</div>
+    <div class="empf-text">
+      <p class="empf-eyebrow">Histaminarme Fertiggerichte</p>
+      <h3>HistaFood</h3>
+      <p>Wenn kochen mal zu viel ist. Fertiggerichte, die auf die Histaminintoleranz Rücksicht nehmen.</p>
+      <div class="empf-code">Code: SMACADO10</div>
+      <div>
+        <a href="https://histafood.eu/discount/smacado10" target="_blank" rel="noopener" class="btn btn-outline">Zu HistaFood</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="empfehlung reverse">
+    <div class="empf-visual">Histaminikus</div>
+    <div class="empf-text">
+      <p class="empf-eyebrow">Histaminarme Lebensmittel</p>
+      <h3>Histaminikus</h3>
+      <p>Große Auswahl an Lebensmitteln, die ich für den Alltag brauche. Vom Nussmus bis zum Snack.</p>
+      <div class="empf-code">Code: JULIA10734</div>
+      <div>
+        <a href="https://histaminikus.de/?ref=cyxjbwzy" target="_blank" rel="noopener" class="btn btn-outline">Zu Histaminikus</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="empf-disclaimer">
+  Partnerempfehlungen (Affiliate-Links). Ich bekomme eine kleine Provision, dein Preis bleibt gleich.
 </div>
 
-<!-- ERNÄHRUNG -->
-<section>
-  <div class="section-inner">
-    <p class="section-label fade-up">Ernährung</p>
-    <h2 class="section-title fade-up">Was meine Verdauung verändert hat</h2>
-
-    <div class="empfehlung-card fade-up">
-      <div class="empfehlung-nr">01</div>
-      <h3>Weniger Ballaststoffe</h3>
-      <p>Das klingt erstmal kontraintuitiv, weil überall steht: Iss mehr Ballaststoffe. Bei mir war das Gegenteil der Fall. Mein Darm war so gereizt, dass zu viele Ballaststoffe alles schlimmer gemacht haben.</p>
-      <p class="detail">Weniger Hülsenfrüchte, weniger Vollkorn in der akuten Phase. Stattdessen leicht verdauliche Sachen wie Reis, Kartoffeln, gedünstetes Gemüse.</p>
-    </div>
-
-    <div class="empfehlung-card fade-up">
-      <div class="empfehlung-nr">02</div>
-      <h3>Weniger Rohkost, mehr Gedünstetes</h3>
-      <p>Rohe Paprika, Salat, rohes Gemüse — das hat mein Darm einfach nicht geschafft. Sobald ich angefangen habe, fast alles zu dünsten oder zu kochen, wurde es deutlich besser.</p>
-      <p class="detail">Zucchini, Karotten, Kürbis, Fenchel — alles gedünstet. Einfach, aber es hat funktioniert.</p>
-    </div>
-
-    <div class="empfehlung-card fade-up">
-      <div class="empfehlung-nr">03</div>
-      <h3>Viele Proteine</h3>
-      <p>Protein war mein Gamechanger. Mein Körper hat so lange so wenig bekommen, dass er Proteine dringend gebraucht hat. Besonders nach dem Untergewicht war das extrem wichtig.</p>
-      <p class="detail">Frisches Hähnchen, Fisch (frisch, nicht gelagert), Eier (wenn verträglich), Reisprotein.</p>
-    </div>
-
-    <div class="empfehlung-card fade-up">
-      <div class="empfehlung-nr">04</div>
-      <h3>Gekeimte Produkte</h3>
-      <p>Gekeimte Lebensmittel sind für mich ein absoluter Gamechanger gewesen. Durch das Keimen werden Nährstoffe besser verfügbar und antinutritive Stoffe abgebaut. Mein Darm verträgt gekeimte Produkte deutlich besser als ungekeimte.</p>
-      <p class="detail">Gekeimtes Brot, gekeimte Nudeln, gekeimte Haferflocken. Ich liebe die Produkte von Aho.bio.</p>
-    </div>
-
-    <div class="empfehlung-card fade-up">
-      <div class="empfehlung-nr">05</div>
-      <h3>Schwarzkümmelöl</h3>
-      <p>Schwarzkümmelöl war für mich extrem hilfreich. Es wird traditionell bei Verdauungsbeschwerden eingesetzt und ich habe gemerkt, dass es mir gut tut. Jeden Morgen ein Teelöffel.</p>
-      <p class="detail">Kaltgepresst, in Bio-Qualität. Schmeckt gewöhnungsbedürftig, aber ich möchte es nicht mehr missen.</p>
-    </div>
-  </div>
-</section>
-
-<!-- MENTAL -->
-<section style="background: var(--linen);">
-  <div class="section-inner">
-    <p class="section-label fade-up">Mindset</p>
-    <h2 class="section-title fade-up">Was meinem Kopf geholfen hat</h2>
-
-    <div class="mental-card fade-up">
-      <h3>Nach dem Essen nicht zu lange nachdenken</h3>
-      <p>Das war für mich einer der wichtigsten Schritte. Ich habe nach jeder Mahlzeit auf Symptome gewartet. Jedes Grummeln analysiert. Jedes Ziehen interpretiert. Das hat den Stress nur verstärkt. Und Stress macht alles schlimmer.</p>
-      <p style="margin-top: 12px; color: rgba(255,255,255,0.5);">Mein Trick: Nach dem Essen direkt ablenken. Am besten mit etwas Kreativem. Ich forme Charms, zeichne, arbeite an meinen Projekten. Alles was den Kopf beschäftigt.</p>
-    </div>
-
-    <div class="empfehlung-card fade-up">
-      <div class="empfehlung-nr">06</div>
-      <h3>Stress reduzieren</h3>
-      <p>Das klingt so einfach und ist so schwer. Aber mein Darm hat direkt auf Stress reagiert. Je gestresster ich war, desto schlechter ging es mir. Die Darm-Hirn-Achse ist real.</p>
-      <p class="detail">Was mir hilft: Spaziergänge, kreativ arbeiten, weniger Social Media, früher schlafen, mir selbst sagen dass es okay ist.</p>
-    </div>
-
-    <div class="empfehlung-card fade-up">
-      <div class="empfehlung-nr">07</div>
-      <h3>Ablenkung nach dem Essen</h3>
-      <p>Statt nach dem Essen auf dem Sofa zu sitzen und in mich hineinzuhören, mache ich etwas Kreatives. Charms formen, malen, an der App arbeiten. Das lenkt den Fokus weg vom Körper und der Körper kann in Ruhe verdauen.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUKTE -->
-<section class="produkt-section">
-  <div class="section-inner">
-    <p class="section-label fade-up">Produkte die ich nutze</p>
-    <h2 class="section-title fade-up">Ehrlich empfohlen</h2>
-    <p class="fade-up" style="font-size: 15px; color: var(--cocoa); margin-bottom: 32px; line-height: 1.8;">Das sind Produkte die ich selbst verwende und die mir persönlich helfen. Einige Links sind Partnerempfehlungen, bei denen ich eine kleine Provision erhalte. Dein Preis bleibt gleich.</p>
-
-    <div class="produkt-card fade-up">
-      <div class="produkt-info">
-        <h4>Aho.bio</h4>
-        <p>Gekeimte Sprossenmehle und Nudeln. Für mich ein absoluter Gamechanger. Besser verträglich, mehr Nährstoffe, und es schmeckt richtig gut.</p>
-        <div class="produkt-tag">Partnerempfehlung · Code: SMACADO10</div>
-      </div>
-      <a href="https://aho.bio/smacado10" target="_blank" class="produkt-link">Zum Shop</a>
-    </div>
-
-    <div class="produkt-card fade-up">
-      <div class="produkt-info">
-        <h4>HistaFood Riegel</h4>
-        <p>Mein Lebensretter auf Reisen. Histaminarme Riegel, die ich immer dabei habe. Wenn ich unterwegs nichts Sicheres finde, greifen ich zu denen. Gibt mir Sicherheit.</p>
-        <div class="produkt-tag">Partnerempfehlung · Code: SMACADO10</div>
-      </div>
-      <a href="https://histafood.eu/discount/smacado10" target="_blank" class="produkt-link">Zum Shop</a>
-    </div>
-
-    <div class="produkt-card fade-up">
-      <div class="produkt-info">
-        <h4>Nigela</h4>
-        <p>Histaminarme Gewürze. Endlich Geschmack ohne Angst. Ich liebe besonders die Gewürzmischungen zum Kochen.</p>
-        <div class="produkt-tag">Partnerempfehlung · Code: SMACADO10</div>
-      </div>
-      <a href="https://nigela.de?sca_ref=10960285.t5W9j-LLKpfk3vt" target="_blank" class="produkt-link">Zum Shop</a>
-    </div>
-
-    <div class="produkt-card fade-up">
-      <div class="produkt-info">
-        <h4>Histaminikus</h4>
-        <p>Histaminarme Lebensmittel für den Alltag. Gute Qualität, verlässlich, und man weiß was drin ist.</p>
-        <div class="produkt-tag">Partnerempfehlung · Code: JULIA10734</div>
-      </div>
-      <a href="https://histaminikus.de/?ref=cyxjbwzy" target="_blank" class="produkt-link">Zum Shop</a>
-    </div>
-
-    <div class="produkt-card fade-up">
-      <div class="produkt-info">
-        <h4>Schwarzkümmelöl (Bio, kaltgepresst)</h4>
-        <p>Jeden Morgen ein Teelöffel. Traditionell bei Verdauungsbeschwerden eingesetzt. Ich möchte es nicht mehr missen.</p>
-        <div class="produkt-tag">Persönliche Empfehlung</div>
-      </div>
-    </div>
-
-    <!-- DISCLAIMER -->
-    <div class="disclaimer fade-up">
-      <p><strong>Wichtiger Hinweis:</strong> Das sind meine persönlichen Erfahrungen. Keine medizinischen Empfehlungen. Was bei mir funktioniert hat, muss nicht bei dir funktionieren. Jeder Körper ist anders. Bei Beschwerden wende dich bitte immer an eine Ärztin oder einen Arzt. Partnerempfehlungen sind als solche gekennzeichnet.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section style="text-align: center;">
-  <div class="section-inner">
-    <h2 class="section-title fade-up">Noch mehr Orientierung?</h2>
-    <p class="fade-up" style="font-size: 15px; color: var(--cocoa); margin-bottom: 24px;">In meiner App TerraLuna findest du 250+ Lebensmittel bewertet, 120+ Rezepte und einen Scanner der dir zeigt was du essen kannst.</p>
-    <div class="fade-up" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-      <a href="app.html" style="padding: 14px 32px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; background: linear-gradient(135deg, var(--wine), #d4868a, var(--wine)); color: white;">TerraLuna App</a>
-      <a href="eatmoreart.html" style="padding: 14px 32px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; border: 2px solid var(--wine); color: var(--wine);">Wear Your Healing Shop</a>
-    </div>
-  </div>
-</section>
-
-<!-- KOSTENLOSES E-BOOK -->
-<section style="background: #2C2820; color: #F5EFE6; padding: 80px 24px;">
-  <div style="max-width: 560px; margin: 0 auto; text-align: center;">
-    <p class="fade-up" style="font-size: 11px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #C9908A; margin-bottom: 16px;">Kostenloser Starter Guide</p>
-    <h2 class="fade-up" style="font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #F5EFE6; margin-bottom: 16px; line-height: 1.2;">Verstehe deinen Körper.</h2>
-    <p class="fade-up" style="font-size: 16px; color: #B5AC9E; margin-bottom: 40px; line-height: 1.8; font-weight: 300;">10 Seiten, die dir mehr Klarheit geben als monatelanges Googeln. Medizinisch fundiert, persönlich geschrieben, kostenlos.</p>
-
-
-    <div class="fade-up" style="max-width: 420px; margin: 0 auto;">
-      <iframe data-tally-src="https://tally.so/embed/7Rag90?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" style="border: none;"></iframe>
-      <script src="https://tally.so/widgets/embed.js"></script>
-      <p style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 8px;">Kein Spam, kein Newsletter. Du bekommst nur dein E-Book.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo"><span style="letter-spacing: 4px; font-weight: 600;">EMA</span> <span style="font-size: 14px; font-weight: 300; opacity: 0.6;">EatMoreArt</span></div>
-    <div class="footer-links">
-      <a href="app.html">TerraLuna App</a>
-      <a href="eatmoreart.html">Shop</a>
-      <a href="social-media.html">Social Media</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="agb.html">AGB</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="widerruf.html">Widerruf</a>
-    </div>
-    <div class="footer-disclaimer">
-      Persönliche Erfahrungen. Keine medizinische Beratung.<br>
-      © 2024–2026 Smacado · Julia Bergles
-    </div>
+  <a href="index.html" class="footer-logo">Julia</a>
+  <div class="footer-links">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Histamin</a>
+    <a href="mcas.html">MCAS</a>
+    <a href="reizdarm.html">Reizdarm</a>
+    <a href="blog/">Blog</a>
+    <a href="gespraech.html">Gespräch</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
   </div>
+  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
+  <div class="footer-disclaimer">Meine Inhalte sind Erfahrungsberichte, kein Ersatz für ärztliche Beratung. &copy; 2024–2026</div>
 </footer>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-let empfEbookGuide = 'histamin';
-function selectEmpfEbook(guide) {
-  empfEbookGuide = guide;
-  const h = document.getElementById('empfEbookHit');
-  const r = document.getElementById('empfEbookRds');
-  if (guide === 'histamin') {
-    h.style.background = '#F5EFE6'; h.style.color = '#2C2820';
-    r.style.background = 'rgba(255,255,255,0.08)'; r.style.color = '#B5AC9E';
-  } else {
-    r.style.background = '#F5EFE6'; r.style.color = '#2C2820';
-    h.style.background = 'rgba(255,255,255,0.08)'; h.style.color = '#B5AC9E';
-  }
-}
-function submitEmpfEbook() {
-  const email = document.getElementById('empfEbookEmail').value;
-  if (!email || !email.includes('@')) { alert('Bitte gib eine gültige E-Mail-Adresse ein.'); return; }
-  const name = empfEbookGuide === 'histamin' ? 'Histaminintoleranz' : 'Reizdarm';
-  window.open('mailto:julia@bergles.net?subject=' + encodeURIComponent('E-Book: ' + name) + '&body=' + encodeURIComponent('Guide: ' + name + '\nE-Mail: ' + email), '_blank');
-  document.getElementById('empfEbookForm').style.display = 'none';
-  document.getElementById('empfEbookSuccess').style.display = 'block';
-}
+  document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
+  });
 </script>
 
 </body>
