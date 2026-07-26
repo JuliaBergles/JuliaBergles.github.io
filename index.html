@@ -2176,6 +2176,134 @@
   }
 </style>
 
+<!-- FAQ zur App -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-header reveal">
+      <span class="faq-eyebrow">Häufige Fragen</span>
+      <h2 class="faq-h">Was du über die <em>App</em> wissen willst.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Was macht die TerraLuna App eigentlich?</summary>
+        <p>Die App ist dein Begleiter im Alltag mit Histaminintoleranz, Allergien und Reizdarm. Du scannst Lebensmittel und Produkte, siehst sofort was du verträgst, findest über 120 Rezepte und trackst deinen Zyklus und deine Symptome. Alles an einem Ort.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Für wen ist die App gemacht?</summary>
+        <p>Für alle mit Histaminintoleranz, MCAS, Reizdarm, Zöliakie oder Allergien. Und für alle, die verstehen wollen, was ihr Körper braucht — auch wenn keine Diagnose da ist.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Muss ich für die App zahlen?</summary>
+        <p>Es gibt eine kostenlose Basisversion. Für alle Funktionen (Scanner, alle Rezepte, Zyklustracking, SOS-Karten) kostet die App 4,99 € im Monat oder 39,99 € im Jahr. Die ersten 3 Tage sind kostenlos.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Für welches Betriebssystem gibt es die App?</summary>
+        <p>Für iPhone (Apple App Store) und Android (Google Play).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ersetzt die App einen Arztbesuch?</summary>
+        <p>Nein. Die App ist ein Werkzeug, das dir im Alltag hilft. Sie ersetzt keine ärztliche Diagnose und keine Behandlung. Bei Beschwerden geh bitte zu einer Ärztin oder einem Arzt.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Woher weiß die App, was ich vertrage?</summary>
+        <p>Du gibst am Anfang deine Diagnosen und Unverträglichkeiten ein. Danach kombiniert die App das mit einer Datenbank aus 250+ Lebensmitteln und zeigt dir per Ampel: grün (verträgst du), gelb (mit Vorsicht), rot (meiden).</p>
+      </details>
+    </div>
+    <div class="faq-cta">
+      <a href="app.html" class="faq-btn">Mehr zur App →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 140px 40px;
+    background: var(--bg);
+  }
+  .faq-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 60px;
+  }
+  .faq-eyebrow {
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    color: var(--bordeaux);
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  .faq-h {
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(28px, 4.5vw, 64px);
+    line-height: 1.05;
+    color: var(--bordeaux) !important;
+    letter-spacing: -0.025em;
+  }
+  .faq-h em { font-style: normal; color: var(--gold); }
+  .faq-list {
+    max-width: 800px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 24px 28px;
+    transition: box-shadow 0.3s;
+  }
+  .faq-item[open] {
+    box-shadow: 0 20px 40px rgba(90,20,40,0.08);
+    border-color: var(--gold);
+  }
+  .faq-item summary {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700; font-size: 17px;
+    color: var(--bordeaux);
+    cursor: pointer;
+    list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px; font-weight: 400;
+    color: var(--gold);
+    transition: transform 0.3s;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15.5px; color: var(--ink); opacity: 0.85;
+    line-height: 1.65;
+    margin-top: 16px;
+  }
+  .faq-cta {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .faq-btn {
+    display: inline-block; padding: 20px 44px;
+    background: var(--bordeaux); color: var(--bg);
+    border-radius: 999px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px; font-weight: 700; letter-spacing: 0.05em;
+    text-decoration: none;
+    box-shadow: 0 12px 32px rgba(90,20,40,0.25);
+    transition: transform 0.3s;
+  }
+  .faq-btn:hover { transform: translateY(-3px); }
+
+  @media (max-width: 900px) {
+    .faq-section { padding: 80px 20px; }
+    .faq-header { margin-bottom: 40px; }
+    .faq-item { padding: 20px 22px; border-radius: 16px; }
+    .faq-item summary { font-size: 15px; }
+  }
+</style>
+
 <!-- BLOG TEASER -->
 <section style="padding: 140px 40px; background: var(--bg-warm); text-align: center;">
   <div class="container" style="max-width: 720px;">
@@ -2190,7 +2318,8 @@
 <section style="padding: 120px 40px; background: var(--bg); text-align: center;">
   <div class="container" style="max-width: 620px;">
     <span style="font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; color: var(--bordeaux); margin-bottom: 20px; display: inline-block;">Kontakt</span>
-    <h2 style="font-size: clamp(40px, 5.5vw, 72px); margin-bottom: 32px;">Schreib mir</h2>
+    <h2 style="font-family: 'Rubik', sans-serif !important; font-weight: 900 !important; font-size: clamp(32px, 5vw, 64px); margin-bottom: 20px; line-height: 1;">Schreib mir</h2>
+    <p style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; color: var(--ink); opacity: 0.85; line-height: 1.6; margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto;">Schreib mir, wenn ich dich unterstützen kann oder wenn du einfach jemanden zum Reden brauchst.</p>
     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
       <a href="mailto:julia@bergles.net" style="display: inline-flex; align-items: center; padding: 16px 28px; background: transparent; color: var(--bordeaux); border: 1.5px solid var(--bordeaux); border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none;">julia@bergles.net</a>
       <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; padding: 16px 28px; background: transparent; color: var(--bordeaux); border: 1.5px solid var(--bordeaux); border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none;">@julia_bergles</a>
