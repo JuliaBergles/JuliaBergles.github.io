@@ -9,21 +9,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bordeaux: #955251;
-      --copper: #C48B6C;
-      --copper-light: #D4A48A;
-      --warm-white: #FDFBF9;
-      --warm-cream: #F3ECE5;
+      /* Neue App-Palette — kräftiger, warm, wie in TerraLuna */
+      --bordeaux: #430a14;      /* Malaga — Statement/Primary */
+      --bordeaux-hi: #6b1424;   /* Malaga hover */
+      --pink: #c74873;          /* Akzent frisch */
+      --orange: #ff9c6d;        /* Gold/Orange leuchtend */
+      --orange-hi: #ffb08a;
+      --blue: #7993ae;          /* kalter Kontrast */
+      --ink: #2D1F22;           /* Text/Dark */
+      /* Kompatibilität mit bestehendem CSS */
+      --copper: #ff9c6d;        /* jetzt Orange */
+      --copper-light: #ffb08a;
+      --warm-white: #FBF2ED;    /* Cream Hintergrund */
+      --warm-cream: #F3D6C6;    /* wärmer, peachy */
       --warm-beige: #EFE4D9;
-      --warm-sand: #E8DDD1;
-      --text-dark: #3D2B2E;
-      --text-muted: #8A7B75;
-      --line: rgba(61,43,46,0.08);
+      --warm-sand: #E8D0BE;
+      --text-dark: #2D1F22;
+      --text-muted: #6b5459;
+      --line: rgba(45,31,34,0.10);
     }
     html { scroll-behavior: smooth; }
     body {
@@ -693,312 +702,377 @@
     .footer-contact { font-size: 13px; margin-bottom: 12px; line-height: 1.7; }
     .footer-disclaimer { font-size: 10.5px; color: rgba(253,251,249,0.35); margin-top: 22px; letter-spacing: 0.08em; line-height: 1.6; }
 
-    /* ────────── LANDING OVERLAY (Intro-Animation + Wahl) ────────── */
+    /* ══════════ LANDING OVERLAY — Cream↔Farbe Invert (nach Agentur-Spec) ══════════ */
     html.overlay-open, body.overlay-open { overflow: hidden; }
     #landing-overlay {
-      position: fixed; inset: 0; z-index: 200;
+      position: fixed; inset: 0; z-index: 9999;
       background: var(--warm-white);
       overflow: hidden;
       opacity: 0; visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+      transition: opacity 0.6s ease, visibility 0s linear 0.6s;
     }
     #landing-overlay.visible {
       opacity: 1; visibility: visible;
-      transition: opacity 0.5s ease, visibility 0s;
+      transition: opacity 0.6s ease, visibility 0s;
     }
 
-    /* Phases */
-    .lo-phase {
+    /* Kicker (oben links) + Brand-Mark (oben rechts) */
+    .lo-kicker {
+      position: absolute; top: 32px; left: 40px; z-index: 5;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      opacity: 0.6;
+      transition: color 0.5s, opacity 0.5s;
+    }
+    .lo-brand-mark {
+      position: absolute; top: 32px; right: 40px; z-index: 5;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      opacity: 0.6;
+      transition: color 0.5s, opacity 0.5s;
+    }
+    .lo-mobile-tag {
+      display: none;
+      position: absolute; bottom: 130px; left: 50%; transform: translateX(-50%);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      opacity: 0.55;
+      z-index: 5;
+      transition: color 0.5s, opacity 0.5s;
+    }
+
+    /* Stage-Wrapper — hier läuft der Farb-Wechsel */
+    #lo-stage-wrap {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
-      opacity: 0; visibility: hidden;
-      transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+      background: var(--warm-white);
+      transition: background 0.28s ease;
     }
-    .lo-phase.on { opacity: 1; visibility: visible; transition: opacity 0.6s ease, visibility 0s; }
+    /* 6 States: pro Wort 2 Farben (a = cream, b = farbig) */
+    #lo-stage-wrap.state-1a { background: var(--warm-white); }
+    #lo-stage-wrap.state-1b { background: var(--pink); }
+    #lo-stage-wrap.state-2a { background: var(--warm-white); }
+    #lo-stage-wrap.state-2b { background: var(--bordeaux); }
+    #lo-stage-wrap.state-3a { background: var(--warm-white); }
+    #lo-stage-wrap.state-3b { background: var(--orange); }
 
-    /* ── Intro phase (auto-slideshow) ── */
-    #lo-intro-phase {
-      background: var(--warm-cream);
-      transition: background 0.9s cubic-bezier(0.4,0,0.2,1), opacity 0.6s ease, visibility 0s linear 0.6s;
+    /* Kicker/Brand Farb-Invert bei dunklen BGs */
+    #lo-stage-wrap.state-1b ~ .lo-kicker,
+    #lo-stage-wrap.state-1b ~ .lo-brand-mark,
+    #lo-stage-wrap.state-1b ~ .lo-mobile-tag { color: var(--warm-white); opacity: 0.9; }
+    #lo-stage-wrap.state-2b ~ .lo-kicker,
+    #lo-stage-wrap.state-2b ~ .lo-brand-mark,
+    #lo-stage-wrap.state-2b ~ .lo-mobile-tag { color: var(--orange); opacity: 1; }
+    #lo-stage-wrap.state-3b ~ .lo-kicker,
+    #lo-stage-wrap.state-3b ~ .lo-brand-mark,
+    #lo-stage-wrap.state-3b ~ .lo-mobile-tag { color: var(--ink); opacity: 0.85; }
+
+    /* Wortstack */
+    .lo-wordstack {
+      text-align: center;
+      max-width: 1100px;
+      padding: 0 40px;
     }
-    #lo-intro-phase.bg-1 { background: var(--warm-cream); }
-    #lo-intro-phase.bg-2 { background: var(--bordeaux); }
-    #lo-intro-phase.bg-3 { background: var(--text-dark); }
+    .lo-word {
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.2rem, 12vw, 9.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      color: var(--bordeaux);
+      margin-bottom: 28px;
+      transition: color 0.28s ease;
+    }
+    /* Wort-Farbe je State */
+    #lo-stage-wrap.state-1a .lo-word { color: var(--pink); }
+    #lo-stage-wrap.state-1b .lo-word { color: var(--warm-white); }
+    #lo-stage-wrap.state-2a .lo-word { color: var(--bordeaux); }
+    #lo-stage-wrap.state-2b .lo-word { color: var(--warm-white); }
+    #lo-stage-wrap.state-3a .lo-word { color: var(--orange); }
+    #lo-stage-wrap.state-3b .lo-word { color: var(--ink); }
+    .lo-word.snap {
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+    .lo-word.snap.in {
+      opacity: 1;
+    }
 
+    .lo-word-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.45;
+      color: var(--ink);
+      opacity: 0.75;
+      max-width: 640px;
+      margin: 0 auto;
+      transition: color 0.28s ease, opacity 0.28s ease;
+    }
+    #lo-stage-wrap.state-1b .lo-word-sub,
+    #lo-stage-wrap.state-2b .lo-word-sub { color: var(--warm-white); opacity: 0.9; }
+    #lo-stage-wrap.state-3b .lo-word-sub { color: var(--ink); opacity: 0.85; }
+
+    /* Sub Slide-in from left */
+    .lo-word-sub.slide {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1);
+    }
+    .lo-word-sub.slide.in {
+      opacity: 0.85;
+      transform: translateX(0);
+      transition-delay: 0.5s;
+    }
+    #lo-stage-wrap.state-1b .lo-word-sub.slide.in,
+    #lo-stage-wrap.state-2b .lo-word-sub.slide.in { opacity: 0.9; }
+
+    /* Progress Dots (unten mittig) */
     .lo-progress {
-      position: absolute; top: 32px; left: 50%; transform: translateX(-50%);
+      position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%);
       display: flex; gap: 10px; z-index: 5;
     }
     .lo-progress .pd {
-      width: 32px; height: 3px;
-      background: rgba(61,43,46,0.15);
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(45,31,34,0.18);
+      transition: background 0.4s, width 0.4s, border-radius 0.4s;
+    }
+    .lo-progress .pd.active {
+      background: var(--bordeaux);
+      width: 32px; border-radius: 999px;
+    }
+    #lo-stage-wrap.state-1b ~ .lo-progress .pd { background: rgba(255,255,255,0.35); }
+    #lo-stage-wrap.state-1b ~ .lo-progress .pd.active { background: var(--warm-white); }
+    #lo-stage-wrap.state-2b ~ .lo-progress .pd { background: rgba(255,156,109,0.35); }
+    #lo-stage-wrap.state-2b ~ .lo-progress .pd.active { background: var(--orange); }
+    #lo-stage-wrap.state-3b ~ .lo-progress .pd { background: rgba(45,31,34,0.25); }
+    #lo-stage-wrap.state-3b ~ .lo-progress .pd.active { background: var(--ink); }
+
+    /* Skip-Button (unten mittig) */
+    .lo-skip {
+      position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%);
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid rgba(45,31,34,0.25);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 12px 26px;
+      cursor: pointer;
       border-radius: 999px;
-      transition: background 0.4s, width 0.4s;
+      transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
+      z-index: 10;
     }
-    .lo-progress .pd.active { background: var(--bordeaux); width: 48px; }
-    #lo-intro-phase.bg-2 .lo-progress .pd,
-    #lo-intro-phase.bg-3 .lo-progress .pd { background: rgba(253,251,249,0.25); }
-    #lo-intro-phase.bg-2 .lo-progress .pd.active,
-    #lo-intro-phase.bg-3 .lo-progress .pd.active { background: var(--warm-white); }
+    .lo-skip:hover {
+      background: var(--ink); color: var(--warm-white); border-color: var(--ink);
+      transform: translateX(-50%) translateY(-2px);
+    }
+    #lo-stage-wrap.state-1b ~ .lo-skip,
+    #lo-stage-wrap.state-2b ~ .lo-skip {
+      color: var(--warm-white); border-color: rgba(255,255,255,0.4);
+    }
+    #lo-stage-wrap.state-1b ~ .lo-skip:hover,
+    #lo-stage-wrap.state-2b ~ .lo-skip:hover {
+      background: var(--warm-white); color: var(--ink); border-color: var(--warm-white);
+    }
+    #lo-stage-wrap.state-3b ~ .lo-skip {
+      color: var(--ink); border-color: rgba(45,31,34,0.35);
+    }
 
-    .lo-kicker {
-      position: absolute; top: 30px; left: 40px; z-index: 3;
-      font-family: 'Object Sans', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.36em; text-transform: uppercase;
-      color: var(--copper);
-      transition: color 0.5s;
+    /* ══════════ CHOICE-SLIDE ══════════ */
+    #lo-choice {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, var(--warm-white) 0%, var(--warm-cream) 100%);
+      display: none;
+      overflow-y: auto;
+      padding: 88px 32px 128px;
     }
-    #lo-intro-phase.bg-2 .lo-kicker { color: var(--copper-light); }
-    #lo-intro-phase.bg-3 .lo-kicker { color: var(--copper-light); }
-    .lo-brand-mark {
-      position: absolute; top: 30px; right: 40px; z-index: 3;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 22px; font-weight: 500;
-      color: var(--bordeaux);
-      transition: color 0.5s;
-    }
-    #lo-intro-phase.bg-2 .lo-brand-mark { color: var(--warm-cream); }
-    #lo-intro-phase.bg-3 .lo-brand-mark { color: var(--copper-light); }
-
-    .lo-wordstack {
+    #lo-choice.on { display: block; }
+    .lo-choice-inner {
+      max-width: 1200px; margin: 0 auto;
       text-align: center;
-      max-width: 900px;
-      padding: 0 32px;
     }
-    .lo-word {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.5rem, 11vw, 8rem);
-      font-weight: 500;
+    .lo-choice-kicker {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--bordeaux);
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+    .lo-choice-h {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5.5vw, 4.5rem);
       line-height: 1;
       letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .lo-choice-h em {
+      font-style: normal;
       color: var(--bordeaux);
-      margin-bottom: 28px;
-      transition: color 0.5s;
-      opacity: 0;
-      transform: translateY(24px);
     }
-    .lo-word.in {
-      opacity: 1; transform: translateY(0);
-      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    .lo-choice-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      opacity: 0.72;
+      max-width: 620px; margin: 0 auto 40px;
+      line-height: 1.55;
     }
-    .lo-word.out {
-      opacity: 0; transform: translateY(-14px);
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
-    #lo-intro-phase.bg-2 .lo-word { color: var(--warm-white); }
-    #lo-intro-phase.bg-3 .lo-word { color: var(--copper-light); }
-    .lo-word-sub {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
-      color: var(--text-muted);
-      max-width: 620px; margin: 0 auto;
-      line-height: 1.4;
-      transition: color 0.5s;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .lo-word-sub.in {
-      opacity: 1; transform: translateY(0);
-      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s;
-    }
-    .lo-word-sub.out {
-      opacity: 0; transform: translateY(-10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    #lo-intro-phase.bg-2 .lo-word-sub { color: rgba(253,251,249,0.85); }
-    #lo-intro-phase.bg-3 .lo-word-sub { color: rgba(253,251,249,0.75); }
 
-    /* ── Wahl phase — scrollable ── */
-    #lo-wahl-phase {
-      background: var(--warm-white);
-      padding: 60px 32px 110px;
-      overflow-y: auto;
-      align-items: flex-start;
-    }
-    #lo-wahl-phase .lo-inner { margin: auto; }
-
-    /* Symptom chips */
+    /* Symptom-Chips */
     .lo-chips {
-      display: flex; flex-wrap: wrap;
-      justify-content: center;
+      display: flex; flex-wrap: wrap; justify-content: center;
       gap: 10px;
-      margin: 8px auto 40px;
-      max-width: 780px;
+      margin: 0 auto 44px;
+      max-width: 900px;
     }
     .lo-chip {
       display: inline-flex; align-items: center;
-      padding: 12px 22px;
-      background: var(--warm-cream);
-      color: var(--text-dark);
-      border: 1px solid var(--line);
+      padding: 11px 22px;
+      background: rgba(255,255,255,0.7);
+      color: var(--ink);
+      border: 1px solid rgba(67,10,20,0.18);
       border-radius: 999px;
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 14px; font-weight: 600;
       text-decoration: none;
       transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
       cursor: pointer;
     }
     .lo-chip:hover {
-      background: var(--bordeaux);
-      color: var(--warm-white);
+      background: var(--bordeaux); color: var(--warm-white);
       border-color: var(--bordeaux);
       transform: translateY(-2px);
     }
 
-    .lo-divider {
-      font-family: 'Object Sans', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--text-muted);
-      text-align: center;
-      margin: 8px 0 28px;
-      position: relative;
+    .lo-choice-divider {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink);
+      opacity: 0.5;
+      margin: 4px 0 26px;
     }
-    .lo-inner {
-      max-width: 1080px; width: 100%;
-      text-align: center;
-      position: relative;
+
+    /* 5 Signature-Cards nebeneinander */
+    .lo-choice-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      max-width: 1200px; margin: 0 auto 26px;
     }
-    .lo-brand {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 22px; font-weight: 500;
-      color: var(--copper);
-      margin-bottom: 20px;
-      display: inline-block;
-      position: relative;
-      padding: 0 8px;
-    }
-    .lo-brand::after {
-      content: '';
-      position: absolute; bottom: -4px; left: 20%; right: 20%;
-      height: 1px; background: var(--copper);
-    }
-    .lo-eyebrow {
-      font-family: 'Object Sans', sans-serif;
-      font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.36em; text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-    .lo-h {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4.5vw, 3.6rem);
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 12px;
-      color: var(--text-dark);
-    }
-    .lo-h em { font-style: italic; color: var(--bordeaux); }
-    .lo-sub {
-      font-size: 15.5px;
-      color: var(--text-muted);
-      margin-bottom: 48px;
-      max-width: 460px; margin-left: auto; margin-right: auto;
-    }
-    .lo-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .lo-card {
+    .lo-c-card {
       display: flex; flex-direction: column;
-      padding: 30px 24px 26px;
+      padding: 32px 24px 26px;
       text-align: left;
       text-decoration: none;
-      min-height: 260px;
-      border-radius: 16px;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+      min-height: 280px;
+      border-radius: 14px;
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
-    .lo-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 60px rgba(61,43,46,0.14);
+    .lo-c-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(45,31,34,0.18);
     }
-    .lo-card .lo-n {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 2rem; font-weight: 500;
+    .lo-c-card .lo-c-n {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 900;
+      font-size: 34px;
       line-height: 1;
-      margin-bottom: 22px;
-      opacity: 0.75;
+      margin-bottom: 20px;
+      opacity: 0.85;
     }
-    .lo-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; font-weight: 500;
-      line-height: 1.15;
+    .lo-c-card h3 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 1.1;
       margin-bottom: 12px;
-      letter-spacing: -0.005em;
+      letter-spacing: -0.01em;
     }
-    .lo-card p {
-      font-family: 'Object Sans', sans-serif;
+    .lo-c-card p {
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 13.5px;
       line-height: 1.55;
       flex-grow: 1;
       margin-bottom: 22px;
-      opacity: 0.85;
+      opacity: 0.9;
     }
-    .lo-card .lo-arrow {
-      font-family: 'Object Sans', sans-serif;
-      font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
+    .lo-c-arrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.15em;
       display: inline-flex; align-items: center; gap: 8px;
       transition: gap 0.3s;
     }
-    .lo-card:hover .lo-arrow { gap: 14px; }
-    /* Color variants — Julias warme Palette */
-    .lo-c-bordeaux { background: var(--bordeaux); color: var(--warm-white); }
-    .lo-c-bordeaux .lo-n, .lo-c-bordeaux .lo-arrow { color: var(--copper-light); }
-    .lo-c-copper { background: var(--copper); color: var(--warm-white); }
-    .lo-c-copper .lo-n, .lo-c-copper .lo-arrow { color: var(--warm-cream); }
-    .lo-c-cream { background: var(--warm-cream); color: var(--text-dark); }
-    .lo-c-cream .lo-n, .lo-c-cream .lo-arrow { color: var(--bordeaux); }
-    .lo-c-dark { background: var(--text-dark); color: var(--warm-white); }
-    .lo-c-dark .lo-n, .lo-c-dark .lo-arrow { color: var(--copper-light); }
+    .lo-c-card:hover .lo-c-arrow { gap: 14px; }
 
-    /* Selbsttest block */
+    /* Signature-Farb-Variants */
+    .lo-c-orange { background: var(--orange); color: var(--ink); }
+    .lo-c-bordeaux { background: var(--bordeaux); color: var(--orange); }
+    .lo-c-pink { background: var(--pink); color: var(--ink); }
+    .lo-c-blue { background: var(--blue); color: var(--warm-white); }
+    .lo-c-ink { background: var(--ink); color: var(--warm-white); }
+
+    /* Selbsttest-CTA nach den Cards */
     .lo-selbsttest {
-      margin-top: 20px;
+      max-width: 900px; margin: 32px auto 0;
     }
     .lo-selbsttest-card {
-      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px;
-      background: var(--warm-beige);
-      border: 1px solid var(--line);
-      padding: 26px 32px;
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(67,10,20,0.14);
+      padding: 28px 34px;
       text-decoration: none;
-      color: var(--text-dark);
+      color: var(--ink);
       transition: transform 0.35s, box-shadow 0.35s, background 0.35s;
       text-align: left;
       border-radius: 18px;
     }
     .lo-selbsttest-card:hover {
       transform: translateY(-3px);
-      background: var(--warm-cream);
-      box-shadow: 0 20px 40px rgba(61,43,46,0.10);
+      background: #fff;
+      box-shadow: 0 24px 50px rgba(67,10,20,0.14);
     }
     .lo-selbsttest-body { display: flex; flex-direction: column; gap: 4px; }
-    .lo-selbsttest-body .lo-eyebrow { margin-bottom: 6px; }
+    .lo-selbsttest-body .lo-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 6px;
+    }
     .lo-selbsttest-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem; font-weight: 500;
-      line-height: 1.2;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 900;
+      font-size: 1.35rem;
+      line-height: 1.15;
       margin-bottom: 4px;
+      color: var(--ink);
     }
     .lo-selbsttest-body p {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 14px;
-      color: var(--text-muted);
+      color: var(--ink);
+      opacity: 0.7;
       line-height: 1.5;
     }
     .lo-selbsttest-arrow {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 12px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
+      letter-spacing: 0.15em;
       color: var(--bordeaux);
       display: inline-flex; align-items: center; gap: 10px;
       white-space: nowrap;
@@ -1009,36 +1083,27 @@
     }
     .lo-selbsttest-card:hover .lo-selbsttest-arrow::after { transform: translateX(6px); }
 
-    /* Skip button — bottom right */
-    .lo-skip {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      background: var(--text-dark);
-      color: var(--warm-white);
-      border: 0;
-      font-family: 'Object Sans', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.26em; text-transform: uppercase;
-      padding: 15px 28px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
-      z-index: 220;
-      display: inline-flex; align-items: center; gap: 10px;
-      box-shadow: 0 12px 30px rgba(61,43,46,0.24);
-      border-radius: 999px;
+    /* Skip-Button ist in der Choice-Slide oben rechts */
+    #lo-choice .lo-skip {
+      position: absolute; top: 24px; right: 28px;
+      left: auto; bottom: auto; transform: none;
     }
-    .lo-skip:hover { background: var(--bordeaux); transform: translateY(-2px); }
+    #lo-choice .lo-skip:hover { transform: translateY(-2px); }
 
-    @media (max-width: 1000px) {
-      .lo-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Mobile */
+    @media (max-width: 900px) {
+      .lo-kicker, .lo-brand-mark { display: none; }
+      .lo-mobile-tag { display: block; }
+      .lo-choice-grid { grid-template-columns: repeat(2, 1fr); }
+      .lo-c-card { min-height: 220px; padding: 26px 22px; }
     }
     @media (max-width: 600px) {
-      #landing-overlay { padding: 40px 20px 90px; align-items: flex-start; }
-      .lo-grid { grid-template-columns: 1fr; }
-      .lo-card { min-height: 200px; padding: 26px 22px; }
-      .lo-selbsttest-card { grid-template-columns: 1fr; padding: 22px 24px; gap: 16px; }
+      #lo-choice { padding: 60px 20px 100px; }
+      .lo-choice-grid { grid-template-columns: 1fr; }
+      .lo-selbsttest-card { grid-template-columns: 1fr; padding: 22px 24px; gap: 14px; }
       .lo-selbsttest-arrow { justify-self: start; }
-      .lo-skip { bottom: 16px; right: 16px; padding: 13px 20px; font-size: 10.5px; }
+      .lo-progress { bottom: 92px; }
+      .lo-skip { bottom: 34px; padding: 11px 22px; font-size: 11.5px; }
     }
 
     /* ────────── RESPONSIVE ────────── */
@@ -1103,34 +1168,38 @@
 </head>
 <body>
 
-<!-- LANDING OVERLAY — Intro-Animation + Themen-Wahl + Selbsttest -->
+<!-- LANDING OVERLAY — Cream↔Farbe Invert Animation + Choice -->
 <div id="landing-overlay" role="dialog" aria-label="Willkommen">
-  <button class="lo-skip" id="lo-skip" type="button">Überspringen →</button>
 
-  <!-- PHASE 1: Intro-Slideshow -->
-  <div id="lo-intro-phase" class="lo-phase bg-1">
-    <div class="lo-progress" id="lo-progress">
-      <span class="pd active"></span>
-      <span class="pd"></span>
-      <span class="pd"></span>
-    </div>
-    <span class="lo-kicker" id="lo-kicker">N°01</span>
-    <span class="lo-brand-mark">Julia Bergles</span>
+  <!-- Stage-Wrap: der Farb-Wechsel läuft hier -->
+  <div id="lo-stage-wrap" class="state-1a">
     <div class="lo-wordstack">
-      <h1 class="lo-word in" id="lo-word">Blähbauch?</h1>
-      <p class="lo-word-sub in" id="lo-word-sub">Kann Histamin sein — muss aber nicht.</p>
+      <h1 class="lo-word" id="lo-word">Blähbauch?</h1>
+      <p class="lo-word-sub slide in" id="lo-word-sub">Kann Histamin sein — muss aber nicht.</p>
     </div>
   </div>
 
-  <!-- PHASE 2: Wahl (Chips + Menü + Selbsttest) -->
-  <div id="lo-wahl-phase" class="lo-phase">
-    <div class="lo-inner">
-      <span class="lo-brand">Julia</span>
-      <p class="lo-eyebrow">Was beschäftigt dich?</p>
-      <h1 class="lo-h">Wähl, wo <em>du</em> gerade stehst.</h1>
-      <p class="lo-sub">Ich kenne die Themen selber — Reizdarm, Darmverschluss, HIT, MCAS, Essstörung, PMS, Depressionen. Klick was an, das dich betrifft.</p>
+  <!-- Kicker + Brand + Progress + Skip (nach Stage-Wrap für ~-Selektor) -->
+  <span class="lo-kicker" id="lo-kicker">N°01</span>
+  <span class="lo-brand-mark">Julia Bergles</span>
+  <span class="lo-mobile-tag" id="lo-mobile-tag">N°01 · Julia Bergles</span>
 
-      <!-- Symptom chips -->
+  <div class="lo-progress" id="lo-progress">
+    <span class="pd active"></span>
+    <span class="pd"></span>
+    <span class="pd"></span>
+  </div>
+
+  <button class="lo-skip" id="lo-skip" type="button">Überspringen</button>
+
+  <!-- Choice-Slide (kommt nach der Animation oder per Skip) -->
+  <div id="lo-choice">
+    <button class="lo-skip" id="lo-skip-choice" type="button">Zur Website</button>
+    <div class="lo-choice-inner">
+      <span class="lo-choice-kicker">Was beschäftigt dich?</span>
+      <h2 class="lo-choice-h">Wobei kann ich dir <em>helfen</em>?</h2>
+      <p class="lo-choice-sub">Ich kenne die Themen selber — Reizdarm, Darmverschluss, HIT, MCAS, Essstörung, PMS, Depressionen, Sportsucht. Klick, was dich betrifft.</p>
+
       <div class="lo-chips">
         <a href="blog/blaehbauch-in-griff/" class="lo-chip">Blähbauch</a>
         <a href="reizdarm.html" class="lo-chip">Reizdarm</a>
@@ -1144,33 +1213,38 @@
         <a href="blog/angst-vor-essen/" class="lo-chip">Angst vorm Essen</a>
       </div>
 
-      <p class="lo-divider">— oder schau mal hier rein —</p>
+      <p class="lo-choice-divider">— oder schau dir das an —</p>
 
-      <!-- Menü-Kacheln -->
-      <div class="lo-grid">
-        <a href="#app" class="lo-card lo-c-bordeaux" data-in-page>
-          <span class="lo-n">01</span>
+      <div class="lo-choice-grid">
+        <a href="#app" class="lo-c-card lo-c-bordeaux" data-in-page>
+          <span class="lo-c-n">01</span>
           <h3>TerraLuna App</h3>
-          <p>Verträglichkeits-Scanner, 250+ Lebensmittel mit Ampel, 120+ Rezepte und Zyklustracking.</p>
-          <span class="lo-arrow">Zur App →</span>
+          <p>Scanner, 250+ Lebensmittel mit Ampel, 120+ Rezepte und Zyklustracking.</p>
+          <span class="lo-c-arrow">Zur App →</span>
         </a>
-        <a href="ueber-mich.html" class="lo-card lo-c-copper">
-          <span class="lo-n">02</span>
+        <a href="ueber-mich.html" class="lo-c-card lo-c-orange">
+          <span class="lo-c-n">02</span>
           <h3>Meine Geschichte</h3>
-          <p>Von fünf Lebensmitteln zurück ins Leben. Warum ich das alles weiß — aus eigener Erfahrung.</p>
-          <span class="lo-arrow">Lesen →</span>
+          <p>Von fünf Lebensmitteln zurück ins Leben — aus eigener Erfahrung.</p>
+          <span class="lo-c-arrow">Lesen →</span>
         </a>
-        <a href="blog/" class="lo-card lo-c-cream">
-          <span class="lo-n">03</span>
-          <h3>Blogbeiträge</h3>
-          <p>Elf ehrliche Artikel aus meinem Weg. Nicht als Ratschlag von oben.</p>
-          <span class="lo-arrow">Zum Blog →</span>
+        <a href="blog/" class="lo-c-card lo-c-pink">
+          <span class="lo-c-n">03</span>
+          <h3>Blog</h3>
+          <p>Elf ehrliche Artikel aus meinem Weg — nicht als Ratschlag von oben.</p>
+          <span class="lo-c-arrow">Zum Blog →</span>
         </a>
-        <a href="#app" class="lo-card lo-c-dark" data-in-page>
-          <span class="lo-n">04</span>
-          <h3>Histaminarme Rezepte</h3>
-          <p>120+ glutenfreie Rezepte ohne Industriezucker — alle in der TerraLuna App.</p>
-          <span class="lo-arrow">Rezepte →</span>
+        <a href="#app" class="lo-c-card lo-c-blue" data-in-page>
+          <span class="lo-c-n">04</span>
+          <h3>Rezepte</h3>
+          <p>120+ glutenfreie Rezepte ohne Industriezucker in der App.</p>
+          <span class="lo-c-arrow">Rezepte →</span>
+        </a>
+        <a href="#" class="lo-c-card lo-c-ink" data-explore>
+          <span class="lo-c-n">05</span>
+          <h3>Erst mal stöbern</h3>
+          <p>Ich schau mich einfach um. Zeig mir die ganze Website.</p>
+          <span class="lo-c-arrow">Stöbern →</span>
         </a>
       </div>
 
@@ -1502,24 +1576,30 @@
 </footer>
 
 <script>
-  // Landing Overlay — Intro-Animation + Wahl-Phase
+  // Landing Overlay — 6 States (Wort × 2 Farb-Invert), dann Choice
   (function () {
     const overlay   = document.getElementById('landing-overlay');
-    const skipBtn   = document.getElementById('lo-skip');
-    const intro     = document.getElementById('lo-intro-phase');
-    const wahl      = document.getElementById('lo-wahl-phase');
+    const stageWrap = document.getElementById('lo-stage-wrap');
     const wordEl    = document.getElementById('lo-word');
     const subEl     = document.getElementById('lo-word-sub');
     const kickerEl  = document.getElementById('lo-kicker');
+    const mobileTag = document.getElementById('lo-mobile-tag');
     const dots      = document.querySelectorAll('#lo-progress .pd');
-    const KEY       = 'jb-landing-dismissed';
+    const skipBtn   = document.getElementById('lo-skip');
+    const skipBtn2  = document.getElementById('lo-skip-choice');
+    const choice    = document.getElementById('lo-choice');
+    const progress  = document.getElementById('lo-progress');
 
+    // 6 States: pro Wort 2 (a = cream, b = farbig)
     const STATES = [
-      { kicker: 'N°01', word: 'Blähbauch?',       sub: 'Kann Histamin sein — muss aber nicht.',        bg: 'bg-1' },
-      { kicker: 'N°02', word: 'PMS?',             sub: 'Der Zyklus verändert alles — auch dich.',      bg: 'bg-2' },
-      { kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',                 bg: 'bg-3' }
+      { cls: 'state-1a', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein — muss aber nicht.',    dot: 0 },
+      { cls: 'state-1b', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein — muss aber nicht.',    dot: 0 },
+      { cls: 'state-2a', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles — auch dich.',  dot: 1 },
+      { cls: 'state-2b', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles — auch dich.',  dot: 1 },
+      { cls: 'state-3a', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',              dot: 2 },
+      { cls: 'state-3b', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',              dot: 2 }
     ];
-    const SLIDE_MS = 2400;
+    const SLIDE_MS = 1900;
     let idx = 0;
     let timer;
 
@@ -1533,57 +1613,88 @@
       overlay.classList.remove('visible');
       document.documentElement.classList.remove('overlay-open');
       document.body.classList.remove('overlay-open');
-      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
     }
-    function showPhase(el) {
-      [intro, wahl].forEach(p => p.classList.remove('on'));
-      el.classList.add('on');
+    function showChoice() {
+      clearTimeout(timer);
+      progress.style.display = 'none';
+      skipBtn.style.display = 'none';
+      kickerEl.style.display = 'none';
+      document.querySelector('.lo-brand-mark').style.display = 'none';
+      mobileTag.style.display = 'none';
+      stageWrap.style.display = 'none';
+      choice.classList.add('on');
     }
 
     function applyState(i) {
       const s = STATES[i];
-      intro.classList.remove('bg-1', 'bg-2', 'bg-3');
-      intro.classList.add(s.bg);
-      dots.forEach((d, di) => d.classList.toggle('active', di === i));
+      const prev = STATES[i - 1];
+      const wordChanges = !prev || prev.word !== s.word;
 
-      // fade out current
-      wordEl.classList.add('out'); wordEl.classList.remove('in');
-      subEl.classList.add('out');  subEl.classList.remove('in');
+      // BG-Klasse wechseln (CSS macht den 0.28s Farb-Übergang)
+      STATES.forEach(x => stageWrap.classList.remove(x.cls));
+      stageWrap.classList.add(s.cls);
+
+      // Kicker/Brand-Tag
       kickerEl.textContent = s.kicker;
+      mobileTag.textContent = s.kicker + ' · Julia Bergles';
 
-      setTimeout(() => {
-        wordEl.textContent = s.word;
-        subEl.textContent  = s.sub;
-        wordEl.classList.remove('out'); wordEl.classList.add('in');
-        subEl.classList.remove('out');  subEl.classList.add('in');
-      }, 360);
+      // Progress-Dot
+      dots.forEach((d, di) => d.classList.toggle('active', di === s.dot));
+
+      // Wort: snapt in 100-150ms wenn's sich ändert; Sub fliegt jedes Mal neu
+      if (wordChanges) {
+        wordEl.classList.add('snap');
+        wordEl.classList.remove('in');
+        setTimeout(() => {
+          wordEl.textContent = s.word;
+          wordEl.classList.add('in');
+        }, 100);
+        setTimeout(() => {
+          wordEl.classList.remove('snap', 'in');
+        }, 400);
+      }
+
+      // Sub: jedes Mal neu von links einfliegen
+      subEl.classList.remove('slide', 'in');
+      // Force reflow, damit Transition neu triggert
+      void subEl.offsetWidth;
+      subEl.textContent = s.sub;
+      subEl.classList.add('slide');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => subEl.classList.add('in'));
+      });
     }
 
     function tick() {
       idx++;
       if (idx >= STATES.length) {
-        // Intro done → Wahl-Phase
-        setTimeout(() => showPhase(wahl), 800);
+        showChoice();
         return;
       }
       applyState(idx);
       timer = setTimeout(tick, SLIDE_MS);
     }
 
-    // Session-Check
-    let dismissed = false;
-    try { dismissed = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+    // Immer öffnen — kein sessionStorage-Skip
+    openOverlay();
+    // State 0 ist schon aus HTML gerendert; nur den Sub einmalig triggern
+    requestAnimationFrame(() => {
+      subEl.classList.remove('in');
+      requestAnimationFrame(() => subEl.classList.add('in'));
+    });
+    timer = setTimeout(tick, SLIDE_MS);
 
-    if (!dismissed) {
-      openOverlay();
-      showPhase(intro);
-      // start after first paint (word is already visible via .in)
-      timer = setTimeout(tick, SLIDE_MS);
-    }
+    // Skip → direkt Choice
+    skipBtn.addEventListener('click', showChoice);
+    // Choice-Skip → Overlay komplett zu
+    if (skipBtn2) skipBtn2.addEventListener('click', closeOverlay);
 
-    skipBtn.addEventListener('click', closeOverlay);
+    // "Erst mal stöbern" schließt Overlay
+    overlay.querySelectorAll('[data-explore]').forEach(el => {
+      el.addEventListener('click', (e) => { e.preventDefault(); closeOverlay(); });
+    });
 
-    // In-page anchor cards (Wahl-Phase): close, then smooth-scroll
+    // In-Page-Anchor: Overlay zu, dann scrollen
     overlay.querySelectorAll('[data-in-page]').forEach(el => {
       el.addEventListener('click', (e) => {
         const href = el.getAttribute('href') || '';
@@ -1597,14 +1708,7 @@
       });
     });
 
-    // Regular navigation clicks should still dismiss for the session
-    overlay.querySelectorAll('a[href]:not([data-in-page])').forEach(a => {
-      a.addEventListener('click', () => {
-        try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
-      });
-    });
-
-    // Esc closes
+    // Esc schließt
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay.classList.contains('visible')) closeOverlay();
     });
