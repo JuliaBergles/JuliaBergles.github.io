@@ -124,13 +124,20 @@ Verlinkt aus der Startseite + jedem passenden Blog-Artikel.
 
 ---
 
-## WYH — nicht löschen, nur ausblenden
+## WYH — raus (Stand Juli 2026, von Julia bestätigt)
 
-Diese Dateien bleiben liegen (für spätere Reaktivierung), werden aber **NICHT mehr aus der Nav / Startseite verlinkt**:
+Wear Your Healing ist aus Nav und Footer **komplett raus**. Dateien bleiben auf Platte liegen — falls Julia's je wieder aktivieren will, sind sie da. Aber im aktuellen Bild der Website: **nicht existent**.
 
+Dateien, die liegen bleiben (nicht verlinkt, nicht löschen):
 - `eatmoreart.html` (Shop)
 - `bestellen.html`, `bestell-uebersicht.html`, `danke.html`, `widerruf.html` (Bestellprozess)
 - `funnel.html`
+- `freebook.html`, `ebooks.html` (Freebook-Landings — WYH-Ära)
+- `dashboard.html`, `deine-speisekammer.html`, `onboarding.html`, `social-media.html` (WYH-Ära, unbenutzt)
+- `masterclass/` gesamt (Seelenbauch Masterclass — WYH-Ära)
+- `selbsttest.html` (unbenutzt seit Redesign)
+
+**Nicht** in Nav/Footer aufnehmen. Wenn Julia je zurück will → explizit ansprechen.
 
 ---
 
@@ -158,9 +165,24 @@ Betroffen u. a.:
 
 ## Was gerade offen ist (Juli 2026)
 
-- [ ] Startseite neu bauen: Nav größer, WYH raus, Fonts umstellen, App-Fokus, Blog-Grid, Telefonat-Sektion, aho.bio-Empfehlung
-- [ ] Info-Seiten `histaminintoleranz.html`, `mcas.html`, `reizdarm.html` als Skelett anlegen
-- [ ] Blog-Ordner `blog/` mit Index + Platzhaltern für 11 Artikel
-- [ ] Bilder in `blog-bilder/` den Artikeln zuordnen (Julia + Claude gemeinsam)
-- [ ] Blog-Artikel schreiben (Julia liefert Text, Claude baut HTML + korrigiert Grammatik)
-- [ ] Git-Löschungen klären (siehe Warnung oben)
+**Erledigt:**
+- [x] Startseite neu gebaut — editorial Design nach Julias Screenshots, zentriertes „Julia" Logo, Menü-basiert (Über mich | Blog | App | Gespräch | Empfehlungen | Kontakt)
+- [x] Info-Seiten `histaminintoleranz.html`, `mcas.html`, `reizdarm.html` als Skelett
+- [x] Blog-Struktur: `blog/index.html` + 11 Platzhalter-Ordner
+- [x] Neue Seiten: `ueber-mich.html`, `gespraech.html`
+- [x] `empfehlungen.html` im neuen Design
+- [x] WYH aus Nav/Footer raus, Dateien bleiben
+- [x] Git-Löschungen aus dem Move committed
+- [x] Shared CSS in `assets/site.css` für alle neuen Seiten
+
+**Noch offen:**
+- [ ] **Julia-Texte einbauen** — überall wo 📝 Platzhalter stehen (Homepage-Hero-Sub, Über mich, Info-Seiten, Blog-Artikel). Julia schreibt selbst, Claude paste ein.
+- [ ] Bilder für Blog-Karten wo aktuell Text-Platzhalter (wenig, Sport, hören, enttäuscht)
+- [ ] Ggf. Hero-Foto tauschen (aktuell `images/IMG_5738.jpeg` — falls besseres Bild da)
+- [ ] `app.html` läuft noch im alten Design — entscheiden ob umziehen oder lassen
+- [ ] Bilder in `blog-bilder/` (100MB, lokal, nicht im Repo) den Blog-Artikeln zuordnen
+
+## Feedback-Regeln aus laufenden Sessions
+
+- **Julia's Prosa gehört Julia.** Claude hat mehrfach Versuche in ihrer Stimme geschrieben (Hero-Sub, Meine-Geschichte-Teaser) — jedes Mal Rückmeldung „klingt nicht gut". Konsequenz: bei prosa-artigem Content nur Platzhalter setzen, Julia füllt.
+- **Ehrlich sein, dass es Placeholder ist.** Kein Versuch, sanft in ihre Voice zu schreiben.
