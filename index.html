@@ -1944,7 +1944,11 @@
       </div>
     </div>
     <div class="rezepte-cta">
-      <a href="app.html" class="rezepte-btn">Rezepte in der App →</a>
+      <p class="rezepte-cta-note">Einige Rezepte findest du hier</p>
+      <div class="rezepte-cta-buttons">
+        <a href="app.html" class="rezepte-btn">Alle Rezepte in der App →</a>
+        <a href="blog/" class="rezepte-btn-outline">Vorschau ansehen →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -2083,8 +2087,17 @@
   .rezepte-cta {
     text-align: center;
   }
+  .rezepte-cta-note {
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--bordeaux); margin-bottom: 20px;
+    display: inline-block;
+  }
+  .rezepte-cta-buttons {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  }
   .rezepte-btn {
-    display: inline-block; padding: 20px 44px;
+    display: inline-block; padding: 20px 36px;
     background: var(--bordeaux); color: var(--bg);
     border-radius: 999px;
     font-family: 'Rubik', sans-serif;
@@ -2094,6 +2107,20 @@
     transition: transform 0.3s;
   }
   .rezepte-btn:hover { transform: translateY(-3px); }
+  .rezepte-btn-outline {
+    display: inline-block; padding: 20px 36px;
+    background: transparent; color: var(--bordeaux);
+    border: 1.5px solid var(--bordeaux);
+    border-radius: 999px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px; font-weight: 700; letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+  }
+  .rezepte-btn-outline:hover {
+    transform: translateY(-3px);
+    background: var(--bordeaux); color: var(--bg);
+  }
 
   /* Mobile */
   @media (max-width: 900px) {
