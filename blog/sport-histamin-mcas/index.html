@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sport und Histamin / MCAS — ein Artikel von Julia Bergles über ihren Weg mit Histaminintoleranz, MCAS und Reizdarm.">
+  <title>Sport und Histamin / MCAS — Julia Bergles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <style>
+    .article-hero-img {
+      width: 100%; max-width: 900px; margin: 40px auto 0;
+      aspect-ratio: 16 / 9;
+      background-size: cover; background-position: center;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(149,82,81,0.15);
+    }
+    .article-nav {
+      max-width: 720px; margin: 40px auto 0; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Object Sans', sans-serif; font-size: 14px;
+    }
+    .article-nav a {
+      color: var(--bordeaux); text-decoration: none; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .article-nav a:hover { color: var(--copper); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Julia <em>Bergles</em></a>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="../../index.html#app">TerraLuna App</a>
+      <a href="../">Blog</a>
+      <a href="../../index.html#geschichte">Meine Geschichte</a>
+      <a href="../../index.html#telefonat">Gespräch</a>
+      <a href="../../index.html#kontakt">Kontakt</a>
+      <a href="../../app.html" class="nav-cta">App laden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-nav" style="padding-top: 100px;">
+  <a href="../">← Alle Artikel</a>
+</div>
+
+<section class="page-hero" style="padding-top: 40px;">
+  <div class="page-hero-inner">
+    <span class="page-hero-tag">Sport</span>
+    <h1>Sport und Histamin / MCAS</h1>
+    <p class="lead">Warum HIIT bei mir alles verschlimmert hat — und was heute funktioniert.</p>
+  </div>
+  
+</section>
+
+<section class="content">
+  <div class="content-inner">
+
+    <div class="placeholder-block">
+      <strong>Dieser Artikel wird bald geschrieben.</strong><br>
+      Julia arbeitet dran. Wenn du in der Zwischenzeit was zum Thema hören willst — schreib ihr auf <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener">Instagram</a> oder buch ein <a href="../../index.html#telefonat">Peer-Support-Gespräch</a>.
+    </div>
+
+    <div class="disclaimer-box">
+      <p><strong>Wichtig:</strong> Alle Inhalte in diesem Blog sind meine persönliche Erfahrung. Keine medizinische Beratung. Bei Beschwerden sprich bitte mit einer Ärztin oder einem Arzt.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-app">
+  <h2>Alle Rezepte und Lebensmittel-Bewertungen in der <em>TerraLuna App</em></h2>
+  <p>250+ Lebensmittel mit Ampel-System, 120+ glutenfreie Rezepte, Histamin-Scanner, Zyklustracking.</p>
+  <a href="../../app.html" class="btn-primary" style="background: linear-gradient(135deg, #E8C4A8, #F2D9C4); color: var(--bordeaux);">App entdecken</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Julia <em>Bergles</em></div>
+    <div class="footer-links">
+      <a href="../../index.html#app">TerraLuna App</a>
+      <a href="../">Blog</a>
+      <a href="../../histaminintoleranz.html">Histaminintoleranz</a>
+      <a href="../../mcas.html">MCAS</a>
+      <a href="../../reizdarm.html">Reizdarm</a>
+      <a href="../../index.html#empfehlungen">Empfehlungen</a>
+      <a href="../../impressum.html">Impressum</a>
+      <a href="../../datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
+    <div class="footer-disclaimer">
+      Meine Inhalte sind Erfahrungsberichte, kein Ersatz für ärztliche Beratung.<br>
+      &copy; 2024–2026 Julia Bergles
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
