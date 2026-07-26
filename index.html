@@ -8,35 +8,67 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+  <!-- Fallback-Fonts bis Sunborn/Neue Montreal WOFF2 in /fonts/ liegen -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&display=swap">
+
+  <style>
+    /* Sunborn + Neue Montreal — Datei-Drop in /fonts/ genügt */
+    @font-face {
+      font-family: 'Sunborn';
+      src: url('fonts/Sunborn-SansOne.woff2') format('woff2'),
+           url('fonts/Sunborn.woff2') format('woff2');
+      font-weight: 400 900;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('fonts/NeueMontreal-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('fonts/NeueMontreal-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Neue Montreal';
+      src: url('fonts/NeueMontreal-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-display: swap;
+    }
+  </style>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      /* Neue App-Palette — kräftiger, warm, wie in TerraLuna */
-      --bordeaux: #430a14;      /* Malaga — Statement/Primary */
-      --bordeaux-hi: #6b1424;   /* Malaga hover */
-      --pink: #c74873;          /* Akzent frisch */
-      --orange: #ff9c6d;        /* Gold/Orange leuchtend */
-      --orange-hi: #ffb08a;
-      --blue: #7993ae;          /* kalter Kontrast */
-      --ink: #2D1F22;           /* Text/Dark */
-      /* Kompatibilität mit bestehendem CSS */
-      --copper: #ff9c6d;        /* jetzt Orange */
-      --copper-light: #ffb08a;
-      --warm-white: #FBF2ED;    /* Cream Hintergrund */
-      --warm-cream: #F3D6C6;    /* wärmer, peachy */
-      --warm-beige: #EFE4D9;
-      --warm-sand: #E8D0BE;
+      /* Julias offizielle Palette */
+      --malaga: #520b23;        /* Primary — Malaga */
+      --gold:   #e2ae61;        /* Warm Akzent — Gold */
+      --pink:   #c74873;        /* Akzent frisch */
+      --beige:  #ded0c2;        /* Hintergrund warm */
+      --cream:  #f5ebe0;        /* Heller Cream */
+      --ink:    #2D1F22;        /* Text dark */
+      /* Alias für bestehendes CSS */
+      --bordeaux: #520b23;
+      --bordeaux-hi: #6d1a30;
+      --orange: #e2ae61;
+      --orange-hi: #eec287;
+      --blue: #7993ae;
+      --copper: #e2ae61;
+      --copper-light: #eec287;
+      --warm-white: #f5ebe0;
+      --warm-cream: #ded0c2;
+      --warm-beige: #d6c5b5;
+      --warm-sand: #c9b8a7;
       --text-dark: #2D1F22;
       --text-muted: #6b5459;
-      --line: rgba(45,31,34,0.10);
+      --line: rgba(82,11,35,0.14);
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Object Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', -apple-system, sans-serif;
       background: var(--warm-white);
       color: var(--text-dark);
       line-height: 1.75;
@@ -46,7 +78,7 @@
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-weight: 800; letter-spacing: -0.02em; color: var(--text-dark); line-height: 1.05; }
+    h1, h2, h3, h4 { font-family: 'Sunborn', 'Fraunces', serif; font-weight: 800; letter-spacing: -0.02em; color: var(--text-dark); line-height: 1.05; }
     a { color: inherit; }
     img { display: block; max-width: 100%; }
 
@@ -54,7 +86,7 @@
     .topbar {
       background: var(--text-dark);
       color: var(--warm-white);
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 10.5px; font-weight: 600;
       letter-spacing: 0.28em; text-transform: uppercase;
       padding: 11px 24px;
@@ -96,7 +128,7 @@
     }
     .nav-left, .nav-right {
       display: flex; align-items: center; gap: 6px;
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 12px; font-weight: 600;
       letter-spacing: 0.24em; text-transform: uppercase;
     }
@@ -111,7 +143,7 @@
     nav.scrolled .nav-left a, nav.scrolled .nav-right a { color: var(--text-dark); }
     nav.scrolled .nav-left a:hover, nav.scrolled .nav-right a:hover { color: var(--copper); opacity: 1; }
     .nav-logo {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-style: normal;
       font-size: 36px; font-weight: 500;
       color: var(--warm-white);
@@ -163,7 +195,7 @@
       color: var(--warm-white);
     }
     .hero-eyebrow {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.4em; text-transform: uppercase;
       color: rgba(253,251,249,0.85);
@@ -179,7 +211,7 @@
     .hero-eyebrow::before { left: 0; }
     .hero-eyebrow::after { right: 0; }
     .hero h1 {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-size: clamp(2.6rem, 6vw, 5.4rem);
       font-weight: 500;
       color: var(--warm-white);
@@ -205,7 +237,7 @@
     .hero-scroll {
       position: absolute; z-index: 3;
       bottom: 32px; left: 50%; transform: translateX(-50%);
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 10px; font-weight: 700;
       letter-spacing: 0.32em; text-transform: uppercase;
       color: rgba(253,251,249,0.7);
@@ -233,7 +265,7 @@
       border-radius: 20px;
     }
     .float-card-label {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 10.5px; font-weight: 700;
       letter-spacing: 0.32em; text-transform: uppercase;
       color: var(--copper);
@@ -247,7 +279,7 @@
       margin: 0 10px;
     }
     .float-card h3 {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-size: 1.9rem; font-weight: 500;
       text-align: center;
       margin-bottom: 22px;
@@ -278,7 +310,7 @@
       background: var(--text-dark);
       color: var(--warm-white);
       padding: 16px 34px;
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 12px; font-weight: 700;
       letter-spacing: 0.26em; text-transform: uppercase;
       text-decoration: none;
@@ -307,14 +339,14 @@
 
     /* ────────── SECTION HEADER (shared) ────────── */
     .eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.32em; text-transform: uppercase;
       color: var(--bordeaux);
       margin-bottom: 20px;
     }
     .section-h {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-size: clamp(2.2rem, 4vw, 3.4rem);
       font-weight: 500; line-height: 1.05;
       letter-spacing: -0.01em;
@@ -375,19 +407,19 @@
     }
     .pricing-row + .pricing-row { border-top: 1px solid var(--line); }
     .pricing-row .plan {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 13px; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--text-dark);
     }
     .pricing-row .amount {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-size: 1.6rem; font-weight: 500;
       color: var(--bordeaux);
     }
     .pricing-row .amount span {
       font-size: 0.85rem; color: var(--text-muted);
-      font-family: 'Object Sans', sans-serif; font-weight: 500;
+      font-family: 'Neue Montreal', 'Inter', sans-serif; font-weight: 500;
     }
     .pricing-note {
       font-size: 13px; color: var(--text-muted);
@@ -411,13 +443,13 @@
     .store-btn-icon { width: 22px; height: 22px; }
     .store-btn-txt { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
     .store-btn-txt small {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 9px; font-weight: 600;
       letter-spacing: 0.24em; text-transform: uppercase;
       color: rgba(253,251,249,0.7);
     }
     .store-btn-txt strong {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 14px; font-weight: 700;
     }
 
@@ -459,14 +491,14 @@
       display: flex; flex-direction: column;
     }
     .diag-card-label {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 10.5px; font-weight: 700;
       letter-spacing: 0.32em; text-transform: uppercase;
       color: var(--copper);
       margin-bottom: 14px;
     }
     .diag-card h3 {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-size: 1.7rem; font-weight: 500;
       line-height: 1.1;
       margin-bottom: 16px;
@@ -479,7 +511,7 @@
       flex: 1;
     }
     .diag-card-more {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.28em; text-transform: uppercase;
       color: var(--text-dark);
@@ -562,20 +594,20 @@
       background: var(--warm-cream);
     }
     .blog-card-img.placeholder span {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-style: normal;
       font-size: 4rem;
       color: rgba(149,82,81,0.22);
     }
     .blog-card-cat {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 10px; font-weight: 700;
       letter-spacing: 0.32em; text-transform: uppercase;
       color: var(--copper);
       margin-bottom: 10px;
     }
     .blog-card h3 {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-size: 1.4rem; font-weight: 500;
       line-height: 1.2;
       margin-bottom: 10px;
@@ -615,7 +647,7 @@
     }
     .platform-label {
       display: block;
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 13px; font-weight: 700;
       letter-spacing: 0.36em; text-transform: uppercase;
       color: var(--text-dark);
@@ -635,7 +667,7 @@
       max-width: 620px; margin: 0 auto; text-align: center;
     }
     .newsletter h2 {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-size: clamp(2.2rem, 4vw, 3rem);
       font-weight: 500;
       margin-bottom: 14px;
@@ -672,7 +704,7 @@
       text-align: center;
     }
     .footer-logo {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-style: normal;
       font-size: 40px; font-weight: 500;
       color: var(--warm-white);
@@ -689,7 +721,7 @@
     .footer-links {
       display: flex; gap: 22px 34px; justify-content: center; flex-wrap: wrap;
       margin: 36px 0 26px;
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.26em; text-transform: uppercase;
     }
@@ -719,7 +751,7 @@
     /* Kicker (oben links) + Brand-Mark (oben rechts) */
     .lo-kicker {
       position: absolute; top: 32px; left: 40px; z-index: 5;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 12px; font-weight: 600;
       letter-spacing: 0.02em;
       color: var(--ink);
@@ -728,7 +760,7 @@
     }
     .lo-brand-mark {
       position: absolute; top: 32px; right: 40px; z-index: 5;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 12px; font-weight: 600;
       letter-spacing: 0.02em;
       color: var(--ink);
@@ -738,7 +770,7 @@
     .lo-mobile-tag {
       display: none;
       position: absolute; bottom: 130px; left: 50%; transform: translateX(-50%);
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.05em;
       color: var(--ink);
@@ -780,7 +812,7 @@
       padding: 0 40px;
     }
     .lo-word {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-family: 'Sunborn', 'Fraunces', serif;
       font-weight: 900;
       font-size: clamp(3.2rem, 12vw, 9.5rem);
       line-height: 0.95;
@@ -805,7 +837,7 @@
     }
 
     .lo-word-sub {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-weight: 500;
       font-size: clamp(1rem, 1.6vw, 1.35rem);
       line-height: 1.45;
@@ -861,7 +893,7 @@
       background: transparent;
       color: var(--ink);
       border: 1px solid rgba(45,31,34,0.25);
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 12px; font-weight: 600;
       letter-spacing: 0.04em;
       padding: 12px 26px;
@@ -889,7 +921,13 @@
     /* ══════════ CHOICE-SLIDE ══════════ */
     #lo-choice {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, var(--warm-white) 0%, var(--warm-cream) 100%);
+      background:
+        linear-gradient(180deg, rgba(245,235,224,0.88) 0%, rgba(222,208,194,0.94) 100%),
+        url('images/pfingstrose.jpeg'),
+        url('images/IMG_5716.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       display: none;
       overflow-y: auto;
       padding: 88px 32px 128px;
@@ -900,7 +938,7 @@
       text-align: center;
     }
     .lo-choice-kicker {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 12px; font-weight: 600;
       letter-spacing: 0.05em;
       color: var(--bordeaux);
@@ -921,7 +959,7 @@
       color: var(--bordeaux);
     }
     .lo-choice-sub {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 16px;
       color: var(--ink);
       opacity: 0.72;
@@ -943,7 +981,7 @@
       color: var(--ink);
       border: 1px solid rgba(67,10,20,0.18);
       border-radius: 999px;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 14px; font-weight: 600;
       text-decoration: none;
       transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
@@ -956,7 +994,7 @@
     }
 
     .lo-choice-divider {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.16em; text-transform: uppercase;
       color: var(--ink);
@@ -971,12 +1009,12 @@
       max-width: 1200px; margin: 0 auto 26px;
     }
     .lo-c-card {
-      display: flex; flex-direction: column;
-      padding: 32px 24px 26px;
+      display: flex; align-items: flex-end;
+      padding: 24px 22px;
       text-align: left;
       text-decoration: none;
-      min-height: 280px;
-      border-radius: 14px;
+      min-height: 220px;
+      border-radius: 18px;
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s;
       cursor: pointer;
       position: relative;
@@ -984,47 +1022,41 @@
     }
     .lo-c-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 30px 60px rgba(45,31,34,0.18);
-    }
-    .lo-c-card .lo-c-n {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 900;
-      font-size: 34px;
-      line-height: 1;
-      margin-bottom: 20px;
-      opacity: 0.85;
+      box-shadow: 0 30px 60px rgba(45,31,34,0.20);
     }
     .lo-c-card h3 {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 900;
-      font-size: 22px;
-      line-height: 1.1;
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
+      font-family: 'Sunborn', 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 2;
     }
-    .lo-c-card p {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 13.5px;
-      line-height: 1.55;
-      flex-grow: 1;
-      margin-bottom: 22px;
-      opacity: 0.9;
-    }
-    .lo-c-arrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.15em;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: gap 0.3s;
-    }
-    .lo-c-card:hover .lo-c-arrow { gap: 14px; }
 
-    /* Signature-Farb-Variants */
-    .lo-c-orange { background: var(--orange); color: var(--ink); }
-    .lo-c-bordeaux { background: var(--bordeaux); color: var(--orange); }
-    .lo-c-pink { background: var(--pink); color: var(--ink); }
-    .lo-c-blue { background: var(--blue); color: var(--warm-white); }
-    .lo-c-ink { background: var(--ink); color: var(--warm-white); }
+    /* Farb-Variants aus Julias Palette */
+    .lo-c-malaga { background: var(--malaga); color: var(--cream); }
+    .lo-c-gold   { background: var(--gold);   color: var(--ink); }
+    .lo-c-pink   { background: var(--pink);   color: var(--cream); }
+    .lo-c-blue   { background: var(--blue);   color: var(--cream); }
+    .lo-c-ink    { background: var(--ink);    color: var(--gold); }
+    .lo-c-beige  { background: var(--beige);  color: var(--malaga); }
+
+    /* TerraLuna Card mit App-Screenshot */
+    .lo-c-image {
+      background-size: cover;
+      background-position: center top;
+      background-color: var(--malaga);
+      color: var(--cream);
+      min-height: 300px;
+    }
+    .lo-c-image::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(82,11,35,0.15) 0%, rgba(82,11,35,0.55) 60%, rgba(82,11,35,0.9) 100%);
+      z-index: 1;
+    }
+    .lo-c-image h3 { color: var(--cream); }
 
     /* Selbsttest-CTA nach den Cards */
     .lo-selbsttest {
@@ -1048,7 +1080,7 @@
     }
     .lo-selbsttest-body { display: flex; flex-direction: column; gap: 4px; }
     .lo-selbsttest-body .lo-eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--bordeaux);
@@ -1063,14 +1095,14 @@
       color: var(--ink);
     }
     .lo-selbsttest-body p {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 14px;
       color: var(--ink);
       opacity: 0.7;
       line-height: 1.5;
     }
     .lo-selbsttest-arrow {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Neue Montreal', 'Inter', sans-serif;
       font-size: 12px; font-weight: 700;
       letter-spacing: 0.15em;
       color: var(--bordeaux);
@@ -1216,35 +1248,20 @@
       <p class="lo-choice-divider">— oder schau dir das an —</p>
 
       <div class="lo-choice-grid">
-        <a href="#app" class="lo-c-card lo-c-bordeaux" data-in-page>
-          <span class="lo-c-n">01</span>
+        <a href="#app" class="lo-c-card lo-c-image" data-in-page style="background-image: url('images/app-v1.2/01-heute.png');">
           <h3>TerraLuna App</h3>
-          <p>Scanner, 250+ Lebensmittel mit Ampel, 120+ Rezepte und Zyklustracking.</p>
-          <span class="lo-c-arrow">Zur App →</span>
         </a>
-        <a href="ueber-mich.html" class="lo-c-card lo-c-orange">
-          <span class="lo-c-n">02</span>
+        <a href="ueber-mich.html" class="lo-c-card lo-c-malaga">
           <h3>Meine Geschichte</h3>
-          <p>Von fünf Lebensmitteln zurück ins Leben — aus eigener Erfahrung.</p>
-          <span class="lo-c-arrow">Lesen →</span>
         </a>
         <a href="blog/" class="lo-c-card lo-c-pink">
-          <span class="lo-c-n">03</span>
           <h3>Blog</h3>
-          <p>Elf ehrliche Artikel aus meinem Weg — nicht als Ratschlag von oben.</p>
-          <span class="lo-c-arrow">Zum Blog →</span>
         </a>
-        <a href="#app" class="lo-c-card lo-c-blue" data-in-page>
-          <span class="lo-c-n">04</span>
+        <a href="#app" class="lo-c-card lo-c-gold" data-in-page>
           <h3>Rezepte</h3>
-          <p>120+ glutenfreie Rezepte ohne Industriezucker in der App.</p>
-          <span class="lo-c-arrow">Rezepte →</span>
         </a>
         <a href="#" class="lo-c-card lo-c-ink" data-explore>
-          <span class="lo-c-n">05</span>
           <h3>Erst mal stöbern</h3>
-          <p>Ich schau mich einfach um. Zeig mir die ganze Website.</p>
-          <span class="lo-c-arrow">Stöbern →</span>
         </a>
       </div>
 
