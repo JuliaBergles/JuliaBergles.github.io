@@ -43,28 +43,31 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      /* Julias offizielle Palette */
-      --malaga: #520b23;        /* Primary — Malaga */
-      --gold:   #e2ae61;        /* Warm Akzent — Gold */
-      --pink:   #c74873;        /* Akzent frisch */
-      --beige:  #ded0c2;        /* Hintergrund warm */
-      --cream:  #f5ebe0;        /* Heller Cream */
-      --ink:    #2D1F22;        /* Text dark */
+      /* Julias Palette — weich & lieblich */
+      --beige:      #ded0c2;   /* Hintergrund warm */
+      --pink:       #c74873;   /* Statement-Akzent */
+      --gold:       #e2ae61;   /* Wärme */
+      --rose:       #f1d2cb;   /* Weiches Rosé/Peach */
+      --lavender:   #c3cfe6;   /* Weiches Blau/Lavendel */
+      --malaga:     #520b23;   /* Nur für Text & Featured (dezent) */
+      --cream:      #faf3ea;   /* Heller Cream Hintergrund */
+      --cream-hi:   #fdf9f2;   /* Fast weiß, warm */
+      --ink:        #4a3236;   /* Weicher warmer Grauton für Text */
       /* Alias für bestehendes CSS */
-      --bordeaux: #520b23;
-      --bordeaux-hi: #6d1a30;
-      --orange: #e2ae61;
-      --orange-hi: #eec287;
-      --blue: #7993ae;
-      --copper: #e2ae61;
-      --copper-light: #eec287;
-      --warm-white: #f5ebe0;
-      --warm-cream: #ded0c2;
-      --warm-beige: #d6c5b5;
-      --warm-sand: #c9b8a7;
-      --text-dark: #2D1F22;
-      --text-muted: #6b5459;
-      --line: rgba(82,11,35,0.14);
+      --bordeaux:      #520b23;
+      --bordeaux-hi:   #6d1a30;
+      --orange:        #e2ae61;
+      --orange-hi:     #eec287;
+      --blue:          #c3cfe6;
+      --copper:        #e2ae61;
+      --copper-light:  #eec287;
+      --warm-white:    #faf3ea;
+      --warm-cream:    #f1d2cb;
+      --warm-beige:    #ded0c2;
+      --warm-sand:     #e6d6c3;
+      --text-dark:     #4a3236;
+      --text-muted:    #8a7075;
+      --line:          rgba(82,11,35,0.10);
     }
     html { scroll-behavior: smooth; }
     body {
@@ -786,24 +789,26 @@
       background: var(--warm-white);
       transition: background 0.28s ease;
     }
-    /* 6 States: pro Wort 2 Farben (a = cream, b = farbig) */
-    #lo-stage-wrap.state-1a { background: var(--warm-white); }
-    #lo-stage-wrap.state-1b { background: var(--pink); }
-    #lo-stage-wrap.state-2a { background: var(--warm-white); }
-    #lo-stage-wrap.state-2b { background: var(--bordeaux); }
-    #lo-stage-wrap.state-3a { background: var(--warm-white); }
-    #lo-stage-wrap.state-3b { background: var(--orange); }
+    /* 6 States: pro Wort 2 Farben (a = cream, b = pastell) */
+    #lo-stage-wrap.state-1a { background: var(--cream); }
+    #lo-stage-wrap.state-1b { background: var(--rose); }
+    #lo-stage-wrap.state-2a { background: var(--cream); }
+    #lo-stage-wrap.state-2b { background: var(--lavender); }
+    #lo-stage-wrap.state-3a { background: var(--cream); }
+    #lo-stage-wrap.state-3b {
+      background: linear-gradient(135deg, #d69a48 0%, #e2ae61 25%, #f2cf8f 45%, #e2ae61 65%, #c99048 100%);
+    }
 
-    /* Kicker/Brand Farb-Invert bei dunklen BGs */
+    /* Kicker/Brand Farb-Invert bei pastelligen BGs — Malaga für Kontrast */
     #lo-stage-wrap.state-1b ~ .lo-kicker,
     #lo-stage-wrap.state-1b ~ .lo-brand-mark,
-    #lo-stage-wrap.state-1b ~ .lo-mobile-tag { color: var(--warm-white); opacity: 0.9; }
+    #lo-stage-wrap.state-1b ~ .lo-mobile-tag { color: var(--malaga); opacity: 0.85; }
     #lo-stage-wrap.state-2b ~ .lo-kicker,
     #lo-stage-wrap.state-2b ~ .lo-brand-mark,
-    #lo-stage-wrap.state-2b ~ .lo-mobile-tag { color: var(--orange); opacity: 1; }
+    #lo-stage-wrap.state-2b ~ .lo-mobile-tag { color: var(--malaga); opacity: 0.85; }
     #lo-stage-wrap.state-3b ~ .lo-kicker,
     #lo-stage-wrap.state-3b ~ .lo-brand-mark,
-    #lo-stage-wrap.state-3b ~ .lo-mobile-tag { color: var(--ink); opacity: 0.85; }
+    #lo-stage-wrap.state-3b ~ .lo-mobile-tag { color: var(--malaga); opacity: 0.9; }
 
     /* Wortstack */
     .lo-wordstack {
@@ -823,11 +828,15 @@
     }
     /* Wort-Farbe je State */
     #lo-stage-wrap.state-1a .lo-word { color: var(--pink); }
-    #lo-stage-wrap.state-1b .lo-word { color: var(--warm-white); }
-    #lo-stage-wrap.state-2a .lo-word { color: var(--bordeaux); }
-    #lo-stage-wrap.state-2b .lo-word { color: var(--warm-white); }
-    #lo-stage-wrap.state-3a .lo-word { color: var(--orange); }
-    #lo-stage-wrap.state-3b .lo-word { color: var(--ink); }
+    #lo-stage-wrap.state-1b .lo-word { color: var(--malaga); }
+    #lo-stage-wrap.state-2a .lo-word { color: var(--malaga); }
+    #lo-stage-wrap.state-2b .lo-word { color: var(--malaga); }
+    #lo-stage-wrap.state-3a .lo-word {
+      background: linear-gradient(135deg, #d69a48 0%, #e2ae61 30%, #f5d59c 55%, #c99048 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #lo-stage-wrap.state-3b .lo-word { color: var(--malaga); }
     .lo-word.snap {
       opacity: 0;
       transition: opacity 0.15s ease;
@@ -956,7 +965,9 @@
     }
     .lo-choice-h em {
       font-style: normal;
-      color: var(--bordeaux);
+      background: linear-gradient(135deg, #c99048 0%, #e2ae61 30%, #f5d59c 55%, #d69a48 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .lo-choice-sub {
       font-family: 'Neue Montreal', 'Inter', sans-serif;
@@ -988,8 +999,8 @@
       cursor: pointer;
     }
     .lo-chip:hover {
-      background: var(--bordeaux); color: var(--warm-white);
-      border-color: var(--bordeaux);
+      background: var(--pink); color: var(--cream);
+      border-color: var(--pink);
       transform: translateY(-2px);
     }
 
@@ -1034,29 +1045,56 @@
       z-index: 2;
     }
 
-    /* Farb-Variants aus Julias Palette */
-    .lo-c-malaga { background: var(--malaga); color: var(--cream); }
-    .lo-c-gold   { background: var(--gold);   color: var(--ink); }
-    .lo-c-pink   { background: var(--pink);   color: var(--cream); }
-    .lo-c-blue   { background: var(--blue);   color: var(--cream); }
-    .lo-c-ink    { background: var(--ink);    color: var(--gold); }
-    .lo-c-beige  { background: var(--beige);  color: var(--malaga); }
+    /* Farb-Variants — pastell & weich */
+    .lo-c-malaga   { background: var(--malaga);   color: var(--cream); }
+    .lo-c-pink     { background: var(--pink);     color: var(--cream); }
+    .lo-c-rose     { background: var(--rose);     color: var(--malaga); }
+    .lo-c-lavender { background: var(--lavender); color: var(--malaga); }
+    .lo-c-beige    { background: var(--beige);    color: var(--malaga); }
+    .lo-c-cream    { background: var(--cream-hi); color: var(--malaga); border: 1px solid rgba(82,11,35,0.10); }
 
-    /* TerraLuna Card mit App-Screenshot */
+    /* Gold-Card: subtiler metallic Verlauf */
+    .lo-c-gold {
+      background: linear-gradient(135deg, #d69a48 0%, #e2ae61 25%, #f2cf8f 45%, #e2ae61 65%, #c99048 100%);
+      color: var(--malaga);
+      position: relative;
+    }
+
+    /* Metallic Sheen on hover — läuft einmal durch */
+    .lo-c-card::after {
+      content: '';
+      position: absolute; top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.14) 50%, transparent 100%);
+      transform: skewX(-20deg);
+      transition: left 0.9s cubic-bezier(0.16,1,0.3,1);
+      pointer-events: none;
+      z-index: 3;
+    }
+    .lo-c-card:hover::after { left: 125%; }
+
+    /* TerraLuna Card mit App-Screenshot — malaga Overlay + gold Metallic-Rand */
     .lo-c-image {
       background-size: cover;
       background-position: center top;
       background-color: var(--malaga);
       color: var(--cream);
       min-height: 300px;
+      box-shadow: inset 0 0 0 1px rgba(226,174,97,0.35);
     }
     .lo-c-image::before {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(82,11,35,0.15) 0%, rgba(82,11,35,0.55) 60%, rgba(82,11,35,0.9) 100%);
+      background: linear-gradient(180deg, rgba(82,11,35,0.15) 0%, rgba(82,11,35,0.45) 55%, rgba(82,11,35,0.82) 100%);
       z-index: 1;
     }
-    .lo-c-image h3 { color: var(--cream); }
+    .lo-c-image h3 {
+      color: var(--cream);
+      background: linear-gradient(135deg, #f2cf8f 0%, #e2ae61 40%, #f5d59c 70%, #e2ae61 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
     /* Selbsttest-CTA nach den Cards */
     .lo-selbsttest {
@@ -1251,16 +1289,16 @@
         <a href="#app" class="lo-c-card lo-c-image" data-in-page style="background-image: url('images/app-v1.2/01-heute.png');">
           <h3>TerraLuna App</h3>
         </a>
-        <a href="ueber-mich.html" class="lo-c-card lo-c-malaga">
+        <a href="ueber-mich.html" class="lo-c-card lo-c-gold">
           <h3>Meine Geschichte</h3>
         </a>
         <a href="blog/" class="lo-c-card lo-c-pink">
           <h3>Blog</h3>
         </a>
-        <a href="#app" class="lo-c-card lo-c-gold" data-in-page>
+        <a href="#app" class="lo-c-card lo-c-rose" data-in-page>
           <h3>Rezepte</h3>
         </a>
-        <a href="#" class="lo-c-card lo-c-ink" data-explore>
+        <a href="#" class="lo-c-card lo-c-lavender" data-explore>
           <h3>Erst mal stöbern</h3>
         </a>
       </div>
