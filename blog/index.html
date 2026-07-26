@@ -59,30 +59,60 @@
 
 <div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="../app.html">jetzt laden</a></div>
 
-<nav id="mainNav">
-  <div class="nav-inner">
-    <div class="nav-left">
-      <a href="../ueber-mich.html">Über mich</a>
-      <a href="../blog/">Blog</a>
-      <a href="../app.html">TerraLuna App</a>
-    </div>
-    <a href="../index.html" class="nav-logo">Julia</a>
-    <div class="nav-right">
-      <a href="../gespraech.html">Gespräch</a>
-      <a href="../empfehlungen.html">Empfehlungen</a>
-      <a href="../index.html#kontakt">Kontakt</a>
-    </div>
-    <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+<nav>
+  <div class="row">
+    <a href="../index.html" class="brand">Julia</a>
+    <ul>
+      <li><a href="../ueber-mich.html">Über mich</a></li>
+      <li><a href="../app.html">TerraLuna App</a></li>
+      <li><a href="../histaminintoleranz.html">Aufklärung</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../empfehlungen.html">Empfehlungen</a></li>
+    </ul>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../ueber-mich.html">Über mich</a>
+    <a href="../app.html">TerraLuna App</a>
+    <a href="../histaminintoleranz.html">Aufklärung</a>
+    <a href="../blog/">Blog</a>
+    <a href="../empfehlungen.html">Empfehlungen</a>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
   </div>
 </nav>
 
-<section class="page-hero">
+<section class="page-hero page-hero-dark">
   <div class="page-hero-inner">
     <span class="page-hero-tag">Blog</span>
     <h1>Was mir <em>geholfen</em> hat</h1>
-    <p class="lead">Elf Artikel aus meinem Weg mit Histaminintoleranz, MCAS und Reizdarm. Nicht als Ratschlag von oben. als das, was ich dir schicken würde, wenn du mir jetzt schreiben würdest.</p>
   </div>
 </section>
+
+<style>
+  .page-hero-dark {
+    background: linear-gradient(135deg, #5a1428 0%, #430a14 100%) !important;
+    position: relative; overflow: hidden;
+    padding: 140px 32px 100px !important;
+  }
+  .page-hero-dark::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(226,174,97,0.18), transparent 65%);
+    filter: blur(60px); pointer-events: none;
+  }
+  .page-hero-dark::after {
+    content: ''; position: absolute; bottom: -100px; left: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(226,174,97,0.12), transparent 65%);
+    filter: blur(80px); pointer-events: none;
+  }
+  .page-hero-dark .page-hero-inner { position: relative; z-index: 1; }
+  .page-hero-dark .page-hero-tag { color: #e2ae61 !important; }
+  .page-hero-dark .page-hero-tag::before, .page-hero-dark .page-hero-tag::after { background: #e2ae61 !important; }
+  .page-hero-dark h1 { color: #FBF2ED !important; }
+  .page-hero-dark h1 em { color: #e2ae61 !important; }
+</style>
 
 <section class="blog-list">
   <div class="blog-list-inner">

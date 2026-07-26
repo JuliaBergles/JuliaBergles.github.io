@@ -13,21 +13,26 @@
 
 <div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
 
-<nav id="mainNav">
-  <div class="nav-inner">
-    <div class="nav-left">
-      <a href="index.html">Startseite</a>
-      <a href="ueber-mich.html">Über mich</a>
-      <a href="app.html">TerraLuna App</a>
-      <a href="blog/">Blog</a>
-    </div>
-    <a href="index.html" class="nav-logo">Julia</a>
-    <div class="nav-right">
-      <a href="histaminintoleranz.html">Aufklärung</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="gespraech.html">Gespräch</a>
-    </div>
-    <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+<nav>
+  <div class="row">
+    <a href="index.html" class="brand">Julia</a>
+    <ul>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="app.html">TerraLuna App</a></li>
+      <li><a href="histaminintoleranz.html">Aufklärung</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    </ul>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Aufklärung</a>
+    <a href="blog/">Blog</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
   </div>
 </nav>
 
