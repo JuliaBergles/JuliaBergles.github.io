@@ -221,6 +221,7 @@
       padding: 36px 32px 32px;
       box-shadow: 0 30px 80px rgba(61,43,46,0.18);
       border: 1px solid var(--line);
+      border-radius: 20px;
     }
     .float-card-label {
       font-family: 'Object Sans', sans-serif;
@@ -274,6 +275,7 @@
       text-decoration: none;
       transition: all 0.3s;
       border: 1px solid var(--text-dark);
+      border-radius: 999px;
       cursor: pointer;
       text-align: center;
     }
@@ -355,6 +357,7 @@
       border: 1px solid var(--line);
       padding: 26px 30px;
       margin: 28px 0 28px;
+      border-radius: 16px;
     }
     .pricing-row {
       display: flex; justify-content: space-between; align-items: baseline;
@@ -390,9 +393,10 @@
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--text-dark);
       color: var(--warm-white);
-      padding: 14px 22px;
+      padding: 14px 24px;
       text-decoration: none;
       transition: background 0.3s;
+      border-radius: 999px;
     }
     .store-btn:hover { background: var(--bordeaux); }
     .store-btn-icon { width: 22px; height: 22px; }
@@ -428,10 +432,12 @@
       color: inherit;
       display: flex; flex-direction: column;
       transition: transform 0.4s, box-shadow 0.4s;
+      border-radius: 18px;
+      overflow: hidden;
     }
     .diag-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 30px 60px rgba(61,43,46,0.08);
+      box-shadow: 0 30px 60px rgba(61,43,46,0.10);
     }
     .diag-card-img {
       width: 100%; aspect-ratio: 4/3;
@@ -491,6 +497,7 @@
       aspect-ratio: 4 / 5;
       background-size: cover; background-position: center;
       background-color: var(--warm-sand);
+      border-radius: 20px;
     }
     .feature-text p {
       font-size: 1.05rem;
@@ -535,6 +542,7 @@
       margin-bottom: 22px;
       position: relative;
       overflow: hidden;
+      border-radius: 16px;
     }
     .blog-card-img::after {
       content: ''; position: absolute; inset: 0;
@@ -593,6 +601,8 @@
       width: 100%; aspect-ratio: 1 / 1;
       background-size: cover; background-position: center;
       background-color: var(--warm-cream);
+      border-radius: 18px;
+      overflow: hidden;
     }
     .platform-label {
       display: block;
@@ -683,20 +693,169 @@
     .footer-contact { font-size: 13px; margin-bottom: 12px; line-height: 1.7; }
     .footer-disclaimer { font-size: 10.5px; color: rgba(253,251,249,0.35); margin-top: 22px; letter-spacing: 0.08em; line-height: 1.6; }
 
-    /* ────────── LANDING OVERLAY (Intro-Wahl) ────────── */
+    /* ────────── LANDING OVERLAY (Intro-Animation + Wahl) ────────── */
     html.overlay-open, body.overlay-open { overflow: hidden; }
     #landing-overlay {
       position: fixed; inset: 0; z-index: 200;
       background: var(--warm-white);
-      display: flex; align-items: center; justify-content: center;
-      padding: 60px 32px 100px;
-      overflow-y: auto;
+      overflow: hidden;
       opacity: 0; visibility: hidden;
       transition: opacity 0.5s ease, visibility 0s linear 0.5s;
     }
     #landing-overlay.visible {
       opacity: 1; visibility: visible;
       transition: opacity 0.5s ease, visibility 0s;
+    }
+
+    /* Phases */
+    .lo-phase {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+    }
+    .lo-phase.on { opacity: 1; visibility: visible; transition: opacity 0.6s ease, visibility 0s; }
+
+    /* ── Intro phase (auto-slideshow) ── */
+    #lo-intro-phase {
+      background: var(--warm-cream);
+      transition: background 0.9s cubic-bezier(0.4,0,0.2,1), opacity 0.6s ease, visibility 0s linear 0.6s;
+    }
+    #lo-intro-phase.bg-1 { background: var(--warm-cream); }
+    #lo-intro-phase.bg-2 { background: var(--bordeaux); }
+    #lo-intro-phase.bg-3 { background: var(--text-dark); }
+
+    .lo-progress {
+      position: absolute; top: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 10px; z-index: 5;
+    }
+    .lo-progress .pd {
+      width: 32px; height: 3px;
+      background: rgba(61,43,46,0.15);
+      border-radius: 999px;
+      transition: background 0.4s, width 0.4s;
+    }
+    .lo-progress .pd.active { background: var(--bordeaux); width: 48px; }
+    #lo-intro-phase.bg-2 .lo-progress .pd,
+    #lo-intro-phase.bg-3 .lo-progress .pd { background: rgba(253,251,249,0.25); }
+    #lo-intro-phase.bg-2 .lo-progress .pd.active,
+    #lo-intro-phase.bg-3 .lo-progress .pd.active { background: var(--warm-white); }
+
+    .lo-kicker {
+      position: absolute; top: 30px; left: 40px; z-index: 3;
+      font-family: 'Object Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.36em; text-transform: uppercase;
+      color: var(--copper);
+      transition: color 0.5s;
+    }
+    #lo-intro-phase.bg-2 .lo-kicker { color: var(--copper-light); }
+    #lo-intro-phase.bg-3 .lo-kicker { color: var(--copper-light); }
+    .lo-brand-mark {
+      position: absolute; top: 30px; right: 40px; z-index: 3;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px; font-weight: 500;
+      color: var(--bordeaux);
+      transition: color 0.5s;
+    }
+    #lo-intro-phase.bg-2 .lo-brand-mark { color: var(--warm-cream); }
+    #lo-intro-phase.bg-3 .lo-brand-mark { color: var(--copper-light); }
+
+    .lo-wordstack {
+      text-align: center;
+      max-width: 900px;
+      padding: 0 32px;
+    }
+    .lo-word {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 11vw, 8rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--bordeaux);
+      margin-bottom: 28px;
+      transition: color 0.5s;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .lo-word.in {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .lo-word.out {
+      opacity: 0; transform: translateY(-14px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    #lo-intro-phase.bg-2 .lo-word { color: var(--warm-white); }
+    #lo-intro-phase.bg-3 .lo-word { color: var(--copper-light); }
+    .lo-word-sub {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      color: var(--text-muted);
+      max-width: 620px; margin: 0 auto;
+      line-height: 1.4;
+      transition: color 0.5s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .lo-word-sub.in {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s;
+    }
+    .lo-word-sub.out {
+      opacity: 0; transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    #lo-intro-phase.bg-2 .lo-word-sub { color: rgba(253,251,249,0.85); }
+    #lo-intro-phase.bg-3 .lo-word-sub { color: rgba(253,251,249,0.75); }
+
+    /* ── Wahl phase — scrollable ── */
+    #lo-wahl-phase {
+      background: var(--warm-white);
+      padding: 60px 32px 110px;
+      overflow-y: auto;
+      align-items: flex-start;
+    }
+    #lo-wahl-phase .lo-inner { margin: auto; }
+
+    /* Symptom chips */
+    .lo-chips {
+      display: flex; flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 8px auto 40px;
+      max-width: 780px;
+    }
+    .lo-chip {
+      display: inline-flex; align-items: center;
+      padding: 12px 22px;
+      background: var(--warm-cream);
+      color: var(--text-dark);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: 'Object Sans', sans-serif;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+      cursor: pointer;
+    }
+    .lo-chip:hover {
+      background: var(--bordeaux);
+      color: var(--warm-white);
+      border-color: var(--bordeaux);
+      transform: translateY(-2px);
+    }
+
+    .lo-divider {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 8px 0 28px;
+      position: relative;
     }
     .lo-inner {
       max-width: 1080px; width: 100%;
@@ -753,7 +912,7 @@
       text-align: left;
       text-decoration: none;
       min-height: 260px;
-      border-radius: 4px;
+      border-radius: 16px;
       transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
       cursor: pointer;
     }
@@ -815,6 +974,7 @@
       color: var(--text-dark);
       transition: transform 0.35s, box-shadow 0.35s, background 0.35s;
       text-align: left;
+      border-radius: 18px;
     }
     .lo-selbsttest-card:hover {
       transform: translateY(-3px);
@@ -859,12 +1019,13 @@
       font-family: 'Object Sans', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.26em; text-transform: uppercase;
-      padding: 15px 26px;
+      padding: 15px 28px;
       cursor: pointer;
       transition: background 0.3s, transform 0.3s;
-      z-index: 210;
+      z-index: 220;
       display: inline-flex; align-items: center; gap: 10px;
-      box-shadow: 0 12px 30px rgba(61,43,46,0.18);
+      box-shadow: 0 12px 30px rgba(61,43,46,0.24);
+      border-radius: 999px;
     }
     .lo-skip:hover { background: var(--bordeaux); transform: translateY(-2px); }
 
@@ -942,51 +1103,87 @@
 </head>
 <body>
 
-<!-- LANDING OVERLAY — Themen-Wahl + Selbsttest -->
+<!-- LANDING OVERLAY — Intro-Animation + Themen-Wahl + Selbsttest -->
 <div id="landing-overlay" role="dialog" aria-label="Willkommen">
   <button class="lo-skip" id="lo-skip" type="button">Überspringen →</button>
-  <div class="lo-inner">
-    <span class="lo-brand">Julia</span>
-    <p class="lo-eyebrow">Willkommen</p>
-    <h1 class="lo-h">Was <em>beschäftigt</em> dich gerade?</h1>
-    <p class="lo-sub">Wähl, wo du anfangen willst — oder überspring das hier und schau dich einfach um.</p>
 
-    <div class="lo-grid">
-      <a href="ueber-mich.html" class="lo-card lo-c-bordeaux">
-        <span class="lo-n">01</span>
-        <h3>Meine Geschichte</h3>
-        <p>Von fünf Lebensmitteln zurück ins Leben — wie ich mit HIT, MCAS und Reizdarm meinen Weg gefunden habe.</p>
-        <span class="lo-arrow">Lesen →</span>
-      </a>
-      <a href="#app" class="lo-card lo-c-copper" data-in-page>
-        <span class="lo-n">02</span>
-        <h3>TerraLuna App</h3>
-        <p>Verträglichkeits-Scanner, 250+ Lebensmittel mit Ampel-System und Zyklustracking in einer App.</p>
-        <span class="lo-arrow">Zur App →</span>
-      </a>
-      <a href="blog/" class="lo-card lo-c-cream">
-        <span class="lo-n">03</span>
-        <h3>Blogbeiträge</h3>
-        <p>Elf ehrliche Artikel aus meinem Weg. Nicht als Ratschlag — als das, was ich dir schreiben würde.</p>
-        <span class="lo-arrow">Zum Blog →</span>
-      </a>
-      <a href="#app" class="lo-card lo-c-dark" data-in-page>
-        <span class="lo-n">04</span>
-        <h3>Histaminarme Rezepte</h3>
-        <p>120+ glutenfreie Rezepte ohne Industriezucker — alle in der TerraLuna App.</p>
-        <span class="lo-arrow">Rezepte →</span>
-      </a>
+  <!-- PHASE 1: Intro-Slideshow -->
+  <div id="lo-intro-phase" class="lo-phase bg-1">
+    <div class="lo-progress" id="lo-progress">
+      <span class="pd active"></span>
+      <span class="pd"></span>
+      <span class="pd"></span>
     </div>
+    <span class="lo-kicker" id="lo-kicker">N°01</span>
+    <span class="lo-brand-mark">Julia Bergles</span>
+    <div class="lo-wordstack">
+      <h1 class="lo-word in" id="lo-word">Blähbauch?</h1>
+      <p class="lo-word-sub in" id="lo-word-sub">Kann Histamin sein — muss aber nicht.</p>
+    </div>
+  </div>
 
-    <div class="lo-selbsttest">
-      <a href="selbsttest.html" class="lo-selbsttest-card">
-        <div class="lo-selbsttest-body">
-          <span class="lo-eyebrow">Selbsttest</span>
-          <h3>Könnten deine Beschwerden Histamin sein?</h3>
-          <p>18 kurze Fragen. Am Ende eine ehrliche Einschätzung, wo du hinschauen könntest.</p>
-        </div>
-        <span class="lo-selbsttest-arrow">Test starten</span>
-      </a>
+  <!-- PHASE 2: Wahl (Chips + Menü + Selbsttest) -->
+  <div id="lo-wahl-phase" class="lo-phase">
+    <div class="lo-inner">
+      <span class="lo-brand">Julia</span>
+      <p class="lo-eyebrow">Was beschäftigt dich?</p>
+      <h1 class="lo-h">Wähl, wo <em>du</em> gerade stehst.</h1>
+      <p class="lo-sub">Ich kenne die Themen selber — Reizdarm, Darmverschluss, HIT, MCAS, Essstörung, PMS, Depressionen. Klick was an, das dich betrifft.</p>
+
+      <!-- Symptom chips -->
+      <div class="lo-chips">
+        <a href="blog/blaehbauch-in-griff/" class="lo-chip">Blähbauch</a>
+        <a href="reizdarm.html" class="lo-chip">Reizdarm</a>
+        <a href="blog/darmverschluss/" class="lo-chip">Darmverschluss</a>
+        <a href="#app" class="lo-chip" data-in-page>PMS &middot; Zyklus</a>
+        <a href="histaminintoleranz.html" class="lo-chip">Histaminintoleranz</a>
+        <a href="mcas.html" class="lo-chip">MCAS</a>
+        <a href="blog/weg-aus-depressionen/" class="lo-chip">Depressionen</a>
+        <a href="blog/orthorexie-corona/" class="lo-chip">Essstörung</a>
+        <a href="blog/sport-histamin-mcas/" class="lo-chip">Sportsucht</a>
+        <a href="blog/angst-vor-essen/" class="lo-chip">Angst vorm Essen</a>
+      </div>
+
+      <p class="lo-divider">— oder schau mal hier rein —</p>
+
+      <!-- Menü-Kacheln -->
+      <div class="lo-grid">
+        <a href="#app" class="lo-card lo-c-bordeaux" data-in-page>
+          <span class="lo-n">01</span>
+          <h3>TerraLuna App</h3>
+          <p>Verträglichkeits-Scanner, 250+ Lebensmittel mit Ampel, 120+ Rezepte und Zyklustracking.</p>
+          <span class="lo-arrow">Zur App →</span>
+        </a>
+        <a href="ueber-mich.html" class="lo-card lo-c-copper">
+          <span class="lo-n">02</span>
+          <h3>Meine Geschichte</h3>
+          <p>Von fünf Lebensmitteln zurück ins Leben. Warum ich das alles weiß — aus eigener Erfahrung.</p>
+          <span class="lo-arrow">Lesen →</span>
+        </a>
+        <a href="blog/" class="lo-card lo-c-cream">
+          <span class="lo-n">03</span>
+          <h3>Blogbeiträge</h3>
+          <p>Elf ehrliche Artikel aus meinem Weg. Nicht als Ratschlag von oben.</p>
+          <span class="lo-arrow">Zum Blog →</span>
+        </a>
+        <a href="#app" class="lo-card lo-c-dark" data-in-page>
+          <span class="lo-n">04</span>
+          <h3>Histaminarme Rezepte</h3>
+          <p>120+ glutenfreie Rezepte ohne Industriezucker — alle in der TerraLuna App.</p>
+          <span class="lo-arrow">Rezepte →</span>
+        </a>
+      </div>
+
+      <div class="lo-selbsttest">
+        <a href="selbsttest.html?next=app" class="lo-selbsttest-card">
+          <div class="lo-selbsttest-body">
+            <span class="lo-eyebrow">Selbsttest</span>
+            <h3>Könnten deine Beschwerden Histamin sein?</h3>
+            <p>18 kurze Fragen. Am Ende landest du direkt in der App, die dir weiterhelfen kann.</p>
+          </div>
+          <span class="lo-selbsttest-arrow">Test starten</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -1305,48 +1502,111 @@
 </footer>
 
 <script>
-  // Landing Overlay
+  // Landing Overlay — Intro-Animation + Wahl-Phase
   (function () {
-    const overlay = document.getElementById('landing-overlay');
-    const skipBtn = document.getElementById('lo-skip');
-    const KEY = 'jb-landing-dismissed';
+    const overlay   = document.getElementById('landing-overlay');
+    const skipBtn   = document.getElementById('lo-skip');
+    const intro     = document.getElementById('lo-intro-phase');
+    const wahl      = document.getElementById('lo-wahl-phase');
+    const wordEl    = document.getElementById('lo-word');
+    const subEl     = document.getElementById('lo-word-sub');
+    const kickerEl  = document.getElementById('lo-kicker');
+    const dots      = document.querySelectorAll('#lo-progress .pd');
+    const KEY       = 'jb-landing-dismissed';
 
-    function open() {
+    const STATES = [
+      { kicker: 'N°01', word: 'Blähbauch?',       sub: 'Kann Histamin sein — muss aber nicht.',        bg: 'bg-1' },
+      { kicker: 'N°02', word: 'PMS?',             sub: 'Der Zyklus verändert alles — auch dich.',      bg: 'bg-2' },
+      { kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',                 bg: 'bg-3' }
+    ];
+    const SLIDE_MS = 2400;
+    let idx = 0;
+    let timer;
+
+    function openOverlay() {
       overlay.classList.add('visible');
       document.documentElement.classList.add('overlay-open');
       document.body.classList.add('overlay-open');
     }
-    function close() {
+    function closeOverlay() {
+      clearTimeout(timer);
       overlay.classList.remove('visible');
       document.documentElement.classList.remove('overlay-open');
       document.body.classList.remove('overlay-open');
       try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
     }
+    function showPhase(el) {
+      [intro, wahl].forEach(p => p.classList.remove('on'));
+      el.classList.add('on');
+    }
 
-    // Show unless already dismissed this session
+    function applyState(i) {
+      const s = STATES[i];
+      intro.classList.remove('bg-1', 'bg-2', 'bg-3');
+      intro.classList.add(s.bg);
+      dots.forEach((d, di) => d.classList.toggle('active', di === i));
+
+      // fade out current
+      wordEl.classList.add('out'); wordEl.classList.remove('in');
+      subEl.classList.add('out');  subEl.classList.remove('in');
+      kickerEl.textContent = s.kicker;
+
+      setTimeout(() => {
+        wordEl.textContent = s.word;
+        subEl.textContent  = s.sub;
+        wordEl.classList.remove('out'); wordEl.classList.add('in');
+        subEl.classList.remove('out');  subEl.classList.add('in');
+      }, 360);
+    }
+
+    function tick() {
+      idx++;
+      if (idx >= STATES.length) {
+        // Intro done → Wahl-Phase
+        setTimeout(() => showPhase(wahl), 800);
+        return;
+      }
+      applyState(idx);
+      timer = setTimeout(tick, SLIDE_MS);
+    }
+
+    // Session-Check
     let dismissed = false;
     try { dismissed = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
-    if (!dismissed) open();
 
-    skipBtn.addEventListener('click', close);
+    if (!dismissed) {
+      openOverlay();
+      showPhase(intro);
+      // start after first paint (word is already visible via .in)
+      timer = setTimeout(tick, SLIDE_MS);
+    }
 
-    // In-page anchor cards: close first, then smooth-scroll
-    overlay.querySelectorAll('.lo-card[data-in-page]').forEach(card => {
-      card.addEventListener('click', (e) => {
-        const href = card.getAttribute('href') || '';
+    skipBtn.addEventListener('click', closeOverlay);
+
+    // In-page anchor cards (Wahl-Phase): close, then smooth-scroll
+    overlay.querySelectorAll('[data-in-page]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        const href = el.getAttribute('href') || '';
         if (!href.startsWith('#')) return;
         e.preventDefault();
-        close();
+        closeOverlay();
         setTimeout(() => {
           const target = document.querySelector(href);
           if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 400);
+        }, 500);
       });
     });
 
-    // Esc to close
+    // Regular navigation clicks should still dismiss for the session
+    overlay.querySelectorAll('a[href]:not([data-in-page])').forEach(a => {
+      a.addEventListener('click', () => {
+        try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+      });
+    });
+
+    // Esc closes
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && overlay.classList.contains('visible')) close();
+      if (e.key === 'Escape' && overlay.classList.contains('visible')) closeOverlay();
     });
   })();
 
