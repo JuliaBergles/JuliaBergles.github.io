@@ -1046,20 +1046,22 @@
       z-index: 2;
     }
 
-    /* Farb-Variants — pastell & weich */
-    .lo-c-malaga   { background: var(--malaga);   color: var(--cream); }
-    .lo-c-pink     { background: var(--pink);     color: var(--cream); }
-    .lo-c-rose     { background: var(--rose);     color: var(--malaga); }
-    .lo-c-lavender { background: var(--lavender); color: var(--malaga); }
-    .lo-c-beige    { background: var(--beige);    color: var(--malaga); }
-    .lo-c-cream    { background: var(--cream-hi); color: var(--malaga); border: 1px solid rgba(82,11,35,0.10); }
+    /* Farb-Variants — Text immer weiß */
+    .lo-c-malaga   { background: var(--malaga);   color: #ffffff; }
+    .lo-c-pink     { background: var(--pink);     color: #ffffff; }
+    .lo-c-rose     { background: var(--rose);     color: #ffffff; }
+    .lo-c-lavender { background: var(--lavender); color: #ffffff; }
+    .lo-c-beige    { background: var(--beige);    color: #ffffff; }
+    .lo-c-cream    { background: var(--cream-hi); color: #ffffff; border: 1px solid rgba(82,11,35,0.10); }
 
-    /* Gold-Card: subtiler metallic Verlauf */
+    /* Gold-Card: subtiler metallic Verlauf, Text weiß */
     .lo-c-gold {
       background: linear-gradient(135deg, #d69a48 0%, #e2ae61 25%, #f2cf8f 45%, #e2ae61 65%, #c99048 100%);
-      color: var(--malaga);
+      color: #ffffff;
       position: relative;
     }
+    /* h3 in Cards immer weiß, kein Metallic-Overlay */
+    .lo-c-card h3 { color: #ffffff !important; -webkit-text-fill-color: #ffffff; }
 
     /* Metallic Sheen on hover — läuft einmal durch */
     .lo-c-card::after {
