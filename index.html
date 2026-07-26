@@ -1,1763 +1,1978 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Julia Bergles. TerraLuna App, Aufklärung zu Histaminintoleranz, MCAS & Reizdarm und ein ehrlicher Blog aus eigener Erfahrung.">
-  <title>Julia Bergles</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="google-site-verification" content="zjdWnM2diljOGIRonIwIzcWVEGGknCIZNM5-0BK3e9A" />
+<meta name="msvalidate.01" content="4FE463F3FC5F26E2231BD9BCC31B9AD0" />
+<title>Julia Bergles · TerraLuna App, Aufklärung, Blog</title>
+<meta name="description" content="Social Media Betreuung, Content-Erstellung, Mediendesign und Websites. Von Julia Bergles aus Wehringen bei Augsburg. Für Marken, die sichtbar werden wollen." />
+<link rel="canonical" href="https://www.agentur.juliabergles.de/" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Fallback-Fonts bis Sunborn/Neue Montreal WOFF2 in /fonts/ liegen -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&display=swap">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.agentur.juliabergles.de/" />
+<meta property="og:title" content="Julia Bergles · TerraLuna App, Aufklärung, Blog" />
+<meta property="og:description" content="Social Media Betreuung, Content-Erstellung, Mediendesign und Websites — von Julia Bergles." />
+<meta property="og:image" content="https://www.agentur.juliabergles.de/img/bild-2.jpg" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Julia" />
 
-  <style>
-    /* Sunborn + Neue Montreal. Datei-Drop in /fonts/ genügt */
-    @font-face {
-      font-family: 'Sunborn';
-      src: url('fonts/Sunborn-SansOne.woff2') format('woff2'),
-           url('fonts/Sunborn.woff2') format('woff2');
-      font-weight: 400 900;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Neue Montreal';
-      src: url('fonts/NeueMontreal-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Neue Montreal';
-      src: url('fonts/NeueMontreal-Medium.woff2') format('woff2');
-      font-weight: 500;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Neue Montreal';
-      src: url('fonts/NeueMontreal-Bold.woff2') format('woff2');
-      font-weight: 700;
-      font-display: swap;
-    }
-  </style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Julia Bergles · TerraLuna App, Aufklärung, Blog" />
+<meta name="twitter:description" content="Social Media Betreuung, Content-Erstellung, Mediendesign und Websites — von Julia Bergles." />
+<meta name="twitter:image" content="https://www.agentur.juliabergles.de/img/bild-2.jpg" />
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      /* Julias Palette. hell, weich, kein Schwarz mehr */
-      --beige:      #ded0c2;   /* Hintergrund warm + ehemals dunkle Blöcke */
-      --beige-hi:   #e8ddd0;
-      --pink:       #c74873;   /* Statement + TerraLuna */
-      --gold:       #e2ae61;   /* Wärme */
-      --rose:       #f1d2cb;   /* Weiches Rosé/Peach */
-      --lavender:   #c3cfe6;   /* Weiches Lavendel */
-      --cream:      #faf3ea;   /* Heller Cream */
-      --cream-hi:   #fdf9f2;
-      --ink:        #1a1418;   /* Fast schwarz, warm. nur Text */
-      /* Alias für bestehendes CSS */
-      --malaga:        #1a1418;
-      --bordeaux:      #1a1418;
-      --bordeaux-hi:   #2b1e21;
-      --orange:        #e2ae61;
-      --orange-hi:     #eec287;
-      --blue:          #c3cfe6;
-      --copper:        #e2ae61;
-      --copper-light:  #eec287;
-      --warm-white:    #faf3ea;
-      --warm-cream:    #f1d2cb;
-      --warm-beige:    #ded0c2;
-      --warm-sand:     #e6d6c3;
-      --text-dark:     #1a1418;
-      --text-muted:    #6b5459;
-      --line:          rgba(26,20,24,0.10);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Neue Montreal', 'Inter', -apple-system, sans-serif;
-      background: var(--warm-white);
-      color: var(--text-dark);
-      line-height: 1.75;
-      font-weight: 500;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, h4 { font-family: 'Sunborn', 'Fraunces', serif; font-weight: 800; letter-spacing: -0.02em; color: var(--text-dark); line-height: 1.05; }
-    a { color: inherit; }
-    img { display: block; max-width: 100%; }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.agentur.juliabergles.de/#business",
+  "name": "Julia · Julia Bergles",
+  "url": "https://www.agentur.juliabergles.de/",
+  "image": "https://www.agentur.juliabergles.de/img/bild-2.jpg",
+  "email": "julia@bergles.net",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Singoldstraße 5a",
+    "postalCode": "86517",
+    "addressLocality": "Wehringen",
+    "addressRegion": "Bayern",
+    "addressCountry": "DE"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Augsburg" },
+    { "@type": "City", "name": "Wehringen" },
+    { "@type": "City", "name": "München" },
+    { "@type": "Country", "name": "Deutschland" }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Julia Bergles"
+  },
+  "sameAs": [
+    "https://www.instagram.com/julia_bergles"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #FBF2ED;
+    --bg-warm: #F3D6C6;
+    --bg-soft: #E8D0BE;
+    --bg-mint: #e7fffe;
+    --card: #ffffff;
 
-    /* ────────── TOP-BAR ────────── */
-    .topbar {
-      background: var(--beige);
-      color: var(--ink);
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 10.5px; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      padding: 11px 24px;
-    }
-    .topbar-inner {
-      max-width: 1400px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 24px;
-    }
-    .topbar-msg a { color: var(--copper-light); text-decoration: none; }
-    .topbar-msg a:hover { color: var(--warm-white); }
-    .topbar-social { display: flex; gap: 22px; align-items: center; }
-    .topbar-social a {
-      color: rgba(253,251,249,0.75);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .topbar-social a:hover { color: var(--copper-light); }
+    --ink: #2D1F22;
+    --ink-soft: #4a3236;
+    --muted: #8a6f72;
+    --muted-lite: #b09a9c;
 
-    /* ────────── NAV. transparent over hero, solid on scroll ────────── */
-    nav {
-      position: absolute;
-      top: 34px; left: 0; right: 0; z-index: 50;
-      transition: background 0.35s, box-shadow 0.35s;
+    --bordeaux: #430a14;
+    --bordeaux-hi: #c74873;
+    --bordeaux-deep: #2d0508;
+
+    --pink: #c74873;
+    --blue: #7993ae;
+    --orange: #ff9c6d;
+
+    --gold: #ff9c6d;
+    --gold-hi: #ffb08a;
+
+    --line: rgba(67, 10, 20, 0.10);
+    --line-strong: rgba(67, 10, 20, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Object Sans', -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img, video { max-width: 100%; display: block; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  @media (max-width: 700px) { .container { padding: 0 24px; } }
+
+  h1, h2 {
+    font-family: 'Rubik', 'Space Grotesk', 'Object Sans', sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: var(--ink);
+    text-transform: none;
+  }
+  h3, h4 {
+    font-family: 'Rubik', 'Space Grotesk', 'Object Sans', sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-transform: none;
+  }
+  /* .serif nutzt Rubik (Julia will überall die gleiche Schrift) */
+  .serif {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  /* Circle-Signature (ohne kursiv) */
+  .circle-italic {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+  }
+  .circle-italic::before {
+    content: "";
+    position: absolute; inset: -6% -4% -6% -4%;
+    border: 1.5px solid var(--ink);
+    border-radius: 55% 45% 55% 45% / 55% 45% 55% 45%;
+    transform: rotate(-3deg);
+    pointer-events: none;
+  }
+  .circle-italic.gold::before { border-color: var(--gold); }
+  .circle-italic.white::before { border-color: #fff; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(251, 242, 237, 0.85);
+    backdrop-filter: saturate(1.3) blur(20px);
+    -webkit-backdrop-filter: saturate(1.3) blur(20px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    max-width: 1200px; margin: 0 auto;
+    padding: 22px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .brand {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-weight: 500; font-size: 26px;
+    color: var(--ink); letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .brand::before {
+    content: "";
+    display: inline-block; width: 16px; height: 16px;
+    background: var(--bordeaux); border-radius: 50%;
+  }
+  nav ul { display: flex; gap: 22px; list-style: none; flex-wrap: nowrap; }
+  nav ul a {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: none;
+    color: var(--ink); font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+  nav ul a:hover { color: var(--bordeaux); }
+  .nav-cta {
+    padding: 13px 26px;
+    background: var(--bordeaux); color: var(--bg);
+    border-radius: 999px;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: none;
+    font-weight: 500;
+    transition: all 0.4s;
+  }
+  .nav-cta:hover { background: var(--bordeaux); }
+
+  /* Burger + Mobile-Menu */
+  .nav-burger {
+    display: none;
+    width: 40px; height: 40px;
+    background: transparent; border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    cursor: pointer;
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .nav-burger span { display: block; width: 16px; height: 1.5px; background: var(--bordeaux); position: relative; }
+  .nav-burger span::before, .nav-burger span::after {
+    content: ""; position: absolute; left: 0; width: 16px; height: 1.5px;
+    background: var(--bordeaux); transition: transform 0.3s;
+  }
+  .nav-burger span::before { top: -5px; }
+  .nav-burger span::after  { top:  5px; }
+  .nav-burger.open span { background: transparent; }
+  .nav-burger.open span::before { top: 0; transform: rotate(45deg); }
+  .nav-burger.open span::after  { top: 0; transform: rotate(-45deg); }
+
+  @media (max-width: 980px) {
+    nav ul { display: none; }
+    .nav-cta { display: none; }
+    .nav-burger { display: inline-flex; }
+    .mobile-menu {
+      position: fixed; top: 78px; left: 0; right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 24px 32px 32px;
+      display: none;
+      z-index: 99;
     }
-    nav.scrolled {
-      position: fixed; top: 0;
-      background: rgba(253,251,249,0.96);
-      backdrop-filter: saturate(180%) blur(14px);
-      -webkit-backdrop-filter: saturate(180%) blur(14px);
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block; padding: 14px 0;
+      font-size: 14px; letter-spacing: 0.12em; text-transform: none;
+      color: var(--ink); font-weight: 500;
       border-bottom: 1px solid var(--line);
     }
-    .nav-inner {
-      max-width: 1400px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 22px 40px;
-      gap: 32px;
+    .mobile-menu .mobile-cta {
+      display: inline-block; margin-top: 20px; padding: 14px 28px;
+      background: var(--bordeaux); color: var(--bg); border-radius: 999px;
+      font-size: 11px; letter-spacing: 0.12em; text-transform: none;
+      font-weight: 500; border-bottom: 0;
     }
-    .nav-left, .nav-right {
-      display: flex; align-items: center; gap: 6px;
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.24em; text-transform: uppercase;
-    }
-    .nav-right { justify-content: flex-end; }
-    .nav-left a, .nav-right a {
-      color: var(--warm-white);
-      text-decoration: none;
-      padding: 10px 14px;
-      transition: opacity 0.2s, color 0.2s;
-    }
-    .nav-left a:hover, .nav-right a:hover { opacity: 0.7; }
-    nav.scrolled .nav-left a, nav.scrolled .nav-right a { color: var(--text-dark); }
-    nav.scrolled .nav-left a:hover, nav.scrolled .nav-right a:hover { color: var(--copper); opacity: 1; }
-    .nav-logo {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-style: normal;
-      font-size: 36px; font-weight: 500;
-      color: var(--warm-white);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      position: relative;
-      padding: 0 10px;
-      transition: color 0.35s;
-    }
-    .nav-logo::after {
-      content: '';
-      position: absolute;
-      bottom: -8px; left: 20%; right: 20%;
-      height: 1px;
-      background: var(--copper-light);
-      transition: background 0.35s;
-    }
-    nav.scrolled .nav-logo { color: var(--text-dark); }
-    nav.scrolled .nav-logo::after { background: var(--copper); }
-    .menu-toggle {
-      display: none; background: none; border: none;
-      font-size: 26px; cursor: pointer; color: var(--warm-white); padding: 8px;
-    }
-    nav.scrolled .menu-toggle { color: var(--text-dark); }
+  }
+  @media (min-width: 981px) { .mobile-menu { display: none !important; } }
 
-    /* ────────── HERO. full-bleed editorial ────────── */
-    .hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-      background: #2a1e20;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('images/header.jpg');
-      background-size: cover; background-position: center 30%;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(61,43,46,0.35) 0%, rgba(61,43,46,0.35) 40%, rgba(61,43,46,0.65) 100%);
-    }
-    .hero-inner {
-      position: relative; z-index: 2;
-      max-width: 900px; margin: 0 auto;
-      padding: 160px 32px 140px;
-      text-align: center;
-      color: var(--warm-white);
-    }
-    .hero-eyebrow {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.4em; text-transform: uppercase;
-      color: rgba(253,251,249,0.85);
-      margin-bottom: 32px;
-      display: inline-block;
-      position: relative;
-      padding: 0 40px;
-    }
-    .hero-eyebrow::before, .hero-eyebrow::after {
-      content: ''; position: absolute; top: 50%;
-      width: 28px; height: 1px; background: rgba(253,251,249,0.5);
-    }
-    .hero-eyebrow::before { left: 0; }
-    .hero-eyebrow::after { right: 0; }
-    .hero h1 {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: clamp(3rem, 7.2vw, 6.6rem);
-      font-weight: 900;
-      color: var(--warm-white);
-      line-height: 0.98;
-      letter-spacing: -0.035em;
-      margin-bottom: 32px;
-      text-shadow: 0 2px 30px rgba(0,0,0,0.25);
-    }
-    .hero h1 span { display: block; }
-    .hero h1 .word2 { color: var(--orange); }
-    .hero h1 .word3 { color: var(--pink); }
-    .hero-sub {
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      color: rgba(255,255,255,0.92);
-      max-width: 540px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-      text-shadow: 0 1px 12px rgba(0,0,0,0.25);
-    }
-    .hero-ctas {
-      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-    }
-    .hero-scroll {
-      position: absolute; z-index: 3;
-      bottom: 32px; left: 50%; transform: translateX(-50%);
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: rgba(253,251,249,0.7);
-      writing-mode: horizontal-tb;
-    }
+  /* ─── AUSWAHL-HERO (index.html) — dunkel editorial ─── */
+  .hero-choice {
+    padding: 180px 0 130px;
+    background: var(--bordeaux);
+    color: var(--bg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-choice::before {
+    content: ""; position: absolute; top: 100px; left: -80px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(67, 10, 20, 0.32), transparent 60%);
+    filter: blur(80px);
+    pointer-events: none; z-index: 0;
+    animation: floatA 22s ease-in-out infinite alternate;
+  }
+  .hero-choice::after {
+    content: ""; position: absolute; bottom: -120px; right: -60px;
+    width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 156, 109, 0.24), transparent 60%);
+    filter: blur(90px);
+    pointer-events: none; z-index: 0;
+    animation: floatB 26s ease-in-out infinite alternate;
+  }
+  .hero-choice .container { position: relative; z-index: 1; }
+  .hero-choice .eyebrow {
+    font-size: 10px; letter-spacing: 0.45em; text-transform: none;
+    color: var(--gold); font-weight: 700;
+    margin-bottom: 32px;
+    display: inline-block;
+  }
+  .hero-choice h1 {
+    font-size: clamp(52px, 8vw, 108px);
+    font-weight: 400;
+    margin-bottom: 28px;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    color: var(--bg);
+  }
+  .hero-choice h1 em { font-style: normal; color: var(--gold); }
+  .hero-choice .lede {
+    font-size: 17px;
+    color: rgba(251, 242, 237, 0.7);
+    max-width: 560px;
+    margin: 0 auto 64px;
+    line-height: 1.65;
+  }
+  .choice-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  @media (max-width: 980px) { .choice-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .choice-grid { grid-template-columns: 1fr; } }
+  .choice-card {
+    background: rgba(251, 242, 237, 0.04);
+    border: 1px solid rgba(255, 156, 109, 0.22);
+    border-radius: 12px;
+    padding: 40px 28px 32px;
+    text-align: left;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex; flex-direction: column;
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+  }
+  .choice-card::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(255, 156, 109, 0.08));
+    opacity: 0; transition: opacity 0.6s;
+    pointer-events: none;
+  }
+  .choice-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    background: rgba(251, 242, 237, 0.06);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  }
+  .choice-card:hover::after { opacity: 1; }
+  .choice-card .n {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal;
+    font-weight: 500; font-size: 44px;
+    color: var(--gold); line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .choice-card h3 {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900; font-style: normal;
+    font-size: 28px; color: var(--bg);
+    margin-bottom: 14px; line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .choice-card p {
+    font-size: 14px;
+    color: rgba(251, 242, 237, 0.65);
+    line-height: 1.65;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+  .choice-card .arrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: none;
+    color: var(--gold); font-weight: 700;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: gap 0.4s;
+  }
+  .choice-card:hover .arrow { gap: 12px; }
 
-    /* ────────── FLOATING APP CARD (overlaps hero right) ────────── */
-    .float-card-wrap {
-      position: relative;
-      max-width: 1400px; margin: 0 auto;
-      padding: 0 40px;
-      pointer-events: none;
-      z-index: 4;
-      height: 0;
-    }
-    .float-card {
-      pointer-events: auto;
-      position: absolute;
-      top: -240px; right: 40px;
-      width: 340px;
-      background: var(--warm-white);
-      padding: 36px 32px 32px;
-      box-shadow: 0 30px 80px rgba(61,43,46,0.18);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-    }
-    .float-card-label {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--copper);
-      text-align: center;
-      margin-bottom: 18px;
-      position: relative;
-    }
-    .float-card-label::before, .float-card-label::after {
-      content: ''; display: inline-block; vertical-align: middle;
-      width: 20px; height: 1px; background: var(--copper);
-      margin: 0 10px;
-    }
-    .float-card h3 {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: 1.9rem; font-weight: 500;
-      text-align: center;
-      margin-bottom: 22px;
-      line-height: 1.05;
-    }
-    .float-card h3 em { font-style: normal; color: var(--bordeaux); }
-    .float-card-phones {
-      display: flex; justify-content: center; gap: 6px;
-      margin-bottom: 22px;
-    }
-    .float-card-phones img {
-      width: 32%; height: auto; aspect-ratio: 9/19;
-      object-fit: cover; border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(149,82,81,0.14);
-    }
-    .float-card-note {
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-    .float-card-note strong { color: var(--copper); font-weight: 600; }
+  /* Featured „Ich weiß noch nicht" */
+  .choice-card.warm {
+    background: linear-gradient(135deg, var(--bordeaux-deep), var(--bordeaux));
+    border: 1px solid var(--gold);
+  }
+  .choice-card.warm:hover {
+    background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-hi));
+    box-shadow: 0 40px 80px rgba(67, 10, 20, 0.5);
+  }
+  .choice-card.warm .n { color: var(--gold); }
+  .choice-card.warm p { color: rgba(251, 242, 237, 0.85); }
 
-    /* ────────── BUTTONS ────────── */
-    .btn {
-      display: inline-block;
-      background: var(--text-dark);
-      color: var(--warm-white);
-      padding: 16px 34px;
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.26em; text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s;
-      border: 1px solid var(--text-dark);
-      border-radius: 999px;
-      cursor: pointer;
-      text-align: center;
-    }
-    .btn:hover { background: var(--bordeaux); border-color: var(--bordeaux); }
-    .btn-copper { background: var(--copper); border-color: var(--copper); }
-    .btn-copper:hover { background: var(--bordeaux); border-color: var(--bordeaux); }
-    .btn-outline {
-      background: transparent;
-      color: var(--text-dark);
-      border: 1px solid var(--text-dark);
-    }
-    .btn-outline:hover { background: var(--text-dark); color: var(--warm-white); }
-    .btn-outline-light {
-      background: transparent;
-      color: var(--warm-white);
-      border: 1px solid rgba(253,251,249,0.7);
-    }
-    .btn-outline-light:hover { background: var(--warm-white); color: var(--text-dark); }
-    .btn-block { display: block; width: 100%; }
+  /* ─── FLOATING AUSWAHL MODAL ─── */
+  .choice-modal {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 380px;
+    max-width: calc(100vw - 48px);
+    background: linear-gradient(155deg, var(--bordeaux), var(--bordeaux-deep));
+    color: var(--bg);
+    border: 1px solid rgba(255, 156, 109, 0.32);
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    z-index: 300;
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+  }
+  .choice-modal::before {
+    content: ""; position: absolute; top: -80px; right: -80px;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 156, 109, 0.28), transparent 65%);
+    filter: blur(30px); pointer-events: none;
+  }
+  .choice-modal.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .choice-modal > * { position: relative; z-index: 1; }
+  .choice-close {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(251, 242, 237, 0.08);
+    border: 0;
+    color: var(--bg);
+    cursor: pointer;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 2;
+  }
+  .choice-close:hover {
+    background: rgba(255, 156, 109, 0.3);
+    transform: rotate(90deg);
+  }
+  .choice-modal-eyebrow {
+    font-size: 10px; letter-spacing: 0.35em; text-transform: none;
+    color: var(--gold); font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .choice-modal-h {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900;
+    font-size: 24px; color: var(--bg);
+    line-height: 1.15;
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+  }
+  .choice-modal-h em { font-style: normal; color: var(--gold); }
+  .choice-modal-grid { display: flex; flex-direction: column; gap: 10px; }
+  .cm-card {
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
+    padding: 14px 16px;
+    background: rgba(251, 242, 237, 0.04);
+    border: 1px solid rgba(255, 156, 109, 0.18);
+    border-radius: 10px;
+    color: var(--bg);
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cm-card:hover {
+    background: rgba(251, 242, 237, 0.08);
+    border-color: var(--gold);
+    transform: translateX(4px);
+  }
+  .cm-n {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900;
+    color: var(--gold); font-size: 22px; line-height: 1;
+    min-width: 26px;
+  }
+  .cm-body { display: flex; flex-direction: column; gap: 2px; }
+  .cm-h {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900;
+    color: var(--bg); font-size: 16px; line-height: 1.2;
+  }
+  .cm-sub {
+    font-size: 12px; color: rgba(251, 242, 237, 0.6); line-height: 1.3;
+  }
+  .cm-arrow {
+    color: var(--gold); font-size: 18px;
+    transition: transform 0.3s;
+  }
+  .cm-card:hover .cm-arrow { transform: translateX(4px); }
+  .cm-card.cm-warm {
+    background: linear-gradient(135deg, var(--bordeaux-deep), var(--bordeaux));
+    border-color: var(--gold);
+  }
+  .cm-card.cm-warm:hover {
+    background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-hi));
+  }
 
-    /* ────────── SECTION HEADER (shared) ────────── */
-    .eyebrow {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--bordeaux);
-      margin-bottom: 20px;
-    }
-    .section-h {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 500; line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 22px;
-    }
-    .section-h em { font-style: normal; color: var(--bordeaux); }
+  /* Re-Open Button */
+  .choice-reopen {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--bordeaux);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    z-index: 300;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s;
+  }
+  .choice-reopen:hover {
+    transform: scale(1.08);
+    background: var(--gold);
+    color: var(--ink);
+  }
+  .choice-reopen .pulse {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    animation: pulseRing 2.4s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes pulseRing {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  @media (max-width: 500px) {
+    .choice-modal { width: calc(100vw - 32px); bottom: 16px; right: 16px; }
+    .choice-reopen { bottom: 16px; right: 16px; }
+  }
 
-    /* ────────── APP DETAIL SECTION ────────── */
-    .app-section {
-      background: var(--warm-cream);
-      padding: 160px 32px 120px;
-    }
-    .app-section-inner {
-      max-width: 1280px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 100px; align-items: center;
-    }
-    .app-section-phones {
-      display: flex; gap: 18px; justify-content: center; align-items: flex-end;
-    }
-    .app-section-phones img {
-      width: 30%; aspect-ratio: 9/19;
-      object-fit: cover; border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(149,82,81,0.20);
-    }
-    .app-section-phones img:nth-child(2) {
-      width: 34%; transform: translateY(-32px);
-      box-shadow: 0 30px 80px rgba(149,82,81,0.24);
-    }
-    .app-features {
-      list-style: none; padding: 0;
-      margin: 28px 0 32px;
-    }
-    .app-features li {
-      font-size: 1.02rem;
-      padding: 10px 0 10px 32px;
-      color: var(--text-dark);
-      position: relative;
-      line-height: 1.55;
-    }
-    .app-features li::before {
-      content: '';
-      position: absolute; left: 0; top: 20px;
-      width: 20px; height: 1px;
-      background: var(--copper);
-    }
-    .pricing {
-      background: var(--warm-white);
-      border: 1px solid var(--line);
-      padding: 26px 30px;
-      margin: 28px 0 28px;
-      border-radius: 16px;
-    }
-    .pricing-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      gap: 16px;
-      padding: 10px 0;
-    }
-    .pricing-row + .pricing-row { border-top: 1px solid var(--line); }
-    .pricing-row .plan {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--text-dark);
-    }
-    .pricing-row .amount {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: 1.6rem; font-weight: 500;
-      color: var(--bordeaux);
-    }
-    .pricing-row .amount span {
-      font-size: 0.85rem; color: var(--text-muted);
-      font-family: 'Neue Montreal', 'Inter', sans-serif; font-weight: 500;
-    }
-    .pricing-note {
-      font-size: 13px; color: var(--text-muted);
-      text-align: center;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-    .pricing-note strong { color: var(--copper); }
-    .store-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
-    .store-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--text-dark);
-      color: var(--warm-white);
-      padding: 14px 24px;
-      text-decoration: none;
-      transition: background 0.3s;
-      border-radius: 999px;
-    }
-    .store-btn:hover { background: var(--bordeaux); }
-    .store-btn-icon { width: 22px; height: 22px; }
-    .store-btn-txt { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
-    .store-btn-txt small {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 9px; font-weight: 600;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      color: rgba(253,251,249,0.7);
-    }
-    .store-btn-txt strong {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 14px; font-weight: 700;
-    }
+  /* ─── HERO Full-Bleed ─── */
+  .hero {
+    min-height: 620px;
+    height: auto;
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+  }
+  @media (max-width: 700px) {
+    .hero { min-height: 520px; padding: 90px 24px 60px; }
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 1; }
+  .hero-bg img {
+    width: 100%; height: 100%; object-fit: cover;
+    animation: kenburns 30s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+  }
+  .hero-bg::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(45, 31, 34, 0.15) 0%, rgba(45, 31, 34, 0.5) 100%);
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    color: #fff; max-width: 900px;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.4em; text-transform: none;
+    color: rgba(255, 255, 255, 0.85); font-weight: 500;
+    margin-bottom: 36px;
+    display: inline-flex; align-items: center; gap: 20px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ""; width: 60px; height: 1px; background: var(--gold);
+  }
+  .hero h1 {
+    color: #fff;
+    font-size: clamp(52px, 8vw, 108px);
+    font-weight: 400;
+    line-height: 1.02;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  }
+  .hero-sub {
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 620px;
+    margin: 0 auto 48px;
+    line-height: 1.55;
+    font-weight: 400;
+  }
+  .hero-buttons {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  }
+  .btn-red {
+    padding: 20px 44px;
+    background: var(--bordeaux); color: #fff;
+    border: 0; border-radius: 999px;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    box-shadow: 0 20px 40px rgba(67, 10, 20, 0.35);
+    display: inline-block;
+  }
+  .btn-red:hover { background: var(--bordeaux-hi); transform: translateY(-3px); box-shadow: 0 25px 50px rgba(67, 10, 20, 0.5); }
+  .btn-outline-white {
+    padding: 20px 44px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none;
+    cursor: pointer; backdrop-filter: blur(8px);
+    transition: all 0.4s;
+    display: inline-block;
+  }
+  .btn-outline-white:hover { background: #fff; color: var(--ink); }
 
-    /* ────────── DIAGNOSEN 3-KACHELN ────────── */
-    .diag {
-      padding: 140px 32px;
-      background: var(--warm-white);
-    }
-    .diag-inner { max-width: 1280px; margin: 0 auto; }
-    .diag-head {
-      text-align: center;
-      max-width: 640px; margin: 0 auto 72px;
-    }
-    .diag-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .diag-card {
-      background: var(--warm-cream);
-      text-decoration: none;
-      color: inherit;
-      display: flex; flex-direction: column;
-      transition: transform 0.4s, box-shadow 0.4s;
-      border-radius: 18px;
-      overflow: hidden;
-    }
-    .diag-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 60px rgba(61,43,46,0.10);
-    }
-    .diag-card-img {
-      width: 100%; aspect-ratio: 4/3;
-      background-size: cover; background-position: center;
-      background-color: var(--warm-sand);
-    }
-    .diag-card-body {
-      padding: 38px 32px 36px;
-      flex: 1;
-      display: flex; flex-direction: column;
-    }
-    .diag-card-label {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 14px;
-    }
-    .diag-card h3 {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: 1.7rem; font-weight: 500;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .diag-card p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 22px;
-      flex: 1;
-    }
-    .diag-card-more {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--text-dark);
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .diag-card-more::after {
-      content: '→'; font-size: 14px;
-      transition: transform 0.3s;
-    }
-    .diag-card:hover .diag-card-more::after { transform: translateX(4px); }
+  /* ─── VIELLEICHT KENNST DU UNS AUS ─── */
+  .press {
+    padding: 70px 0;
+    background: var(--bg);
+    text-align: center;
+  }
+  .press-header {
+    font-size: 12px; letter-spacing: 0.2em;
+    color: var(--muted); font-weight: 500;
+    text-transform: none;
+    margin-bottom: 36px;
+  }
+  .press-logos {
+    display: flex; gap: 60px; justify-content: center; align-items: center; flex-wrap: wrap;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .press-logo {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-weight: 500; font-size: 22px;
+    color: var(--ink); opacity: 0.5;
+    transition: opacity 0.3s;
+    letter-spacing: 0.03em;
+  }
+  .press-logo:hover { opacity: 1; }
+  .press-logo.bold {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-weight: 700;
+    text-transform: lowercase; font-style: normal;
+  }
+  .press-logo.serif { font-style: normal; }
 
-    /* ────────── FEATURE BAND (image + text alternating) ────────── */
-    .feature-band {
-      background: var(--warm-cream);
-    }
-    .feature-band.light { background: var(--warm-white); }
-    .feature-band-inner {
-      max-width: 1280px; margin: 0 auto;
-      padding: 120px 32px;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 100px; align-items: center;
-    }
-    .feature-visual {
-      aspect-ratio: 4 / 5;
-      background-size: cover; background-position: center;
-      background-color: var(--warm-sand);
-      border-radius: 20px;
-    }
-    .feature-text p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 26px;
-      max-width: 480px;
-    }
-    .feature-band-inner.reverse .feature-visual { order: 2; }
-    .feature-band-inner.reverse .feature-text { order: 1; }
+  /* ─── MARQUEE Bilder ─── */
+  .marquee-strip {
+    padding: 40px 0 80px;
+    background: var(--bg);
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  }
+  .marquee-track {
+    display: flex; gap: 28px; width: max-content;
+    animation: mScroll 60s linear infinite;
+  }
+  @keyframes mScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-card {
+    flex-shrink: 0; width: 260px; aspect-ratio: 4/5;
+    border-radius: 3px; overflow: hidden;
+    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.1);
+  }
+  .marquee-card img, .marquee-card video { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ────────── BLOG GRID ────────── */
-    .blog-section {
-      padding: 140px 32px;
-      background: var(--warm-white);
-    }
-    .blog-inner { max-width: 1280px; margin: 0 auto; }
-    .blog-head {
-      text-align: center;
-      max-width: 640px; margin: 0 auto 72px;
-    }
-    .blog-head p {
-      color: var(--text-muted);
-      font-size: 1.02rem;
-      line-height: 1.7;
-    }
-    .blog-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 40px 32px;
-    }
-    .blog-card {
-      text-decoration: none;
-      color: inherit;
-      display: flex; flex-direction: column;
-      transition: transform 0.35s;
-    }
-    .blog-card:hover { transform: translateY(-4px); }
-    /* No-image variant. Farb-Kachel mit Titel */
-    .blog-card.no-img {
-      padding: 40px 32px 34px;
-      min-height: 260px;
-      border-radius: 20px;
-      justify-content: space-between;
-    }
-    .blog-card.no-img:nth-child(1) { background: var(--rose);     color: #ffffff; }
-    .blog-card.no-img:nth-child(2) { background: var(--gold);     color: #ffffff; }
-    .blog-card.no-img:nth-child(3) { background: var(--pink);     color: #ffffff; }
-    .blog-card.no-img:nth-child(4) { background: var(--lavender); color: #ffffff; }
-    .blog-card.no-img:nth-child(5) { background: var(--beige);    color: #ffffff; }
-    .blog-card.no-img:nth-child(6) { background: #d69a48;         color: #ffffff; }
-    .blog-card.no-img .blog-card-cat { color: rgba(255,255,255,0.85); }
-    .blog-card.no-img h3 { color: #ffffff; margin-bottom: 12px; }
-    .blog-card.no-img p { color: rgba(255,255,255,0.9); }
-    .blog-card-img {
-      width: 100%; aspect-ratio: 4/5;
-      background-size: cover; background-position: center;
-      background-color: var(--warm-cream);
-      margin-bottom: 22px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-    }
-    .blog-card-img::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(0deg, rgba(61,43,46,0.06), transparent 40%);
-    }
-    .blog-card-img.placeholder {
-      display: flex; align-items: center; justify-content: center;
-      background: var(--warm-cream);
-    }
-    .blog-card-img.placeholder span {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-style: normal;
-      font-size: 4rem;
-      color: rgba(149,82,81,0.22);
-    }
-    .blog-card-cat {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 10px;
-    }
-    .blog-card h3 {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: 1.4rem; font-weight: 500;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-    .blog-card p {
-      font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    .blog-cta {
-      text-align: center;
-      margin-top: 72px;
-    }
+  /* ─── 4 BAUSTEINE (Hell + freundlich) ─── */
+  .features {
+    padding: 160px 0;
+    background: var(--bg);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .features::before {
+    content: ""; position: absolute; top: -200px; right: -200px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 156, 109, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .features::after {
+    content: ""; position: absolute; bottom: -200px; left: -200px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(67, 10, 20, 0.15), transparent 70%);
+    pointer-events: none;
+  }
+  .features-header { text-align: center; margin-bottom: 90px; max-width: 900px; margin-left: auto; margin-right: auto; position: relative; }
+  .features-eyebrow {
+    font-size: 11px; letter-spacing: 0.35em; text-transform: none;
+    color: var(--bordeaux); font-weight: 700;
+    margin-bottom: 24px; display: inline-block;
+  }
+  .features-header h2 {
+    font-size: clamp(48px, 6.5vw, 96px);
+    font-weight: 900 !important;
+    margin-bottom: 24px;
+    color: var(--ink);
+    -webkit-text-stroke: 1.5px currentColor;
+  }
+  .features-header h2 em { font-style: normal; color: #ff9c6d; -webkit-text-stroke: 1.5px #ff9c6d; }
+  .features-lede { font-size: 17px; color: var(--muted); line-height: 1.6; max-width: 620px; margin: 0 auto; }
 
-    /* ────────── PLATFORMS (3-col) ────────── */
-    .platforms {
-      max-width: 1280px; margin: 0 auto;
-      padding: 120px 32px 100px;
-    }
-    .platforms-inner {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-    }
-    .platform-card {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: transform 0.35s;
-    }
-    .platform-card:hover { transform: translateY(-6px); }
-    .platform-img {
-      width: 100%; aspect-ratio: 1 / 1;
-      background-size: cover; background-position: center;
-      background-color: var(--warm-cream);
-      border-radius: 18px;
-      overflow: hidden;
-    }
-    .platform-label {
-      display: block;
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.36em; text-transform: uppercase;
-      color: var(--text-dark);
-      text-align: center;
-      margin-top: 26px;
-      text-decoration: underline;
-      text-underline-offset: 6px;
-      text-decoration-thickness: 1px;
-    }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    max-width: 1200px; margin: 0 auto;
+    position: relative;
+  }
+  @media (max-width: 1100px) { .features-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } }
 
-    /* ────────── NEWSLETTER ────────── */
-    .newsletter {
-      background: var(--warm-cream);
-      padding: 120px 32px;
-    }
-    .newsletter-inner {
-      max-width: 620px; margin: 0 auto; text-align: center;
-    }
-    .newsletter h2 {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      font-weight: 500;
-      margin-bottom: 14px;
-      letter-spacing: -0.01em;
-    }
-    .newsletter h2 em { font-style: normal; color: var(--bordeaux); }
-    .newsletter p {
-      color: var(--text-muted);
-      font-size: 15px;
-      margin-bottom: 32px;
-    }
+  .feature-card {
+    background: #fff;
+    padding: 44px 36px;
+    border-radius: 14px;
+    border: 1.5px solid currentColor;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: currentColor;
+  }
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(45, 31, 34, 0.15);
+  }
+  /* Farb-Varianten pro Card */
+  .feature-card.fc-orange { color: #ff9c6d; }
+  .feature-card.fc-pink   { color: #c74873; }
+  .feature-card.fc-red    { color: #430a14; }
+  .feature-card.fc-blue   { color: #7993ae; }
+  .feature-badge {
+    display: inline-block;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: none;
+    color: currentColor; font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    opacity: 0.85;
+  }
+  .feature-card h3 {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 30px; color: currentColor !important;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+    line-height: 1.02;
+    text-transform: none;
+    -webkit-text-stroke: 1px currentColor;
+  }
+  .feature-card p {
+    font-size: 14px; color: var(--muted); line-height: 1.65;
+  }
 
-    /* ────────── KONTAKT ────────── */
-    .kontakt {
-      padding: 120px 32px;
-      background: var(--warm-white);
-      text-align: center;
-    }
-    .kontakt-inner { max-width: 540px; margin: 0 auto; }
-    .kontakt p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
-    .kontakt-buttons {
-      display: flex; flex-direction: column; gap: 10px; align-items: center;
-    }
+  /* ─── PORTFOLIO Tab-System (Wähle deine Welt) ─── */
+  .portfolio { padding: 160px 0; background: var(--bg); }
+  .portfolio-header { text-align: center; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .portfolio-header .eyebrow {
+    font-size: 11px; letter-spacing: 0.35em; text-transform: none;
+    color: var(--muted); font-weight: 500;
+    margin-bottom: 24px; display: inline-block;
+  }
+  .portfolio-header h2 { font-size: clamp(44px, 6vw, 88px); font-weight: 400; margin-bottom: 20px; }
+  .portfolio-header h2 em { font-style: normal; color: var(--bordeaux); }
+  .portfolio-header p { font-size: 16px; color: var(--muted); }
 
-    /* ────────── FOOTER ────────── */
-    footer {
-      background: var(--text-dark);
-      color: rgba(253,251,249,0.7);
-      padding: 80px 32px 34px;
-      text-align: center;
-    }
-    .footer-logo {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-style: normal;
-      font-size: 40px; font-weight: 500;
-      color: var(--warm-white);
-      margin-bottom: 24px;
-      display: inline-block;
-      position: relative;
-      text-decoration: none;
-    }
-    .footer-logo::after {
-      content: '';
-      position: absolute; bottom: -8px; left: 20%; right: 20%;
-      height: 1px; background: var(--copper);
-    }
-    .footer-links {
-      display: flex; gap: 22px 34px; justify-content: center; flex-wrap: wrap;
-      margin: 36px 0 26px;
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.26em; text-transform: uppercase;
-    }
-    .footer-links a {
-      color: rgba(253,251,249,0.7);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .footer-links a:hover { color: var(--copper-light); }
-    .footer-contact { font-size: 13px; margin-bottom: 12px; line-height: 1.7; }
-    .footer-disclaimer { font-size: 10.5px; color: rgba(253,251,249,0.35); margin-top: 22px; letter-spacing: 0.08em; line-height: 1.6; }
+  .port-tabs {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  .port-tab {
+    padding: 14px 26px;
+    background: var(--card);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 13px; font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+  .port-tab:hover { border-color: var(--bordeaux); color: var(--bordeaux); }
+  .port-tab.active {
+    background: var(--bordeaux); border-color: var(--bordeaux); color: #fff;
+    box-shadow: 0 10px 20px rgba(67, 10, 20, 0.25);
+  }
 
-    /* ══════════ LANDING OVERLAY. Cream↔Farbe Invert (nach Agentur-Spec) ══════════ */
-    html.overlay-open, body.overlay-open { overflow: hidden; }
-    #landing-overlay {
-      position: fixed; inset: 0; z-index: 9999;
-      background: var(--warm-white);
-      overflow: hidden;
-      opacity: 0; visibility: hidden;
-      transition: opacity 0.6s ease, visibility 0s linear 0.6s;
-    }
-    #landing-overlay.visible {
-      opacity: 1; visibility: visible;
-      transition: opacity 0.6s ease, visibility 0s;
-    }
+  .port-panel { display: none; animation: pFade 0.5s ease; }
+  .port-panel.active { display: block; }
+  @keyframes pFade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Kicker (oben links) + Brand-Mark (oben rechts) */
-    .lo-kicker {
-      position: absolute; top: 32px; left: 40px; z-index: 5;
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      opacity: 0.6;
-      transition: color 0.5s, opacity 0.5s;
-    }
-    .lo-brand-mark {
-      position: absolute; top: 32px; right: 40px; z-index: 5;
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      opacity: 0.6;
-      transition: color 0.5s, opacity 0.5s;
-    }
-    .lo-mobile-tag {
-      display: none;
-      position: absolute; bottom: 130px; left: 50%; transform: translateX(-50%);
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--ink);
-      opacity: 0.55;
-      z-index: 5;
-      transition: color 0.5s, opacity 0.5s;
-    }
+  .port-inner {
+    max-width: 1100px; margin: 0 auto;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 40px 36px;
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 700px) { .port-inner { padding: 40px 24px; } }
+  .port-inner .k { font-size: 11px; letter-spacing: 0.3em; text-transform: none; color: var(--gold); font-weight: 600; margin-bottom: 20px; display: inline-block; }
+  .port-inner h3 {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900;
+    font-size: clamp(36px, 5vw, 60px);
+    margin-bottom: 20px; line-height: 1.05;
+  }
+  .port-inner p { font-size: 16px; color: var(--muted); max-width: 620px; margin-bottom: 40px; line-height: 1.65; }
 
-    /* Stage-Wrapper. hier läuft der Farb-Wechsel */
-    #lo-stage-wrap {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--warm-white);
-      transition: background 0.28s ease;
-    }
-    /* 6 States: pro Wort 2 Farben (a = cream, b = pastell) */
-    #lo-stage-wrap.state-1a { background: var(--cream); }
-    #lo-stage-wrap.state-1b { background: var(--rose); }
-    #lo-stage-wrap.state-2a { background: var(--cream); }
-    #lo-stage-wrap.state-2b { background: var(--lavender); }
-    #lo-stage-wrap.state-3a { background: var(--cream); }
-    #lo-stage-wrap.state-3b {
-      background: linear-gradient(135deg, #d69a48 0%, #e2ae61 25%, #f2cf8f 45%, #e2ae61 65%, #c99048 100%);
-    }
+  .port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 700px) { .port-grid { grid-template-columns: 1fr 1fr; } }
+  .port-item {
+    border-radius: 4px; overflow: hidden; aspect-ratio: 4/5;
+    box-shadow: 0 10px 20px rgba(45, 31, 34, 0.08);
+    transition: transform 0.5s;
+  }
+  .port-item:hover { transform: translateY(-4px); }
+  .port-item img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Kicker/Brand Farb-Invert bei pastelligen BGs. Malaga für Kontrast */
-    #lo-stage-wrap.state-1b ~ .lo-kicker,
-    #lo-stage-wrap.state-1b ~ .lo-brand-mark,
-    #lo-stage-wrap.state-1b ~ .lo-mobile-tag { color: var(--malaga); opacity: 0.85; }
-    #lo-stage-wrap.state-2b ~ .lo-kicker,
-    #lo-stage-wrap.state-2b ~ .lo-brand-mark,
-    #lo-stage-wrap.state-2b ~ .lo-mobile-tag { color: var(--malaga); opacity: 0.85; }
-    #lo-stage-wrap.state-3b ~ .lo-kicker,
-    #lo-stage-wrap.state-3b ~ .lo-brand-mark,
-    #lo-stage-wrap.state-3b ~ .lo-mobile-tag { color: var(--malaga); opacity: 0.9; }
+  .port-fitness-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    background: #0e0e0e; padding: 40px 30px; border-radius: 8px;
+  }
+  @media (max-width: 700px) { .port-fitness-grid { grid-template-columns: 1fr; } }
+  .port-fitness-grid > div { border-radius: 4px; overflow: hidden; }
+  .port-fitness-grid img { width: 100%; height: auto; display: block; }
 
-    /* Wortstack */
-    .lo-wordstack {
-      text-align: center;
-      max-width: 1100px;
-      padding: 0 40px;
-    }
-    .lo-word {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-weight: 900;
-      font-size: clamp(3.2rem, 12vw, 9.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.035em;
-      color: var(--bordeaux);
-      margin-bottom: 28px;
-      transition: color 0.28s ease;
-    }
-    /* Wort-Farbe je State */
-    #lo-stage-wrap.state-1a .lo-word { color: var(--pink); }
-    #lo-stage-wrap.state-1b .lo-word { color: var(--malaga); }
-    #lo-stage-wrap.state-2a .lo-word { color: var(--malaga); }
-    #lo-stage-wrap.state-2b .lo-word { color: var(--malaga); }
-    #lo-stage-wrap.state-3a .lo-word {
-      background: linear-gradient(135deg, #d69a48 0%, #e2ae61 30%, #f5d59c 55%, #c99048 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    #lo-stage-wrap.state-3b .lo-word { color: var(--malaga); }
-    .lo-word.snap {
-      opacity: 0;
-      transition: opacity 0.15s ease;
-    }
-    .lo-word.snap.in {
-      opacity: 1;
-    }
+  .port-mental-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  @media (max-width: 700px) { .port-mental-grid { grid-template-columns: repeat(2, 1fr); } }
+  .port-mental-grid > div { border-radius: 4px; overflow: hidden; aspect-ratio: 3/4; }
+  .port-mental-grid img { width: 100%; height: 100%; object-fit: cover; }
 
-    .lo-word-sub {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: clamp(1rem, 1.6vw, 1.35rem);
-      line-height: 1.45;
-      color: var(--ink);
-      opacity: 0.75;
-      max-width: 640px;
-      margin: 0 auto;
-      transition: color 0.28s ease, opacity 0.28s ease;
-    }
-    #lo-stage-wrap.state-1b .lo-word-sub,
-    #lo-stage-wrap.state-2b .lo-word-sub { color: var(--warm-white); opacity: 0.9; }
-    #lo-stage-wrap.state-3b .lo-word-sub { color: var(--ink); opacity: 0.85; }
+  .port-placeholder {
+    text-align: center; padding: 80px 30px;
+  }
+  .port-placeholder .icon {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--bg-soft); color: var(--bordeaux);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+  }
 
-    /* Sub Slide-in from left */
-    .lo-word-sub.slide {
-      opacity: 0;
-      transform: translateX(-32px);
-      transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1);
-    }
-    .lo-word-sub.slide.in {
-      opacity: 0.85;
-      transform: translateX(0);
-      transition-delay: 0.5s;
-    }
-    #lo-stage-wrap.state-1b .lo-word-sub.slide.in,
-    #lo-stage-wrap.state-2b .lo-word-sub.slide.in { opacity: 0.9; }
+  /* ─── ÜBER JULIA ─── */
+  .mentor { padding: 160px 0; background: var(--bg-warm); }
+  .mentor-inner {
+    display: grid; grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+  @media (max-width: 900px) { .mentor-inner { grid-template-columns: 1fr; gap: 50px; } }
+  .mentor-portrait {
+    aspect-ratio: 4/5; border-radius: 3px; overflow: hidden;
+    box-shadow: 0 50px 100px rgba(45, 31, 34, 0.25);
+    position: relative;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--gold), #b8925c 50%, var(--gold));
+  }
+  .mentor-portrait::after {
+    content: ""; position: absolute; inset: 12px;
+    border: 1px solid rgba(45, 31, 34, 0.15);
+    pointer-events: none; z-index: 2;
+  }
+  .mentor-portrait img { width: 100%; height: 100%; object-fit: cover; animation: kenburns 24s ease-in-out infinite alternate; position: relative; z-index: 1; }
+  .mentor-eyebrow {
+    color: var(--bordeaux) !important;
+  }
+  .mentor-eyebrow {
+    font-size: 11px; letter-spacing: 0.35em; text-transform: none;
+    color: var(--muted); font-weight: 500; margin-bottom: 24px;
+  }
+  .mentor-content h2 {
+    font-size: clamp(44px, 6vw, 82px); font-weight: 400;
+    margin-bottom: 32px;
+  }
+  .mentor-content h2 em { font-style: normal; color: var(--bordeaux); }
+  .mentor-content p {
+    font-size: 17px; color: var(--ink-soft);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .mentor-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0; }
+  .mentor-chips span {
+    padding: 8px 16px;
+    background: var(--card); border: 1px solid var(--line-strong);
+    border-radius: 999px; font-size: 12px; color: var(--ink); font-weight: 500;
+    letter-spacing: 0.03em;
+  }
 
-    /* Progress Dots (unten mittig) */
-    .lo-progress {
-      position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 10px; z-index: 5;
-    }
-    .lo-progress .pd {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: rgba(45,31,34,0.18);
-      transition: background 0.4s, width 0.4s, border-radius 0.4s;
-    }
-    .lo-progress .pd.active {
-      background: var(--bordeaux);
-      width: 32px; border-radius: 999px;
-    }
-    #lo-stage-wrap.state-1b ~ .lo-progress .pd { background: rgba(255,255,255,0.35); }
-    #lo-stage-wrap.state-1b ~ .lo-progress .pd.active { background: var(--warm-white); }
-    #lo-stage-wrap.state-2b ~ .lo-progress .pd { background: rgba(255,156,109,0.35); }
-    #lo-stage-wrap.state-2b ~ .lo-progress .pd.active { background: var(--orange); }
-    #lo-stage-wrap.state-3b ~ .lo-progress .pd { background: rgba(45,31,34,0.25); }
-    #lo-stage-wrap.state-3b ~ .lo-progress .pd.active { background: var(--ink); }
+  /* ─── RESULTS (Zahlen dunkel) ─── */
+  .results { padding: 160px 0; background: var(--bordeaux); color: var(--bg); text-align: center; }
+  .results-header { max-width: 900px; margin: 0 auto 90px; }
+  .results-header h2 { color: var(--bg); font-size: clamp(44px, 6vw, 90px); font-weight: 400; }
+  .results-header h2 em { color: var(--gold); font-style: normal; }
+  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 80px; max-width: 1100px; margin: 0 auto; }
+  @media (max-width: 700px) { .results-grid { grid-template-columns: 1fr; gap: 50px; } }
+  .result {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 30px; align-items: center;
+    text-align: left;
+  }
+  .result .num {
+    font-family: 'Object Sans', -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 82px);
+    color: var(--gold); line-height: 1;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+  .result-text { display: flex; flex-direction: column; gap: 6px; }
+  .result .lbl { font-size: 11px; letter-spacing: 0.25em; text-transform: none; color: rgba(251, 242, 237, 0.7); font-weight: 500; }
+  .result .hint { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-size: 15px; color: rgba(251, 242, 237, 0.6); }
 
-    /* Skip-Button (unten mittig) */
-    .lo-skip {
-      position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%);
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid rgba(45,31,34,0.25);
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 12px 26px;
-      cursor: pointer;
-      border-radius: 999px;
-      transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
-      z-index: 10;
-    }
-    .lo-skip:hover {
-      background: var(--ink); color: var(--warm-white); border-color: var(--ink);
-      transform: translateX(-50%) translateY(-2px);
-    }
-    #lo-stage-wrap.state-1b ~ .lo-skip,
-    #lo-stage-wrap.state-2b ~ .lo-skip {
-      color: var(--warm-white); border-color: rgba(255,255,255,0.4);
-    }
-    #lo-stage-wrap.state-1b ~ .lo-skip:hover,
-    #lo-stage-wrap.state-2b ~ .lo-skip:hover {
-      background: var(--warm-white); color: var(--ink); border-color: var(--warm-white);
-    }
-    #lo-stage-wrap.state-3b ~ .lo-skip {
-      color: var(--ink); border-color: rgba(45,31,34,0.35);
-    }
+  /* ─── NEWSLETTER Split ─── */
+  .newsletter-section { padding: 160px 0; background: var(--bg); }
+  .nl-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    max-width: 1200px; margin: 0 auto;
+    background: var(--card);
+    border-radius: 8px; overflow: hidden;
+    box-shadow: 0 50px 100px rgba(45, 31, 34, 0.15);
+  }
+  @media (max-width: 900px) { .nl-inner { grid-template-columns: 1fr; } }
+  .nl-image { aspect-ratio: 1/1; overflow: hidden; }
+  .nl-image img { width: 100%; height: 100%; object-fit: cover; animation: kenburns 20s ease-in-out infinite alternate; }
+  .nl-content { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; }
+  @media (max-width: 700px) { .nl-content { padding: 50px 30px; } }
+  .nl-mark { width: 60px; height: 2px; background: var(--gold); margin-bottom: 32px; }
+  .nl-content h2 { font-size: clamp(32px, 4vw, 52px); font-weight: 400; line-height: 1.1; margin-bottom: 24px; }
+  .nl-content h2 em { font-style: normal; color: var(--bordeaux); }
+  .nl-content p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
+  .nl-form {
+    display: flex; gap: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: 6px 6px 6px 20px;
+    background: var(--bg);
+  }
+  .nl-form input { flex: 1; border: 0; background: transparent; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 14px; color: var(--ink); outline: none; }
+  .nl-form button {
+    padding: 14px 28px;
+    background: var(--bordeaux); color: #fff;
+    border: 0; border-radius: 999px;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: none;
+    cursor: pointer; transition: background 0.4s;
+  }
+  .nl-form button:hover { background: var(--bordeaux-hi); }
 
-    /* ══════════ CHOICE-SLIDE ══════════ */
-    #lo-choice {
-      position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, rgba(245,235,224,0.88) 0%, rgba(222,208,194,0.94) 100%),
-        url('images/pfingstrose.jpeg'),
-        url('images/header.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: none;
-      overflow-y: auto;
-      padding: 88px 32px 128px;
-    }
-    #lo-choice.on { display: block; }
-    .lo-choice-inner {
-      max-width: 1200px; margin: 0 auto;
-      text-align: center;
-    }
-    .lo-choice-kicker {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--bordeaux);
-      margin-bottom: 18px;
-      display: inline-block;
-    }
-    .lo-choice-h {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.4rem, 5.5vw, 4.5rem);
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      margin-bottom: 18px;
-    }
-    .lo-choice-h em {
-      font-style: normal;
-      background: linear-gradient(135deg, #c99048 0%, #e2ae61 30%, #f5d59c 55%, #d69a48 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .lo-choice-sub {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 16px;
-      color: var(--ink);
-      opacity: 0.72;
-      max-width: 620px; margin: 0 auto 40px;
-      line-height: 1.55;
-    }
+  /* ─── FOOTER ─── */
+  footer { background: var(--bordeaux); color: rgba(251, 242, 237, 0.6); padding: 80px 0 40px; }
+  .footer-top {
+    max-width: 1200px; margin: 0 auto 100px; padding: 0 40px;
+    display: grid; grid-template-columns: 1fr auto auto; gap: 60px;
+  }
+  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr; gap: 40px; } }
+  .footer-nav { display: flex; flex-direction: column; gap: 12px; }
+  .footer-nav a { font-size: 12px; letter-spacing: 0.15em; text-transform: none; color: var(--bg); font-weight: 500; transition: color 0.3s; }
+  .footer-nav a:hover { color: var(--gold); }
+  .footer-social-h { font-size: 12px; letter-spacing: 0.15em; text-transform: none; color: rgba(251, 242, 237, 0.5); margin-bottom: 12px; }
+  .footer-social { display: flex; gap: 16px; }
+  .footer-social a {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(251, 242, 237, 0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bg); transition: all 0.3s;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+  }
+  .footer-social a:hover { background: var(--gold); color: var(--ink); }
+  .footer-legal a { display: block; font-size: 12px; letter-spacing: 0.15em; text-transform: none; color: var(--bg); margin-bottom: 8px; transition: color 0.3s; }
+  .footer-legal a:hover { color: var(--gold); }
+  .footer-xxl { text-align: center; padding: 0 20px; }
+  .footer-xxl .logo {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900;
+    font-size: clamp(80px, 18vw, 240px);
+    color: var(--bg); letter-spacing: -0.03em; line-height: 0.85;
+  }
+  .footer-xxl .logo .g { color: var(--bordeaux); }
+  .footer-copy { margin-top: 50px; text-align: center; font-size: 11px; letter-spacing: 0.2em; text-transform: none; color: rgba(251, 242, 237, 0.35); }
 
-    /* Symptom-Chips */
-    .lo-chips {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 10px;
-      margin: 0 auto 44px;
-      max-width: 900px;
-    }
-    .lo-chip {
-      display: inline-flex; align-items: center;
-      padding: 11px 22px;
-      background: rgba(255,255,255,0.7);
-      color: var(--ink);
-      border: 1px solid rgba(67,10,20,0.18);
-      border-radius: 999px;
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
-      cursor: pointer;
-    }
-    .lo-chip:hover {
-      background: var(--pink); color: var(--cream);
-      border-color: var(--pink);
-      transform: translateY(-2px);
-    }
-
-    .lo-choice-divider {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--ink);
-      opacity: 0.5;
-      margin: 4px 0 26px;
-    }
-
-    /* 5 Signature-Cards nebeneinander */
-    .lo-choice-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      max-width: 1200px; margin: 0 auto 26px;
-    }
-    .lo-c-card {
-      display: flex; align-items: flex-end;
-      padding: 24px 22px;
-      text-align: left;
-      text-decoration: none;
-      min-height: 220px;
-      border-radius: 18px;
-      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-    .lo-c-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 60px rgba(45,31,34,0.20);
-    }
-    .lo-c-card h3 {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Farb-Variants. Text immer weiß */
-    .lo-c-malaga   { background: var(--malaga);   color: #ffffff; }
-    .lo-c-pink     { background: var(--pink);     color: #ffffff; }
-    .lo-c-rose     { background: var(--rose);     color: #ffffff; }
-    .lo-c-lavender { background: var(--lavender); color: #ffffff; }
-    .lo-c-beige    { background: var(--beige);    color: #ffffff; }
-    .lo-c-cream    { background: var(--cream-hi); color: #ffffff; border: 1px solid rgba(82,11,35,0.10); }
-
-    /* Gold-Card: subtiler metallic Verlauf, Text weiß */
-    .lo-c-gold {
-      background: linear-gradient(135deg, #d69a48 0%, #e2ae61 25%, #f2cf8f 45%, #e2ae61 65%, #c99048 100%);
-      color: #ffffff;
-      position: relative;
-    }
-    /* h3 in Cards immer weiß, kein Metallic-Overlay */
-    .lo-c-card h3 { color: #ffffff !important; -webkit-text-fill-color: #ffffff; }
-
-    /* Metallic Sheen on hover. läuft einmal durch */
-    .lo-c-card::after {
-      content: '';
-      position: absolute; top: 0; left: -75%;
-      width: 50%; height: 100%;
-      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.14) 50%, transparent 100%);
-      transform: skewX(-20deg);
-      transition: left 0.9s cubic-bezier(0.16,1,0.3,1);
-      pointer-events: none;
-      z-index: 3;
-    }
-    .lo-c-card:hover::after { left: 125%; }
-
-    /* TerraLuna Card mit App-Screenshot. malaga Overlay + gold Metallic-Rand */
-    .lo-c-image {
-      background-size: cover;
-      background-position: center top;
-      background-color: var(--malaga);
-      color: var(--cream);
-      min-height: 300px;
-      box-shadow: inset 0 0 0 1px rgba(226,174,97,0.35);
-    }
-    .lo-c-image::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(82,11,35,0.15) 0%, rgba(82,11,35,0.45) 55%, rgba(82,11,35,0.82) 100%);
-      z-index: 1;
-    }
-    .lo-c-image h3 {
-      color: var(--cream);
-      background: linear-gradient(135deg, #f2cf8f 0%, #e2ae61 40%, #f5d59c 70%, #e2ae61 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Selbsttest-CTA nach den Cards */
-    .lo-selbsttest {
-      max-width: 900px; margin: 32px auto 0;
-    }
-    .lo-selbsttest-card {
-      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px;
-      background: rgba(255,255,255,0.75);
-      border: 1px solid rgba(67,10,20,0.14);
-      padding: 28px 34px;
-      text-decoration: none;
-      color: var(--ink);
-      transition: transform 0.35s, box-shadow 0.35s, background 0.35s;
-      text-align: left;
-      border-radius: 18px;
-    }
-    .lo-selbsttest-card:hover {
-      transform: translateY(-3px);
-      background: #fff;
-      box-shadow: 0 24px 50px rgba(67,10,20,0.14);
-    }
-    .lo-selbsttest-body { display: flex; flex-direction: column; gap: 4px; }
-    .lo-selbsttest-body .lo-eyebrow {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--bordeaux);
-      margin-bottom: 6px;
-    }
-    .lo-selbsttest-body h3 {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 900;
-      font-size: 1.35rem;
-      line-height: 1.15;
-      margin-bottom: 4px;
-      color: var(--ink);
-    }
-    .lo-selbsttest-body p {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 14px;
-      color: var(--ink);
-      opacity: 0.7;
-      line-height: 1.5;
-    }
-    .lo-selbsttest-arrow {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.15em;
-      color: var(--bordeaux);
-      display: inline-flex; align-items: center; gap: 10px;
-      white-space: nowrap;
-    }
-    .lo-selbsttest-arrow::after {
-      content: '→'; font-size: 16px;
-      transition: transform 0.3s;
-    }
-    .lo-selbsttest-card:hover .lo-selbsttest-arrow::after { transform: translateX(6px); }
-
-    /* Skip-Button ist in der Choice-Slide oben rechts */
-    #lo-choice .lo-skip {
-      position: absolute; top: 24px; right: 28px;
-      left: auto; bottom: auto; transform: none;
-    }
-    #lo-choice .lo-skip:hover { transform: translateY(-2px); }
-
-    /* Mobile */
-    @media (max-width: 900px) {
-      .lo-kicker, .lo-brand-mark { display: none; }
-      .lo-mobile-tag { display: block; }
-      .lo-choice-grid { grid-template-columns: repeat(2, 1fr); }
-      .lo-c-card { min-height: 220px; padding: 26px 22px; }
-    }
-    @media (max-width: 600px) {
-      #lo-choice { padding: 60px 20px 100px; }
-      .lo-choice-grid { grid-template-columns: 1fr; }
-      .lo-selbsttest-card { grid-template-columns: 1fr; padding: 22px 24px; gap: 14px; }
-      .lo-selbsttest-arrow { justify-self: start; }
-      .lo-progress { bottom: 92px; }
-      .lo-skip { bottom: 34px; padding: 11px 22px; font-size: 11.5px; }
-    }
-
-    /* ────────── RESPONSIVE ────────── */
-    @media (max-width: 1080px) {
-      .diag-grid { grid-template-columns: 1fr; gap: 20px; }
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
-      .float-card { width: 300px; top: -200px; }
-    }
-    @media (max-width: 900px) {
-      .topbar { display: none; }
-      nav { top: 0; position: sticky; background: rgba(253,251,249,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-      nav .nav-logo { color: var(--text-dark); }
-      nav .nav-logo::after { background: var(--copper); }
-      nav .nav-left a, nav .nav-right a { color: var(--text-dark); }
-      nav .menu-toggle { color: var(--text-dark); }
-      .nav-inner { grid-template-columns: 1fr auto 1fr; padding: 16px 20px; gap: 12px; }
-      .nav-logo { font-size: 28px; }
-      .nav-left, .nav-right { display: none; }
-      .menu-toggle { display: block; justify-self: end; }
-      nav.open .nav-left, nav.open .nav-right {
-        display: flex; flex-direction: column; align-items: center;
-        grid-column: 1 / -1;
-        padding: 20px 0;
-        gap: 6px;
-      }
-      nav.open .nav-inner { grid-template-columns: auto; grid-template-rows: auto auto auto; row-gap: 8px; }
-      nav.open .nav-logo { grid-column: 1 / -1; text-align: center; justify-self: center; }
-      nav.open .menu-toggle { position: absolute; top: 16px; right: 20px; }
-
-      .hero { min-height: auto; }
-      .hero-inner { padding: 100px 24px 80px; }
-      .float-card-wrap { padding: 0 20px; }
-      .float-card {
-        position: static; width: auto; margin: -80px auto 0;
-        max-width: 400px;
-      }
-
-      .app-section { padding: 80px 20px 60px; }
-      .app-section-inner { grid-template-columns: 1fr; gap: 60px; }
-      .app-section-phones { order: 2; }
-
-      .diag { padding: 80px 20px; }
-      .diag-head { margin-bottom: 48px; }
-
-      .feature-band-inner {
-        grid-template-columns: 1fr; padding: 80px 20px; gap: 40px;
-      }
-      .feature-band-inner.reverse .feature-visual { order: 0; }
-      .feature-band-inner.reverse .feature-text { order: 0; }
-      .feature-visual { aspect-ratio: 4 / 3; }
-
-      .blog-section { padding: 80px 20px; }
-      .blog-grid { grid-template-columns: 1fr; gap: 40px; }
-
-      .platforms { padding: 70px 20px; }
-      .platforms-inner { grid-template-columns: 1fr; gap: 40px; }
-
-      .newsletter { padding: 70px 20px; }
-      .kontakt { padding: 70px 20px; }
-    }
-  </style>
+</style>
 </head>
 <body>
 
-<!-- LANDING OVERLAY. Cream↔Farbe Invert Animation + Choice -->
-<div id="landing-overlay" role="dialog" aria-label="Willkommen">
-
-  <!-- Stage-Wrap: der Farb-Wechsel läuft hier -->
-  <div id="lo-stage-wrap" class="state-1a">
-    <div class="lo-wordstack">
-      <h1 class="lo-word" id="lo-word">Blähbauch?</h1>
-      <p class="lo-word-sub slide in" id="lo-word-sub">Kann Histamin sein. muss aber nicht.</p>
-    </div>
-  </div>
-
-  <!-- Kicker + Brand + Progress + Skip (nach Stage-Wrap für ~-Selektor) -->
-  <span class="lo-kicker" id="lo-kicker">N°01</span>
-  <span class="lo-brand-mark">Julia Bergles</span>
-  <span class="lo-mobile-tag" id="lo-mobile-tag">N°01 · Julia Bergles</span>
-
-  <div class="lo-progress" id="lo-progress">
-    <span class="pd active"></span>
-    <span class="pd"></span>
-    <span class="pd"></span>
-  </div>
-
-  <button class="lo-skip" id="lo-skip" type="button">Überspringen</button>
-
-  <!-- Choice-Slide (kommt nach der Animation oder per Skip) -->
-  <div id="lo-choice">
-    <button class="lo-skip" id="lo-skip-choice" type="button">Zur Website</button>
-    <div class="lo-choice-inner">
-      <span class="lo-choice-kicker">Was beschäftigt dich?</span>
-      <h2 class="lo-choice-h">Wobei kann ich dir <em>helfen</em>?</h2>
-      <div class="lo-chips">
-        <a href="blog/blaehbauch-in-griff/" class="lo-chip">Blähbauch</a>
-        <a href="reizdarm.html" class="lo-chip">Bauchschmerzen</a>
-        <a href="reizdarm.html" class="lo-chip">Krämpfe</a>
-        <a href="mcas.html" class="lo-chip">Übelkeit</a>
-        <a href="reizdarm.html" class="lo-chip">Reizdarm</a>
-        <a href="blog/darmverschluss/" class="lo-chip">Darmverschluss</a>
-        <a href="#app" class="lo-chip" data-in-page>PMS &middot; Zyklus</a>
-        <a href="histaminintoleranz.html" class="lo-chip">Histaminintoleranz</a>
-        <a href="mcas.html" class="lo-chip">MCAS</a>
-        <a href="blog/weg-aus-depressionen/" class="lo-chip">Depressionen</a>
-        <a href="blog/orthorexie-corona/" class="lo-chip">Essstörung</a>
-        <a href="blog/sport-histamin-mcas/" class="lo-chip">Sportsucht</a>
-        <a href="blog/angst-vor-essen/" class="lo-chip">Angst vorm Essen</a>
-      </div>
-
-      <div class="lo-choice-grid">
-        <a href="#app" class="lo-c-card lo-c-pink" data-in-page>
-          <h3>TerraLuna App</h3>
-        </a>
-        <a href="ueber-mich.html" class="lo-c-card lo-c-gold">
-          <h3>Meine Geschichte</h3>
-        </a>
-        <a href="blog/" class="lo-c-card lo-c-rose">
-          <h3>Blog</h3>
-        </a>
-        <a href="#app" class="lo-c-card lo-c-lavender" data-in-page>
-          <h3>Rezepte</h3>
-        </a>
-        <a href="#" class="lo-c-card lo-c-beige" data-explore>
-          <h3>Erst mal stöbern</h3>
-        </a>
-      </div>
-
-      <div class="lo-selbsttest">
-        <a href="selbsttest.html?next=app" class="lo-selbsttest-card">
-          <div class="lo-selbsttest-body">
-            <span class="lo-eyebrow">Selbsttest</span>
-            <h3>Könnten deine Beschwerden Histamin sein?</h3>
-            <p>18 kurze Fragen. Am Ende landest du direkt in der App, die dir weiterhelfen kann.</p>
-          </div>
-          <span class="lo-selbsttest-arrow">Test starten</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TOP-BAR -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="topbar-msg">Neu · TerraLuna App live. <a href="app.html">jetzt laden</a></div>
-    <div class="topbar-social">
-      <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://agentur.juliabergles.de" target="_blank" rel="noopener">On-Point Agentur</a>
-    </div>
-  </div>
-</div>
-
 <!-- NAV -->
-<nav id="mainNav">
-  <div class="nav-inner">
-    <div class="nav-left">
-      <a href="ueber-mich.html">Über mich</a>
-      <a href="blog/">Blog</a>
-      <a href="#app">App</a>
-    </div>
-    <a href="index.html" class="nav-logo">Julia</a>
-    <div class="nav-right">
-      <a href="gespraech.html">Gespräch</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
-    <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')">&#9776;</button>
+<nav>
+  <div class="row">
+    <a href="index.html" class="brand">Julia</a>
+    <ul>
+      <li class="has-drop">
+        <a href="anfrage.html">Leistungen <span class="drop-caret">▾</span></a>
+        <div class="drop-menu">
+          <a href="ueber-mich.html">Social Media</a>
+          <a href="app.html">Mediendesign</a>
+          <a href="blog/">Webdesign</a>
+          <a href="reichweite.html">Reichweite</a>
+          <a href="anfrage.html" class="all">Angebot anfragen →</a>
+        </div>
+      </li>
+      <li><a href="warum-onpoint.html">Warum ich</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+    </ul>
+    <a href="https://dashboard.juliabergles-onpoint.de" target="_blank" rel="noopener" class="nav-login">Login</a>
+    <a href="anfrage.html" class="nav-cta">Beratung</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-group-label">Leistungen</div>
+    <a href="ueber-mich.html">Social Media</a>
+    <a href="app.html">Mediendesign</a>
+    <a href="blog/">Webdesign</a>
+    <a href="reichweite.html">Reichweite</a>
+    <a href="anfrage.html">Angebot anfragen</a>
+    <div class="mobile-group-label">Mehr</div>
+    <a href="warum-onpoint.html">Warum ich</a>
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="https://dashboard.juliabergles-onpoint.de" target="_blank" rel="noopener">Kunden-Login →</a>
+    <a href="anfrage.html" class="mobile-cta">Beratung</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <span class="hero-eyebrow">Julia Bergles</span>
-    <h1>
-      <span>Histamin.</span>
-      <span class="word2">Unverträglichkeiten.</span>
-      <span class="word3">Allergien.</span>
-    </h1>
-    <p class="hero-sub">Hier teile ich, was mir geholfen hat. die App, meine Geschichte, mein Blog.</p>
-    <div class="hero-ctas">
-      <a href="#app" class="btn btn-copper">TerraLuna App</a>
-      <a href="ueber-mich.html" class="btn btn-outline-light">Meine Geschichte</a>
+<!-- LANDING OVERLAY — Nahtloser Farbwechsel-State-Machine -->
+<style>
+  html.overlay-open, body.overlay-open { overflow: hidden !important; height: 100vh; }
+  .site-hidden { visibility: hidden; }
+
+  #landing-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    transition: opacity 0.7s ease, visibility 0s linear 0.7s, background-color 0.3s ease;
+    background: #FBF2ED;
+  }
+  #landing-overlay.done {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  /* Stage-Container für Cross-Slide zwischen Wörtern */
+  .lo-stage-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .lo-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    transform: translateX(0);
+    will-change: transform, background-color, color;
+    transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Slide-States: alter wischt nach LINKS raus, neuer kommt von RECHTS (Bewegung nach rechts) */
+  .lo-stage.leaving {
+    transform: translateX(-100%);
+    transition: transform 0.55s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  .lo-stage.incoming {
+    transform: translateX(100%);
+    transition: none;
+  }
+  .lo-stage.entering {
+    transform: translateX(0);
+    transition: transform 0.55s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  .lo-stage.hide { opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0s linear 0.5s; }
+
+  /* Heller invertierter Wechsel pro Wort — Cream + Farbe ↔ Farbe + Weinrot.
+     Weinrot bleibt als Anker (Brand), keine schwarze Sektion mehr. */
+  /* Innovation: Cream ↔ Pink */
+  .lo-stage.state-1a { background: #FBF2ED; color: #c74873; }
+  .lo-stage.state-1b { background: #c74873; color: #FBF2ED; }
+  /* Sichtbarkeit: Cream ↔ Weinrot (Mint zu hell auf Cream, Weinrot als Anker) */
+  .lo-stage.state-2a { background: #FBF2ED; color: #430a14; }
+  .lo-stage.state-2b { background: #430a14; color: #ffffff; }
+  .lo-stage.state-2b .lo-word,
+  .lo-stage.state-2b .lo-sub { color: #ffffff; }
+  /* Null Aufwand: Cream ↔ Orange */
+  .lo-stage.state-3a { background: #FBF2ED; color: #ff9c6d; }
+  .lo-stage.state-3b { background: #ff9c6d; color: #430a14; }
+
+  /* Legacy .lo-slide (nur noch für Choice-Sektion) */
+  .lo-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+  }
+  .lo-slide.active { opacity: 1; pointer-events: auto; }
+
+  .lo-slide .kicker,
+  .lo-stage .kicker {
+    position: absolute;
+    top: 32px; left: 40px;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: none;
+    font-weight: 600;
+    opacity: 0.65;
+  }
+  .lo-slide .brand-mark,
+  .lo-stage .brand-mark {
+    position: absolute;
+    top: 32px; right: 40px;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: none;
+    font-weight: 600;
+    opacity: 0.65;
+  }
+  @media (max-width: 700px) {
+    /* Handy: Kicker + Brand-Mark oben zentriert nebeneinander, "N°01 · Julia" statt getrennt */
+    .lo-slide .kicker, .lo-stage .kicker {
+      top: 20px; left: 50%; transform: translateX(-50%);
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10px;
+    }
+    .lo-slide .kicker::after, .lo-stage .kicker::after {
+      content: "·  Julia";
+      opacity: 0.9;
+    }
+    .lo-slide .brand-mark, .lo-stage .brand-mark { display: none; }
+    /* Slide-Padding reduzieren damit Wörter mehr Platz haben */
+    .lo-slide, .lo-stage { padding: 60px 12px 40px !important; }
+  }
+
+  .lo-wordstack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+  }
+  .lo-word {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 8.5vw, 110px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: none;
+    text-align: center;
+    margin: 0;
+    max-width: 100%;
+    transition: opacity 0.15s ease;
+  }
+  @media (max-width: 700px) {
+    .lo-word { font-size: clamp(34px, 9vw, 64px); line-height: 1.02; }
+    .lo-wordstack { gap: 12px; padding: 0 16px; }
+    .lo-sub { font-size: 12px; }
+  }
+  @media (max-width: 400px) {
+    .lo-word { font-size: 32px; }
+    .lo-sub { font-size: 11px; }
+  }
+  .lo-word.fading { opacity: 0; }
+  .lo-sub {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: clamp(14px, 1.4vw, 18px);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: center;
+    max-width: 480px;
+    line-height: 1.4;
+    /* Sub kommt später mit einem kleinen Delay hinter dem Wort rein */
+    opacity: 0;
+    transform: translateX(-24px);
+    animation: subSlideIn 0.55s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+    animation-delay: 0.5s;
+  }
+  @keyframes subSlideIn {
+    to { opacity: 0.85; transform: translateX(0); }
+  }
+  .lo-sub.fading { opacity: 0; }
+
+  /* Farb-Kombis pro Slide — 3 Wörter × 2 (invertiert) = 6 Slides */
+  .lo-slide.slide-1 { background: #2D1F22; color: #ff9c6d; } /* Sichtbarkeit — Schwarz · Orange */
+  .lo-slide.slide-2 { background: #ff9c6d; color: #2D1F22; } /* Sichtbarkeit — Orange · Schwarz */
+  .lo-slide.slide-3 { background: #2D1F22; color: #c74873; } /* Professionell — Schwarz · Pink */
+  .lo-slide.slide-4 { background: #c74873; color: #2D1F22; } /* Professionell — Pink · Schwarz */
+  .lo-slide.slide-5 { background: #2D1F22; color: #e7fffe; } /* Kein Aufwand — Schwarz · Mint */
+  .lo-slide.slide-6 { background: #e7fffe; color: #2D1F22; } /* Kein Aufwand — Mint · Schwarz */
+  .lo-slide.slide-choice { background: #FBF2ED; color: #2D1F22; }
+  .lo-slide .kicker, .lo-slide .brand-mark { color: currentColor; }
+
+  /* Progress-Punkte über dem Skip-Button */
+  .lo-progress {
+    position: fixed;
+    bottom: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10000;
+    transition: opacity 0.4s;
+  }
+  .lo-progress.hide { opacity: 0; pointer-events: none; }
+  .lo-progress .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.4s;
+  }
+  .lo-progress .dot.done { background: rgba(255, 255, 255, 0.9); width: 24px; border-radius: 3px; }
+
+  /* Skip-Button unten mittig */
+  .lo-skip {
+    position: fixed;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: currentColor;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .lo-skip:hover { background: rgba(255, 255, 255, 0.3); }
+  .lo-skip.hide { display: none; }
+
+  /* Choice-Slide — Bild-Header wie Mediendesign (dunkler Bordeaux-Overlay über Foto) */
+  .lo-slide.slide-choice {
+    background-image: linear-gradient(180deg, rgba(67, 10, 20, 0.88), rgba(67, 10, 20, 0.95)), url('img/bild-2.jpg');
+    background-size: cover;
+    background-position: center;
+    align-items: flex-start !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  .choice-inner {
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  @media (max-width: 700px) {
+    .lo-slide.slide-choice { padding-top: 80px !important; padding-bottom: 40px !important; }
+    .choice-inner { padding: 20px 12px; }
+  }
+  .choice-inner h2 {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(34px, 4.5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #FBF2ED;
+    margin: 0 0 12px;
+  }
+  .choice-inner .sub {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    color: rgba(255, 156, 109, 0.9);
+    margin-bottom: 40px;
+  }
+  .choice-grid-lo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (max-width: 1000px) { .choice-grid-lo { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 640px)  { .choice-grid-lo { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 420px)  { .choice-grid-lo { grid-template-columns: 1fr; } }
+
+  .choice-card-lo {
+    border-radius: 12px;
+    padding: 24px 18px 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex; flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+  }
+  @media (max-width: 700px) {
+    .choice-card-lo { min-height: 150px; padding: 22px 16px 18px; }
+    .choice-card-lo h3 { font-size: 20px !important; }
+    .choice-card-lo .n { font-size: 22px; margin-bottom: 10px; }
+  }
+  .choice-card-lo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.18);
+  }
+  .choice-card-lo .n {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 26px;
+    color: inherit;
+    margin: 0 0 14px;
+    opacity: 0.85;
+  }
+  .choice-card-lo h3 {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 22px;
+    color: inherit !important;
+    margin: 0 0 8px;
+    line-height: 1.05;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+  .choice-card-lo p {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.5;
+    flex-grow: 1;
+    opacity: 0.85;
+  }
+  /* Alle Cards einheitlich: Bordeaux mit Gold — ruhig und markig */
+  .choice-card-lo.c-orange,
+  .choice-card-lo.c-red,
+  .choice-card-lo.c-pink,
+  .choice-card-lo.c-blue,
+  .choice-card-lo.c-ink {
+    background: #430a14;
+    color: #ff9c6d;
+    border: 1px solid rgba(255, 156, 109, 0.32);
+  }
+  .choice-card-lo.c-orange:hover,
+  .choice-card-lo.c-red:hover,
+  .choice-card-lo.c-pink:hover,
+  .choice-card-lo.c-blue:hover,
+  .choice-card-lo.c-ink:hover {
+    border-color: #ff9c6d;
+    background: #5a1220;
+  }
+  .choice-card-lo p { color: rgba(255, 156, 109, 0.75); }
+
+  /* ─── Wobei kann ich dir helfen? ─── */
+  .help-choice {
+    padding: 120px 40px;
+    background: #2D1F22;
+    color: #FBF2ED;
+  }
+  @media (max-width: 700px) { .help-choice { padding: 80px 24px; } }
+  .help-choice .container { max-width: 1200px; margin: 0 auto; }
+  .help-choice .eyebrow {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 11px;
+    letter-spacing: 0.32em; text-transform: none;
+    color: #ff9c6d;
+    margin-bottom: 20px;
+  }
+  .help-choice h2 {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: #FBF2ED !important;
+    margin-bottom: 60px;
+    max-width: 900px;
+    text-transform: none;
+  }
+  .help-choice h2 em {
+    font-style: normal;
+    color: #ff9c6d;
+  }
+  .help-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 1100px) { .help-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 720px)  { .help-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px)  { .help-grid { grid-template-columns: 1fr; } }
+  .help-card {
+    border-radius: 14px;
+    padding: 32px 24px 26px;
+    text-align: left;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex; flex-direction: column;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 700px) {
+    .help-card { min-height: 180px; padding: 26px 22px 22px; }
+    .help-card h3 { font-size: 26px !important; }
+    .help-card .num { font-size: 38px; margin-bottom: 14px; }
+  }
+  .help-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  }
+  .help-card .num {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 44px; line-height: 1;
+    color: inherit;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    opacity: 0.85;
+  }
+  .help-card h3 {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 30px;
+    color: inherit !important;
+    margin-bottom: 10px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+  .help-card p {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    opacity: 0.85;
+  }
+  .help-card .arrow {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: none;
+    font-weight: 700;
+    color: inherit;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: gap 0.3s;
+    opacity: 0.9;
+  }
+  .help-card:hover .arrow { gap: 14px; opacity: 1; }
+  /* Farb-Varianten: jede Card VOLL in Signature-Farbe, Text als Kontrast */
+  .help-card.c-orange { background: #ff9c6d; color: #2D1F22; }
+  .help-card.c-red    { background: #430a14; color: #ff9c6d; }
+  .help-card.c-pink   { background: #c74873; color: #2D1F22; }
+  .help-card.c-blue   { background: #7993ae; color: #FBF2ED; }
+  .help-card.c-ink    { background: #e7fffe; color: #2D1F22; }
+</style>
+
+<!-- HERO — Intro + 5 Panel-Sektionen -->
+<!-- LANDING OVERLAY (5 Wörter auto + Wahl-Sektion) -->
+<div id="landing-overlay" role="dialog" aria-label="Willkommen">
+  <button class="lo-skip" id="lo-skip" type="button">Überspringen →</button>
+  <div class="lo-progress" id="lo-progress">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <!-- STAGE-WRAP: zwei Stages können gleichzeitig existieren (Cross-Slide) -->
+  <div class="lo-stage-wrap" id="lo-stage-wrap">
+    <div class="lo-stage state-1a" data-current>
+      <span class="kicker">N°01</span>
+      <span class="brand-mark">Julia Bergles</span>
+      <div class="lo-wordstack">
+        <h1 class="lo-word">Blähbauch?</h1>
+        <p class="lo-sub">Kann Histamin sein. Muss aber nicht.</p>
+      </div>
     </div>
   </div>
-  <div class="hero-scroll">↓ Scroll</div>
-</section>
 
-<!-- FLOATING APP CARD -->
-<div class="float-card-wrap">
-  <aside class="float-card">
-    <p class="float-card-label">TerraLuna App</p>
-    <h3>Dein <em>Ernährungs­begleiter</em></h3>
-    <div class="float-card-phones">
-      <img src="images/app-v1.2/01-heute.png" alt="TerraLuna Heute-Tab" loading="lazy">
-      <img src="images/app-v1.2/03-lebensmittel.png" alt="TerraLuna Lebensmittel" loading="lazy">
-      <img src="images/app-v1.2/04-rezepte.png" alt="TerraLuna Rezepte" loading="lazy">
+  <div class="lo-slide slide-choice" data-slide="6">
+    <span class="kicker">Auswahl</span>
+    <span class="brand-mark">Julia Bergles</span>
+    <div class="choice-inner">
+      <h2>Wobei kann ich dir helfen?</h2>
+      <p class="sub">Wähl, wo du anfangen willst.</p>
+      <div class="choice-grid-lo">
+        <a href="app.html" class="choice-card-lo c-orange">
+          <span class="n">01</span>
+          <h3>TerraLuna App</h3>
+          <p>Verträglichkeits-Scanner, Rezepte und Zyklustracking in einer App.</p>
+        </a>
+        <a href="ueber-mich.html" class="choice-card-lo c-pink">
+          <span class="n">02</span>
+          <h3>Meine Geschichte</h3>
+          <p>Vom Darmverschluss zurück ins Leben. Aus eigener Erfahrung.</p>
+        </a>
+        <a href="blog/" class="choice-card-lo c-red">
+          <span class="n">03</span>
+          <h3>Blog</h3>
+          <p>Ehrliche Artikel aus meinem Weg. Nicht als Ratschlag von oben.</p>
+        </a>
+        <a href="#" class="choice-card-lo c-blue" data-explore>
+          <span class="n">04</span>
+          <h3>Erst mal stöbern</h3>
+          <p>Ich schau mich einfach um. Zeig mir die ganze Website.</p>
+        </a>
+        <a href="histaminintoleranz.html" class="choice-card-lo c-ink">
+          <span class="n">05</span>
+          <h3>Diagnosen verstehen</h3>
+          <p>Was HIT, MCAS und Reizdarm wirklich bedeuten.</p>
+        </a>
+      </div>
     </div>
-    <p class="float-card-note"><strong>4,99 € / Monat</strong> · 3 Tage kostenlos testen · auch als Basisversion.</p>
-    <a href="#app" class="btn btn-block">Mehr erfahren</a>
-  </aside>
+  </div>
 </div>
 
-<!-- APP DETAIL -->
-<section class="app-section" id="app">
-  <div class="app-section-inner">
-    <div class="app-section-phones">
-      <img src="images/app-v1.2/03-lebensmittel.png" alt="TerraLuna Lebensmittel" loading="lazy">
-      <img src="images/app-v1.2/01-heute.png" alt="TerraLuna Heute-Tab" loading="lazy">
-      <img src="images/app-v1.2/04-rezepte.png" alt="TerraLuna Rezepte" loading="lazy">
-    </div>
-    <div class="app-section-text">
-      <p class="eyebrow">TerraLuna App</p>
-      <h2 class="section-h">Alles, was ich mir <em>gewünscht</em> hätte. in einer App.</h2>
-      <ul class="app-features">
-        <li>Verträglichkeits-Scanner für Histamin, Allergene & Zutaten</li>
-        <li>250+ Lebensmittel mit Ampel-System</li>
-        <li>120+ glutenfreie Rezepte ohne Industriezucker</li>
-        <li>Zyklustracking mit Seed Cycling & Symptomen</li>
-        <li>SOS-Karten für Restaurants & Reisen in 8 Sprachen</li>
-      </ul>
+<script>
+(function () {
+  var overlay = document.getElementById('landing-overlay');
+  var stageWrap = document.getElementById('lo-stage-wrap');
+  var choiceSlide = overlay.querySelector('.slide-choice');
+  var dots = document.querySelectorAll('#lo-progress .dot');
+  var skipBtn = document.getElementById('lo-skip');
+  var progress = document.getElementById('lo-progress');
+  var timer;
+  var current = 0;
 
-      <div class="pricing">
-        <div class="pricing-row">
-          <span class="plan">Monatlich</span>
-          <span class="amount">4,99 € <span>/ Monat</span></span>
-        </div>
-        <div class="pricing-row">
-          <span class="plan">Jährlich</span>
-          <span class="amount">39,99 € <span>/ Jahr</span></span>
-        </div>
-        <p class="pricing-note"><strong>3 Tage kostenlos testen</strong> · Auch als kostenlose Basisversion verfügbar</p>
+  // 6 States: pro Wort 2 (a = schwarz+farbig, b = farbig+schwarz)
+  var STATES = [
+    { cls: 'state-1a', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein. Muss aber nicht.' },
+    { cls: 'state-1b', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein. Muss aber nicht.' },
+    { cls: 'state-2a', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles. Auch dich.' },
+    { cls: 'state-2b', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles. Auch dich.' },
+    { cls: 'state-3a', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.' },
+    { cls: 'state-3b', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.' }
+  ];
+  var TOTAL_STATES = STATES.length;
+  var SLIDE_MS = 1900; // pro State — genug Zeit um den Untertitel zu lesen
+
+  document.documentElement.classList.add('overlay-open');
+  document.body.classList.add('overlay-open');
+
+  function getCurrentStage() {
+    return stageWrap.querySelector('.lo-stage[data-current]');
+  }
+
+  function buildStage(s) {
+    var st = document.createElement('div');
+    st.className = 'lo-stage ' + s.cls;
+    st.innerHTML =
+      '<span class="kicker">' + s.kicker + '</span>' +
+      '<span class="brand-mark">Julia Bergles</span>' +
+      '<div class="lo-wordstack">' +
+        '<h1 class="lo-word">' + s.word + '</h1>' +
+        '<p class="lo-sub">' + s.sub + '</p>' +
+      '</div>';
+    return st;
+  }
+
+  function applyState(idx) {
+    var s = STATES[idx];
+    var currentStage = getCurrentStage();
+    var currentWord = currentStage.querySelector('.lo-word').textContent;
+    var wordChanges = currentWord !== s.word;
+
+    if (wordChanges) {
+      // Wort statisch: nur Text-Content wechseln, kein Stage-Slide.
+      // Wort snapt in 100ms, dann Sub fliegt neu ein.
+      var wordEl = currentStage.querySelector('.lo-word');
+      var subEl = currentStage.querySelector('.lo-sub');
+      var kickerEl = currentStage.querySelector('.kicker');
+
+      wordEl.style.opacity = '0';
+      setTimeout(function () {
+        // Farben snappen (State-Klasse wechseln)
+        STATES.forEach(function (st) { currentStage.classList.remove(st.cls); });
+        currentStage.classList.add(s.cls);
+        kickerEl.textContent = s.kicker;
+        wordEl.textContent = s.word;
+        wordEl.style.opacity = '1';
+
+        // Sub: Animation restart (fliegt neu von links ein)
+        subEl.textContent = s.sub;
+        subEl.style.animation = 'none';
+        void subEl.offsetHeight;
+        subEl.style.animation = '';
+      }, 100);
+    } else {
+      // Invert-Wechsel innerhalb eines Worts: gleiche Stage, State-Klasse wechseln (CSS-transition fadet Farben)
+      STATES.forEach(function (st) { currentStage.classList.remove(st.cls); });
+      currentStage.classList.add(s.cls);
+      currentStage.querySelector('.kicker').textContent = s.kicker;
+    }
+
+    // Progress-Dots
+    var wordIdx = Math.floor(idx / 2);
+    dots.forEach(function (d, i) {
+      d.classList.toggle('done', i < wordIdx);
+    });
+  }
+
+  function showChoice() {
+    var st = getCurrentStage();
+    if (st) st.classList.add('hide');
+    choiceSlide.classList.add('active');
+    progress.classList.add('hide');
+    skipBtn.classList.add('hide');
+  }
+
+  function next() {
+    current++;
+    if (current >= TOTAL_STATES) {
+      showChoice();
+      return;
+    }
+    applyState(current);
+    timer = setTimeout(next, SLIDE_MS);
+  }
+
+  function closeOverlay() {
+    overlay.classList.add('done');
+    document.documentElement.classList.remove('overlay-open');
+    document.body.classList.remove('overlay-open');
+  }
+
+  skipBtn.addEventListener('click', function () {
+    clearTimeout(timer);
+    showChoice();
+  });
+
+  overlay.querySelectorAll('[data-explore]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeOverlay();
+    });
+  });
+
+  // Start
+  timer = setTimeout(next, SLIDE_MS);
+})();
+</script>
+
+<!-- HERO — Editorial mit Bild -->
+<section class="hero">
+  <div class="hero-bg"><img src="images/header.jpg" alt="Julia Bergles" /></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">Julia Bergles</div>
+    <h1 class="reveal d1">Histamin.<br /><span class="circle-italic white">Unverträglichkeiten</span>.<br />Allergien.</h1>
+    <div class="hero-buttons reveal d3" style="margin-top: 40px;">
+      <a href="app.html" class="btn-red">TerraLuna App</a>
+      <a href="#features" class="btn-outline-white">Mehr erfahren</a>
+    </div>
+  </div>
+</section>
+
+<!-- 4 BAUSTEINE -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header reveal">
+      <span class="features-eyebrow">Was dich hier erwartet</span>
+      <h2>Nicht nur Info.<br />Sondern was mir <em>geholfen</em> hat.</h2>
+      <div style="margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="app.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 18px 36px; background: var(--bordeaux); color: #fff; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none; box-shadow: 0 20px 40px rgba(67, 10, 20, 0.3); transition: all 0.4s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">Zur App <span style="font-size: 16px;">→</span></a>
+        <a href="blog/" style="display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px; background: transparent; color: var(--bg); border: 1.5px solid rgba(251, 242, 237, 0.35); border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none; transition: all 0.4s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(251, 242, 237, 0.35)'; this.style.color='var(--bg)'">Zum Blog <span style="font-size: 16px;">→</span></a>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card fc-orange reveal d1">
+        <div class="feature-badge">App</div>
+        <h3>TerraLuna App</h3>
+        <a href="app.html" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#ff9c6d'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='inherit'">Zur App <span>→</span></a>
       </div>
 
-      <div class="store-buttons">
-        <a href="https://apps.apple.com/de/app/terraluna/id6763492103" target="_blank" rel="noopener" class="store-btn">
-          <svg class="store-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-          <div class="store-btn-txt">
-            <small>Laden im</small>
-            <strong>App Store</strong>
-          </div>
-        </a>
-        <a href="https://play.google.com/store/search?q=TerraLuna+Julia+Bergles" target="_blank" rel="noopener" class="store-btn">
-          <svg class="store-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.609 22.186c-.29-.29-.472-.678-.472-1.121V2.935c0-.443.182-.831.472-1.121zm10.831 8.771l2.63-1.518L6.05.83c-.457-.26-1.032-.276-1.508-.014L14.44 10.585zm4.706 2.723l-2.938-1.696-2.938 2.938 2.938 2.938 2.938-1.696c1.13-.653 1.13-2.831 0-3.484zm-14.007 9.874c.476.263 1.051.247 1.508-.014l11.02-6.237-2.63-1.518L4.44 22.813z"/></svg>
-          <div class="store-btn-txt">
-            <small>Erhältlich bei</small>
-            <strong>Google Play</strong>
-          </div>
-        </a>
+      <div class="feature-card fc-pink reveal d1">
+        <div class="feature-badge">Ich</div>
+        <h3>Meine Geschichte</h3>
+        <a href="ueber-mich.html" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#c74873'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='inherit'">Meine Story <span>→</span></a>
+      </div>
+
+      <div class="feature-card fc-red reveal d2">
+        <div class="feature-badge">Diagnosen</div>
+        <h3>HIT, MCAS, Reizdarm</h3>
+        <a href="histaminintoleranz.html" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#430a14'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='inherit'">Aufklärung <span>→</span></a>
+      </div>
+
+      <div class="feature-card fc-blue reveal d2">
+        <div class="feature-badge">Blog</div>
+        <h3>Ehrliche Artikel</h3>
+        <a href="blog/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#7993ae'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='inherit'">Zum Blog <span>→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DIAGNOSEN -->
-<section class="diag" id="aufklaerung">
-  <div class="diag-inner">
-    <div class="diag-head">
-      <p class="eyebrow">Aufklärung</p>
-      <h2 class="section-h">Was <em>eigentlich</em> hinter deiner Diagnose steckt.</h2>
+<!-- KUNDENDASHBOARD (Innovation) -->
+<section style="padding: 140px 0; background: linear-gradient(135deg, #430a14, #2d0508); color: #FBF2ED; position: relative; overflow: hidden;">
+  <div style="position: absolute; top: -100px; right: -100px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(255,156,109,0.28), transparent 70%); filter: blur(60px); pointer-events: none;"></div>
+  <div style="position: absolute; bottom: -120px; left: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(199,72,115,0.22), transparent 70%); filter: blur(70px); pointer-events: none;"></div>
+
+  <div class="container" style="position: relative; z-index: 1; text-align: center; max-width: 860px;">
+    <div class="reveal" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; background: rgba(255,156,109,0.15); border: 1px solid rgba(255,156,109,0.35); border-radius: 999px; margin-bottom: 32px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: none; color: #ff9c6d;">
+      <span style="width: 6px; height: 6px; border-radius: 50%; background: #ff9c6d;"></span>
+      Innovation · Als einzige Agentur
     </div>
-    <div class="diag-grid">
-      <a href="histaminintoleranz.html" class="diag-card">
-        <div class="diag-card-img" style="background-image: url('images/histamin.jpg');"></div>
-        <div class="diag-card-body">
-          <p class="diag-card-label">Diagnose</p>
-          <h3>Histaminintoleranz</h3>
-          <p>Was HIT wirklich bedeutet, welche Symptome dazugehören und was mir im Alltag geholfen hat.</p>
-          <span class="diag-card-more">Mehr lesen</span>
+
+    <h2 class="reveal d1" style="color: #FBF2ED; margin-bottom: 20px; font-size: clamp(48px, 6.5vw, 96px);">Dein eigenes <em style="font-style: normal; color: #ff9c6d;">Kundendashboard</em>.</h2>
+
+    <p class="reveal d2" style="font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 17px; line-height: 1.65; color: rgba(251,242,237,0.85); max-width: 620px; margin: 0 auto 44px;">
+      Freigaben. Termine. Rechnungen. Content-Kalender. Alles an einem Ort.
+      <br>Kein WhatsApp-Chaos mehr.
+    </p>
+
+    <div class="reveal d3" style="display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
+      <a href="https://dashboard.juliabergles-onpoint.de" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 34px; background: #ff9c6d; color: #430a14; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: none; transition: all 0.35s; box-shadow: 0 16px 32px rgba(255,156,109,0.25);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 22px 44px rgba(255,156,109,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 16px 32px rgba(255,156,109,0.25)'">Dashboard ansehen →</a>
+      <a href="anfrage.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 34px; background: transparent; color: #FBF2ED; border: 1.5px solid rgba(251,242,237,0.4); border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: none; transition: all 0.35s;" onmouseover="this.style.borderColor='#ff9c6d'; this.style.color='#ff9c6d'" onmouseout="this.style.borderColor='rgba(251,242,237,0.4)'; this.style.color='#FBF2ED'">Zugang anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- Branchen — Beispiele aus meiner Arbeit -->
+<section style="padding: 100px 40px 80px; background: var(--bg);">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <p style="font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.02em; color: var(--bordeaux); font-weight: 700; margin-bottom: 18px;">Für wen</p>
+      <h2 style="font-size: clamp(36px, 5vw, 68px); color: var(--ink); margin: 0 0 16px;">Wähl deine Branche.</h2>
+      <p style="font-size: 16px; color: var(--muted); margin: 0;">Beispiele aus meiner Arbeit — ich arbeite in jeder Branche.</p>
+    </div>
+
+    <style>
+      .branche-tab {
+        padding: 12px 22px;
+        background: transparent;
+        border: 1.5px solid var(--line-strong);
+        border-radius: 999px;
+        font-family: 'Rubik', 'Space Grotesk', sans-serif;
+        font-size: 14px; font-weight: 500; letter-spacing: 0;
+        color: var(--ink); cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .branche-tab:hover { border-color: var(--bordeaux); color: var(--bordeaux); }
+      .branche-tab.active {
+        background: var(--bordeaux); color: #fff; border-color: var(--bordeaux);
+      }
+      .branche-panel { display: none; animation: brancheFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+      .branche-panel.active { display: block; }
+      @keyframes brancheFadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+      .branche-panel-inner {
+        background: var(--card); border-radius: 16px; padding: 40px 36px; border: 1px solid var(--line);
+      }
+      .branche-panel-inner.dark {
+        background: var(--bordeaux); border-color: rgba(255, 156, 109, 0.28); color: var(--bg);
+      }
+      .branche-panel-inner h3 {
+        font-size: clamp(28px, 3.8vw, 44px);
+        margin-bottom: 14px;
+        color: inherit;
+      }
+      .branche-panel-inner .lede {
+        font-size: 15px; line-height: 1.6; max-width: 560px;
+        margin-bottom: 28px;
+        color: inherit; opacity: 0.75;
+      }
+      .branche-panel-inner .kicker {
+        font-family: 'Rubik', 'Space Grotesk', sans-serif;
+        font-size: 12px; letter-spacing: 0.02em; font-weight: 600;
+        color: var(--bordeaux); margin-bottom: 12px;
+      }
+      .branche-panel-inner.dark .kicker { color: var(--gold); }
+      .branche-grid {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      }
+      @media (max-width: 700px) {
+        .branche-grid { grid-template-columns: repeat(2, 1fr); }
+        .branche-panel-inner { padding: 28px 20px; }
+      }
+      .branche-grid img {
+        width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 8px; display: block;
+      }
+      .branche-grid.two { grid-template-columns: 1fr 1fr; }
+    </style>
+
+    <!-- Tab Buttons -->
+    <div class="reveal d1" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px;">
+      <button class="branche-tab active" onclick="switchBranche(this, 'fitness')">Fitness</button>
+      <button class="branche-tab" onclick="switchBranche(this, 'einrichtung')">Einrichtung & Möbel</button>
+      <button class="branche-tab" onclick="switchBranche(this, 'mental')">Mediale Beratung</button>
+      <button class="branche-tab" onclick="switchBranche(this, 'rezepte')">Rezepte</button>
+      <button class="branche-tab" onclick="switchBranche(this, 'ernaehrung')">Gesundheit & Ernährung</button>
+    </div>
+
+    <div class="reveal d2" style="max-width: 1100px; margin: 0 auto;">
+      <!-- Fitness -->
+      <div class="branche-panel active" data-panel="fitness">
+        <div class="branche-panel-inner dark">
+          <div class="kicker">Fitnessstudio</div>
+          <h3>Bold. Klar. Ohne Bla.</h3>
+          <p class="lede">Karussell-Serie für ein Fitnessstudio. Problem, Lösung, Call-to-Action. Content, der Anmeldungen bringt.</p>
+          <div class="branche-grid two">
+            <img src="img/fitness-1.png" alt="Fitnessstudio Beitrag 1">
+            <img src="img/fitness-2.png" alt="Fitnessstudio Beitrag 2">
+          </div>
         </div>
-      </a>
-      <a href="mcas.html" class="diag-card">
-        <div class="diag-card-img" style="background-image: url('images/mcas.jpg');"></div>
-        <div class="diag-card-body">
-          <p class="diag-card-label">Diagnose</p>
-          <h3>MCAS</h3>
-          <p>Mastzellaktivierungssyndrom. warum es oft übersehen wird und wie sich das anfühlt.</p>
-          <span class="diag-card-more">Mehr lesen</span>
+      </div>
+
+      <!-- Einrichtung -->
+      <div class="branche-panel" data-panel="einrichtung">
+        <div class="branche-panel-inner">
+          <div class="kicker">Einrichtungshaus Bruckner</div>
+          <h3>Elegant. Warm. Editorial.</h3>
+          <p class="lede">Sechsteilige Karussell-Serie im Editorial-Look. Zeigt, wie ruhig und ausdrucksstark Content sein kann.</p>
+          <div class="branche-grid">
+            <img src="img/kitchen-1.png" alt="Kitchen 1">
+            <img src="img/kitchen-2.png" alt="Kitchen 2">
+            <img src="img/kitchen-3.png" alt="Kitchen 3">
+            <img src="img/kitchen-4.png" alt="Kitchen 4">
+            <img src="img/kitchen-5.png" alt="Kitchen 5">
+            <img src="img/kitchen-6.png" alt="Kitchen 6">
+          </div>
         </div>
-      </a>
-      <a href="reizdarm.html" class="diag-card">
-        <div class="diag-card-img" style="background-image: url('images/reizdarm.jpg');"></div>
-        <div class="diag-card-body">
-          <p class="diag-card-label">Diagnose</p>
-          <h3>Reizdarm</h3>
-          <p>Wenn der Bauch macht, was er will. Was dahinter stecken kann und was bei mir wirkt.</p>
-          <span class="diag-card-more">Mehr lesen</span>
+      </div>
+
+      <!-- Mediale Beratung -->
+      <div class="branche-panel" data-panel="mental">
+        <div class="branche-panel-inner">
+          <div class="kicker">Mediale Lebensberatung</div>
+          <h3>Sanft. Klar. Verbunden.</h3>
+          <p class="lede">Content für mediale Lebensberatung, Coaches und mentale Gesundheitspraxen — mit Ruhe, Klarheit und Tiefe.</p>
+          <div class="branche-grid">
+            <img src="img/mental-1.png" alt="">
+            <img src="img/mental-2.png" alt="">
+            <img src="img/mental-3.png" alt="">
+            <img src="img/mental-4.png" alt="">
+            <img src="img/mental-5.png" alt="">
+            <img src="img/mental-6.png" alt="">
+          </div>
         </div>
-      </a>
+      </div>
+
+      <!-- Rezepte -->
+      <div class="branche-panel" data-panel="rezepte">
+        <div class="branche-panel-inner">
+          <div class="kicker">Rezept-Fotografie</div>
+          <h3>Warm. Handgemacht. Appetitanregend.</h3>
+          <p class="lede">Rezept-Content für Ernährungsberaterinnen und Food-Marken. Alles selbst gebacken, fotografiert, geschnitten.</p>
+          <div class="branche-grid">
+            <img src="img/recipe-1386.jpg" alt="">
+            <img src="img/recipe-1399.jpg" alt="">
+            <img src="img/recipe-2359.jpg" alt="">
+            <img src="img/rezept-1.png" alt="">
+            <img src="img/rezept-2.png" alt="">
+            <img src="img/rezept-3.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- Gesundheit & Ernährung -->
+      <div class="branche-panel" data-panel="ernaehrung">
+        <div class="branche-panel-inner">
+          <div class="kicker">Gesundheit & Ernährung — TerraLuna</div>
+          <h3>Fachlich. Empathisch. Aus Erfahrung.</h3>
+          <p class="lede">Content aus meiner eigenen Marke TerraLuna — für Frauen mit Histaminintoleranz, Darmproblemen und Zyklus-Themen.</p>
+          <div class="branche-grid">
+            <img src="img/idea-1.png" alt="">
+            <img src="img/idea-2.png" alt="">
+            <img src="img/idea-3.png" alt="">
+            <img src="img/idea-4.png" alt="">
+            <img src="img/idea-5.png" alt="">
+            <img src="img/idea-6.png" alt="">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- MEINE GESCHICHTE -->
-<section class="feature-band">
-  <div class="feature-band-inner">
-    <div class="feature-visual" style="background-image: url('images/julia-2.jpg');"></div>
-    <div class="feature-text">
-      <p class="eyebrow">Über mich</p>
-      <h2 class="section-h">Von fünf Lebensmitteln zurück ins <em>Leben</em>.</h2>
-      <p>Mit 19 lag ich mit einem Darmverschluss im Krankenhaus. Danach zwei Jahre nur fünf Lebensmittel vertragen. Heute geht wieder mehr. und ich schreibe hier auf, was mir dabei geholfen hat.</p>
-      <a href="ueber-mich.html" class="btn btn-outline">Meine ganze Geschichte</a>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG PREVIEW -->
-<section class="blog-section" id="blog">
-  <div class="blog-inner">
-    <div class="blog-head">
-      <p class="eyebrow">Blog</p>
-      <h2 class="section-h">Mein <em>Blog</em></h2>
-      <p>Wie ich wieder zurück ins Leben kam. Fragen. Alles, was ich früher wissen wollte.</p>
-    </div>
-
-    <div class="blog-cta">
-      <a href="blog/" class="btn">Zum Blog</a>
-    </div>
-  </div>
-</section>
-
-<!-- 1:1 GESPRÄCH -->
-<section class="feature-band light">
-  <div class="feature-band-inner reverse">
-    <div class="feature-visual" style="background-image: url('images/gespraech.jpg');"></div>
-    <div class="feature-text">
-      <p class="eyebrow">1:1 Peer-Support</p>
-      <h2 class="section-h">Wenn du mit jemandem <em>reden</em> willst, der's kennt.</h2>
-      <p>30 Minuten am Telefon. Kein Coaching, keine Beratung. Ehrlicher Erfahrungsaustausch mit mir. von einer Betroffenen an eine Betroffene.</p>
-      <a href="gespraech.html" class="btn btn-copper">25 € · Termin buchen</a>
-    </div>
-  </div>
-</section>
-
-<!-- EMPFEHLUNGEN -->
-<section class="feature-band">
-  <div class="feature-band-inner">
-    <div class="feature-visual" style="background-image: url('images/julia-4.jpg');"></div>
-    <div class="feature-text">
-      <p class="eyebrow">Meine Empfehlungen</p>
-      <h2 class="section-h">Was <em>täglich</em> auf meinem Teller landet.</h2>
-      <p>Lebensmittel und Produkte, die ich selbst nutze. aho.bio (Code Smacado10), Balance Riegel, und alles was bei mir täglich auf dem Teller landet. Ehrlich, mit Warnung wenn was nicht passt.</p>
-      <a href="empfehlungen.html" class="btn btn-outline">Meine Empfehlungen</a>
-    </div>
-  </div>
-</section>
-
-<!-- PLATFORMS -->
-<section class="platforms">
-  <div class="platforms-inner">
-    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="platform-card">
-      <div class="platform-img" style="background-image: url('images/IMG_5735.jpeg');"></div>
-      <span class="platform-label">Instagram</span>
-    </a>
-    <a href="blog/" class="platform-card">
-      <div class="platform-img" style="background-image: url('images/julia-5.jpg');"></div>
-      <span class="platform-label">Blog</span>
-    </a>
-    <a href="https://agentur.juliabergles.de" target="_blank" rel="noopener" class="platform-card">
-      <div class="platform-img" style="background-image: url('images/agentur.jpg');"></div>
-      <span class="platform-label">On-Point Agentur</span>
-    </a>
-  </div>
-</section>
-
-<!-- E-BOOKS -->
-<section class="newsletter" id="ebooks">
-  <div class="newsletter-inner">
-    <p class="eyebrow" style="margin-bottom: 14px;">E-Books</p>
-    <h2>Meine <em>E-Books</em></h2>
-    <p>Zum Runterladen. Symptomtagebuch, Histaminarme Lebensmittel-Liste und mehr.</p>
-    <a href="ebooks.html" class="btn" style="margin-top: 8px;">Zu den E-Books</a>
-  </div>
-</section>
-
-<!-- KONTAKT -->
-<section class="kontakt" id="kontakt">
-  <div class="kontakt-inner">
-    <p class="eyebrow">Kontakt</p>
-    <h2 class="section-h">Schreib mir</h2>
-    <div class="kontakt-buttons">
-      <a href="mailto:julia@bergles.net" class="btn btn-outline">julia@bergles.net</a>
-      <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="btn btn-outline">@julia_bergles</a>
-    </div>
+    <p class="reveal" style="text-align: center; margin-top: 40px; font-size: 14px; color: var(--muted);">Nur eine Marke pro Branche und Region — ich mache keinen Content für deine direkte Konkurrenz.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <a href="index.html" class="footer-logo">Julia</a>
-  <div class="footer-links">
-    <a href="ueber-mich.html">Über mich</a>
-    <a href="app.html">TerraLuna App</a>
-    <a href="histaminintoleranz.html">Histamin</a>
-    <a href="mcas.html">MCAS</a>
-    <a href="reizdarm.html">Reizdarm</a>
-    <a href="blog/">Blog</a>
-    <a href="gespraech.html">Gespräch</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+  <div class="footer-top">
+    <div class="footer-nav">
+      <a href="ueber-mich.html">Social Media</a>
+      <a href="app.html">Mediendesign</a>
+      <a href="blog/">Webdesign</a>
+      <a href="warum-onpoint.html">Warum Julia</a>
+      <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener">Kontakt</a>
+    </div>
+    <div>
+      <div class="footer-social-h">Folge uns</div>
+      <div class="footer-social">
+        <a href="https://instagram.com/julia_bergles" target="_blank" rel="noopener">IG</a>
+        <a href="#" target="_blank" rel="noopener">TT</a>
+        <a href="#" target="_blank" rel="noopener">Pt</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="agb.html">AGB</a>
+    </div>
   </div>
-  <div class="footer-contact">Julia Bergles · Singoldstrasse 5a · 86517 Wehringen</div>
-  <div class="footer-disclaimer">Ich bin keine Ärztin. ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
+  <div class="footer-xxl">
+    <div class="logo">ON<span class="g">·</span>POINT</div>
+    <div style="font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900; font-size: 22px; color: var(--gold); margin-top: 12px; letter-spacing: 0.02em;">Content auf den Punkt gebracht.</div>
+  </div>
+  <div class="footer-copy">© 2026 Julia · Julia Bergles · Augsburg</div>
 </footer>
 
 <script>
-  // Landing Overlay. 6 States (Wort × 2 Farb-Invert), dann Choice
-  (function () {
-    const overlay   = document.getElementById('landing-overlay');
-    const stageWrap = document.getElementById('lo-stage-wrap');
-    const wordEl    = document.getElementById('lo-word');
-    const subEl     = document.getElementById('lo-word-sub');
-    const kickerEl  = document.getElementById('lo-kicker');
-    const mobileTag = document.getElementById('lo-mobile-tag');
-    const dots      = document.querySelectorAll('#lo-progress .pd');
-    const skipBtn   = document.getElementById('lo-skip');
-    const skipBtn2  = document.getElementById('lo-skip-choice');
-    const choice    = document.getElementById('lo-choice');
-    const progress  = document.getElementById('lo-progress');
-
-    // 6 States: pro Wort 2 (a = cream, b = farbig)
-    const STATES = [
-      { cls: 'state-1a', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein. muss aber nicht.',    dot: 0 },
-      { cls: 'state-1b', kicker: 'N°01', word: 'Blähbauch?',        sub: 'Kann Histamin sein. muss aber nicht.',    dot: 0 },
-      { cls: 'state-2a', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles. auch dich.',  dot: 1 },
-      { cls: 'state-2b', kicker: 'N°02', word: 'PMS?',              sub: 'Der Zyklus verändert alles. auch dich.',  dot: 1 },
-      { cls: 'state-3a', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',              dot: 2 },
-      { cls: 'state-3b', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.',              dot: 2 }
-    ];
-    const SLIDE_MS = 1900;
-    let idx = 0;
-    let timer;
-
-    function openOverlay() {
-      overlay.classList.add('visible');
-      document.documentElement.classList.add('overlay-open');
-      document.body.classList.add('overlay-open');
-    }
-    function closeOverlay() {
-      clearTimeout(timer);
-      overlay.classList.remove('visible');
-      document.documentElement.classList.remove('overlay-open');
-      document.body.classList.remove('overlay-open');
-    }
-    function showChoice() {
-      clearTimeout(timer);
-      progress.style.display = 'none';
-      skipBtn.style.display = 'none';
-      kickerEl.style.display = 'none';
-      document.querySelector('.lo-brand-mark').style.display = 'none';
-      mobileTag.style.display = 'none';
-      stageWrap.style.display = 'none';
-      choice.classList.add('on');
-    }
-
-    function applyState(i) {
-      const s = STATES[i];
-      const prev = STATES[i - 1];
-      const wordChanges = !prev || prev.word !== s.word;
-
-      // BG-Klasse wechseln (CSS macht den 0.28s Farb-Übergang)
-      STATES.forEach(x => stageWrap.classList.remove(x.cls));
-      stageWrap.classList.add(s.cls);
-
-      // Kicker/Brand-Tag
-      kickerEl.textContent = s.kicker;
-      mobileTag.textContent = s.kicker + ' · Julia Bergles';
-
-      // Progress-Dot
-      dots.forEach((d, di) => d.classList.toggle('active', di === s.dot));
-
-      // Wort: snapt in 100-150ms wenn's sich ändert; Sub fliegt jedes Mal neu
-      if (wordChanges) {
-        wordEl.classList.add('snap');
-        wordEl.classList.remove('in');
-        setTimeout(() => {
-          wordEl.textContent = s.word;
-          wordEl.classList.add('in');
-        }, 100);
-        setTimeout(() => {
-          wordEl.classList.remove('snap', 'in');
-        }, 400);
-      }
-
-      // Sub: jedes Mal neu von links einfliegen
-      subEl.classList.remove('slide', 'in');
-      // Force reflow, damit Transition neu triggert
-      void subEl.offsetWidth;
-      subEl.textContent = s.sub;
-      subEl.classList.add('slide');
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => subEl.classList.add('in'));
-      });
-    }
-
-    function tick() {
-      idx++;
-      if (idx >= STATES.length) {
-        showChoice();
-        return;
-      }
-      applyState(idx);
-      timer = setTimeout(tick, SLIDE_MS);
-    }
-
-    // Immer öffnen. kein sessionStorage-Skip
-    openOverlay();
-    // State 0 ist schon aus HTML gerendert; nur den Sub einmalig triggern
-    requestAnimationFrame(() => {
-      subEl.classList.remove('in');
-      requestAnimationFrame(() => subEl.classList.add('in'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
     });
-    timer = setTimeout(tick, SLIDE_MS);
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-    // Skip → direkt Choice
-    skipBtn.addEventListener('click', showChoice);
-    // Choice-Skip → Overlay komplett zu
-    if (skipBtn2) skipBtn2.addEventListener('click', closeOverlay);
+  function switchPort(button, tabId) {
+    document.querySelectorAll('.port-tab').forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+    document.querySelectorAll('.port-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector('.port-panel[data-panel="' + tabId + '"]').classList.add('active');
+  }
 
-    // "Erst mal stöbern" schließt Overlay
-    overlay.querySelectorAll('[data-explore]').forEach(el => {
-      el.addEventListener('click', (e) => { e.preventDefault(); closeOverlay(); });
-    });
+  function switchBranche(button, brancheId) {
+    document.querySelectorAll('.branche-tab').forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+    document.querySelectorAll('.branche-panel').forEach(p => p.classList.remove('active'));
+    const target = document.querySelector('.branche-panel[data-panel="' + brancheId + '"]');
+    if (target) target.classList.add('active');
+  }
 
-    // In-Page-Anchor: Overlay zu, dann scrollen
-    overlay.querySelectorAll('[data-in-page]').forEach(el => {
-      el.addEventListener('click', (e) => {
-        const href = el.getAttribute('href') || '';
-        if (!href.startsWith('#')) return;
-        e.preventDefault();
-        closeOverlay();
-        setTimeout(() => {
-          const target = document.querySelector(href);
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 500);
-      });
-    });
+  function toggleFragen() {
+    const panel = document.getElementById('fragen-panel');
+    const icon = document.getElementById('fragen-icon');
+    panel.classList.toggle('open');
+    icon.textContent = panel.classList.contains('open') ? '×' : '?';
+  }
 
-    // Esc schließt
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && overlay.classList.contains('visible')) closeOverlay();
-    });
-  })();
-
-  // Nav: transparent over hero, solid on scroll
-  const nav = document.getElementById('mainNav');
-  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
-  const onScroll = () => {
-    if (isMobile()) { nav.classList.remove('scrolled'); return; }
-    if (window.scrollY > 80) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  onScroll();
-
-  // Mobile menu close on link click
-  document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
-    a.addEventListener('click', () => nav.classList.remove('open'));
-  });
+  // Floating Auswahl-Modal: auto-open nach 3 Sek.
+  setTimeout(() => {
+    const m = document.getElementById('choice-modal');
+    if (m && !sessionStorage.getItem('choiceModalClosed')) m.classList.add('open');
+  }, 3000);
+  function closeChoiceModal() {
+    document.getElementById('choice-modal').classList.remove('open');
+    sessionStorage.setItem('choiceModalClosed', '1');
+    setTimeout(() => {
+      document.getElementById('choice-reopen').style.display = 'inline-flex';
+    }, 600);
+  }
+  function openChoiceModal() {
+    document.getElementById('choice-modal').classList.add('open');
+    document.getElementById('choice-reopen').style.display = 'none';
+    sessionStorage.removeItem('choiceModalClosed');
+  }
 </script>
+
+<!-- FRAGEN-WIDGET (Sonne) -->
+<div id="fragen-widget" style="position: fixed; bottom: 24px; right: 24px; z-index: 300;">
+  <button id="fragen-toggle" aria-label="Häufige Fragen" style="width: 68px; height: 68px; border-radius: 50%; background: #430a14; border: 0; cursor: pointer; box-shadow: 0 15px 35px rgba(67, 10, 20, 0.4); position: relative; transition: all 0.4s; display: flex; align-items: center; justify-content: center;" onclick="toggleFragen()" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform=''">
+    <div style="position: absolute; inset: -8px; border-radius: 50%; pointer-events: none; animation: rotateSun 20s linear infinite;">
+      <svg width="84" height="84" viewBox="0 0 84 84" style="display: block;">
+        <g stroke="#ff9c6d" stroke-width="1.5" stroke-linecap="round" fill="none">
+          <line x1="42" y1="4" x2="42" y2="12"/>
+          <line x1="42" y1="72" x2="42" y2="80"/>
+          <line x1="4" y1="42" x2="12" y2="42"/>
+          <line x1="72" y1="42" x2="80" y2="42"/>
+          <line x1="15" y1="15" x2="21" y2="21"/>
+          <line x1="63" y1="63" x2="69" y2="69"/>
+          <line x1="15" y1="69" x2="21" y2="63"/>
+          <line x1="63" y1="21" x2="69" y2="15"/>
+        </g>
+      </svg>
+    </div>
+    <span id="fragen-icon" style="color: #ff9c6d; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900; font-size: 30px; line-height: 1; position: relative; z-index: 2; pointer-events: none;">?</span>
+  </button>
+
+  <div id="fragen-panel" style="position: absolute; bottom: 84px; right: 0; width: 340px; max-width: calc(100vw - 48px); background: #fff; border-radius: 16px; box-shadow: 0 40px 80px rgba(45, 31, 34, 0.25); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.95); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid rgba(45, 31, 34, 0.08);">
+    <div style="padding: 22px 24px 18px; background: linear-gradient(135deg, #430a14, #c74873); color: #fff;">
+      <div style="font-size: 10px; letter-spacing: 0.25em; text-transform: none; color: #ff9c6d; font-weight: 700; margin-bottom: 6px;">Häufige Fragen</div>
+      <div style="font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900; font-size: 22px; letter-spacing: -0.01em;">Was möchten Sie wissen?</div>
+    </div>
+    <div style="padding: 12px; max-height: 380px; overflow-y: auto;">
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wie lange bin ich vertraglich gebunden?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wie viele Feedback-Runden sind drin?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Was passiert bei Urlaub oder Krankheit?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Kann ich zwischen den Paketen wechseln?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wann sehe ich erste Ergebnisse?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wem gehört der Content?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Muss ich vor die Kamera?</a>
+    </div>
+    <div style="padding: 14px 22px 18px; border-top: 1px solid rgba(45, 31, 34, 0.08); text-align: center;">
+      <a href="anfrage.html" style="font-size: 11px; letter-spacing: 0.2em; text-transform: none; color: #430a14; font-weight: 700; text-decoration: none;">Alle Fragen ansehen →</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes rotateSun { to { transform: rotate(360deg); } }
+  #fragen-panel.open { opacity: 1 !important; visibility: visible !important; transform: translateY(0) scale(1) !important; }
+</style>
 
 </body>
 </html>
