@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TerraLuna App. Dein smarter Ernährungsbegleiter für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden.">
-  <title>TerraLuna App | EatMoreArt</title>
+  <title>TerraLuna App | Julia Bergles</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -271,37 +271,49 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <a href="eatmoreart.html" class="nav-logo">
-      <span><span class="ema">EMA</span><span class="ema-full">EatMoreArt</span></span>
-    </a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <div class="nav-links">
-      <a href="onboarding.html">Für dich</a>
-      <a href="app.html">TerraLuna App</a>
-      <a href="eatmoreart.html">Shop</a>
-      <a href="social-media.html">Social Media</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="index.html#geschichte">Meine Geschichte</a>
-      <a href="index.html#kontakt">Kontakt</a>
-      <a href="onboarding.html" class="nav-cta">Für dich</a>
-    </div>
+  <div class="row">
+    <a href="index.html" class="brand">TerraLuna</a>
+    <ul>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="app.html">TerraLuna App</a></li>
+      <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
+      <li><a href="mcas.html">MCAS</a></li>
+      <li><a href="reizdarm.html">Reizdarm</a></li>
+      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    </ul>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Histaminintoleranz</a>
+    <a href="mcas.html">MCAS</a>
+    <a href="reizdarm.html">Reizdarm</a>
+    <a href="selbsttest.html">Selbsttest</a>
+    <a href="blog/">Blog</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
   </div>
 </nav>
+<link rel="stylesheet" href="assets/site.css">
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <p class="hero-label fade-up">TerraLuna App</p>
-    <h1 class="fade-up">Dein smarter Ernährungsbegleiter</h1>
-    <p class="subtitle fade-up">Für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden. Entwickelt von einer Betroffenen.</p>
-    <div class="hero-buttons fade-up">
-      <a href="https://apps.apple.com/de/app/terraluna/id6763492103" class="btn btn-gold" target="_blank" rel="noopener">App Store</a>
-      <a href="#features" class="btn btn-outline-light">Features ansehen</a>
+<section class="page-hero" style="--page-hero-img: url('images/app-v1.2/01-heute.png');">
+  <div class="page-hero-inner">
+    <span class="page-hero-tag">TerraLuna App</span>
+    <h1>Dein smarter <em>Ernährungsbegleiter</em></h1>
+    <p class="lead">Für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden. Entwickelt von einer Betroffenen.</p>
+    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://apps.apple.com/de/app/terraluna/id6763492103" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">App Store</a>
+      <a href="https://play.google.com/store/search?q=TerraLuna+Julia+Bergles" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">Google Play</a>
     </div>
-    <p class="fade-up" style="margin-top: 14px; font-size: 13px; color: var(--soft); opacity: 0.85;">Auch für Android verfügbar</p>
+    <p style="margin-top: 20px; font-size: 13px; color: rgba(251,242,237,0.7);">Auch für Android verfügbar</p>
   </div>
 </section>
+<link rel="stylesheet" href="assets/site.css">
 
 <!-- APP SCREENSHOTS. Carousel -->
 <section id="app-screens" class="app-screens-section">

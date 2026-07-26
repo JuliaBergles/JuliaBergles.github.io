@@ -1209,17 +1209,38 @@
 
   /* Choice-Slide — Bild-Header wie Mediendesign (dunkler Bordeaux-Overlay über Foto) */
   .lo-slide.slide-choice {
-    background: linear-gradient(135deg, #5a1428 0%, #430a14 60%, #2d0508 100%);
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    padding-top: 60px !important;
-    padding-bottom: 120px !important;
+    background:
+      linear-gradient(135deg, rgba(90,20,40,0.90) 0%, rgba(67,10,20,0.96) 100%),
+      url('images/header.jpg') center/cover no-repeat;
+    display: block !important;
     position: fixed !important;
     inset: 0;
+    height: 100vh; height: 100dvh;
     overflow-y: scroll !important;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
     overscroll-behavior: contain;
+    padding: 60px 20px 140px !important;
+    z-index: 9000;
+  }
+  .lo-slide.slide-choice > .choice-inner {
+    position: relative; z-index: 1;
+  }
+  /* Circle-em auf choice headline */
+  .lo-slide.slide-choice .choice-inner h2 em {
+    font-style: normal;
+    color: #e2ae61;
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+  }
+  .lo-slide.slide-choice .choice-inner h2 em::before {
+    content: "";
+    position: absolute; inset: -6% -4% -6% -4%;
+    border: 2px solid #e2ae61;
+    border-radius: 55% 45% 55% 45% / 55% 45% 55% 45%;
+    transform: rotate(-3deg);
+    pointer-events: none;
   }
   .lo-slide.slide-choice::before {
     content: ''; position: absolute; top: 10%; right: -10%;
@@ -1463,7 +1484,7 @@
     <span class="kicker">Auswahl</span>
     <span class="brand-mark">Julia Bergles</span>
     <div class="choice-inner">
-      <h2>Was interessiert dich?</h2>
+      <h2>Was <em>interessiert</em> dich?</h2>
       <p class="sub">Wähl, wo du anfangen willst.</p>
       <div class="choice-grid-lo">
         <a href="app.html" class="choice-card-lo c-orange">
