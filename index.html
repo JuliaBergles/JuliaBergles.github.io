@@ -105,7 +105,7 @@
   @media (max-width: 700px) { .container { padding: 0 24px; } }
 
   h1, h2 {
-    font-family: 'Rubik', 'Space Grotesk', 'Object Sans', sans-serif !important;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
     font-weight: 900 !important;
     letter-spacing: -0.025em;
     line-height: 1;
@@ -113,7 +113,7 @@
     text-transform: none;
   }
   h3, h4 {
-    font-family: 'Rubik', 'Space Grotesk', 'Object Sans', sans-serif !important;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
     font-weight: 900 !important;
     letter-spacing: -0.02em;
     line-height: 1.05;
@@ -1210,18 +1210,16 @@
   /* Choice-Slide — Bild-Header wie Mediendesign (dunkler Bordeaux-Overlay über Foto) */
   .lo-slide.slide-choice {
     background: linear-gradient(135deg, #5a1428 0%, #430a14 60%, #2d0508 100%);
-    background-size: cover;
-    background-position: center;
     align-items: flex-start !important;
     justify-content: flex-start !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
     padding-top: 60px !important;
-    padding-bottom: 100px !important;
+    padding-bottom: 120px !important;
     position: fixed !important;
     inset: 0;
-    height: 100vh; max-height: 100vh;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
+    overscroll-behavior: contain;
   }
   .lo-slide.slide-choice::before {
     content: ''; position: absolute; top: 10%; right: -10%;
@@ -1519,7 +1517,7 @@
     { cls: 'state-3b', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.' }
   ];
   var TOTAL_STATES = STATES.length;
-  var SLIDE_MS = 1200; // pro State — schneller
+  var SLIDE_MS = 900; // pro State — schneller
 
   document.documentElement.classList.add('overlay-open');
   document.body.classList.add('overlay-open');
