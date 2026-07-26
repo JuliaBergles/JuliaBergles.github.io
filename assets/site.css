@@ -984,7 +984,10 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 /* Page-Hero (Unterseiten) */
 .page-hero {
   padding: 140px 32px 100px;
-  background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+  background:
+    linear-gradient(135deg, rgba(90,20,40,0.85) 0%, rgba(67,10,20,0.94) 100%),
+    var(--page-hero-img, none) center/cover no-repeat,
+    linear-gradient(135deg, #5a1428 0%, #430a14 100%);
   text-align: center;
   position: relative; overflow: hidden;
 }
@@ -1025,6 +1028,17 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 .page-hero h1 em {
   font-style: normal;
   color: #e2ae61;
+  position: relative;
+  display: inline-block;
+  padding: 0 12px;
+}
+.page-hero h1 em::before {
+  content: "";
+  position: absolute; inset: -6% -4% -6% -4%;
+  border: 2px solid #e2ae61;
+  border-radius: 55% 45% 55% 45% / 55% 45% 55% 45%;
+  transform: rotate(-3deg);
+  pointer-events: none;
 }
 .page-hero .lead {
   font-family: 'Space Grotesk', sans-serif;
