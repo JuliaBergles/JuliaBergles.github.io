@@ -47,6 +47,109 @@
     @media (max-width: 900px) {
       .portrait-hero { grid-template-columns: 1fr; padding: 100px 20px 60px; gap: 32px; }
     }
+
+    /* ── Zeitstrahl ── */
+    .timeline {
+      list-style: none; padding: 0; margin: 40px 0 60px;
+      position: relative;
+    }
+    .timeline::before {
+      content: ''; position: absolute;
+      top: 20px; bottom: 20px; left: 40px;
+      width: 3px;
+      background: linear-gradient(180deg, #e2ae61 0%, #5a1428 100%);
+      border-radius: 999px;
+    }
+    .tl-item {
+      display: grid; grid-template-columns: 100px 1fr;
+      gap: 24px; align-items: start;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .tl-marker {
+      display: flex; align-items: center; justify-content: center;
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+      color: #e2ae61;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-weight: 900; font-size: 16px;
+      letter-spacing: -0.02em;
+      box-shadow: 0 12px 32px rgba(90,20,40,0.35), 0 0 0 3px var(--bg);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .tl-year { line-height: 1; }
+    .tl-item:hover .tl-marker {
+      transform: scale(1.08);
+      box-shadow: 0 16px 40px rgba(226,174,97,0.35), 0 0 0 3px var(--bg);
+    }
+    .tl-details {
+      background: var(--card, #fff);
+      border: 1.5px solid rgba(226,174,97,0.30);
+      border-radius: 20px;
+      padding: 24px 28px;
+      transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
+    }
+    .tl-details[open] {
+      box-shadow: 0 24px 50px rgba(90,20,40,0.12);
+      border-color: #e2ae61;
+    }
+    .tl-details summary {
+      list-style: none;
+      cursor: pointer;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-weight: 900; font-size: 20px;
+      color: #5a1428;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      line-height: 1.15;
+    }
+    .tl-details summary::-webkit-details-marker { display: none; }
+    .tl-details summary::after {
+      content: '+';
+      font-family: 'Rubik', sans-serif;
+      font-size: 30px; font-weight: 400;
+      color: #e2ae61;
+      transition: transform 0.4s;
+      flex-shrink: 0;
+    }
+    .tl-details[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .tl-body {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(226,174,97,0.30);
+      animation: tlFade 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .tl-body p {
+      font-family: 'Space Grotesk', 'Object Sans', sans-serif;
+      font-size: 16px; color: var(--ink, #2D1F22);
+      opacity: 0.85; line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .tl-body p:last-child { margin-bottom: 0; }
+    @keyframes tlFade {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Item-Reveal beim Scroll */
+    .tl-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .tl-item.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 700px) {
+      .timeline::before { left: 30px; }
+      .tl-item { grid-template-columns: 60px 1fr; gap: 16px; }
+      .tl-marker { width: 60px; height: 60px; font-size: 13px; }
+      .tl-details { padding: 20px 22px; border-radius: 16px; }
+      .tl-details summary { font-size: 17px; }
+      .tl-body p { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
@@ -95,10 +198,62 @@
   <div class="content-inner">
 
     <h2>Meine <em>Geschichte</em></h2>
-    <p>Genau vor einem Jahr hatte ich einen Darmverschluss und konnte danach fast nichts mehr essen. 7 Monate lang habe ich nur 5 Lebensmittel vertragen. Meine Angst vor Schmerzen war so groß, dass ich extrem abgenommen habe. mein Untergewicht lag bei 31 kg.</p>
-    <p>Dann kamen die Diagnosen: Histaminintoleranz, Angststörung, Reizdarm und sämtliche Allergien.</p>
-    <p>In der Zeit war es für mich absolut nicht möglich zu verreisen, weil ich auf meine spezielle Nahrung angewiesen war. Ich war auch sehr depressiv in dieser Phase. da hat mich ein Freund rausgezogen.</p>
-    <p>Mittlerweile habe ich mich wieder gefangen. Ich kann „normaler" essen. Mit Hilfe vom Gym habe ich wieder genug Muskelmasse draufgelegt. Und ich habe wieder Lebensfreude.</p>
+    <p>Ich schreibe hier auf, was passiert ist. Nicht chronologisch perfekt, aber ehrlich. Klick dich durch die Jahre.</p>
+
+    <ol class="timeline">
+      <li class="tl-item">
+        <div class="tl-marker"><span class="tl-year">2022</span></div>
+        <details class="tl-details" open>
+          <summary>Nach Corona. Der eigentliche Anfang.</summary>
+          <div class="tl-body">
+            <p>Nach der Corona-Infektion habe ich meinen Geschmack verloren. Danach bin ich in eine Orthorexie gerutscht. Immer gesünder, immer weniger, immer mehr Sport.</p>
+            <p>Mein Gewicht hat immer wieder geschwankt. Mal ein bisschen mehr, dann wieder weniger. Ich habe versucht alles zu kontrollieren.</p>
+          </div>
+        </details>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-marker"><span class="tl-year">2023</span></div>
+        <details class="tl-details">
+          <summary>Immer weniger, was ich vertrage.</summary>
+          <div class="tl-body">
+            <p>Die Liste der Lebensmittel, die ich noch essen konnte, wurde von Monat zu Monat kürzer. Bauchschmerzen, Blähbauch, Kopfschmerzen nach fast jedem Essen. Und keine Antwort von Ärzten.</p>
+          </div>
+        </details>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-marker"><span class="tl-year">2024</span></div>
+        <details class="tl-details">
+          <summary>Fachabitur Gestaltung. Und Selbstständigkeit.</summary>
+          <div class="tl-body">
+            <p>Fachabitur im Bereich Gestaltung. Und schon während des Abschlusses hat alles wirklich angefangen. Ich habe mich selbstständig gemacht als Social Media Managerin, Mediendesignerin und Webdesignerin für Firmen.</p>
+          </div>
+        </details>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-marker"><span class="tl-year">2025</span></div>
+        <details class="tl-details">
+          <summary>Darmverschluss. Und 5 Lebensmittel.</summary>
+          <div class="tl-body">
+            <p>Genau vor einem Jahr hatte ich einen Darmverschluss und konnte danach fast nichts mehr essen. 7 Monate lang habe ich nur 5 Lebensmittel vertragen. Mein Untergewicht lag bei 31 kg.</p>
+            <p>Dann kamen die Diagnosen: Histaminintoleranz, Angststörung, Reizdarm und sämtliche Allergien. Ich war sehr depressiv in dieser Phase. Da hat mich ein Freund rausgezogen.</p>
+          </div>
+        </details>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-marker"><span class="tl-year">2026</span></div>
+        <details class="tl-details">
+          <summary>TerraLuna. Muskeln. Lebensfreude.</summary>
+          <div class="tl-body">
+            <p>Mittlerweile habe ich mich wieder gefangen. Ich kann „normaler" essen. Mit Hilfe vom Gym habe ich wieder Muskelmasse draufgelegt. Und ich habe wieder Lebensfreude.</p>
+            <p>Aus allem, was ich gelernt habe, ist die TerraLuna App entstanden.</p>
+          </div>
+        </details>
+      </li>
+    </ol>
 
     <h2>Was mich <em>ausmacht</em></h2>
     <p>Ich bin keine Expertin. Ich bin die, die es gerade lebt. Was ich weiß, weiß ich aus eigener Erfahrung. nicht aus Büchern und nicht aus einer Ausbildung. Deswegen schreibe ich hier auch nicht als „Coach", sondern als Betroffene, die aufschreibt, was ihr geholfen hat.</p>
@@ -157,9 +312,15 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
+  // Nav mobile-menu close on link click
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.remove('open'));
   });
+  // Timeline reveal on scroll
+  const tlObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); tlObserver.unobserve(e.target); }});
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.tl-item').forEach(el => tlObserver.observe(el));
 </script>
 
 </body>
