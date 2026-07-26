@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Julia Bergles — Personal Brand, TerraLuna App und ehrlicher Blog für alle mit Histaminintoleranz, MCAS oder Reizdarm.">
+  <meta name="description" content="Julia Bergles — TerraLuna App, Aufklärung zu Histaminintoleranz, MCAS & Reizdarm und ein ehrlicher Blog aus eigener Erfahrung.">
   <title>Julia Bergles</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
 
   <style>
@@ -20,6 +20,7 @@
       --warm-white: #FDFBF9;
       --warm-cream: #F3ECE5;
       --warm-beige: #EFE4D9;
+      --warm-sand: #E8DDD1;
       --text-dark: #3D2B2E;
       --text-muted: #8A7B75;
       --line: rgba(61,43,46,0.08);
@@ -29,31 +30,34 @@
       font-family: 'Object Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--warm-white);
       color: var(--text-dark);
-      line-height: 1.7;
+      line-height: 1.75;
       font-weight: 500;
       font-size: 17px;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; letter-spacing: -0.01em; color: var(--text-dark); }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; letter-spacing: -0.005em; color: var(--text-dark); }
     a { color: inherit; }
+    img { display: block; max-width: 100%; }
 
-    /* Top-Bar */
+    /* ────────── TOP-BAR ────────── */
     .topbar {
       background: var(--text-dark);
       color: var(--warm-white);
       font-family: 'Object Sans', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      padding: 10px 24px;
+      font-size: 10.5px; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      padding: 11px 24px;
     }
     .topbar-inner {
-      max-width: 1280px; margin: 0 auto;
+      max-width: 1400px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
       gap: 24px;
     }
     .topbar-msg a { color: var(--copper-light); text-decoration: none; }
-    .topbar-social { display: flex; gap: 20px; align-items: center; }
+    .topbar-msg a:hover { color: var(--warm-white); }
+    .topbar-social { display: flex; gap: 22px; align-items: center; }
     .topbar-social a {
       color: rgba(253,251,249,0.75);
       text-decoration: none;
@@ -61,256 +65,318 @@
     }
     .topbar-social a:hover { color: var(--copper-light); }
 
-    /* NAV */
+    /* ────────── NAV — transparent over hero, solid on scroll ────────── */
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--warm-white);
+      position: absolute;
+      top: 34px; left: 0; right: 0; z-index: 50;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+    nav.scrolled {
+      position: fixed; top: 0;
+      background: rgba(253,251,249,0.96);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
       border-bottom: 1px solid var(--line);
     }
     .nav-inner {
-      max-width: 1280px; margin: 0 auto;
+      max-width: 1400px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      padding: 28px 32px;
+      padding: 22px 40px;
       gap: 32px;
     }
     .nav-left, .nav-right {
-      display: flex; align-items: center; gap: 4px;
+      display: flex; align-items: center; gap: 6px;
       font-family: 'Object Sans', sans-serif;
       font-size: 12px; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
+      letter-spacing: 0.24em; text-transform: uppercase;
     }
     .nav-right { justify-content: flex-end; }
     .nav-left a, .nav-right a {
-      color: var(--text-dark);
+      color: var(--warm-white);
       text-decoration: none;
       padding: 10px 14px;
-      transition: color 0.2s;
+      transition: opacity 0.2s, color 0.2s;
     }
-    .nav-left a:hover, .nav-right a:hover { color: var(--copper); }
+    .nav-left a:hover, .nav-right a:hover { opacity: 0.7; }
+    nav.scrolled .nav-left a, nav.scrolled .nav-right a { color: var(--text-dark); }
+    nav.scrolled .nav-left a:hover, nav.scrolled .nav-right a:hover { color: var(--copper); opacity: 1; }
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 34px; font-weight: 500;
-      color: var(--text-dark);
+      font-size: 36px; font-weight: 500;
+      color: var(--warm-white);
       text-decoration: none;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
       line-height: 1;
       position: relative;
-      padding: 0 8px;
+      padding: 0 10px;
+      transition: color 0.35s;
     }
     .nav-logo::after {
       content: '';
       position: absolute;
-      bottom: -6px; left: 20%; right: 20%;
+      bottom: -8px; left: 20%; right: 20%;
       height: 1px;
-      background: var(--copper);
+      background: var(--copper-light);
+      transition: background 0.35s;
     }
+    nav.scrolled .nav-logo { color: var(--text-dark); }
+    nav.scrolled .nav-logo::after { background: var(--copper); }
     .menu-toggle {
       display: none; background: none; border: none;
-      font-size: 24px; cursor: pointer; color: var(--text-dark); padding: 8px;
+      font-size: 26px; cursor: pointer; color: var(--warm-white); padding: 8px;
     }
+    nav.scrolled .menu-toggle { color: var(--text-dark); }
 
-    /* HERO */
+    /* ────────── HERO — full-bleed editorial ────────── */
     .hero {
-      max-width: 1280px; margin: 0 auto;
-      padding: 40px 32px 80px;
-      display: grid; grid-template-columns: 1.55fr 0.9fr;
-      gap: 40px; align-items: stretch;
-    }
-    .hero-visual {
       position: relative;
-      background: var(--warm-cream);
+      min-height: 92vh;
+      display: flex; align-items: center; justify-content: center;
       overflow: hidden;
-      min-height: 520px;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 60px 56px;
+      background: #2a1e20;
     }
-    .hero-visual-bg {
+    .hero-bg {
       position: absolute; inset: 0;
       background-image: url('images/IMG_5716.jpeg');
-      background-size: cover; background-position: center;
+      background-size: cover; background-position: center 30%;
     }
-    .hero-visual-overlay {
+    .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(61,43,46,0.05) 0%, rgba(61,43,46,0.5) 100%);
+      background: linear-gradient(180deg, rgba(61,43,46,0.35) 0%, rgba(61,43,46,0.35) 40%, rgba(61,43,46,0.65) 100%);
     }
-    .hero-visual-content { position: relative; z-index: 1; }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 900px; margin: 0 auto;
+      padding: 160px 32px 140px;
+      text-align: center;
+      color: var(--warm-white);
+    }
     .hero-eyebrow {
       font-family: 'Object Sans', sans-serif;
       font-size: 11px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--warm-white);
-      margin-bottom: 20px;
-      opacity: 0.9;
+      letter-spacing: 0.4em; text-transform: uppercase;
+      color: rgba(253,251,249,0.85);
+      margin-bottom: 32px;
+      display: inline-block;
+      position: relative;
+      padding: 0 40px;
     }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; position: absolute; top: 50%;
+      width: 28px; height: 1px; background: rgba(253,251,249,0.5);
+    }
+    .hero-eyebrow::before { left: 0; }
+    .hero-eyebrow::after { right: 0; }
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
       font-weight: 500;
       color: var(--warm-white);
-      line-height: 1.05;
-      margin-bottom: 24px;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin-bottom: 32px;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.25);
     }
     .hero h1 span { display: block; }
-    .hero h1 .word2 { font-style: italic; color: var(--copper-light); }
-    .hero h1 .word3 { color: #F2D9C4; }
+    .hero h1 .word2 { font-style: italic; color: #F2D9C4; font-weight: 400; }
+    .hero h1 .word3 { color: var(--copper-light); font-weight: 400; }
     .hero-sub {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.9);
-      max-width: 440px;
-      margin-bottom: 32px;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.2);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,0.92);
+      max-width: 540px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.25);
+    }
+    .hero-ctas {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    }
+    .hero-scroll {
+      position: absolute; z-index: 3;
+      bottom: 32px; left: 50%; transform: translateX(-50%);
+      font-family: 'Object Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: rgba(253,251,249,0.7);
+      writing-mode: horizontal-tb;
     }
 
-    /* Side card (community / app) */
-    .side-card {
-      background: var(--warm-cream);
-      padding: 48px 40px;
-      display: flex; flex-direction: column; justify-content: center;
+    /* ────────── FLOATING APP CARD (overlaps hero right) ────────── */
+    .float-card-wrap {
+      position: relative;
+      max-width: 1400px; margin: 0 auto;
+      padding: 0 40px;
+      pointer-events: none;
+      z-index: 4;
+      height: 0;
     }
-    .side-card-label {
+    .float-card {
+      pointer-events: auto;
+      position: absolute;
+      top: -240px; right: 40px;
+      width: 340px;
+      background: var(--warm-white);
+      padding: 36px 32px 32px;
+      box-shadow: 0 30px 80px rgba(61,43,46,0.18);
+      border: 1px solid var(--line);
+    }
+    .float-card-label {
       font-family: 'Object Sans', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.32em; text-transform: uppercase;
       color: var(--copper);
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       position: relative;
     }
-    .side-card-label::before, .side-card-label::after {
+    .float-card-label::before, .float-card-label::after {
       content: ''; display: inline-block; vertical-align: middle;
-      width: 24px; height: 1px; background: var(--copper);
-      margin: 0 12px;
+      width: 20px; height: 1px; background: var(--copper);
+      margin: 0 10px;
     }
-    .side-card h3 {
+    .float-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem; font-weight: 500;
+      font-size: 1.9rem; font-weight: 500;
       text-align: center;
-      margin-bottom: 24px;
-      line-height: 1.1;
+      margin-bottom: 22px;
+      line-height: 1.05;
     }
-    .side-card h3 em { font-style: italic; color: var(--bordeaux); }
-    .side-card-phones {
-      display: flex; justify-content: center; gap: 8px;
-      margin-bottom: 24px;
+    .float-card h3 em { font-style: italic; color: var(--bordeaux); }
+    .float-card-phones {
+      display: flex; justify-content: center; gap: 6px;
+      margin-bottom: 22px;
     }
-    .side-card-phones img {
-      width: 30%; height: auto; aspect-ratio: 9/19;
-      object-fit: cover; border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(149,82,81,0.12);
+    .float-card-phones img {
+      width: 32%; height: auto; aspect-ratio: 9/19;
+      object-fit: cover; border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(149,82,81,0.14);
     }
-    .side-card-text {
+    .float-card-note {
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 24px;
-      padding: 0 4px;
+      margin-bottom: 22px;
     }
+    .float-card-note strong { color: var(--copper); font-weight: 600; }
 
-    /* BUTTONS */
+    /* ────────── BUTTONS ────────── */
     .btn {
       display: inline-block;
       background: var(--text-dark);
       color: var(--warm-white);
-      padding: 15px 32px;
+      padding: 16px 34px;
       font-family: 'Object Sans', sans-serif;
       font-size: 12px; font-weight: 700;
-      letter-spacing: 0.24em; text-transform: uppercase;
+      letter-spacing: 0.26em; text-transform: uppercase;
       text-decoration: none;
       transition: all 0.3s;
-      border: none; cursor: pointer;
+      border: 1px solid var(--text-dark);
+      cursor: pointer;
       text-align: center;
     }
-    .btn:hover { background: var(--bordeaux); }
-    .btn-copper { background: var(--copper); }
-    .btn-copper:hover { background: var(--bordeaux); }
+    .btn:hover { background: var(--bordeaux); border-color: var(--bordeaux); }
+    .btn-copper { background: var(--copper); border-color: var(--copper); }
+    .btn-copper:hover { background: var(--bordeaux); border-color: var(--bordeaux); }
     .btn-outline {
       background: transparent;
       color: var(--text-dark);
       border: 1px solid var(--text-dark);
     }
     .btn-outline:hover { background: var(--text-dark); color: var(--warm-white); }
+    .btn-outline-light {
+      background: transparent;
+      color: var(--warm-white);
+      border: 1px solid rgba(253,251,249,0.7);
+    }
+    .btn-outline-light:hover { background: var(--warm-white); color: var(--text-dark); }
     .btn-block { display: block; width: 100%; }
 
-    /* APP FEATURE SECTION — prominent */
+    /* ────────── SECTION HEADER (shared) ────────── */
+    .eyebrow {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 20px;
+    }
+    .section-h {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 500; line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
+    }
+    .section-h em { font-style: italic; color: var(--bordeaux); }
+
+    /* ────────── APP DETAIL SECTION ────────── */
     .app-section {
       background: var(--warm-cream);
-      padding: 100px 32px;
+      padding: 160px 32px 120px;
     }
     .app-section-inner {
       max-width: 1280px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center;
+      gap: 100px; align-items: center;
     }
     .app-section-phones {
-      display: flex; gap: 16px; justify-content: center; align-items: flex-end;
+      display: flex; gap: 18px; justify-content: center; align-items: flex-end;
     }
     .app-section-phones img {
       width: 30%; aspect-ratio: 9/19;
-      object-fit: cover; border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(149,82,81,0.18);
+      object-fit: cover; border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(149,82,81,0.20);
     }
     .app-section-phones img:nth-child(2) {
-      width: 34%; transform: translateY(-24px);
-      box-shadow: 0 30px 70px rgba(149,82,81,0.22);
+      width: 34%; transform: translateY(-32px);
+      box-shadow: 0 30px 80px rgba(149,82,81,0.24);
     }
-    .app-section-text .eyebrow {
-      font-family: 'Object Sans', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 20px;
-    }
-    .app-section-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 3.8vw, 3rem);
-      font-weight: 500; line-height: 1.05;
-      margin-bottom: 20px;
-    }
-    .app-section-text h2 em { font-style: italic; color: var(--bordeaux); }
     .app-features {
       list-style: none; padding: 0;
-      margin: 24px 0 32px;
+      margin: 28px 0 32px;
     }
     .app-features li {
-      font-size: 1rem;
-      padding: 8px 0 8px 28px;
+      font-size: 1.02rem;
+      padding: 10px 0 10px 32px;
       color: var(--text-dark);
       position: relative;
+      line-height: 1.55;
     }
     .app-features li::before {
       content: '';
-      position: absolute; left: 0; top: 16px;
-      width: 16px; height: 1px;
+      position: absolute; left: 0; top: 20px;
+      width: 20px; height: 1px;
       background: var(--copper);
     }
     .pricing {
       background: var(--warm-white);
       border: 1px solid var(--line);
-      padding: 24px 28px;
-      margin: 24px 0 28px;
+      padding: 26px 30px;
+      margin: 28px 0 28px;
     }
     .pricing-row {
       display: flex; justify-content: space-between; align-items: baseline;
       gap: 16px;
-      padding: 8px 0;
+      padding: 10px 0;
     }
     .pricing-row + .pricing-row { border-top: 1px solid var(--line); }
     .pricing-row .plan {
       font-family: 'Object Sans', sans-serif;
       font-size: 13px; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase;
+      letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--text-dark);
     }
     .pricing-row .amount {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem; font-weight: 500;
+      font-size: 1.6rem; font-weight: 500;
       color: var(--bordeaux);
     }
-    .pricing-row .amount span { font-size: 0.85rem; color: var(--text-muted); font-family: 'Object Sans', sans-serif; font-weight: 500; }
+    .pricing-row .amount span {
+      font-size: 0.85rem; color: var(--text-muted);
+      font-family: 'Object Sans', sans-serif; font-weight: 500;
+    }
     .pricing-note {
       font-size: 13px; color: var(--text-muted);
       text-align: center;
@@ -329,7 +395,7 @@
       transition: background 0.3s;
     }
     .store-btn:hover { background: var(--bordeaux); }
-    .store-btn-icon { width: 24px; height: 24px; }
+    .store-btn-icon { width: 22px; height: 22px; }
     .store-btn-txt { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
     .store-btn-txt small {
       font-family: 'Object Sans', sans-serif;
@@ -340,64 +406,181 @@
     .store-btn-txt strong {
       font-family: 'Object Sans', sans-serif;
       font-size: 14px; font-weight: 700;
-      letter-spacing: 0.02em;
     }
 
-    /* FEATURE-BLOCK: alternating image/text */
-    .feature {
+    /* ────────── DIAGNOSEN 3-KACHELN ────────── */
+    .diag {
+      padding: 140px 32px;
+      background: var(--warm-white);
+    }
+    .diag-inner { max-width: 1280px; margin: 0 auto; }
+    .diag-head {
+      text-align: center;
+      max-width: 640px; margin: 0 auto 72px;
+    }
+    .diag-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .diag-card {
+      background: var(--warm-cream);
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .diag-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(61,43,46,0.08);
+    }
+    .diag-card-img {
+      width: 100%; aspect-ratio: 4/3;
+      background-size: cover; background-position: center;
+      background-color: var(--warm-sand);
+    }
+    .diag-card-body {
+      padding: 38px 32px 36px;
+      flex: 1;
+      display: flex; flex-direction: column;
+    }
+    .diag-card-label {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 14px;
+    }
+    .diag-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .diag-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .diag-card-more {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--text-dark);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .diag-card-more::after {
+      content: '→'; font-size: 14px;
+      transition: transform 0.3s;
+    }
+    .diag-card:hover .diag-card-more::after { transform: translateX(4px); }
+
+    /* ────────── FEATURE BAND (image + text alternating) ────────── */
+    .feature-band {
+      background: var(--warm-cream);
+    }
+    .feature-band.light { background: var(--warm-white); }
+    .feature-band-inner {
       max-width: 1280px; margin: 0 auto;
-      padding: 60px 32px;
+      padding: 120px 32px;
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
+      gap: 100px; align-items: center;
     }
     .feature-visual {
       aspect-ratio: 4 / 5;
       background-size: cover; background-position: center;
-      background-color: var(--warm-cream);
+      background-color: var(--warm-sand);
     }
-    .feature-visual.contain { background-size: contain; background-repeat: no-repeat; background-color: transparent; }
-    .feature-text { padding: 20px 0; }
-    .feature-eyebrow {
-      font-family: 'Object Sans', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 20px;
-    }
-    .feature-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.4vw, 2.8rem);
-      font-weight: 500;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-    .feature-text h2 em { font-style: italic; color: var(--bordeaux); }
     .feature-text p {
-      font-size: 1.0625rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
       line-height: 1.75;
-      margin-bottom: 24px;
-      max-width: 440px;
+      margin-bottom: 26px;
+      max-width: 480px;
     }
-    .feature.reverse .feature-visual { order: 2; }
-    .feature.reverse .feature-text { order: 1; }
-    .feature-band { background: var(--warm-cream); }
-    .feature-band-inner {
-      max-width: 1280px; margin: 0 auto;
-      padding: 100px 32px;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-    }
-    .feature-band-inner .feature-visual { background-color: transparent; }
+    .feature-band-inner.reverse .feature-visual { order: 2; }
+    .feature-band-inner.reverse .feature-text { order: 1; }
 
-    /* 3-COLUMN PLATFORMS */
+    /* ────────── BLOG GRID ────────── */
+    .blog-section {
+      padding: 140px 32px;
+      background: var(--warm-white);
+    }
+    .blog-inner { max-width: 1280px; margin: 0 auto; }
+    .blog-head {
+      text-align: center;
+      max-width: 640px; margin: 0 auto 72px;
+    }
+    .blog-head p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 40px 32px;
+    }
+    .blog-card {
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column;
+      transition: transform 0.35s;
+    }
+    .blog-card:hover { transform: translateY(-4px); }
+    .blog-card-img {
+      width: 100%; aspect-ratio: 4/5;
+      background-size: cover; background-position: center;
+      background-color: var(--warm-cream);
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-card-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(61,43,46,0.06), transparent 40%);
+    }
+    .blog-card-img.placeholder {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--warm-cream);
+    }
+    .blog-card-img.placeholder span {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 4rem;
+      color: rgba(149,82,81,0.22);
+    }
+    .blog-card-cat {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 10px;
+    }
+    .blog-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .blog-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .blog-cta {
+      text-align: center;
+      margin-top: 72px;
+    }
+
+    /* ────────── PLATFORMS (3-col) ────────── */
     .platforms {
       max-width: 1280px; margin: 0 auto;
-      padding: 100px 32px 60px;
+      padding: 120px 32px 100px;
     }
     .platforms-inner {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 40px;
     }
     .platform-card {
       text-decoration: none;
@@ -410,40 +593,34 @@
       width: 100%; aspect-ratio: 1 / 1;
       background-size: cover; background-position: center;
       background-color: var(--warm-cream);
-      overflow: hidden;
-    }
-    .platform-img.placeholder {
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem; font-style: italic;
-      color: rgba(149,82,81,0.3);
     }
     .platform-label {
       display: block;
       font-family: 'Object Sans', sans-serif;
       font-size: 13px; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
+      letter-spacing: 0.36em; text-transform: uppercase;
       color: var(--text-dark);
       text-align: center;
-      margin-top: 24px;
+      margin-top: 26px;
       text-decoration: underline;
-      text-underline-offset: 4px;
+      text-underline-offset: 6px;
       text-decoration-thickness: 1px;
     }
 
-    /* NEWSLETTER */
+    /* ────────── NEWSLETTER ────────── */
     .newsletter {
       background: var(--warm-cream);
-      padding: 100px 32px;
+      padding: 120px 32px;
     }
     .newsletter-inner {
-      max-width: 640px; margin: 0 auto; text-align: center;
+      max-width: 620px; margin: 0 auto; text-align: center;
     }
     .newsletter h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      font-size: clamp(2.2rem, 4vw, 3rem);
       font-weight: 500;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
     }
     .newsletter h2 em { font-style: italic; color: var(--bordeaux); }
     .newsletter p {
@@ -452,33 +629,50 @@
       margin-bottom: 32px;
     }
 
-    /* FOOTER */
+    /* ────────── KONTAKT ────────── */
+    .kontakt {
+      padding: 120px 32px;
+      background: var(--warm-white);
+      text-align: center;
+    }
+    .kontakt-inner { max-width: 540px; margin: 0 auto; }
+    .kontakt p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    .kontakt-buttons {
+      display: flex; flex-direction: column; gap: 10px; align-items: center;
+    }
+
+    /* ────────── FOOTER ────────── */
     footer {
       background: var(--text-dark);
       color: rgba(253,251,249,0.7);
-      padding: 72px 32px 32px;
+      padding: 80px 32px 34px;
       text-align: center;
     }
     .footer-logo {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 36px; font-weight: 500;
+      font-size: 40px; font-weight: 500;
       color: var(--warm-white);
       margin-bottom: 24px;
       display: inline-block;
       position: relative;
+      text-decoration: none;
     }
     .footer-logo::after {
       content: '';
-      position: absolute; bottom: -6px; left: 20%; right: 20%;
+      position: absolute; bottom: -8px; left: 20%; right: 20%;
       height: 1px; background: var(--copper);
     }
     .footer-links {
-      display: flex; gap: 20px 32px; justify-content: center; flex-wrap: wrap;
-      margin: 32px 0 24px;
+      display: flex; gap: 22px 34px; justify-content: center; flex-wrap: wrap;
+      margin: 36px 0 26px;
       font-family: 'Object Sans', sans-serif;
       font-size: 11px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
+      letter-spacing: 0.26em; text-transform: uppercase;
     }
     .footer-links a {
       color: rgba(253,251,249,0.7);
@@ -487,44 +681,315 @@
     }
     .footer-links a:hover { color: var(--copper-light); }
     .footer-contact { font-size: 13px; margin-bottom: 12px; line-height: 1.7; }
-    .footer-disclaimer { font-size: 10px; color: rgba(253,251,249,0.3); margin-top: 20px; letter-spacing: 0.08em; }
+    .footer-disclaimer { font-size: 10.5px; color: rgba(253,251,249,0.35); margin-top: 22px; letter-spacing: 0.08em; line-height: 1.6; }
 
-    /* RESPONSIVE */
+    /* ────────── LANDING OVERLAY (Intro-Wahl) ────────── */
+    html.overlay-open, body.overlay-open { overflow: hidden; }
+    #landing-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: var(--warm-white);
+      display: flex; align-items: center; justify-content: center;
+      padding: 60px 32px 100px;
+      overflow-y: auto;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    }
+    #landing-overlay.visible {
+      opacity: 1; visibility: visible;
+      transition: opacity 0.5s ease, visibility 0s;
+    }
+    .lo-inner {
+      max-width: 1080px; width: 100%;
+      text-align: center;
+      position: relative;
+    }
+    .lo-brand {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px; font-weight: 500;
+      color: var(--copper);
+      margin-bottom: 20px;
+      display: inline-block;
+      position: relative;
+      padding: 0 8px;
+    }
+    .lo-brand::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 20%; right: 20%;
+      height: 1px; background: var(--copper);
+    }
+    .lo-eyebrow {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.36em; text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .lo-h {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    .lo-h em { font-style: italic; color: var(--bordeaux); }
+    .lo-sub {
+      font-size: 15.5px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      max-width: 460px; margin-left: auto; margin-right: auto;
+    }
+    .lo-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .lo-card {
+      display: flex; flex-direction: column;
+      padding: 30px 24px 26px;
+      text-align: left;
+      text-decoration: none;
+      min-height: 260px;
+      border-radius: 4px;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+      cursor: pointer;
+    }
+    .lo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(61,43,46,0.14);
+    }
+    .lo-card .lo-n {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 2rem; font-weight: 500;
+      line-height: 1;
+      margin-bottom: 22px;
+      opacity: 0.75;
+    }
+    .lo-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      letter-spacing: -0.005em;
+    }
+    .lo-card p {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 13.5px;
+      line-height: 1.55;
+      flex-grow: 1;
+      margin-bottom: 22px;
+      opacity: 0.85;
+    }
+    .lo-card .lo-arrow {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: gap 0.3s;
+    }
+    .lo-card:hover .lo-arrow { gap: 14px; }
+    /* Color variants — Julias warme Palette */
+    .lo-c-bordeaux { background: var(--bordeaux); color: var(--warm-white); }
+    .lo-c-bordeaux .lo-n, .lo-c-bordeaux .lo-arrow { color: var(--copper-light); }
+    .lo-c-copper { background: var(--copper); color: var(--warm-white); }
+    .lo-c-copper .lo-n, .lo-c-copper .lo-arrow { color: var(--warm-cream); }
+    .lo-c-cream { background: var(--warm-cream); color: var(--text-dark); }
+    .lo-c-cream .lo-n, .lo-c-cream .lo-arrow { color: var(--bordeaux); }
+    .lo-c-dark { background: var(--text-dark); color: var(--warm-white); }
+    .lo-c-dark .lo-n, .lo-c-dark .lo-arrow { color: var(--copper-light); }
+
+    /* Selbsttest block */
+    .lo-selbsttest {
+      margin-top: 20px;
+    }
+    .lo-selbsttest-card {
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px;
+      background: var(--warm-beige);
+      border: 1px solid var(--line);
+      padding: 26px 32px;
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: transform 0.35s, box-shadow 0.35s, background 0.35s;
+      text-align: left;
+    }
+    .lo-selbsttest-card:hover {
+      transform: translateY(-3px);
+      background: var(--warm-cream);
+      box-shadow: 0 20px 40px rgba(61,43,46,0.10);
+    }
+    .lo-selbsttest-body { display: flex; flex-direction: column; gap: 4px; }
+    .lo-selbsttest-body .lo-eyebrow { margin-bottom: 6px; }
+    .lo-selbsttest-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .lo-selbsttest-body p {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .lo-selbsttest-arrow {
+      font-family: 'Object Sans', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--bordeaux);
+      display: inline-flex; align-items: center; gap: 10px;
+      white-space: nowrap;
+    }
+    .lo-selbsttest-arrow::after {
+      content: '→'; font-size: 16px;
+      transition: transform 0.3s;
+    }
+    .lo-selbsttest-card:hover .lo-selbsttest-arrow::after { transform: translateX(6px); }
+
+    /* Skip button — bottom right */
+    .lo-skip {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      background: var(--text-dark);
+      color: var(--warm-white);
+      border: 0;
+      font-family: 'Object Sans', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      padding: 15px 26px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      z-index: 210;
+      display: inline-flex; align-items: center; gap: 10px;
+      box-shadow: 0 12px 30px rgba(61,43,46,0.18);
+    }
+    .lo-skip:hover { background: var(--bordeaux); transform: translateY(-2px); }
+
+    @media (max-width: 1000px) {
+      .lo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      #landing-overlay { padding: 40px 20px 90px; align-items: flex-start; }
+      .lo-grid { grid-template-columns: 1fr; }
+      .lo-card { min-height: 200px; padding: 26px 22px; }
+      .lo-selbsttest-card { grid-template-columns: 1fr; padding: 22px 24px; gap: 16px; }
+      .lo-selbsttest-arrow { justify-self: start; }
+      .lo-skip { bottom: 16px; right: 16px; padding: 13px 20px; font-size: 10.5px; }
+    }
+
+    /* ────────── RESPONSIVE ────────── */
+    @media (max-width: 1080px) {
+      .diag-grid { grid-template-columns: 1fr; gap: 20px; }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .float-card { width: 300px; top: -200px; }
+    }
     @media (max-width: 900px) {
       .topbar { display: none; }
-      .nav-inner { grid-template-columns: 1fr auto 1fr; padding: 18px 20px; gap: 12px; }
-      .nav-logo { font-size: 26px; }
+      nav { top: 0; position: sticky; background: rgba(253,251,249,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+      nav .nav-logo { color: var(--text-dark); }
+      nav .nav-logo::after { background: var(--copper); }
+      nav .nav-left a, nav .nav-right a { color: var(--text-dark); }
+      nav .menu-toggle { color: var(--text-dark); }
+      .nav-inner { grid-template-columns: 1fr auto 1fr; padding: 16px 20px; gap: 12px; }
+      .nav-logo { font-size: 28px; }
       .nav-left, .nav-right { display: none; }
       .menu-toggle { display: block; justify-self: end; }
-      .nav-right { justify-content: flex-end; }
       nav.open .nav-left, nav.open .nav-right {
         display: flex; flex-direction: column; align-items: center;
         grid-column: 1 / -1;
         padding: 20px 0;
-        gap: 8px;
+        gap: 6px;
       }
       nav.open .nav-inner { grid-template-columns: auto; grid-template-rows: auto auto auto; row-gap: 8px; }
       nav.open .nav-logo { grid-column: 1 / -1; text-align: center; justify-self: center; }
-      nav.open .menu-toggle { position: absolute; top: 18px; right: 20px; }
+      nav.open .menu-toggle { position: absolute; top: 16px; right: 20px; }
 
-      .hero { grid-template-columns: 1fr; padding: 24px 20px 60px; gap: 20px; }
-      .hero-visual { min-height: 480px; padding: 40px 32px; }
-      .side-card { padding: 40px 28px; }
-      .app-section { padding: 60px 20px; }
-      .app-section-inner { grid-template-columns: 1fr; gap: 40px; }
-      .topbar-inner { flex-direction: column; gap: 6px; text-align: center; }
-      .topbar-social { gap: 12px; font-size: 10px; }
-      .feature, .feature-band-inner { grid-template-columns: 1fr; padding: 60px 20px; gap: 32px; }
-      .feature.reverse .feature-visual { order: 0; }
-      .feature.reverse .feature-text { order: 0; }
+      .hero { min-height: auto; }
+      .hero-inner { padding: 100px 24px 80px; }
+      .float-card-wrap { padding: 0 20px; }
+      .float-card {
+        position: static; width: auto; margin: -80px auto 0;
+        max-width: 400px;
+      }
+
+      .app-section { padding: 80px 20px 60px; }
+      .app-section-inner { grid-template-columns: 1fr; gap: 60px; }
+      .app-section-phones { order: 2; }
+
+      .diag { padding: 80px 20px; }
+      .diag-head { margin-bottom: 48px; }
+
+      .feature-band-inner {
+        grid-template-columns: 1fr; padding: 80px 20px; gap: 40px;
+      }
+      .feature-band-inner.reverse .feature-visual { order: 0; }
+      .feature-band-inner.reverse .feature-text { order: 0; }
       .feature-visual { aspect-ratio: 4 / 3; }
-      .platforms { padding: 60px 20px; }
+
+      .blog-section { padding: 80px 20px; }
+      .blog-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .platforms { padding: 70px 20px; }
       .platforms-inner { grid-template-columns: 1fr; gap: 40px; }
-      .newsletter { padding: 60px 20px; }
+
+      .newsletter { padding: 70px 20px; }
+      .kontakt { padding: 70px 20px; }
     }
   </style>
 </head>
 <body>
+
+<!-- LANDING OVERLAY — Themen-Wahl + Selbsttest -->
+<div id="landing-overlay" role="dialog" aria-label="Willkommen">
+  <button class="lo-skip" id="lo-skip" type="button">Überspringen →</button>
+  <div class="lo-inner">
+    <span class="lo-brand">Julia</span>
+    <p class="lo-eyebrow">Willkommen</p>
+    <h1 class="lo-h">Was <em>beschäftigt</em> dich gerade?</h1>
+    <p class="lo-sub">Wähl, wo du anfangen willst — oder überspring das hier und schau dich einfach um.</p>
+
+    <div class="lo-grid">
+      <a href="ueber-mich.html" class="lo-card lo-c-bordeaux">
+        <span class="lo-n">01</span>
+        <h3>Meine Geschichte</h3>
+        <p>Von fünf Lebensmitteln zurück ins Leben — wie ich mit HIT, MCAS und Reizdarm meinen Weg gefunden habe.</p>
+        <span class="lo-arrow">Lesen →</span>
+      </a>
+      <a href="#app" class="lo-card lo-c-copper" data-in-page>
+        <span class="lo-n">02</span>
+        <h3>TerraLuna App</h3>
+        <p>Verträglichkeits-Scanner, 250+ Lebensmittel mit Ampel-System und Zyklustracking in einer App.</p>
+        <span class="lo-arrow">Zur App →</span>
+      </a>
+      <a href="blog/" class="lo-card lo-c-cream">
+        <span class="lo-n">03</span>
+        <h3>Blogbeiträge</h3>
+        <p>Elf ehrliche Artikel aus meinem Weg. Nicht als Ratschlag — als das, was ich dir schreiben würde.</p>
+        <span class="lo-arrow">Zum Blog →</span>
+      </a>
+      <a href="#app" class="lo-card lo-c-dark" data-in-page>
+        <span class="lo-n">04</span>
+        <h3>Histaminarme Rezepte</h3>
+        <p>120+ glutenfreie Rezepte ohne Industriezucker — alle in der TerraLuna App.</p>
+        <span class="lo-arrow">Rezepte →</span>
+      </a>
+    </div>
+
+    <div class="lo-selbsttest">
+      <a href="selbsttest.html" class="lo-selbsttest-card">
+        <div class="lo-selbsttest-body">
+          <span class="lo-eyebrow">Selbsttest</span>
+          <h3>Könnten deine Beschwerden Histamin sein?</h3>
+          <p>18 kurze Fragen. Am Ende eine ehrliche Einschätzung, wo du hinschauen könntest.</p>
+        </div>
+        <span class="lo-selbsttest-arrow">Test starten</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- TOP-BAR -->
 <div class="topbar">
@@ -543,7 +1008,7 @@
     <div class="nav-left">
       <a href="ueber-mich.html">Über mich</a>
       <a href="blog/">Blog</a>
-      <a href="#app">TerraLuna App</a>
+      <a href="#app">App</a>
     </div>
     <a href="index.html" class="nav-logo">Julia</a>
     <div class="nav-right">
@@ -557,35 +1022,40 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-visual">
-    <div class="hero-visual-bg"></div>
-    <div class="hero-visual-overlay"></div>
-    <div class="hero-visual-content">
-      <p class="hero-eyebrow">Julia Bergles · Wehringen</p>
-      <h1>
-        <span>Histamin.</span>
-        <span class="word2">Unverträglichkeiten.</span>
-        <span class="word3">Allergien.</span>
-      </h1>
-      <p class="hero-sub">Ich kenne die Themen selber. Das hat mir geholfen. Hier teile ich meine Geschichte — all das, was ich früher gewusst hätte.</p>
-      <a href="ueber-mich.html" class="btn btn-copper">Meine Geschichte</a>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Julia Bergles · Wehringen</span>
+    <h1>
+      <span>Histamin.</span>
+      <span class="word2">Unverträglichkeiten.</span>
+      <span class="word3">Allergien.</span>
+    </h1>
+    <p class="hero-sub">Ich kenne die Themen selber. Das hat mir geholfen. Hier teile ich meine Geschichte — all das, was ich früher gewusst hätte.</p>
+    <div class="hero-ctas">
+      <a href="#app" class="btn btn-copper">TerraLuna App</a>
+      <a href="ueber-mich.html" class="btn btn-outline-light">Meine Geschichte</a>
     </div>
   </div>
+  <div class="hero-scroll">↓ Scroll</div>
+</section>
 
-  <aside class="side-card">
-    <p class="side-card-label">TerraLuna App</p>
+<!-- FLOATING APP CARD -->
+<div class="float-card-wrap">
+  <aside class="float-card">
+    <p class="float-card-label">TerraLuna App</p>
     <h3>Dein <em>Ernährungs­begleiter</em></h3>
-    <div class="side-card-phones">
+    <div class="float-card-phones">
       <img src="images/app-v1.2/01-heute.png" alt="TerraLuna Heute-Tab" loading="lazy">
       <img src="images/app-v1.2/03-lebensmittel.png" alt="TerraLuna Lebensmittel" loading="lazy">
       <img src="images/app-v1.2/04-rezepte.png" alt="TerraLuna Rezepte" loading="lazy">
     </div>
-    <p class="side-card-text">4,99 € / Monat &middot; 3 Tage kostenlos testen &middot; auch mit kostenloser Basisversion nutzbar.</p>
-    <a href="#app" class="btn btn-block">Mehr zur App</a>
+    <p class="float-card-note"><strong>4,99 € / Monat</strong> · 3 Tage kostenlos testen · auch als Basisversion.</p>
+    <a href="#app" class="btn btn-block">Mehr erfahren</a>
   </aside>
-</section>
+</div>
 
-<!-- APP FEATURE BLOCK -->
+<!-- APP DETAIL -->
 <section class="app-section" id="app">
   <div class="app-section-inner">
     <div class="app-section-phones">
@@ -595,7 +1065,7 @@
     </div>
     <div class="app-section-text">
       <p class="eyebrow">TerraLuna App</p>
-      <h2>Alles, was ich mir <em>gewünscht</em> hätte — in einer App.</h2>
+      <h2 class="section-h">Alles, was ich mir <em>gewünscht</em> hätte — in einer App.</h2>
       <ul class="app-features">
         <li>Verträglichkeits-Scanner für Histamin, Allergene & Zutaten</li>
         <li>250+ Lebensmittel mit Ampel-System</li>
@@ -613,7 +1083,7 @@
           <span class="plan">Jährlich</span>
           <span class="amount">39,99 € <span>/ Jahr</span></span>
         </div>
-        <p class="pricing-note"><strong>3 Tage kostenlos testen</strong> &middot; Auch als kostenlose Basisversion verfügbar</p>
+        <p class="pricing-note"><strong>3 Tage kostenlos testen</strong> · Auch als kostenlose Basisversion verfügbar</p>
       </div>
 
       <div class="store-buttons">
@@ -636,58 +1106,144 @@
   </div>
 </section>
 
-<!-- FEATURE 1: Meine Geschichte -->
-<section class="feature">
-  <div class="feature-visual" style="background-image: url('images/IMG_5644.jpeg');"></div>
-  <div class="feature-text">
-    <p class="feature-eyebrow">Über mich</p>
-    <h2>Von fünf Lebensmitteln zurück ins <em>Leben</em>.</h2>
-    <p>📝 Julia schreibt hier 2-3 Sätze in ihrer Stimme (Teaser für die Über-mich-Seite).</p>
-    <a href="ueber-mich.html" class="btn btn-outline">Meine ganze Geschichte</a>
-  </div>
-</section>
-
-<!-- FEATURE 2: Diagnosen -->
-<section class="feature-band">
-  <div class="feature-band-inner">
-    <div class="feature-text">
-      <p class="feature-eyebrow">Diagnosen verstehen</p>
-      <h2>Was <em>eigentlich</em> hinter deiner Diagnose steckt.</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;">
-        <a href="histaminintoleranz.html" class="btn btn-outline">Histaminintoleranz</a>
-        <a href="mcas.html" class="btn btn-outline">MCAS</a>
-        <a href="reizdarm.html" class="btn btn-outline">Reizdarm</a>
-      </div>
+<!-- DIAGNOSEN -->
+<section class="diag" id="aufklaerung">
+  <div class="diag-inner">
+    <div class="diag-head">
+      <p class="eyebrow">Aufklärung</p>
+      <h2 class="section-h">Was <em>eigentlich</em> hinter deiner Diagnose steckt.</h2>
     </div>
-    <div class="feature-visual" style="background-image: url('images/IMG_5717.jpeg');"></div>
+    <div class="diag-grid">
+      <a href="histaminintoleranz.html" class="diag-card">
+        <div class="diag-card-img" style="background-image: url('images/IMG_5717.jpeg');"></div>
+        <div class="diag-card-body">
+          <p class="diag-card-label">Diagnose</p>
+          <h3>Histaminintoleranz</h3>
+          <p>Was HIT wirklich bedeutet, welche Symptome dazugehören und was mir im Alltag geholfen hat.</p>
+          <span class="diag-card-more">Mehr lesen</span>
+        </div>
+      </a>
+      <a href="mcas.html" class="diag-card">
+        <div class="diag-card-img" style="background-image: url('images/IMG_5644.jpeg');"></div>
+        <div class="diag-card-body">
+          <p class="diag-card-label">Diagnose</p>
+          <h3>MCAS</h3>
+          <p>Mastzellaktivierungssyndrom — warum es oft übersehen wird und wie sich das anfühlt.</p>
+          <span class="diag-card-more">Mehr lesen</span>
+        </div>
+      </a>
+      <a href="reizdarm.html" class="diag-card">
+        <div class="diag-card-img" style="background-image: url('images/IMG_5648.jpeg');"></div>
+        <div class="diag-card-body">
+          <p class="diag-card-label">Diagnose</p>
+          <h3>Reizdarm</h3>
+          <p>Wenn der Bauch macht, was er will. Was dahinter stecken kann und was bei mir wirkt.</p>
+          <span class="diag-card-more">Mehr lesen</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- FEATURE 3: Blog -->
-<section class="feature">
-  <div class="feature-visual" style="background-image: url('images/IMG_5657.jpeg');"></div>
-  <div class="feature-text">
-    <p class="feature-eyebrow">Blog</p>
-    <h2>Was mir <em>geholfen</em> hat — ehrlich aufgeschrieben.</h2>
-    <p>Elf Artikel aus meinem Weg mit HIT, MCAS und Reizdarm. Nicht als Ratschlag von oben — als das, was ich dir schicken würde, wenn du mir jetzt schreiben würdest.</p>
-    <a href="blog/" class="btn btn-outline">Zum Blog</a>
-  </div>
-</section>
-
-<!-- FEATURE 4: Gespräch -->
+<!-- MEINE GESCHICHTE -->
 <section class="feature-band">
   <div class="feature-band-inner">
+    <div class="feature-visual" style="background-image: url('images/IMG_5644.jpeg');"></div>
     <div class="feature-text">
-      <p class="feature-eyebrow">1:1 Peer-Support</p>
-      <h2>Wenn du mit jemandem <em>reden</em> willst, der's kennt.</h2>
+      <p class="eyebrow">Über mich</p>
+      <h2 class="section-h">Von fünf Lebensmitteln zurück ins <em>Leben</em>.</h2>
+      <p>📝 Julia schreibt hier 2–3 Sätze in ihrer Stimme (Teaser zur Über-mich-Seite).</p>
+      <a href="ueber-mich.html" class="btn btn-outline">Meine ganze Geschichte</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="blog-section" id="blog">
+  <div class="blog-inner">
+    <div class="blog-head">
+      <p class="eyebrow">Blog</p>
+      <h2 class="section-h">Was mir <em>geholfen</em> hat — ehrlich aufgeschrieben.</h2>
+      <p>Elf Artikel aus meinem Weg mit HIT, MCAS und Reizdarm. Nicht als Ratschlag von oben — als das, was ich dir schicken würde, wenn du mir jetzt schreiben würdest.</p>
+    </div>
+
+    <div class="blog-grid">
+      <a href="blog/blaehbauch-in-griff/" class="blog-card">
+        <div class="blog-card-img placeholder"><span>B</span></div>
+        <p class="blog-card-cat">Alltag</p>
+        <h3>Wie ich meinen Blähbauch (fast) losgeworden bin</h3>
+        <p>Sechs Dinge, die bei mir wirklich einen Unterschied gemacht haben.</p>
+      </a>
+
+      <a href="blog/gym-transformation/" class="blog-card">
+        <div class="blog-card-img placeholder"><span>G</span></div>
+        <p class="blog-card-cat">Bewegung</p>
+        <h3>Wie Gym mir geholfen hat</h3>
+        <p>Sechs Monate — mit Vorher-Bildern. Was sich verändert hat, außer dem Körper.</p>
+      </a>
+
+      <a href="blog/darmverschluss/" class="blog-card">
+        <div class="blog-card-img placeholder"><span>D</span></div>
+        <p class="blog-card-cat">Meine Geschichte</p>
+        <h3>Wie es zu meinem Darmverschluss kam</h3>
+        <p>Wo alles begann. Und was ich rückblickend zu spät verstanden habe.</p>
+      </a>
+
+      <a href="blog/angst-vor-essen/" class="blog-card">
+        <div class="blog-card-img placeholder"><span>A</span></div>
+        <p class="blog-card-cat">Emotional</p>
+        <h3>Angst vor dem Essen — wie ich sie losgeworden bin</h3>
+        <p>Warum jeder Bissen sich wie Kontrolle anfühlt. Und was mir Stück für Stück geholfen hat.</p>
+      </a>
+
+      <a href="blog/frische-diagnose/" class="blog-card">
+        <div class="blog-card-img placeholder"><span>F</span></div>
+        <p class="blog-card-cat">Rat</p>
+        <h3>Frisch diagnostiziert — was ich dir empfehlen würde</h3>
+        <p>Das, was ich mir gewünscht hätte, dass mir jemand am Anfang sagt.</p>
+      </a>
+
+      <a href="blog/weg-aus-depressionen/" class="blog-card">
+        <div class="blog-card-img placeholder"><span>W</span></div>
+        <p class="blog-card-cat">Kopf</p>
+        <h3>Mein Weg raus aus den Depressionen</h3>
+        <p>Als der Körper mir nicht mehr traute, hat der Kopf mitgezogen. So bin ich rausgekommen.</p>
+      </a>
+    </div>
+
+    <div class="blog-cta">
+      <a href="blog/" class="btn btn-outline">Alle Artikel</a>
+    </div>
+  </div>
+</section>
+
+<!-- 1:1 GESPRÄCH -->
+<section class="feature-band light">
+  <div class="feature-band-inner reverse">
+    <div class="feature-visual" style="background-image: url('images/IMG_5648.jpeg');"></div>
+    <div class="feature-text">
+      <p class="eyebrow">1:1 Peer-Support</p>
+      <h2 class="section-h">Wenn du mit jemandem <em>reden</em> willst, der's kennt.</h2>
       <p>30 Minuten am Telefon. Kein Coaching, keine Beratung. Ehrlicher Erfahrungsaustausch mit mir — von einer Betroffenen an eine Betroffene.</p>
       <a href="gespraech.html" class="btn btn-copper">25 € · Termin buchen</a>
     </div>
-    <div class="feature-visual" style="background-image: url('images/IMG_5648.jpeg');"></div>
   </div>
 </section>
 
-<!-- 3-COLUMN PLATFORMS -->
+<!-- EMPFEHLUNGEN -->
+<section class="feature-band">
+  <div class="feature-band-inner">
+    <div class="feature-visual" style="background-image: url('images/IMG_5657.jpeg');"></div>
+    <div class="feature-text">
+      <p class="eyebrow">Meine Empfehlungen</p>
+      <h2 class="section-h">Was <em>täglich</em> auf meinem Teller landet.</h2>
+      <p>Lebensmittel und Produkte, die ich selbst nutze — inklusive aho.bio (mit meinem Code Smacado10). Ehrlich, mit Warnung wenn was nicht passt.</p>
+      <a href="empfehlungen.html" class="btn btn-outline">Meine Empfehlungen</a>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
 <section class="platforms">
   <div class="platforms-inner">
     <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="platform-card">
@@ -708,7 +1264,7 @@
 <!-- NEWSLETTER -->
 <section class="newsletter" id="newsletter">
   <div class="newsletter-inner">
-    <p class="feature-eyebrow" style="margin-bottom: 12px;">Newsletter</p>
+    <p class="eyebrow" style="margin-bottom: 14px;">Newsletter</p>
     <h2>Mein <em>Newsletter</em></h2>
     <p>Manchmal was Neues aus dem Blog oder der App. Kein Spam, jederzeit abmeldbar.</p>
     <iframe data-tally-src="https://tally.so/embed/7Rag90?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" style="border: none;"></iframe>
@@ -717,12 +1273,12 @@
 </section>
 
 <!-- KONTAKT -->
-<section class="feature" id="kontakt" style="padding-top: 60px; padding-bottom: 100px;">
-  <div class="feature-text" style="text-align: center; margin: 0 auto; max-width: 520px; grid-column: 1 / -1;">
-    <p class="feature-eyebrow">Kontakt</p>
-    <h2>Schreib mir</h2>
-    <p style="margin-left: auto; margin-right: auto;">Für alles, wofür ein Telefonat zu viel oder zu wenig ist.</p>
-    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; margin-top: 24px;">
+<section class="kontakt" id="kontakt">
+  <div class="kontakt-inner">
+    <p class="eyebrow">Kontakt</p>
+    <h2 class="section-h">Schreib mir</h2>
+    <p>Für alles, wofür ein Telefonat zu viel oder zu wenig ist.</p>
+    <div class="kontakt-buttons">
       <a href="mailto:julia@bergles.net" class="btn btn-outline">julia@bergles.net</a>
       <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="btn btn-outline">@julia_bergles</a>
     </div>
@@ -744,13 +1300,71 @@
     <a href="impressum.html">Impressum</a>
     <a href="datenschutz.html">Datenschutz</a>
   </div>
-  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
+  <div class="footer-contact">Julia Bergles · Singoldstrasse 5a · 86517 Wehringen</div>
   <div class="footer-disclaimer">Meine Inhalte sind Erfahrungsberichte, kein Ersatz für ärztliche Beratung. &copy; 2024–2026</div>
 </footer>
 
 <script>
+  // Landing Overlay
+  (function () {
+    const overlay = document.getElementById('landing-overlay');
+    const skipBtn = document.getElementById('lo-skip');
+    const KEY = 'jb-landing-dismissed';
+
+    function open() {
+      overlay.classList.add('visible');
+      document.documentElement.classList.add('overlay-open');
+      document.body.classList.add('overlay-open');
+    }
+    function close() {
+      overlay.classList.remove('visible');
+      document.documentElement.classList.remove('overlay-open');
+      document.body.classList.remove('overlay-open');
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    }
+
+    // Show unless already dismissed this session
+    let dismissed = false;
+    try { dismissed = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+    if (!dismissed) open();
+
+    skipBtn.addEventListener('click', close);
+
+    // In-page anchor cards: close first, then smooth-scroll
+    overlay.querySelectorAll('.lo-card[data-in-page]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        const href = card.getAttribute('href') || '';
+        if (!href.startsWith('#')) return;
+        e.preventDefault();
+        close();
+        setTimeout(() => {
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 400);
+      });
+    });
+
+    // Esc to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('visible')) close();
+    });
+  })();
+
+  // Nav: transparent over hero, solid on scroll
+  const nav = document.getElementById('mainNav');
+  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+  const onScroll = () => {
+    if (isMobile()) { nav.classList.remove('scrolled'); return; }
+    if (window.scrollY > 80) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // Mobile menu close on link click
   document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
+    a.addEventListener('click', () => nav.classList.remove('open'));
   });
 </script>
 
