@@ -1213,11 +1213,15 @@
     background-size: cover;
     background-position: center;
     align-items: flex-start !important;
-    overflow-y: auto;
+    justify-content: flex-start !important;
+    overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
     padding-top: 60px !important;
-    padding-bottom: 60px !important;
-    position: relative;
+    padding-bottom: 100px !important;
+    position: fixed !important;
+    inset: 0;
+    height: 100vh; max-height: 100vh;
+    touch-action: pan-y;
   }
   .lo-slide.slide-choice::before {
     content: ''; position: absolute; top: 10%; right: -10%;
@@ -1515,7 +1519,7 @@
     { cls: 'state-3b', kicker: 'N°03', word: 'Angst vorm Essen?', sub: 'Du bist damit nicht allein.' }
   ];
   var TOTAL_STATES = STATES.length;
-  var SLIDE_MS = 1900; // pro State — genug Zeit um den Untertitel zu lesen
+  var SLIDE_MS = 1200; // pro State — schneller
 
   document.documentElement.classList.add('overlay-open');
   document.body.classList.add('overlay-open');

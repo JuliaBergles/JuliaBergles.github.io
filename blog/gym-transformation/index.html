@@ -65,7 +65,7 @@
   <a href="../">← Alle Artikel</a>
 </div>
 
-<section class="page-hero" style="padding-top: 40px;">
+<section class="page-hero" style="padding-top: 20px;">
   <div class="page-hero-inner">
     <span class="page-hero-tag">Sport</span>
     <h1>Wie Gym mir geholfen hat</h1>
@@ -118,6 +118,76 @@
     a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
   });
 </script>
+
+
+<div class="app-float-cta" id="appFloatCta">
+  <button class="app-float-close" onclick="this.parentElement.classList.add('hidden');">×</button>
+  <span class="app-float-tag">TerraLuna App</span>
+  <h4 class="app-float-h">Mehr in der App</h4>
+  <p>Scanner, 250+ Lebensmittel, 120+ Rezepte.</p>
+  <a href="../app.html" class="app-float-btn">App entdecken →</a>
+</div>
+<style>
+  .app-float-cta {
+    position: fixed;
+    right: 24px; top: 50%; transform: translateY(-50%) translateX(340px);
+    width: 280px; z-index: 200;
+    background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+    border: 1.5px solid #e2ae61;
+    border-radius: 20px;
+    padding: 24px 22px;
+    box-shadow: 0 24px 60px rgba(90,20,40,0.35);
+    animation: floatIn 0.7s cubic-bezier(0.16,1,0.3,1) 2s forwards;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  .app-float-cta.hidden { opacity: 0; transform: translateY(-50%) translateX(340px); pointer-events: none; }
+  @keyframes floatIn {
+    to { transform: translateY(-50%) translateX(0); }
+  }
+  .app-float-close {
+    position: absolute; top: 8px; right: 10px;
+    background: transparent; border: 0;
+    color: rgba(226,174,97,0.7); font-size: 22px; cursor: pointer;
+    line-height: 1; padding: 4px 8px;
+    transition: color 0.3s, transform 0.3s;
+  }
+  .app-float-close:hover { color: #e2ae61; transform: rotate(90deg); }
+  .app-float-tag {
+    display: inline-block;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    color: #e2ae61;
+    padding: 5px 12px;
+    background: rgba(226,174,97,0.15);
+    border: 1px solid rgba(226,174,97,0.35);
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .app-float-h {
+    font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 22px !important;
+    color: #FBF2ED !important;
+    margin-bottom: 8px !important;
+    letter-spacing: -0.02em;
+  }
+  .app-float-cta p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; color: rgba(251,242,237,0.85);
+    line-height: 1.5; margin-bottom: 16px;
+  }
+  .app-float-btn {
+    display: inline-block; padding: 12px 22px;
+    background: #e2ae61; color: #5a1428;
+    border-radius: 999px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+  .app-float-btn:hover { transform: translateY(-2px); }
+  @media (max-width: 900px) { .app-float-cta { display: none; } }
+</style>
 
 </body>
 </html>
