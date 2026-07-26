@@ -120,13 +120,39 @@
   </div>
 </nav>
 
-<section class="page-hero">
+<section class="page-hero page-hero-dark-malaga">
   <div class="page-hero-inner">
     <span class="page-hero-tag">Empfehlungen</span>
     <h1>Was ich <em>selbst</em> nutze.</h1>
-    <p class="lead">Ehrlich ausgewählt. Nur Produkte, die bei mir wirklich auf dem Tisch stehen. Partnerempfehlungen. ich bekomme eine kleine Provision, dein Preis bleibt gleich.</p>
+    <p class="lead">Diese Produkte sind meine Favoriten. Damit habe ich es geschafft, von 5 auf über 100 Lebensmittel zu kommen.</p>
   </div>
 </section>
+
+<style>
+  .page-hero-dark-malaga {
+    background: linear-gradient(135deg, #5a1428 0%, #430a14 100%) !important;
+    position: relative; overflow: hidden;
+    padding: 140px 32px 100px !important;
+  }
+  .page-hero-dark-malaga::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(226,174,97,0.20), transparent 65%);
+    filter: blur(60px); pointer-events: none;
+  }
+  .page-hero-dark-malaga::after {
+    content: ''; position: absolute; bottom: -100px; left: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(226,174,97,0.12), transparent 65%);
+    filter: blur(80px); pointer-events: none;
+  }
+  .page-hero-dark-malaga .page-hero-inner { position: relative; z-index: 1; }
+  .page-hero-dark-malaga .page-hero-tag { color: #e2ae61 !important; }
+  .page-hero-dark-malaga .page-hero-tag::before, .page-hero-dark-malaga .page-hero-tag::after { background: #e2ae61 !important; }
+  .page-hero-dark-malaga h1 { color: #FBF2ED !important; }
+  .page-hero-dark-malaga h1 em { color: #e2ae61 !important; font-style: normal; }
+  .page-hero-dark-malaga .lead { color: rgba(251,242,237,0.85) !important; }
+</style>
 
 <section class="empfehlungen-list">
 
