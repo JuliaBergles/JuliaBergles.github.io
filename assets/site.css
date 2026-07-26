@@ -34,7 +34,7 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Rubik', 'Space Grotesk', sans-serif;
     font-weight: 400;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -1041,7 +1041,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   pointer-events: none;
 }
 .page-hero .lead {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 17px; color: rgba(251,242,237,0.85);
   line-height: 1.6; max-width: 640px; margin: 0 auto;
 }
@@ -1066,13 +1066,13 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   margin: 32px 0 12px; color: var(--bordeaux);
 }
 .content p {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 17px; color: var(--ink);
   line-height: 1.75; margin-bottom: 20px;
 }
 .content ul, .content ol { padding-left: 24px; margin-bottom: 20px; }
 .content li {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 17px; line-height: 1.7; margin-bottom: 10px; padding-left: 6px;
 }
 .content li::marker { color: var(--gold); font-weight: 700; }
@@ -1092,7 +1092,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 .placeholder-block {
   background: var(--bg-warm); border-left: 3px solid var(--gold);
   padding: 20px 24px; margin: 20px 0;
-  color: var(--bordeaux); font-family: 'Space Grotesk', sans-serif;
+  color: var(--bordeaux); font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-weight: 500; border-radius: 12px;
 }
 .placeholder-block::before { content: '📝 '; }
@@ -1125,7 +1125,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   margin-bottom: 12px; color: var(--bordeaux);
 }
 .related-card p {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 14px; color: var(--ink); opacity: 0.75; line-height: 1.55;
 }
 
@@ -1136,7 +1136,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   border-radius: 12px;
 }
 .disclaimer-box p {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 14px; color: var(--ink); line-height: 1.7;
   margin: 0; opacity: 0.85;
 }
@@ -1153,7 +1153,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 }
 .cta-app h2 em { font-style: normal; color: var(--gold); }
 .cta-app p {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   color: rgba(251,242,237,0.85); font-size: 17px;
   margin-bottom: 32px; max-width: 560px;
   margin-left: auto; margin-right: auto; line-height: 1.65;
@@ -1180,12 +1180,12 @@ footer {
 .footer-links a { color: rgba(251,242,237,0.75); transition: color 0.3s; }
 .footer-links a:hover { color: var(--gold); }
 .footer-contact {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 13px; margin-bottom: 12px; line-height: 1.7;
   color: rgba(251,242,237,0.85);
 }
 .footer-disclaimer {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 11px; color: rgba(251,242,237,0.5);
   margin-top: 22px; letter-spacing: 0.05em; line-height: 1.6;
 }
