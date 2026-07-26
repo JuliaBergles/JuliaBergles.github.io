@@ -9,69 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/site.css">
   <style>
-    /* Dunkler Malaga-Portrait-Hero mit Gold */
-    .portrait-hero {
-      background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
-      padding: 120px 40px 100px;
-      position: relative; overflow: hidden;
-    }
-    .portrait-hero::before {
-      content: ''; position: absolute; top: -80px; right: -80px;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(226,174,97,0.20), transparent 65%);
-      filter: blur(60px); pointer-events: none;
-    }
-    .portrait-hero::after {
-      content: ''; position: absolute; bottom: -100px; left: -100px;
-      width: 500px; height: 500px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(226,174,97,0.12), transparent 65%);
-      filter: blur(80px); pointer-events: none;
-    }
-    .portrait-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 0.9fr 1.1fr;
-      gap: 60px; align-items: center;
-      position: relative; z-index: 1;
-    }
-    .portrait-img {
-      width: 100%; aspect-ratio: 3 / 4;
-      background-size: cover; background-position: center;
-      background-color: #430a14;
-      border-radius: 24px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
-      border: 1px solid rgba(226,174,97,0.30);
-    }
-    .portrait-text .eyebrow {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: none;
-      color: #e2ae61;
-      margin-bottom: 20px;
-      display: inline-block;
-      padding: 8px 16px;
-      background: rgba(226,174,97,0.15);
-      border: 1px solid rgba(226,174,97,0.35);
-      border-radius: 999px;
-    }
-    .portrait-text h1 {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif !important;
-      font-size: clamp(48px, 7vw, 96px);
-      font-weight: 900 !important;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      margin-bottom: 24px;
-      color: #FBF2ED !important;
-    }
-    .portrait-text h1 em { font-style: normal; color: #e2ae61; }
-    .portrait-text > p {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-size: 17px; line-height: 1.7;
-      color: rgba(251,242,237,0.88);
-    }
-    @media (max-width: 900px) {
-      .portrait-hero { padding: 100px 20px 60px; }
-      .portrait-inner { grid-template-columns: 1fr; gap: 32px; }
-    }
 
     /* ── Zeitstrahl ── */
     .timeline {
