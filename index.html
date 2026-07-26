@@ -216,11 +216,11 @@
     .hero-eyebrow::after { right: 0; }
     .hero h1 {
       font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: clamp(2.6rem, 6vw, 5.4rem);
-      font-weight: 500;
+      font-size: clamp(3rem, 7.2vw, 6.6rem);
+      font-weight: 900;
       color: var(--warm-white);
-      line-height: 1.02;
-      letter-spacing: -0.015em;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
       margin-bottom: 32px;
       text-shadow: 0 2px 30px rgba(0,0,0,0.25);
     }
@@ -580,6 +580,22 @@
       transition: transform 0.35s;
     }
     .blog-card:hover { transform: translateY(-4px); }
+    /* No-image variant — Farb-Kachel mit Titel */
+    .blog-card.no-img {
+      padding: 40px 32px 34px;
+      min-height: 260px;
+      border-radius: 20px;
+      justify-content: space-between;
+    }
+    .blog-card.no-img:nth-child(1) { background: var(--rose);     color: #ffffff; }
+    .blog-card.no-img:nth-child(2) { background: var(--gold);     color: #ffffff; }
+    .blog-card.no-img:nth-child(3) { background: var(--pink);     color: #ffffff; }
+    .blog-card.no-img:nth-child(4) { background: var(--lavender); color: #ffffff; }
+    .blog-card.no-img:nth-child(5) { background: var(--beige);    color: #ffffff; }
+    .blog-card.no-img:nth-child(6) { background: #d69a48;         color: #ffffff; }
+    .blog-card.no-img .blog-card-cat { color: rgba(255,255,255,0.85); }
+    .blog-card.no-img h3 { color: #ffffff; margin-bottom: 12px; }
+    .blog-card.no-img p { color: rgba(255,255,255,0.9); }
     .blog-card-img {
       width: 100%; aspect-ratio: 4/5;
       background-size: cover; background-position: center;
@@ -1271,7 +1287,7 @@
     <div class="lo-choice-inner">
       <span class="lo-choice-kicker">Was beschäftigt dich?</span>
       <h2 class="lo-choice-h">Wobei kann ich dir <em>helfen</em>?</h2>
-      <p class="lo-choice-sub">Ich kenne die Themen selber — Reizdarm, Darmverschluss, HIT, MCAS, Essstörung, PMS, Depressionen, Sportsucht. Klick, was dich betrifft.</p>
+      <p class="lo-choice-sub">Klick, was dich betrifft — oder überspring das und schau dir gleich die ganze Seite an.</p>
 
       <div class="lo-chips">
         <a href="blog/blaehbauch-in-griff/" class="lo-chip">Blähbauch</a>
@@ -1355,7 +1371,7 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <span class="hero-eyebrow">Julia Bergles · Wehringen</span>
+    <span class="hero-eyebrow">Julia Bergles</span>
     <h1>
       <span>Histamin.</span>
       <span class="word2">Unverträglichkeiten.</span>
@@ -1482,7 +1498,7 @@
     <div class="feature-text">
       <p class="eyebrow">Über mich</p>
       <h2 class="section-h">Von fünf Lebensmitteln zurück ins <em>Leben</em>.</h2>
-      <p>📝 Julia schreibt hier 2–3 Sätze in ihrer Stimme (Teaser zur Über-mich-Seite).</p>
+      <p>Mit 19 lag ich mit einem Darmverschluss im Krankenhaus. Danach zwei Jahre nur fünf Lebensmittel vertragen. Heute geht wieder mehr — und ich schreibe hier auf, was mir dabei geholfen hat.</p>
       <a href="ueber-mich.html" class="btn btn-outline">Meine ganze Geschichte</a>
     </div>
   </div>
@@ -1498,43 +1514,37 @@
     </div>
 
     <div class="blog-grid">
-      <a href="blog/blaehbauch-in-griff/" class="blog-card">
-        <div class="blog-card-img placeholder"><span>B</span></div>
+      <a href="blog/blaehbauch-in-griff/" class="blog-card no-img">
         <p class="blog-card-cat">Alltag</p>
         <h3>Wie ich meinen Blähbauch (fast) losgeworden bin</h3>
         <p>Sechs Dinge, die bei mir wirklich einen Unterschied gemacht haben.</p>
       </a>
 
-      <a href="blog/gym-transformation/" class="blog-card">
-        <div class="blog-card-img placeholder"><span>G</span></div>
+      <a href="blog/gym-transformation/" class="blog-card no-img">
         <p class="blog-card-cat">Bewegung</p>
         <h3>Wie Gym mir geholfen hat</h3>
         <p>Sechs Monate — mit Vorher-Bildern. Was sich verändert hat, außer dem Körper.</p>
       </a>
 
-      <a href="blog/darmverschluss/" class="blog-card">
-        <div class="blog-card-img placeholder"><span>D</span></div>
+      <a href="blog/darmverschluss/" class="blog-card no-img">
         <p class="blog-card-cat">Meine Geschichte</p>
         <h3>Wie es zu meinem Darmverschluss kam</h3>
         <p>Wo alles begann. Und was ich rückblickend zu spät verstanden habe.</p>
       </a>
 
-      <a href="blog/angst-vor-essen/" class="blog-card">
-        <div class="blog-card-img placeholder"><span>A</span></div>
+      <a href="blog/angst-vor-essen/" class="blog-card no-img">
         <p class="blog-card-cat">Emotional</p>
         <h3>Angst vor dem Essen — wie ich sie losgeworden bin</h3>
         <p>Warum jeder Bissen sich wie Kontrolle anfühlt. Und was mir Stück für Stück geholfen hat.</p>
       </a>
 
-      <a href="blog/frische-diagnose/" class="blog-card">
-        <div class="blog-card-img placeholder"><span>F</span></div>
+      <a href="blog/frische-diagnose/" class="blog-card no-img">
         <p class="blog-card-cat">Rat</p>
         <h3>Frisch diagnostiziert — was ich dir empfehlen würde</h3>
         <p>Das, was ich mir gewünscht hätte, dass mir jemand am Anfang sagt.</p>
       </a>
 
-      <a href="blog/weg-aus-depressionen/" class="blog-card">
-        <div class="blog-card-img placeholder"><span>W</span></div>
+      <a href="blog/weg-aus-depressionen/" class="blog-card no-img">
         <p class="blog-card-cat">Kopf</p>
         <h3>Mein Weg raus aus den Depressionen</h3>
         <p>Als der Körper mir nicht mehr traute, hat der Kopf mitgezogen. So bin ich rausgekommen.</p>
@@ -1550,7 +1560,7 @@
 <!-- 1:1 GESPRÄCH -->
 <section class="feature-band light">
   <div class="feature-band-inner reverse">
-    <div class="feature-visual" style="background-image: url('images/liebe.jpg');"></div>
+    <div class="feature-visual" style="background-image: url('images/gespraech.jpg');"></div>
     <div class="feature-text">
       <p class="eyebrow">1:1 Peer-Support</p>
       <h2 class="section-h">Wenn du mit jemandem <em>reden</em> willst, der's kennt.</h2>
@@ -1567,7 +1577,7 @@
     <div class="feature-text">
       <p class="eyebrow">Meine Empfehlungen</p>
       <h2 class="section-h">Was <em>täglich</em> auf meinem Teller landet.</h2>
-      <p>Lebensmittel und Produkte, die ich selbst nutze — inklusive aho.bio (mit meinem Code Smacado10). Ehrlich, mit Warnung wenn was nicht passt.</p>
+      <p>Lebensmittel und Produkte, die ich selbst nutze — aho.bio (Code Smacado10), Balance Riegel, und alles was bei mir täglich auf dem Teller landet. Ehrlich, mit Warnung wenn was nicht passt.</p>
       <a href="empfehlungen.html" class="btn btn-outline">Meine Empfehlungen</a>
     </div>
   </div>
