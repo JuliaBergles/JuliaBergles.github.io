@@ -9,14 +9,18 @@
     @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --blush: #f2d5cf; --strawberry: #e8a0a0; --cream: #F8F2EE; --warmwhite: #fffbf7;
-      --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #5a1428; --soft: #b8a99a;
-      --honey: #dbb88a; --lavender: #d5c8e0; --peach: #f0c4a8;
-      --glossy: #f8e8e0; --white: #ffffff;
-      --navy: #5a1428; --wine: #5a1428; --gold: #c9a96e;
-      --linen: #F0E8E4;
+      /* On-Point Palette (TerraLuna App Look) */
+      --blush: #f1d2cb; --strawberry: #c74873; --cream: #FBF2ED; --warmwhite: #FDF9F2;
+      --rosegold: #c74873; --sand: #F3D6C6; --charcoal: #5a1428; --soft: #8a6f72;
+      --honey: #e2ae61; --lavender: #F3D6C6; --peach: #F3D6C6;
+      --glossy: #FDF9F2; --white: #ffffff;
+      --navy: #5a1428; --wine: #5a1428; --gold: #e2ae61; --gold-hi: #eec287;
+      --linen: #F3D6C6; --ink: #2D1F22; --bordeaux: #5a1428; --bg: #FBF2ED;
+      --pink: #c74873;
     }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    body { font-family: 'Space Grotesk', 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; overflow-x: hidden; font-weight: 400; }
+    h1, h2, h3, h4 { font-family: 'Rubik', 'Space Grotesk', sans-serif !important; font-weight: 900 !important; letter-spacing: -0.025em; line-height: 1.05; text-transform: none; }
+    h1 em, h2 em, h3 em { font-style: normal !important; color: var(--gold); }
 
     /* ANIMATIONS */
     .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
