@@ -46,7 +46,7 @@
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; letter-spacing: -0.005em; color: var(--text-dark); }
+    h1, h2, h3, h4 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-weight: 800; letter-spacing: -0.02em; color: var(--text-dark); line-height: 1.05; }
     a { color: inherit; }
     img { display: block; max-width: 100%; }
 
@@ -111,8 +111,8 @@
     nav.scrolled .nav-left a, nav.scrolled .nav-right a { color: var(--text-dark); }
     nav.scrolled .nav-left a:hover, nav.scrolled .nav-right a:hover { color: var(--copper); opacity: 1; }
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-style: normal;
       font-size: 36px; font-weight: 500;
       color: var(--warm-white);
       text-decoration: none;
@@ -179,7 +179,7 @@
     .hero-eyebrow::before { left: 0; }
     .hero-eyebrow::after { right: 0; }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-size: clamp(2.6rem, 6vw, 5.4rem);
       font-weight: 500;
       color: var(--warm-white);
@@ -189,8 +189,8 @@
       text-shadow: 0 2px 30px rgba(0,0,0,0.25);
     }
     .hero h1 span { display: block; }
-    .hero h1 .word2 { font-style: italic; color: #F2D9C4; font-weight: 400; }
-    .hero h1 .word3 { color: var(--copper-light); font-weight: 400; }
+    .hero h1 .word2 { color: var(--orange); }
+    .hero h1 .word3 { color: var(--pink); }
     .hero-sub {
       font-size: clamp(1rem, 1.5vw, 1.15rem);
       color: rgba(255,255,255,0.92);
@@ -247,13 +247,13 @@
       margin: 0 10px;
     }
     .float-card h3 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-size: 1.9rem; font-weight: 500;
       text-align: center;
       margin-bottom: 22px;
       line-height: 1.05;
     }
-    .float-card h3 em { font-style: italic; color: var(--bordeaux); }
+    .float-card h3 em { font-style: normal; color: var(--bordeaux); }
     .float-card-phones {
       display: flex; justify-content: center; gap: 6px;
       margin-bottom: 22px;
@@ -307,20 +307,20 @@
 
     /* ────────── SECTION HEADER (shared) ────────── */
     .eyebrow {
-      font-family: 'Object Sans', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--copper);
+      color: var(--bordeaux);
       margin-bottom: 20px;
     }
     .section-h {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-size: clamp(2.2rem, 4vw, 3.4rem);
       font-weight: 500; line-height: 1.05;
       letter-spacing: -0.01em;
       margin-bottom: 22px;
     }
-    .section-h em { font-style: italic; color: var(--bordeaux); }
+    .section-h em { font-style: normal; color: var(--bordeaux); }
 
     /* ────────── APP DETAIL SECTION ────────── */
     .app-section {
@@ -381,7 +381,7 @@
       color: var(--text-dark);
     }
     .pricing-row .amount {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-size: 1.6rem; font-weight: 500;
       color: var(--bordeaux);
     }
@@ -466,7 +466,7 @@
       margin-bottom: 14px;
     }
     .diag-card h3 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-size: 1.7rem; font-weight: 500;
       line-height: 1.1;
       margin-bottom: 16px;
@@ -562,8 +562,8 @@
       background: var(--warm-cream);
     }
     .blog-card-img.placeholder span {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-style: normal;
       font-size: 4rem;
       color: rgba(149,82,81,0.22);
     }
@@ -575,7 +575,7 @@
       margin-bottom: 10px;
     }
     .blog-card h3 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-size: 1.4rem; font-weight: 500;
       line-height: 1.2;
       margin-bottom: 10px;
@@ -635,13 +635,13 @@
       max-width: 620px; margin: 0 auto; text-align: center;
     }
     .newsletter h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-size: clamp(2.2rem, 4vw, 3rem);
       font-weight: 500;
       margin-bottom: 14px;
       letter-spacing: -0.01em;
     }
-    .newsletter h2 em { font-style: italic; color: var(--bordeaux); }
+    .newsletter h2 em { font-style: normal; color: var(--bordeaux); }
     .newsletter p {
       color: var(--text-muted);
       font-size: 15px;
@@ -672,8 +672,8 @@
       text-align: center;
     }
     .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-style: normal;
       font-size: 40px; font-weight: 500;
       color: var(--warm-white);
       margin-bottom: 24px;
