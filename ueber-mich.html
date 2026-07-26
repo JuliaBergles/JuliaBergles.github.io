@@ -10,34 +10,42 @@
   <link rel="stylesheet" href="assets/site.css">
   <style>
     .portrait-hero {
-      max-width: 1280px; margin: 0 auto;
-      padding: 40px 32px 80px;
+      max-width: 1200px; margin: 0 auto;
+      padding: 120px 40px 80px;
       display: grid; grid-template-columns: 0.9fr 1.1fr;
       gap: 60px; align-items: center;
     }
     .portrait-img {
       width: 100%; aspect-ratio: 3 / 4;
       background-size: cover; background-position: center;
-      background-color: var(--warm-cream);
+      background-color: var(--bg-warm);
+      border-radius: 24px;
     }
     .portrait-text .eyebrow {
-      font-family: 'Neue Montreal', 'Inter', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--copper);
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: none;
+      color: var(--bordeaux);
       margin-bottom: 20px;
+      display: inline-block;
     }
     .portrait-text h1 {
-      font-family: 'Sunborn', 'Fraunces', serif;
-      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
-      font-weight: 500;
-      line-height: 1.05;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
       margin-bottom: 24px;
+      color: var(--bordeaux);
     }
-    .portrait-text h1 em { font-style: normal; color: var(--bordeaux); }
-
+    .portrait-text h1 em { font-style: normal; color: var(--pink); }
+    .portrait-text > p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px; line-height: 1.7;
+      color: var(--ink); opacity: 0.9;
+    }
     @media (max-width: 900px) {
-      .portrait-hero { grid-template-columns: 1fr; padding: 24px 20px 60px; gap: 32px; }
+      .portrait-hero { grid-template-columns: 1fr; padding: 100px 20px 60px; gap: 32px; }
     }
   </style>
 </head>

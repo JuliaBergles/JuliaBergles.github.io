@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mein Weg aus dem Blähbauch | EatMoreArt</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap
   <style>
     @page { size: A4; margin: 0; }
     :root {
-      --cream: #F8F2EE; --warmwhite: #F8F2EE; --charcoal: #955251;
-      --text: #5e4640; --textstrong: #3d322a; --cocoa: #8A7B75; --rosegold: #D4A48A;
-      --wine: #C48B6C; --navy: #955251; --gold: #C48B6C;
+      --cream: #F8F2EE; --warmwhite: #F8F2EE; --charcoal: #5a1428;
+      --text: #5e4640; --textstrong: #3d322a; --cocoa: #8A7B75; --rosegold: #eec287;
+      --wine: #5a1428; --navy: #5a1428; --gold: #e2ae61;
       --linen: #F0E8E4; --white: #F8F2EE; --gray: #b5a99a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,18 +24,18 @@
     .cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--navy); color: var(--white); padding: 80px 60px; }
     .cover::after { display: none; }
     .cover-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
-    .cover-label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
-    .cover h1 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 52px; font-weight: 300; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .cover-label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: none; color: var(--gold); margin-bottom: 32px; }
+    .cover h1 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 300; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.5px; }
     .cover h1 em { color: var(--gold); font-style: normal; }
-    .cover .subtitle { font-family: 'Sunborn', 'Fraunces', serif; font-size: 19px; color: rgba(255,255,255,0.9); font-style: normal; margin-bottom: 40px; letter-spacing: 0.5px; }
+    .cover .subtitle { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 19px; color: rgba(255,255,255,0.9); font-style: normal; margin-bottom: 40px; letter-spacing: 0.5px; }
     .cover .cover-illu { margin: 0 auto 36px; opacity: 0.9; }
     .cover .cover-line-bottom { width: 40px; height: 1px; background: rgba(255,255,255,0.15); margin: 0 auto 20px; }
-    .cover .author { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: uppercase; }
-    .cover .brand { position: absolute; bottom: 52px; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 3px; text-transform: uppercase; }
+    .cover .author { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 3px; text-transform: none; }
+    .cover .brand { position: absolute; bottom: 52px; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 3px; text-transform: none; }
 
-    h2 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 14px; line-height: 1.25; letter-spacing: -0.3px; }
-    h3 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 19px; font-weight: 500; color: var(--navy); margin: 24px 0 8px; }
-    h4 { font-size: 11.5px; font-weight: 700; color: var(--charcoal); margin: 14px 0 6px; letter-spacing: 0.6px; text-transform: uppercase; }
+    h2 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 300; color: var(--charcoal); margin-bottom: 14px; line-height: 1.25; letter-spacing: -0.3px; }
+    h3 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 500; color: var(--navy); margin: 24px 0 8px; }
+    h4 { font-size: 11.5px; font-weight: 700; color: var(--charcoal); margin: 14px 0 6px; letter-spacing: 0.6px; text-transform: none; }
 
     p { margin-bottom: 9px; color: var(--text); }
     p strong, li strong { color: var(--textstrong); font-weight: 700; }
@@ -45,7 +45,7 @@
     .kapitel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
     .kapitel-head .kapitel-meta { flex: 1; }
     .kapitel-head .kapitel-illu { width: 64px; height: 64px; flex-shrink: 0; opacity: 0.85; }
-    .page-label { font-size: 9px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .page-label { font-size: 9px; font-weight: 700; letter-spacing: 3.5px; text-transform: none; color: var(--gold); margin-bottom: 6px; }
     .page-number { position: absolute; bottom: 44px; right: 70px; font-size: 10px; color: var(--cocoa); font-weight: 400; }
     .divider { width: 40px; height: 1px; background: var(--gold); margin: 8px 0 22px; }
 
@@ -93,7 +93,7 @@
     .vs-card .vs-illu { width: 40px; height: 40px; margin: 0 auto 8px; opacity: 0.85; }
     .vs-card h4 { margin: 0 0 6px; color: var(--textstrong); }
     .vs-card p { font-size: 11.5px; margin: 0; line-height: 1.55; color: var(--cocoa); }
-    .vs-arrow { display: flex; align-items: center; font-family: 'Sunborn', 'Fraunces', serif; font-size: 22px; color: var(--gold); font-style: normal; }
+    .vs-arrow { display: flex; align-items: center; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 22px; color: var(--gold); font-style: normal; }
 
     /* Rezept */
     .recipe-box { background: var(--warmwhite); border: 1px solid rgba(201,169,110,0.2); border-radius: 12px; padding: 22px 24px; margin: 16px 0; }
@@ -104,7 +104,7 @@
 
     .step-list { counter-reset: step; list-style: none; margin-left: 0; padding-left: 0; }
     .step-list li { counter-increment: step; position: relative; padding-left: 36px; margin-bottom: 10px; font-size: 12.5px; }
-    .step-list li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: var(--white); font-family: 'Sunborn', 'Fraunces', serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; padding-left: 0; }
+    .step-list li::before { content: counter(step); position: absolute; left: 0; top: -2px; width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: var(--white); font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; padding-left: 0; }
 
     /* Pflanzen-Liste für YamatoGast */
     .plant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
@@ -122,13 +122,13 @@
     .exercise li { font-size: 12px; }
 
     /* Quote */
-    .quote { font-family: 'Sunborn', 'Fraunces', serif; font-size: 19px; font-style: normal; color: var(--navy); text-align: center; padding: 22px 20px; line-height: 1.6; }
+    .quote { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 19px; font-style: normal; color: var(--navy); text-align: center; padding: 22px 20px; line-height: 1.6; }
 
     /* CTA */
     .cta-box { background: var(--navy); border-radius: 16px; padding: 32px 32px; text-align: center; color: var(--white); margin: 24px 0; }
     .cta-box h3 { color: var(--gold); font-size: 24px; margin: 0 0 12px; }
     .cta-box p { color: rgba(255,255,255,0.95); font-size: 13px; margin-bottom: 7px; }
-    .cta-box .app-name { font-family: 'Sunborn', 'Fraunces', serif; font-size: 20px; color: var(--white); margin: 14px 0 12px; font-style: normal; }
+    .cta-box .app-name { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 20px; color: var(--white); margin: 14px 0 12px; font-style: normal; }
     .cta-box ul { display: inline-block; text-align: left; margin: 0 auto; }
     .cta-box li { color: rgba(255,255,255,0.95); font-size: 13px; padding-left: 18px; }
     .cta-box li::before { background: var(--gold); }
@@ -161,14 +161,14 @@
 
   <!-- Cover Illustration: Mond + Pflanzen-Lineart -->
   <svg class="cover-illu" width="120" height="120" viewBox="0 0 120 120" fill="none">
-    <circle cx="60" cy="60" r="34" stroke="#C48B6C" stroke-width="0.8" opacity="0.55"/>
-    <path d="M60 30 Q72 48 60 60 Q48 72 60 90" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.45"/>
-    <path d="M30 60 Q48 48 60 60 Q72 72 90 60" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.45"/>
-    <circle cx="60" cy="60" r="2" fill="#C48B6C" opacity="0.7"/>
-    <circle cx="22" cy="32" r="0.8" fill="#C48B6C" opacity="0.6"/>
-    <circle cx="98" cy="40" r="0.8" fill="#C48B6C" opacity="0.6"/>
-    <circle cx="100" cy="88" r="0.8" fill="#C48B6C" opacity="0.6"/>
-    <circle cx="20" cy="92" r="0.8" fill="#C48B6C" opacity="0.6"/>
+    <circle cx="60" cy="60" r="34" stroke="#e2ae61" stroke-width="0.8" opacity="0.55"/>
+    <path d="M60 30 Q72 48 60 60 Q48 72 60 90" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.45"/>
+    <path d="M30 60 Q48 48 60 60 Q72 72 90 60" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.45"/>
+    <circle cx="60" cy="60" r="2" fill="#e2ae61" opacity="0.7"/>
+    <circle cx="22" cy="32" r="0.8" fill="#e2ae61" opacity="0.6"/>
+    <circle cx="98" cy="40" r="0.8" fill="#e2ae61" opacity="0.6"/>
+    <circle cx="100" cy="88" r="0.8" fill="#e2ae61" opacity="0.6"/>
+    <circle cx="20" cy="92" r="0.8" fill="#e2ae61" opacity="0.6"/>
   </svg>
 
   <div class="cover-line-bottom"></div>
@@ -219,12 +219,12 @@
     </div>
     <!-- Bauch-Lineart -->
     <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
-      <path d="M20 14 Q32 8 44 14 Q54 24 50 40 Q44 56 32 56 Q20 56 14 40 Q10 24 20 14 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <circle cx="32" cy="36" r="2" stroke="#C48B6C" stroke-width="0.8" fill="none"/>
-      <path d="M22 28 Q26 32 24 36" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.5"/>
-      <path d="M42 26 Q38 30 40 34" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.5"/>
-      <circle cx="26" cy="22" r="0.8" fill="#C48B6C" opacity="0.6"/>
-      <circle cx="40" cy="20" r="0.8" fill="#C48B6C" opacity="0.6"/>
+      <path d="M20 14 Q32 8 44 14 Q54 24 50 40 Q44 56 32 56 Q20 56 14 40 Q10 24 20 14 Z" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <circle cx="32" cy="36" r="2" stroke="#e2ae61" stroke-width="0.8" fill="none"/>
+      <path d="M22 28 Q26 32 24 36" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M42 26 Q38 30 40 34" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <circle cx="26" cy="22" r="0.8" fill="#e2ae61" opacity="0.6"/>
+      <circle cx="40" cy="20" r="0.8" fill="#e2ae61" opacity="0.6"/>
     </svg>
   </div>
 
@@ -265,14 +265,14 @@
     </div>
     <!-- Dampf-Lineart -->
     <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
-      <path d="M16 50 L48 50 L46 54 L18 54 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <ellipse cx="32" cy="46" rx="18" ry="3" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M22 30 Q24 36 22 42" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
-      <path d="M32 26 Q34 34 32 42" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
-      <path d="M42 30 Q44 36 42 42" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
-      <path d="M22 22 Q24 26 22 30" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
-      <path d="M32 18 Q34 22 32 26" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
-      <path d="M42 22 Q44 26 42 30" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M16 50 L48 50 L46 54 L18 54 Z" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <ellipse cx="32" cy="46" rx="18" ry="3" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M22 30 Q24 36 22 42" stroke="#e2ae61" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M32 26 Q34 34 32 42" stroke="#e2ae61" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M42 30 Q44 36 42 42" stroke="#e2ae61" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M22 22 Q24 26 22 30" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M32 18 Q34 22 32 26" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M42 22 Q44 26 42 30" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.4"/>
     </svg>
   </div>
 
@@ -288,11 +288,11 @@
     <div class="vs-card bad">
       <!-- Kürbis-Lineart -->
       <svg class="vs-illu" viewBox="0 0 40 40" fill="none">
-        <ellipse cx="20" cy="24" rx="14" ry="10" stroke="#C48B6C" stroke-width="1" fill="none"/>
-        <path d="M12 22 Q12 30 16 32" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M20 14 Q20 28 20 32" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M28 22 Q28 30 24 32" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M20 14 Q18 10 16 10" stroke="#C48B6C" stroke-width="1" fill="none"/>
+        <ellipse cx="20" cy="24" rx="14" ry="10" stroke="#e2ae61" stroke-width="1" fill="none"/>
+        <path d="M12 22 Q12 30 16 32" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <path d="M20 14 Q20 28 20 32" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <path d="M28 22 Q28 30 24 32" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.6"/>
+        <path d="M20 14 Q18 10 16 10" stroke="#e2ae61" stroke-width="1" fill="none"/>
       </svg>
       <h4>Kürbis</h4>
       <p><strong>Viel Wasser</strong>, viel Volumen. Füllt den Magen, ohne wirklich zu sättigen.</p>
@@ -301,9 +301,9 @@
     <div class="vs-card good">
       <!-- Süßkartoffel-Lineart -->
       <svg class="vs-illu" viewBox="0 0 40 40" fill="none">
-        <path d="M10 22 Q8 14 16 12 Q26 10 32 18 Q36 28 28 32 Q18 36 12 30 Q8 26 10 22 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
-        <path d="M14 18 Q18 20 22 18" stroke="#C48B6C" stroke-width="0.7" fill="none" opacity="0.5"/>
-        <path d="M18 26 Q22 28 26 26" stroke="#C48B6C" stroke-width="0.7" fill="none" opacity="0.5"/>
+        <path d="M10 22 Q8 14 16 12 Q26 10 32 18 Q36 28 28 32 Q18 36 12 30 Q8 26 10 22 Z" stroke="#e2ae61" stroke-width="1" fill="none"/>
+        <path d="M14 18 Q18 20 22 18" stroke="#e2ae61" stroke-width="0.7" fill="none" opacity="0.5"/>
+        <path d="M18 26 Q22 28 26 26" stroke="#e2ae61" stroke-width="0.7" fill="none" opacity="0.5"/>
       </svg>
       <h4>Süßkartoffel</h4>
       <p><strong>Weniger Wasser, mehr Energie pro Bissen.</strong> Sättigender, leichter im Magen.</p>
@@ -334,13 +334,13 @@
     </div>
     <!-- Brot-Lineart -->
     <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
-      <path d="M12 32 Q12 22 22 22 L42 22 Q52 22 52 32 L52 46 Q52 50 48 50 L16 50 Q12 50 12 46 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M20 22 Q20 16 26 16 Q32 16 32 22" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M32 22 Q32 16 38 16 Q44 16 44 22" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M18 36 L26 36" stroke="#C48B6C" stroke-width="0.8" opacity="0.5"/>
-      <path d="M18 42 L24 42" stroke="#C48B6C" stroke-width="0.8" opacity="0.5"/>
-      <circle cx="34" cy="36" r="1" fill="#C48B6C" opacity="0.5"/>
-      <circle cx="40" cy="42" r="1" fill="#C48B6C" opacity="0.5"/>
+      <path d="M12 32 Q12 22 22 22 L42 22 Q52 22 52 32 L52 46 Q52 50 48 50 L16 50 Q12 50 12 46 Z" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M20 22 Q20 16 26 16 Q32 16 32 22" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M32 22 Q32 16 38 16 Q44 16 44 22" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M18 36 L26 36" stroke="#e2ae61" stroke-width="0.8" opacity="0.5"/>
+      <path d="M18 42 L24 42" stroke="#e2ae61" stroke-width="0.8" opacity="0.5"/>
+      <circle cx="34" cy="36" r="1" fill="#e2ae61" opacity="0.5"/>
+      <circle cx="40" cy="42" r="1" fill="#e2ae61" opacity="0.5"/>
     </svg>
   </div>
 
@@ -389,12 +389,12 @@
     </div>
     <!-- Heilpflanze-Lineart -->
     <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
-      <path d="M32 54 L32 24" stroke="#C48B6C" stroke-width="1"/>
-      <path d="M32 36 Q22 32 18 22 Q28 22 32 30" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M32 30 Q42 26 46 16 Q36 16 32 24" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M32 44 Q24 42 22 36 Q30 36 32 40" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
-      <path d="M32 40 Q40 38 42 32 Q34 32 32 36" stroke="#C48B6C" stroke-width="0.9" fill="none" opacity="0.7"/>
-      <ellipse cx="32" cy="56" rx="10" ry="2" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M32 54 L32 24" stroke="#e2ae61" stroke-width="1"/>
+      <path d="M32 36 Q22 32 18 22 Q28 22 32 30" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M32 30 Q42 26 46 16 Q36 16 32 24" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M32 44 Q24 42 22 36 Q30 36 32 40" stroke="#e2ae61" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <path d="M32 40 Q40 38 42 32 Q34 32 32 36" stroke="#e2ae61" stroke-width="0.9" fill="none" opacity="0.7"/>
+      <ellipse cx="32" cy="56" rx="10" ry="2" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.5"/>
     </svg>
   </div>
 
@@ -409,35 +409,35 @@
   <h3>Die 8 Heilpflanzen</h3>
   <div class="plant-grid">
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 8 Q7 8 5 12 M11 8 Q15 8 17 12" stroke="#C48B6C" stroke-width="0.9"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 8 Q7 8 5 12 M11 8 Q15 8 17 12" stroke="#e2ae61" stroke-width="0.9"/></svg>
       <div><h4>Ginsengwurzelstock</h4><p>Fördert die Durchblutung der Magenschleimhaut. Traditionelles Tonikum.</p></div>
     </div>
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 10 Q7 10 5 14 M11 10 Q15 10 17 14 M11 6 Q9 6 8 8 M11 6 Q13 6 14 8" stroke="#C48B6C" stroke-width="0.9"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 10 Q7 10 5 14 M11 10 Q15 10 17 14 M11 6 Q9 6 8 8 M11 6 Q13 6 14 8" stroke="#e2ae61" stroke-width="0.9"/></svg>
       <div><h4>Atractylodes</h4><p>In der ostasiatischen Medizin zur Unterstützung der Verdauung.</p></div>
     </div>
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><ellipse cx="11" cy="13" rx="6" ry="4" stroke="#C48B6C" stroke-width="0.9" fill="none"/><path d="M11 9 Q11 6 13 5" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><ellipse cx="11" cy="13" rx="6" ry="4" stroke="#e2ae61" stroke-width="0.9" fill="none"/><path d="M11 9 Q11 6 13 5" stroke="#e2ae61" stroke-width="0.9" fill="none"/></svg>
       <div><h4>Poria-Fruchtkörper</h4><p>Ein Pilz. traditionell bei Wasseransammlungen und Verdauungsbeschwerden.</p></div>
     </div>
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 Q5 8 5 14 Q5 18 11 18 Q17 18 17 14 Q17 8 11 4" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 Q5 8 5 14 Q5 18 11 18 Q17 18 17 14 Q17 8 11 4" stroke="#e2ae61" stroke-width="0.9" fill="none"/></svg>
       <div><h4>Pinellia-Rhizom</h4><p>In der TCM gegen Übelkeit und Magenbeschwerden bekannt.</p></div>
     </div>
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="6" stroke="#C48B6C" stroke-width="0.9" fill="none"/><path d="M11 5 Q14 8 14 11 Q14 14 11 17" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.6"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="6" stroke="#e2ae61" stroke-width="0.9" fill="none"/><path d="M11 5 Q14 8 14 11 Q14 14 11 17" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.6"/></svg>
       <div><h4>Citrus-Unshiu-Schale</h4><p>Getrocknete Mandarinenschale. ätherische Öle wirken verdauungsanregend.</p></div>
     </div>
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><ellipse cx="11" cy="12" rx="4" ry="6" stroke="#C48B6C" stroke-width="0.9" fill="none"/><path d="M11 6 Q11 4 13 3" stroke="#C48B6C" stroke-width="0.9"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><ellipse cx="11" cy="12" rx="4" ry="6" stroke="#e2ae61" stroke-width="0.9" fill="none"/><path d="M11 6 Q11 4 13 3" stroke="#e2ae61" stroke-width="0.9"/></svg>
       <div><h4>Jujube-Früchte</h4><p>Chinesische Datteln. traditionell zur Harmonisierung und als sanftes Tonikum.</p></div>
     </div>
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 9 Q8 9 6 12 M11 12 Q14 12 16 15" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M11 4 L11 18 M11 9 Q8 9 6 12 M11 12 Q14 12 16 15" stroke="#e2ae61" stroke-width="0.9" fill="none"/></svg>
       <div><h4>Süßholzwurzel</h4><p>Aus westlicher Kräuterkunde und TCM. traditionell krampflösend und magenberuhigend.</p></div>
     </div>
     <div class="plant-card">
-      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M6 14 Q8 8 14 8 Q18 8 18 12 Q18 16 14 16 Q10 16 6 14 Z" stroke="#C48B6C" stroke-width="0.9" fill="none"/></svg>
+      <svg class="plant-illu" viewBox="0 0 22 22" fill="none"><path d="M6 14 Q8 8 14 8 Q18 8 18 12 Q18 16 14 16 Q10 16 6 14 Z" stroke="#e2ae61" stroke-width="0.9" fill="none"/></svg>
       <div><h4>Ingwerwurzelstock</h4><p>Entzündungshemmend, regt die Darmtätigkeit an, lindert Übelkeit.</p></div>
     </div>
   </div>
@@ -459,12 +459,12 @@
     </div>
     <!-- Yoga-Lineart -->
     <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
-      <circle cx="32" cy="16" r="4" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M32 20 L32 36" stroke="#C48B6C" stroke-width="1"/>
-      <path d="M32 28 Q24 28 18 34 Q14 38 12 42" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M32 28 Q40 28 46 34 Q50 38 52 42" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M32 36 Q26 40 22 50" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M32 36 Q38 40 42 50" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <circle cx="32" cy="16" r="4" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M32 20 L32 36" stroke="#e2ae61" stroke-width="1"/>
+      <path d="M32 28 Q24 28 18 34 Q14 38 12 42" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M32 28 Q40 28 46 34 Q50 38 52 42" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M32 36 Q26 40 22 50" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M32 36 Q38 40 42 50" stroke="#e2ae61" stroke-width="1" fill="none"/>
     </svg>
   </div>
 
@@ -473,11 +473,11 @@
   <div class="exercise">
     <svg class="exercise-illu" viewBox="0 0 56 56" fill="none">
       <!-- Katze-Kuh: Person im Vierfüßlerstand -->
-      <path d="M10 36 L46 36" stroke="#C48B6C" stroke-width="1" opacity="0.4"/>
-      <path d="M12 36 L12 28 Q14 24 18 24" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
-      <path d="M44 36 L44 28 Q42 24 38 24" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
-      <path d="M18 24 Q28 18 38 24" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
-      <circle cx="14" cy="22" r="3" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M10 36 L46 36" stroke="#e2ae61" stroke-width="1" opacity="0.4"/>
+      <path d="M12 36 L12 28 Q14 24 18 24" stroke="#e2ae61" stroke-width="1.1" fill="none"/>
+      <path d="M44 36 L44 28 Q42 24 38 24" stroke="#e2ae61" stroke-width="1.1" fill="none"/>
+      <path d="M18 24 Q28 18 38 24" stroke="#e2ae61" stroke-width="1.1" fill="none"/>
+      <circle cx="14" cy="22" r="3" stroke="#e2ae61" stroke-width="1" fill="none"/>
     </svg>
     <div class="exercise-body">
       <h3>1 &middot; Katze-Kuh</h3>
@@ -493,11 +493,11 @@
   <div class="exercise">
     <svg class="exercise-illu" viewBox="0 0 56 56" fill="none">
       <!-- Knie zur Brust -->
-      <path d="M6 42 L50 42" stroke="#C48B6C" stroke-width="1" opacity="0.4"/>
-      <ellipse cx="28" cy="38" rx="20" ry="4" stroke="#C48B6C" stroke-width="0.6" fill="none" opacity="0.3"/>
-      <circle cx="14" cy="34" r="3" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <path d="M17 34 Q22 32 28 30 Q34 28 38 24 Q40 22 38 18" stroke="#C48B6C" stroke-width="1.1" fill="none"/>
-      <path d="M28 30 Q32 36 36 38" stroke="#C48B6C" stroke-width="1" fill="none"/>
+      <path d="M6 42 L50 42" stroke="#e2ae61" stroke-width="1" opacity="0.4"/>
+      <ellipse cx="28" cy="38" rx="20" ry="4" stroke="#e2ae61" stroke-width="0.6" fill="none" opacity="0.3"/>
+      <circle cx="14" cy="34" r="3" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <path d="M17 34 Q22 32 28 30 Q34 28 38 24 Q40 22 38 18" stroke="#e2ae61" stroke-width="1.1" fill="none"/>
+      <path d="M28 30 Q32 36 36 38" stroke="#e2ae61" stroke-width="1" fill="none"/>
     </svg>
     <div class="exercise-body">
       <h3>2 &middot; Knie zur Brust</h3>
@@ -513,10 +513,10 @@
   <div class="exercise">
     <svg class="exercise-illu" viewBox="0 0 56 56" fill="none">
       <!-- Bauchmassage im Uhrzeigersinn -->
-      <circle cx="28" cy="28" r="16" stroke="#C48B6C" stroke-width="0.8" fill="none" opacity="0.4"/>
-      <path d="M28 12 A16 16 0 0 1 44 28" stroke="#C48B6C" stroke-width="1.4" fill="none"/>
-      <path d="M40 22 L44 28 L38 30" stroke="#C48B6C" stroke-width="1.4" fill="none"/>
-      <circle cx="28" cy="28" r="2" fill="#C48B6C" opacity="0.7"/>
+      <circle cx="28" cy="28" r="16" stroke="#e2ae61" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M28 12 A16 16 0 0 1 44 28" stroke="#e2ae61" stroke-width="1.4" fill="none"/>
+      <path d="M40 22 L44 28 L38 30" stroke="#e2ae61" stroke-width="1.4" fill="none"/>
+      <circle cx="28" cy="28" r="2" fill="#e2ae61" opacity="0.7"/>
     </svg>
     <div class="exercise-body">
       <h3>3 &middot; Bauchmassage im Uhrzeigersinn</h3>
@@ -545,10 +545,10 @@
     </div>
     <!-- Mond/Atem-Lineart -->
     <svg class="kapitel-illu" viewBox="0 0 64 64" fill="none">
-      <path d="M42 14 Q26 22 26 32 Q26 42 42 50 Q30 50 22 42 Q14 34 14 32 Q14 22 22 14 Q30 14 42 14 Z" stroke="#C48B6C" stroke-width="1" fill="none"/>
-      <circle cx="50" cy="22" r="0.8" fill="#C48B6C" opacity="0.6"/>
-      <circle cx="54" cy="32" r="0.8" fill="#C48B6C" opacity="0.6"/>
-      <circle cx="50" cy="44" r="0.8" fill="#C48B6C" opacity="0.6"/>
+      <path d="M42 14 Q26 22 26 32 Q26 42 42 50 Q30 50 22 42 Q14 34 14 32 Q14 22 22 14 Q30 14 42 14 Z" stroke="#e2ae61" stroke-width="1" fill="none"/>
+      <circle cx="50" cy="22" r="0.8" fill="#e2ae61" opacity="0.6"/>
+      <circle cx="54" cy="32" r="0.8" fill="#e2ae61" opacity="0.6"/>
+      <circle cx="50" cy="44" r="0.8" fill="#e2ae61" opacity="0.6"/>
     </svg>
   </div>
 
@@ -618,7 +618,7 @@
     Und genau das wünsche ich dir auch."
   </div>
 
-  <p style="text-align: center; font-family: 'Sunborn', 'Fraunces', serif; font-size: 17px; color: var(--rosegold); margin-top: 8px; font-style: normal;">Alles Liebe, Julia</p>
+  <p style="text-align: center; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 17px; color: var(--rosegold); margin-top: 8px; font-style: normal;">Alles Liebe, Julia</p>
   <span class="page-number">9</span>
 </div>
 

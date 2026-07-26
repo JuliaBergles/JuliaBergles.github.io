@@ -6,14 +6,14 @@
   <meta name="description" content="TerraLuna App. Dein smarter Ernährungsbegleiter für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden.">
   <title>TerraLuna App | EatMoreArt</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --blush: #f2d5cf; --strawberry: #e8a0a0; --cream: #F8F2EE; --warmwhite: #fffbf7;
-      --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #3D2B2E; --soft: #b8a99a;
+      --rosegold: #c9908a; --sand: #d4c4b0; --charcoal: #5a1428; --soft: #b8a99a;
       --honey: #dbb88a; --lavender: #d5c8e0; --peach: #f0c4a8;
       --glossy: #f8e8e0; --white: #ffffff;
-      --navy: #955251; --wine: #C48B6C; --gold: #c9a96e;
+      --navy: #5a1428; --wine: #5a1428; --gold: #c9a96e;
       --linen: #F0E8E4;
     }
     body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
@@ -27,7 +27,7 @@
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,246,240,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,144,138,0.1); }
     .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
     .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .nav-logo span { font-family: 'Sunborn', 'Fraunces', serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; display: flex; align-items: baseline; gap: 6px; }
+    .nav-logo span { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; display: flex; align-items: baseline; gap: 6px; }
     .nav-logo .ema { font-size: 22px; font-weight: 600; letter-spacing: 4px; background: linear-gradient(135deg, var(--rosegold), #d4a49e, var(--rosegold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .nav-logo .ema-full { font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--soft); }
     .nav-links { display: flex; gap: 28px; align-items: center; }
@@ -42,8 +42,8 @@
     .hero::before { content: ''; position: absolute; top: -30%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%); border-radius: 50%; }
     .hero::after { content: ''; position: absolute; bottom: -20%; left: -15%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,144,138,0.06) 0%, transparent 70%); border-radius: 50%; }
     .hero-content { position: relative; z-index: 1; max-width: 680px; }
-    .hero-label { font-size: 11px; font-weight: 600; color: var(--honey); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
-    .hero h1 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 60px; font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+    .hero-label { font-size: 11px; font-weight: 600; color: var(--honey); letter-spacing: 4px; text-transform: none; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 60px; font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
     .hero .subtitle { font-size: 17px; color: var(--sand); max-width: 540px; margin: 0 auto 44px; line-height: 1.8; font-weight: 300; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
@@ -60,8 +60,8 @@
     /* SECTIONS */
     section { padding: 100px 24px; }
     .section-inner { max-width: 1000px; margin: 0 auto; }
-    .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
-    .section-title { font-family: 'Sunborn', 'Fraunces', serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
+    .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: none; margin-bottom: 12px; }
+    .section-title { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--soft); margin-bottom: 48px; max-width: 560px; line-height: 1.8; }
 
     /* FEATURE ROWS */
@@ -69,8 +69,8 @@
     .feature-row:last-child { margin-bottom: 0; }
     .feature-row.reverse { direction: rtl; }
     .feature-row.reverse > * { direction: ltr; }
-    .feature-text .feature-number { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-    .feature-text h3 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 30px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; line-height: 1.2; }
+    .feature-text .feature-number { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 3px; text-transform: none; margin-bottom: 10px; }
+    .feature-text h3 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; line-height: 1.2; }
     .feature-text p { font-size: 15px; color: var(--soft); line-height: 1.8; margin-bottom: 16px; }
     .feature-text ul { list-style: none; padding: 0; }
     .feature-text ul li { font-size: 14px; color: var(--charcoal); padding: 5px 0 5px 20px; position: relative; }
@@ -89,7 +89,7 @@
     .more-feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(201,144,138,0.1); }
     .more-feature-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--glossy); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
     .more-feature-icon svg { width: 24px; height: 24px; stroke: var(--rosegold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .more-feature-card h4 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
+    .more-feature-card h4 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
     .more-feature-card p { font-size: 13px; color: var(--soft); line-height: 1.7; }
 
     /* PRICING */
@@ -97,8 +97,8 @@
     .pricing-card { background: var(--warmwhite); border-radius: 24px; padding: 36px 28px; display: flex; flex-direction: column; transition: all 0.4s; border: 1px solid rgba(201,144,138,0.08); position: relative; }
     .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(201,144,138,0.12); }
     .pricing-card.popular { border: 2px solid var(--navy); }
-    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 20px; border-radius: 50px; }
-    .pricing-card h3 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: none; padding: 6px 20px; border-radius: 50px; }
+    .pricing-card h3 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
     .pricing-price { font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .pricing-price span { font-size: 14px; font-weight: 400; color: var(--soft); }
     .pricing-alt { font-size: 13px; color: var(--soft); margin-bottom: 20px; }
@@ -110,7 +110,7 @@
 
     /* CTA SECTION */
     .cta-section { background: var(--navy); text-align: center; color: var(--white); }
-    .cta-section h2 { font-family: 'Sunborn', 'Fraunces', serif; font-size: 44px; font-weight: 300; color: var(--white); margin-bottom: 16px; }
+    .cta-section h2 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 300; color: var(--white); margin-bottom: 16px; }
     .cta-section p { font-size: 16px; color: var(--sand); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
     /* APP SCREENSHOTS. Carousel mit iPhone-Mockups */
@@ -186,7 +186,7 @@
         inset 0 1px 2px rgba(255,255,255,0.08),
         inset 0 -1px 2px rgba(0,0,0,0.4);
     }
-    .screen-label { font-family: 'Sunborn', 'Fraunces', serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.2px; }
+    .screen-label { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.2px; }
     .screen-desc { font-size: 13px; color: var(--soft); letter-spacing: 0.04em; line-height: 1.5; }
     .carousel-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
@@ -203,7 +203,7 @@
       z-index: 5;
     }
     .carousel-btn:hover {
-      background: linear-gradient(135deg, #C48B6C, #D4A48A);
+      background: linear-gradient(135deg, #e2ae61, #eec287);
       color: white;
       transform: translateY(-50%) scale(1.08);
       box-shadow: 0 12px 32px rgba(196,139,108,0.32);
@@ -215,14 +215,14 @@
     .screens-hint {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 11px; color: var(--soft);
-      letter-spacing: 0.2em; text-transform: uppercase;
+      letter-spacing: 0.2em; text-transform: none;
       margin-top: 8px; opacity: 0.6;
     }
 
     /* FOOTER */
     footer { background: var(--navy); color: var(--sand); padding: 60px 24px; border-top: 1px solid rgba(255,255,255,0.06); }
     .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    .footer-logo { font-family: 'Sunborn', 'Fraunces', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-logo { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
     .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
     .footer-links a { color: var(--sand); text-decoration: none; font-size: 13px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
