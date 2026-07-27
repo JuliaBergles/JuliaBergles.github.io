@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/site.css">
   <style>
 
-    /* ── Zeitstrahl ── */
+    /* ── Zeitstrahl in Beige-Tönen ── */
     .timeline {
       list-style: none; padding: 0; margin: 40px 0 60px;
       position: relative;
@@ -19,7 +19,7 @@
       content: ''; position: absolute;
       top: 20px; bottom: 20px; left: 40px;
       width: 3px;
-      background: linear-gradient(180deg, #e2ae61 0%, #5a1428 100%);
+      background: linear-gradient(180deg, #F3D6C6 0%, #d4b48c 50%, #ded0c2 100%);
       border-radius: 999px;
     }
     .tl-item {
@@ -31,12 +31,12 @@
     .tl-marker {
       display: flex; align-items: center; justify-content: center;
       width: 80px; height: 80px; border-radius: 50%;
-      background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
-      color: #e2ae61;
+      background: linear-gradient(135deg, #F3D6C6 0%, #ded0c2 100%);
+      color: #5a1428;
       font-family: 'Rubik', 'Space Grotesk', sans-serif;
       font-weight: 900; font-size: 16px;
       letter-spacing: -0.02em;
-      box-shadow: 0 12px 32px rgba(90,20,40,0.35), 0 0 0 3px var(--bg);
+      box-shadow: 0 12px 32px rgba(200,150,110,0.25), 0 0 0 3px var(--bg);
       position: relative;
       z-index: 1;
       transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
@@ -47,15 +47,16 @@
       box-shadow: 0 16px 40px rgba(226,174,97,0.35), 0 0 0 3px var(--bg);
     }
     .tl-details {
-      background: var(--card, #fff);
-      border: 1.5px solid rgba(226,174,97,0.30);
+      background: #fdf7ee;
+      border: 1.5px solid #ded0c2;
       border-radius: 20px;
       padding: 24px 28px;
       transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
     }
     .tl-details[open] {
-      box-shadow: 0 24px 50px rgba(90,20,40,0.12);
-      border-color: #e2ae61;
+      box-shadow: 0 24px 50px rgba(90,20,40,0.08);
+      border-color: #d4b48c;
+      background: #faf1e3;
     }
     .tl-details summary {
       list-style: none;

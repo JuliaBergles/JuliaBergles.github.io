@@ -995,12 +995,17 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 /* Page-Hero (Unterseiten) */
 .page-hero {
   padding: 140px 32px 100px;
-  background:
-    linear-gradient(135deg, rgba(90,20,40,0.65) 0%, rgba(67,10,20,0.85) 100%),
-    var(--page-hero-img, none) center/cover no-repeat,
-    linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+  background-color: #5a1428;
+  background-image:
+    linear-gradient(180deg, rgba(45,31,34,0.35) 0%, rgba(45,31,34,0.65) 100%),
+    var(--page-hero-img, none);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   text-align: center;
   position: relative; overflow: hidden;
+  min-height: 480px;
+  display: flex; align-items: center; justify-content: center;
 }
 .page-hero::before {
   content: ''; position: absolute; top: -80px; right: -80px;
@@ -1030,11 +1035,12 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 .page-hero-tag::before, .page-hero-tag::after { display: none; }
 .page-hero h1 {
   font-family: 'Rubik', 'Space Grotesk', sans-serif;
-  font-size: clamp(40px, 6vw, 84px);
-  font-weight: 900; line-height: 1;
+  font-size: clamp(48px, 7.5vw, 96px);
+  font-weight: 400; line-height: 1.02;
   color: #FBF2ED;
   margin-bottom: 24px;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.3);
 }
 .page-hero h1 em {
   font-style: normal;
@@ -1170,10 +1176,18 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   margin-left: auto; margin-right: auto; line-height: 1.65;
 }
 
-/* Footer */
+/* Footer mit Pfingstrose als Hintergrund */
 footer {
-  background: var(--bordeaux); color: rgba(251,242,237,0.75);
-  padding: 80px 32px 34px; text-align: center;
+  background-color: #5a1428;
+  background-image:
+    linear-gradient(180deg, rgba(90,20,40,0.75) 0%, rgba(67,10,20,0.90) 100%),
+    url('../images/header.jpg');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  color: rgba(251,242,237,0.85);
+  padding: 100px 32px 40px; text-align: center;
+  position: relative;
 }
 .footer-logo {
   font-family: 'Rubik', 'Space Grotesk', sans-serif;
