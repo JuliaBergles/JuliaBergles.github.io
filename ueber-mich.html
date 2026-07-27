@@ -10,69 +10,93 @@
   <link rel="stylesheet" href="assets/site.css">
   <style>
 
-    /* ── Zeitstrahl in Beige-Tönen ── */
+    /* ── Zeitstrahl modern (Malaga + Gold, Glass-Cards) ── */
     .timeline {
       list-style: none; padding: 0; margin: 40px 0 60px;
       position: relative;
     }
     .timeline::before {
       content: ''; position: absolute;
-      top: 20px; bottom: 20px; left: 40px;
-      width: 3px;
-      background: linear-gradient(180deg, #F3D6C6 0%, #d4b48c 50%, #ded0c2 100%);
-      border-radius: 999px;
+      top: 40px; bottom: 40px; left: 50px;
+      width: 2px;
+      background: linear-gradient(180deg,
+        rgba(226,174,97,0) 0%,
+        rgba(226,174,97,0.6) 8%,
+        rgba(226,174,97,1) 50%,
+        rgba(226,174,97,0.6) 92%,
+        rgba(226,174,97,0) 100%);
+      z-index: 0;
     }
     .tl-item {
       display: grid; grid-template-columns: 100px 1fr;
-      gap: 24px; align-items: start;
-      margin-bottom: 24px;
+      gap: 32px; align-items: start;
+      margin-bottom: 20px;
       position: relative;
     }
     .tl-marker {
       display: flex; align-items: center; justify-content: center;
-      width: 80px; height: 80px; border-radius: 50%;
-      background: linear-gradient(135deg, #F3D6C6 0%, #ded0c2 100%);
-      color: #5a1428;
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-weight: 900; font-size: 16px;
+      width: 100px; height: 60px; border-radius: 999px;
+      background: transparent;
+      color: #e2ae61;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 900; font-size: 20px;
       letter-spacing: -0.02em;
-      box-shadow: 0 12px 32px rgba(200,150,110,0.25), 0 0 0 3px var(--bg);
       position: relative;
       z-index: 1;
       transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
     }
-    .tl-year { line-height: 1; }
-    .tl-item:hover .tl-marker {
-      transform: scale(1.08);
-      box-shadow: 0 16px 40px rgba(226,174,97,0.35), 0 0 0 3px var(--bg);
+    .tl-marker::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+      border-radius: 999px;
+      border: 1.5px solid #e2ae61;
+      z-index: -1;
     }
+    .tl-year { line-height: 1; }
+    .tl-item:hover .tl-marker { transform: translateX(4px); }
     .tl-details {
-      background: #fdf7ee;
-      border: 1.5px solid #ded0c2;
-      border-radius: 20px;
-      padding: 24px 28px;
+      background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+      border: 1.5px solid rgba(226,174,97,0.35);
+      border-radius: 18px;
+      padding: 22px 28px;
       transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .tl-details::before {
+      content: ''; position: absolute; top: -40px; right: -40px;
+      width: 160px; height: 160px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(226,174,97,0.15), transparent 65%);
+      pointer-events: none;
     }
     .tl-details[open] {
-      box-shadow: 0 24px 50px rgba(90,20,40,0.08);
-      border-color: #d4b48c;
-      background: #faf1e3;
+      box-shadow: 0 24px 50px rgba(90,20,40,0.35);
+      border-color: #e2ae61;
     }
     .tl-details summary {
       list-style: none;
       cursor: pointer;
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-weight: 900; font-size: 20px;
-      color: #5a1428;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700; font-size: 17px;
+      color: #f5f1eb;
       display: flex; justify-content: space-between; align-items: center; gap: 20px;
-      line-height: 1.15;
+      line-height: 1.25;
+      position: relative;
+      z-index: 1;
     }
     .tl-details summary::-webkit-details-marker { display: none; }
     .tl-details summary::after {
-      content: '+';
-      font-family: 'Rubik', sans-serif;
-      font-size: 30px; font-weight: 400;
+      content: '';
+      width: 32px; height: 32px; border-radius: 999px;
+      background: rgba(226,174,97,0.15);
+      border: 1px solid rgba(226,174,97,0.35);
       color: #e2ae61;
+      display: inline-flex; align-items: center; justify-content: center;
+      background-image: linear-gradient(#e2ae61, #e2ae61), linear-gradient(#e2ae61, #e2ae61);
+      background-repeat: no-repeat;
+      background-size: 12px 2px, 2px 12px;
+      background-position: center;
       transition: transform 0.4s;
       flex-shrink: 0;
     }
@@ -82,16 +106,20 @@
     .tl-body {
       margin-top: 16px;
       padding-top: 16px;
-      border-top: 1px solid rgba(226,174,97,0.30);
+      border-top: 1px solid rgba(226,174,97,0.25);
       animation: tlFade 0.5s cubic-bezier(0.16,1,0.3,1);
+      position: relative; z-index: 1;
     }
     .tl-body p {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-size: 16px; color: var(--ink, #2D1F22);
-      opacity: 0.85; line-height: 1.7;
+      font-family: 'Rubik', sans-serif;
+      font-size: 15.5px; color: rgba(251,242,237,0.92);
+      line-height: 1.65;
       margin-bottom: 12px;
     }
     .tl-body p:last-child { margin-bottom: 0; }
+    .tl-body strong { color: #e2ae61; font-weight: 700; }
+    .tl-body em { font-style: normal; color: #e2ae61; }
+    .tl-body a { color: #e2ae61; text-decoration: underline; text-underline-offset: 3px; }
     @keyframes tlFade {
       from { opacity: 0; transform: translateY(-8px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -323,7 +351,7 @@
       .diag-toggle-body ul { list-style: none; padding: 0; margin: 0; }
       .diag-toggle-body li {
         font-family: 'Rubik', sans-serif;
-        font-size: 15.5px; color: #FBF2ED;
+        font-size: 15.5px; color: #f5f1eb;
         padding: 6px 0 6px 22px;
         position: relative; line-height: 1.5;
       }
@@ -334,7 +362,7 @@
       }
       .diag-toggle-body p {
         font-family: 'Rubik', sans-serif;
-        font-size: 15.5px; color: #FBF2ED; opacity: 0.92;
+        font-size: 15.5px; color: #f5f1eb; opacity: 0.92;
         line-height: 1.65; margin-bottom: 12px;
       }
       .diag-toggle-body p:last-child { margin-bottom: 0; }

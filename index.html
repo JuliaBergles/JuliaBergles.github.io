@@ -63,8 +63,8 @@
 <style>
   :root {
     /* Beige/Cream Basis, dunkler Malaga für Kontrast */
-    --bg: #FBF2ED;              /* Cream — Standard */
-    --bg-warm: #F3D6C6;         /* Warm-Cream für Sektionen */
+    --bg: #f5f1eb;              /* Cream — Standard */
+    --bg-warm: #e8e2d6;         /* Warm-Cream für Sektionen */
     --bg-soft: #E8D0BE;
     --card: #ffffff;
 
@@ -1000,7 +1000,7 @@
     z-index: 9999;
     overflow: hidden;
     transition: opacity 0.7s ease, visibility 0s linear 0.7s, background-color 0.3s ease;
-    background: #FBF2ED;
+    background: #f5f1eb;
   }
   #landing-overlay.done {
     opacity: 0;
@@ -1044,15 +1044,15 @@
   /* Heller invertierter Wechsel pro Wort — Cream + Farbe ↔ Farbe + Weinrot.
      Weinrot bleibt als Anker (Brand), keine schwarze Sektion mehr. */
   /* Innovation: Cream ↔ Pink */
-  .lo-stage.state-1a { background: #FBF2ED; color: #5a1428; }
-  .lo-stage.state-1b { background: #c74873; color: #FBF2ED; }
+  .lo-stage.state-1a { background: #f5f1eb; color: #5a1428; }
+  .lo-stage.state-1b { background: #c74873; color: #f5f1eb; }
   /* Sichtbarkeit: Cream ↔ Weinrot (Mint zu hell auf Cream, Weinrot als Anker) */
-  .lo-stage.state-2a { background: #FBF2ED; color: #430a14; }
+  .lo-stage.state-2a { background: #f5f1eb; color: #430a14; }
   .lo-stage.state-2b { background: #430a14; color: #ffffff; }
   .lo-stage.state-2b .lo-word,
   .lo-stage.state-2b .lo-sub { color: #ffffff; }
   /* Null Aufwand: Cream ↔ Orange */
-  .lo-stage.state-3a { background: #FBF2ED; color: #ff9c6d; }
+  .lo-stage.state-3a { background: #f5f1eb; color: #ff9c6d; }
   .lo-stage.state-3b { background: #ff9c6d; color: #430a14; }
 
   /* Legacy .lo-slide (nur noch für Choice-Sektion) */
@@ -1162,7 +1162,7 @@
   .lo-slide.slide-4 { background: #c74873; color: #2D1F22; } /* Professionell — Pink · Schwarz */
   .lo-slide.slide-5 { background: #2D1F22; color: #e7fffe; } /* Kein Aufwand — Schwarz · Mint */
   .lo-slide.slide-6 { background: #e7fffe; color: #2D1F22; } /* Kein Aufwand — Mint · Schwarz */
-  .lo-slide.slide-choice { background: #FBF2ED; color: #2D1F22; }
+  .lo-slide.slide-choice { background: #f5f1eb; color: #2D1F22; }
   .lo-slide .kicker, .lo-slide .brand-mark { color: currentColor; }
 
   /* Progress-Punkte über dem Skip-Button */
@@ -1279,7 +1279,7 @@
     font-size: clamp(34px, 4.5vw, 54px);
     line-height: 1.05;
     letter-spacing: -0.03em;
-    color: #FBF2ED;
+    color: #f5f1eb;
     margin: 0 0 12px;
   }
   .choice-inner .sub {
@@ -1368,7 +1368,7 @@
   .help-choice {
     padding: 120px 40px;
     background: #2D1F22;
-    color: #FBF2ED;
+    color: #f5f1eb;
   }
   @media (max-width: 700px) { .help-choice { padding: 80px 24px; } }
   .help-choice .container { max-width: 1200px; margin: 0 auto; }
@@ -1385,7 +1385,7 @@
     font-size: clamp(42px, 6vw, 78px);
     line-height: 1.02;
     letter-spacing: -0.02em;
-    color: #FBF2ED !important;
+    color: #f5f1eb !important;
     margin-bottom: 60px;
     max-width: 900px;
     text-transform: none;
@@ -1462,7 +1462,7 @@
   .help-card.c-orange { background: #ff9c6d; color: #2D1F22; }
   .help-card.c-red    { background: #430a14; color: #ff9c6d; }
   .help-card.c-pink   { background: #c74873; color: #2D1F22; }
-  .help-card.c-blue   { background: #7993ae; color: #FBF2ED; }
+  .help-card.c-blue   { background: #7993ae; color: #f5f1eb; }
   .help-card.c-ink    { background: #e7fffe; color: #2D1F22; }
 </style>
 
@@ -2736,13 +2736,13 @@
       <div style="font-family: 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900; font-size: 22px; letter-spacing: -0.01em;">Was möchten Sie wissen?</div>
     </div>
     <div style="padding: 12px; max-height: 380px; overflow-y: auto;">
-      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wie lange bin ich vertraglich gebunden?</a>
-      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wie viele Feedback-Runden sind drin?</a>
-      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Was passiert bei Urlaub oder Krankheit?</a>
-      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Kann ich zwischen den Paketen wechseln?</a>
-      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wann sehe ich erste Ergebnisse?</a>
-      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wem gehört der Content?</a>
-      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Muss ich vor die Kamera?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f5f1eb'" onmouseout="this.style.background=''">Wie lange bin ich vertraglich gebunden?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f5f1eb'" onmouseout="this.style.background=''">Wie viele Feedback-Runden sind drin?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f5f1eb'" onmouseout="this.style.background=''">Was passiert bei Urlaub oder Krankheit?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f5f1eb'" onmouseout="this.style.background=''">Kann ich zwischen den Paketen wechseln?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f5f1eb'" onmouseout="this.style.background=''">Wann sehe ich erste Ergebnisse?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f5f1eb'" onmouseout="this.style.background=''">Wem gehört der Content?</a>
+      <a href="anfrage.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f5f1eb'" onmouseout="this.style.background=''">Muss ich vor die Kamera?</a>
     </div>
     <div style="padding: 14px 22px 18px; border-top: 1px solid rgba(45, 31, 34, 0.08); text-align: center;">
       <a href="anfrage.html" style="font-size: 11px; letter-spacing: 0.2em; text-transform: none; color: #430a14; font-weight: 700; text-decoration: none;">Alle Fragen ansehen →</a>
