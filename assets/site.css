@@ -659,7 +659,7 @@
   }
   /* Farb-Varianten pro Card */
   .feature-card.fc-orange { color: #ff9c6d; }
-  .feature-card.fc-pink   { color: #c74873; }
+  .feature-card.fc-pink   { color: #5a1428; }
   .feature-card.fc-red    { color: #430a14; }
   .feature-card.fc-blue   { color: #7993ae; }
   .feature-badge {
@@ -1084,7 +1084,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   color: var(--bordeaux); letter-spacing: -0.02em;
 }
 .content h2:first-child { margin-top: 0; }
-.content h2 em { font-style: normal; color: var(--pink); }
+.content h2 em { font-style: normal; color: var(--bordeaux); }
 .content h3 {
   font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 20px; font-weight: 700;
@@ -1102,7 +1102,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 }
 .content li::marker { color: var(--gold); font-weight: 700; }
 .content strong { color: var(--bordeaux); font-weight: 700; }
-.content em { font-style: normal; color: var(--pink); font-weight: 600; }
+.content em { font-style: normal; color: var(--bordeaux); font-weight: 600; }
 .content blockquote {
   border-left: 3px solid var(--gold);
   padding: 8px 24px; margin: 32px 0;
@@ -1110,8 +1110,8 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   font-weight: 500; font-size: 20px;
   color: var(--ink); opacity: 0.85; line-height: 1.5;
 }
-.content a { color: var(--pink); text-decoration: underline; text-decoration-color: rgba(199,72,115,0.35); text-underline-offset: 3px; }
-.content a:hover { text-decoration-color: var(--pink); }
+.content a { color: var(--bordeaux); text-decoration: underline; text-decoration-color: rgba(199,72,115,0.35); text-underline-offset: 3px; }
+.content a:hover { text-decoration-color: var(--bordeaux); }
 .content img { width: 100%; height: auto; margin: 32px 0; border-radius: 16px; box-shadow: 0 12px 32px rgba(90,20,40,0.10); }
 
 .placeholder-block {
@@ -1141,7 +1141,7 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
 .related-card .tag {
   font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-  color: var(--pink); text-transform: none;
+  color: var(--bordeaux); text-transform: none;
   display: block; margin-bottom: 10px;
 }
 .related-card h4 {

@@ -223,50 +223,58 @@
       <h2>Meine <em>Tests</em> und <em>Diagnosen</em></h2>
       <p class="diag-intro">Ist vielleicht für einige interessant zu wissen. Alles was ich hier auflisten kann, ist auf mich bezogen.</p>
 
-      <div class="diag-card diag-card-primary">
-        <span class="diag-card-tag">Diagnostiziert</span>
-        <ul>
-          <li>Histaminintoleranz</li>
-          <li>Fructoseintoleranz (kleine Mengen sind ok)</li>
-          <li>PMS</li>
-          <li>Sämtliche Allergien</li>
-          <li>Pollenallergien</li>
-        </ul>
-      </div>
+      <details class="diag-toggle">
+        <summary>Diagnostiziert</summary>
+        <div class="diag-toggle-body">
+          <ul>
+            <li>Histaminintoleranz</li>
+            <li>Fructoseintoleranz (kleine Mengen sind ok)</li>
+            <li>PMS</li>
+            <li>Sämtliche Allergien</li>
+            <li>Pollenallergien</li>
+          </ul>
+        </div>
+      </details>
 
-      <div class="diag-card">
-        <span class="diag-card-tag">Vermutet, noch nicht getestet</span>
-        <ul>
-          <li>MCAS — aufgrund meiner akuten Symptome. Werde ich demnächst testen.</li>
-        </ul>
-      </div>
+      <details class="diag-toggle">
+        <summary>Vermutet, noch nicht getestet</summary>
+        <div class="diag-toggle-body">
+          <p>MCAS. Aufgrund meiner akuten Symptome. Werde ich demnächst testen.</p>
+        </div>
+      </details>
 
-      <div class="diag-card">
-        <span class="diag-card-tag">Meine Allergien</span>
-        <ul>
-          <li>Kartoffel</li>
-          <li>Apfel</li>
-          <li>Mandeln</li>
-          <li>Haselnüsse</li>
-          <li>Karotte (nur im Sommer, wegen Kreuzallergie)</li>
-          <li>Latex</li>
-          <li>Nickel</li>
-          <li>Erdnüsse</li>
-          <li>Soja (leicht)</li>
-        </ul>
-      </div>
+      <details class="diag-toggle">
+        <summary>Meine Allergien</summary>
+        <div class="diag-toggle-body">
+          <ul>
+            <li>Kartoffel</li>
+            <li>Apfel</li>
+            <li>Mandeln</li>
+            <li>Haselnüsse</li>
+            <li>Karotte (nur im Sommer, wegen Kreuzallergie)</li>
+            <li>Latex</li>
+            <li>Nickel</li>
+            <li>Erdnüsse</li>
+            <li>Soja (leicht)</li>
+          </ul>
+        </div>
+      </details>
 
-      <div class="diag-card diag-card-warning">
-        <span class="diag-card-tag">Wie ich reagiere</span>
-        <p>Alle Allergien sind bei mir relativ leicht. Ich reagiere vor allem im Darm. Ausnahme: bei Nussallergien kommt Atemnot dazu.</p>
-      </div>
+      <details class="diag-toggle">
+        <summary>Wie ich reagiere</summary>
+        <div class="diag-toggle-body">
+          <p>Alle Allergien sind bei mir relativ leicht. Ich reagiere vor allem im Darm. Ausnahme: bei Nussallergien kommt Atemnot dazu.</p>
+        </div>
+      </details>
 
-      <div class="diag-card diag-card-mental">
-        <span class="diag-card-tag">Auch das gehört dazu</span>
-        <p>Ich hatte eine <strong>Orthorexie</strong> und habe eine <strong>Angststörung</strong>. Ich habe vor sehr vielem Angst. Selbst sitzen oder Autofahren ist für mich eine Herausforderung. Aktuell bin ich auf der Suche nach therapeutischer Hilfe.</p>
-        <p>Ich habe eine sehr verzerrte Selbstwahrnehmung und würde sagen — so hart es auch klingt — dass ich meinen Körper hasse. Nicht nur, weil ich die Symptome nicht immer verstehe. Sondern weil ich mich auch unwohl fühle.</p>
-        <p>Ich habe das Gefühl, nie genug zu sein und immer Fehler zu machen. Meine Anforderungen an mich selbst sind sehr hoch.</p>
-      </div>
+      <details class="diag-toggle">
+        <summary>Auch das gehört dazu</summary>
+        <div class="diag-toggle-body">
+          <p>Ich hatte eine <strong>Orthorexie</strong> und habe eine <strong>Angststörung</strong>. Ich habe vor sehr vielem Angst. Selbst sitzen oder Autofahren ist für mich eine Herausforderung. Aktuell bin ich auf der Suche nach therapeutischer Hilfe.</p>
+          <p>Ich habe eine sehr verzerrte Selbstwahrnehmung und würde sagen, so hart es auch klingt, dass ich meinen Körper hasse. Nicht nur, weil ich die Symptome nicht immer verstehe. Sondern weil ich mich auch unwohl fühle.</p>
+          <p>Ich habe das Gefühl, nie genug zu sein und immer Fehler zu machen. Meine Anforderungen an mich selbst sind sehr hoch.</p>
+        </div>
+      </details>
     </section>
 
     <style>
@@ -277,20 +285,64 @@
         color: var(--muted); opacity: 0.9; font-size: 15px;
         margin-bottom: 28px;
       }
-      .diag-card {
-        background: #fdf7ee;
-        border: 1.5px solid #ded0c2;
+      .diag-toggle {
+        background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+        border-radius: 999px;
+        margin-bottom: 12px;
+        transition: border-radius 0.35s;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(90,20,40,0.15);
+      }
+      .diag-toggle[open] {
         border-radius: 20px;
-        padding: 24px 28px;
-        margin-bottom: 16px;
+        box-shadow: 0 20px 40px rgba(90,20,40,0.20);
       }
-      .diag-card-primary {
-        background: rgba(226,174,97,0.10);
-        border-color: #e2ae61;
+      .diag-toggle summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 28px;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 700; font-size: 15px;
+        color: #e2ae61;
+        display: flex; justify-content: space-between; align-items: center;
+        gap: 16px;
       }
-      .diag-card-warning {
-        background: rgba(199,72,115,0.06);
-        border-color: rgba(199,72,115,0.28);
+      .diag-toggle summary::-webkit-details-marker { display: none; }
+      .diag-toggle summary::after {
+        content: '+';
+        font-size: 22px; font-weight: 400;
+        color: #e2ae61;
+        transition: transform 0.35s;
+        line-height: 1;
+      }
+      .diag-toggle[open] summary::after { transform: rotate(45deg); }
+      .diag-toggle-body {
+        padding: 4px 28px 24px;
+        color: rgba(251,242,237,0.92);
+      }
+      .diag-toggle-body ul { list-style: none; padding: 0; margin: 0; }
+      .diag-toggle-body li {
+        font-family: 'Rubik', sans-serif;
+        font-size: 15.5px; color: #FBF2ED;
+        padding: 6px 0 6px 22px;
+        position: relative; line-height: 1.5;
+      }
+      .diag-toggle-body li::before {
+        content: '·';
+        position: absolute; left: 6px; top: -2px;
+        color: #e2ae61; font-weight: 900; font-size: 24px;
+      }
+      .diag-toggle-body p {
+        font-family: 'Rubik', sans-serif;
+        font-size: 15.5px; color: #FBF2ED; opacity: 0.92;
+        line-height: 1.65; margin-bottom: 12px;
+      }
+      .diag-toggle-body p:last-child { margin-bottom: 0; }
+      .diag-toggle-body strong { color: #e2ae61; }
+      @media (max-width: 700px) {
+        .diag-toggle summary { padding: 16px 22px; font-size: 14px; }
+        .diag-toggle-body { padding: 4px 22px 20px; }
+        .diag-toggle-body li, .diag-toggle-body p { font-size: 14.5px; }
       }
       .diag-card-mental {
         background: #f5e6d8;
@@ -307,7 +359,7 @@
         margin-bottom: 16px;
       }
       .diag-card-warning .diag-card-tag {
-        color: var(--pink);
+        color: var(--bordeaux);
         background: rgba(199,72,115,0.12);
       }
       .diag-card ul {
