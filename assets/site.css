@@ -1189,6 +1189,30 @@ footer {
   padding: 100px 32px 40px; text-align: center;
   position: relative;
 }
+.footer-instagram {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px;
+  background: var(--gold); color: var(--bordeaux);
+  border-radius: 999px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.02em;
+  text-decoration: none;
+  margin-top: 20px; margin-bottom: 20px;
+  box-shadow: 0 12px 32px rgba(226,174,97,0.25);
+  transition: transform 0.3s;
+}
+.footer-instagram:hover { transform: translateY(-2px); }
+.footer-health {
+  max-width: 640px; margin: 24px auto 0;
+  padding: 18px 24px;
+  background: rgba(251,242,237,0.06);
+  border: 1px solid rgba(226,174,97,0.20);
+  border-radius: 12px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px; color: rgba(251,242,237,0.85);
+  line-height: 1.55;
+}
+.footer-health strong { color: var(--gold); }
 .footer-logo {
   font-family: 'Rubik', 'Space Grotesk', sans-serif;
   font-weight: 900; font-size: 32px;
