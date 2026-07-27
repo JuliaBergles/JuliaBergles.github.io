@@ -118,14 +118,25 @@
     display: inline-block; width: 16px; height: 16px;
     background: var(--bordeaux); border-radius: 50%;
   }
-  nav ul { display: flex; gap: 22px; list-style: none; flex-wrap: nowrap; }
+  nav ul { display: flex; gap: 20px; list-style: none; flex-wrap: nowrap; }
   nav ul a {
-    font-size: 11px; letter-spacing: 0.1em; text-transform: none;
+    font-size: 13px; letter-spacing: -0.005em; text-transform: none;
     color: var(--ink); font-weight: 500;
     transition: color 0.3s;
     white-space: nowrap;
   }
   nav ul a:hover { color: var(--bordeaux); }
+  @media (max-width: 1180px) {
+    nav ul { gap: 12px; }
+    nav ul a { font-size: 12px; }
+    .nav-cta { padding: 11px 18px; font-size: 11px; }
+    nav .row { padding: 18px 28px; }
+  }
+  @media (max-width: 1040px) {
+    nav ul { gap: 10px; }
+    nav ul a { font-size: 11px; }
+    .brand { font-size: 22px; }
+  }
   .nav-cta {
     padding: 13px 26px;
     background: var(--bordeaux); color: var(--bg);
