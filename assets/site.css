@@ -1176,6 +1176,32 @@ nav .nav-left a:hover, nav .nav-right a:hover { color: var(--bordeaux); }
   margin-left: auto; margin-right: auto; line-height: 1.65;
 }
 
+/* Floating Instagram-Button — auf jeder Seite sichtbar */
+.floating-instagram {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 200;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
+  color: #e2ae61;
+  border: 1.5px solid #e2ae61;
+  border-radius: 999px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px; font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 20px 40px rgba(90,20,40,0.35);
+  transition: transform 0.3s, background 0.3s;
+}
+.floating-instagram:hover {
+  transform: translateY(-3px);
+  background: #e2ae61; color: #5a1428;
+}
+.floating-instagram svg { width: 18px; height: 18px; }
+@media (max-width: 700px) {
+  .floating-instagram { padding: 12px 18px; font-size: 12px; bottom: 16px; right: 16px; }
+}
+
 /* Footer mit Pfingstrose als Hintergrund */
 footer {
   background-color: #5a1428;
