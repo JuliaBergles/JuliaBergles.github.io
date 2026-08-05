@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Instagram Insights von @julia_bergles — Reichweite, Zielgruppe und Interaktionen im Überblick.">
+  <title>Instagram Insights. Julia Bergles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .ig-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 80px 24px 100px;
+    }
+
+    .ig-period {
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--copper, var(--gold));
+      margin-bottom: 12px;
+    }
+    .ig-handle {
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 60px;
+    }
+    .ig-handle a {
+      color: var(--bordeaux);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .ig-handle a:hover { text-decoration: underline; }
+
+    /* Hero-Zahlen — die drei Big-Numbers */
+    .ig-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .ig-hero-stat {
+      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
+      color: var(--bg);
+      border-radius: 28px;
+      padding: 44px 28px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(90,20,40,0.18);
+    }
+    .ig-hero-stat::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(226,174,97,0.28), transparent 65%);
+      pointer-events: none;
+    }
+    .ig-hero-stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 6vw, 62px);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--gold);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+    .ig-hero-stat-label {
+      font-family: 'Rubik', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    /* Sekundär-Zahlen */
+    .ig-mini-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 72px;
+    }
+    .ig-mini-stat {
+      background: #fdf7ee;
+      border: 1.5px solid #dcd6cb;
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .ig-mini-stat:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+    .ig-mini-stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--bordeaux);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .ig-mini-stat-label {
+      font-family: 'Rubik', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* Sektions-Titel */
+    .ig-section {
+      margin-bottom: 72px;
+    }
+    .ig-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 500;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .ig-section-title em {
+      font-style: normal;
+      color: var(--bordeaux);
+    }
+    .ig-section-sub {
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    /* Bar-Charts */
+    .ig-bars {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .ig-bar-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 60px;
+      gap: 16px;
+      align-items: center;
+    }
+    .ig-bar-label {
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .ig-bar-track {
+      height: 14px;
+      background: rgba(90,20,40,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .ig-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--bordeaux), var(--gold));
+      border-radius: 999px;
+      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+    .ig-bar-value {
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--bordeaux);
+      text-align: right;
+    }
+
+    /* Zielgruppe-Split (Frauen/Männer als Ring/Big-Number) */
+    .ig-audience-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 640px;
+      margin: 0 auto 60px;
+    }
+    .ig-split-card {
+      background: #fdf7ee;
+      border: 1.5px solid #dcd6cb;
+      border-radius: 24px;
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .ig-split-card.primary {
+      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
+      border-color: transparent;
+    }
+    .ig-split-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 7vw, 72px);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--bordeaux);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .ig-split-card.primary .ig-split-value {
+      color: var(--gold);
+    }
+    .ig-split-label {
+      font-family: 'Rubik', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .ig-split-card.primary .ig-split-label {
+      color: rgba(251,242,237,0.85);
+    }
+
+    /* Länder */
+    .ig-countries {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .ig-country-row {
+      display: grid;
+      grid-template-columns: 50px 1fr 1fr 70px;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 20px;
+      background: #fdf7ee;
+      border: 1px solid #dcd6cb;
+      border-radius: 16px;
+    }
+    .ig-country-flag {
+      font-size: 24px;
+      text-align: center;
+    }
+    .ig-country-name {
+      font-family: 'Rubik', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .ig-country-bar {
+      height: 8px;
+      background: rgba(90,20,40,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .ig-country-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--bordeaux), var(--gold));
+    }
+    .ig-country-pct {
+      font-family: 'Rubik', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--bordeaux);
+      text-align: right;
+    }
+
+    /* Story-Sektion */
+    .ig-story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .ig-story-card {
+      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
+      color: var(--bg);
+      border-radius: 24px;
+      padding: 36px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ig-story-card::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(226,174,97,0.25), transparent 65%);
+      pointer-events: none;
+    }
+    .ig-story-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .ig-story-label {
+      font-family: 'Rubik', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    /* CTA */
+    .ig-cta {
+      max-width: 720px;
+      margin: 100px auto 0;
+      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
+      border-radius: 32px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ig-cta::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(226,174,97,0.22), transparent 65%);
+      pointer-events: none;
+    }
+    .ig-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(226,174,97,0.14), transparent 65%);
+      pointer-events: none;
+    }
+    .ig-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 500;
+      color: var(--bg);
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .ig-cta h2 em { font-style: normal; color: var(--gold); }
+    .ig-cta p {
+      font-family: 'Rubik', sans-serif;
+      font-size: 16px;
+      color: rgba(251,242,237,0.85);
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .ig-cta .btn-malaga-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--bordeaux-deep);
+      padding: 18px 40px;
+      font-family: 'Rubik', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      box-shadow: 0 12px 32px rgba(226,174,97,0.4);
+    }
+    .ig-cta .btn-malaga-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(226,174,97,0.5);
+    }
+
+    .ig-note {
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 780px) {
+      .ig-wrap { padding: 60px 20px 80px; }
+      .ig-hero-stats { grid-template-columns: 1fr; gap: 16px; }
+      .ig-mini-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .ig-audience-split { grid-template-columns: 1fr; gap: 16px; }
+      .ig-story-grid { grid-template-columns: 1fr; }
+      .ig-bar-row { grid-template-columns: 100px 1fr 50px; gap: 10px; }
+      .ig-bar-label, .ig-bar-value { font-size: 13px; }
+      .ig-country-row { grid-template-columns: 40px 1fr 1fr 60px; padding: 12px 14px; gap: 12px; }
+      .ig-country-name { font-size: 14px; }
+      .ig-cta { padding: 44px 24px; border-radius: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
+
+<nav>
+  <div class="row">
+    <a href="index.html" class="brand">TerraLuna</a>
+    <ul>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="app.html">TerraLuna App</a></li>
+      <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
+      <li><a href="mcas.html">MCAS</a></li>
+      <li><a href="reizdarm.html">Reizdarm</a></li>
+      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li><a href="instagram-insights.html">Insights</a></li>
+    </ul>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Histaminintoleranz</a>
+    <a href="mcas.html">MCAS</a>
+    <a href="reizdarm.html">Reizdarm</a>
+    <a href="selbsttest.html">Selbsttest</a>
+    <a href="blog/">Blog</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="instagram-insights.html">Insights</a>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
+  </div>
+</nav>
+
+<section class="page-hero" style="background: linear-gradient(155deg, #5a1428 0%, #430a14 100%);">
+  <div class="page-hero-inner">
+    <h1>Instagram <em>Insights</em>.</h1>
+    <p class="lead" style="color: rgba(251,242,237,0.88);">Reichweite, Zielgruppe und Interaktionen auf einen Blick.</p>
+  </div>
+</section>
+
+<div class="ig-wrap">
+
+  <div class="ig-period">6. Juli – 4. August 2026</div>
+  <div class="ig-handle"><a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener">@julia_bergles</a> · 6.012 Follower</div>
+
+  <!-- Hero-Zahlen: Die drei Big-Numbers -->
+  <div class="ig-hero-stats">
+    <div class="ig-hero-stat">
+      <div class="ig-hero-stat-value">832.583</div>
+      <div class="ig-hero-stat-label">Aufrufe</div>
+    </div>
+    <div class="ig-hero-stat">
+      <div class="ig-hero-stat-value">399.404</div>
+      <div class="ig-hero-stat-label">Erreichte Konten</div>
+    </div>
+    <div class="ig-hero-stat">
+      <div class="ig-hero-stat-value">23.231</div>
+      <div class="ig-hero-stat-label">Interaktionen</div>
+    </div>
+  </div>
+
+  <!-- Mini-Zahlen -->
+  <div class="ig-mini-stats">
+    <div class="ig-mini-stat">
+      <div class="ig-mini-stat-value">+723</div>
+      <div class="ig-mini-stat-label">Neue Follower</div>
+    </div>
+    <div class="ig-mini-stat">
+      <div class="ig-mini-stat-value">16.774</div>
+      <div class="ig-mini-stat-label">Reel-Likes</div>
+    </div>
+    <div class="ig-mini-stat">
+      <div class="ig-mini-stat-value">8.144</div>
+      <div class="ig-mini-stat-label">Profilaufrufe</div>
+    </div>
+    <div class="ig-mini-stat">
+      <div class="ig-mini-stat-value">66</div>
+      <div class="ig-mini-stat-label">Bio-Klicks</div>
+    </div>
+  </div>
+
+  <!-- Zielgruppe: Geschlecht -->
+  <div class="ig-section">
+    <h2 class="ig-section-title">Zielgruppe <em>Geschlecht</em></h2>
+    <p class="ig-section-sub">Wer meinen Content sieht</p>
+
+    <div class="ig-audience-split">
+      <div class="ig-split-card primary">
+        <div class="ig-split-value">74,1&thinsp;%</div>
+        <div class="ig-split-label">Frauen</div>
+      </div>
+      <div class="ig-split-card">
+        <div class="ig-split-value">25,9&thinsp;%</div>
+        <div class="ig-split-label">Männer</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zielgruppe: Alter -->
+  <div class="ig-section">
+    <h2 class="ig-section-title">Zielgruppe <em>Alter</em></h2>
+    <p class="ig-section-sub">Die zwei größten Altersgruppen</p>
+
+    <div class="ig-bars">
+      <div class="ig-bar-row">
+        <div class="ig-bar-label">25 – 34 Jahre</div>
+        <div class="ig-bar-track"><div class="ig-bar-fill" style="width: 86.5%;"></div></div>
+        <div class="ig-bar-value">34,6&thinsp;%</div>
+      </div>
+      <div class="ig-bar-row">
+        <div class="ig-bar-label">35 – 44 Jahre</div>
+        <div class="ig-bar-track"><div class="ig-bar-fill" style="width: 63.3%;"></div></div>
+        <div class="ig-bar-value">25,3&thinsp;%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zielgruppe: Länder -->
+  <div class="ig-section">
+    <h2 class="ig-section-title">Zielgruppe <em>Länder</em></h2>
+    <p class="ig-section-sub">Wo meine Community lebt</p>
+
+    <div class="ig-countries">
+      <div class="ig-country-row">
+        <div class="ig-country-flag">🇩🇪</div>
+        <div class="ig-country-name">Deutschland</div>
+        <div class="ig-country-bar"><div class="ig-country-bar-fill" style="width: 100%;"></div></div>
+        <div class="ig-country-pct">85,5&thinsp;%</div>
+      </div>
+      <div class="ig-country-row">
+        <div class="ig-country-flag">🇦🇹</div>
+        <div class="ig-country-name">Österreich</div>
+        <div class="ig-country-bar"><div class="ig-country-bar-fill" style="width: 8.9%;"></div></div>
+        <div class="ig-country-pct">7,6&thinsp;%</div>
+      </div>
+      <div class="ig-country-row">
+        <div class="ig-country-flag">🇨🇭</div>
+        <div class="ig-country-name">Schweiz</div>
+        <div class="ig-country-bar"><div class="ig-country-bar-fill" style="width: 3.9%;"></div></div>
+        <div class="ig-country-pct">3,3&thinsp;%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story Insights -->
+  <div class="ig-section">
+    <h2 class="ig-section-title">Story <em>Insights</em></h2>
+    <p class="ig-section-sub">Wie meine Stories laufen</p>
+
+    <div class="ig-story-grid">
+      <div class="ig-story-card">
+        <div class="ig-story-value">56.652</div>
+        <div class="ig-story-label">Story-Aufrufe</div>
+      </div>
+      <div class="ig-story-card">
+        <div class="ig-story-value">999</div>
+        <div class="ig-story-label">Story-Likes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="ig-cta">
+    <h2>Folge mir auf <em>Instagram</em>.</h2>
+    <p>Alltag mit Histaminintoleranz, MCAS &amp; Reizdarm — ehrlich und ungeschönt.</p>
+    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="btn-malaga-gold">@julia_bergles</a>
+  </div>
+
+  <p class="ig-note">Alle Zahlen aus den offiziellen Instagram-Insights. Zeitraum: 6. Juli – 4. August 2026.</p>
+
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">Julia</a>
+  <div class="footer-links">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Histamin</a>
+    <a href="mcas.html">MCAS</a>
+    <a href="reizdarm.html">Reizdarm</a>
+    <a href="blog/">Blog</a>
+    <a href="gespraech.html">Gespräch</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="instagram-insights.html">Insights</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="footer-instagram">Folge mir auf Instagram</a>
+  <div class="footer-health">
+    <strong>Health-Disclaimer:</strong> Ich bin keine Ärztin. Alles auf dieser Seite sind persönliche Erfahrungen. Keine medizinische Beratung, kein Ersatz für Arzt oder Heilpraktiker. Bei Beschwerden bitte an eine Fachperson wenden.
+  </div>
+  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
+  <div class="footer-disclaimer">Ich bin keine Ärztin. ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
+</footer>
+
+<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+  Instagram
+</a>
+
+</body>
+</html>
