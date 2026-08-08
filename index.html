@@ -678,12 +678,13 @@
   .features-lede { font-size: 17px; color: var(--muted); line-height: 1.6; max-width: 620px; margin: 0 auto; }
 
   .features-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px;
+    max-width: 1280px; margin: 0 auto;
     position: relative;
   }
-  @media (max-width: 1100px) { .features-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1200px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px)  { .features-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px)  { .features-grid { grid-template-columns: 1fr; } }
 
   .feature-card {
     background: #fff;
@@ -710,6 +711,7 @@
   .feature-card.fc-pink   { color: #5a1428; }
   .feature-card.fc-red    { color: #5a1428; }
   .feature-card.fc-blue   { color: #7993ae; }
+  .feature-card.fc-copper { color: #C48B6C; }
   .feature-badge {
     display: inline-block;
     font-size: 10px; letter-spacing: 0.2em; text-transform: none;
@@ -972,6 +974,7 @@
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li><a href="videografie.html">Videografie</a></li>
       <li><a href="instagram-insights.html">Insights</a></li>
     </ul>
     <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
@@ -986,6 +989,7 @@
     <a href="selbsttest.html">Selbsttest</a>
     <a href="blog/">Blog</a>
     <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="videografie.html">Videografie</a>
     <a href="instagram-insights.html">Insights</a>
     <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
   </div>
@@ -1864,6 +1868,13 @@
         <h3>Wobei kann ich dir helfen?</h3>
         <a href="histaminintoleranz.html" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#7993ae'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='inherit'">Aufklärung <span>→</span></a>
       </div>
+
+      <div class="feature-card fc-copper reveal d2">
+        <div class="feature-badge">05</div>
+        <h3>Videografie</h3>
+        <p style="margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.55;">Hochzeit, Geburtstag, Feier, Party, Event. Echte Momente, unvergessliche Aufnahmen.</p>
+        <a href="videografie.html" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.background='#C48B6C'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='inherit'">Mehr erfahren <span>→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -2635,6 +2646,7 @@
       <a href="app.html">TerraLuna App</a>
       <a href="blog/">Blog</a>
       <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="videografie.html">Videografie</a>
       <a href="instagram-insights.html">Insights</a>
       <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener">Gespräch</a>
     </div>

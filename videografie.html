@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Videografie, Fotos, Einladungs- und Dankeskarten, Fotoalben — für Hochzeiten, Geburtstage, Feiern und Events. Julia Bergles, Wehringen bei Augsburg.">
+  <title>Videografie &amp; Erinnerungen. Julia Bergles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .price-block {
+      background: var(--warm-cream);
+      padding: 48px 40px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .price-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .price-item { text-align: center; }
+    .price {
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-size: 3rem; font-weight: 500;
+      color: var(--bordeaux);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .price span {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-weight: 500;
+    }
+    .price-label {
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: none;
+      color: var(--copper);
+      margin-bottom: 20px;
+    }
+    .price-details {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin: 20px 0 32px;
+    }
+    .anlaesse {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 28px 0 40px;
+    }
+    .anlaesse span {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--warm-cream);
+      border: 1px solid rgba(149, 82, 81, 0.2);
+      border-radius: 999px;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--bordeaux);
+    }
+    .leistungen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0 48px;
+    }
+    @media (max-width: 900px) { .leistungen-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .leistungen-grid { grid-template-columns: 1fr; } }
+    .leistung-card {
+      background: #fff;
+      border: 1.5px solid rgba(149, 82, 81, 0.18);
+      border-radius: 14px;
+      padding: 28px 26px;
+      transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+    }
+    .leistung-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(149, 82, 81, 0.12);
+      border-color: var(--copper);
+    }
+    .leistung-card .tag {
+      display: inline-block;
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--copper);
+      margin-bottom: 12px;
+    }
+    .leistung-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--bordeaux);
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+    .leistung-card p {
+      font-family: 'Rubik', 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text-dark);
+    }
+    .leistung-card .preis-hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
+
+<nav>
+  <div class="row">
+    <a href="index.html" class="brand">TerraLuna</a>
+    <ul>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="app.html">TerraLuna App</a></li>
+      <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
+      <li><a href="mcas.html">MCAS</a></li>
+      <li><a href="reizdarm.html">Reizdarm</a></li>
+      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li><a href="videografie.html">Videografie</a></li>
+      <li><a href="instagram-insights.html">Insights</a></li>
+    </ul>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Histaminintoleranz</a>
+    <a href="mcas.html">MCAS</a>
+    <a href="reizdarm.html">Reizdarm</a>
+    <a href="selbsttest.html">Selbsttest</a>
+    <a href="blog/">Blog</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="videografie.html">Videografie</a>
+    <a href="instagram-insights.html">Insights</a>
+    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
+  </div>
+</nav>
+
+<section class="page-hero" style="background: linear-gradient(135deg, #5a1428 0%, #955251 55%, #C48B6C 100%);">
+  <div class="page-hero-inner">
+    <h1>Echte Momente. <em>Unvergessliche</em> Aufnahmen.</h1>
+    <p style="color: rgba(248, 242, 238, 0.92); font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 18px; max-width: 660px; margin: 20px auto 0; line-height: 1.6;">Videos, Fotos, Einladungs- und Dankeskarten, Fotoalben — für Hochzeiten, Geburtstage, Feiern und Events.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="content-inner">
+
+    <div class="price-block">
+      <p class="price-label">Video · Preise</p>
+      <div class="price-row">
+        <div class="price-item">
+          <div class="price">70 € <span>/ Stunde</span></div>
+          <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Dreh vor Ort</p>
+        </div>
+        <div class="price-item">
+          <div class="price">70 € <span>/ Stunde</span></div>
+          <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Schnitt &amp; Bearbeitung</p>
+        </div>
+      </div>
+      <p class="price-details">Anfahrt nach Absprache. Alle weiteren Leistungen (Fotos, Karten, Fotoalben) auf Anfrage — Preise je nach Umfang.</p>
+      <a href="mailto:julia@bergles.net?subject=Anfrage%20Videografie" class="btn btn-copper">Anfrage schreiben</a>
+    </div>
+
+    <h2>Was ich <em>mache</em></h2>
+    <div class="leistungen-grid">
+      <div class="leistung-card">
+        <span class="tag">Hauptleistung</span>
+        <h3>Videos &amp; Schnappschüsse</h3>
+        <p>Schöne Aufnahmen von deinem Tag. Echte Momente, keine gestellten Szenen. Danach geschnitten zu einem Video, das du immer wieder anschauen willst.</p>
+        <span class="preis-hint">70 €/h Dreh · 70 €/h Schnitt</span>
+      </div>
+      <div class="leistung-card">
+        <span class="tag">Auch dabei</span>
+        <h3>Fotos</h3>
+        <p>Fotos sind sowieso mit dabei. Bin keine professionelle Fotografin — aber wenn du schöne Erinnerungsbilder willst, mach ich die gern.</p>
+        <span class="preis-hint">Nach Absprache</span>
+      </div>
+      <div class="leistung-card">
+        <span class="tag">Papeterie</span>
+        <h3>Einladungskarten</h3>
+        <p>Individuelle Einladungen zu deinem Anlass. Passend zum Stil deiner Feier — schlicht, verspielt, elegant, wie du willst.</p>
+        <span class="preis-hint">Preis auf Anfrage</span>
+      </div>
+      <div class="leistung-card">
+        <span class="tag">Papeterie</span>
+        <h3>Dankeskarten</h3>
+        <p>Nach der Feier: Dankeskarten für deine Gäste. Optional mit einem Foto oder kleinem Video-Ausschnitt vom Tag.</p>
+        <span class="preis-hint">Preis auf Anfrage</span>
+      </div>
+      <div class="leistung-card">
+        <span class="tag">Erinnerung</span>
+        <h3>Fotoalben</h3>
+        <p>Gedrucktes Album mit den schönsten Bildern deines Events. Layout und Auswahl übernehm ich, du sagst mir, was dir wichtig ist.</p>
+        <span class="preis-hint">Preis auf Anfrage</span>
+      </div>
+    </div>
+
+    <h2>Für welche <em>Anlässe</em></h2>
+    <div class="anlaesse">
+      <span>Hochzeit</span>
+      <span>Geburtstag</span>
+      <span>Feier</span>
+      <span>Party</span>
+      <span>Event</span>
+    </div>
+
+    <h2>Was du <em>bekommst</em></h2>
+    <div class="placeholder-block">Julia schreibt hier: Was passiert beim Dreh, wie ich arbeite (unaufdringlich, echte Momente), welches Equipment ich benutze, wie das fertige Video aussieht (Länge, Format, Übergabe). Deine Worte.</div>
+
+    <h2>Wie es <em>abläuft</em></h2>
+    <ol>
+      <li>Du schreibst mir eine kurze Mail oder Instagram-Nachricht mit Anlass, Datum und Ort.</li>
+      <li>Wir telefonieren kurz, damit ich verstehe, was dir wichtig ist — und ob du zusätzlich Karten oder ein Fotoalbum willst.</li>
+      <li>Ich komme zum Event, filme die Momente, mache Fotos wenn gewünscht.</li>
+      <li>Danach Schnitt und Bearbeitung — du bekommst dein fertiges Video (und Karten/Album, falls gebucht).</li>
+    </ol>
+
+    <h2>Kontakt</h2>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
+      <a href="mailto:julia@bergles.net?subject=Anfrage%20Videografie" class="btn btn-copper">julia@bergles.net</a>
+      <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="btn btn-outline">@julia_bergles</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">Julia</a>
+  <div class="footer-links">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Histamin</a>
+    <a href="mcas.html">MCAS</a>
+    <a href="reizdarm.html">Reizdarm</a>
+    <a href="blog/">Blog</a>
+    <a href="gespraech.html">Gespräch</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="videografie.html">Videografie</a>
+    <a href="instagram-insights.html">Insights</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="footer-instagram">Folge mir auf Instagram</a>
+  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
+  <div class="footer-disclaimer">&copy; 2024–2026 Julia Bergles</div>
+</footer>
+
+<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+  Instagram
+</a>
+
+</body>
+</html>
