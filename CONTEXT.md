@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-08-01
+> Letzte Aktualisierung: 2026-08-10
 
 ---
 
@@ -40,7 +40,9 @@ Julia Bergles' Personal-Brand-Website unter **www.juliabergles.de**.
   5. **Yamatogast** (kein Affiliate, Kampro-Arzneimittel aus 8 Heilpflanzen, mit Warnung „meine eigene Erfahrung")
 - `blog/index.html` + 11 Artikel-Ordner (siehe unten)
 - **Selbsttest wieder aktiv:** `selbsttest.html` läuft komplett client-seitig (keine Speicherung, kein Tracking) — Symptom-Quiz mit Handlungsempfehlung
-- **Floating Instagram-Button** unten rechts auf allen 21 Seiten (Malaga + Gold-Rand)
+- **Startseite: Sektion „Einführung in die App"** zwischen Feature-Cards und App-Showcase — zwei Karten (So funktioniert / Für wen ist die App) + WhatsApp-Community-CTA (https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK). Feature-Card #5 auf Startseite ist Anker-Link `#einfuehrung`.
+- **Instagram-Insights-Seite** `instagram-insights.html` (Reichweite/Zielgruppe/Interaktionen 6.7.–4.8.2026)
+- **Floating Instagram-Button** unten rechts auf allen aktiven Seiten (Malaga + Gold-Rand)
 - **Health-Disclaimer** im Footer aller Unterseiten („Ich bin keine Ärztin")
 - Zeitstrahl auf `ueber-mich`: Malaga-Gradient-Karten, Gold-Border, Pill-shaped Marker, Gold-Fade-Linie
 - Page-Hero mit BG-Image + Overlay auf jeder Unterseite; H1 weiß, weight 700, doppelter Text-Shadow
@@ -120,6 +122,12 @@ Verlinkt von Startseite + relevanten Blog-Artikeln.
 
 ---
 
+## Videografie — komplett raus (2026-08-10)
+
+Videografie war kurz drin (Nav, Feature-Card #5, eigene Seite `videografie.html`) — Julia wollte das wieder raus. **Alle Links entfernt**, `videografie.html` **gelöscht**. Feature-Card #5 auf Startseite ist jetzt „Einführung in die App".
+
+---
+
 ## WYH — raus (nicht verlinken, nicht löschen)
 
 Wear Your Healing ist aus Nav und Footer **komplett raus**. Dateien liegen weiter auf Platte für ggf. Reaktivierung:
@@ -148,6 +156,7 @@ Wear Your Healing ist aus Nav und Footer **komplett raus**. Dateien liegen weite
 
 **Noch offen:**
 - [ ] **Julia-Texte einbauen** — überall wo 📝 Platzhalter stehen (Blog-Artikel-Body, ggf. Info-Seiten). Julia schreibt selbst, Claude paste ein.
+- [ ] **Einführungs-Sektion auf Startseite (2026-08-10):** Claude hat Draft-Texte reingeschrieben (Intro, „So funktioniert die App", „Für wen ist die App", Community-Beschreibung) — Julia korrigiert am Handy live.
 - [ ] Bilder in `blog-bilder/` (lokal, nicht im Repo) den einzelnen Blog-Artikeln zuordnen
 - [ ] Ggf. weitere Empfehlungen aufnehmen, wenn Julia neue Produkte testet
 - [ ] MCAS-Testergebnis abwarten und Diagnosen-Sektion updaten (aktuell „vermutet")
