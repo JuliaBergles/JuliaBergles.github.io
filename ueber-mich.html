@@ -1,511 +1,670 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Über Julia Bergles. 20 Jahre, aus Wehringen. Meine Geschichte mit Histaminintoleranz, MCAS und Reizdarm.">
-  <title>Über mich. Julia Bergles</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="assets/site.css">
-  <style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<title>Über mich · Julia Bergles</title>
+<meta name="description" content="Meine Geschichte: Histaminintoleranz, MCAS, Reizdarm. Wie ich hier gelandet bin, was ich gelernt habe, warum ich TerraLuna gebaut habe." />
+<link rel="canonical" href="https://www.juliabergles.de/ueber-mich.html" />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://www.juliabergles.de/ueber-mich.html" />
+<meta property="og:title" content="Über mich · Julia Bergles" />
+<meta property="og:description" content="Meine Geschichte: Histaminintoleranz, MCAS, Reizdarm. Wie ich hier gelandet bin, was ich gelernt habe." />
+<meta property="og:image" content="https://www.juliabergles.de/images/julia-1.jpg" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Julia Bergles" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Über mich · Julia Bergles" />
+<meta name="twitter:description" content="Meine Geschichte: Histaminintoleranz, MCAS, Reizdarm. Wie ich hier gelandet bin, was ich gelernt habe." />
+<meta name="twitter:image" content="https://www.juliabergles.de/images/julia-1.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/onpoint.css">
+<style>
+  /* Gemeinsame mymiapage-Basics für Über-mich */
+  .um-eyebrow {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px; letter-spacing: 0.32em;
+    color: var(--copper-dark); font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .um-h1, .um-h2, .um-h3 {
+    font-family: 'Raleway', sans-serif !important;
+    color: var(--bordeaux);
+    font-weight: 900 !important;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+  }
+  .um-h1 { font-size: clamp(42px, 5.5vw, 72px); }
+  .um-h2 { font-size: clamp(34px, 4.5vw, 54px); }
+  .um-h3 { font-size: clamp(22px, 2vw, 28px); }
+  .um-h1 em, .um-h2 em, .um-h3 em {
+    font-style: normal;
+    background: var(--copper-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .um-lede {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: clamp(15px, 1.5vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .um-lede em {
+    font-style: normal;
+    color: var(--bordeaux);
+    font-weight: 700;
+  }
 
-    /* ── Zeitstrahl modern (Malaga + Gold, Glass-Cards) ── */
-    .timeline {
-      list-style: none; padding: 0; margin: 40px 0 60px;
-      position: relative;
-    }
-    .timeline::before {
-      content: ''; position: absolute;
-      top: 40px; bottom: 40px; left: 50px;
-      width: 2px;
-      background: linear-gradient(180deg,
-        rgba(226,174,97,0) 0%,
-        rgba(226,174,97,0.6) 8%,
-        rgba(226,174,97,1) 50%,
-        rgba(226,174,97,0.6) 92%,
-        rgba(226,174,97,0) 100%);
-      z-index: 0;
-    }
-    .tl-item {
-      display: grid; grid-template-columns: 100px 1fr;
-      gap: 32px; align-items: start;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .tl-marker {
-      display: flex; align-items: center; justify-content: center;
-      width: 100px; height: 60px; border-radius: 999px;
-      background: transparent;
-      color: #e2ae61;
-      font-family: 'Rubik', sans-serif;
-      font-weight: 900; font-size: 20px;
-      letter-spacing: -0.02em;
-      position: relative;
-      z-index: 1;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-    }
-    .tl-marker::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
-      border-radius: 999px;
-      border: 1.5px solid #e2ae61;
-      z-index: -1;
-    }
-    .tl-year { line-height: 1; }
-    .tl-item:hover .tl-marker { transform: translateX(4px); }
-    .tl-details {
-      background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
-      border: 1.5px solid rgba(226,174,97,0.35);
-      border-radius: 18px;
-      padding: 22px 28px;
-      transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
-      position: relative;
-      overflow: hidden;
-    }
-    .tl-details::before {
-      content: ''; position: absolute; top: -40px; right: -40px;
-      width: 160px; height: 160px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(226,174,97,0.15), transparent 65%);
-      pointer-events: none;
-    }
-    .tl-details[open] {
-      box-shadow: 0 24px 50px rgba(90,20,40,0.35);
-      border-color: #e2ae61;
-    }
-    .tl-details summary {
-      list-style: none;
-      cursor: pointer;
-      font-family: 'Rubik', sans-serif;
-      font-weight: 700; font-size: 17px;
-      color: #f5f1eb;
-      display: flex; justify-content: space-between; align-items: center; gap: 20px;
-      line-height: 1.25;
-      position: relative;
-      z-index: 1;
-    }
-    .tl-details summary::-webkit-details-marker { display: none; }
-    .tl-details summary::after {
-      content: '';
-      width: 32px; height: 32px; border-radius: 999px;
-      background: rgba(226,174,97,0.15);
-      border: 1px solid rgba(226,174,97,0.35);
-      color: #e2ae61;
-      display: inline-flex; align-items: center; justify-content: center;
-      background-image: linear-gradient(#e2ae61, #e2ae61), linear-gradient(#e2ae61, #e2ae61);
-      background-repeat: no-repeat;
-      background-size: 12px 2px, 2px 12px;
-      background-position: center;
-      transition: transform 0.4s;
-      flex-shrink: 0;
-    }
-    .tl-details[open] summary::after {
-      transform: rotate(45deg);
-    }
-    .tl-body {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(226,174,97,0.25);
-      animation: tlFade 0.5s cubic-bezier(0.16,1,0.3,1);
-      position: relative; z-index: 1;
-    }
-    .tl-body p {
-      font-family: 'Rubik', sans-serif;
-      font-size: 15.5px; color: rgba(251,242,237,0.92);
-      line-height: 1.65;
-      margin-bottom: 12px;
-    }
-    .tl-body p:last-child { margin-bottom: 0; }
-    .tl-body strong { color: #e2ae61; font-weight: 700; }
-    .tl-body em { font-style: normal; color: #e2ae61; }
-    .tl-body a { color: #e2ae61; text-decoration: underline; text-underline-offset: 3px; }
-    @keyframes tlFade {
-      from { opacity: 0; transform: translateY(-8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+  /* HERO — Split: Portrait links, Text rechts */
+  .um-hero {
+    padding: 120px 32px 90px;
+    background: var(--bg);
+  }
+  .um-hero-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.05fr;
+    gap: 70px; align-items: center;
+  }
+  @media (max-width: 900px) {
+    .um-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .um-hero { padding: 100px 24px 60px; }
+  }
+  .um-hero-photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(45, 31, 34, 0.15);
+  }
+  .um-hero-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .um-hero-photo .caption {
+    position: absolute; bottom: 20px; left: 20px;
+    background: rgba(255, 252, 249, 0.92);
+    color: var(--bordeaux);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px; letter-spacing: 0.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
+  .um-hero-text .um-lede { margin: 0 0 32px; max-width: 480px; }
+  @media (max-width: 900px) {
+    .um-hero-text { text-align: center; }
+    .um-hero-text .um-lede { margin-left: auto; margin-right: auto; }
+  }
 
-    /* Item-Reveal beim Scroll */
-    .tl-item {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
-    }
-    .tl-item.in { opacity: 1; transform: translateY(0); }
+  /* LEARN (Ausbildung) — Cream Cards */
+  .um-section { padding: 100px 32px; }
+  @media (max-width: 700px) { .um-section { padding: 70px 20px; } }
+  .um-section.bg-warm { background: var(--bg-warm); }
+  .um-section.bg-cream { background: var(--bg); }
 
-    @media (max-width: 700px) {
-      .timeline::before { left: 30px; }
-      .tl-item { grid-template-columns: 60px 1fr; gap: 16px; }
-      .tl-marker { width: 60px; height: 60px; font-size: 13px; }
-      .tl-details { padding: 20px 22px; border-radius: 16px; }
-      .tl-details summary { font-size: 17px; }
-      .tl-body p { font-size: 15px; }
-    }
-  </style>
+  .um-section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 60px;
+  }
+  .um-section-head .um-lede { margin-top: 18px; }
+
+  .um-learn-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  @media (max-width: 800px) { .um-learn-grid { grid-template-columns: 1fr; } }
+  .um-learn-card {
+    background: #fff;
+    border: 1px solid rgba(42, 42, 42, 0.08);
+    border-radius: 12px;
+    padding: 40px 36px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s, border-color 0.5s;
+    box-shadow: 0 4px 14px rgba(45, 31, 34, 0.04);
+  }
+  .um-learn-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--copper);
+    box-shadow: 0 24px 48px rgba(45, 31, 34, 0.10);
+  }
+  .um-learn-card .year {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    color: #fff;
+    background: var(--bordeaux);
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+  .um-learn-card h4 {
+    font-family: 'Raleway', sans-serif; font-weight: 900;
+    font-size: 24px; color: var(--bordeaux);
+    margin: 0 0 14px; line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .um-learn-card p {
+    font-family: 'Quicksand', sans-serif; font-weight: 500;
+    font-size: 15px; color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* WISSEN — Split mit Portrait + Liste */
+  .um-wissen-split {
+    display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px;
+    max-width: 1200px; margin: 0 auto; align-items: center;
+  }
+  @media (max-width: 900px) { .um-wissen-split { grid-template-columns: 1fr; gap: 40px; } }
+  .um-wissen-photo {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(45, 31, 34, 0.15);
+  }
+  .um-wissen-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .um-wissen-photo .caption {
+    position: absolute; bottom: 20px; left: 20px;
+    background: rgba(255, 252, 249, 0.92);
+    color: var(--bordeaux);
+    padding: 8px 16px; border-radius: 999px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px; letter-spacing: 0.2em;
+    font-weight: 700; text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
+  .um-wissen-list {
+    list-style: none; padding: 0;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .um-wissen-list li {
+    background: #fff;
+    border: 1px solid rgba(42, 42, 42, 0.08);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: grid; grid-template-columns: 44px 1fr; gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;
+  }
+  .um-wissen-list li:hover {
+    transform: translateX(4px);
+    border-color: var(--copper);
+    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.08);
+  }
+  .um-wissen-list .icn {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, rgba(196, 139, 108, 0.15), rgba(232, 196, 168, 0.25));
+    color: var(--bordeaux);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .um-wissen-list h5 {
+    font-family: 'Raleway', sans-serif; font-weight: 900;
+    font-size: 19px; color: var(--bordeaux);
+    margin: 0 0 6px;
+  }
+  .um-wissen-list p {
+    font-family: 'Quicksand', sans-serif; font-weight: 500;
+    font-size: 14px; color: var(--ink-soft); line-height: 1.6;
+    margin: 0;
+  }
+
+  /* VALUES — 3 Cards mit Icon oben */
+  .um-values-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  @media (max-width: 900px) { .um-values-grid { grid-template-columns: 1fr; } }
+  .um-value-card {
+    background: #fff;
+    border: 1px solid rgba(42, 42, 42, 0.08);
+    border-radius: 12px;
+    padding: 40px 32px;
+    transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 14px rgba(45, 31, 34, 0.04);
+  }
+  .um-value-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--copper);
+    box-shadow: 0 24px 48px rgba(45, 31, 34, 0.10);
+  }
+  .um-value-card .value-n {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--copper-gradient);
+    color: #fff;
+    font-family: 'Raleway', sans-serif; font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 22px;
+  }
+  .um-value-card h4 {
+    font-family: 'Raleway', sans-serif; font-weight: 900;
+    font-size: 22px; color: var(--bordeaux);
+    margin: 0 0 12px; line-height: 1.15;
+  }
+  .um-value-card p {
+    font-family: 'Quicksand', sans-serif; font-weight: 500;
+    font-size: 14.5px; color: var(--ink-soft); line-height: 1.65;
+    margin: 0;
+  }
+
+  /* JULIA-GALLERIE — Masonry-Grid mit versetzten Größen im mymiapage-Stil */
+  .um-gallery-section { padding: 100px 32px; background: var(--bg); }
+  @media (max-width: 700px) { .um-gallery-section { padding: 70px 20px; } }
+  .um-gallery-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 50px;
+  }
+  .um-gallery-head h2 { margin: 0 0 18px; }
+  .um-gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    gap: 16px;
+  }
+  @media (max-width: 900px) { .um-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; } }
+  @media (max-width: 600px) { .um-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+  .um-g {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-warm);
+    box-shadow: 0 6px 18px rgba(45, 31, 34, 0.08);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s;
+  }
+  .um-g:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.16);
+  }
+  .um-g img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .um-g:hover img { transform: scale(1.05); }
+  .um-g.tall { grid-row: span 2; aspect-ratio: 4 / 6.5; }
+  .um-g.wide { grid-column: span 2; aspect-ratio: 16 / 10; }
+  .um-g.square { aspect-ratio: 1 / 1; }
+  @media (max-width: 900px) {
+    .um-g.tall { grid-row: auto; aspect-ratio: 4 / 5; }
+  }
+  @media (max-width: 600px) {
+    .um-g.tall { grid-row: auto; aspect-ratio: 4 / 5; }
+    .um-g.wide { grid-column: span 2; aspect-ratio: 4 / 3; }
+  }
+  /* Transparente Text-Überlagerung auf einem Bild — mymiapage-Signature */
+  .um-g .caption-over {
+    position: absolute;
+    inset: auto 14px 14px 14px;
+    padding: 14px 18px;
+    background: rgba(251, 242, 237, 0.92);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--bordeaux);
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+  .um-g .caption-over .small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: none;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* CTA — mymiapage-Stil: cream Sektion mit prominenter Bordeaux-Karte */
+  .um-cta {
+    padding: 100px 32px;
+    background: var(--bg);
+    text-align: center;
+  }
+  .um-cta-card {
+    max-width: 720px; margin: 0 auto;
+    background: linear-gradient(160deg, #fffcf9 0%, #efe3da 100%);
+    border: 1px solid rgba(42, 42, 42, 0.1);
+    border-radius: 12px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.06);
+  }
+  .um-cta-card h2 { margin: 0 0 14px; }
+  .um-cta-card p {
+    font-family: 'Quicksand', sans-serif; font-weight: 500;
+    font-size: 16px; color: var(--ink-soft);
+    line-height: 1.6; margin: 0 0 30px;
+  }
+  .um-cta-card .actions {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  }
+</style>
 </head>
 <body>
 
-<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
-
-<nav>
+<nav class="site-nav">
   <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
+    <a href="index.html" class="brand">Julia</a>
     <ul>
-      <li><a href="ueber-mich.html">Über mich</a></li>
       <li><a href="app.html">TerraLuna App</a></li>
-      <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
-      <li><a href="mcas.html">MCAS</a></li>
-      <li><a href="reizdarm.html">Reizdarm</a></li>
-      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li class="has-drop"><a href="histaminintoleranz.html">Diagnosen <span class="drop-caret">▾</span></a><div class="drop-menu"><a href="histaminintoleranz.html">Histaminintoleranz</a><a href="mcas.html">MCAS</a><a href="reizdarm.html">Reizdarm</a><a href="selbsttest.html">Selbsttest</a></div></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
-      <li><a href="instagram-insights.html">Insights</a></li>
+      <li><a href="ueber-mich.html" class="current">Über mich</a></li>
     </ul>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <a href="#kontakt" class="nav-cta">Schreib mir</a>
     <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
     <a href="app.html">TerraLuna App</a>
     <a href="histaminintoleranz.html">Histaminintoleranz</a>
     <a href="mcas.html">MCAS</a>
     <a href="reizdarm.html">Reizdarm</a>
     <a href="selbsttest.html">Selbsttest</a>
     <a href="blog/">Blog</a>
+    <a href="ebooks.html">E-Books</a>
     <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
+    <a href="ueber-mich.html" class="current">Über mich</a>
+    <a href="#kontakt" class="mobile-cta">Schreib mir</a>
   </div>
 </nav>
+<div class="nav-spacer"></div>
 
-<section class="page-hero" style="background-image: linear-gradient(180deg, rgba(45,31,34,0.65) 0%, rgba(45,31,34,0.85) 100%), url('images/ueber-mich.jpg'); background-size: cover, cover; background-position: center, center; background-repeat: no-repeat, no-repeat; background-color: #5a1428;">
-  <div class="page-hero-inner">
-    <h1>Hey, ich bin <em>Julia</em>.</h1>
-  </div>
-</section>
-
-<section class="content">
-  <div class="content-inner">
-
-
-
-    <ol class="timeline">
-      <li class="tl-item">
-        <div class="tl-marker"><span class="tl-year">2022</span></div>
-        <details class="tl-details" open>
-          <summary>Nach Corona. Der eigentliche Anfang.</summary>
-          <div class="tl-body">
-            <p>Nach der Corona-Infektion habe ich meinen Geschmack verloren. Danach bin ich in eine Orthorexie gerutscht. Immer gesünder, immer weniger, immer mehr Sport.</p>
-            <p>Mein Gewicht hat immer wieder geschwankt. Mal ein bisschen mehr, dann wieder weniger. Ich habe versucht alles zu kontrollieren.</p>
-          </div>
-        </details>
-      </li>
-
-      <li class="tl-item">
-        <div class="tl-marker"><span class="tl-year">2023</span></div>
-        <details class="tl-details">
-          <summary>Immer weniger, was ich vertrage.</summary>
-          <div class="tl-body">
-            <p>Die Liste der Lebensmittel, die ich noch essen konnte, wurde von Monat zu Monat kürzer. Bauchschmerzen, Blähbauch, Kopfschmerzen nach fast jedem Essen. Und keine Antwort von Ärzten.</p>
-          </div>
-        </details>
-      </li>
-
-      <li class="tl-item">
-        <div class="tl-marker"><span class="tl-year">2024</span></div>
-        <details class="tl-details">
-          <summary>Fachabitur. Bauchschmerzen. Selbstständigkeit. Smacado.</summary>
-          <div class="tl-body">
-            <p>Fachabitur im Bereich Gestaltung. Während des Abschlusses hat alles mit den Bauchschmerzen richtig angefangen. Es wurde immer schlimmer und ich immer dünner.</p>
-            <p>Nach dem Abschluss habe ich mich selbstständig gemacht — eigentlich nur, weil ich nicht wusste was ich machen soll. Ich hatte zu viele Interessen.</p>
-            <p>Damals habe ich meine erste Firma <strong>Smacado</strong> gegründet: gesunde, glutenfreie und nährstoffreiche Backmischungen.</p>
-          </div>
-        </details>
-      </li>
-
-      <li class="tl-item">
-        <div class="tl-marker"><span class="tl-year">2025</span></div>
-        <details class="tl-details">
-          <summary>Darmverschluss. Diagnose. Depressionen. 31 kg auf 47 kg.</summary>
-          <div class="tl-body">
-            <p>2025 hatte ich den Darmverschluss. Danach konnte ich nur noch wenig essen. 7 Monate lang habe ich nur 5 Lebensmittel vertragen. Mein Untergewicht lag bei <strong>31 kg</strong>.</p>
-            <p>Im <strong>Februar 2025</strong> kam die Diagnose Histaminintoleranz. Dazu Angststörung, Reizdarm und sämtliche Allergien. Ich wusste nicht wie ich starten soll. <strong>Kein Arzt hat mich unterstützt.</strong></p>
-            <p>Die <strong>Depressionen</strong> waren vor allem 2025 heftig. Ich habe mich zurückgezogen und von allem ausgeschlossen. Keine Geburtstage, keine Feiern. Nichts außer Sport und dem einen Gedanken: <em>Was kann ich essen, ohne dass es schmerzt?</em></p>
-            <p>Nach dem Darmverschluss musste ich zunehmen. Von 31 kg auf <strong>47 kg</strong>. Ein Sprung. Aber auch viele Muskeln.</p>
-          </div>
-        </details>
-      </li>
-
-      <li class="tl-item">
-        <div class="tl-marker"><span class="tl-year">2026</span></div>
-        <details class="tl-details">
-          <summary>Körper verstanden. Umorientiert. Eigene App.</summary>
-          <div class="tl-body">
-            <p>Mittlerweile habe ich gelernt, meinen Körper zu verstehen. Ich habe keinen schmerzhaften Blähbauch mehr.</p>
-            <p>Ich habe mich umorientiert: Die Ära von Smacado ist beendet. Heute bin ich Social Media Managerin mit meiner Agentur <a href="https://www.agentur.juliabergles.de" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">On&nbsp;Point</a> und habe meine eigene App entwickelt: <strong>TerraLuna</strong>.</p>
-            <p>Fokus jetzt auf die Themen, die mir wirklich am Herzen liegen: <strong>anderen helfen und meine Geschichte teilen</strong>.</p>
-          </div>
-        </details>
-      </li>
-    </ol>
-
-    <section class="diag-block" id="meine-diagnosen">
-      <h2>Meine <em>Tests</em> und <em>Diagnosen</em></h2>
-      <p class="diag-intro">Ist vielleicht für einige interessant zu wissen. Alles was ich hier auflisten kann, ist auf mich bezogen.</p>
-
-      <details class="diag-toggle">
-        <summary>Diagnostiziert</summary>
-        <div class="diag-toggle-body">
-          <ul>
-            <li>Histaminintoleranz</li>
-            <li>Fructoseintoleranz (kleine Mengen sind ok)</li>
-            <li>PMS</li>
-            <li>Sämtliche Allergien</li>
-            <li>Pollenallergien</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="diag-toggle">
-        <summary>Wo ich getestet habe</summary>
-        <div class="diag-toggle-body">
-          <ul>
-            <li><strong>Histamin-Test</strong> beim Arzt und zusätzlich bei <strong>Cerascreen</strong></li>
-            <li><strong>Allergien</strong> bei Cerascreen und zusätzlich beim <strong>Allergologen</strong></li>
-          </ul>
-          <p><em>Keine Werbung. Alles selbst gekauft.</em></p>
-        </div>
-      </details>
-
-      <details class="diag-toggle">
-        <summary>Vermutet, noch nicht getestet</summary>
-        <div class="diag-toggle-body">
-          <p>MCAS. Aufgrund meiner akuten Symptome. Werde ich demnächst testen.</p>
-        </div>
-      </details>
-
-      <details class="diag-toggle">
-        <summary>Meine Allergien</summary>
-        <div class="diag-toggle-body">
-          <ul>
-            <li>Kartoffel</li>
-            <li>Apfel</li>
-            <li>Mandeln</li>
-            <li>Haselnüsse</li>
-            <li>Karotte (nur im Sommer, wegen Kreuzallergie)</li>
-            <li>Latex</li>
-            <li>Nickel</li>
-            <li>Erdnüsse</li>
-            <li>Soja (leicht)</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="diag-toggle">
-        <summary>Wie ich reagiere</summary>
-        <div class="diag-toggle-body">
-          <p>Alle Allergien sind bei mir relativ leicht. Ich reagiere vor allem im Darm. Ausnahme: bei Nussallergien kommt Atemnot dazu.</p>
-          <p><strong>Bei Histamin ist es anders</strong>. Da bin ich wirklich unglaublich sensibel. Kleinster Stress oder Überforderung schütten schon Symptome aus.</p>
-        </div>
-      </details>
-
-      <details class="diag-toggle">
-        <summary>Auch das gehört dazu</summary>
-        <div class="diag-toggle-body">
-          <p>Ich hatte eine <strong>Orthorexie</strong> und habe eine <strong>Angststörung</strong>. Ich habe vor sehr vielem Angst. Selbst sitzen oder Autofahren ist für mich eine Herausforderung. Aktuell bin ich auf der Suche nach therapeutischer Hilfe.</p>
-          <p>Ich habe eine sehr verzerrte Selbstwahrnehmung und würde sagen, so hart es auch klingt, dass ich meinen Körper hasse. Nicht nur, weil ich die Symptome nicht immer verstehe. Sondern weil ich mich auch unwohl fühle.</p>
-          <p>Ich habe das Gefühl, nie genug zu sein und immer Fehler zu machen. Meine Anforderungen an mich selbst sind sehr hoch.</p>
-        </div>
-      </details>
-    </section>
-
-    <style>
-      .diag-block { margin: 40px 0 60px; }
-      .diag-block h2 { color: var(--bordeaux); margin-bottom: 12px !important; }
-      .diag-intro {
-        font-family: 'Rubik', sans-serif;
-        color: var(--muted); opacity: 0.9; font-size: 15px;
-        margin-bottom: 28px;
-      }
-      .diag-toggle {
-        background: linear-gradient(135deg, #5a1428 0%, #430a14 100%);
-        border-radius: 999px;
-        margin-bottom: 12px;
-        transition: border-radius 0.35s;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(90,20,40,0.15);
-      }
-      .diag-toggle[open] {
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(90,20,40,0.20);
-      }
-      .diag-toggle summary {
-        list-style: none;
-        cursor: pointer;
-        padding: 18px 28px;
-        font-family: 'Rubik', sans-serif;
-        font-weight: 700; font-size: 15px;
-        color: #e2ae61;
-        display: flex; justify-content: space-between; align-items: center;
-        gap: 16px;
-      }
-      .diag-toggle summary::-webkit-details-marker { display: none; }
-      .diag-toggle summary::after {
-        content: '+';
-        font-size: 22px; font-weight: 400;
-        color: #e2ae61;
-        transition: transform 0.35s;
-        line-height: 1;
-      }
-      .diag-toggle[open] summary::after { transform: rotate(45deg); }
-      .diag-toggle-body {
-        padding: 4px 28px 24px;
-        color: rgba(251,242,237,0.92);
-      }
-      .diag-toggle-body ul { list-style: none; padding: 0; margin: 0; }
-      .diag-toggle-body li {
-        font-family: 'Rubik', sans-serif;
-        font-size: 15.5px; color: #f5f1eb;
-        padding: 6px 0 6px 22px;
-        position: relative; line-height: 1.5;
-      }
-      .diag-toggle-body li::before {
-        content: '·';
-        position: absolute; left: 6px; top: -2px;
-        color: #e2ae61; font-weight: 900; font-size: 24px;
-      }
-      .diag-toggle-body p {
-        font-family: 'Rubik', sans-serif;
-        font-size: 15.5px; color: #f5f1eb; opacity: 0.92;
-        line-height: 1.65; margin-bottom: 12px;
-      }
-      .diag-toggle-body p:last-child { margin-bottom: 0; }
-      .diag-toggle-body strong { color: #e2ae61; }
-      @media (max-width: 700px) {
-        .diag-toggle summary { padding: 16px 22px; font-size: 14px; }
-        .diag-toggle-body { padding: 4px 22px 20px; }
-        .diag-toggle-body li, .diag-toggle-body p { font-size: 14.5px; }
-      }
-      .diag-card-mental {
-        background: #f5e6d8;
-        border-color: #d4b48c;
-      }
-      .diag-card-mental p + p { margin-top: 12px; }
-      .diag-card-tag {
-        display: inline-block;
-        font-family: 'Rubik', sans-serif;
-        font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-        color: var(--bordeaux);
-        background: rgba(90,20,40,0.10);
-        padding: 6px 14px; border-radius: 999px;
-        margin-bottom: 16px;
-      }
-      .diag-card-warning .diag-card-tag {
-        color: var(--bordeaux);
-        background: rgba(199,72,115,0.12);
-      }
-      .diag-card ul {
-        list-style: none; padding: 0; margin: 0;
-      }
-      .diag-card li {
-        font-family: 'Rubik', sans-serif;
-        font-size: 16px; color: var(--ink);
-        padding: 6px 0 6px 22px;
-        position: relative; line-height: 1.5;
-      }
-      .diag-card li::before {
-        content: '·';
-        position: absolute; left: 6px; top: -2px;
-        color: var(--gold); font-weight: 900; font-size: 24px;
-      }
-      .diag-card p {
-        font-family: 'Rubik', sans-serif;
-        font-size: 16px; color: var(--ink); opacity: 0.9;
-        line-height: 1.6; margin: 0;
-      }
-      @media (max-width: 700px) {
-        .diag-card { padding: 20px 22px; border-radius: 16px; }
-        .diag-card li, .diag-card p { font-size: 15px; }
-      }
-    </style>
-
-    <h2>Was mich <em>ausmacht</em></h2>
-    <p>Ich bin keine Expertin. Ich bin die, die es gerade lebt. Was ich weiß, weiß ich aus eigener Erfahrung. nicht aus Büchern und nicht aus einer Ausbildung. Deswegen schreibe ich hier auch nicht als „Coach", sondern als Betroffene, die aufschreibt, was ihr geholfen hat.</p>
-
-    <h2>Warum ich <em>TerraLuna</em> entwickelt habe</h2>
-    <p>Aus meinen Erfahrungen habe ich die App TerraLuna entwickelt. Die App ist nicht nur für Histamin. Sie betrachtet alles ganzheitlich: weitere Unverträglichkeiten, deinen Stoffwechsel, Zyklus, Allergien, Fibromyalgie, Laktose, Fructose, Zöliakie, Gluten und mehr.</p>
-    <p>Denn Histamin und alles drumherum ist komplex. Es kommt nicht nur vom Essen, sondern auch von Stress, Wetter, Luftdruck, Zyklusphase. Das Leben kann man damit nicht so einfach planen.</p>
-    <p>Die App soll das ein Stück einfacher machen. Mit Ampel-System, Rezepten, Symptomtagebuch und SOS-Karten für unterwegs.</p>
-
-    <div class="disclaimer-box">
-      <p><strong>Wichtig:</strong> Alles auf dieser Seite ist meine persönliche Erfahrung. Keine medizinische Beratung. Bei Beschwerden sprich bitte mit einer Ärztin oder einem Arzt.</p>
+<!-- HERO: Split Portrait + Text -->
+<section class="um-hero">
+  <div class="um-hero-inner">
+    <div class="um-hero-photo reveal">
+      <img src="images/julia-1.jpg" alt="Julia Bergles" onerror="this.src='images/ueber-mich.jpg'">
+      <span class="caption">Julia · Wehringen</span>
     </div>
-
-  </div>
-</section>
-
-<section class="related">
-  <div class="related-inner">
-    <h3 class="related-title">Mehr von mir</h3>
-    <div class="related-grid">
-      <a href="blog/" class="related-card">
-        <span class="tag">Blog</span>
-        <h4>11 ehrliche Artikel aus meinem Weg</h4>
-        <p>Was mir geholfen hat, aufgeschrieben ohne Coach-Sprech.</p>
-      </a>
-      <a href="app.html" class="related-card">
-        <span class="tag">App</span>
-        <h4>TerraLuna App</h4>
-        <p>Mein Ernährungsbegleiter für alle mit HIT, MCAS oder Reizdarm.</p>
-      </a>
-      <a href="gespraech.html" class="related-card">
-        <span class="tag">1:1</span>
-        <h4>Persönliches Gespräch</h4>
-        <p>30 Minuten am Telefon, wenn du mit jemandem reden willst, der's kennt.</p>
-      </a>
+    <div class="um-hero-text reveal d1">
+      <span class="um-eyebrow">Meine Geschichte</span>
+      <h1 class="um-h1">Hey, ich bin <em>Julia</em>.</h1>
+      <p class="um-lede">
+        Betroffen von Histamin, MCAS und Reizdarm.
+        <br>Gründerin der TerraLuna-App.
+        <br><em>Ich teile meine Erfahrung — nicht Behandlungen.</em>
+      </p>
+      <a href="#kontakt" class="btn-red">Schreib mir</a>
     </div>
   </div>
 </section>
 
-<footer>
-  <a href="index.html" class="footer-logo">Julia</a>
-  <div class="footer-links">
-    <a href="ueber-mich.html">Über mich</a>
-    <a href="app.html">TerraLuna App</a>
-    <a href="histaminintoleranz.html">Histamin</a>
-    <a href="mcas.html">MCAS</a>
-    <a href="reizdarm.html">Reizdarm</a>
-    <a href="blog/">Blog</a>
-    <a href="gespraech.html">Gespräch</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+<!-- MEIN WEG (Timeline) -->
+<section class="um-section bg-warm">
+  <div class="um-section-head reveal">
+    <span class="um-eyebrow">Mein Weg</span>
+    <h2 class="um-h2">Wie ich <em>hier</em> gelandet bin.</h2>
+    <p class="um-lede">
+      Von Corona bis Diagnose bis TerraLuna.
+      <br>Kein gerader Weg. Aber meiner.
+    </p>
   </div>
-    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="footer-instagram">Folge mir auf Instagram</a>
-  <div class="footer-health">
-    <strong>Health-Disclaimer:</strong> Ich bin keine Ärztin. Alles auf dieser Seite sind persönliche Erfahrungen. Keine medizinische Beratung, kein Ersatz für Arzt oder Heilpraktiker. Bei Beschwerden bitte an eine Fachperson wenden.
+  <div class="um-learn-grid">
+    <div class="um-learn-card reveal d1">
+      <span class="year">2022</span>
+      <h4>Nach Corona. Der eigentliche Anfang.</h4>
+      <p>
+        Nach der Corona-Infektion habe ich meinen Geschmack verloren.
+        <br>Danach bin ich in eine Orthorexie gerutscht.
+        <br>Immer gesünder, immer weniger, immer mehr Sport.
+      </p>
+    </div>
+    <div class="um-learn-card reveal d2">
+      <span class="year">2023</span>
+      <h4>Immer weniger, was ich vertrage.</h4>
+      <p>
+        Die Liste der Lebensmittel wurde von Monat zu Monat kürzer.
+        <br>Bauchschmerzen, Blähbauch, Kopfschmerzen nach fast jedem Essen.
+        <br>Und keine Antwort von Ärzten.
+      </p>
+    </div>
+    <div class="um-learn-card reveal d3">
+      <span class="year">2024</span>
+      <h4>Fachabi. Selbstständig. Smacado.</h4>
+      <p>
+        Fachabitur Gestaltung — während dem Abschluss ging alles richtig los.
+        <br>Danach Selbstständigkeit. Erste Firma <strong>Smacado</strong>:
+        <br>gesunde, glutenfreie Backmischungen.
+      </p>
+    </div>
+    <div class="um-learn-card reveal d4">
+      <span class="year">2025</span>
+      <h4>Darmverschluss. Diagnose. 31 → 47&nbsp;kg.</h4>
+      <p>
+        Darmverschluss. 7 Monate nur 5 Lebensmittel. Untergewicht <strong>31&nbsp;kg</strong>.
+        <br>Februar 2025: Diagnose Histamin, Reizdarm, Allergien.
+        <br>Depressionen, Rückzug. Kein Arzt hat unterstützt.
+      </p>
+    </div>
+    <div class="um-learn-card reveal d1">
+      <span class="year">2026</span>
+      <h4>Körper verstanden. TerraLuna.</h4>
+      <p>
+        Endlich Rhythmus. Kein schmerzhafter Blähbauch mehr.
+        <br>Smacado beendet, TerraLuna-App entwickelt.
+        <br>Fokus: <strong>anderen helfen, meine Geschichte teilen</strong>.
+      </p>
+    </div>
   </div>
-  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
-  <div class="footer-disclaimer">Ich bin keine Ärztin. ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
+</section>
+
+<!-- JULIA IM ALLTAG — Masonry-Grid mymiapage-Stil, versetzte Größen -->
+<section class="um-gallery-section">
+  <div class="um-gallery-head reveal">
+    <span class="um-eyebrow">Julia im Alltag</span>
+  </div>
+  <div class="um-gallery-grid">
+    <div class="um-g tall reveal">
+      <img src="images/julia-5.jpeg" alt="Julia Bergles">
+    </div>
+    <div class="um-g reveal d1">
+      <img src="images/julia-3.jpeg" alt="Julia Bergles">
+    </div>
+    <div class="um-g square shape-round reveal d2">
+      <img src="images/julia-6.jpeg" alt="Julia Bergles">
+    </div>
+    <div class="um-g reveal d1">
+      <img src="images/julia-4.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+    </div>
+    <div class="um-g wide reveal d2">
+      <img src="images/julia-beruflich.jpg" alt="Julia Bergles" onerror="this.src='images/julia-2.jpg'">
+      <div class="caption-over">
+        <span class="small">Julia · Wehringen</span>
+        Meine Erfahrung mit Histamin, MCAS und Reizdarm.
+      </div>
+    </div>
+    <div class="um-g tall shape-oval reveal d1">
+      <img src="images/julia-2.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+    </div>
+    <div class="um-g reveal d2">
+      <img src="images/ueber-mich.jpg" alt="Julia Bergles" onerror="this.src='images/julia-3.jpg'">
+    </div>
+    <div class="um-g square shape-blob reveal d1">
+      <img src="images/liebe.jpg" alt="Julia Bergles" onerror="this.src='images/julia-5.jpg'">
+    </div>
+  </div>
+</section>
+
+<!-- WOHER MEINE ERFAHRUNG KOMMT -->
+<section class="um-section bg-cream">
+  <div class="um-section-head reveal">
+    <span class="um-eyebrow">Aus erster Hand</span>
+    <h2 class="um-h2">Woher meine <em>Erfahrung</em> kommt.</h2>
+    <p class="um-lede">Nicht aus Kursen und Zertifikaten. Aus dem, was ich selbst durchgemacht habe.</p>
+  </div>
+
+  <div class="um-wissen-split">
+    <div class="um-wissen-photo reveal">
+      <img src="images/julia-3.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+      <span class="caption">Selbst betroffen</span>
+    </div>
+    <ul class="um-wissen-list reveal d1">
+      <li>
+        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <div>
+          <h5>Selbst betroffen</h5>
+          <p>
+            Diagnostiziert: Histamin, Reizdarm, Fructose, PMS, sämtliche Allergien.
+            <br>Vermutet: MCAS.
+            <br>Ich lebe jeden Tag mit dem, worüber ich schreibe.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
+        <div>
+          <h5>TerraLuna-App</h5>
+          <p>
+            Eigene App gebaut aus dem, was mir gefehlt hat.
+            <br>App-Development, User-Research, Community-Aufbau.
+            <br>Für alle mit HIT, MCAS oder Reizdarm.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <div>
+          <h5>Community</h5>
+          <p>
+            WhatsApp-Community mit Leuten die es verstehen.
+            <br>Instagram <a href="https://instagram.com/julia_bergles" target="_blank" rel="noopener" style="color: var(--bordeaux); text-decoration: underline;">@julia_bergles</a>.
+            <br>Direkter Draht. Echte Fragen. Ehrliche Antworten.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
+        <div>
+          <h5>Jahrelanges Ausprobieren</h5>
+          <p>
+            Was mir geholfen hat. Was nicht. Was ich nie wieder machen würde.
+            <br>Aufgeschrieben im Blog, in E-Books, in der App.
+            <br>Kein Coach-Sprech, keine Heilversprechen.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- WAS MICH ANTREIBT -->
+<section class="um-section bg-warm">
+  <div class="um-section-head reveal">
+    <span class="um-eyebrow">Meine Werte</span>
+    <h2 class="um-h2">Was mich <em>antreibt</em>.</h2>
+  </div>
+  <div class="um-values-grid">
+    <div class="um-value-card reveal d1">
+      <div class="value-n">01</div>
+      <h4>Ehrlich</h4>
+      <p>
+        Auch wenn's nicht sexy klingt.
+        <br>Keine Heilversprechen. Kein Coach-Sprech.
+        <br>Was hilft, was nicht.
+      </p>
+    </div>
+    <div class="um-value-card reveal d2">
+      <div class="value-n">02</div>
+      <h4>Persönlich</h4>
+      <p>
+        Ich bin keine Expertin.
+        <br>Ich bin die, die es lebt.
+        <br>Aus meiner Perspektive als Betroffene.
+      </p>
+    </div>
+    <div class="um-value-card reveal d3">
+      <div class="value-n">03</div>
+      <h4>Ohne Bullshit</h4>
+      <p>
+        Handgemacht, kein Team.
+        <br>Kein KI-Text, kein Baukasten-Blog.
+        <br>Alles selbst geschrieben.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="um-cta" id="kontakt">
+  <div class="um-cta-card reveal">
+    <span class="um-eyebrow">Kontakt</span>
+    <h2 class="um-h2">Schreib <em>mir</em>.</h2>
+    <p>
+      Fragen zur App, zur Community, zum Blog.<br>
+      Oder einfach so. Ich les alles selbst.
+    </p>
+    <div class="actions">
+      <a href="mailto:julia@bergles.net" class="btn-red">julia@bergles.net</a>
+      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" class="btn-outline">WhatsApp-Community</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Julia</div>
+      <div class="tag">Ehrlich. Persönlich. Ohne Bullshit.</div>
+      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
+    </div>
+    <div class="footer-col">
+      <h5>App &amp; Diagnosen</h5>
+      <a href="app.html">TerraLuna App</a>
+      <a href="histaminintoleranz.html">Histaminintoleranz</a>
+      <a href="mcas.html">MCAS</a>
+      <a href="reizdarm.html">Reizdarm</a>
+      <a href="selbsttest.html">Selbsttest</a>
+    </div>
+    <div class="footer-col">
+      <h5>Inhalte</h5>
+      <a href="blog/">Blog</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="ueber-mich.html">Über mich</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerruf</a>
+    </div>
+  </div>
+  <div class="footer-xxl">
+    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
+    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
+  </div>
 </footer>
 
 <script>
-  // Nav mobile-menu close on link click
-  document.querySelectorAll('.mobile-menu a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.remove('open'));
-  });
-  // Timeline reveal on scroll
-  const tlObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); tlObserver.unobserve(e.target); }});
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.tl-item').forEach(el => tlObserver.observe(el));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 </script>
-
-<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  Instagram
-</a>
 
 </body>
 </html>
