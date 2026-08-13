@@ -6,21 +6,22 @@
   <meta name="description" content="TerraLuna App. Dein smarter Ernährungsbegleiter für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden.">
   <title>TerraLuna App | Julia Bergles</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+    @import url('https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      /* On-Point Palette (TerraLuna App Look) */
-      --blush: #f1d2cb; --strawberry: #c74873; --cream: #f5f1eb; --warmwhite: #FDF9F2;
-      --rosegold: #c74873; --sand: #e8e2d6; --charcoal: #5a1428; --soft: #8a6f72;
-      --honey: #e2ae61; --lavender: #e8e2d6; --peach: #e8e2d6;
-      --glossy: #FDF9F2; --white: #ffffff;
-      --navy: #5a1428; --wine: #5a1428; --gold: #e2ae61; --gold-hi: #eec287;
-      --linen: #e8e2d6; --ink: #2D1F22; --bordeaux: #5a1428; --bg: #f5f1eb;
-      --pink: #c74873;
+      /* Agentur On Point Palette (Copper + Dark + warm Cream) */
+      --blush: #f6e7e7; --strawberry: #C48B6C; --cream: #fffcf9; --warmwhite: #fffcf9;
+      --rosegold: #C48B6C; --sand: #efe3da; --charcoal: #2a2a2a; --soft: #8a6f72;
+      --honey: #C48B6C; --lavender: #efe3da; --peach: #E8C4A8;
+      --glossy: #fffcf9; --white: #ffffff;
+      --navy: #2a2a2a; --wine: #2a2a2a; --gold: #C48B6C; --gold-hi: #E8C4A8;
+      --linen: #efe3da; --ink: #2D1F22; --bordeaux: #2a2a2a; --bg: #fffcf9;
+      --pink: #C48B6C; --copper: #C48B6C; --copper-dark: #A0705A;
     }
-    body { font-family: 'Rubik', 'Space Grotesk', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; overflow-x: hidden; font-weight: 400; }
-    h1, h2, h3, h4 { font-family: 'Rubik', 'Space Grotesk', sans-serif !important; font-weight: 900 !important; letter-spacing: -0.025em; line-height: 1.05; text-transform: none; }
-    h1 em, h2 em, h3 em { font-style: normal !important; color: var(--gold); }
+    body { font-family: 'Object Sans', 'Space Grotesk', -apple-system, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.65; overflow-x: hidden; font-weight: 400; }
+    h1, h2, h3, h4 { font-family: 'Raleway', 'Space Grotesk', sans-serif !important; font-weight: 900 !important; letter-spacing: -0.02em; line-height: 1.08; text-transform: none; }
+    h1 em, h2 em, h3 em { font-style: normal !important; background: linear-gradient(135deg, #A0705A 0%, #C48B6C 50%, #E8C4A8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
     /* ANIMATIONS */
     .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
@@ -31,7 +32,7 @@
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,246,240,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,144,138,0.1); }
     .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
     .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .nav-logo span { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; display: flex; align-items: baseline; gap: 6px; }
+    .nav-logo span { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; display: flex; align-items: baseline; gap: 6px; }
     .nav-logo .ema { font-size: 22px; font-weight: 600; letter-spacing: 4px; background: linear-gradient(135deg, var(--rosegold), #d4a49e, var(--rosegold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .nav-logo .ema-full { font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--soft); }
     .nav-links { display: flex; gap: 28px; align-items: center; }
@@ -47,7 +48,7 @@
     .hero::after { content: ''; position: absolute; bottom: -20%; left: -15%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,144,138,0.06) 0%, transparent 70%); border-radius: 50%; }
     .hero-content { position: relative; z-index: 1; max-width: 680px; }
     .hero-label { font-size: 11px; font-weight: 600; color: var(--honey); letter-spacing: 4px; text-transform: none; margin-bottom: 20px; }
-    .hero h1 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 60px; font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+    .hero h1 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 60px; font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
     .hero .subtitle { font-size: 17px; color: var(--sand); max-width: 540px; margin: 0 auto 44px; line-height: 1.8; font-weight: 300; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
@@ -65,7 +66,7 @@
     section { padding: 100px 24px; }
     .section-inner { max-width: 1000px; margin: 0 auto; }
     .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: none; margin-bottom: 12px; }
-    .section-title { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
+    .section-title { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
     .section-sub { font-size: 16px; color: var(--soft); margin-bottom: 48px; max-width: 560px; line-height: 1.8; }
 
     /* FEATURE ROWS */
@@ -74,7 +75,7 @@
     .feature-row.reverse { direction: rtl; }
     .feature-row.reverse > * { direction: ltr; }
     .feature-text .feature-number { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 3px; text-transform: none; margin-bottom: 10px; }
-    .feature-text h3 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; line-height: 1.2; }
+    .feature-text h3 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; line-height: 1.2; }
     .feature-text p { font-size: 15px; color: var(--soft); line-height: 1.8; margin-bottom: 16px; }
     .feature-text ul { list-style: none; padding: 0; }
     .feature-text ul li { font-size: 14px; color: var(--charcoal); padding: 5px 0 5px 20px; position: relative; }
@@ -93,7 +94,7 @@
     .more-feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(201,144,138,0.1); }
     .more-feature-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--glossy); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
     .more-feature-icon svg { width: 24px; height: 24px; stroke: var(--rosegold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .more-feature-card h4 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
+    .more-feature-card h4 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
     .more-feature-card p { font-size: 13px; color: var(--soft); line-height: 1.7; }
 
     /* PRICING */
@@ -102,7 +103,7 @@
     .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(201,144,138,0.12); }
     .pricing-card.popular { border: 2px solid var(--navy); }
     .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: none; padding: 6px 20px; border-radius: 50px; }
-    .pricing-card h3 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
+    .pricing-card h3 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
     .pricing-price { font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .pricing-price span { font-size: 14px; font-weight: 400; color: var(--soft); }
     .pricing-alt { font-size: 13px; color: var(--soft); margin-bottom: 20px; }
@@ -114,7 +115,7 @@
 
     /* CTA SECTION */
     .cta-section { background: var(--navy); text-align: center; color: var(--white); }
-    .cta-section h2 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 300; color: var(--white); margin-bottom: 16px; }
+    .cta-section h2 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 300; color: var(--white); margin-bottom: 16px; }
     .cta-section p { font-size: 16px; color: var(--sand); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
     /* APP SCREENSHOTS. Carousel mit iPhone-Mockups */
@@ -190,7 +191,7 @@
         inset 0 1px 2px rgba(255,255,255,0.08),
         inset 0 -1px 2px rgba(0,0,0,0.4);
     }
-    .screen-label { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.2px; }
+    .screen-label { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.2px; }
     .screen-desc { font-size: 13px; color: var(--soft); letter-spacing: 0.04em; line-height: 1.5; }
     .carousel-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
@@ -226,7 +227,7 @@
     /* FOOTER */
     footer { background: var(--navy); color: var(--sand); padding: 60px 24px; border-top: 1px solid rgba(255,255,255,0.06); }
     .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    .footer-logo { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .footer-logo { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
     .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
     .footer-links a { color: var(--sand); text-decoration: none; font-size: 13px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
@@ -306,8 +307,8 @@
   <div class="page-hero-inner">
     <h1>Dein smarter <em>Ernährungsbegleiter</em></h1>
     <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
-      <a href="https://apps.apple.com/de/app/terraluna/id6763492103" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">App Store</a>
-      <a href="https://play.google.com/store/search?q=TerraLuna+Julia+Bergles" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">Google Play</a>
+      <a href="https://apps.apple.com/de/app/terraluna/id6763492103" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">App Store</a>
+      <a href="https://play.google.com/store/search?q=TerraLuna+Julia+Bergles" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">Google Play</a>
     </div>
     <p style="margin-top: 20px; font-size: 13px; color: rgba(251,242,237,0.7);">Auch für Android verfügbar</p>
   </div>
@@ -570,7 +571,7 @@
         <div class="pricing-price">4,99 Euro <span>/ Monat</span></div>
         <p class="pricing-alt">oder 39,99 Euro / Jahr · spare 33%</p>
         <div class="pricing-divider"></div>
-        <p style="text-align: center; font-family: 'Rubik', sans-serif; font-size: 17px; color: var(--charcoal); font-weight: 700; margin: 20px 0;">Jetzt 3 Tage kostenlos testen<br>oder kostenfreie Version nutzen</p>
+        <p style="text-align: center; font-family: 'Raleway', sans-serif; font-size: 17px; color: var(--charcoal); font-weight: 700; margin: 20px 0;">Jetzt 3 Tage kostenlos testen<br>oder kostenfreie Version nutzen</p>
         <a href="#" class="btn btn-gold btn-sm" style="text-align: center;">3 Tage gratis starten</a>
       </div>
     </div>

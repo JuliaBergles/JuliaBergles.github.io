@@ -1,176 +1,514 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Was ist Histaminintoleranz (HIT)? Julia Bergles teilt, wie sich HIT anfühlt, welche Symptome auftreten und was ihr im Alltag geholfen hat.">
-  <title>Histaminintoleranz. Julia Bergles</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="assets/site.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<title>Histaminintoleranz · Julia Bergles</title>
+<meta name="description" content="Was ist Histaminintoleranz (HIT)? Symptome, Auslöser, was mir im Alltag geholfen hat. Aus meiner Erfahrung als Betroffene — kein Coach-Sprech." />
+<link rel="canonical" href="https://www.juliabergles.de/histaminintoleranz.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.juliabergles.de/histaminintoleranz.html" />
+<meta property="og:title" content="Histaminintoleranz · Julia Bergles" />
+<meta property="og:description" content="Was ist HIT, wie fühlt es sich an, was hilft. Aus meiner Erfahrung." />
+<meta property="og:image" content="https://www.juliabergles.de/images/histamin.jpg" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Julia Bergles" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Histaminintoleranz · Julia Bergles" />
+<meta name="twitter:description" content="Was ist HIT, wie fühlt es sich an, was hilft. Aus meiner Erfahrung." />
+<meta name="twitter:image" content="https://www.juliabergles.de/images/histamin.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/onpoint.css">
+<style>
+  /* Leistungen (dark editorial) — HIT-Adaption */
+  .leistung-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+  @media (max-width: 1050px) { .leistung-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .leistung-grid { grid-template-columns: 1fr; } }
+  .leistung {
+    background: rgba(251, 242, 237, 0.04);
+    border: 1px solid rgba(196, 139, 108, 0.28);
+    border-radius: 12px;
+    padding: 32px 28px;
+    text-align: left;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(6px);
+    position: relative;
+    overflow: hidden;
+  }
+  .leistung::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(196, 139, 108, 0.10));
+    opacity: 0; transition: opacity 0.6s; pointer-events: none;
+  }
+  .leistung:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    background: rgba(251, 242, 237, 0.06);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  }
+  .leistung:hover::before { opacity: 1; }
+  .leistung .icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(196, 139, 108, 0.16);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--gold); margin-bottom: 18px;
+  }
+  .leistung h4 {
+    font-family: 'Raleway', sans-serif; font-weight: 900;
+    font-size: 22px; color: var(--bg); margin-bottom: 12px;
+    line-height: 1.15; letter-spacing: -0.01em;
+  }
+  .leistung p { font-size: 14px; color: rgba(251, 242, 237, 0.7); line-height: 1.6; }
+  .leistung ul { list-style: none; padding: 0; margin: 8px 0 0; }
+  .leistung li {
+    font-size: 13.5px; color: rgba(251, 242, 237, 0.72);
+    padding: 4px 0 4px 14px; position: relative; line-height: 1.5;
+  }
+  .leistung li::before { content: "·"; position: absolute; left: 2px; color: var(--gold); font-weight: 900; font-size: 20px; top: -3px; }
+
+  /* HANDSCHRIFT — Text-um-Bild-Layout */
+  .md-handschrift-section { padding: 100px 32px; background: var(--bg); }
+  @media (max-width: 700px) { .md-handschrift-section { padding: 70px 20px; } }
+  .md-handschrift-inner { max-width: 1200px; margin: 0 auto; }
+  .md-handschrift-head { text-align: center; max-width: 720px; margin: 0 auto 70px; }
+  .md-handschrift-head h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 54px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin: 18px 0; }
+  .md-handschrift-head h2 em { font-style: normal; color: var(--copper-dark); }
+  .md-handschrift-head p {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .md-block { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; margin-bottom: 90px; }
+  @media (max-width: 900px) { .md-block { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; } }
+  .md-block.reverse { direction: rtl; }
+  .md-block.reverse > * { direction: ltr; }
+  .md-block-photo {
+    aspect-ratio: 4/5; border-radius: 16px; overflow: hidden;
+    position: relative; background: var(--bg-warm);
+    box-shadow: 0 30px 60px rgba(45, 31, 34, 0.14);
+  }
+  .md-block-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .md-block-photo:hover img { transform: scale(1.06); }
+  .md-block-photo .over {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, transparent, rgba(45, 31, 34, 0.75));
+    color: #fff; padding: 28px 24px 22px;
+    font-family: 'Quicksand', sans-serif; font-size: 14px; line-height: 1.5;
+  }
+  .md-block-photo .over .small {
+    display: block; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.8; margin-bottom: 6px;
+  }
+  .md-block-txt .kicker {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px; letter-spacing: 0.32em;
+    color: var(--copper-dark); font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .md-block-txt h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 22px;
+  }
+  .md-block-txt h3 em { font-style: normal; color: var(--copper-dark); }
+  .md-block-txt p {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .md-block-txt p:last-child { margin-bottom: 0; }
+  .md-block-txt p strong { color: var(--copper-dark); font-weight: 700; }
+  .md-block-txt ul { list-style: none; padding: 0; margin: 10px 0 16px; }
+  .md-block-txt li {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15.5px; color: var(--ink-soft);
+    padding: 4px 0 4px 18px; position: relative; line-height: 1.6;
+  }
+  .md-block-txt li::before { content: "·"; position: absolute; left: 2px; color: var(--copper-dark); font-weight: 900; font-size: 22px; top: -3px; }
+
+  /* Disclaimer */
+  .health-disclaimer {
+    max-width: 780px; margin: 60px auto 0;
+    background: rgba(196, 139, 108, 0.08);
+    border-left: 3px solid var(--copper-dark);
+    border-radius: 4px 12px 12px 4px;
+    padding: 24px 28px;
+    font-family: 'Quicksand', sans-serif; font-size: 15px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .health-disclaimer strong { color: var(--copper-dark); font-weight: 700; }
+</style>
 </head>
 <body>
 
-<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
-
-<nav>
+<nav class="site-nav">
   <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
+    <a href="index.html" class="brand">Julia</a>
     <ul>
-      <li><a href="ueber-mich.html">Über mich</a></li>
       <li><a href="app.html">TerraLuna App</a></li>
-      <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
-      <li><a href="mcas.html">MCAS</a></li>
-      <li><a href="reizdarm.html">Reizdarm</a></li>
-      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li class="has-drop"><a href="histaminintoleranz.html" class="current">Diagnosen <span class="drop-caret">▾</span></a><div class="drop-menu"><a href="histaminintoleranz.html" class="current">Histaminintoleranz</a><a href="mcas.html">MCAS</a><a href="reizdarm.html">Reizdarm</a><a href="selbsttest.html">Selbsttest</a></div></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
-      <li><a href="instagram-insights.html">Insights</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
     </ul>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <a href="#kontakt" class="nav-cta">Schreib mir</a>
     <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
     <a href="app.html">TerraLuna App</a>
-    <a href="histaminintoleranz.html">Histaminintoleranz</a>
+    <a href="histaminintoleranz.html" class="current">Histaminintoleranz</a>
     <a href="mcas.html">MCAS</a>
     <a href="reizdarm.html">Reizdarm</a>
     <a href="selbsttest.html">Selbsttest</a>
     <a href="blog/">Blog</a>
+    <a href="ebooks.html">E-Books</a>
     <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="#kontakt" class="mobile-cta">Schreib mir</a>
   </div>
 </nav>
+<div class="nav-spacer"></div>
 
-<section class="page-hero" style="background-image: linear-gradient(180deg, rgba(45,31,34,0.65) 0%, rgba(45,31,34,0.85) 100%), url('images/histamin.jpg'); background-size: cover, cover; background-position: center, center; background-repeat: no-repeat, no-repeat; background-color: #5a1428;">
-  <div class="page-hero-inner">
-    <h1>Was ist <em>Histaminintoleranz</em>?</h1>
-  </div>
-</section>
-
-<section class="content">
-  <div class="content-inner">
-
-    <h2>Kurz gesagt</h2>
-    <p>Histaminintoleranz (HIT) heißt: dein Körper kann Histamin nicht schnell genug abbauen. Es sammelt sich an. und dann geht der Körper irgendwann auf „laut". Bauch, Kopf, Haut, Kreislauf. Alles kann getroffen sein, oft gleichzeitig, selten vorhersehbar.</p>
-
-    <h2>Wie es sich <em>anfühlt</em></h2>
-    <p>Bei mir startet es meistens im Bauch. Druck, Blähen, Krämpfe. Kurz danach kommt der Kopf: erst dumpf, dann Kopfschmerz. Die Haut wird rot, ich krieg Herzrasen, manchmal wird mir schwindelig. Nach einer halben Stunde weiß ich: Das war jetzt zu viel Histamin.</p>
-
-    <h2>Wie ich bei <em>Histamin</em> reagiere</h2>
-    <p><strong>Jeder reagiert anders.</strong> Ich bekomme starke Bauchkrämpfe, Durchfall, Schwindel, Übelkeit und Brainfog. Das ist meistens 3–4 Stunden akut. Danach merke ich es noch 1–2 Tage länger.</p>
-    <p>Teilweise kommt meine Reaktion auch erst, wenn mein <em>Histaminfass</em> gefüllt ist. Wenn ich mehrere Tage etwas esse und viel Stress habe, merke ich das auch sofort.</p>
-    <p>Vor allem <strong>Stress ist ein sehr starker Trigger</strong>. Bei Stress bekomme ich direkt Schmerzen und Übelkeit.</p>
-
-    <h2>Symptome</h2>
-    <ul>
-      <li>Blähbauch, Bauchschmerzen, Krämpfe, Durchfall</li>
-      <li>Kopfschmerzen bis Migräne</li>
-      <li>Hautrötungen, Juckreiz, Ausschlag (oft im Gesicht und Dekolleté)</li>
-      <li>Herzrasen, Kreislaufprobleme, Schwindel</li>
-      <li>Fließschnupfen, verstopfte Nase, geschwollene Augen</li>
-      <li>Müdigkeit, Konzentrationsprobleme („Histamin-Brain")</li>
-      <li>Schlafprobleme, obwohl du erschöpft bist</li>
-    </ul>
-
-    <h2>Was Histamin überhaupt macht</h2>
-    <p>Histamin ist ein Botenstoff, den der Körper selber herstellt. Es reguliert Wachheit, Verdauung, die Immunabwehr. und ist bei jeder allergischen Reaktion beteiligt. Normalerweise wird zu viel Histamin von zwei Enzymen abgebaut (DAO im Darm, HNMT in den Zellen). Wenn die zu langsam arbeiten oder überfordert sind, staut sich das Histamin auf. Und dann fangen die Symptome an.</p>
-
-    <h2>Auslöser, die ich <em>gemerkt</em> habe</h2>
-    <ul>
-      <li><strong>Histaminreiche Lebensmittel</strong>. gereifter Käse, Rotwein, Tomaten, Sauerkraut, geräucherter Fisch, Schokolade</li>
-      <li><strong>Histaminfreisetzer</strong>. Erdbeeren, Zitrusfrüchte, Nüsse, Meeresfrüchte, Alkohol</li>
-      <li><strong>Zyklus</strong>. direkt vor der Periode reagiere ich viel empfindlicher</li>
-      <li><strong>Stress und wenig Schlaf</strong>. der Körper schafft dann noch weniger abzubauen</li>
-      <li><strong>Hitze</strong>. Sommer, Sauna, heiße Duschen</li>
-      <li><strong>HIIT und Intensivsport</strong>. setzt selber Histamin frei</li>
-    </ul>
-
-    <h2>Was mir im Alltag hilft</h2>
-    <ul>
-      <li>Regelmäßig essen. nicht auslassen, nicht überladen</li>
-      <li>Wenig Ballaststoffe, dafür gut verträgliche Kohlenhydrate</li>
-      <li>Kein HIIT. dafür Spaziergänge, Radfahren, Krafttraining moderat</li>
-      <li>Nach dem Essen 10 Minuten laufen</li>
-      <li>Gekeimte Lebensmittel (Basis für alles, was mein Bauch mag)</li>
-      <li>Zyklus tracken. in der zweiten Hälfte weniger Histaminreiches</li>
-      <li>Symptom-Tagebuch. was hab ich gegessen, wie ging's mir drei Stunden später</li>
-    </ul>
-
-    <h2>Und der Unterschied zu MCAS und Allergien?</h2>
-    <p>Eine <strong>Allergie</strong> ist eine Immunreaktion auf ein bestimmtes Eiweiß. meistens sofort und im Bluttest nachweisbar. <strong>HIT</strong> ist ein Abbau-Problem, keine Allergie. der Körper kommt mit dem Histamin nicht hinterher. <strong>MCAS</strong> geht tiefer: die Mastzellen setzen ohne Auslöser Histamin und andere Stoffe frei. nicht nur bei Essen, sondern bei fast allem. HIT und MCAS können sich überlappen, MCAS ist aber die schwerere Ausprägung.</p>
-
-    <div class="disclaimer-box">
-      <p><strong>Wichtig:</strong> Das hier ist meine Erfahrung und mein Verständnis. Keine medizinische Beratung, kein Ersatz für Arzt oder Heilpraktiker. Wenn du Beschwerden hast, sprich bitte mit einer medizinischen Fachperson.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="related">
-  <div class="related-inner">
-    <h3 class="related-title">Mehr dazu im Blog</h3>
-    <div class="related-grid">
-      <a href="blog/frische-diagnose/" class="related-card">
-        <span class="tag">Für dich</span>
-        <h4>Was ich jedem empfehlen würde nach der Diagnose</h4>
-        <p>Wenn du gerade HIT bekommen hast. das hier hätte ich mir am Anfang gewünscht.</p>
-      </a>
-      <a href="blog/sport-histamin-mcas/" class="related-card">
-        <span class="tag">Sport</span>
-        <h4>Sport und Histamin / MCAS</h4>
-        <p>Warum HIIT bei mir alles verschlimmert hat.</p>
-      </a>
-      <a href="blog/blaehbauch-in-griff/" class="related-card">
-        <span class="tag">Verdauung</span>
-        <h4>Wie ich meinen Blähbauch nahezu losgeworden bin</h4>
-        <p>Meine sechs Punkte, die im Alltag den Unterschied gemacht haben.</p>
-      </a>
+<section class="page-hero page-hero-image" style="background-image: linear-gradient(180deg, rgba(45, 31, 34, 0.72), rgba(45, 31, 34, 0.9)), url('images/histamin.jpg'); background-size: cover; background-position: center; color: var(--bg);">
+  <div class="container">
+    <div class="eyebrow reveal" style="color: var(--gold);">Diagnose</div>
+    <h1 class="reveal d1" style="color: #fff;">Was ist <em style="color: var(--gold);">Histaminintoleranz</em>?</h1>
+    <p class="lede reveal d2" style="color: rgba(255, 255, 255, 0.88);">
+      Dein Körper baut Histamin nicht schnell genug ab.
+      <br>Es sammelt sich an — und irgendwann geht der Körper auf „laut".
+      <br><em style="color: var(--gold);">Bauch, Kopf, Haut, Kreislauf. Alles auf einmal.</em>
+    </p>
+    <div class="reveal d3" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <a href="app.html" class="btn-red">TerraLuna App</a>
+      <a href="selbsttest.html" class="btn-outline-white">Selbsttest starten</a>
     </div>
   </div>
 </section>
 
-<section class="cta-app">
-  <h2>Alle Lebensmittel-Bewertungen und Rezepte in der <em>TerraLuna App</em></h2>
-  <p>250+ Lebensmittel mit Ampel-System, 120+ glutenfreie Rezepte ohne Industriezucker, Histamin-Scanner und SOS-Karten für unterwegs.</p>
-  <a href="app.html" class="btn-primary" style="background: linear-gradient(135deg, #E8C4A8, #F2D9C4); color: var(--bordeaux);">App entdecken</a>
+<!-- MARQUEE-STRIP -->
+<div class="mini-marquee reveal">
+  <div class="track">
+    <span class="item">Blähbauch</span><span class="sep"></span>
+    <span class="item">Kopfschmerzen</span><span class="sep"></span>
+    <span class="item">Hautrötungen</span><span class="sep"></span>
+    <span class="item">Herzrasen</span><span class="sep"></span>
+    <span class="item">Brainfog</span><span class="sep"></span>
+    <span class="item">Rotwein · Käse · Tomaten</span><span class="sep"></span>
+    <span class="item">Stress als Trigger</span><span class="sep"></span>
+    <span class="item">Zyklus-Effekt</span><span class="sep"></span>
+    <span class="item">DAO &amp; HNMT</span><span class="sep"></span>
+    <span class="item">Symptom-Tagebuch</span><span class="sep"></span>
+    <span class="item">Blähbauch</span><span class="sep"></span>
+    <span class="item">Kopfschmerzen</span><span class="sep"></span>
+    <span class="item">Hautrötungen</span><span class="sep"></span>
+    <span class="item">Herzrasen</span><span class="sep"></span>
+    <span class="item">Brainfog</span><span class="sep"></span>
+    <span class="item">Rotwein · Käse · Tomaten</span><span class="sep"></span>
+    <span class="item">Stress als Trigger</span><span class="sep"></span>
+    <span class="item">Zyklus-Effekt</span><span class="sep"></span>
+    <span class="item">DAO &amp; HNMT</span><span class="sep"></span>
+    <span class="item">Symptom-Tagebuch</span><span class="sep"></span>
+  </div>
+</div>
+
+<!-- WAS DU WISSEN SOLLTEST (dark) -->
+<section class="section section-dark section-orbs">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Kurz gesagt</div>
+      <h2>Was du <em>wissen</em> solltest.</h2>
+      <p>
+        Histaminintoleranz ist keine Allergie.
+        <br>Es ist ein <em>Abbau-Problem</em> — und äußert sich bei jedem anders.
+      </p>
+    </div>
+    <div class="leistung-grid">
+      <div class="leistung reveal d1">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Symptome</h4>
+        <ul>
+          <li>Blähbauch, Bauchschmerzen, Krämpfe</li>
+          <li>Kopfschmerzen bis Migräne</li>
+          <li>Hautrötungen, Juckreiz (oft Gesicht &amp; Dekolleté)</li>
+          <li>Herzrasen, Kreislauf, Schwindel</li>
+          <li>Fließschnupfen, verstopfte Nase</li>
+          <li>Müdigkeit, „Histamin-Brain"</li>
+          <li>Schlafprobleme trotz Erschöpfung</li>
+        </ul>
+      </div>
+      <div class="leistung reveal d2">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div>
+        <h4>Auslöser bei mir</h4>
+        <ul>
+          <li>Histaminreich: gereifter Käse, Rotwein, Tomaten, Sauerkraut, Räucherfisch, Schoko</li>
+          <li>Histamin-Freisetzer: Erdbeeren, Zitrus, Nüsse, Meeresfrüchte, Alkohol</li>
+          <li>Zyklus: kurz vor Periode empfindlicher</li>
+          <li>Stress &amp; wenig Schlaf</li>
+          <li>Hitze, Sauna, HIIT-Sport</li>
+        </ul>
+      </div>
+      <div class="leistung reveal d3">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></div>
+        <h4>Was mir hilft</h4>
+        <ul>
+          <li>Regelmäßig essen, nicht auslassen</li>
+          <li>Wenig Ballaststoffe, verträgliche Kohlenhydrate</li>
+          <li>Kein HIIT — Spaziergänge, moderates Kraft</li>
+          <li>10 Min laufen nach dem Essen</li>
+          <li>Gekeimte Lebensmittel</li>
+          <li>Zyklus tracken</li>
+          <li>Symptom-Tagebuch</li>
+        </ul>
+      </div>
+      <div class="leistung reveal d4">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <h4>HIT vs MCAS vs Allergie</h4>
+        <p>
+          <strong>Allergie</strong>: Immunreaktion, meist sofort und im Bluttest sichtbar.
+          <br><strong>HIT</strong>: Abbau-Problem, keine Allergie.
+          <br><strong>MCAS</strong>: Mastzellen setzen ohne klaren Auslöser Histamin frei — die schwerere Ausprägung.
+        </p>
+      </div>
+    </div>
+
+    <p class="reveal" style="text-align: center; margin: 40px auto 0; max-width: 780px; font-size: 15px; color: rgba(251, 242, 237, 0.75); line-height: 1.7;">
+      Alle Lebensmittel-Bewertungen, Rezepte und SOS-Karten für unterwegs.
+      <br>Alles gebündelt in der TerraLuna-App.
+    </p>
+
+    <div class="reveal" style="max-width: 720px; margin: 44px auto 0; text-align: center; padding: 34px 30px; background: linear-gradient(135deg, rgba(251, 242, 237, 0.04), rgba(196, 139, 108, 0.12)); border: 1.5px solid var(--gold); border-radius: 16px; position: relative; overflow: hidden; backdrop-filter: blur(6px);">
+      <div style="position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 139, 108, 0.32), transparent 70%); filter: blur(20px); pointer-events: none;"></div>
+      <div style="position: relative;">
+        <div style="font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 22px; color: var(--gold); margin-bottom: 10px;">250+ Lebensmittel mit Ampel</div>
+        <p style="font-size: 15px; color: rgba(251, 242, 237, 0.8); line-height: 1.7;">
+          120+ glutenfreie Rezepte ohne Industriezucker.
+          <br>Symptom-Scanner. SOS-Karten. Zyklus-Sync.
+        </p>
+        <a href="app.html" style="display: inline-block; margin-top: 20px; padding: 14px 28px; background: var(--gold); color: var(--ink); border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">TerraLuna App →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <a href="index.html" class="footer-logo">Julia</a>
-  <div class="footer-links">
-    <a href="ueber-mich.html">Über mich</a>
-    <a href="app.html">TerraLuna App</a>
-    <a href="histaminintoleranz.html">Histamin</a>
-    <a href="mcas.html">MCAS</a>
-    <a href="reizdarm.html">Reizdarm</a>
-    <a href="blog/">Blog</a>
-    <a href="gespraech.html">Gespräch</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+<!-- MEINE ERFAHRUNG — Text-um-Bild -->
+<section class="md-handschrift-section">
+  <div class="md-handschrift-inner">
+    <div class="md-handschrift-head reveal">
+      <span class="k-eyebrow" style="color: var(--copper-dark); font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; font-weight: 700; text-transform: uppercase;">Meine Erfahrung</span>
+      <h2>Wie sich HIT im <em>Alltag</em> anfühlt.</h2>
+      <p>
+        Nicht aus dem Lehrbuch.
+        <br>Aus meinem Bauch, meinem Kopf, meinem Kalender.
+      </p>
+    </div>
+
+    <div class="md-block reveal">
+      <div class="md-block-photo">
+        <img src="images/julia-2.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+        <div class="over">
+          <span class="small">Wie es sich anfühlt</span>
+          Erst der Bauch. Dann der Kopf. Dann die Haut.
+        </div>
+      </div>
+      <div class="md-block-txt">
+        <span class="kicker">01 · Der Reaktions-Ablauf</span>
+        <h3>Wie es <em>losgeht</em> — jedes Mal.</h3>
+        <p>
+          Bei mir startet es meistens im <strong>Bauch</strong>. Druck, Blähen, Krämpfe. Kurz danach kommt der <strong>Kopf</strong>: erst dumpf, dann Kopfschmerz. Die Haut wird rot, ich krieg Herzrasen, manchmal Schwindel.
+        </p>
+        <p>
+          Nach einer halben Stunde weiß ich: Das war jetzt zu viel Histamin. Der Rest des Tages ist meistens gelaufen.
+        </p>
+        <p>
+          Teilweise kommt meine Reaktion auch erst, wenn mein <em>Histaminfass</em> voll ist. Mehrere Tage, viel Stress — dann reicht schon Kleinigkeit.
+        </p>
+      </div>
+    </div>
+
+    <div class="md-block reverse reveal">
+      <div class="md-block-photo">
+        <img src="images/julia-3.jpg" alt="Julia Bergles" onerror="this.src='images/julia-4.jpg'">
+        <div class="over">
+          <span class="small">Was mir hilft</span>
+          Rhythmus. Kein Perfektions-Diät-Ding.
+        </div>
+      </div>
+      <div class="md-block-txt">
+        <span class="kicker">02 · Was tatsächlich funktioniert</span>
+        <h3>Was mir <em>Ruhe</em> in den Körper gebracht hat.</h3>
+        <p>
+          <strong>Regelmäßigkeit</strong>. Nicht auslassen, nicht überladen. Kleinere Mahlzeiten über den Tag verteilt.
+        </p>
+        <p>
+          Weniger Ballaststoffe, dafür gut verträgliche Kohlenhydrate. <strong>Gekeimte Lebensmittel</strong> sind die Basis für fast alles was mein Bauch mag.
+        </p>
+        <p>
+          Kein HIIT mehr — dafür Spaziergänge, Radfahren, moderates Krafttraining. Nach dem Essen 10 Minuten laufen. Klingt banal, macht Riesenunterschied.
+        </p>
+        <p>
+          <strong>Zyklus tracken.</strong> In der zweiten Zyklushälfte reagiere ich viel empfindlicher — dann esse ich histaminärmer.
+        </p>
+      </div>
+    </div>
+
+    <div class="md-block reveal">
+      <div class="md-block-photo">
+        <img src="images/mcas.jpg" alt="Unterschied zu MCAS" onerror="this.src='images/julia-5.jpg'">
+        <div class="over">
+          <span class="small">Kurze Abgrenzung</span>
+          HIT · MCAS · Allergie — drei verschiedene Dinge.
+        </div>
+      </div>
+      <div class="md-block-txt">
+        <span class="kicker">03 · Der Unterschied</span>
+        <h3>Und was das <em>nicht</em> ist.</h3>
+        <p>
+          Eine <strong>Allergie</strong> ist eine Immunreaktion auf ein bestimmtes Eiweiß — meist sofort und im Bluttest nachweisbar.
+        </p>
+        <p>
+          <strong>HIT</strong> ist ein <em>Abbau-Problem</em>, keine Allergie. Der Körper kommt mit dem Histamin nicht hinterher.
+        </p>
+        <p>
+          <strong>MCAS</strong> geht tiefer: die Mastzellen setzen ohne klaren Auslöser Histamin und andere Stoffe frei. Nicht nur beim Essen, sondern bei fast allem. HIT und MCAS können sich überlappen — MCAS ist die schwerere Ausprägung.
+        </p>
+        <p style="margin-top: 20px;">
+          <a href="mcas.html" style="color: var(--copper-dark); font-weight: 700; text-decoration: underline;">Mehr zu MCAS →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="health-disclaimer">
+      <strong>Wichtig:</strong> Das hier ist meine Erfahrung und mein Verständnis. Keine medizinische Beratung, kein Ersatz für Ärzt:in oder Heilpraktiker:in. Wenn du Beschwerden hast, sprich bitte mit einer Fachperson.
+    </div>
   </div>
-    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="footer-instagram">Folge mir auf Instagram</a>
-  <div class="footer-health">
-    <strong>Health-Disclaimer:</strong> Ich bin keine Ärztin. Alles auf dieser Seite sind persönliche Erfahrungen. Keine medizinische Beratung, kein Ersatz für Arzt oder Heilpraktiker. Bei Beschwerden bitte an eine Fachperson wenden.
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Häufige Fragen</div>
+      <h2>Zu Histaminintoleranz.<br><em>Aus meiner Erfahrung</em> beantwortet.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Wie fühlt sich HIT an?</summary><p>
+        Bei mir: erst Bauch (Druck, Krämpfe), dann Kopf (dumpf → Kopfschmerz), dann Haut (Rötung), oft Herzrasen und Schwindel.
+        <br>Nach etwa 30 Minuten ist klar: zu viel Histamin.
+        <br>Jeder reagiert anders — deins darf ganz woanders sitzen.
+      </p></details>
+      <details class="faq-item"><summary>Was sind die häufigsten Auslöser?</summary><p>
+        Histaminreiche Lebensmittel (gereifter Käse, Rotwein, Tomaten, Sauerkraut, Räucherfisch, Schoko).
+        <br>Histamin-Freisetzer (Erdbeeren, Zitrus, Nüsse, Alkohol).
+        <br>Stress, wenig Schlaf, Hitze, HIIT-Sport, Zyklus.
+      </p></details>
+      <details class="faq-item"><summary>Wie hab ich meine Diagnose bekommen?</summary><p>
+        Über Histamin-Test beim Arzt und zusätzlich bei <strong>Cerascreen</strong>.
+        <br>Dazu Allergien-Test beim Allergologen.
+        <br>Keine Werbung — alles selbst gekauft.
+      </p></details>
+      <details class="faq-item"><summary>Was hilft dir im Alltag am meisten?</summary><p>
+        Regelmäßig essen, nicht auslassen. Wenig Ballaststoffe, verträgliche Kohlenhydrate.
+        <br>Kein HIIT — moderate Bewegung, Spaziergang nach dem Essen.
+        <br>Zyklus tracken, Symptom-Tagebuch führen.
+      </p></details>
+      <details class="faq-item"><summary>Ist HIT dasselbe wie MCAS oder Allergie?</summary><p>
+        Nein.
+        <br><strong>Allergie</strong> = Immunreaktion auf Eiweiß.
+        <br><strong>HIT</strong> = Abbau-Problem.
+        <br><strong>MCAS</strong> = Mastzellen reagieren spontan, viel weitreichender.
+        <br>HIT und MCAS können sich überlappen.
+      </p></details>
+      <details class="faq-item"><summary>Kann ich das komplett loswerden?</summary><p>
+        Meine Erfahrung: nein — aber es wird deutlich besser wenn du deinen Rhythmus findest.
+        <br>Ich hab keinen schmerzhaften Blähbauch mehr. Trigger kenne ich. Rhythmus sitzt.
+        <br>Kein Heilversprechen — das ist mein Weg, deiner darf anders sein.
+      </p></details>
+    </div>
   </div>
-  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
-  <div class="footer-disclaimer">Ich bin keine Ärztin. ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block with-photo" id="kontakt">
+  <div class="container">
+    <div class="inner reveal">
+      <div class="mark"></div>
+      <h2>Schreib <em>mir</em>.</h2>
+      <p>
+        Fragen zur App, zur Community, zum Blog.
+        <br>Oder einfach so. Ich les alles selbst.
+      </p>
+      <div class="actions">
+        <a href="mailto:julia@bergles.net" class="btn-red">julia@bergles.net</a>
+        <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" class="btn-outline">WhatsApp-Community</a>
+      </div>
+    </div>
+    <div class="cta-photo reveal d1">
+      <img src="images/julia-4.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+      <div class="over">
+        <span class="small">Julia · @julia_bergles</span>
+        Ich melde mich meistens innerhalb weniger Stunden.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Julia</div>
+      <div class="tag">Ehrlich. Persönlich. Ohne Bullshit.</div>
+      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
+    </div>
+    <div class="footer-col">
+      <h5>App &amp; Diagnosen</h5>
+      <a href="app.html">TerraLuna App</a>
+      <a href="histaminintoleranz.html">Histaminintoleranz</a>
+      <a href="mcas.html">MCAS</a>
+      <a href="reizdarm.html">Reizdarm</a>
+      <a href="selbsttest.html">Selbsttest</a>
+    </div>
+    <div class="footer-col">
+      <h5>Inhalte</h5>
+      <a href="blog/">Blog</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="ueber-mich.html">Über mich</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerruf</a>
+    </div>
+  </div>
+  <div class="footer-xxl">
+    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
+    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
+  </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
-  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 </script>
-
-<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  Instagram
-</a>
 
 </body>
 </html>

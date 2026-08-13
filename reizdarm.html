@@ -1,171 +1,396 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Was ist Reizdarm (RDS)? Julia Bergles teilt, wie sich Reizdarm im Alltag anfühlt und was ihr geholfen hat, dass ihr Bauch nicht mehr jeden Abend rebelliert.">
-  <title>Reizdarm. Julia Bergles</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="assets/site.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<title>Reizdarm · Julia Bergles</title>
+<meta name="description" content="Reizdarm ist ein Sammelbegriff für einen Darm, der macht was er will. Symptome, Diagnose per Ausschluss, was mir hilft. Aus meiner Erfahrung." />
+<link rel="canonical" href="https://www.juliabergles.de/reizdarm.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.juliabergles.de/reizdarm.html" />
+<meta property="og:title" content="Reizdarm · Julia Bergles" />
+<meta property="og:description" content="Reizdarm ist eine Ausschlussdiagnose. Was mir hilft, was nicht. Aus meiner Erfahrung." />
+<meta property="og:image" content="https://www.juliabergles.de/images/reizdarm.jpg" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Julia Bergles" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Reizdarm · Julia Bergles" />
+<meta name="twitter:description" content="Reizdarm ist eine Ausschlussdiagnose. Was mir hilft, was nicht." />
+<meta name="twitter:image" content="https://www.juliabergles.de/images/reizdarm.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/onpoint.css">
+<style>
+  .leistung-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+  @media (max-width: 1050px) { .leistung-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .leistung-grid { grid-template-columns: 1fr; } }
+  .leistung { background: rgba(251, 242, 237, 0.04); border: 1px solid rgba(196, 139, 108, 0.28); border-radius: 12px; padding: 32px 28px; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); backdrop-filter: blur(6px); position: relative; overflow: hidden; }
+  .leistung:hover { transform: translateY(-6px); border-color: var(--gold); background: rgba(251, 242, 237, 0.06); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35); }
+  .leistung .icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(196, 139, 108, 0.16); display: inline-flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 18px; }
+  .leistung h4 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 22px; color: var(--bg); margin-bottom: 12px; line-height: 1.15; letter-spacing: -0.01em; }
+  .leistung p { font-size: 14px; color: rgba(251, 242, 237, 0.72); line-height: 1.6; }
+  .leistung ul { list-style: none; padding: 0; margin: 8px 0 0; }
+  .leistung li { font-size: 13.5px; color: rgba(251, 242, 237, 0.72); padding: 4px 0 4px 14px; position: relative; line-height: 1.5; }
+  .leistung li::before { content: "·"; position: absolute; left: 2px; color: var(--gold); font-weight: 900; font-size: 20px; top: -3px; }
+
+  .md-handschrift-section { padding: 100px 32px; background: var(--bg); }
+  @media (max-width: 700px) { .md-handschrift-section { padding: 70px 20px; } }
+  .md-handschrift-inner { max-width: 1200px; margin: 0 auto; }
+  .md-handschrift-head { text-align: center; max-width: 720px; margin: 0 auto 70px; }
+  .md-handschrift-head h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 54px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin: 18px 0; }
+  .md-handschrift-head h2 em { font-style: normal; color: var(--copper-dark); }
+  .md-handschrift-head p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  .md-block { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; margin-bottom: 90px; }
+  @media (max-width: 900px) { .md-block { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; } }
+  .md-block.reverse { direction: rtl; }
+  .md-block.reverse > * { direction: ltr; }
+  .md-block-photo { aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; position: relative; background: var(--bg-warm); box-shadow: 0 30px 60px rgba(45, 31, 34, 0.14); }
+  .md-block-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .md-block-photo:hover img { transform: scale(1.06); }
+  .md-block-photo .over { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent, rgba(45, 31, 34, 0.75)); color: #fff; padding: 28px 24px 22px; font-family: 'Quicksand', sans-serif; font-size: 14px; line-height: 1.5; }
+  .md-block-photo .over .small { display: block; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.8; margin-bottom: 6px; }
+  .md-block-txt .kicker { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; color: var(--copper-dark); font-weight: 700; text-transform: uppercase; margin-bottom: 18px; }
+  .md-block-txt h3 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(28px, 3.5vw, 42px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 22px; }
+  .md-block-txt h3 em { font-style: normal; color: var(--copper-dark); }
+  .md-block-txt p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 16px; }
+  .md-block-txt p strong { color: var(--copper-dark); font-weight: 700; }
+  .md-block-txt ul { list-style: none; padding: 0; margin: 10px 0 16px; }
+  .md-block-txt li { font-family: 'Quicksand', sans-serif; font-size: 15.5px; color: var(--ink-soft); padding: 4px 0 4px 18px; position: relative; line-height: 1.6; }
+  .md-block-txt li::before { content: "·"; position: absolute; left: 2px; color: var(--copper-dark); font-weight: 900; font-size: 22px; top: -3px; }
+
+  .health-disclaimer { max-width: 780px; margin: 60px auto 0; background: rgba(196, 139, 108, 0.08); border-left: 3px solid var(--copper-dark); border-radius: 4px 12px 12px 4px; padding: 24px 28px; font-family: 'Quicksand', sans-serif; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+  .health-disclaimer strong { color: var(--copper-dark); font-weight: 700; }
+</style>
 </head>
 <body>
 
-<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
-
-<nav>
+<nav class="site-nav">
   <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
+    <a href="index.html" class="brand">Julia</a>
     <ul>
-      <li><a href="ueber-mich.html">Über mich</a></li>
       <li><a href="app.html">TerraLuna App</a></li>
-      <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
-      <li><a href="mcas.html">MCAS</a></li>
-      <li><a href="reizdarm.html">Reizdarm</a></li>
-      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li class="has-drop"><a href="reizdarm.html" class="current">Diagnosen <span class="drop-caret">▾</span></a><div class="drop-menu"><a href="histaminintoleranz.html">Histaminintoleranz</a><a href="mcas.html">MCAS</a><a href="reizdarm.html" class="current">Reizdarm</a><a href="selbsttest.html">Selbsttest</a></div></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
-      <li><a href="instagram-insights.html">Insights</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
     </ul>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <a href="#kontakt" class="nav-cta">Schreib mir</a>
     <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
     <a href="app.html">TerraLuna App</a>
     <a href="histaminintoleranz.html">Histaminintoleranz</a>
     <a href="mcas.html">MCAS</a>
-    <a href="reizdarm.html">Reizdarm</a>
+    <a href="reizdarm.html" class="current">Reizdarm</a>
     <a href="selbsttest.html">Selbsttest</a>
     <a href="blog/">Blog</a>
+    <a href="ebooks.html">E-Books</a>
     <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="#kontakt" class="mobile-cta">Schreib mir</a>
   </div>
 </nav>
+<div class="nav-spacer"></div>
 
-<section class="page-hero" style="background-image: linear-gradient(180deg, rgba(45,31,34,0.65) 0%, rgba(45,31,34,0.85) 100%), url('images/reizdarm.jpg'); background-size: cover, cover; background-position: center, center; background-repeat: no-repeat, no-repeat; background-color: #5a1428;">
-  <div class="page-hero-inner">
-    <h1>Was ist <em>Reizdarm</em>?</h1>
-  </div>
-</section>
-
-<section class="content">
-  <div class="content-inner">
-
-    <h2>Kurz gesagt</h2>
-    <p>Reizdarm ist ein Sammelbegriff für einen Darm, der macht was er will. ohne dass die Untersuchungen etwas finden. Keine Entzündung, kein Tumor, keine Zöliakie. Und trotzdem: Blähbauch, Krämpfe, Durchfall oder Verstopfung, oft im Wechsel. Er ist eine Ausschlussdiagnose. man findet ihn, wenn nichts anderes passt.</p>
-
-    <h2>Wie es sich <em>anfühlt</em></h2>
-    <p>Der Bauch macht sich bemerkbar. Manchmal nach dem Essen, manchmal ohne Grund. Es zieht, drückt, gluckert. Der Blähbauch kommt nach der ersten Mahlzeit und geht bis abends nicht mehr weg. Man plant Wege in der Stadt nach Toiletten. Und man weiß nie: ist es heute ein guter oder ein schlechter Bauchtag.</p>
-
-    <h2>Symptome</h2>
-    <ul>
-      <li>Blähbauch. oft schon nach kleinen Portionen</li>
-      <li>Bauchschmerzen, Krämpfe, Ziehen</li>
-      <li>Durchfall, Verstopfung. oft im Wechsel</li>
-      <li>Druck- und Völlegefühl</li>
-      <li>Schleim im Stuhl</li>
-      <li>Plötzlicher Stuhldrang direkt nach dem Essen</li>
-      <li>Müdigkeit, Konzentrationsprobleme</li>
-      <li>Der Bauch bestimmt den Tag mit. Kleidung, Termine, Essen</li>
-    </ul>
-
-    <h2>Wie wird die Diagnose gestellt</h2>
-    <p>Reizdarm wird per Ausschluss diagnostiziert: der Arzt schließt zuerst alles andere aus, was ähnliche Beschwerden macht. Das heißt in der Regel: Blutbild, Stuhluntersuchung, Ultraschall vom Bauch, Magenspiegelung, Darmspiegelung, Zöliakie-Test, Laktose- und Fruktose-Atemtest. Erst wenn all das nichts findet, bleibt „Reizdarm" (auch: Reizdarmsyndrom, RDS oder IBS) als Diagnose.</p>
-
-    <h2>Was mir im Alltag hilft</h2>
-    <ul>
-      <li>Regelmäßig essen. kleinere Mahlzeiten, dafür öfter</li>
-      <li>Wenig Ballaststoffe. Rohkost und Vollkorn machen bei mir mehr Probleme als sie helfen</li>
-      <li>Gekeimte Lebensmittel. sind schonender für den Darm</li>
-      <li>Nach dem Essen 10 Minuten spazieren. bringt die Verdauung in Gang</li>
-      <li>Kein HIIT, dafür ruhige Bewegung (Gehen, Radeln, Krafttraining moderat)</li>
-      <li>Symptom-Tagebuch. was hab ich gegessen, wie ging's mir</li>
-      <li>Stress reduzieren. der Darm reagiert sofort auf Anspannung</li>
-      <li>Genug schlafen. schlechter Schlaf verschlechtert bei mir alles</li>
-    </ul>
-
-    <h2>Und was hat mir <em>nicht</em> geholfen</h2>
-    <ul>
-      <li>„Iss mehr Ballaststoffe". hat's bei mir noch schlimmer gemacht</li>
-      <li>Standard-Probiotika aus der Drogerie. bei mir keine Wirkung</li>
-      <li>Extreme Diäten (FODMAP über Wochen, Rohkost, Detox). bringen nur kurzfristig was und stressen den Bauch danach umso mehr</li>
-      <li>„Alles nur Kopfsache". nein. Der Kopf spielt mit, aber die Beschwerden sind echt</li>
-    </ul>
-
-    <h2>Der Zusammenhang mit HIT und MCAS</h2>
-    <p>Reizdarm, HIT und MCAS treten oft zusammen auf. Bei allen drei ist der Darm gereizt und die Mastzellen. die Zellen, die Histamin freisetzen. überaktiv. Wenn du also Reizdarm hast und immer wieder Symptome bekommst, die nicht zum Bauch passen (Kopfschmerzen, Hautrötungen, Herzrasen), lohnt es sich auch in Richtung HIT und MCAS zu schauen.</p>
-
-    <div class="disclaimer-box">
-      <p><strong>Wichtig:</strong> Das hier ist meine Erfahrung. Keine medizinische Beratung. Wenn du länger anhaltende Bauchbeschwerden hast, kläre das bitte mit einer Ärztin oder einem Arzt ab. Reizdarm ist eine Ausschlussdiagnose, es kann auch etwas anderes dahinterstecken.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="related">
-  <div class="related-inner">
-    <h3 class="related-title">Mehr dazu im Blog</h3>
-    <div class="related-grid">
-      <a href="blog/blaehbauch-in-griff/" class="related-card">
-        <span class="tag">Verdauung</span>
-        <h4>Wie ich meinen Blähbauch nahezu losgeworden bin</h4>
-        <p>Meine sechs konkreten Punkte, die im Alltag den Unterschied gemacht haben.</p>
-      </a>
-      <a href="blog/warum-wenig-essen/" class="related-card">
-        <span class="tag">Alltag</span>
-        <h4>Warum ich nur wenig esse</h4>
-        <p>Nicht aus Disziplin, aus Notwendigkeit.</p>
-      </a>
-      <a href="blog/auf-koerper-hoeren/" class="related-card">
-        <span class="tag">Mindset</span>
-        <h4>Wie ich gelernt habe, auf meinen Körper zu hören</h4>
-        <p>Kleine Signale, große Wirkung.</p>
-      </a>
+<section class="page-hero page-hero-image" style="background-image: linear-gradient(180deg, rgba(45, 31, 34, 0.72), rgba(45, 31, 34, 0.9)), url('images/reizdarm.jpg'); background-size: cover; background-position: center; color: var(--bg);">
+  <div class="container">
+    <div class="eyebrow reveal" style="color: var(--gold);">Diagnose</div>
+    <h1 class="reveal d1" style="color: #fff;">Was ist <em style="color: var(--gold);">Reizdarm</em>?</h1>
+    <p class="lede reveal d2" style="color: rgba(255, 255, 255, 0.88);">
+      Ein Sammelbegriff für einen Darm, der macht was er will —
+      <br>ohne dass die Untersuchungen etwas finden.
+      <br><em style="color: var(--gold);">Ausschlussdiagnose. Und trotzdem: sehr echt.</em>
+    </p>
+    <div class="reveal d3" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <a href="app.html" class="btn-red">TerraLuna App</a>
+      <a href="selbsttest.html" class="btn-outline-white">Selbsttest starten</a>
     </div>
   </div>
 </section>
 
-<section class="cta-app">
-  <h2>Alle Lebensmittel-Bewertungen und Rezepte in der <em>TerraLuna App</em></h2>
-  <p>250+ Lebensmittel mit Ampel für Darmverträglichkeit, 120+ Rezepte glutenfrei und ohne Industriezucker, Tagebuch für Muster.</p>
-  <a href="app.html" class="btn-primary" style="background: linear-gradient(135deg, #E8C4A8, #F2D9C4); color: var(--bordeaux);">App entdecken</a>
+<div class="mini-marquee reveal">
+  <div class="track">
+    <span class="item">Blähbauch</span><span class="sep"></span>
+    <span class="item">Krämpfe</span><span class="sep"></span>
+    <span class="item">Durchfall &amp; Verstopfung</span><span class="sep"></span>
+    <span class="item">Ausschlussdiagnose</span><span class="sep"></span>
+    <span class="item">IBS &middot; RDS</span><span class="sep"></span>
+    <span class="item">Toiletten-Planung</span><span class="sep"></span>
+    <span class="item">Stress-Bauch</span><span class="sep"></span>
+    <span class="item">Weniger Ballaststoffe</span><span class="sep"></span>
+    <span class="item">Gekeimte Lebensmittel</span><span class="sep"></span>
+    <span class="item">Nach dem Essen laufen</span><span class="sep"></span>
+    <span class="item">Blähbauch</span><span class="sep"></span>
+    <span class="item">Krämpfe</span><span class="sep"></span>
+    <span class="item">Durchfall &amp; Verstopfung</span><span class="sep"></span>
+    <span class="item">Ausschlussdiagnose</span><span class="sep"></span>
+    <span class="item">IBS &middot; RDS</span><span class="sep"></span>
+    <span class="item">Toiletten-Planung</span><span class="sep"></span>
+    <span class="item">Stress-Bauch</span><span class="sep"></span>
+    <span class="item">Weniger Ballaststoffe</span><span class="sep"></span>
+    <span class="item">Gekeimte Lebensmittel</span><span class="sep"></span>
+    <span class="item">Nach dem Essen laufen</span><span class="sep"></span>
+  </div>
+</div>
+
+<section class="section section-dark section-orbs">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Kurz gesagt</div>
+      <h2>Was du <em>wissen</em> solltest.</h2>
+      <p>
+        Keine Entzündung, kein Tumor, keine Zöliakie.
+        <br>Und trotzdem: Blähbauch, Krämpfe, Durchfall oder Verstopfung, oft im Wechsel.
+      </p>
+    </div>
+    <div class="leistung-grid">
+      <div class="leistung reveal d1">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Symptome</h4>
+        <ul>
+          <li>Blähbauch, oft schon nach kleinen Portionen</li>
+          <li>Bauchschmerzen, Krämpfe, Ziehen</li>
+          <li>Durchfall, Verstopfung — oft im Wechsel</li>
+          <li>Druck- und Völlegefühl</li>
+          <li>Schleim im Stuhl</li>
+          <li>Plötzlicher Stuhldrang direkt nach dem Essen</li>
+          <li>Müdigkeit, Konzentrationsprobleme</li>
+        </ul>
+      </div>
+      <div class="leistung reveal d2">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Wie's diagnostiziert wird</h4>
+        <p>
+          Reizdarm wird per <strong>Ausschluss</strong> diagnostiziert.
+        </p>
+        <p style="margin-top: 8px;">
+          Blutbild, Stuhluntersuchung, Ultraschall, Magen- und Darmspiegelung, Zöliakie-Test, Laktose- und Fruktose-Atemtest. Erst wenn all das nichts findet, bleibt „Reizdarm" (RDS, IBS).
+        </p>
+      </div>
+      <div class="leistung reveal d3">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></div>
+        <h4>Was mir hilft</h4>
+        <ul>
+          <li>Regelmäßig essen, kleinere Mahlzeiten</li>
+          <li>Wenig Ballaststoffe (Rohkost + Vollkorn = mehr Probleme)</li>
+          <li>Gekeimte Lebensmittel</li>
+          <li>10 Min laufen nach dem Essen</li>
+          <li>Kein HIIT, dafür ruhige Bewegung</li>
+          <li>Symptom-Tagebuch führen</li>
+          <li>Stress reduzieren</li>
+          <li>Genug schlafen</li>
+        </ul>
+      </div>
+      <div class="leistung reveal d4">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></div>
+        <h4>Was mir NICHT geholfen hat</h4>
+        <ul>
+          <li>„Iss mehr Ballaststoffe" — hat's schlimmer gemacht</li>
+          <li>Standard-Probiotika aus der Drogerie</li>
+          <li>Extreme Diäten (FODMAP über Wochen, Rohkost, Detox)</li>
+          <li>„Alles nur Kopfsache" — nein, ist es nicht</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <a href="index.html" class="footer-logo">Julia</a>
-  <div class="footer-links">
-    <a href="ueber-mich.html">Über mich</a>
-    <a href="app.html">TerraLuna App</a>
-    <a href="histaminintoleranz.html">Histamin</a>
-    <a href="mcas.html">MCAS</a>
-    <a href="reizdarm.html">Reizdarm</a>
-    <a href="blog/">Blog</a>
-    <a href="gespraech.html">Gespräch</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+<section class="md-handschrift-section">
+  <div class="md-handschrift-inner">
+    <div class="md-handschrift-head reveal">
+      <span class="k-eyebrow" style="color: var(--copper-dark); font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; font-weight: 700; text-transform: uppercase;">Meine Erfahrung</span>
+      <h2>Wie sich Reizdarm im <em>Alltag</em> anfühlt.</h2>
+      <p>
+        Nicht aus dem Lehrbuch.
+        <br>Aus meinem Bauch, meinem Kalender, meinen Toiletten-Wegen.
+      </p>
+    </div>
+
+    <div class="md-block reveal">
+      <div class="md-block-photo">
+        <img src="images/julia-2.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+        <div class="over">
+          <span class="small">Wie es sich anfühlt</span>
+          Der Bauch bestimmt den Tag mit. Kleidung, Termine, Essen.
+        </div>
+      </div>
+      <div class="md-block-txt">
+        <span class="kicker">01 · Der Alltag</span>
+        <h3>Wie es sich <em>anfühlt</em>.</h3>
+        <p>
+          Der Bauch macht sich bemerkbar. Manchmal nach dem Essen, manchmal ohne Grund. Es zieht, drückt, gluckert.
+        </p>
+        <p>
+          Der Blähbauch kommt nach der ersten Mahlzeit und geht bis abends nicht mehr weg. Man plant Wege in der Stadt <strong>nach Toiletten</strong>.
+        </p>
+        <p>
+          Und man weiß nie: ist es heute ein guter oder ein schlechter Bauchtag.
+        </p>
+      </div>
+    </div>
+
+    <div class="md-block reverse reveal">
+      <div class="md-block-photo">
+        <img src="images/julia-3.jpg" alt="Julia Bergles" onerror="this.src='images/julia-4.jpg'">
+        <div class="over">
+          <span class="small">Was hilft</span>
+          Rhythmus. Weniger Ballaststoffe. Ruhige Bewegung.
+        </div>
+      </div>
+      <div class="md-block-txt">
+        <span class="kicker">02 · Was funktioniert</span>
+        <h3>Was mir <em>hilft</em> im Alltag.</h3>
+        <ul>
+          <li>Regelmäßig essen — kleinere Mahlzeiten, dafür öfter</li>
+          <li>Wenig Ballaststoffe. Rohkost und Vollkorn machen bei mir mehr Probleme als sie helfen</li>
+          <li>Gekeimte Lebensmittel — schonender für den Darm</li>
+          <li>Nach dem Essen 10 Minuten spazieren — bringt die Verdauung in Gang</li>
+          <li>Kein HIIT, dafür ruhige Bewegung (Gehen, Radeln, moderates Kraft)</li>
+          <li>Symptom-Tagebuch führen</li>
+          <li>Stress reduzieren — der Darm reagiert sofort auf Anspannung</li>
+          <li>Genug schlafen — schlechter Schlaf verschlechtert bei mir alles</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="md-block reveal">
+      <div class="md-block-photo">
+        <img src="images/histamin.jpg" alt="Zusammenhang mit HIT und MCAS" onerror="this.src='images/julia-5.jpg'">
+        <div class="over">
+          <span class="small">Reizdarm · HIT · MCAS</span>
+          Kommen oft zusammen. Bei allen dreien sind die Mastzellen überaktiv.
+        </div>
+      </div>
+      <div class="md-block-txt">
+        <span class="kicker">03 · Zusammenhänge</span>
+        <h3>Was <em>zusammen</em>hängt.</h3>
+        <p>
+          Reizdarm, HIT und MCAS treten oft zusammen auf. Bei allen drei ist der Darm gereizt und die <strong>Mastzellen</strong> — die Zellen, die Histamin freisetzen — überaktiv.
+        </p>
+        <p>
+          Wenn du also Reizdarm hast und immer wieder Symptome bekommst, die nicht zum Bauch passen (Kopfschmerzen, Hautrötungen, Herzrasen), lohnt es sich auch in Richtung HIT und MCAS zu schauen.
+        </p>
+        <p style="margin-top: 20px;">
+          <a href="histaminintoleranz.html" style="color: var(--copper-dark); font-weight: 700; text-decoration: underline;">Mehr zu HIT →</a>
+          &nbsp;·&nbsp;
+          <a href="mcas.html" style="color: var(--copper-dark); font-weight: 700; text-decoration: underline;">Mehr zu MCAS →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="health-disclaimer">
+      <strong>Wichtig:</strong> Das hier ist meine Erfahrung. Keine medizinische Beratung. Wenn du länger anhaltende Bauchbeschwerden hast, kläre das bitte mit einer Ärzt:in ab. Reizdarm ist eine Ausschlussdiagnose — es kann auch etwas anderes dahinterstecken.
+    </div>
   </div>
-    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="footer-instagram">Folge mir auf Instagram</a>
-  <div class="footer-health">
-    <strong>Health-Disclaimer:</strong> Ich bin keine Ärztin. Alles auf dieser Seite sind persönliche Erfahrungen. Keine medizinische Beratung, kein Ersatz für Arzt oder Heilpraktiker. Bei Beschwerden bitte an eine Fachperson wenden.
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Häufige Fragen</div>
+      <h2>Zu Reizdarm.<br><em>Aus meiner Erfahrung</em> beantwortet.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Was ist Reizdarm eigentlich?</summary><p>
+        Ein Sammelbegriff für einen Darm, der macht was er will — ohne dass Untersuchungen etwas finden.
+        <br>Keine Entzündung, kein Tumor, keine Zöliakie. Trotzdem: Blähbauch, Krämpfe, Durchfall oder Verstopfung.
+      </p></details>
+      <details class="faq-item"><summary>Wie wird die Diagnose gestellt?</summary><p>
+        Per Ausschluss: Blutbild, Stuhluntersuchung, Ultraschall, Magen- und Darmspiegelung, Zöliakie-Test, Laktose- und Fruktose-Atemtest.
+        <br>Erst wenn all das nichts findet, bleibt „Reizdarm" (RDS, IBS) als Diagnose.
+      </p></details>
+      <details class="faq-item"><summary>Was hilft dir im Alltag am meisten?</summary><p>
+        Regelmäßig essen, kleinere Mahlzeiten. Weniger Ballaststoffe. Gekeimte Lebensmittel.
+        <br>10 Minuten laufen nach dem Essen. Kein HIIT. Symptom-Tagebuch. Stress reduzieren. Schlaf.
+      </p></details>
+      <details class="faq-item"><summary>Was hat dir nicht geholfen?</summary><p>
+        „Iss mehr Ballaststoffe" — hat's bei mir noch schlimmer gemacht.
+        <br>Standard-Probiotika aus der Drogerie. Extreme Diäten (FODMAP über Wochen, Rohkost, Detox).
+        <br>Und „alles nur Kopfsache" — nein, der Kopf spielt mit, aber die Beschwerden sind echt.
+      </p></details>
+      <details class="faq-item"><summary>Hängt Reizdarm mit HIT und MCAS zusammen?</summary><p>
+        Ja, sie treten oft zusammen auf. Bei allen dreien sind die Mastzellen — die Zellen, die Histamin freisetzen — überaktiv.
+        <br>Wenn du Symptome außerhalb des Bauchs hast, lohnt sich der Blick in Richtung HIT und MCAS.
+      </p></details>
+      <details class="faq-item"><summary>Kann man Reizdarm loswerden?</summary><p>
+        Meine Erfahrung: nicht komplett, aber es wird deutlich besser wenn du deinen Rhythmus findest.
+        <br>Kein Heilversprechen — das ist mein Weg.
+      </p></details>
+    </div>
   </div>
-  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
-  <div class="footer-disclaimer">Ich bin keine Ärztin. ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
+</section>
+
+<section class="cta-block with-photo" id="kontakt">
+  <div class="container">
+    <div class="inner reveal">
+      <div class="mark"></div>
+      <h2>Schreib <em>mir</em>.</h2>
+      <p>
+        Fragen zur App, zur Community, zum Blog.
+        <br>Oder einfach so. Ich les alles selbst.
+      </p>
+      <div class="actions">
+        <a href="mailto:julia@bergles.net" class="btn-red">julia@bergles.net</a>
+        <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" class="btn-outline">WhatsApp-Community</a>
+      </div>
+    </div>
+    <div class="cta-photo reveal d1">
+      <img src="images/julia-4.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+      <div class="over">
+        <span class="small">Julia · @julia_bergles</span>
+        Ich melde mich meistens innerhalb weniger Stunden.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Julia</div>
+      <div class="tag">Ehrlich. Persönlich. Ohne Bullshit.</div>
+      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
+    </div>
+    <div class="footer-col">
+      <h5>App &amp; Diagnosen</h5>
+      <a href="app.html">TerraLuna App</a>
+      <a href="histaminintoleranz.html">Histaminintoleranz</a>
+      <a href="mcas.html">MCAS</a>
+      <a href="reizdarm.html">Reizdarm</a>
+      <a href="selbsttest.html">Selbsttest</a>
+    </div>
+    <div class="footer-col">
+      <h5>Inhalte</h5>
+      <a href="blog/">Blog</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="ueber-mich.html">Über mich</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerruf</a>
+    </div>
+  </div>
+  <div class="footer-xxl">
+    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
+    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
+  </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
-  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 </script>
-
-<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  Instagram
-</a>
 
 </body>
 </html>
