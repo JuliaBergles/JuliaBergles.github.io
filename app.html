@@ -310,7 +310,23 @@
       <a href="https://apps.apple.com/de/app/terraluna/id6763492103" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">App Store</a>
       <a href="https://play.google.com/store/search?q=TerraLuna+Julia+Bergles" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">Google Play</a>
     </div>
-    <p style="margin-top: 20px; font-size: 13px; color: rgba(251,242,237,0.7);">Auch für Android verfügbar</p>
+    <p style="margin-top: 20px; font-size: 13px; color: rgba(251,242,237,0.75); letter-spacing: 0.05em;">Für Apple und Android</p>
+    <p style="margin-top: 10px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: #e2ae61;">„Hat mir total bei Blähbauch geholfen."</p>
+  </div>
+</section>
+
+<!-- INFO-BOX: Scanner-Reset + Kontakt -->
+<section style="padding: 60px 24px; background: var(--cream);">
+  <div style="max-width: 780px; margin: 0 auto;">
+    <div style="background: #fff; border-left: 4px solid #C48B6C; border-radius: 4px 14px 14px 4px; padding: 28px 32px; box-shadow: 0 8px 24px rgba(45,31,34,0.06);">
+      <p style="font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 700; color: #A0705A; margin: 0 0 12px;">Info</p>
+      <p style="font-family: 'Object Sans', 'Space Grotesk', sans-serif; font-size: 15.5px; line-height: 1.65; color: var(--charcoal); margin: 0 0 14px;">
+        Sollte der Scanner nach dem Kauf nicht funktionieren, klick bitte auch auf <strong>„Kauf wiederherstellen"</strong> in der App. Das findest du bei den Abo-Optionen.
+      </p>
+      <p style="font-family: 'Object Sans', 'Space Grotesk', sans-serif; font-size: 15.5px; line-height: 1.65; color: var(--charcoal); margin: 0;">
+        Ansonsten schreib mir über Instagram <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" style="color: #A0705A; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">@julia_bergles</a> oder per E-Mail an <a href="mailto:julia@bergles.net" style="color: #A0705A; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">julia@bergles.net</a>.
+      </p>
+    </div>
   </div>
 </section>
 <!-- APP SCREENSHOTS. Carousel -->
@@ -649,10 +665,45 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 })();
 </script>
 
-<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  Instagram
-</a>
+<!-- FLOATING BUTTONS: FAQ + Instagram mit Sprechblase -->
+<style>
+  .float-stack { position: fixed; bottom: 24px; right: 24px; z-index: 200; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .float-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 20px 12px 16px; border-radius: 999px;
+    text-decoration: none; font-family: 'Raleway', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 12px 28px rgba(45,31,34,0.22);
+  }
+  .float-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(45,31,34,0.32); }
+  .float-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .float-btn.faq { background: #2a2a2a; color: #fff; }
+  .float-btn.faq:hover { background: #C48B6C; color: #fff; }
+  .float-btn.ig { background: #fff; color: #2a2a2a; border: 1px solid rgba(45,31,34,0.1); }
+  .float-btn.ig .bubble { display: inline; }
+  .float-btn.ig:hover { background: #C48B6C; color: #fff; }
+  @media (max-width: 640px) {
+    .float-btn { padding: 11px 16px 11px 14px; font-size: 12px; }
+    .float-btn.ig .bubble-full { display: none; }
+    .float-btn.ig .bubble-short { display: inline; }
+  }
+  @media (min-width: 641px) {
+    .float-btn.ig .bubble-short { display: none; }
+    .float-btn.ig .bubble-full { display: inline; }
+  }
+</style>
+<div class="float-stack">
+  <a href="#faq" class="float-btn faq" aria-label="Häufige Fragen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span>Häufige Fragen</span>
+  </a>
+  <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="float-btn ig" aria-label="Instagram — Fragen? Schreib mir!">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    <span class="bubble-full">Hast du Fragen? Schreib mir!</span>
+    <span class="bubble-short">Schreib mir!</span>
+  </a>
+</div>
 
 </body>
 </html>
