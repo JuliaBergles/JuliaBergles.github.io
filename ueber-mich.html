@@ -396,23 +396,62 @@
 </nav>
 <div class="nav-spacer"></div>
 
-<!-- HERO: Split Portrait + Text -->
-<section class="um-hero">
-  <div class="um-hero-inner">
-    <div class="um-hero-photo reveal">
-      <img src="images/julia-1.jpg" alt="Julia Bergles" onerror="this.src='images/ueber-mich.jpg'">
-      <span class="caption">Julia · Wehringen</span>
-    </div>
-    <div class="um-hero-text reveal d1">
-      <span class="um-eyebrow">Meine Geschichte</span>
-      <h1 class="um-h1">Hey, ich bin <em>Julia</em>.</h1>
-      <p class="um-lede">
-        Betroffen von Histamin, MCAS und Reizdarm.
-        <br>Gründerin der TerraLuna-App.
-        <br><em>Ich teile meine Erfahrung — nicht Behandlungen.</em>
-      </p>
-      <a href="#kontakt" class="btn-red">Schreib mir</a>
-    </div>
+<!-- HERO: Full-Bleed Portrait + Overlay-Text-Box -->
+<style>
+  .um-hero-full {
+    position: relative;
+    min-height: clamp(560px, 92vh, 900px);
+    background: #2a2a2a url('images/hey-ich-bin-julia.jpg') center/cover no-repeat;
+    display: flex; align-items: center;
+    padding: 100px 40px;
+    overflow: hidden;
+  }
+  @media (max-width: 700px) {
+    .um-hero-full { padding: 80px 20px; min-height: 78vh; background-position: 60% center; }
+  }
+  .um-hero-full::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(45,31,34,0.35) 0%, rgba(45,31,34,0.15) 45%, rgba(45,31,34,0.05) 100%);
+    pointer-events: none;
+  }
+  @media (max-width: 700px) {
+    .um-hero-full::before {
+      background: linear-gradient(180deg, rgba(45,31,34,0.15) 0%, rgba(45,31,34,0.55) 70%, rgba(45,31,34,0.75) 100%);
+    }
+  }
+  .um-hero-box {
+    position: relative; z-index: 1;
+    margin-left: auto;
+    max-width: 480px;
+    padding: 48px 42px;
+    background: rgba(251, 242, 237, 0.82);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 40px 80px rgba(45,31,34,0.25);
+  }
+  @media (max-width: 900px) {
+    .um-hero-box { margin: 0 auto; max-width: 560px; }
+  }
+  @media (max-width: 700px) {
+    .um-hero-box { padding: 36px 28px; margin-top: auto; margin-bottom: 0; }
+  }
+  .um-hero-box .um-eyebrow { color: var(--copper-dark); }
+  .um-hero-box .um-h1 { font-size: clamp(38px, 5vw, 62px); margin: 8px 0 20px; }
+  .um-hero-box .um-lede { font-size: clamp(15px, 1.5vw, 18px); margin: 0 0 28px; color: var(--ink); }
+  .um-hero-box .um-lede em { font-style: normal; color: var(--copper-dark); font-weight: 600; }
+</style>
+<section class="um-hero-full">
+  <div class="um-hero-box reveal d1">
+    <span class="um-eyebrow">Meine Geschichte</span>
+    <h1 class="um-h1">Hey, ich bin <em>Julia</em>.</h1>
+    <p class="um-lede">
+      Betroffen von Histamin, MCAS und Reizdarm.
+      <br>Gründerin der TerraLuna-App.
+      <br><em>Ich teile meine Erfahrung — nicht Behandlungen.</em>
+    </p>
+    <a href="#kontakt" class="btn-red">Schreib mir</a>
   </div>
 </section>
 
@@ -475,42 +514,6 @@
   </div>
 </section>
 
-<!-- JULIA IM ALLTAG — Masonry-Grid mymiapage-Stil, versetzte Größen -->
-<section class="um-gallery-section">
-  <div class="um-gallery-head reveal">
-    <span class="um-eyebrow">Julia im Alltag</span>
-  </div>
-  <div class="um-gallery-grid">
-    <div class="um-g tall reveal">
-      <img src="images/julia-5.jpeg" alt="Julia Bergles">
-    </div>
-    <div class="um-g reveal d1">
-      <img src="images/julia-3.jpeg" alt="Julia Bergles">
-    </div>
-    <div class="um-g square shape-round reveal d2">
-      <img src="images/julia-6.jpeg" alt="Julia Bergles">
-    </div>
-    <div class="um-g reveal d1">
-      <img src="images/julia-4.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
-    </div>
-    <div class="um-g wide reveal d2">
-      <img src="images/julia-beruflich.jpg" alt="Julia Bergles" onerror="this.src='images/julia-2.jpg'">
-      <div class="caption-over">
-        <span class="small">Julia · Wehringen</span>
-        Meine Erfahrung mit Histamin, MCAS und Reizdarm.
-      </div>
-    </div>
-    <div class="um-g tall shape-oval reveal d1">
-      <img src="images/julia-2.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
-    </div>
-    <div class="um-g reveal d2">
-      <img src="images/ueber-mich.jpg" alt="Julia Bergles" onerror="this.src='images/julia-3.jpg'">
-    </div>
-    <div class="um-g square shape-blob reveal d1">
-      <img src="images/liebe.jpg" alt="Julia Bergles" onerror="this.src='images/julia-5.jpg'">
-    </div>
-  </div>
-</section>
 
 <!-- WOHER MEINE ERFAHRUNG KOMMT -->
 <section class="um-section bg-cream">
