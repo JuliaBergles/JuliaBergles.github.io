@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-08-10
+> Letzte Aktualisierung: 2026-08-14
 
 ---
 
@@ -104,13 +104,31 @@ Verlinkt von Startseite + relevanten Blog-Artikeln.
 
 ---
 
-## Design-System (Kurz — Details siehe CLAUDE.md)
+## Design-System — Redesign v3 (ab 2026-08-14)
 
-- **Headlines:** Playfair Display, weight 500–700
-- **Body/UI:** Object Sans, weight 500, 18–19 px
-- **Farben:** Bordeaux `#955251` / Copper `#C48B6C` / Warm-White `#F8F2EE` / Text `#3D2B2E` — **kein Grün, kein Blau, kein Schwarz**
-- **Section-Padding:** 120 px 24 px
-- **Pink-Akzente überall raus**, ersetzt durch Malaga (`var(--bordeaux)`)
+**Wichtig:** Design-System wird komplett auf **OnPoint-Kit / agentur.juliabergles.de-Look** umgestellt. Die alten Angaben in CLAUDE.md (Playfair Display + Bordeaux `#955251` + Warm-White `#F8F2EE`) sind **veraltet** — es gilt was hier steht. CLAUDE.md-Design-Sektion muss noch nachgezogen werden.
+
+**Fonts (verbindlich, wie agentur.juliabergles.de):**
+- Headlines: **Raleway** weight 900, uppercase, letter-spacing tight
+- Body/UI: **Object Sans** weight 400/500, 18–19 px, line-height 1.6
+
+**Farben (verbindlich):**
+- Copper `#C48B6C` (Primary/Akzent)
+- Dark `#2a2a2a` (Text, dunkle Sektionen)
+- Cream `#fffcf9` (Grundton BG)
+- **Kein Grün, kein Blau, kein Schwarz-#000, kein Pink**
+
+**Spacing:**
+- Section-Padding: 120–160 px vertikal Desktop, 70–90 px mobile
+- Container: max-width 1200 px, padding 0 40 px (24 px mobile)
+
+**Bilder:** großzügige Flächen, mediterran-warm, persönliche Fotografie, organische Formen, viel Weißraum
+
+**Referenzen für Aufbau:** Mia Page (Struktur/Atmosphäre) + agentur.juliabergles.de (Farben/Typo) — Details noch offen (Julia liefert Mia-URL).
+
+**Neue Bilder (2026-08-14):** 15 Julia-HEICs aus iCloud konvertiert nach `images/neu-2026-08/*.jpg` (2400 px, JPEG 85). Werden im v3-Redesign eingebaut.
+
+**Redesign-Historie:** Redesign v2 (5f63dd1, Raleway/Archivo/Cream+Choice-Screen) wurde am 2026-08-10 revertet (7054ef5) — war zu experimentell. v3 orientiert sich stärker an agentur.juliabergles.de + Mia Page.
 
 ---
 
@@ -154,12 +172,23 @@ Wear Your Healing ist aus Nav und Footer **komplett raus**. Dateien liegen weite
 
 ## Was gerade offen ist
 
-**Noch offen:**
+**In Arbeit — Redesign v3 (2026-08-14):**
+- [ ] **Mia-Page-URL** von Julia holen (Layout-Referenz)
+- [ ] `assets/site-v3.css` mit neuen Design-Tokens (Raleway 900 + Object Sans + Copper/Dark/Cream) aufbauen
+- [ ] Startseite als erste Komplett-Umsetzung — TerraLuna zieht sich als roter Faden durch (Hero-CTA, dedizierte App-Sektion, Content-CTAs bei Rezepten/Blog)
+- [ ] Unterseiten iterativ nachziehen: Über mich → App → HIT/MCAS/Reizdarm → Blog → Rezepte → Empfehlungen → Insights
+- [ ] Neue Bilder aus `images/neu-2026-08/` in Hero/Sektionen einbauen
+- [ ] Rezept-Bereich neu bauen (Übersicht + Rezept-Template, Recipe-Schema)
+- [ ] Blog-Kategorien-System (Histamin, MCAS, Ernährung, Darm, Zyklus, Alltag, Erfahrungen, App, Rezepte)
+- [ ] CLAUDE.md-Design-Sektion nachziehen (Julia freigeben lassen)
+
+**Bestehendes weiter offen:**
 - [ ] **Julia-Texte einbauen** — überall wo 📝 Platzhalter stehen (Blog-Artikel-Body, ggf. Info-Seiten). Julia schreibt selbst, Claude paste ein.
-- [ ] **Einführungs-Sektion auf Startseite (2026-08-10):** Claude hat Draft-Texte reingeschrieben (Intro, „So funktioniert die App", „Für wen ist die App", Community-Beschreibung) — Julia korrigiert am Handy live.
-- [ ] Bilder in `blog-bilder/` (lokal, nicht im Repo) den einzelnen Blog-Artikeln zuordnen
-- [ ] Ggf. weitere Empfehlungen aufnehmen, wenn Julia neue Produkte testet
+- [ ] Einführungs-Sektion auf Startseite: Julia korrigiert Draft-Texte am Handy live.
+- [ ] Bilder in `blog-bilder/` den einzelnen Blog-Artikeln zuordnen
 - [ ] MCAS-Testergebnis abwarten und Diagnosen-Sektion updaten (aktuell „vermutet")
+
+**Regel für v3:** Bestehende Texte + Content grundsätzlich behalten, nur visuell/strukturell neu. Keine persönlichen Inhalte selbstständig kürzen oder streichen.
 
 ---
 
