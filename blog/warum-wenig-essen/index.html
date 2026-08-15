@@ -27,12 +27,11 @@
     }
     .article-nav a:hover { color: var(--copper); }
   </style>
+<link rel="stylesheet" href="../../css/onpoint.css">
 </head>
 <body>
 
-<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="../../app.html">jetzt laden</a></div>
-
-<nav>
+<nav class="site-nav">
   <div class="row">
     <a href="../../index.html" class="brand">TerraLuna</a>
     <ul>
@@ -42,13 +41,13 @@
       <li><a href="../../mcas.html">MCAS</a></li>
       <li><a href="../../reizdarm.html">Reizdarm</a></li>
       <li><a href="../../selbsttest.html">Selbsttest</a></li>
-      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../../blog/" class="current">Blog</a></li>
       <li><a href="../../rezepte.html">Rezepte</a></li>
       <li><a href="../../ebooks.html">E-Books</a></li>
       <li><a href="../../bilder.html">Bilder</a></li>
       <li><a href="../../empfehlungen.html">Empfehlungen</a></li>
     </ul>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="nav-cta">Gespräch</a>
+    <a href="../../gespraech.html" class="nav-cta">Gespräch</a>
     <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
@@ -58,14 +57,27 @@
     <a href="../../mcas.html">MCAS</a>
     <a href="../../reizdarm.html">Reizdarm</a>
     <a href="../../selbsttest.html">Selbsttest</a>
-    <a href="../blog/">Blog</a>
+    <a href="../../blog/" class="current">Blog</a>
     <a href="../../rezepte.html">Rezepte</a>
     <a href="../../ebooks.html">E-Books</a>
     <a href="../../bilder.html">Bilder</a>
     <a href="../../empfehlungen.html">Empfehlungen</a>
-    <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="mobile-cta">Gespräch</a>
+    <a href="../../instagram-insights.html">Insights</a>
+    <a href="../../gespraech.html" class="mobile-cta">Gespräch</a>
   </div>
 </nav>
+
+<!-- TOP CTA BANNER -->
+<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
+    <a href="../../app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
+    <span style="opacity:0.5;">·</span>
+    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
+    <span style="opacity:0.5;">·</span>
+    <a href="../../ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+  </div>
+</div>
+<div class="nav-spacer"></div>
 
 <div class="article-nav" style="padding-top: 100px;">
   <a href="../">← Alle Artikel</a>
