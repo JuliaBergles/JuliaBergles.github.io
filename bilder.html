@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<title>Bilder · Acryl &amp; Aquarell · Julia Bergles</title>
+<meta name="description" content="Originalbilder von Julia Bergles — Acryl auf Leinwand und Aquarell auf Papier. Unikate, gemalt in Wehringen bei Augsburg." />
+<link rel="canonical" href="https://www.juliabergles.de/bilder.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.juliabergles.de/bilder.html" />
+<meta property="og:title" content="Bilder · Acryl &amp; Aquarell · Julia Bergles" />
+<meta property="og:description" content="Originalbilder von Julia Bergles — Acryl auf Leinwand und Aquarell auf Papier. Unikate." />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Julia Bergles" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/onpoint.css">
+<style>
+  .b-section { padding: 110px 32px; }
+  .b-section.warm { background: var(--bg-warm); }
+  @media (max-width: 700px) { .b-section { padding: 70px 20px; } }
+
+  .b-section-head { max-width: 820px; margin: 0 auto 60px; text-align: center; }
+  .b-section-head .kicker { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; color: var(--copper-dark); font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+  .b-section-head h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(36px, 5vw, 60px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 18px; }
+  .b-section-head h2 em { font-style: normal; color: var(--copper-dark); }
+  .b-section-head p { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(16px, 1.7vw, 20px); line-height: 1.55; color: var(--ink-soft); }
+
+  .b-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  @media (max-width: 1000px) { .b-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .b-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+  .b-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 44px rgba(45, 31, 34, 0.08);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+    display: flex;
+    flex-direction: column;
+  }
+  .b-card:hover { transform: translateY(-6px); box-shadow: 0 32px 64px rgba(45, 31, 34, 0.14); }
+
+  .b-card-img {
+    aspect-ratio: 4/5;
+    background: var(--bg-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--copper-dark);
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+  }
+  .b-card-img.placeholder-acryl  { background: linear-gradient(160deg, #F0E8E4 0%, #C48B6C 100%); color: #fff; }
+  .b-card-img.placeholder-aquarell { background: linear-gradient(160deg, #F8F2EE 0%, #E8C4A8 60%, #955251 130%); color: var(--ink); }
+  .b-card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .b-card-body { padding: 26px 24px 28px; display: flex; flex-direction: column; gap: 10px; }
+  .b-card-body .t { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 20px; color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; }
+  .b-card-body .m { font-family: 'Object Sans', sans-serif; font-size: 13px; color: var(--ink-muted); letter-spacing: 0.02em; }
+  .b-card-body .p { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 22px; color: var(--copper-dark); margin-top: 6px; }
+  .b-card-body a.buy {
+    margin-top: 14px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--bordeaux);
+    color: #fff;
+    border-radius: 999px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .b-card-body a.buy:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(149, 82, 81, 0.28); }
+
+  .b-info { padding: 100px 32px; background: var(--bg-warm); }
+  .b-info .inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  @media (max-width: 800px) { .b-info .inner { grid-template-columns: 1fr; } }
+  .b-info .item .icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(196,139,108,0.14); display: inline-flex; align-items: center; justify-content: center; color: var(--copper-dark); font-family: 'Raleway', sans-serif; font-weight: 900; margin-bottom: 16px; }
+  .b-info .item h4 { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 18px; color: var(--ink); margin-bottom: 8px; }
+  .b-info .item p { font-family: 'Object Sans', sans-serif; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+
+  .b-cta { padding: 120px 32px; background: linear-gradient(135deg, #2a2a2a 0%, #955251 100%); color: #fff; text-align: center; }
+  .b-cta .inner { max-width: 720px; margin: 0 auto; }
+  .b-cta h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(32px, 4.5vw, 54px); color: #fff; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 20px; }
+  .b-cta h2 em { font-style: normal; color: #E8C4A8; }
+  .b-cta p { font-family: 'Object Sans', sans-serif; font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.9); margin-bottom: 34px; }
+  .b-cta a.btn { display: inline-flex; align-items: center; gap: 10px; padding: 18px 32px; background: #fff; color: var(--ink); border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-decoration: none; box-shadow: 0 16px 32px rgba(0,0,0,0.18); transition: transform 0.3s; }
+  .b-cta a.btn:hover { transform: translateY(-3px); }
+
+  .placeholder-note {
+    max-width: 780px;
+    margin: 0 auto 40px;
+    padding: 20px 26px;
+    background: rgba(196, 139, 108, 0.08);
+    border-left: 3px solid var(--copper-dark);
+    border-radius: 4px 12px 12px 4px;
+    font-family: 'Object Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="row">
+    <a href="index.html" class="brand">TerraLuna</a>
+    <ul>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="app.html">TerraLuna App</a></li>
+      <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
+      <li><a href="mcas.html">MCAS</a></li>
+      <li><a href="reizdarm.html">Reizdarm</a></li>
+      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="rezepte.html">Rezepte</a></li>
+      <li><a href="ebooks.html">E-Books</a></li>
+      <li><a href="bilder.html" class="current">Bilder</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    </ul>
+    <a href="gespraech.html" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="app.html">TerraLuna App</a>
+    <a href="histaminintoleranz.html">Histaminintoleranz</a>
+    <a href="mcas.html">MCAS</a>
+    <a href="reizdarm.html">Reizdarm</a>
+    <a href="selbsttest.html">Selbsttest</a>
+    <a href="blog/">Blog</a>
+    <a href="rezepte.html">Rezepte</a>
+    <a href="ebooks.html">E-Books</a>
+    <a href="bilder.html" class="current">Bilder</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="instagram-insights.html">Insights</a>
+    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+  </div>
+</nav>
+
+<!-- TOP CTA BANNER -->
+<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
+    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
+    <span style="opacity:0.5;">·</span>
+    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
+    <span style="opacity:0.5;">·</span>
+    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Folge mir auf Instagram →</a>
+  </div>
+</div>
+<div class="nav-spacer"></div>
+
+<!-- HERO -->
+<section class="page-hero" style="background: var(--bg-warm); color: var(--ink); padding: 140px 32px 80px;">
+  <div class="container" style="text-align: center; max-width: 820px;">
+    <div class="eyebrow reveal" style="color: var(--copper-dark);">Bilder · Original</div>
+    <h1 class="reveal d1" style="color: var(--ink); font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(42px, 6vw, 78px); letter-spacing: -0.02em; line-height: 1.05; margin: 18px 0 24px;">
+      Acryl &amp; <em style="font-style: normal; color: var(--copper-dark);">Aquarell</em>.
+    </h1>
+    <p class="lede reveal d2" style="color: var(--ink-soft); font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 660px; margin: 0 auto;">
+      Meine Bilder — Unikate, gemalt in Wehringen bei Augsburg. Jedes Bild einmal auf der Welt.
+    </p>
+  </div>
+</section>
+
+<!-- ACRYL -->
+<section class="b-section">
+  <div class="b-section-head reveal">
+    <span class="kicker">Serie 1</span>
+    <h2>Acryl auf <em>Leinwand</em>.</h2>
+    <p>Farbe, Textur, Fläche. Etwas das im Raum wirkt.</p>
+  </div>
+
+  <div class="placeholder-note reveal">
+    <strong>Julia — Platzhalter.</strong> Sobald du mir Fotos deiner Acrylbilder schickst (samt Titel, Größe in cm, Preis), tausch ich die Karten hier gegen die echten Bilder aus.
+  </div>
+
+  <div class="b-grid">
+    <!-- Placeholder-Karten (3× Acryl) -->
+    <div class="b-card reveal">
+      <div class="b-card-img placeholder-acryl">Bild folgt</div>
+      <div class="b-card-body">
+        <div class="t">Titel folgt</div>
+        <div class="m">Acryl auf Leinwand · Größe folgt</div>
+        <div class="p">Preis auf Anfrage</div>
+        <a class="buy" href="mailto:julia@bergles.net?subject=Anfrage%20Acrylbild">Anfragen</a>
+      </div>
+    </div>
+    <div class="b-card reveal d1">
+      <div class="b-card-img placeholder-acryl">Bild folgt</div>
+      <div class="b-card-body">
+        <div class="t">Titel folgt</div>
+        <div class="m">Acryl auf Leinwand · Größe folgt</div>
+        <div class="p">Preis auf Anfrage</div>
+        <a class="buy" href="mailto:julia@bergles.net?subject=Anfrage%20Acrylbild">Anfragen</a>
+      </div>
+    </div>
+    <div class="b-card reveal d2">
+      <div class="b-card-img placeholder-acryl">Bild folgt</div>
+      <div class="b-card-body">
+        <div class="t">Titel folgt</div>
+        <div class="m">Acryl auf Leinwand · Größe folgt</div>
+        <div class="p">Preis auf Anfrage</div>
+        <a class="buy" href="mailto:julia@bergles.net?subject=Anfrage%20Acrylbild">Anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AQUARELL -->
+<section class="b-section warm">
+  <div class="b-section-head reveal">
+    <span class="kicker">Serie 2</span>
+    <h2>Aquarell auf <em>Papier</em>.</h2>
+    <p>Zart, transparent, weich. Für ruhige Wände.</p>
+  </div>
+
+  <div class="b-grid">
+    <!-- Placeholder-Karten (3× Aquarell) -->
+    <div class="b-card reveal">
+      <div class="b-card-img placeholder-aquarell">Bild folgt</div>
+      <div class="b-card-body">
+        <div class="t">Titel folgt</div>
+        <div class="m">Aquarell auf Papier · Größe folgt</div>
+        <div class="p">Preis auf Anfrage</div>
+        <a class="buy" href="mailto:julia@bergles.net?subject=Anfrage%20Aquarellbild">Anfragen</a>
+      </div>
+    </div>
+    <div class="b-card reveal d1">
+      <div class="b-card-img placeholder-aquarell">Bild folgt</div>
+      <div class="b-card-body">
+        <div class="t">Titel folgt</div>
+        <div class="m">Aquarell auf Papier · Größe folgt</div>
+        <div class="p">Preis auf Anfrage</div>
+        <a class="buy" href="mailto:julia@bergles.net?subject=Anfrage%20Aquarellbild">Anfragen</a>
+      </div>
+    </div>
+    <div class="b-card reveal d2">
+      <div class="b-card-img placeholder-aquarell">Bild folgt</div>
+      <div class="b-card-body">
+        <div class="t">Titel folgt</div>
+        <div class="m">Aquarell auf Papier · Größe folgt</div>
+        <div class="p">Preis auf Anfrage</div>
+        <a class="buy" href="mailto:julia@bergles.net?subject=Anfrage%20Aquarellbild">Anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="b-info">
+  <div class="inner">
+    <div class="item reveal">
+      <div class="icon">1</div>
+      <h4>Unikate</h4>
+      <p>Jedes Bild ist ein Original. Kein Druck, keine Kopie — nur einmal auf der Welt.</p>
+    </div>
+    <div class="item reveal d1">
+      <div class="icon">2</div>
+      <h4>Sicher verpackt</h4>
+      <p>Ich verpacke jedes Bild persönlich und versende versichert innerhalb Deutschlands. Weltweit auf Anfrage.</p>
+    </div>
+    <div class="item reveal d2">
+      <div class="icon">3</div>
+      <h4>Direkt von mir</h4>
+      <p>Kauf per Anfrage über Mail oder WhatsApp. Rechnung mit ausgewiesener USt (Kleinunternehmer-Regelung falls zutreffend).</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="b-cta">
+  <div class="inner">
+    <img src="images/hey-ich-bin-julia.jpg" alt="Julia" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 5px solid rgba(255,255,255,0.9); box-shadow: 0 22px 44px rgba(0, 0, 0, 0.28); margin: 0 auto 28px; display: block;">
+    <h2>Interesse an einem <em>Bild</em>?</h2>
+    <p>Schreib mir kurz — ich schick dir gerne mehr Fotos, Details und was ich sonst noch da habe.</p>
+    <a class="btn" href="mailto:julia@bergles.net?subject=Interesse%20an%20einem%20Bild">Mail schreiben →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Julia</div>
+      <div class="tag">Ehrlich. Persönlich. Ohne Bullshit.</div>
+      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
+    </div>
+    <div class="footer-col">
+      <h5>App &amp; Diagnosen</h5>
+      <a href="app.html">TerraLuna App</a>
+      <a href="histaminintoleranz.html">Histaminintoleranz</a>
+      <a href="mcas.html">MCAS</a>
+      <a href="reizdarm.html">Reizdarm</a>
+      <a href="selbsttest.html">Selbsttest</a>
+    </div>
+    <div class="footer-col">
+      <h5>Inhalte</h5>
+      <a href="blog/">Blog</a>
+      <a href="rezepte.html">Rezepte</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="bilder.html">Bilder</a>
+      <a href="empfehlungen.html">Empfehlungen</a>
+      <a href="ueber-mich.html">Über mich</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html">Widerruf</a>
+    </div>
+  </div>
+  <div class="footer-xxl">
+    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
+    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>
