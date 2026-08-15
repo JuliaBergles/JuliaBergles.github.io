@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kostenloser Symptom-Check: Finde heraus, welche Themen rund um Verdauung und Wohlbefinden fÃÂ¼r dich relevant sein kÃÂ¶nnten. Von Julia Bergles.">
+  <meta name="description" content="Kostenloser Symptom-Check: Finde heraus, welche Themen rund um Verdauung und Wohlbefinden für dich relevant sein könnten. Von Julia Bergles.">
   <title>Symptom-Check | Julia Bergles</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
@@ -102,7 +102,7 @@
     .btn-weiter { padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 15px; background: var(--accent); color: white; border: none; cursor: pointer; font-family: inherit; transition: all 0.2s; }
     .btn-weiter:hover { background: #eec287; }
     .btn-weiter:disabled { opacity: 0.3; cursor: not-allowed; }
-    .btn-zurÃÂ¼ck { padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 15px; background: transparent; color: var(--muted); border: 1px solid rgba(0,0,0,0.1); cursor: pointer; font-family: inherit; }
+    .btn-zurück { padding: 14px 36px; border-radius: 50px; font-weight: 500; font-size: 15px; background: transparent; color: var(--muted); border: 1px solid rgba(0,0,0,0.1); cursor: pointer; font-family: inherit; }
 
     /* ERGEBNIS */
     .ergebnis { display: none; max-width: 600px; margin: 0 auto; padding: 0 24px 80px; }
@@ -143,7 +143,7 @@
   <div class="row">
     <a href="index.html" class="brand">TerraLuna</a>
     <ul>
-      <li><a href="ueber-mich.html">ÃÂber mich</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
       <li><a href="app.html">TerraLuna App</a></li>
       <li><a href="histaminintoleranz.html">Histaminintoleranz</a></li>
       <li><a href="mcas.html">MCAS</a></li>
@@ -155,11 +155,11 @@
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
       <li><a href="instagram-insights.html">Insights</a></li>
     </ul>
-    <a href="gespraech.html" class="nav-cta">GesprÃÂ¤ch</a>
-    <button class="nav-burger" aria-label="MenÃÂ¼" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+    <a href="gespraech.html" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">ÃÂber mich</a>
+    <a href="ueber-mich.html">Über mich</a>
     <a href="app.html">TerraLuna App</a>
     <a href="histaminintoleranz.html">Histaminintoleranz</a>
     <a href="mcas.html">MCAS</a>
@@ -170,7 +170,7 @@
     <a href="ebooks.html">E-Books</a>
     <a href="empfehlungen.html">Empfehlungen</a>
     <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">GesprÃÂ¤ch</a>
+    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
   </div>
 </nav>
 
@@ -191,7 +191,7 @@
   <div class="page-hero-inner">
     <h1>Finde heraus, was <em>dich</em> betrifft.</h1>
     <div style="margin-top: 32px;">
-      <button class="btn-start" onclick="startQuiz()" style="display: inline-block; padding: 18px 40px; background: #e2ae61; color: #5a1428; border: none; border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">Symptom-Check starten Ã¢ÂÂ</button>
+      <button class="btn-start" onclick="startQuiz()" style="display: inline-block; padding: 18px 40px; background: #e2ae61; color: #5a1428; border: none; border-radius: 999px; font-family: 'Rubik', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">Symptom-Check starten →</button>
     </div>
   </div>
 </section>
@@ -204,29 +204,29 @@
 
   <!-- FRAGE 1 -->
   <div class="frage active" data-frage="1" data-bereich="Verdauung">
-    <h2>Wie oft hast du nach dem Essen Bauchschmerzen oder ein unangenehmes DruckgefÃÂ¼hl?</h2>
+    <h2>Wie oft hast du nach dem Essen Bauchschmerzen oder ein unangenehmes Druckgefühl?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 1, 0)">Nie</button>
       <button class="antwort" onclick="select(this, 1, 1)">Selten</button>
       <button class="antwort" onclick="select(this, 1, 2)">Mehrmals pro Woche</button>
-      <button class="antwort" onclick="select(this, 1, 3)">Fast tÃÂ¤glich</button>
+      <button class="antwort" onclick="select(this, 1, 3)">Fast täglich</button>
     </div>
   </div>
 
   <!-- FRAGE 2 -->
   <div class="frage" data-frage="2" data-bereich="Verdauung">
-    <h2>Kennst du das GefÃÂ¼hl, dass dein Bauch sich nach dem Essen aufblÃÂ¤ht, obwohl du gar nicht viel gegessen hast?</h2>
+    <h2>Kennst du das Gefühl, dass dein Bauch sich nach dem Essen aufbläht, obwohl du gar nicht viel gegessen hast?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 2, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 2, 1)">Manchmal</button>
-      <button class="antwort" onclick="select(this, 2, 2)">RegelmÃÂ¤ÃÂig</button>
+      <button class="antwort" onclick="select(this, 2, 2)">Regelmäßig</button>
       <button class="antwort" onclick="select(this, 2, 3)">Ja, fast immer</button>
     </div>
   </div>
 
   <!-- FRAGE 3 -->
   <div class="frage" data-frage="3" data-bereich="Verdauung">
-    <h2>Hast du hÃÂ¤ufig Durchfall, Verstopfung oder beides im Wechsel?</h2>
+    <h2>Hast du häufig Durchfall, Verstopfung oder beides im Wechsel?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 3, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 3, 1)">Selten</button>
@@ -249,17 +249,17 @@
 
   <!-- FRAGE 5 -->
   <div class="frage" data-frage="5" data-bereich="Verdauung">
-    <h2>HÃÂ¶rst du oft Magengrummeln, Gluckern oder hast du viele DarmgerÃÂ¤usche?</h2>
+    <h2>Hörst du oft Magengrummeln, Gluckern oder hast du viele Darmgeräusche?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 5, 0)">Selten</button>
       <button class="antwort" onclick="select(this, 5, 1)">Manchmal</button>
-      <button class="antwort" onclick="select(this, 5, 2)">RegelmÃÂ¤ÃÂig</button>
+      <button class="antwort" onclick="select(this, 5, 2)">Regelmäßig</button>
     </div>
   </div>
 
   <!-- FRAGE 6 -->
   <div class="frage" data-frage="6" data-bereich="Verdauung">
-    <h2>Hast du das GefÃÂ¼hl, dass bestimmte Mahlzeiten dir mehr Probleme machen als andere, aber du kannst nicht genau sagen woran es liegt?</h2>
+    <h2>Hast du das Gefühl, dass bestimmte Mahlzeiten dir mehr Probleme machen als andere, aber du kannst nicht genau sagen woran es liegt?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 6, 0)">Nein, ich weiss genau was mir nicht bekommt</button>
       <button class="antwort" onclick="select(this, 6, 2)">Ja, es ist total unvorhersehbar</button>
@@ -268,30 +268,30 @@
   </div>
 
   <!-- FRAGE 7 -->
-  <div class="frage" data-frage="7" data-bereich="KÃÂ¶rper &amp; Wohlbefinden">
-    <h2>FÃÂ¼hlst du dich nach dem Essen oft mÃÂ¼de, benebelt oder unkonzentriert?</h2>
+  <div class="frage" data-frage="7" data-bereich="Körper &amp; Wohlbefinden">
+    <h2>Fühlst du dich nach dem Essen oft müde, benebelt oder unkonzentriert?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 7, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 7, 1)">Manchmal</button>
-      <button class="antwort" onclick="select(this, 7, 2)">Ja, regelmÃÂ¤ÃÂig</button>
+      <button class="antwort" onclick="select(this, 7, 2)">Ja, regelmäßig</button>
       <button class="antwort" onclick="select(this, 7, 3)">Ja, fast nach jeder Mahlzeit</button>
     </div>
   </div>
 
   <!-- FRAGE 8 -->
-  <div class="frage" data-frage="8" data-bereich="KÃÂ¶rper &amp; Wohlbefinden">
-    <h2>Hast du ÃÂ¶fter Kopfschmerzen oder MigrÃÂ¤ne, ohne genau zu wissen warum?</h2>
+  <div class="frage" data-frage="8" data-bereich="Körper &amp; Wohlbefinden">
+    <h2>Hast du öfter Kopfschmerzen oder Migräne, ohne genau zu wissen warum?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 8, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 8, 1)">Selten</button>
       <button class="antwort" onclick="select(this, 8, 2)">Ja, mehrmals im Monat</button>
-      <button class="antwort" onclick="select(this, 8, 3)">Ja, hÃÂ¤ufig</button>
+      <button class="antwort" onclick="select(this, 8, 3)">Ja, häufig</button>
     </div>
   </div>
 
   <!-- FRAGE 9 -->
-  <div class="frage" data-frage="9" data-bereich="KÃÂ¶rper &amp; Wohlbefinden">
-    <h2>Bemerkst du manchmal Hautreaktionen wie RÃÂ¶tungen, Juckreiz oder Ausschlag?</h2>
+  <div class="frage" data-frage="9" data-bereich="Körper &amp; Wohlbefinden">
+    <h2>Bemerkst du manchmal Hautreaktionen wie Rötungen, Juckreiz oder Ausschlag?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 9, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 9, 1)">Selten</button>
@@ -301,7 +301,7 @@
   </div>
 
   <!-- FRAGE 10 -->
-  <div class="frage" data-frage="10" data-bereich="KÃÂ¶rper &amp; Wohlbefinden">
+  <div class="frage" data-frage="10" data-bereich="Körper &amp; Wohlbefinden">
     <h2>Hast du manchmal Herzrasen, Kreislaufprobleme oder wird dir schwindelig nach dem Essen?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 10, 0)">Nein</button>
@@ -311,7 +311,7 @@
   </div>
 
   <!-- FRAGE 11 -->
-  <div class="frage" data-frage="11" data-bereich="KÃÂ¶rper &amp; Wohlbefinden">
+  <div class="frage" data-frage="11" data-bereich="Körper &amp; Wohlbefinden">
     <h2>Schwanken deine Beschwerden je nach Stresslevel, Schlaf oder allgemeiner Tagesform?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 11, 0)">Nein, immer gleich</button>
@@ -321,41 +321,41 @@
   </div>
 
   <!-- FRAGE 12 -->
-  <div class="frage" data-frage="12" data-bereich="KÃÂ¶rper &amp; Wohlbefinden">
+  <div class="frage" data-frage="12" data-bereich="Körper &amp; Wohlbefinden">
     <h2>Hast du bemerkt, dass deine Beschwerden zu bestimmten Zeiten im Monat schlimmer werden?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 12, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 12, 1)">Nicht darauf geachtet</button>
-      <button class="antwort" onclick="select(this, 12, 3)">Ja, vor oder wÃÂ¤hrend der Periode</button>
+      <button class="antwort" onclick="select(this, 12, 3)">Ja, vor oder während der Periode</button>
       <button class="antwort" onclick="select(this, 12, 0)">Bin maennlich</button>
     </div>
   </div>
 
   <!-- FRAGE 13 -->
   <div class="frage" data-frage="13" data-bereich="Alltag &amp; Umgang">
-    <h2>Hast du das GefÃÂ¼hl, dass du immer weniger Lebensmittel vertrÃÂ¤gst?</h2>
+    <h2>Hast du das Gefühl, dass du immer weniger Lebensmittel verträgst?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 13, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 13, 1)">Ja, in den letzten Monaten</button>
-      <button class="antwort" onclick="select(this, 13, 2)">Ja, seit lÃÂ¤ngerem</button>
+      <button class="antwort" onclick="select(this, 13, 2)">Ja, seit längerem</button>
       <button class="antwort" onclick="select(this, 13, 3)">Ja, ich esse nur noch wenige Dinge</button>
     </div>
   </div>
 
   <!-- FRAGE 14 -->
   <div class="frage" data-frage="14" data-bereich="Alltag &amp; Umgang">
-    <h2>Machst du dir vor dem Essen oft Sorgen, wie dein KÃÂ¶rper reagieren wird?</h2>
+    <h2>Machst du dir vor dem Essen oft Sorgen, wie dein Körper reagieren wird?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 14, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 14, 1)">Manchmal</button>
-      <button class="antwort" onclick="select(this, 14, 2)">Ja, regelmÃÂ¤ÃÂig</button>
+      <button class="antwort" onclick="select(this, 14, 2)">Ja, regelmäßig</button>
       <button class="antwort" onclick="select(this, 14, 3)">Ja, fast vor jeder Mahlzeit</button>
     </div>
   </div>
 
   <!-- FRAGE 15 -->
   <div class="frage" data-frage="15" data-bereich="Alltag &amp; Umgang">
-    <h2>FÃÂ¤llt es dir schwer, auswÃÂ¤rts zu essen, z.B. im Restaurant oder bei Freunden?</h2>
+    <h2>Fällt es dir schwer, auswärts zu essen, z.B. im Restaurant oder bei Freunden?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 15, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 15, 1)">Manchmal</button>
@@ -377,7 +377,7 @@
 
   <!-- FRAGE 17 -->
   <div class="frage" data-frage="17" data-bereich="Alltag &amp; Umgang">
-    <h2>Hast du das GefÃÂ¼hl, dass deine Verdauungsprobleme auch deine Stimmung beeinflussen?</h2>
+    <h2>Hast du das Gefühl, dass deine Verdauungsprobleme auch deine Stimmung beeinflussen?</h2>
     <div class="antworten">
       <button class="antwort" onclick="select(this, 17, 0)">Nein</button>
       <button class="antwort" onclick="select(this, 17, 1)">Manchmal</button>
@@ -393,12 +393,12 @@
       <button class="antwort" onclick="select(this, 18, 0)">Weniger als 3 Monate</button>
       <button class="antwort" onclick="select(this, 18, 1)">3 bis 12 Monate</button>
       <button class="antwort" onclick="select(this, 18, 2)">1 bis 3 Jahre</button>
-      <button class="antwort" onclick="select(this, 18, 3)">LÃÂ¤nger als 3 Jahre</button>
+      <button class="antwort" onclick="select(this, 18, 3)">Länger als 3 Jahre</button>
     </div>
   </div>
 
   <div class="quiz-nav">
-    <button class="btn-zurÃÂ¼ck" id="btnZurÃÂ¼ck" onclick="zurÃÂ¼ck()" style="visibility: hidden;">ZurÃÂ¼ck</button>
+    <button class="btn-zurück" id="btnZurück" onclick="zurück()" style="visibility: hidden;">Zurück</button>
     <button class="btn-weiter" id="btnWeiter" onclick="weiter()" disabled>Weiter</button>
   </div>
 </div>
@@ -407,15 +407,15 @@
 <div class="ergebnis" id="ergebnisSection">
   <div class="ergebnis-card">
     <div class="ergebnis-label">Dein Ergebnis</div>
-    <h2 class="ergebnis-titel">Deine persÃÂ¶nliche Orientierung</h2>
-    <p class="ergebnis-text" id="ergebnisIntro">Basierend auf deinen Antworten scheinen folgende Themen fÃÂ¼r dich besonders relevant zu sein:</p>
+    <h2 class="ergebnis-titel">Deine persönliche Orientierung</h2>
+    <p class="ergebnis-text" id="ergebnisIntro">Basierend auf deinen Antworten scheinen folgende Themen für dich besonders relevant zu sein:</p>
   </div>
 
   <div id="themenKarten"></div>
 
   <div class="empfehlung" style="margin-top: 24px;">
     <h3>TerraLuna App</h3>
-    <p>Scanne Produkte, tracke Symptome und finde heraus was du vertrÃÂ¤gst. Personalisiert fÃÂ¼r deine ErnÃÂ¤hrung und deinen Zyklus.</p>
+    <p>Scanne Produkte, tracke Symptome und finde heraus was du verträgst. Personalisiert für deine Ernährung und deinen Zyklus.</p>
     <a href="app.html" class="empfehlung-btn">Mehr erfahren</a>
   </div>
 
@@ -424,7 +424,7 @@
   </div>
 
   <div class="disclaimer">
-    Dieser Test ist keine medizinische Diagnose. Er ersetzt keinen Arztbesuch. Er dient als Orientierungshilfe, um herauszufinden, welche Themen fÃÂ¼r dich relevant sein kÃÂ¶nnten. Bei anhaltenden Beschwerden wende dich bitte an eine Fachperson. Entwickelt von Julia Bergles aus persÃÂ¶nlicher Erfahrung mit Histaminintoleranz und Reizdarm.
+    Dieser Test ist keine medizinische Diagnose. Er ersetzt keinen Arztbesuch. Er dient als Orientierungshilfe, um herauszufinden, welche Themen für dich relevant sein könnten. Bei anhaltenden Beschwerden wende dich bitte an eine Fachperson. Entwickelt von Julia Bergles aus persönlicher Erfahrung mit Histaminintoleranz und Reizdarm.
   </div>
 </div>
 
@@ -454,9 +454,9 @@ const maxFragen = 18;
 const bereichMap = {
   1: 'Verdauung', 2: 'Verdauung', 3: 'Verdauung',
   4: 'Verdauung', 5: 'Verdauung', 6: 'Verdauung',
-  7: 'KÃÂ¶rper & Wohlbefinden', 8: 'KÃÂ¶rper & Wohlbefinden',
-  9: 'KÃÂ¶rper & Wohlbefinden', 10: 'KÃÂ¶rper & Wohlbefinden',
-  11: 'KÃÂ¶rper & Wohlbefinden', 12: 'KÃÂ¶rper & Wohlbefinden',
+  7: 'Körper & Wohlbefinden', 8: 'Körper & Wohlbefinden',
+  9: 'Körper & Wohlbefinden', 10: 'Körper & Wohlbefinden',
+  11: 'Körper & Wohlbefinden', 12: 'Körper & Wohlbefinden',
   13: 'Alltag & Umgang', 14: 'Alltag & Umgang',
   15: 'Alltag & Umgang', 16: 'Alltag & Umgang',
   17: 'Alltag & Umgang', 18: 'Alltag & Umgang'
@@ -498,11 +498,11 @@ function weiter() {
   document.getElementById('progressText').textContent = 'Frage ' + aktFrage + ' von ' + maxFragen;
   updateBereichLabel();
   document.getElementById('btnWeiter').disabled = (antworten[aktFrage] === undefined);
-  document.getElementById('btnZurÃÂ¼ck').style.visibility = 'visible';
+  document.getElementById('btnZurück').style.visibility = 'visible';
   if (aktFrage === maxFragen) document.getElementById('btnWeiter').textContent = 'Ergebnis anzeigen';
 }
 
-function zurÃÂ¼ck() {
+function zurück() {
   if (aktFrage <= 1) return;
   document.querySelector('.frage[data-frage="' + aktFrage + '"]').classList.remove('active');
   aktFrage--;
@@ -512,7 +512,7 @@ function zurÃÂ¼ck() {
   updateBereichLabel();
   document.getElementById('btnWeiter').textContent = 'Weiter';
   document.getElementById('btnWeiter').disabled = false;
-  if (aktFrage === 1) document.getElementById('btnZurÃÂ¼ck').style.visibility = 'hidden';
+  if (aktFrage === 1) document.getElementById('btnZurück').style.visibility = 'hidden';
 }
 
 function berechneCluster() {
@@ -556,8 +556,8 @@ function zeigeErgebnis() {
     hatThema = true;
     themenDiv.innerHTML += themaKarte(
       'Vielfaeltige, schwankende Symptome',
-      'Deine Symptome sind vielfaeltig und scheinen zu schwanken. Das kennen viele Menschen, bei denen Themen wie Histaminintoleranz oder ein empfindlicher Darm eine Rolle spielen kÃÂ¶nnten.',
-      'Es kÃÂ¶nnte sinnvoll sein, mit einer Fachperson ÃÂ¼ber das Thema Histamin und Darmgesundheit zu sprechen.',
+      'Deine Symptome sind vielfaeltig und scheinen zu schwanken. Das kennen viele Menschen, bei denen Themen wie Histaminintoleranz oder ein empfindlicher Darm eine Rolle spielen könnten.',
+      'Es könnte sinnvoll sein, mit einer Fachperson über das Thema Histamin und Darmgesundheit zu sprechen.',
       ['Starter-Guide Histaminintoleranz', 'Starter-Guide Reizdarm']
     );
   }
@@ -567,7 +567,7 @@ function zeigeErgebnis() {
     themenDiv.innerHTML += themaKarte(
       'Darm und Verdauung',
       'Deine Beschwerden betreffen vor allem die Verdauung. Das kann verschiedene Ursachen haben, zum Beispiel eine Unvertraeglichkeit oder ein empfindlicher Darm.',
-      'Es kÃÂ¶nnte sinnvoll sein, mit einer Fachperson ÃÂ¼ber Themen wie Reizdarm, Laktoseintoleranz oder Fructosemalabsorption zu sprechen.',
+      'Es könnte sinnvoll sein, mit einer Fachperson über Themen wie Reizdarm, Laktoseintoleranz oder Fructosemalabsorption zu sprechen.',
       ['Starter-Guide Reizdarm']
     );
   }
@@ -577,7 +577,7 @@ function zeigeErgebnis() {
     themenDiv.innerHTML += themaKarte(
       'Verdauung und koerperliche Reaktionen',
       'Deine Symptome betreffen sowohl die Verdauung als auch Bereiche wie Kopf, Haut oder Kreislauf. Das kann auf verschiedene Zusammenhaenge hindeuten.',
-      'Es kÃÂ¶nnte sinnvoll sein, mit einer Fachperson ÃÂ¼ber Themen wie Histaminintoleranz und Darmgesundheit zu sprechen.',
+      'Es könnte sinnvoll sein, mit einer Fachperson über Themen wie Histaminintoleranz und Darmgesundheit zu sprechen.',
       ['Starter-Guide Histaminintoleranz', 'Starter-Guide Reizdarm']
     );
   }
@@ -587,7 +587,7 @@ function zeigeErgebnis() {
     themenDiv.innerHTML += themaKarte(
       'Darm und Verdauung',
       'Deine Beschwerden betreffen vor allem die Verdauung. Das kann verschiedene Ursachen haben.',
-      'Es kÃÂ¶nnte sinnvoll sein, mit einer Fachperson ÃÂ¼ber Themen wie Reizdarm oder UnvertrÃÂ¤glichkeiten zu sprechen.',
+      'Es könnte sinnvoll sein, mit einer Fachperson über Themen wie Reizdarm oder Unverträglichkeiten zu sprechen.',
       ['Starter-Guide Reizdarm']
     );
   }
@@ -596,9 +596,9 @@ function zeigeErgebnis() {
   if (cluster.B >= HOCH && cluster.A < HOCH) {
     hatThema = true;
     themenDiv.innerHTML += themaKarte(
-      'KÃÂ¶rperliche Reaktionen ÃÂ¼ber die Verdauung hinaus',
-      'Du beschreibst Symptome, die ÃÂ¼ber die Verdauung hinausgehen. Kopfschmerzen, Hautreaktionen oder Kreislaufbeschwerden koennen auf verschiedene Zusammenhaenge hindeuten, unter anderem auf einen erhoehten Histaminspiegel.',
-      'Es kÃÂ¶nnte sinnvoll sein, mit einer Fachperson ÃÂ¼ber das Thema Histaminintoleranz zu sprechen.',
+      'Körperliche Reaktionen über die Verdauung hinaus',
+      'Du beschreibst Symptome, die über die Verdauung hinausgehen. Kopfschmerzen, Hautreaktionen oder Kreislaufbeschwerden koennen auf verschiedene Zusammenhaenge hindeuten, unter anderem auf einen erhoehten Histaminspiegel.',
+      'Es könnte sinnvoll sein, mit einer Fachperson über das Thema Histaminintoleranz zu sprechen.',
       ['Starter-Guide Histaminintoleranz']
     );
   }
@@ -608,9 +608,9 @@ function zeigeErgebnis() {
     hatThema = true;
     themenDiv.innerHTML += themaKarte(
       'Schwankende Vertraeglichkeit und Zyklus',
-      'Deine Vertraeglichkeit scheint zu schwanken. Das ist etwas, das viele Betroffene beschreiben. Besonders wenn sich deine Symptome im Zyklus veraendern, kÃÂ¶nnte die ÃÂstrogen-Histamin-Verbindung eine Rolle spielen.',
-      'Es kÃÂ¶nnte sinnvoll sein, mit einer Fachperson ÃÂ¼ber das Histamin-Belastungsmodell und den Zusammenhang von Zyklus und Vertraeglichkeit zu sprechen.',
-      ['Starter-Guide Histaminintoleranz', 'Guide Zyklus und ErnÃÂ¤hrung']
+      'Deine Vertraeglichkeit scheint zu schwanken. Das ist etwas, das viele Betroffene beschreiben. Besonders wenn sich deine Symptome im Zyklus veraendern, könnte die Östrogen-Histamin-Verbindung eine Rolle spielen.',
+      'Es könnte sinnvoll sein, mit einer Fachperson über das Histamin-Belastungsmodell und den Zusammenhang von Zyklus und Vertraeglichkeit zu sprechen.',
+      ['Starter-Guide Histaminintoleranz', 'Guide Zyklus und Ernährung']
     );
   }
 
@@ -619,8 +619,8 @@ function zeigeErgebnis() {
     hatThema = true;
     themenDiv.innerHTML += themaKarte(
       'Emotionale Belastung durch Beschwerden',
-      'Du beschreibst eine starke Belastung durch deine Beschwerden. Angst vor dem Essen und sozialer Rueckzug sind hÃÂ¤ufige Begleiterscheinungen bei Verdauungsproblemen. Du bist damit nicht allein.',
-      'Neben einer Abklaerung der koerperlichen Ursachen kÃÂ¶nnte es hilfreich sein, auch professionelle Unterstuetzung fÃÂ¼r die emotionale Seite in Anspruch zu nehmen.',
+      'Du beschreibst eine starke Belastung durch deine Beschwerden. Angst vor dem Essen und sozialer Rueckzug sind häufige Begleiterscheinungen bei Verdauungsproblemen. Du bist damit nicht allein.',
+      'Neben einer Abklaerung der koerperlichen Ursachen könnte es hilfreich sein, auch professionelle Unterstuetzung für die emotionale Seite in Anspruch zu nehmen.',
       ['Starter-Guide Reizdarm', 'Starter-Guide Histaminintoleranz']
     );
   }
@@ -630,9 +630,9 @@ function zeigeErgebnis() {
     hatThema = true;
     themenDiv.innerHTML += themaKarte(
       'Langanhaltende Beschwerden',
-      'Du lebst schon lÃÂ¤nger mit Beschwerden und hast mÃÂ¶glicherweise das GefÃÂ¼hl, dass dir niemand richtig helfen konnte. Das kennen sehr viele Betroffene. Oft stecken mehrere Faktoren dahinter, die zusammenwirken.',
-      'Es kÃÂ¶nnte sinnvoll sein, systematisch verschiedene Themen mit einer Fachperson durchzugehen: Darmgesundheit, Histamin, UnvertrÃÂ¤glichkeiten und das Zusammenspiel mit Stress und Zyklus.',
-      ['Starter-Guide Histaminintoleranz', 'Starter-Guide Reizdarm', 'Guide Zyklus und ErnÃÂ¤hrung']
+      'Du lebst schon länger mit Beschwerden und hast möglicherweise das Gefühl, dass dir niemand richtig helfen konnte. Das kennen sehr viele Betroffene. Oft stecken mehrere Faktoren dahinter, die zusammenwirken.',
+      'Es könnte sinnvoll sein, systematisch verschiedene Themen mit einer Fachperson durchzugehen: Darmgesundheit, Histamin, Unverträglichkeiten und das Zusammenspiel mit Stress und Zyklus.',
+      ['Starter-Guide Histaminintoleranz', 'Starter-Guide Reizdarm', 'Guide Zyklus und Ernährung']
     );
   }
 
@@ -643,13 +643,13 @@ function zeigeErgebnis() {
 
     if (anyMittel) {
       themenDiv.innerHTML += themaKarte(
-        'Leichte Hinweise auf mÃÂ¶gliche Themen',
-        'Basierend auf deinen Antworten gibt es einzelne Hinweise, die auf eine leichte Verdauungssensibilitaet hindeuten kÃÂ¶nnten. Das muss nichts Ernstes bedeuten.',
-        'Wenn du unsicher bist oder die Beschwerden zunehmen, kÃÂ¶nnte ein Gespraech mit einer Fachperson hilfreich sein.',
+        'Leichte Hinweise auf mögliche Themen',
+        'Basierend auf deinen Antworten gibt es einzelne Hinweise, die auf eine leichte Verdauungssensibilitaet hindeuten könnten. Das muss nichts Ernstes bedeuten.',
+        'Wenn du unsicher bist oder die Beschwerden zunehmen, könnte ein Gespraech mit einer Fachperson hilfreich sein.',
         ['Starter-Guide Reizdarm']
       );
     } else {
-      document.getElementById('ergebnisIntro').textContent = 'Basierend auf deinen Antworten gibt es aktuell keine deutlichen Hinweise auf belastende Symptome. Wenn du trotzdem Beschwerden hast oder sich etwas verÃÂ¤ndert, sprich gerne mit einer Fachperson darÃÂ¼ber.';
+      document.getElementById('ergebnisIntro').textContent = 'Basierend auf deinen Antworten gibt es aktuell keine deutlichen Hinweise auf belastende Symptome. Wenn du trotzdem Beschwerden hast oder sich etwas verändert, sprich gerne mit einer Fachperson darüber.';
     }
   }
 }
@@ -665,7 +665,7 @@ function themaKarte(titel, text, hinweis, guides) {
     '<p>' + text + '</p>' +
     '<p class="thema-hinweis">' + hinweis + '</p>' +
     '<div style="margin-top: 12px;">' +
-      '<p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Kostenlose Guides, die fÃÂ¼r dich relevant sein kÃÂ¶nnten:</p>' +
+      '<p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Kostenlose Guides, die für dich relevant sein könnten:</p>' +
       guideHTML +
     '</div>' +
   '</div>';
