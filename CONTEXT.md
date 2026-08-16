@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-08-14
+> Letzte Aktualisierung: 2026-08-16
 
 ---
 
@@ -47,6 +47,7 @@ Julia Bergles' Personal-Brand-Website unter **www.juliabergles.de**.
 - Zeitstrahl auf `ueber-mich`: Malaga-Gradient-Karten, Gold-Border, Pill-shaped Marker, Gold-Fade-Linie
 - Page-Hero mit BG-Image + Overlay auf jeder Unterseite; H1 weiß, weight 700, doppelter Text-Shadow
 - **Shared CSS:** `assets/site.css` für alle neuen Seiten
+- **Neue Nav (7 Items, 2 Dropdowns):** Über mich · Diagnosen ▾ (Histaminintoleranz / MCAS / Reizdarm) · Selbsttest · Blog · Rezepte · Shop ▾ (E-Books / Kunst / TerraLuna App) · Empfehlungen + Gespräch-CTA. Auf **allen 28 aktiven Seiten** (12 Haupt + 11 Blog + blog-index + Impressum + Datenschutz + AGB + Widerruf). Mobile: Sub-Punkte eingerückt unter „Diagnosen"/„Shop"-Labels. Rechts-Seiten (Impressum/Datenschutz/AGB/Widerruf) haben Nav-CSS inline (nicht via `css/onpoint.css`) — bei Nav-Änderungen dort separat nachziehen.
 
 **Bilder gesetzt (inline, aus `blog-bilder/`):**
 - Startseiten-Hero, Über mich (`Liebe.jpeg`), App (TerraLuna-Logo), HIT (Sonnenblumen-Portrait), MCAS, Reizdarm, Empfehlungen („Was auf meinem Teller landet"), Gespräch
@@ -58,7 +59,7 @@ Julia Bergles' Personal-Brand-Website unter **www.juliabergles.de**.
 
 - **App heißt TerraLuna** — überall so benannt, auch AGB (nicht mehr EatMoreArt-Referenzen)
 - **Preise:** 4,99 €/Monat oder 39,99 €/Jahr (vorher 7,99 / 59,99)
-- **Preis-Sektion:** keine Feature-Liste mehr — CTA lautet **„Jetzt 3 Tage kostenlos testen oder kostenfreie Version nutzen"**
+- **Preis-Sektion „Ein klarer Plan":** 2-Spalten-Layout — iPhone-Home-Screen (`images/app-v1.2/01-heute.png`) links, Preis-Karte rechts, auf Mobile gestapelt. CTA lautet **„Jetzt 3 Tage kostenlos testen oder kostenfreie Version nutzen"**
 - `app.html` ist auf neues Design (Fonts + Overlay) gebracht — doppelte Stylesheet-Links im body raus, einer im head
 
 ---
