@@ -6,7 +6,7 @@
   <meta name="description" content="Allgemeine Geschäftsbedingungen - Smacado / TerraLuna App, Coaching & digitale Produkte">
   <title>AGB | TerraLuna</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --wine: #5a1428; --cream: #F8F2EE; --charcoal: #5a1428; --cocoa: #c4b5a6;
@@ -19,18 +19,44 @@
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { width: 36px; height: 36px; border-radius: 18px; }
-    .nav-logo span { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 400; color: var(--wine); letter-spacing: 1px; }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--cocoa); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--wine); }
-    .nav-links a.active { color: var(--wine); font-weight: 600; }
-    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(149,82,81,0.15); transition: all 0.3s; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(149,82,81,0.25); }
-    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .site-nav .row { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; gap: 20px; }
+    .site-nav .brand { font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: 700; color: #C48B6C; letter-spacing: 0.5px; text-decoration: none; }
+    .site-nav ul { display: flex; gap: 26px; list-style: none; align-items: center; flex-wrap: nowrap; margin: 0; padding: 0; }
+    .site-nav ul li { position: relative; }
+    .site-nav ul a { font-family: 'Raleway', sans-serif; font-size: 14px; letter-spacing: -0.005em; color: var(--charcoal); text-decoration: none; font-weight: 700; white-space: nowrap; transition: color 0.3s; }
+    .site-nav ul a:hover { color: var(--navy); }
+    .site-nav ul li.has-drop > a { display: inline-flex; align-items: center; gap: 4px; }
+    .site-nav .drop-caret { font-size: 9px; opacity: 0.6; transition: transform 0.3s; }
+    .site-nav ul li.has-drop:hover .drop-caret { transform: rotate(180deg); opacity: 1; }
+    .site-nav .drop-menu { position: absolute; top: 100%; left: -20px; min-width: 220px; background: #fff; border: 1px solid rgba(201,169,110,0.2); border-radius: 12px; padding: 12px 0; box-shadow: 0 24px 48px rgba(45,31,34,0.12); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s; z-index: 200; }
+    .site-nav ul li.has-drop:hover .drop-menu, .site-nav ul li.has-drop:focus-within .drop-menu { opacity: 1; visibility: visible; transform: translateY(6px); transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s; }
+    .site-nav .drop-menu a { display: block; padding: 10px 22px; font-family: 'Raleway', sans-serif; font-size: 14px; color: var(--charcoal); font-weight: 500; text-decoration: none; letter-spacing: 0; }
+    .site-nav .drop-menu a:hover { color: var(--navy); background: rgba(149,82,81,0.05); }
+    .site-nav ul li.has-drop > a[href="#"] { cursor: default; }
+    .site-nav .nav-cta { padding: 11px 24px; background: var(--navy); color: var(--white) !important; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 700 !important; text-decoration: none; letter-spacing: 0.02em; transition: all 0.3s; flex-shrink: 0; }
+    .site-nav .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(149,82,81,0.25); }
+    .nav-burger { display: none; width: 40px; height: 40px; background: transparent; border: 1px solid rgba(201,169,110,0.4); border-radius: 999px; cursor: pointer; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 16px; height: 1.5px; background: var(--navy); position: relative; }
+    .nav-burger span::before, .nav-burger span::after { content: ""; position: absolute; left: 0; width: 16px; height: 1.5px; background: var(--navy); transition: transform 0.3s; }
+    .nav-burger span::before { top: -5px; }
+    .nav-burger span::after { top: 5px; }
+    .nav-burger.open span { background: transparent; }
+    .nav-burger.open span::before { top: 0; transform: rotate(45deg); }
+    .nav-burger.open span::after { top: 0; transform: rotate(-45deg); }
+    .mobile-menu { display: none; }
+    @media (max-width: 980px) {
+      .site-nav .row { padding: 16px 24px; }
+      .site-nav ul { display: none; }
+      .site-nav .nav-cta { display: none; }
+      .nav-burger { display: inline-flex; }
+      .mobile-menu { position: fixed; top: 72px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid rgba(201,169,110,0.15); padding: 24px 32px 32px; display: none; z-index: 99; max-height: calc(100vh - 72px); overflow-y: auto; }
+      .mobile-menu.open { display: block; }
+      .mobile-menu a { display: block; padding: 12px 0; font-family: 'Raleway', sans-serif; font-size: 15px; color: var(--charcoal); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(201,169,110,0.12); letter-spacing: 0; }
+      .mobile-group-label { font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cocoa); font-weight: 700; margin: 18px 0 6px; padding: 8px 0 4px; }
+      .mobile-menu a.mobile-sub { padding-left: 20px; font-size: 14px; font-weight: 500; color: var(--cocoa); }
+      .mobile-menu .mobile-cta { display: inline-block; margin-top: 20px; padding: 12px 26px; background: var(--navy); color: var(--white) !important; border-radius: 999px; font-size: 12px; font-weight: 700; border-bottom: 0; letter-spacing: 0.05em; }
+    }
 
     /* PAGE HERO */
     .page-hero { padding-top: 140px; padding-bottom: 60px; text-align: center; }
@@ -69,21 +95,50 @@
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <span style="font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: 700; color: var(--rosegold, #C48B6C); letter-spacing: 0.5px;">Julia</span>
-    </a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <div class="nav-links">
-      <a href="onboarding.html">Für dich</a>
-      <a href="app.html">TerraLuna App</a>
-      <a href="social-media.html">Social Media</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="index.html#geschichte">Meine Geschichte</a>
-      <a href="index.html#kontakt">Kontakt</a>
-      <a href="onboarding.html" class="nav-cta">Für dich</a>
-    </div>
+<nav class="site-nav">
+  <div class="row">
+    <a href="index.html" class="brand">Julia</a>
+    <ul>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-drop">
+        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
+        <div class="drop-menu">
+          <a href="histaminintoleranz.html">Histaminintoleranz</a>
+          <a href="mcas.html">MCAS</a>
+          <a href="reizdarm.html">Reizdarm</a>
+        </div>
+      </li>
+      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="rezepte.html">Rezepte</a></li>
+      <li class="has-drop">
+        <a href="#">Shop <span class="drop-caret">▾</span></a>
+        <div class="drop-menu">
+          <a href="ebooks.html">E-Books</a>
+          <a href="bilder.html">Kunst</a>
+          <a href="app.html">TerraLuna App</a>
+        </div>
+      </li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    </ul>
+    <a href="gespraech.html" class="nav-cta">Gespräch</a>
+    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="ueber-mich.html">Über mich</a>
+    <div class="mobile-group-label">Diagnosen</div>
+    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
+    <a href="mcas.html" class="mobile-sub">MCAS</a>
+    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
+    <a href="selbsttest.html">Selbsttest</a>
+    <a href="blog/">Blog</a>
+    <a href="rezepte.html">Rezepte</a>
+    <div class="mobile-group-label">Shop</div>
+    <a href="ebooks.html" class="mobile-sub">E-Books</a>
+    <a href="bilder.html" class="mobile-sub">Kunst</a>
+    <a href="app.html" class="mobile-sub">TerraLuna App</a>
+    <a href="empfehlungen.html">Empfehlungen</a>
+    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
   </div>
 </nav>
 
