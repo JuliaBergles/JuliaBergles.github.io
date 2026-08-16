@@ -112,6 +112,9 @@
     .pricing-features li { font-size: 14px; color: var(--charcoal); padding: 5px 0 5px 22px; position: relative; line-height: 1.6; }
     .pricing-features li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--rosegold); }
     .pricing-card.popular .pricing-features li::before { background: var(--navy); }
+    .pricing-with-image { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 900px; margin: 0 auto; }
+    .pricing-with-image .iphone-frame { margin: 0 auto; }
+    .pricing-with-image .pricing-card { max-width: 380px; margin: 0 auto; width: 100%; }
 
     /* CTA SECTION */
     .cta-section { background: var(--navy); text-align: center; color: var(--white); }
@@ -246,6 +249,7 @@
       .feature-screenshots img { width: 140px; }
       .more-features-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-with-image { grid-template-columns: 1fr; gap: 40px; }
       .section-title { font-size: 28px; }
       .cta-section h2 { font-size: 32px; }
     }
@@ -608,7 +612,8 @@
     <h2 class="section-title fade-up" style="text-align: center;">Ein klarer Plan</h2>
     <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">3 Tage gratis testen. danach 4,99 Euro im Monat oder 39,99 Euro im Jahr. Jederzeit kündbar, keine versteckten Kosten.</p>
 
-    <div class="pricing-grid pricing-grid-single">
+    <div class="pricing-with-image">
+      <div class="iphone-frame fade-up"><img src="images/app-v1.2/01-heute.png" alt="TerraLuna Home-Screen" loading="lazy" width="280" height="580"></div>
       <div class="pricing-card popular fade-up">
         <div class="pricing-badge">3 Tage gratis testen</div>
         <h3>TerraLuna</h3>
