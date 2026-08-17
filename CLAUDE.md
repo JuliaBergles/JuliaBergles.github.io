@@ -46,45 +46,61 @@ Julia hasst lange Fragenkataloge.
 
 ---
 
-## Design-System
+## Design-System — v3 (ab 2026-08-17)
 
-### Fonts (neu, wie agentur.juliabergles.de)
+**Stil:** Editorial / Vogue-Zeitschrift. Warm-kühl kombiniert (Copper + Blau). Ruhig, elegant, viel Weißraum.
+**Zentrales Stylesheet:** `assets/site-v3.css` — alle neuen Seiten binden dieses ein. Alte `assets/site.css` läuft parallel bis alle Seiten umgezogen sind.
+
+### Fonts
 
 ```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap">
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap">
 ```
 
-- **Headlines:** `'Playfair Display', serif`
-- **Body / UI:** `'Object Sans', -apple-system, sans-serif`
-- **Body-Größe:** 18–19 px (vorher 15–16 — zu klein)
-- **Body-Weight:** 500 (vorher 300 — zu dünn)
-- **Headline-Weight:** 500–700 je nach Größe
+- **Headlines:** `'Cormorant Garamond', serif` — 400/500 weight, große Display-Sizes (bis 132px)
+- **Body / UI:** `'Manrope', sans-serif` — 400/500/700
+- **Betonung im Fließtext:** `<em class="italic">` (Cormorant italic) oder `<strong>` (bold)
+- **Alternativ Body:** *Glacial Indifference* (Original aus dem E-Book) — WOFF2 in `assets/fonts/` legen, `@font-face`-Block in `site-v3.css` reaktivieren, im `--sans`-Token vor `'Manrope'` setzen. Solange Julia die Dateien nicht liefert, ist Manrope die ~95%-Alternative.
 
-### Farben (aus altem Design behalten)
+### Farben (v3 final)
 
 ```css
---bordeaux: #955251;   /* Primary */
---copper:   #C48B6C;   /* Accent */
---warm-white: #F8F2EE; /* Background */
---warm-grey:  #F0E8E4;
---text-dark:  #3D2B2E;
---text-muted: #8A7B75;
+--cream:       #fffcf9;   /* Warm BG */
+--beige:       #f4ede4;   /* Warm BG variant */
+--copper:      #c48b6c;   /* Warm accent — CTAs, Buttons */
+--copper-dark: #a87556;
+
+--blue:        #8790c1;   /* Kühl accent — Zitate, Cards, ruhige Sektionen */
+--blue-dark:   #6f78a8;
+--mint:        #e2fffe;   /* Kühl BG variant — Leseproben, Ruhe-Momente */
+
+--dark:        #2a2a2a;
+--dark-soft:   #4a4a4a;
+--mute:        #8a8a8a;
 ```
 
-**Kein Grün, kein Blau, kein Schwarz.** Warm bleibt warm.
+**Warm bleibt Basis, Blau ist Zweitakzent.** Copper für Aktion (CTA, Buttons), Blau für Editorial-Ruhe (Zitate, E-Book-Sektionen, gefährdete Themen wie Depressionen). Kein Grün, kein Schwarz.
+
+### Editorial-Elemente
+
+- **Chapter-Numerierung:** `Nº 01`, `Nº 02` — im Serif-Italic, klein, oberhalb der Überschrift
+- **Eyebrow-Labels:** ALL CAPS, 11px, Letter-Spacing 0.22em — vor jeder Section-Überschrift
+- **Pull-Quotes:** Cormorant italic, groß, blauer Rand links
+- **Trenn-Ornamente:** `§` oder `—` zentriert, dünne Linien
+- **Buttons:** rechteckig (kein Border-Radius), ALL CAPS, Letter-Spacing weit
 
 ### Nav
 
-- Höhe: mehr Padding (aktuell zu eng)
-- Links: **Object Sans, 15–16 px, weight 500**, mehr Padding pro Link
-- Immer sticky, glasmorph mit blur
-- Auf mobile: klarer Hamburger-Menü-Zustand
+- Sticky, halbtransparent (`rgba(255,252,249,0.92)` + backdrop-blur)
+- Logo: Cormorant serif, „Julia · Bergles" mit Copper-Trenner
+- Links: Manrope 12px, ALL CAPS, Letter-Spacing 0.18em
+- Mobile: Hamburger (noch nicht v3-umgesetzt)
 
 ### Spacing
 
-- Sektionen: `padding: 120px 24px` (vorher 100px — mehr Luft)
-- Weißraum ist wichtig — Julias Content wirkt sonst gedrängt
+- Sektionen: `padding: clamp(80px, 12vw, 160px) 0`
+- Container: `max-width: 1280px`, `max-width-narrow: 780px`
+- Weißraum ist heilig — Editorial-Look lebt davon
 
 ---
 

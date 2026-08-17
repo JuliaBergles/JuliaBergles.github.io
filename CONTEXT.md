@@ -105,31 +105,48 @@ Verlinkt von Startseite + relevanten Blog-Artikeln.
 
 ---
 
-## Design-System — Redesign v3 (ab 2026-08-14)
+## Design-System — v3 FINAL (ab 2026-08-17)
 
-**Wichtig:** Design-System wird komplett auf **OnPoint-Kit / agentur.juliabergles.de-Look** umgestellt. Die alten Angaben in CLAUDE.md (Playfair Display + Bordeaux `#955251` + Warm-White `#F8F2EE`) sind **veraltet** — es gilt was hier steht. CLAUDE.md-Design-Sektion muss noch nachgezogen werden.
+**Stil:** Editorial / Vogue-Zeitschrift. Direkt am E-Book-Cover „Die Probe" orientiert. Warm-kühl kombiniert. Große Serif-Displays, viel Weißraum, ALL-CAPS Eyebrow-Labels, Nº-Kapitelmarker, rechteckige Buttons, dünne Trennlinien.
 
-**Fonts (verbindlich, wie agentur.juliabergles.de):**
-- Headlines: **Raleway** weight 900, uppercase, letter-spacing tight
-- Body/UI: **Object Sans** weight 400/500, 18–19 px, line-height 1.6
+**Zentrales Stylesheet:** `assets/site-v3.css` (fertig 2026-08-17).
+**Erste Referenz-Seite:** `ebook-reisen.html` (Landing für E-Book „Die Probe").
 
-**Farben (verbindlich):**
-- Copper `#C48B6C` (Primary/Akzent)
-- Dark `#2a2a2a` (Text, dunkle Sektionen)
-- Cream `#fffcf9` (Grundton BG)
-- **Kein Grün, kein Blau, kein Schwarz-#000, kein Pink**
+**Fonts:**
+- Headlines: **Cormorant Garamond** (Google Fonts) — Serif, elegant, 400/500 weight, große Sizes
+- Body/UI: **Manrope** (Google Fonts) — geometric Sans, ~95% Glacial-Indifference-Look
+- *Optional-Upgrade:* Echte Glacial Indifference als WOFF2 in `assets/fonts/`, dann im `--sans` Token vor Manrope setzen (Julia besorgt die Dateien, ich schalte sie frei)
+
+**Farben:**
+- Warm: Cream `#fffcf9`, Beige `#f4ede4`, Copper `#C48B6C`, Copper-dark `#a87556`
+- Kühl: Blau `#8790c1`, Blau-dark `#6f78a8`, Mint `#e2fffe`
+- Neutral: Dark `#2a2a2a`, Dark-soft `#4a4a4a`, Mute `#8a8a8a`
+- Regel: Copper für Aktion (CTA, Buttons). Blau für Editorial-Ruhe (Zitate, E-Book, gefährdete Themen). Warm bleibt Basis.
+
+**Ehemalige Regeln — überholt:**
+- Raleway 900 + Object Sans → durch Cormorant Garamond + Manrope ersetzt
+- „Kein Blau" → aufgehoben: Blau ist offizieller Zweitakzent
+- OnPoint-Kit + agentur.juliabergles.de als Design-Referenz → durch eigenes E-Book-Cover als Referenz ersetzt
 
 **Spacing:**
-- Section-Padding: 120–160 px vertikal Desktop, 70–90 px mobile
-- Container: max-width 1200 px, padding 0 40 px (24 px mobile)
+- Section-Padding: `clamp(80px, 12vw, 160px)` vertikal
+- Container: `max-width 1280px`, `max-width-narrow 780px`
+- Padding X: `clamp(24px, 5vw, 60px)`
 
-**Bilder:** großzügige Flächen, mediterran-warm, persönliche Fotografie, organische Formen, viel Weißraum
+**Bilder:** großflächig, editorial (full-bleed, split, oder als Sektions-Break), persönliche Fotografie. Bevorzugt: Julias eigene Bilder aus `images/neu-2026-08/` und `ebook-reisen/bilder/`.
 
-**Referenzen für Aufbau:** Mia Page (Struktur/Atmosphäre) + agentur.juliabergles.de (Farben/Typo) — Details noch offen (Julia liefert Mia-URL).
+**Neue Bilder (2026-08-14):** 15 Julia-HEICs in `images/neu-2026-08/*.jpg` (2400 px, JPEG 85). Aufteilung:
+- **Portraits (Website):** IMG_3635, 3636, 3639, 3545 → Über mich, Hero, App
+- **Reise-Motive (E-Book):** IMG_3612, 3631, 3632, 3689, 3697, 3738, 3776, 3835, 3836, 3719-2, 3724-2 → Ljubljana + Bougainvillea + Mittelmeer-Nacht
 
-**Neue Bilder (2026-08-14):** 15 Julia-HEICs aus iCloud konvertiert nach `images/neu-2026-08/*.jpg` (2400 px, JPEG 85). Werden im v3-Redesign eingebaut.
+**E-Book „Die Probe" — Julia hat bereits gestaltet:**
+- Cover „Titelbild.PNG" in `ebook-reisen/bilder/` (Nächtliche Straße, blaues Kleid, „DIE PROBE" — Farbwelt Babyblau + Cream + Serif → wurde zur Website-Design-Referenz)
+- Vorwort 1-3.JPG, Kapitel vorschau.jpg, Rabattcodes.jpg als PDF-Seiten-Screenshots
 
-**Redesign-Historie:** Redesign v2 (5f63dd1, Raleway/Archivo/Cream+Choice-Screen) wurde am 2026-08-10 revertet (7054ef5) — war zu experimentell. v3 orientiert sich stärker an agentur.juliabergles.de + Mia Page.
+**Redesign-Historie:**
+- v2 (5f63dd1, 2026-08-10 revertet): Raleway/Archivo/Cream+Choice-Screen — zu experimentell
+- v3-Anfang (2026-08-14): geplant als agentur.juliabergles.de-Look — verworfen
+- v3-final (2026-08-17): Editorial nach E-Book-Cover — laufend
 
 ---
 
@@ -173,21 +190,29 @@ Wear Your Healing ist aus Nav und Footer **komplett raus**. Dateien liegen weite
 
 ## Was gerade offen ist
 
-**In Arbeit — Redesign v3 (2026-08-14):**
-- [ ] **Mia-Page-URL** von Julia holen (Layout-Referenz)
-- [ ] `assets/site-v3.css` mit neuen Design-Tokens (Raleway 900 + Object Sans + Copper/Dark/Cream) aufbauen
-- [ ] Startseite als erste Komplett-Umsetzung — TerraLuna zieht sich als roter Faden durch (Hero-CTA, dedizierte App-Sektion, Content-CTAs bei Rezepten/Blog)
-- [ ] Unterseiten iterativ nachziehen: Über mich → App → HIT/MCAS/Reizdarm → Blog → Rezepte → Empfehlungen → Insights
-- [ ] Neue Bilder aus `images/neu-2026-08/` in Hero/Sektionen einbauen
-- [ ] Rezept-Bereich neu bauen (Übersicht + Rezept-Template, Recipe-Schema)
+**In Arbeit — Redesign v3 FINAL (2026-08-17):**
+- [x] Design-System final: Cormorant Garamond + Manrope + Cream/Copper/Blau/Mint/Dark
+- [x] `assets/site-v3.css` aufgebaut
+- [x] `ebook-reisen.html` als erste Vogue-Editorial-Referenz-Seite
+- [x] CLAUDE.md + CONTEXT.md Design-Sektion nachgezogen
+- [ ] Startseite (`index.html`) auf v3 umstellen
+- [ ] Über mich (`ueber-mich.html`) auf v3 umstellen
+- [ ] App (`app.html`) auf v3 umstellen
+- [ ] HIT / MCAS / Reizdarm Info-Seiten auf v3
+- [ ] Blog (`blog/index.html` + Artikel) auf v3
+- [ ] Empfehlungen (`empfehlungen.html`) auf v3
+- [ ] Gespräch (`gespraech.html`) auf v3
+- [ ] Rezept-Bereich neu bauen (Übersicht + Rezept-Template)
 - [ ] Blog-Kategorien-System (Histamin, MCAS, Ernährung, Darm, Zyklus, Alltag, Erfahrungen, App, Rezepte)
-- [ ] CLAUDE.md-Design-Sektion nachziehen (Julia freigeben lassen)
+- [ ] Landing-Pages für weitere E-Books (`ebook-aengste.html`, `ebook-familie.html`, `ebook-depressionen.html`)
 
 **Bestehendes weiter offen:**
-- [ ] **Julia-Texte einbauen** — überall wo 📝 Platzhalter stehen (Blog-Artikel-Body, ggf. Info-Seiten). Julia schreibt selbst, Claude paste ein.
-- [ ] Einführungs-Sektion auf Startseite: Julia korrigiert Draft-Texte am Handy live.
+- [ ] **Julia-Texte einbauen** — überall wo 📝 Platzhalter stehen (Vorwort „Die Probe", Blog-Artikel-Body). Julia schreibt selbst, Claude paste ein.
+- [ ] Elopage-Link für „Die Probe" einbauen sobald E-Book gelauncht
+- [ ] E-Book „Die Probe" Zweitverwendung: K1 „Meine Geschichte" als Blog-Artikel unter `blog/erste-reise-nach-darmverschluss/`
 - [ ] Bilder in `blog-bilder/` den einzelnen Blog-Artikeln zuordnen
 - [ ] MCAS-Testergebnis abwarten und Diagnosen-Sektion updaten (aktuell „vermutet")
+- [ ] 10 Reise-Bilder aus `images/neu-2026-08/` auch in `ebook-reisen/bilder/` kopieren (wenn Julia OK gibt)
 
 **Regel für v3:** Bestehende Texte + Content grundsätzlich behalten, nur visuell/strukturell neu. Keine persönlichen Inhalte selbstständig kürzen oder streichen.
 

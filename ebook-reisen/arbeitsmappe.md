@@ -1,34 +1,36 @@
 # Arbeitsmappe · E-Book #2
 
-# „Histaminarm reisen"
+# „Die Probe" — Erste Reise nach Darmverschluss & mit Histamin-Problematik
 
-*Untertitel-Draft:* Meine Packliste, meine Restaurant-Fragen, meine Länder-Tipps.
+*Untertitel-Draft:* Meine Tipps. Meine Fehler. Meine Packliste. Und wie ich unterwegs esse.
+*Alternativ-Titel (Backup):* Histaminarm reisen
 
 ---
 
 ## Positionierung
 
-- **Zielgruppe:** Betroffene mit Histamin-Problematik / MCAS, die reisen wollen oder gerade planen
-- **Preis:** **2,99 €** — Impulskauf-Schwelle, unter Schmerzgrenze aber echter Kauf → validiert Zahlungsbereitschaft
-- **Länge:** 15-20 Seiten (kompakt, ACTIONABLE — keine Story-Elemente außer wo Anekdote nötig)
-- **Ziel:** Konkrete Hilfe, sofort umsetzbar. Nicht inspirieren — funktionieren.
+- **Zielgruppe:** Betroffene mit Histamin-Problematik / MCAS, die reisen wollen oder gerade planen — insbesondere Menschen mit ähnlicher Vorgeschichte (Angst nach Klinik, körperliche Grenzen, wenig Vertrauen in Fremdessen)
+- **Preis:** **2,99 €** — Impulskauf-Schwelle, validiert Zahlungsbereitschaft
+- **Länge:** 20-25 Seiten (durch neue Themen erweitert)
+- **Ziel:** Konkrete Hilfe, sofort umsetzbar — mit persönlicher Geschichte als Rahmen
 - **Verkaufskanal:** Elopage (später Digistore24 als Backup)
-- **Distribution:** juliabergles.de Startseite E-Book-Sektion + WhatsApp-Community-Ankündigung + Blog-Artikel mit Kaufcta + Instagram-Bio-Link
+- **Distribution:** juliabergles.de → `ebook-reisen.html` Landing-Page mit Leseprobe + WhatsApp-Community + Blog-Artikel + Instagram-Bio-Link
 
-**Positionierung in einem Satz:** „Alles, was ich in den Koffer packe, was ich Restaurants frage und in welchen Ländern es leicht war."
+**Positionierung in einem Satz:** „Meine erste Reise nach dem Darmverschluss — was ich falsch gemacht habe, was mir geholfen hat, und alles was ich seitdem für unterwegs klar habe."
 
 ---
 
-## Struktur (6 Kapitel + Vorwort + Anhang)
+## Struktur (7 Kapitel + Vorwort + Anhang)
 
-- **Vorwort** (1 Seite) — kurz: warum ich das schreib, für wen
-- **K1** — Vor der Reise: was du klären solltest
-- **K2** — Packliste: was IMMER dabei ist
-- **K3** — Restaurants unterwegs
-- **K4** — Anreise: Flug, Auto, Zug
-- **K5** — Länder-Tipps: wo's leicht war, wo nicht
-- **K6** — Bei Symptomschub unterwegs — SOS
-- **Anhang** — Übersetzungs-Sätze für Restaurants + TerraLuna
+- **Vorwort** (1 Seite) — für wen ist das, was kriegst du raus, was NICHT
+- **K1 — Meine Geschichte:** Erste Reise nach dem Darmverschluss *(auch als Blog-Artikel zweitverwenden)*
+- **K2 — Vor der Reise:** was du klären solltest + passende Unterkünfte finden
+- **K3 — Hotel-Kommunikation:** vorgefertigte E-Mails + Übersetzer-Listen für Hotels
+- **K4 — Packliste:** was IMMER dabei ist + meine Einkäufe (Fotos)
+- **K5 — Rezepte für die Reise:** was ich mir vor Ort koche
+- **K6 — Restaurants unterwegs:** Fragen, Übersetzungen, No-Gos
+- **K7 — Anreise + SOS:** Flug/Auto/Zug + was tun bei Symptomschub
+- **Anhang:** Rabattcodes + Restaurant-Sätze in 6 Sprachen + TerraLuna-Sektion
 
 ---
 
@@ -43,11 +45,38 @@
 3. Was ist der EINE Grund, dass du dieses E-Book jetzt schreibst?
 4. Was ist es NICHT: kein Reiseführer, kein Diät-Buch — was ist es dann? (in einem Satz)
 
+**Julias Vorwort-Text hier einfügen (📝 Placeholder):**
+
+> [Julia — dein Vorwort her, ca. 200-300 Wörter]
+
 ---
 
-## KAPITEL 1 — „Vor der Reise: was du klären solltest"
+## KAPITEL 1 — „Meine Geschichte: Erste Reise nach dem Darmverschluss"
 
-**Ziel:** Checkliste vor der Buchung — was klären BEVOR gebucht wird.
+**Ziel:** Persönlich, ehrlich, verletzlich. Deine Geschichte gibt dem Käufer sofort das Gefühl „die versteht mich".
+**Zweitverwendung:** 1:1 auch als Blog-Artikel unter `blog/erste-reise-nach-darmverschluss/`
+
+### Frage-Prompts für Julia
+
+1. Wo bist du zum ersten Mal wieder gereist nach dem Darmverschluss? Wann? Mit wem?
+2. Wie war der Kopf VORHER — was war die größte Angst?
+3. Was hast du getan um dich vorzubereiten? (Recherche, Absprache mit Arzt, Packen…)
+4. Was ist unterwegs passiert — die Momente, die es LEICHT gemacht haben?
+5. Was ist SCHIEF gelaufen? (Fehler = das lernen die Leser gleich mit)
+6. Wann hast du gemerkt „ich schaff das eigentlich"?
+7. Was hast du DANACH gemacht — hat's dein Selbstbild verändert?
+
+**Julias Geschichte hier einfügen (📝 Placeholder):**
+
+> [Julia — deine Geschichte her, so lang wie sie braucht, in deiner Stimme]
+
+**Layout-Hinweis:** Mit 2-3 Fotos von der Reise (Portraits, Landschaften). Persönliche Fotos wirken 10x mehr als Stockbilder.
+
+---
+
+## KAPITEL 2 — „Vor der Reise: was du klären solltest"
+
+**Ziel:** Checkliste vor Buchung — was klären BEVOR gebucht wird + wie findest du eine passende Unterkunft.
 
 ### Recherche + Fakten
 
@@ -57,7 +86,13 @@
 - **Ärztliche Erreichbarkeit** am Zielort — für Notfall (Kortison, Antihistaminika)
 - **Klima:** Hitze ist Histamin-Trigger — Sommer im Süden ist härter
 - **Sprachniveau:** kann ich Englisch/Landessprache gut genug für Restaurant-Fragen?
-- **Zeitzone/Jetlag:** ist Schlaf-Trigger — bei größeren Zeit-Verschiebungen einplanen dass 2-3 Tage schwierig sind
+- **Zeitzone/Jetlag:** Schlaf-Trigger — bei größeren Zeit-Verschiebungen 2-3 Tage einplanen
+
+**Wo Unterkünfte suchen (Filter richtig setzen):**
+- Airbnb / Booking: nach „Küche vorhanden" filtern, im Beschreibungs-Text nach „Kühlschrank / Herd / Wasserkocher" suchen
+- FeWo-direkt: oft ganze Wohnungen, weniger Sharing
+- Bewertungen filtern: Suchbegriff „Küche" / „sauber" in Rezensionen
+- Bei Hotels: **Vorher mit E-Mail-Vorlage anfragen** (siehe K3)
 
 **Reise-Apotheke — Basics (mit Arzt absprechen):**
 - Antihistaminikum (H1) — Notfall
@@ -73,28 +108,100 @@
 ### Frage-Prompts für Julia
 
 1. Was ist deine „No-Go"-Checkliste vor Buchung? (was muss stimmen, sonst buchst du nicht?)
-2. Was frag(t)est du bei Unterkünften — konkret? (Kühlschrank Größe, Kochplatte, Nähe Rewe, …)
+2. Was frag(t)est du bei Unterkünften — konkret? (Kühlschrank Größe, Kochplatte, Nähe Rewe …)
 3. Wie planst du „Puffer"-Zeit für schlechte Bauchtage in Reise-Programm ein?
 4. Was ist in deiner Reise-Apotheke immer drin — und was hast du auf Anraten deines Arztes ergänzt?
 5. Welches Reiseziel hast du mal gebucht und dann bereut? Was war der Fehler?
+6. Auf welchen Plattformen suchst du Unterkünfte — welche Filter setzt du?
 
-**Layout-Hinweis:** Kapitel-Ende: Checkliste zum Ausdrucken (kann als Bonus-PDF beigelegt werden). Wirkt professionell + gibt sofortigen Nutzen.
+**Layout-Hinweis:** Kapitel-Ende: Checkliste zum Ausdrucken.
 
 ---
 
-## KAPITEL 2 — „Packliste: was IMMER dabei ist"
+## KAPITEL 3 — „Hotel-Kommunikation: E-Mails + Übersetzer-Listen"
 
-**Ziel:** Konkrete Packliste in Kategorien. Nicht generisch — was JULIA immer mitnimmt.
+**Ziel:** Fertige E-Mail-Vorlagen für Hotel-Anfragen. Und Übersetzungen der wichtigsten Fragen, damit die Rezeption dich versteht.
+
+### Vorgefertigte E-Mails an Hotels
+
+**Vorlage 1 — Basis-Anfrage (Deutsch):**
+
+> Sehr geehrte Damen und Herren,
+>
+> ich interessiere mich für einen Aufenthalt bei Ihnen vom [Datum] bis [Datum]. Vorab hätte ich einige Fragen, da ich eine Nahrungsmittel-Unverträglichkeit habe (Histamin-Problematik):
+>
+> 1. Verfügt das Zimmer über einen Kühlschrank (Minibar leerräumbar)?
+> 2. Gibt es einen Wasserkocher oder eine Möglichkeit, Wasser heiß zu machen?
+> 3. Wie weit ist der nächste Supermarkt zu Fuß?
+> 4. Bietet die Hotelküche die Möglichkeit, auf besondere Ernährungswünsche einzugehen (frisch zubereitet, keine langen Standzeiten)?
+> 5. Gibt es eine Möglichkeit, eigene Lebensmittel im Restaurant zubereiten zu lassen?
+>
+> Vielen Dank für Ihre Rückmeldung.
+>
+> Mit freundlichen Grüßen,
+> [Name]
+
+**Vorlage 2 — Englisch (International):**
+
+> Dear Sir or Madam,
+>
+> I am interested in a stay at your hotel from [date] to [date]. I have a food intolerance (histamine intolerance) and would like to ask a few questions in advance:
+>
+> 1. Does the room have a fridge (minibar can be emptied)?
+> 2. Is there a kettle or a way to boil water?
+> 3. How far is the nearest supermarket by foot?
+> 4. Can the hotel kitchen accommodate special dietary requirements (freshly prepared, no long standing times)?
+> 5. Would it be possible to have my own food prepared in the restaurant?
+>
+> Thank you for your response.
+>
+> Best regards,
+> [Name]
+
+**Vorlage 3 — Anfrage bei Ankunft (Kühlschrank leerräumen):**
+
+> [Kurzform für Rezeption bei Check-in]
+
+**Vorlage 4 — Restaurant-Anfrage (Vorbestellung):**
+
+> [Kurzform: Am Vortag anfragen was frisch zubereitet werden kann]
+
+### Übersetzer-Listen für Hotel-Rezeption
+
+**Standard-Sätze in 6 Sprachen:**
+
+| Deutsch | Englisch | Italienisch | Spanisch | Französisch | Türkisch |
+|---|---|---|---|---|---|
+| „Ich habe eine Histamin-Unverträglichkeit." | „I have a histamine intolerance." | „Ho un'intolleranza all'istamina." | „Tengo intolerancia a la histamina." | „J'ai une intolérance à l'histamine." | „Histamin intoleransım var." |
+| „Kann der Kühlschrank leergeräumt werden?" | „Can the fridge be emptied?" | „Il frigorifero può essere svuotato?" | „¿Se puede vaciar la nevera?" | „Le frigo peut-il être vidé?" | „Buzdolabı boşaltılabilir mi?" |
+| „Ist das frisch zubereitet?" | „Is this freshly prepared?" | „È preparato al momento?" | „¿Está recién preparado?" | „Est-ce préparé sur le moment?" | „Bu taze mi hazırlandı?" |
+| „Wo ist der nächste Supermarkt?" | „Where is the nearest supermarket?" | „Dov'è il supermercato più vicino?" | „¿Dónde está el supermercado más cercano?" | „Où est le supermarché le plus proche?" | „En yakın market nerede?" |
+| „Bitte ohne [Zwiebel/Knoblauch/Käse]." | „Please without [onion/garlic/cheese]." | „Senza [cipolla/aglio/formaggio], per favore." | „Sin [cebolla/ajo/queso], por favor." | „Sans [oignon/ail/fromage], s'il vous plaît." | „Lütfen [soğan/sarımsak/peynir] olmadan." |
+
+### Frage-Prompts für Julia
+
+1. Welche E-Mail hast du wortwörtlich geschrieben — kannst du sie einmal komplett zeigen?
+2. Was war eine Hotel-Antwort die dich positiv überrascht hat — was hatten die geschrieben?
+3. Was für Fragen fragst du beim Check-in — auf Deutsch, wenn keine Sprachbarriere?
+4. Welche Sprachen willst du in den Übersetzer-Listen? (aktuell: EN/IT/ES/FR/TR — ggf. JA?)
+
+**Layout-Hinweis:** Übersetzer-Tabelle als Bonus zum Ausdrucken oder als Screenshots aufs Handy.
+
+---
+
+## KAPITEL 4 — „Packliste: was IMMER dabei ist + Meine Einkäufe"
+
+**Ziel:** Konkrete Packliste + Fotos deiner echten Einkäufe (was du vor Reisen einkaufst).
 
 ### Recherche + Fakten (Kategorien-Vorschlag)
 
 **Essen — Snacks & Basics:**
-- Reiswaffeln (histaminfreundlich, satigend, überall haltbar)
+- Reiswaffeln
 - Nüsse nur wenn du sie verträgst — sonst Sonnenblumenkerne, Kürbiskerne
 - Datteln / Trockenobst (Vorsicht: manche triggern)
 - Salzstangen / einfache Cracker
-- Reis-/Buchweizen-Riegel (nicht Müsliriegel voller Zeug)
-- Gefriertrocknete Basics wenn Ferienwohnung ohne Herd
+- Reis-/Buchweizen-Riegel
+- Gefriertrocknete Basics wenn ohne Herd
 - Wasserflasche mit Filter
 - Notfall-Zucker (bei Kreislauf)
 
@@ -103,38 +210,80 @@
 - Salz
 - Getrocknete Kräuter (basische Basis)
 - Lieblings-Tee
-- Zusatz: kleine Pfanne? Falls Ferienwohnung ausschließlich Mikrowelle
 
 **Nahrungsergänzung:**
-- DAO wenn du's nimmst
+- DAO
 - Vitamin C (Antihistaminikum-Wirkung)
 - Magnesium (Nervensystem-Support)
 - Quercetin (Mastzell-Stabilisator, natürlich)
 - Zink
 
 **Elektronik/Komfort:**
-- Ohrstöpsel (Reizüberflutung)
+- Ohrstöpsel
 - Schlafmaske
 - Wärmflasche (klein, faltbar) — Bauch-Retter
 - Notizbuch für Symptom-Tagebuch
 
 **Am Körper:**
 - Weite Kleidung (Blähbauch-tauglich)
-- Extra Wäsche im Handgepäck (für den Fall)
+- Extra Wäsche im Handgepäck
+
+### „Meine Einkäufe" — Foto-Section
+
+Julia geht vor jeder Reise einkaufen — Fotos deiner echten Einkäufe:
+- Foto 1: Alles auf dem Tisch ausgebreitet (Overview)
+- Foto 2: Snacks-Kategorie im Detail
+- Foto 3: Nahrungsergänzung im Detail
+- Foto 4: Reise-Kit für Handtasche
+- Kommentar zu jedem Bild: was, warum, wo gekauft
 
 ### Frage-Prompts für Julia
 
 1. Was hast du IMMER dabei? Auch bei 3-Tage-Trip? (Deine Top-5)
 2. Was hast du gelernt zu haben nachdem es einmal fehlte? (Anekdote?)
-3. Was ist der Unterschied Handgepäck vs. Koffer für dich? (Was MUSS mit dir mitfliegen falls Koffer verloren geht?)
-4. Was ist dein Lieblings-Snack unterwegs — die eine Sache die immer geht?
+3. Was ist der Unterschied Handgepäck vs. Koffer für dich? (Was MUSS im Handgepäck?)
+4. Was ist dein Lieblings-Snack unterwegs?
 5. Bei welcher Nahrungsergänzung machst du KEINE Kompromisse?
+6. Wo kaufst du die Basics — Rossmann, DM, aho.bio, Reformhaus?
 
-**Layout-Hinweis:** Als visuelle Packliste — Icon + Text. Kategorien in Boxen. Am Ende: Foto von deinem echten Reise-Kit (nicht Stock).
+**Layout-Hinweis:** Als visuelle Packliste — Icon + Text. Am Ende: Foto von deinem echten Reise-Kit.
 
 ---
 
-## KAPITEL 3 — „Restaurants unterwegs"
+## KAPITEL 5 — „Rezepte für die Reise"
+
+**Ziel:** Einfache Rezepte, die du in einer Ferienwohnung mit minimaler Ausstattung kochen kannst.
+
+### Rezept-Struktur (pro Rezept 1 Seite)
+
+- **Name des Gerichts**
+- **Zubereitungszeit**
+- **Zutaten** (kurz, meist überall zu bekommen)
+- **Anleitung** (max. 5 Schritte)
+- **Warum's histaminfreundlich ist** (kurzer Absatz)
+- **Foto** (deins, kein Stock)
+
+### Rezept-Ideen (Julia füllt was du wirklich machst)
+
+1. **Reis-Bowl mit gedünstetem Gemüse** — Basis, überall machbar
+2. **Buchweizen-Pfanne mit Kräutern**
+3. **Süßkartoffel aus dem Ofen** (falls Ofen da)
+4. **Overnight-Hafer** (gekeimt, für morgens)
+5. **Reis-Suppe mit frischen Kräutern** — bei schlechten Tagen
+6. **Reiswaffel-Snack-Varianten**
+
+### Frage-Prompts für Julia
+
+1. Welche 4-6 Rezepte machst du unterwegs WIRKLICH? (Die einfachsten, die die zuverlässig gehen)
+2. Was ist dein „Notfall-Rezept" wenn nichts läuft — Suppe, Reis, was?
+3. Welche Küchen-Utensilien reichen dir minimal? (nur Pfanne, oder brauchst du Topf, Messer?)
+4. Was machst du morgens? Mittags? Abends? (Wenn typischer Reise-Tag)
+
+**Layout-Hinweis:** Jedes Rezept auf 1 Seite, ganzseitiges Foto oben.
+
+---
+
+## KAPITEL 6 — „Restaurants unterwegs"
 
 **Ziel:** Fragen die HELFEN (nicht nerven). Sprachliche Hilfe für Ausland.
 
@@ -142,31 +291,31 @@
 
 **Was in Restaurants FRAGEN:**
 - „Sind da versteckte Zusätze drin?" (Hefe, Sojasoße, Fischsoße, MSG, Konservierungsstoffe)
-- „Ist das frisch zubereitet oder aufgewärmt?" (aufgewärmt = mehr Histamin durch Standzeit)
-- „Was ist wirklich frisch heute?" (bei Buffet fragen wann's aufgestellt wurde)
-- „Kann ich das ohne [Zwiebel/Knoblauch/Sojasoße/…] bekommen?"
+- „Ist das frisch zubereitet oder aufgewärmt?" (aufgewärmt = mehr Histamin)
+- „Was ist wirklich frisch heute?"
+- „Kann ich das ohne [Zwiebel/Knoblauch/Sojasoße] bekommen?"
 - „Habt ihr Reis / Pasta / einfach zubereiteten Fisch?"
 
 **Was NIE bestellen:**
 - Fermentiertes (Sauerkraut, Käse, Sojasoße)
 - Gereifter Käse
 - Räucherfisch / gepökelt
-- Alkohol (jede Sorte, besonders Rotwein/Sekt)
+- Alkohol
 - Aufgewärmte Fischgerichte
-- Konservierte Tomaten (frische ok für manche, Dose meist nicht)
-- Alles mit „lange Zutatenliste" (Convenience-Food)
+- Konservierte Tomaten
+- Convenience-Food
 
 **Sichere Bestellungen (meist gehen):**
-- Frischer Fisch, gegrillt (nicht aufgewärmt)
+- Frischer Fisch, gegrillt
 - Reis natur
 - Kartoffeln (gekocht/gebraten)
 - Frisches Gemüse einfach gedünstet
-- Kleine Portion frisches Obst (Apfel, Birne, Melone)
-- Wasser still (kein Sprudel bei manchen)
+- Frisches Obst (Apfel, Birne, Melone)
+- Wasser still
 
 **Ländertypische Erfahrungen (Basis, Julia füllt):**
 - Italien: mediterrane Küche eigentlich super — aber Käse und Tomatensoße überall
-- Japan: fermentiertes überall (Miso, Sojasoße), aber Reis + einfacher Fisch geht
+- Japan: fermentiertes überall, aber Reis + einfacher Fisch geht
 - Frankreich: Käse-Problem, aber Grillfisch-Menüs oft gut
 - Deutschland: viele Konserven / lange Standzeiten
 - Skandinavien: hoher Fisch-Anteil, meist frisch
@@ -174,132 +323,80 @@
 ### Frage-Prompts für Julia
 
 1. Was ist DEINE Standard-Frage in Restaurants? Wortwörtlich?
-2. Was war ein Restaurant-Moment wo alles perfekt lief — was hat der Kellner richtig gemacht?
+2. Was war ein Restaurant-Moment wo alles perfekt lief?
 3. Was war ein Restaurant-Desaster? Was hast du daraus gelernt?
-4. Welche Länder waren für dich am leichtesten? Welche am schwersten?
-5. Hast du „Notfall-Restaurants" — Ketten oder Formate wo du weißt, das geht (z.B. asiatisches Reis-Fisch-Menü)?
-
-**Layout-Hinweis:** Übersetzungs-Kasten als Bonus: Standard-Fragen auf DE / EN / IT / FR / ES / JA. Nur 5-6 Sätze, aber Killer-Feature für 2,99 €.
+4. Welche Länder waren am leichtesten? Welche am schwersten?
+5. „Notfall-Restaurants" — Ketten oder Formate wo du weißt, das geht?
 
 ---
 
-## KAPITEL 4 — „Anreise: Flug, Auto, Zug"
+## KAPITEL 7 — „Anreise + SOS"
 
-**Ziel:** Was bei den Verkehrsmitteln zu beachten ist — die sind selbst Trigger.
+**Ziel:** Verkehrsmittel + was tun wenn's crasht unterwegs.
 
-### Recherche + Fakten
+### Flug / Auto / Zug (Kurzform siehe Vorversion)
 
-**Flug:**
-- Trockene Kabinenluft → Schleimhäute reizen → mehr Histamin-Symptome
-- Druckveränderung → Bauchdruck
-- Turbulenzen → Nervensystem-Trigger → Angst-Reaktion
-- Länge des Flugs = Länge der Belastung
-- Notfall-Kit MUSS im Handgepäck (Koffer könnte verloren gehen)
-- Kein Alkohol im Flug (selbst wenn gratis)
-- Viel Wasser trinken
-- Kompressionsstrümpfe für längere Flüge
+- Flug: trockene Kabinenluft, Notfall-Kit ins Handgepäck, kein Alkohol
+- Auto: alle 2 Std. anhalten, Snacks nicht in praller Sonne
+- Zug: meist beste Option
 
-**Auto:**
-- Bewegungsmangel → Stauung
-- Regelmäßig anhalten (alle 2 Std) — 10 Min laufen
-- Snacks nicht in der prallen Sonne (Erwärmung = mehr Histamin)
-- Klimaanlage kann Reizung sein
-- Vorteil: eigenes Essen einfach mitnehmen
-
-**Zug:**
-- Beste Option meistens: viel Bewegungsraum, oft Bordbistro-Alternative eigenes Essen
-- Aber: Toiletten manchmal problematisch
-- Reservierung mit Beinfreiheit
-
-### Frage-Prompts für Julia
-
-1. Was ist dein bevorzugtes Reisemittel — warum?
-2. Was hast du beim Fliegen gelernt (Anekdote)?
-3. Wie strukturierst du längere Autofahrten für den Bauch?
-4. Was war das schlimmste Trigger-Erlebnis unterwegs — und was hilft nachträglich?
-5. Wie planst du „Ankunfts-Puffer" ein (nicht direkt vom Flugzeug ins Familienessen)?
-
-**Layout-Hinweis:** 3 Kacheln (Flug/Auto/Zug) mit je einem „Top-Tipp" hervorgehoben.
-
----
-
-## KAPITEL 5 — „Länder-Tipps"
-
-**Ziel:** Julias PERSÖNLICHE Erfahrungen mit konkreten Ländern. Kein generischer Reiseführer.
-
-### Frage-Prompts für Julia
-
-Für jedes Land wo du warst:
-
-1. **Land + wann warst du da?**
-2. **Was war LEICHT?** (Essenskultur, Restaurants, Supermärkte, Klima)
-3. **Was war SCHWER?** (Trigger überall? Kommunikations-Problem? Klima?)
-4. **Konkreter Tipp:** Wo essen, was vermeiden, was mitnehmen?
-5. **Würdest du wieder hin?** Für wen empfiehlst du's, für wen nicht?
-
-**Struktur-Idee:** 5-8 Länder á 1-2 Seiten. Konzentriere dich auf Länder wo du wirklich warst — kein Copy-Paste-Wissen. Wenn du nur 3 Länder abdecken kannst, dann 3 — aber tief.
-
-**Layout-Hinweis:** Karten-Element (kleine Landkarte mit deinem Foto darauf) für jedes Länder-Kapitel.
-
----
-
-## KAPITEL 6 — „SOS: Bei Symptomschub unterwegs"
-
-**Ziel:** Was tun wenn's crasht — konkrete Reihenfolge, ruhig, ohne Panik.
-
-### Recherche + Fakten
+### SOS bei Symptomschub
 
 **Sofort-Maßnahmen bei Bauch-Schub:**
-1. Aus der Situation raus — irgendwohin ruhig
-2. Wärme auf den Bauch (Wärmflasche, Hände, Handtuch heiß gemacht)
-3. Kohle-Tablette (bindet Histamin im Darm)
-4. Wasser trinken (Elektrolyte)
-5. Antihistaminikum (H1) wenn vom Arzt verschrieben
+1. Aus der Situation raus
+2. Wärme auf den Bauch
+3. Kohle-Tablette
+4. Wasser + Elektrolyte
+5. Antihistaminikum (falls verschrieben)
 6. Nichts weiter essen für 2-4 Std
-7. Falls Reise-Programm möglich: absagen, ruhen
+7. Programm absagen, ruhen
 
-**Bei Panik-Symptomen (Herzrasen/Enge/Schwindel):**
-1. 4-7-8-Atmung (4 Sek einatmen, 7 halten, 8 ausatmen) — 4 Zyklen
-2. Kalte Hände/Nacken (Wasser übers Handgelenk, Vagus-Aktivierung)
-3. Bekannte Person kontaktieren (kein Alleinsein wenn möglich)
-4. Notfall-Antihistaminikum (auch bei Panik hilfreich, weil oft Histamin-getriggert)
-5. Nicht selbst zum Arzt fahren — Notruf oder Taxi
+**Bei Panik-Symptomen:**
+1. 4-7-8-Atmung
+2. Kalte Hände/Nacken
+3. Bekannte Person kontaktieren
+4. Notfall-Antihistaminikum
+5. Notruf oder Taxi (nicht selbst fahren)
 
 **Bei Kreislauf-Absturz:**
-1. Hinlegen, Beine hochlegen
-2. Elektrolyte trinken
+1. Hinlegen, Beine hoch
+2. Elektrolyte
 3. Kohlenhydrate (Salzstangen, Datteln)
 4. Bei Bewusstseinsstörung: 112
 
-**„Danach"-Regel:** 24-48h Ruhephase einplanen. Nichts zwingen. Kein „stell dich nicht so an" — auch nicht zu dir selbst.
+**„Danach"-Regel:** 24-48h Ruhephase. Nichts zwingen.
 
 ### Frage-Prompts für Julia
 
-1. Was war dein schlimmster Schub unterwegs — was hat funktioniert, was nicht?
-2. Was ist die REIHENFOLGE die du machst wenn's crasht — Schritt 1, 2, 3?
+1. Was war dein schlimmster Schub unterwegs?
+2. Was ist die REIHENFOLGE die du machst wenn's crasht?
 3. Welche „Erste-Hilfe"-Sachen sind bei dir immer im Handtaschen-Format dabei?
-4. Wie sagst du Angehörigen oder Reise-Begleiter:innen was du brauchst wenn's crasht?
-5. Wie behandelst du dich SELBST danach — wie erlaubst du dir die Ruhe?
+4. Wie sagst du Reise-Begleiter:innen was du brauchst wenn's crasht?
 
-**Layout-Hinweis:** Als „Notfall-Karte" — Größe A6, druckbar, im Portemonnaie zu tragen. Wichtiger Bonus für Käufer:innen.
+**Layout-Hinweis:** „Notfall-Karte" — Größe A6, druckbar, im Portemonnaie zu tragen.
 
 ---
 
-## ANHANG — Übersetzungen + TerraLuna
+## ANHANG
 
-**Restaurant-Sätze in 6 Sprachen (Julia wählt Sprachen):**
+### 1. Rabattcodes (deine Partnerangebote)
 
-Vorlage:
-> „Ich habe eine Nahrungsmittel-Unverträglichkeit. Kann ich [Gericht] ohne [Zutat] bekommen? Ist es frisch zubereitet?"
+Sammlung deiner echten Rabattcodes für Reise-relevante Produkte:
 
-- 🇬🇧 English
-- 🇮🇹 Italiano
-- 🇫🇷 Français
-- 🇪🇸 Español
-- 🇯🇵 日本語 (mit Umschrift)
-- 🇹🇷 Türkçe (falls Türkei-Urlaub Zielgruppe)
+- **aho.bio** — Code `Smacado10` — 10% auf gekeimte Lebensmittel (super als Reise-Snacks)
+- **Histaminikus** — [Code?]
+- **HistaFOOD** — [Code?]
+- **Balance Riegel** — [Code?]
+- **Weitere?**
 
-**TerraLuna-Sektion (halbe Seite):**
+**Frage-Prompt:** Welche Codes hast du aktuell aktiv? Alle rein, mit Ablauf-Datum falls befristet.
+
+### 2. Restaurant-Sätze in 6 Sprachen
+
+Siehe K3 — Tabelle zum Ausdrucken.
+
+### 3. TerraLuna-Sektion (halbe Seite)
+
 - „Meine App als Reisebegleiter"
 - Lebensmittel-Ampel unterwegs (Barcode-Scanner)
 - SOS-Karten für Kellner
@@ -312,28 +409,35 @@ Vorlage:
 
 **Cover-Idee:**
 - Portrait-Format A4
-- Foto von dir irgendwo unterwegs (Rucksack? Flughafen? Bahn?)
-- Titel „Histaminarm reisen" in Raleway 900 Copper
-- Untertitel klein
+- Foto von dir unterwegs (Ljubljana-Portrait oder Mittelmeer)
+- Titel „Die Probe" in Raleway 900 Copper
+- Untertitel klein „Erste Reise nach Darmverschluss & mit Histamin"
 - „E-Book · 2,99 €" als Badge
 
-**Farbwelt:** Wie Familie-E-Book (Cream + Copper + Dark). Konsistent.
+**Farbwelt:** Cream + Copper + Dark (konsistent mit Website-Redesign v3)
 
 **Layout:**
 - Praktisch, checklisten-lastig
-- Viele Icons (Koffer, Fisch, Flieger, Notfall-Kreuz)
-- Kapitel-Ende mit „Zum Mitnehmen"-Kasten (3 Bullets Zusammenfassung)
-- Anhang mit ausdruckbaren Karten (Übersetzungen + Notfall-Karte)
+- Viele Icons (Koffer, Fisch, Flieger, Notfall-Kreuz, Herd, Mail)
+- Kapitel-Ende „Zum Mitnehmen"-Kasten
+- Anhang mit ausdruckbaren Karten (Übersetzungen + Notfall-Karte + Rabattcodes)
 
 ---
 
 ## Nächste Schritte
 
-1. Kapitel für Kapitel Frage-Prompts abarbeiten
-2. Länder-Kapitel priorisieren — wo warst du wirklich?
-3. Übersetzungs-Sätze mit Native-Speakers gegenchecken (Community-Frage: „Wer spricht Italienisch/Japanisch/…?" — die helfen kostenlos)
-4. Canva-Layout
-5. PDF-Export → Elopage hochladen → 2,99 € Preis setzen
-6. Launch: WhatsApp-Community Ankündigung + Instagram-Post + juliabergles.de E-Book-Sektion aktualisieren
+1. **Julia:** Kapitel-Prompts abarbeiten (v.a. Vorwort + K1 Geschichte)
+2. **Julia:** Rabattcodes zusammensuchen
+3. **Julia:** Länder-Erfahrungen priorisieren (wo warst du wirklich)
+4. **Claude:** Übersetzungen mit Native-Speakers gegenchecken (Community-Frage: „Wer spricht Italienisch/Japanisch?")
+5. **Claude:** Canva-Layout auf Basis der Farbwelt v3
+6. **Claude:** PDF-Export → Elopage
+7. **Launch:** WhatsApp-Community + Instagram-Post + Website-Landing-Page live
 
-**Zeit-Schätzung:** 3-4 Wochen wenn du systematisch arbeitest (kürzer als Familien-E-Book weil weniger Reflexions-Kapitel).
+**Zeit-Schätzung:** 3-4 Wochen wenn systematisch.
+
+---
+
+## Zweitverwendung Blog
+
+**K1 „Meine Geschichte"** wird 1:1 als Blog-Artikel unter `blog/erste-reise-nach-darmverschluss/` veröffentlicht. Rest bleibt E-Book-exklusiv (Bezahl-Content).
