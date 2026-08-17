@@ -9,17 +9,34 @@
 </head>
 <body>
 
-<nav class="nav-v3">
+<nav class="nav-v3" id="navV3">
   <div class="container">
     <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
-    <ul>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li><a href="blog/">Journal</a></li>
-      <li><a href="ebook-reisen.html">E-Books</a></li>
-      <li><a href="app.html">App</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
+      </li>
+      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="rezepte.html">Rezepte</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
+      </li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
-      <li><a href="gespraech.html">Gespräch</a></li>
     </ul>
+    <a href="gespraech.html" class="nav-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
@@ -104,37 +121,37 @@
     </div>
 
     <div class="grid-3 mt-lg">
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 01</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 01</span>
         <h3 class="mt-sm">Reisen mit empfindlichem Darm</h3>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 02</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 02</span>
         <h3 class="mt-sm">Warum Reisen oft schwierig ist</h3>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 03</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 03</span>
         <h3 class="mt-sm">Vorbereitung ist alles</h3>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 04</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 04</span>
         <h3 class="mt-sm">Die richtige Unterkunft wählen</h3>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 05</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 05</span>
         <h3 class="mt-sm">Essen unterwegs — sichere Lebensmittel</h3>
         <p class="mt-sm">Inklusive Einkaufsliste zum Mitnehmen.</p>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 06</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 06</span>
         <h3 class="mt-sm">Mini-Kühlschrank & Kühlung</h3>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 07</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 07</span>
         <h3 class="mt-sm">Meal Prep auf Reisen</h3>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 08</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 08</span>
         <h3 class="mt-sm">Restaurant & Hotel Tipps</h3>
       </article>
       <article class="editorial-card blue">
@@ -142,17 +159,17 @@
         <h3 class="mt-sm">Flyer zum Erklären in 9 Sprachen</h3>
         <p class="mt-sm">Deutsch · Englisch · Kroatisch · Italienisch · Griechisch · Spanisch · Französisch · Türkisch · Niederländisch</p>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 10</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 10</span>
         <h3 class="mt-sm">TerraLuna App als Reisebegleiter</h3>
       </article>
-      <article class="editorial-card">
-        <span class="chapter-num">Nº 11</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 11</span>
         <h3 class="mt-sm">Notfalllisten</h3>
         <p class="mt-sm">Blähbauch · Durchfall · Verstopfung · Histaminreaktion</p>
       </article>
-      <article class="editorial-card beige">
-        <span class="chapter-num">Nº 12</span>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Nº 12</span>
         <h3 class="mt-sm">Meine persönlichen Tipps & Erfahrungen</h3>
       </article>
     </div>
