@@ -665,6 +665,39 @@ p.lead {
   }
 }
 
+/* -----------  Marquee (Ticker unter der Nav)  ----------- */
+.marquee {
+  overflow: hidden;
+  background: var(--dark);
+  color: var(--cream);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,252,249,0.08);
+  position: relative;
+}
+.marquee-track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+.marquee-item {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--cream);
+}
+.marquee-item.dot { color: var(--copper); }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
 /* -----------  Footer v3  ----------- */
 .footer-v3 {
   background: var(--dark);
