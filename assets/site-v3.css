@@ -833,3 +833,49 @@ p.lead {
 
 .max-narrow { max-width: 640px; }
 .max-md { max-width: 840px; }
+
+/* -----------  Rezept-Seiten  ----------- */
+.recipe-meta {
+  display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;
+  margin: 40px 0; padding: 24px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.recipe-meta-item { text-align: center; min-width: 120px; }
+.recipe-meta-label {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper-dark);
+}
+.recipe-meta-value {
+  font-family: var(--serif); font-size: 22px; color: var(--dark); margin-top: 8px;
+}
+.zutaten-liste { list-style: none; padding: 0; }
+.zutaten-liste li {
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--sans); font-size: 16px; color: var(--dark);
+  display: flex; justify-content: space-between; gap: 16px;
+}
+.zutaten-liste li .menge {
+  color: var(--copper-dark); font-weight: 600;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.zubereitung-liste { list-style: none; padding: 0; counter-reset: step; }
+.zubereitung-liste li {
+  padding: 20px 0 20px 60px; position: relative;
+  font-family: var(--sans); font-size: 16px; line-height: 1.6; color: var(--dark);
+  border-bottom: 1px solid var(--line); counter-increment: step;
+}
+.zubereitung-liste li::before {
+  content: counter(step); position: absolute; left: 0; top: 20px;
+  font-family: var(--serif); font-size: 32px; font-style: italic;
+  color: var(--copper); line-height: 1;
+}
+.rezept-hinweis { padding: 32px; background: var(--mint); margin-top: 48px; }
+.rezept-hinweis h4 {
+  font-family: var(--serif); font-size: 24px; color: var(--blue-dark); margin-bottom: 12px;
+}
+.rezept-tag {
+  display: inline-block; padding: 4px 12px; margin: 0 4px;
+  background: var(--mint); color: var(--blue-dark);
+  font-family: var(--sans); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
