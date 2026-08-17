@@ -7,44 +7,6 @@
 <meta name="description" content="Meine echten Marken-Empfehlungen für Histamin-Problematik, MCAS und sensitive Ernährung. Aho.bio, Nigela, Histaminikus, HistaFOOD, Balance Riegel, Yamatogast — mit meinen Rabatt-Codes.">
 <link rel="stylesheet" href="assets/site-v3.css">
 <script defer src="assets/reveal.js"></script>
-<style>
-  .chip-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-  .chip {
-    display: inline-block; padding: 8px 16px;
-    background: var(--cream); border: 1px solid var(--line);
-    font-family: var(--sans); font-size: 14px; color: var(--dark);
-    border-radius: 999px;
-  }
-  .chip.blue { background: var(--mint); border-color: transparent; color: var(--blue-dark); }
-  .chip .chip-note { color: var(--mute); font-size: 12px; margin-left: 4px; }
-  .food-group { margin-top: 40px; }
-  .food-group:first-child { margin-top: 0; }
-  .food-group-label {
-    font-family: var(--sans); font-size: 12px; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper-dark);
-  }
-  .swap-card {
-    padding: 32px 28px; background: var(--cream); border: 1px solid var(--line);
-    text-align: center;
-  }
-  .swap-strike {
-    font-family: var(--serif); font-size: 22px; color: var(--mute);
-    text-decoration: line-through; text-decoration-color: var(--copper);
-  }
-  .swap-arrow {
-    display: block; font-family: var(--serif); font-size: 28px;
-    color: var(--copper); margin: 10px 0;
-  }
-  .swap-take {
-    font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--dark);
-  }
-  .allergie-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
-  .allergie-item {
-    padding: 12px 20px; background: var(--beige);
-    font-family: var(--sans); font-size: 15px; color: var(--dark);
-  }
-  .allergie-item .allergie-note { color: var(--dark-soft); font-size: 13px; font-style: italic; }
-</style>
 </head>
 <body>
 
@@ -59,11 +21,25 @@
           <li><a href="histaminintoleranz.html">Histamin</a></li>
           <li><a href="mcas.html">MCAS</a></li>
           <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
         </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
-      <li><a href="rezepte.html">Rezepte</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+          <li><a href="rezepte/suesses/">Süßes</a></li>
+          <li><a href="rezepte/gebaeck/">Gebäck</a></li>
+        </ul>
+      </li>
       <li class="has-dropdown">
         <span class="nav-link">Shop <span class="caret">▾</span></span>
         <ul class="dropdown">
@@ -72,7 +48,15 @@
         </ul>
       </li>
       <li><a href="app.html">App</a></li>
-      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Empfehlungen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="empfehlungen.html">Marken</a></li>
+          <li><a href="empfehlungen/lebensmittel/">Was ich vertrage</a></li>
+          <li><a href="empfehlungen/tausch/">Tausch-Liste</a></li>
+          <li><a href="empfehlungen/allergien/">Meine Allergien</a></li>
+        </ul>
+      </li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
     <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
@@ -107,10 +91,6 @@
       </div>
       <div>
         <h1 class="display" style="color: var(--cream);">Was ich<br><em class="italic">selbst</em> nutze.</h1>
-        <div style="margin-top: 32px; display: flex; gap: 20px; flex-wrap: wrap;">
-          <a href="#marken" style="color: var(--cream); font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border-bottom: 1px solid var(--cream); padding-bottom: 4px;">Meine Marken</a>
-          <a href="#lebensmittel" style="color: var(--cream); font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border-bottom: 1px solid var(--copper); padding-bottom: 4px;">Meine Lebensmittel</a>
-        </div>
       </div>
     </div>
   </div>
@@ -253,145 +233,6 @@
   </div>
 </section>
 
-<!-- LEBENSMITTEL: Was ich aktuell vertrage -->
-<section class="section section-mint" id="lebensmittel">
-  <div class="container">
-    <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-blue">Meine Lebensmittel</span>
-      <h2 class="mt-sm">Was ich aktuell <em class="italic">vertrage</em>.</h2>
-      <p class="lead mt-md" style="margin-left: auto; margin-right: auto; max-width: 60ch;">
-        Zwei Jahre lang waren es nur fünf Lebensmittel. Heute ist die Liste länger — und das ist für mich schon viel.
-      </p>
-    </div>
-
-    <div class="container-narrow" style="padding: 0;">
-      <div class="food-group">
-        <span class="food-group-label">Milchprodukte</span>
-        <div class="chip-list">
-          <span class="chip">Hüttenkäse</span>
-          <span class="chip">Magerquark</span>
-          <span class="chip">Ricotta</span>
-          <span class="chip">Butter</span>
-        </div>
-      </div>
-
-      <div class="food-group">
-        <span class="food-group-label">Gemüse</span>
-        <div class="chip-list">
-          <span class="chip">Kürbis</span>
-          <span class="chip">Süßkartoffel</span>
-          <span class="chip">Zucchini</span>
-          <span class="chip">Gurke</span>
-          <span class="chip">Rote Bete</span>
-          <span class="chip">Sellerie</span>
-          <span class="chip">Salat<span class="chip-note">(wenig — Ballaststoffe)</span></span>
-          <span class="chip">Karotten<span class="chip-note">(nur im Winter — Kreuzallergie)</span></span>
-        </div>
-      </div>
-
-      <div class="food-group">
-        <span class="food-group-label">Getreide &amp; Kohlenhydrate</span>
-        <div class="chip-list">
-          <span class="chip">Haferflocken</span>
-          <span class="chip">Reis<span class="chip-note">(nur gekeimt, Aho.bio)</span></span>
-          <span class="chip">Sprossenmehl<span class="chip-note">(kleine Mengen)</span></span>
-          <span class="chip">Mais</span>
-          <span class="chip">Maiswaffeln</span>
-          <span class="chip">Polenta<span class="chip-note">(Maisgrieß)</span></span>
-        </div>
-      </div>
-
-      <div class="food-group">
-        <span class="food-group-label">Kerne &amp; Nüsse</span>
-        <div class="chip-list">
-          <span class="chip">Kürbiskerne</span>
-          <span class="chip">Leinsamen</span>
-          <span class="chip">Chiasamen</span>
-          <span class="chip">Macadamia</span>
-          <span class="chip">Pinienkerne</span>
-        </div>
-      </div>
-
-      <div class="food-group">
-        <span class="food-group-label">Süßes &amp; Beeren</span>
-        <div class="chip-list">
-          <span class="chip">Carob</span>
-          <span class="chip">Cranberries</span>
-          <span class="chip">Gojibeeren</span>
-          <span class="chip">Kokosraspeln</span>
-          <span class="chip">Kokoschips</span>
-          <span class="chip">Reissirup</span>
-        </div>
-      </div>
-
-      <div class="food-group">
-        <span class="food-group-label">Gewürze</span>
-        <div class="chip-list">
-          <span class="chip">Basilikum</span>
-          <span class="chip">Salz</span>
-          <span class="chip blue">Alle Gewürze von Histaminikus</span>
-        </div>
-      </div>
-
-      <div class="food-group">
-        <span class="food-group-label">Von Marken, denen ich vertraue</span>
-        <div class="chip-list">
-          <span class="chip blue">Alle Lebensmittel von HistaFOOD</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SWAPS: Nimm das statt dem -->
-<section class="section section-cream">
-  <div class="container">
-    <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-copper">Nimm das statt dem</span>
-      <h2 class="mt-sm">Meine <em class="italic">Alternativen</em>.</h2>
-      <p class="lead mt-md" style="margin-left: auto; margin-right: auto; max-width: 60ch;">
-        Was ich nicht vertrage — und was ich stattdessen esse.
-      </p>
-    </div>
-
-    <div class="grid-3 mt-lg">
-      <div class="swap-card">
-        <span class="swap-strike">Kakao</span>
-        <span class="swap-arrow">→</span>
-        <span class="swap-take">Carob</span>
-      </div>
-      <div class="swap-card">
-        <span class="swap-strike">Spinat</span>
-        <span class="swap-arrow">→</span>
-        <span class="swap-take">Mangold</span>
-      </div>
-      <div class="swap-card">
-        <span class="swap-strike">Himbeeren</span>
-        <span class="swap-arrow">→</span>
-        <span class="swap-take">Heidelbeeren</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ZUSÄTZLICHE ALLERGIEN -->
-<section class="section section-beige">
-  <div class="container-narrow text-center">
-    <span class="eyebrow eyebrow-copper">Meine Allergien</span>
-    <h2 class="mt-sm">Zusätzlich zur <em class="italic">Histamin-Problematik</em>.</h2>
-    <div class="allergie-list">
-      <span class="allergie-item">Apfel</span>
-      <span class="allergie-item">Mandeln</span>
-      <span class="allergie-item">Haselnüsse</span>
-      <span class="allergie-item">Kartoffel <span class="allergie-note">(leicht — kleine Mengen gehen)</span></span>
-      <span class="allergie-item">Pollen</span>
-    </div>
-    <p class="mt-lg" style="font-style: italic; color: var(--dark-soft); max-width: 60ch; margin-left: auto; margin-right: auto;">
-      Das ist meine Erfahrung, keine medizinische Beratung. Jeder Körper reagiert anders — teste vorsichtig und sprich im Zweifel mit einem Arzt.
-    </p>
-  </div>
-</section>
-
 <section class="section section-beige">
   <div class="container-narrow">
     <p class="text-center" style="font-style: italic; color: var(--dark-soft);">
@@ -399,6 +240,35 @@
     </p>
     <div class="text-center mt-md">
       <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" class="btn btn-outline">WhatsApp-Community</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-mint">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">Mehr aus dieser Reihe</span>
+      <h2 class="mt-sm">Was ich <em class="italic">esse</em>, was ich <em class="italic">tausche</em>.</h2>
+    </div>
+    <div class="grid-3">
+      <a href="empfehlungen/lebensmittel/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 02</span>
+        <h3 class="mt-sm">Was ich vertrage</h3>
+        <p class="mt-sm">Milchprodukte, Gemüse, Getreide, Kerne — meine aktuelle Liste.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">Zur Liste →</p>
+      </a>
+      <a href="empfehlungen/tausch/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 03</span>
+        <h3 class="mt-sm">Tausch-Liste</h3>
+        <p class="mt-sm">Meine Alternativen: Kakao → Carob, Spinat → Mangold.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">Zur Tausch-Liste →</p>
+      </a>
+      <a href="empfehlungen/allergien/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 04</span>
+        <h3 class="mt-sm">Meine Allergien</h3>
+        <p class="mt-sm">Zusätzlich zur Histamin-Problematik.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">Zu den Allergien →</p>
+      </a>
     </div>
   </div>
 </section>

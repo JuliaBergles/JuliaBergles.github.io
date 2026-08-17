@@ -3,10 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vorspeisen · Rezepte · Julia Bergles</title>
-<meta name="description" content="Vorspeisen-Rezepte von Julia Bergles — histaminarm, fructosearm, darmschonend.">
+<title>Meine Allergien · Empfehlungen · Julia Bergles</title>
+<meta name="description" content="Zusätzlich zur Histamin-Problematik: Apfel, Mandeln, Haselnüsse, Kartoffel (klein), Pollen.">
 <link rel="stylesheet" href="../../assets/site-v3.css">
 <script defer src="../../assets/reveal.js"></script>
+<style>
+  .allergie-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+  .allergie-item {
+    padding: 12px 20px; background: var(--beige);
+    font-family: var(--sans); font-size: 15px; color: var(--dark);
+  }
+  .allergie-item .allergie-note { color: var(--dark-soft); font-size: 13px; font-style: italic; }
+</style>
 </head>
 <body>
 
@@ -64,43 +72,43 @@
 </nav>
 
 <header class="hero-editorial">
-  <div class="hero-bg">
-    <img src="../../images/rezepte/rote-bete-teller.jpg" alt="Vorspeisen">
-  </div>
+  <div class="hero-bg" style="background: linear-gradient(135deg, var(--beige), var(--cream));"></div>
   <div class="container hero-content">
     <div class="grid-hero">
       <div>
-        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Nº 03 · Rezepte</span>
+        <span class="eyebrow eyebrow-line" style="color: var(--dark);">Empfehlungen · Nº 04</span>
       </div>
       <div>
-        <h1 class="display" style="color: var(--cream);"><em class="italic">Vorspeisen</em></h1>
+        <h1 class="display" style="color: var(--dark);">Meine <em class="italic">Allergien</em>.</h1>
       </div>
     </div>
   </div>
 </header>
 
-<section class="section section-cream">
-  <div class="container">
-    <div class="grid-3">
-      <a href="rote-bete-teller/" class="recipe-card" style="background-image: url('../../images/rezepte/rote-bete-teller.jpg'); background-size: cover; background-position: center;">
-        <div class="recipe-card-body">
-          <span class="chapter-num">Nº 01</span>
-          <h3 class="mt-sm">Rote-Bete-Teller</h3>
-          <p class="mt-sm">Mit Belugalinsen und Pinienkernen.</p>
-          <p class="mt-md" style="font-size: 13px; color: var(--mint);">Zum Rezept →</p>
-        </div>
-      </a>
-
-      <a href="zucchini-aufstrich/" class="editorial-card blue-soft" style="text-decoration: none;">
-        <span class="chapter-num">Nº 02</span>
-        <h3 class="mt-sm">Zucchini-Aufstrich</h3>
-        <p class="mt-sm">Grundrezept mit Basilikum und Leinsamen — geht auch als Suppe.</p>
-        <p class="mt-md text-mute" style="font-size: 13px;">Zum Rezept →</p>
-      </a>
+<section class="section section-beige">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-copper">Meine Allergien</span>
+    <h2 class="mt-sm">Zusätzlich zur <em class="italic">Histamin-Problematik</em>.</h2>
+    <div class="allergie-list">
+      <span class="allergie-item">Apfel</span>
+      <span class="allergie-item">Mandeln</span>
+      <span class="allergie-item">Haselnüsse</span>
+      <span class="allergie-item">Kartoffel <span class="allergie-note">(leicht — kleine Mengen gehen)</span></span>
+      <span class="allergie-item">Pollen</span>
     </div>
+    <p class="mt-lg" style="font-style: italic; color: var(--dark-soft); max-width: 60ch; margin-left: auto; margin-right: auto;">
+      Das ist meine Erfahrung, keine medizinische Beratung. Jeder Körper reagiert anders — teste vorsichtig und sprich im Zweifel mit einem Arzt.
+    </p>
+  </div>
+</section>
 
-    <div class="text-center mt-lg">
-      <a href="../../rezepte.html" class="btn btn-outline">← Zurück zur Übersicht</a>
+<section class="section section-cream">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-copper">Mehr aus dieser Reihe</span>
+    <div class="mt-md" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+      <a href="../../empfehlungen.html" class="btn btn-outline">Marken</a>
+      <a href="../lebensmittel/" class="btn btn-outline">Was ich vertrage</a>
+      <a href="../tausch/" class="btn btn-outline">Tausch-Liste</a>
     </div>
   </div>
 </section>

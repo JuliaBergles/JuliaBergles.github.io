@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Was ich vertrage · Empfehlungen · Julia Bergles</title>
+<meta name="description" content="Meine aktuell verträglichen Lebensmittel — Milchprodukte, Gemüse, Getreide, Kerne, Süßes, Gewürze.">
+<link rel="stylesheet" href="../../assets/site-v3.css">
+<script defer src="../../assets/reveal.js"></script>
+<style>
+  .chip-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .chip {
+    display: inline-block; padding: 8px 16px;
+    background: var(--cream); border: 1px solid var(--line);
+    font-family: var(--sans); font-size: 14px; color: var(--dark);
+    border-radius: 999px;
+  }
+  .chip.blue { background: var(--mint); border-color: transparent; color: var(--blue-dark); }
+  .chip .chip-note { color: var(--mute); font-size: 12px; margin-left: 4px; }
+  .food-group { margin-top: 40px; }
+  .food-group:first-child { margin-top: 0; }
+  .food-group-label {
+    font-family: var(--sans); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper-dark);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="../../index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="../../ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="../../histaminintoleranz.html">Histamin</a></li>
+          <li><a href="../../mcas.html">MCAS</a></li>
+          <li><a href="../../reizdarm.html">Reizdarm</a></li>
+          <li><a href="../../pms.html">PMS</a></li>
+          <li><a href="../../angststoerung.html">Angststörung</a></li>
+        </ul>
+      </li>
+      <li><a href="../../selbsttest.html">Selbsttest</a></li>
+      <li><a href="../../blog/">Blog</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="../../rezepte.html">Übersicht</a></li>
+          <li><a href="../../rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="../../rezepte/snacks/">Snacks</a></li>
+          <li><a href="../../rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="../../rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="../../rezepte/mealprep/">Mealprep</a></li>
+          <li><a href="../../rezepte/suesses/">Süßes</a></li>
+          <li><a href="../../rezepte/gebaeck/">Gebäck</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="../../ebooks.html">E-Books</a></li>
+          <li><a href="../../bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+      <li><a href="../../app.html">App</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Empfehlungen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="../../empfehlungen.html">Marken</a></li>
+          <li><a href="../../empfehlungen/lebensmittel/">Was ich vertrage</a></li>
+          <li><a href="../../empfehlungen/tausch/">Tausch-Liste</a></li>
+          <li><a href="../../empfehlungen/allergien/">Meine Allergien</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="../../gespraech.html" class="nav-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
+  </div>
+</nav>
+
+<header class="hero-editorial">
+  <div class="hero-bg" style="background: linear-gradient(135deg, var(--mint), var(--beige));"></div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--dark);">Empfehlungen · Nº 02</span>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--dark);">Was ich <em class="italic">vertrage</em>.</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section section-mint">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">Meine Lebensmittel</span>
+      <h2 class="mt-sm">Was ich aktuell <em class="italic">vertrage</em>.</h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto; max-width: 60ch;">
+        Zwei Jahre lang waren es nur fünf Lebensmittel. Heute ist die Liste länger — und das ist für mich schon viel.
+      </p>
+    </div>
+
+    <div class="container-narrow" style="padding: 0;">
+      <div class="food-group">
+        <span class="food-group-label">Milchprodukte</span>
+        <div class="chip-list">
+          <span class="chip">Hüttenkäse</span>
+          <span class="chip">Magerquark</span>
+          <span class="chip">Ricotta</span>
+          <span class="chip">Butter</span>
+        </div>
+      </div>
+
+      <div class="food-group">
+        <span class="food-group-label">Gemüse</span>
+        <div class="chip-list">
+          <span class="chip">Kürbis</span>
+          <span class="chip">Süßkartoffel</span>
+          <span class="chip">Zucchini</span>
+          <span class="chip">Gurke</span>
+          <span class="chip">Rote Bete</span>
+          <span class="chip">Sellerie</span>
+          <span class="chip">Salat<span class="chip-note">(wenig — Ballaststoffe)</span></span>
+          <span class="chip">Karotten<span class="chip-note">(nur im Winter — Kreuzallergie)</span></span>
+        </div>
+      </div>
+
+      <div class="food-group">
+        <span class="food-group-label">Getreide &amp; Kohlenhydrate</span>
+        <div class="chip-list">
+          <span class="chip">Haferflocken</span>
+          <span class="chip">Reis<span class="chip-note">(nur gekeimt, Aho.bio)</span></span>
+          <span class="chip">Sprossenmehl<span class="chip-note">(kleine Mengen)</span></span>
+          <span class="chip">Mais</span>
+          <span class="chip">Maiswaffeln</span>
+          <span class="chip">Polenta<span class="chip-note">(Maisgrieß)</span></span>
+        </div>
+      </div>
+
+      <div class="food-group">
+        <span class="food-group-label">Kerne &amp; Nüsse</span>
+        <div class="chip-list">
+          <span class="chip">Kürbiskerne</span>
+          <span class="chip">Leinsamen</span>
+          <span class="chip">Chiasamen</span>
+          <span class="chip">Macadamia</span>
+          <span class="chip">Pinienkerne</span>
+        </div>
+      </div>
+
+      <div class="food-group">
+        <span class="food-group-label">Süßes &amp; Beeren</span>
+        <div class="chip-list">
+          <span class="chip">Carob</span>
+          <span class="chip">Cranberries</span>
+          <span class="chip">Gojibeeren</span>
+          <span class="chip">Kokosraspeln</span>
+          <span class="chip">Kokoschips</span>
+          <span class="chip">Reissirup</span>
+        </div>
+      </div>
+
+      <div class="food-group">
+        <span class="food-group-label">Gewürze</span>
+        <div class="chip-list">
+          <span class="chip">Basilikum</span>
+          <span class="chip">Salz</span>
+          <span class="chip blue">Alle Gewürze von Histaminikus</span>
+        </div>
+      </div>
+
+      <div class="food-group">
+        <span class="food-group-label">Von Marken, denen ich vertraue</span>
+        <div class="chip-list">
+          <span class="chip blue">Alle Lebensmittel von HistaFOOD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-beige">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-copper">Mehr aus dieser Reihe</span>
+    <div class="mt-md" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+      <a href="../../empfehlungen.html" class="btn btn-outline">Marken</a>
+      <a href="../tausch/" class="btn btn-outline">Tausch-Liste</a>
+      <a href="../allergien/" class="btn btn-outline">Meine Allergien</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-v3">
+  <div class="container">
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
