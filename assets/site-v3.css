@@ -359,6 +359,58 @@ p.lead {
   margin-top: 40px;
 }
 
+/* -----------  Timeline  ----------- */
+.timeline {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 48px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--blue);
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 56px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -44px;
+  top: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 3px solid var(--blue);
+  z-index: 2;
+}
+.timeline-year {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--blue-dark);
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 6px;
+}
+.timeline-item h3 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.25;
+  color: var(--dark);
+}
+.timeline-item p {
+  margin-top: 10px;
+  color: var(--dark-soft);
+}
+
 /* -----------  Trenner / Dividers  ----------- */
 .divider {
   height: 1px;
