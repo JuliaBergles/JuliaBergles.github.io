@@ -1,365 +1,244 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="index, follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MCAS · Julia Bergles</title>
-<meta name="description" content="MCAS – Mastzell-Aktivierungs-Syndrom. Was das ist, wie es sich anfühlt und warum es so schwer zu diagnostizieren ist. Aus meiner Erfahrung." />
-<link rel="canonical" href="https://www.juliabergles.de/mcas.html" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.juliabergles.de/mcas.html" />
-<meta property="og:title" content="MCAS · Julia Bergles" />
-<meta property="og:description" content="MCAS – Mastzell-Aktivierungs-Syndrom. Was das ist, wie es sich anfühlt. Aus meiner Erfahrung." />
-<meta property="og:image" content="https://www.juliabergles.de/images/mcas.jpg" />
-<meta property="og:locale" content="de_DE" />
-<meta property="og:site_name" content="Julia Bergles" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="MCAS · Julia Bergles" />
-<meta name="twitter:description" content="MCAS – Mastzell-Aktivierungs-Syndrom. Aus meiner Erfahrung." />
-<meta name="twitter:image" content="https://www.juliabergles.de/images/mcas.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="css/onpoint.css">
-<style>
-  .leistung-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
-  @media (max-width: 1050px) { .leistung-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 500px) { .leistung-grid { grid-template-columns: 1fr; } }
-  .leistung { background: rgba(251, 242, 237, 0.04); border: 1px solid rgba(196, 139, 108, 0.28); border-radius: 12px; padding: 32px 28px; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); backdrop-filter: blur(6px); position: relative; overflow: hidden; }
-  .leistung:hover { transform: translateY(-6px); border-color: var(--gold); background: rgba(251, 242, 237, 0.06); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35); }
-  .leistung .icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(196, 139, 108, 0.16); display: inline-flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 18px; }
-  .leistung h4 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 22px; color: var(--bg); margin-bottom: 12px; line-height: 1.15; letter-spacing: -0.01em; }
-  .leistung p { font-size: 14px; color: rgba(251, 242, 237, 0.7); line-height: 1.6; }
-  .leistung .placeholder { display: inline-block; padding: 4px 10px; background: rgba(196, 139, 108, 0.18); border-radius: 6px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 700; }
-
-  .md-handschrift-section { padding: 100px 32px; background: var(--bg); }
-  @media (max-width: 700px) { .md-handschrift-section { padding: 70px 20px; } }
-  .md-handschrift-inner { max-width: 1200px; margin: 0 auto; }
-  .md-handschrift-head { text-align: center; max-width: 720px; margin: 0 auto 70px; }
-  .md-handschrift-head h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 54px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin: 18px 0; }
-  .md-handschrift-head h2 em { font-style: normal; color: var(--copper-dark); }
-  .md-handschrift-head p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.6; color: var(--ink-soft); margin: 0; }
-
-  .md-block { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; margin-bottom: 90px; }
-  @media (max-width: 900px) { .md-block { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; } }
-  .md-block.reverse { direction: rtl; }
-  .md-block.reverse > * { direction: ltr; }
-  .md-block-photo { aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; position: relative; background: var(--bg-warm); box-shadow: 0 30px 60px rgba(45, 31, 34, 0.14); }
-  .md-block-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
-  .md-block-photo:hover img { transform: scale(1.06); }
-  .md-block-photo .over { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent, rgba(45, 31, 34, 0.75)); color: #fff; padding: 28px 24px 22px; font-family: 'Quicksand', sans-serif; font-size: 14px; line-height: 1.5; }
-  .md-block-photo .over .small { display: block; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.8; margin-bottom: 6px; }
-  .md-block-txt .kicker { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; color: var(--copper-dark); font-weight: 700; text-transform: uppercase; margin-bottom: 18px; }
-  .md-block-txt h3 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(28px, 3.5vw, 42px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 22px; }
-  .md-block-txt h3 em { font-style: normal; color: var(--copper-dark); }
-  .md-block-txt p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 16px; }
-  .md-block-txt .placeholder-block {
-    background: rgba(196, 139, 108, 0.08);
-    border: 1px dashed rgba(196, 139, 108, 0.4);
-    border-radius: 8px;
-    padding: 16px 20px;
-    color: var(--copper-dark);
-    font-family: 'Quicksand', sans-serif; font-size: 14px; line-height: 1.6;
-    font-style: italic;
-  }
-
-  .health-disclaimer { max-width: 780px; margin: 60px auto 0; background: rgba(196, 139, 108, 0.08); border-left: 3px solid var(--copper-dark); border-radius: 4px 12px 12px 4px; padding: 24px 28px; font-family: 'Quicksand', sans-serif; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
-  .health-disclaimer strong { color: var(--copper-dark); font-weight: 700; }
-</style>
+<meta name="description" content="MCAS – Mastzell-Aktivierungs-Syndrom. Was das ist, wie es sich anfühlt und warum es so schwer zu diagnostizieren ist. Aus meiner Erfahrung.">
+<link rel="stylesheet" href="assets/site-v3.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop current-parent">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
       </li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER: App + Community + Instagram -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+<header class="hero-editorial">
+  <div class="hero-bg">
+    <img src="images/mcas.jpg" alt="MCAS">
   </div>
-</div>
-<div class="nav-spacer"></div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Diagnose · Nº 02</span>
+        <p class="lead mt-md" style="color: var(--cream); max-width: 36ch;">Die Mastzellen setzen Botenstoffe frei — ohne klaren Auslöser.</p>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--cream);">Was ist<br><em class="italic">MCAS</em>?</h1>
+        <p class="mt-md" style="color: rgba(255,252,249,0.92); max-width: 44ch;">
+          Mastzell-Aktivierungs-Syndrom. <em class="italic">Symptome überall im Körper. Schwer zu greifen.</em>
+        </p>
+        <div class="mt-lg" style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="app.html" class="btn btn-copper">TerraLuna App</a>
+          <a href="selbsttest.html" class="btn btn-outline" style="border-color: var(--cream); color: var(--cream);">Selbsttest starten</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<section class="page-hero page-hero-image" style="background-image: linear-gradient(180deg, rgba(45, 31, 34, 0.72), rgba(45, 31, 34, 0.9)), url('images/mcas.jpg'); background-size: cover; background-position: center; color: var(--bg);">
+<section class="section section-cream">
   <div class="container">
-    <div class="eyebrow reveal" style="color: var(--gold);">Diagnose</div>
-    <h1 class="reveal d1" style="color: #fff;">Was ist <em style="color: var(--gold);">MCAS</em>?</h1>
-    <p class="lede reveal d2" style="color: rgba(255, 255, 255, 0.88);">
-      Mastzell-Aktivierungs-Syndrom.
-      <br>Die Mastzellen setzen Botenstoffe frei, ohne dass ein klarer Auslöser da ist.
-      <br><em style="color: var(--gold);">Symptome überall im Körper. Schwer zu greifen.</em>
-    </p>
-    <div class="reveal d3" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-      <a href="app.html" class="btn-red">TerraLuna App</a>
-      <a href="selbsttest.html" class="btn-outline-white">Selbsttest starten</a>
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Kurz gesagt</span>
+      <h2 class="mt-sm">Was du <em class="italic">wissen</em> solltest.</h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">MCAS ist keine Allergie. Die Mastzellen setzen Botenstoffe frei — oft ohne klaren Auslöser.</p>
+    </div>
+
+    <div class="grid-2 mt-lg" style="gap: 24px;">
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Symptome</span>
+        <h3 class="mt-sm">Wo es sich zeigt</h3>
+        <p class="mt-sm">📝 Julia trägt hier ihre eigenen Symptome ein.</p>
+      </article>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Auslöser</span>
+        <h3 class="mt-sm">Was mich triggert</h3>
+        <p class="mt-sm">📝 Julia trägt hier ihre eigenen Trigger ein.</p>
+      </article>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">Was mir hilft</span>
+        <h3 class="mt-sm">Alltag</h3>
+        <p class="mt-sm">📝 Julia trägt hier ein was hilft.</p>
+      </article>
+      <article class="editorial-card blue">
+        <span class="chapter-num" style="color: var(--mint);">MCAS vs HIT</span>
+        <h3 class="mt-sm">Der Unterschied</h3>
+        <p class="mt-sm">📝 Julia trägt hier ihre Sicht ein.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<div class="mini-marquee reveal">
-  <div class="track">
-    <span class="item">Mastzellen</span><span class="sep"></span>
-    <span class="item">Ausschlussdiagnose</span><span class="sep"></span>
-    <span class="item">Systemisch</span><span class="sep"></span>
-    <span class="item">Multisymptomatisch</span><span class="sep"></span>
-    <span class="item">Trigger unspezifisch</span><span class="sep"></span>
-    <span class="item">Erforschung läuft</span><span class="sep"></span>
-    <span class="item">Kaum bekannt bei Ärzt:innen</span><span class="sep"></span>
-    <span class="item">Verwandt mit HIT</span><span class="sep"></span>
-    <span class="item">Tryptase-Test</span><span class="sep"></span>
-    <span class="item">Julias vermutete Diagnose</span><span class="sep"></span>
-    <span class="item">Mastzellen</span><span class="sep"></span>
-    <span class="item">Ausschlussdiagnose</span><span class="sep"></span>
-    <span class="item">Systemisch</span><span class="sep"></span>
-    <span class="item">Multisymptomatisch</span><span class="sep"></span>
-    <span class="item">Trigger unspezifisch</span><span class="sep"></span>
-    <span class="item">Erforschung läuft</span><span class="sep"></span>
-    <span class="item">Kaum bekannt bei Ärzt:innen</span><span class="sep"></span>
-    <span class="item">Verwandt mit HIT</span><span class="sep"></span>
-    <span class="item">Tryptase-Test</span><span class="sep"></span>
-    <span class="item">Julias vermutete Diagnose</span><span class="sep"></span>
-  </div>
-</div>
-
-<section class="section section-dark section-orbs">
+<section class="section section-mint">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">Kurz gesagt</div>
-      <h2>Was du <em>wissen</em> solltest.</h2>
-      <p>MCAS ist keine Allergie. Die Mastzellen setzen Botenstoffe frei — oft ohne klaren Auslöser.</p>
-    </div>
-    <div class="leistung-grid">
-      <div class="leistung reveal d1">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <span class="placeholder">Julia füllt</span>
-        <h4>Symptome</h4>
-        <p>MCAS ist bekannt für die Vielfalt der Symptome. Julia trägt hier die ein, die sie selbst kennt oder oft hört. Bulletpoints.</p>
+    <div class="grid-2">
+      <div class="img-block">
+        <img src="images/julia-2.jpg" alt="Julia" onerror="this.src='images/neu-2026-08/IMG_3635.jpg'">
+        <p class="img-caption">Wie es sich anfühlt</p>
       </div>
-      <div class="leistung reveal d2">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div>
-        <span class="placeholder">Julia füllt</span>
-        <h4>Auslöser</h4>
-        <p>Was Julia bei sich als Trigger bemerkt hat. Was sich vom HIT-Auslöser unterscheidet.</p>
-      </div>
-      <div class="leistung reveal d3">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></div>
-        <span class="placeholder">Julia füllt</span>
-        <h4>Was mir hilft</h4>
-        <p>Julias Alltagsstrategien um MCAS-Schübe zu reduzieren. Ehrlich, inklusive was nicht funktioniert hat.</p>
-      </div>
-      <div class="leistung reveal d4">
-        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
-        <span class="placeholder">Julia füllt</span>
-        <h4>MCAS vs HIT</h4>
-        <p>Kurzer Absatz zur Abgrenzung: Was ist der Unterschied zur Histaminintoleranz — wenn Julia das gewichten möchte.</p>
+      <div>
+        <span class="chapter-num">Nº 01</span>
+        <h2 class="mt-sm">Wie sich <em class="italic">MCAS</em> bei mir zeigt.</h2>
+        <p class="mt-md">
+          MCAS zeigt sich bei mir mit Übelkeit, Schwindel, Kreislaufproblemen und Bauchschmerzen. Vor allem wenn ich Stress habe, es sehr heiß ist oder ich meine Periode habe, sind meine Symptome verstärkt. Auch durch künstliche Gerüche — wie z.B. Shisha — merke ich es.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="md-handschrift-section">
-  <div class="md-handschrift-inner">
-    <div class="md-handschrift-head reveal">
-      <span class="k-eyebrow" style="color: var(--copper-dark); font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; font-weight: 700; text-transform: uppercase;">Meine Erfahrung</span>
-      <h2>Wie sich MCAS im <em>Alltag</em> anfühlt.</h2>
-    </div>
-
-    <div class="md-block reveal">
-      <div class="md-block-photo">
-        <img src="images/julia-2.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
-        <div class="over">
-          <span class="small">Wie es sich anfühlt</span>
-          Wird von Julia mit ihren Worten gefüllt.
-        </div>
+<section class="section section-cream">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="chapter-num">Nº 02</span>
+        <h2 class="mt-sm">Warum es so schwer zu <em class="italic">diagnostizieren</em> ist.</h2>
+        <p class="mt-md text-mute">
+          📝 Julia füllt hier aus. Aus deiner Sicht. Was war dein Weg zur Diagnose? Welche Ärzte kannten es, welche nicht? Was hättest du dir vom Gesundheitssystem gewünscht? Warum wird MCAS oft übersehen?
+        </p>
       </div>
-      <div class="md-block-txt">
-        <span class="kicker">01 · Wie es sich anfühlt</span>
-        <h3>Wie sich MCAS bei mir <em>zeigt</em>.</h3>
-        <p>MCAS zeigt sich bei mir mit Übelkeit, Schwindel, Kreislaufproblemen und Bauchschmerzen. Vor allem wenn ich Stress habe, es sehr heiß ist oder ich meine Periode habe, sind meine Symptome verstärkt. Auch durch künstliche Gerüche — wie z.B. Shisha — merke ich es.</p>
+      <div class="img-block">
+        <img src="images/julia-5.jpg" alt="Julia" onerror="this.src='images/neu-2026-08/IMG_3636.jpg'">
+        <p class="img-caption">Warum schwer zu diagnostizieren</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="md-block reverse reveal">
-      <div class="md-block-photo">
-        <img src="images/julia-5.jpg" alt="Diagnostik-Weg" onerror="this.src='images/julia-3.jpg'">
-        <div class="over">
-          <span class="small">Warum schwer zu diagnostizieren</span>
-          Wird von Julia gefüllt.
-        </div>
+<section class="section section-mint">
+  <div class="container">
+    <div class="grid-2">
+      <div class="img-block">
+        <img src="images/histamin.jpg" alt="Mastzellen" onerror="this.src='images/neu-2026-08/IMG_3689.jpg'">
+        <p class="img-caption">Was Mastzellen sind</p>
       </div>
-      <div class="md-block-txt">
-        <span class="kicker">02 · Der Diagnose-Weg</span>
-        <h3>Warum es so <em>schwer</em> zu diagnostizieren ist.</h3>
-        <div class="placeholder-block">Julia füllt hier: Aus deiner Sicht. Was war bei dir der Weg zur Diagnose? Welche Ärzte kannten es, welche nicht? Was hättest du dir vom Gesundheitssystem gewünscht? Warum wird MCAS oft übersehen?</div>
+      <div>
+        <span class="chapter-num">Nº 03</span>
+        <h2 class="mt-sm">Was überhaupt <em class="italic">passiert</em>.</h2>
+        <p class="mt-md text-mute">
+          📝 Julia füllt hier aus. Kurz und in einfachen Worten. Was Mastzellen tun, warum sie überreagieren können, was das mit Histamin und anderen Botenstoffen zu tun hat. Kein Lehrbuch-Text — die Julia-Version.
+        </p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="md-block reveal">
-      <div class="md-block-photo">
-        <img src="images/histamin.jpg" alt="Was Mastzellen sind" onerror="this.src='images/julia-4.jpg'">
-        <div class="over">
-          <span class="small">Was Mastzellen sind</span>
-          Wird von Julia gefüllt.
-        </div>
-      </div>
-      <div class="md-block-txt">
-        <span class="kicker">03 · Was Mastzellen sind</span>
-        <h3>Was <em>überhaupt</em> passiert.</h3>
-        <div class="placeholder-block">Julia füllt hier: Kurz und in einfachen Worten. Was Mastzellen tun, warum sie überreagieren können, was das mit Histamin und anderen Botenstoffen zu tun hat. Kein Lehrbuch-Text — die Julia-Version.</div>
-      </div>
-    </div>
-
-    <div class="health-disclaimer">
+<section class="section section-beige">
+  <div class="container-narrow">
+    <p class="text-center" style="font-style: italic; color: var(--dark-soft);">
       <strong>Wichtig:</strong> Das hier ist meine Erfahrung und mein Verständnis. Keine medizinische Beratung. MCAS wird noch erforscht — für eine Diagnose und Behandlung wende dich bitte an eine spezialisierte Ärztin oder einen Arzt.
+    </p>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container-narrow">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">FAQ</span>
+      <h2 class="mt-sm">Zu <em class="italic">MCAS</em>.<br>Kurz beantwortet.</h2>
+    </div>
+
+    <details class="chapter-mark mt-md" style="cursor: pointer;">
+      <summary style="font-family: var(--serif); font-size: 24px; padding: 20px 0; list-style: none;">Was ist MCAS überhaupt?</summary>
+      <p>📝 Julia füllt hier aus.</p>
+    </details>
+    <details class="chapter-mark" style="cursor: pointer;">
+      <summary style="font-family: var(--serif); font-size: 24px; padding: 20px 0; list-style: none;">Hast du selbst MCAS?</summary>
+      <p>Bei mir vermutet, noch nicht offiziell diagnostiziert — Test folgt.</p>
+    </details>
+    <details class="chapter-mark" style="cursor: pointer;">
+      <summary style="font-family: var(--serif); font-size: 24px; padding: 20px 0; list-style: none;">Wie testet man MCAS?</summary>
+      <p>📝 Julia beschreibt den Weg (Tryptase, Methylhistamin im Urin, Ausschlussverfahren).</p>
+    </details>
+    <details class="chapter-mark" style="cursor: pointer;">
+      <summary style="font-family: var(--serif); font-size: 24px; padding: 20px 0; list-style: none;">Ist MCAS heilbar?</summary>
+      <p>📝 Julias Sicht dazu, ohne Heilversprechen.</p>
+    </details>
+    <details class="chapter-mark" style="cursor: pointer;">
+      <summary style="font-family: var(--serif); font-size: 24px; padding: 20px 0; list-style: none;">Was tun bei einem MCAS-Schub?</summary>
+      <p>📝 Julias SOS-Strategien.</p>
+    </details>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container-narrow text-center">
+    <span class="eyebrow" style="color: var(--copper);">Kontakt</span>
+    <h2 class="mt-md" style="color: var(--cream);">Schreib <em class="italic">mir</em>.</h2>
+    <p class="lead mt-md" style="color: rgba(255,252,249,0.9); margin-left: auto; margin-right: auto;">Fragen zur App, zur Community, zum Blog. Oder einfach so. Ich les alles selbst.</p>
+    <div class="mt-lg" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+      <a href="mailto:julia@bergles.net" class="btn btn-copper">julia@bergles.net</a>
+      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" class="btn btn-outline" style="border-color: var(--cream); color: var(--cream);">WhatsApp-Community</a>
     </div>
   </div>
 </section>
 
-<section class="section" id="faq">
+<footer class="footer-v3">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">Häufige Fragen</div>
-      <h2>Zu MCAS.<br><em>Kurz</em> beantwortet.</h2>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item"><summary>Was ist MCAS überhaupt?</summary><p>
-        Placeholder — Julia trägt hier eine kurze Antwort ein.
-      </p></details>
-      <details class="faq-item"><summary>Hast du selbst MCAS?</summary><p>
-        Bei Julia vermutet, noch nicht offiziell diagnostiziert — Test folgt.
-      </p></details>
-      <details class="faq-item"><summary>Wie testet man MCAS?</summary><p>
-        Placeholder — Julia beschreibt hier den Weg (Tryptase, Methylhistamin im Urin, Ausschlussverfahren).
-      </p></details>
-      <details class="faq-item"><summary>Ist MCAS heilbar?</summary><p>
-        Placeholder — Julias Sicht dazu, ohne Heilversprechen.
-      </p></details>
-      <details class="faq-item"><summary>Was tun bei einem MCAS-Schub?</summary><p>
-        Placeholder — Julias SOS-Strategien.
-      </p></details>
-    </div>
-  </div>
-</section>
-
-<section class="cta-block with-photo" id="kontakt">
-  <div class="container">
-    <div class="inner reveal">
-      <div class="mark"></div>
-      <h2>Schreib <em>mir</em>.</h2>
-      <p>
-        Fragen zur App, zur Community, zum Blog.
-        <br>Oder einfach so. Ich les alles selbst.
-      </p>
-      <div class="actions">
-        <a href="mailto:julia@bergles.net" class="btn-red">julia@bergles.net</a>
-        <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" class="btn-outline">WhatsApp-Community</a>
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop & Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
       </div>
     </div>
-    <div class="cta-photo reveal d1">
-      <img src="images/julia-4.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
-      <div class="over">
-        <span class="small">Julia · @julia_bergles</span>
-        Ich melde mich meistens innerhalb weniger Stunden.
-      </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
     </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Julia</div>
-      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
-    </div>
-    <div class="footer-col">
-      <h5>App &amp; Diagnosen</h5>
-      <a href="app.html">TerraLuna App</a>
-      <a href="histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="mcas.html">MCAS</a>
-      <a href="reizdarm.html">Reizdarm</a>
-      <a href="selbsttest.html">Selbsttest</a>
-    </div>
-    <div class="footer-col">
-      <h5>Inhalte</h5>
-      <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <a href="ebooks.html">E-Books</a>
-      <a href="ebooks.html">E-Books</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-    <div class="footer-col">
-      <h5>Rechtliches</h5>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerruf</a>
-    </div>
-  </div>
-  <div class="footer-xxl">
-    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
-    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
   </div>
 </footer>
-
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-</script>
 
 </body>
 </html>
