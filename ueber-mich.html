@@ -1,706 +1,223 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="index, follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Über mich · Julia Bergles</title>
-<meta name="description" content="Meine Geschichte: Histaminintoleranz, MCAS, Reizdarm. Wie ich hier gelandet bin, was ich gelernt habe, warum ich TerraLuna gebaut habe." />
-<link rel="canonical" href="https://www.juliabergles.de/ueber-mich.html" />
-<meta property="og:type" content="profile" />
-<meta property="og:url" content="https://www.juliabergles.de/ueber-mich.html" />
-<meta property="og:title" content="Über mich · Julia Bergles" />
-<meta property="og:description" content="Meine Geschichte: Histaminintoleranz, MCAS, Reizdarm. Wie ich hier gelandet bin, was ich gelernt habe." />
-<meta property="og:image" content="https://www.juliabergles.de/images/julia-1.jpg" />
-<meta property="og:locale" content="de_DE" />
-<meta property="og:site_name" content="Julia Bergles" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Über mich · Julia Bergles" />
-<meta name="twitter:description" content="Meine Geschichte: Histaminintoleranz, MCAS, Reizdarm. Wie ich hier gelandet bin, was ich gelernt habe." />
-<meta name="twitter:image" content="https://www.juliabergles.de/images/julia-1.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/onpoint.css">
-<style>
-  /* Gemeinsame mymiapage-Basics für Über-mich */
-  .um-eyebrow {
-    display: inline-block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px; letter-spacing: 0.32em;
-    color: var(--copper-dark); font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .um-h1, .um-h2, .um-h3 {
-    font-family: 'Raleway', sans-serif !important;
-    color: var(--bordeaux);
-    font-weight: 900 !important;
-    letter-spacing: -0.02em;
-    line-height: 1.08;
-  }
-  .um-h1 { font-size: clamp(42px, 5.5vw, 72px); }
-  .um-h2 { font-size: clamp(34px, 4.5vw, 54px); }
-  .um-h3 { font-size: clamp(22px, 2vw, 28px); }
-  .um-h1 em, .um-h2 em, .um-h3 em {
-    font-style: normal;
-    background: var(--copper-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .um-lede {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: clamp(15px, 1.5vw, 19px);
-    line-height: 1.6;
-    color: var(--ink-soft);
-  }
-  .um-lede em {
-    font-style: normal;
-    color: var(--bordeaux);
-    font-weight: 700;
-  }
-
-  /* HERO — Split: Portrait links, Text rechts */
-  .um-hero {
-    padding: 120px 32px 90px;
-    background: var(--bg);
-  }
-  .um-hero-inner {
-    max-width: 1280px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1.05fr;
-    gap: 70px; align-items: center;
-  }
-  @media (max-width: 900px) {
-    .um-hero-inner { grid-template-columns: 1fr; gap: 40px; }
-    .um-hero { padding: 100px 24px 60px; }
-  }
-  .um-hero-photo {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 30px 70px rgba(45, 31, 34, 0.15);
-  }
-  .um-hero-photo img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .um-hero-photo .caption {
-    position: absolute; bottom: 20px; left: 20px;
-    background: rgba(255, 252, 249, 0.92);
-    color: var(--bordeaux);
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px; letter-spacing: 0.2em;
-    font-weight: 700;
-    text-transform: uppercase;
-    backdrop-filter: blur(6px);
-  }
-  .um-hero-text .um-lede { margin: 0 0 32px; max-width: 480px; }
-  @media (max-width: 900px) {
-    .um-hero-text { text-align: center; }
-    .um-hero-text .um-lede { margin-left: auto; margin-right: auto; }
-  }
-
-  /* LEARN (Ausbildung) — Cream Cards */
-  .um-section { padding: 100px 32px; }
-  @media (max-width: 700px) { .um-section { padding: 70px 20px; } }
-  .um-section.bg-warm { background: var(--bg-warm); }
-  .um-section.bg-cream { background: var(--bg); }
-
-  .um-section-head {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 60px;
-  }
-  .um-section-head .um-lede { margin-top: 18px; }
-
-  .um-learn-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-    max-width: 1100px; margin: 0 auto;
-  }
-  @media (max-width: 800px) { .um-learn-grid { grid-template-columns: 1fr; } }
-  .um-learn-card {
-    background: #fff;
-    border: 1px solid rgba(42, 42, 42, 0.08);
-    border-radius: 12px;
-    padding: 40px 36px;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s, border-color 0.5s;
-    box-shadow: 0 4px 14px rgba(45, 31, 34, 0.04);
-  }
-  .um-learn-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--copper);
-    box-shadow: 0 24px 48px rgba(45, 31, 34, 0.10);
-  }
-  .um-learn-card .year {
-    display: inline-block;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 800;
-    color: #fff;
-    background: var(--bordeaux);
-    padding: 5px 14px;
-    border-radius: 999px;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    margin-bottom: 18px;
-  }
-  .um-learn-card h4 {
-    font-family: 'Raleway', sans-serif; font-weight: 900;
-    font-size: 24px; color: var(--bordeaux);
-    margin: 0 0 14px; line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-  .um-learn-card p {
-    font-family: 'Quicksand', sans-serif; font-weight: 500;
-    font-size: 15px; color: var(--ink-soft);
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  /* WISSEN — Split mit Portrait + Liste */
-  .um-wissen-split {
-    display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px;
-    max-width: 1200px; margin: 0 auto; align-items: center;
-  }
-  @media (max-width: 900px) { .um-wissen-split { grid-template-columns: 1fr; gap: 40px; } }
-  .um-wissen-photo {
-    position: relative;
-    aspect-ratio: 4/5;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(45, 31, 34, 0.15);
-  }
-  .um-wissen-photo img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
-  .um-wissen-photo .caption {
-    position: absolute; bottom: 20px; left: 20px;
-    background: rgba(255, 252, 249, 0.92);
-    color: var(--bordeaux);
-    padding: 8px 16px; border-radius: 999px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px; letter-spacing: 0.2em;
-    font-weight: 700; text-transform: uppercase;
-    backdrop-filter: blur(6px);
-  }
-  .um-wissen-list {
-    list-style: none; padding: 0;
-    display: flex; flex-direction: column; gap: 18px;
-  }
-  .um-wissen-list li {
-    background: #fff;
-    border: 1px solid rgba(42, 42, 42, 0.08);
-    border-radius: 12px;
-    padding: 24px 28px;
-    display: grid; grid-template-columns: 44px 1fr; gap: 20px;
-    align-items: flex-start;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;
-  }
-  .um-wissen-list li:hover {
-    transform: translateX(4px);
-    border-color: var(--copper);
-    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.08);
-  }
-  .um-wissen-list .icn {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: linear-gradient(135deg, rgba(196, 139, 108, 0.15), rgba(232, 196, 168, 0.25));
-    color: var(--bordeaux);
-    display: inline-flex; align-items: center; justify-content: center;
-  }
-  .um-wissen-list h5 {
-    font-family: 'Raleway', sans-serif; font-weight: 900;
-    font-size: 19px; color: var(--bordeaux);
-    margin: 0 0 6px;
-  }
-  .um-wissen-list p {
-    font-family: 'Quicksand', sans-serif; font-weight: 500;
-    font-size: 14px; color: var(--ink-soft); line-height: 1.6;
-    margin: 0;
-  }
-
-  /* VALUES — 3 Cards mit Icon oben */
-  .um-values-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    max-width: 1200px; margin: 0 auto;
-  }
-  @media (max-width: 900px) { .um-values-grid { grid-template-columns: 1fr; } }
-  .um-value-card {
-    background: #fff;
-    border: 1px solid rgba(42, 42, 42, 0.08);
-    border-radius: 12px;
-    padding: 40px 32px;
-    transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
-    box-shadow: 0 4px 14px rgba(45, 31, 34, 0.04);
-  }
-  .um-value-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--copper);
-    box-shadow: 0 24px 48px rgba(45, 31, 34, 0.10);
-  }
-  .um-value-card .value-n {
-    display: inline-flex;
-    align-items: center; justify-content: center;
-    width: 52px; height: 52px;
-    border-radius: 50%;
-    background: var(--copper-gradient);
-    color: #fff;
-    font-family: 'Raleway', sans-serif; font-weight: 900;
-    font-size: 20px;
-    margin-bottom: 22px;
-  }
-  .um-value-card h4 {
-    font-family: 'Raleway', sans-serif; font-weight: 900;
-    font-size: 22px; color: var(--bordeaux);
-    margin: 0 0 12px; line-height: 1.15;
-  }
-  .um-value-card p {
-    font-family: 'Quicksand', sans-serif; font-weight: 500;
-    font-size: 14.5px; color: var(--ink-soft); line-height: 1.65;
-    margin: 0;
-  }
-
-  /* JULIA-GALLERIE — Masonry-Grid mit versetzten Größen im mymiapage-Stil */
-  .um-gallery-section { padding: 100px 32px; background: var(--bg); }
-  @media (max-width: 700px) { .um-gallery-section { padding: 70px 20px; } }
-  .um-gallery-head {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 50px;
-  }
-  .um-gallery-head h2 { margin: 0 0 18px; }
-  .um-gallery-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-flow: dense;
-    gap: 16px;
-  }
-  @media (max-width: 900px) { .um-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; } }
-  @media (max-width: 600px) { .um-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
-  .um-g {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--bg-warm);
-    box-shadow: 0 6px 18px rgba(45, 31, 34, 0.08);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s;
-  }
-  .um-g:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.16);
-  }
-  .um-g img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .um-g:hover img { transform: scale(1.05); }
-  .um-g.tall { grid-row: span 2; aspect-ratio: 4 / 6.5; }
-  .um-g.wide { grid-column: span 2; aspect-ratio: 16 / 10; }
-  .um-g.square { aspect-ratio: 1 / 1; }
-  @media (max-width: 900px) {
-    .um-g.tall { grid-row: auto; aspect-ratio: 4 / 5; }
-  }
-  @media (max-width: 600px) {
-    .um-g.tall { grid-row: auto; aspect-ratio: 4 / 5; }
-    .um-g.wide { grid-column: span 2; aspect-ratio: 4 / 3; }
-  }
-  /* Transparente Text-Überlagerung auf einem Bild — mymiapage-Signature */
-  .um-g .caption-over {
-    position: absolute;
-    inset: auto 14px 14px 14px;
-    padding: 14px 18px;
-    background: rgba(251, 242, 237, 0.92);
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--bordeaux);
-    letter-spacing: -0.01em;
-    line-height: 1.4;
-  }
-  .um-g .caption-over .small {
-    display: block;
-    font-size: 9px;
-    letter-spacing: 0.28em;
-    text-transform: none;
-    color: var(--muted);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  /* CTA — mymiapage-Stil: cream Sektion mit prominenter Bordeaux-Karte */
-  .um-cta {
-    padding: 100px 32px;
-    background: var(--bg);
-    text-align: center;
-  }
-  .um-cta-card {
-    max-width: 720px; margin: 0 auto;
-    background: linear-gradient(160deg, #fffcf9 0%, #efe3da 100%);
-    border: 1px solid rgba(42, 42, 42, 0.1);
-    border-radius: 12px;
-    padding: 60px 40px;
-    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.06);
-  }
-  .um-cta-card h2 { margin: 0 0 14px; }
-  .um-cta-card p {
-    font-family: 'Quicksand', sans-serif; font-weight: 500;
-    font-size: 16px; color: var(--ink-soft);
-    line-height: 1.6; margin: 0 0 30px;
-  }
-  .um-cta-card .actions {
-    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-  }
-</style>
+<meta name="description" content="Meine Geschichte: Histaminintoleranz, MCAS, Reizdarm. Wie ich hier gelandet bin, was ich gelernt habe, warum ich TerraLuna gebaut habe.">
+<link rel="stylesheet" href="assets/site-v3.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
-      <li><a href="ueber-mich.html" class="current">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
       </li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER: App + Community + Instagram -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+<header class="hero-editorial">
+  <div class="hero-bg">
+    <img src="images/hey-ich-bin-julia.jpg" alt="Julia Bergles" onerror="this.src='ebook-reisen/bilder/Header-Startseite.jpg'">
   </div>
-</div>
-<div class="nav-spacer"></div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Über mich</span>
+        <p class="lead mt-md" style="color: var(--cream); max-width: 36ch;">Betroffen von Histamin, MCAS und Reizdarm. Gründerin der TerraLuna-App.</p>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--cream);">Hey, ich bin<br><em class="italic">Julia</em>.</h1>
+        <p class="mt-md" style="color: rgba(255,252,249,0.92); max-width: 42ch;">
+          Ich teile meine eigenen Erfahrungen. Ehrlich. Ohne Coach-Sprech. Ohne Heilversprechen.
+        </p>
+        <div class="mt-lg">
+          <a href="mailto:julia@bergles.net" class="btn btn-copper">Schreib mir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<!-- HERO: Full-Bleed Portrait + Overlay-Text-Box -->
-<style>
-  .um-hero-full {
-    position: relative;
-    min-height: clamp(560px, 92vh, 900px);
-    background: #2a2a2a url('images/hey-ich-bin-julia.jpg') center/cover no-repeat;
-    display: flex; align-items: center;
-    padding: 100px 40px;
-    overflow: hidden;
-  }
-  @media (max-width: 700px) {
-    .um-hero-full { padding: 80px 20px; min-height: 78vh; background-position: 60% center; }
-  }
-  .um-hero-full::before {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(90deg, rgba(45,31,34,0.35) 0%, rgba(45,31,34,0.15) 45%, rgba(45,31,34,0.05) 100%);
-    pointer-events: none;
-  }
-  @media (max-width: 700px) {
-    .um-hero-full::before {
-      background: linear-gradient(180deg, rgba(45,31,34,0.15) 0%, rgba(45,31,34,0.55) 70%, rgba(45,31,34,0.75) 100%);
-    }
-  }
-  .um-hero-box {
-    position: relative; z-index: 1;
-    margin-left: auto;
-    max-width: 480px;
-    padding: 48px 42px;
-    background: rgba(251, 242, 237, 0.82);
-    backdrop-filter: blur(14px) saturate(1.2);
-    -webkit-backdrop-filter: blur(14px) saturate(1.2);
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.35);
-    box-shadow: 0 40px 80px rgba(45,31,34,0.25);
-  }
-  @media (max-width: 900px) {
-    .um-hero-box { margin: 0 auto; max-width: 560px; }
-  }
-  @media (max-width: 700px) {
-    .um-hero-box { padding: 36px 28px; margin-top: auto; margin-bottom: 0; }
-  }
-  .um-hero-box .um-eyebrow { color: var(--copper-dark); }
-  .um-hero-box .um-h1 { font-size: clamp(38px, 5vw, 62px); margin: 8px 0 20px; }
-  .um-hero-box .um-lede { font-size: clamp(15px, 1.5vw, 18px); margin: 0 0 28px; color: var(--ink); }
-  .um-hero-box .um-lede em { font-style: normal; color: var(--copper-dark); font-weight: 600; }
-</style>
-<section class="um-hero-full">
-  <div class="um-hero-box reveal d1">
-    <span class="um-eyebrow">Meine Geschichte</span>
-    <h1 class="um-h1">Hey, ich bin <em>Julia</em>.</h1>
-    <p class="um-lede">
-      Betroffen von Histamin, MCAS und Reizdarm.
-      <br>Gründerin der TerraLuna-App.
-      <br><em>Ich teile meine eigenen Erfahrungen.</em>
+<section class="section section-cream">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Mein Weg</span>
+      <h2 class="mt-sm">Wie ich <em class="italic">hier</em> gelandet bin.</h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">Von Corona bis Diagnose bis TerraLuna. Kein gerader Weg. Aber meiner.</p>
+    </div>
+
+    <div class="grid-3 mt-lg">
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">2022</span>
+        <h3 class="mt-sm">Nach Corona. Der eigentliche Anfang.</h3>
+        <p class="mt-sm">Nach Corona-Infektion Geschmacksverlust. Orthorexie. Immer mehr Sport.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">2023</span>
+        <h3 class="mt-sm">Immer weniger, was ich vertrage.</h3>
+        <p class="mt-sm">Lebensmittel-Liste kürzer. Bauchschmerzen. Kopfschmerzen. Keine Antworten von Ärzten.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">2024</span>
+        <h3 class="mt-sm">Fachabi. Selbstständig. Smacado.</h3>
+        <p class="mt-sm">Fachabitur Gestaltung. Erste Firma Smacado — glutenfreie Backmischungen.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">2025</span>
+        <h3 class="mt-sm">Darmverschluss. Diagnose. 31 → 47 kg.</h3>
+        <p class="mt-sm">7 Monate nur 5 Lebensmittel. Untergewicht 31 kg. Diagnose Histamin / Reizdarm / Allergien. Depressionen.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">2026</span>
+        <h3 class="mt-sm">Körper verstanden. TerraLuna.</h3>
+        <p class="mt-sm">Rhythmus. Smacado beendet. TerraLuna-App entwickelt. Fokus: anderen helfen, meine Geschichte teilen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<img class="full-image" src="images/neu-2026-08/IMG_3639.jpg" alt="Julia in Ljubljana">
+
+<section class="section section-mint">
+  <div class="container">
+    <div class="grid-2">
+      <div class="img-block">
+        <img src="images/julia-3.jpg" alt="Julia Portrait" onerror="this.src='images/neu-2026-08/IMG_3635.jpg'">
+        <p class="img-caption">Selbst betroffen</p>
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-blue">Woher meine Erfahrung kommt</span>
+        <h2 class="mt-sm">Nicht aus Kursen und Zertifikaten.<br><em class="italic">Aus dem, was ich selbst durchgemacht habe.</em></h2>
+
+        <div class="chapter-mark mt-lg">
+          <h3>Selbst betroffen</h3>
+          <p class="mt-sm">Diagnostiziert: Histamin, Reizdarm, Fructose, PMS, sämtliche Allergien. Vermutet: MCAS. Ich lebe jeden Tag mit dem, worüber ich schreibe.</p>
+        </div>
+        <div class="chapter-mark">
+          <h3>TerraLuna-App</h3>
+          <p class="mt-sm">Eigene App gebaut aus dem, was mir gefehlt hat. App-Development, User-Research, Community-Aufbau. Für alle mit HIT, MCAS oder Reizdarm.</p>
+        </div>
+        <div class="chapter-mark">
+          <h3>Community</h3>
+          <p class="mt-sm">WhatsApp-Community mit Leuten, die es verstehen. <a href="https://instagram.com/julia_bergles" style="color: var(--copper);">Instagram @julia_bergles</a>. Direkter Draht. Echte Fragen. Ehrliche Antworten.</p>
+        </div>
+        <div class="chapter-mark">
+          <h3>Jahrelanges Ausprobieren</h3>
+          <p class="mt-sm">Was mir geholfen hat. Was nicht. Was ich nie wieder machen würde. Aufgeschrieben im Blog, in E-Books, in der App. Kein Coach-Sprech, keine Heilversprechen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Was mich antreibt</span>
+      <h2 class="mt-sm">Was mich <em class="italic">antreibt</em>.</h2>
+    </div>
+    <div class="grid-3 mt-lg">
+      <article class="editorial-card">
+        <span class="chapter-num">Nº 01</span>
+        <h3 class="mt-sm">Ehrlich</h3>
+        <p class="mt-sm">Auch wenn's nicht sexy klingt. Keine Heilversprechen. Kein Coach-Sprech. Was hilft, was nicht.</p>
+      </article>
+      <article class="editorial-card">
+        <span class="chapter-num">Nº 02</span>
+        <h3 class="mt-sm">Persönlich</h3>
+        <p class="mt-sm">Ich bin keine Expertin. Ich bin die, die es lebt. Aus meiner Perspektive als Betroffene.</p>
+      </article>
+      <article class="editorial-card">
+        <span class="chapter-num">Nº 03</span>
+        <h3 class="mt-sm">Ohne Bullshit</h3>
+        <p class="mt-sm">Handgemacht, kein Team. Kein KI-Text, kein Baukasten-Blog. Alles selbst geschrieben.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container-narrow text-center">
+    <span class="eyebrow" style="color: var(--copper);">Kontakt</span>
+    <h2 class="mt-md" style="color: var(--cream);">Schreib <em class="italic">mir</em>.</h2>
+    <p class="lead mt-md" style="color: rgba(255,252,249,0.9); margin-left: auto; margin-right: auto;">
+      Fragen zur App, zur Community, zum Blog. Oder einfach so. Ich les alles selbst.
     </p>
-    <a href="#kontakt" class="btn-red">Schreib mir</a>
-  </div>
-</section>
-
-<!-- MEIN WEG (Timeline) -->
-<section class="um-section bg-warm">
-  <div class="um-section-head reveal">
-    <span class="um-eyebrow">Mein Weg</span>
-    <h2 class="um-h2">Wie ich <em>hier</em> gelandet bin.</h2>
-    <p class="um-lede">
-      Von Corona bis Diagnose bis TerraLuna.
-      <br>Kein gerader Weg. Aber meiner.
-    </p>
-  </div>
-  <div class="um-learn-grid">
-    <div class="um-learn-card reveal d1">
-      <span class="year">2022</span>
-      <h4>Nach Corona. Der eigentliche Anfang.</h4>
-      <p>
-        Nach der Corona-Infektion habe ich meinen Geschmack verloren.
-        <br>Danach bin ich in eine Orthorexie gerutscht.
-        <br>Immer gesünder, immer weniger, immer mehr Sport.
-      </p>
-    </div>
-    <div class="um-learn-card reveal d2">
-      <span class="year">2023</span>
-      <h4>Immer weniger, was ich vertrage.</h4>
-      <p>
-        Die Liste der Lebensmittel wurde von Monat zu Monat kürzer.
-        <br>Bauchschmerzen, Blähbauch, Kopfschmerzen nach fast jedem Essen.
-        <br>Und keine Antwort von Ärzten.
-      </p>
-    </div>
-    <div class="um-learn-card reveal d3">
-      <span class="year">2024</span>
-      <h4>Fachabi. Selbstständig. Smacado.</h4>
-      <p>
-        Fachabitur Gestaltung — während dem Abschluss ging alles richtig los.
-        <br>Danach Selbstständigkeit. Erste Firma <strong>Smacado</strong>:
-        <br>gesunde, glutenfreie Backmischungen.
-      </p>
-    </div>
-    <div class="um-learn-card reveal d4">
-      <span class="year">2025</span>
-      <h4>Darmverschluss. Diagnose. 31 → 47&nbsp;kg.</h4>
-      <p>
-        Darmverschluss. 7 Monate nur 5 Lebensmittel. Untergewicht <strong>31&nbsp;kg</strong>.
-        <br>Februar 2025: Diagnose Histamin, Reizdarm, Allergien.
-        <br>Depressionen, Rückzug. Kein Arzt hat unterstützt.
-      </p>
-    </div>
-    <div class="um-learn-card reveal d1">
-      <span class="year">2026</span>
-      <h4>Körper verstanden. TerraLuna.</h4>
-      <p>
-        Endlich Rhythmus. Kein schmerzhafter Blähbauch mehr.
-        <br>Smacado beendet, TerraLuna-App entwickelt.
-        <br>Fokus: <strong>anderen helfen, meine Geschichte teilen</strong>.
-      </p>
+    <div class="mt-lg" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+      <a href="mailto:julia@bergles.net" class="btn btn-copper">julia@bergles.net</a>
+      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" class="btn btn-outline" style="border-color: var(--cream); color: var(--cream);">WhatsApp-Community</a>
     </div>
   </div>
 </section>
 
-
-<!-- WOHER MEINE ERFAHRUNG KOMMT -->
-<section class="um-section bg-cream">
-  <div class="um-section-head reveal">
-    <span class="um-eyebrow">Aus erster Hand</span>
-    <h2 class="um-h2">Woher meine <em>Erfahrung</em> kommt.</h2>
-    <p class="um-lede">Nicht aus Kursen und Zertifikaten. Aus dem, was ich selbst durchgemacht habe.</p>
-  </div>
-
-  <div class="um-wissen-split">
-    <div class="um-wissen-photo reveal">
-      <img src="images/julia-3.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
-      <span class="caption">Selbst betroffen</span>
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">
+          Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.
+        </p>
+        <p style="margin-top: 20px;"><a href="https://instagram.com/julia_bergles" style="color: var(--copper);">@julia_bergles</a></p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop & Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="um-wissen-list reveal d1">
-      <li>
-        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-        <div>
-          <h5>Selbst betroffen</h5>
-          <p>
-            Diagnostiziert: Histamin, Reizdarm, Fructose, PMS, sämtliche Allergien.
-            <br>Vermutet: MCAS.
-            <br>Ich lebe jeden Tag mit dem, worüber ich schreibe.
-          </p>
-        </div>
-      </li>
-      <li>
-        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
-        <div>
-          <h5>TerraLuna-App</h5>
-          <p>
-            Eigene App gebaut aus dem, was mir gefehlt hat.
-            <br>App-Development, User-Research, Community-Aufbau.
-            <br>Für alle mit HIT, MCAS oder Reizdarm.
-          </p>
-        </div>
-      </li>
-      <li>
-        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-        <div>
-          <h5>Community</h5>
-          <p>
-            WhatsApp-Community mit Leuten die es verstehen.
-            <br>Instagram <a href="https://instagram.com/julia_bergles" target="_blank" rel="noopener" style="color: var(--bordeaux); text-decoration: underline;">@julia_bergles</a>.
-            <br>Direkter Draht. Echte Fragen. Ehrliche Antworten.
-          </p>
-        </div>
-      </li>
-      <li>
-        <span class="icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></span>
-        <div>
-          <h5>Jahrelanges Ausprobieren</h5>
-          <p>
-            Was mir geholfen hat. Was nicht. Was ich nie wieder machen würde.
-            <br>Aufgeschrieben im Blog, in E-Books, in der App.
-            <br>Kein Coach-Sprech, keine Heilversprechen.
-          </p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- WAS MICH ANTREIBT -->
-<section class="um-section bg-warm">
-  <div class="um-section-head reveal">
-    <span class="um-eyebrow">Meine Werte</span>
-    <h2 class="um-h2">Was mich <em>antreibt</em>.</h2>
-  </div>
-  <div class="um-values-grid">
-    <div class="um-value-card reveal d1">
-      <div class="value-n">01</div>
-      <h4>Ehrlich</h4>
-      <p>
-        Auch wenn's nicht sexy klingt.
-        <br>Keine Heilversprechen. Kein Coach-Sprech.
-        <br>Was hilft, was nicht.
-      </p>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung.
+      Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.
+      <br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
     </div>
-    <div class="um-value-card reveal d2">
-      <div class="value-n">02</div>
-      <h4>Persönlich</h4>
-      <p>
-        Ich bin keine Expertin.
-        <br>Ich bin die, die es lebt.
-        <br>Aus meiner Perspektive als Betroffene.
-      </p>
-    </div>
-    <div class="um-value-card reveal d3">
-      <div class="value-n">03</div>
-      <h4>Ohne Bullshit</h4>
-      <p>
-        Handgemacht, kein Team.
-        <br>Kein KI-Text, kein Baukasten-Blog.
-        <br>Alles selbst geschrieben.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="um-cta" id="kontakt">
-  <div class="um-cta-card reveal">
-    <span class="um-eyebrow">Kontakt</span>
-    <h2 class="um-h2">Schreib <em>mir</em>.</h2>
-    <p>
-      Fragen zur App, zur Community, zum Blog.<br>
-      Oder einfach so. Ich les alles selbst.
-    </p>
-    <div class="actions">
-      <a href="mailto:julia@bergles.net" class="btn-red">julia@bergles.net</a>
-      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" class="btn-outline">WhatsApp-Community</a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Julia</div>
-      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
-    </div>
-    <div class="footer-col">
-      <h5>App &amp; Diagnosen</h5>
-      <a href="app.html">TerraLuna App</a>
-      <a href="histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="mcas.html">MCAS</a>
-      <a href="reizdarm.html">Reizdarm</a>
-      <a href="selbsttest.html">Selbsttest</a>
-    </div>
-    <div class="footer-col">
-      <h5>Inhalte</h5>
-      <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <a href="ebooks.html">E-Books</a>
-      <a href="ebooks.html">E-Books</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-    <div class="footer-col">
-      <h5>Rechtliches</h5>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerruf</a>
-    </div>
-  </div>
-  <div class="footer-xxl">
-    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
-    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
   </div>
 </footer>
-
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-</script>
 
 </body>
 </html>
