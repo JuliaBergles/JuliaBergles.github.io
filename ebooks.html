@@ -1,362 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="index, follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E-Books · Julia Bergles</title>
-<meta name="description" content="E-Books von Julia Bergles — Familie versteht deine Histamin-Problematik nicht? · Histaminarm reisen · Wie ich meine Ängste losgelassen habe. Aus meinen eigenen Erfahrungen." />
-<link rel="canonical" href="https://www.juliabergles.de/ebooks.html" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.juliabergles.de/ebooks.html" />
-<meta property="og:title" content="E-Books · Julia Bergles" />
-<meta property="og:description" content="Drei E-Books über Leben mit Histamin-Problematik, MCAS und Ängsten. Aus meinen eigenen Erfahrungen." />
-<meta property="og:locale" content="de_DE" />
-<meta property="og:site_name" content="Julia Bergles" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/onpoint.css">
-<style>
-  /* E-Book-Sektionen im reizdarm-Stil, aber kantig (border-radius 4px statt 16px) */
-  .md-handschrift-section { padding: 100px 32px; background: var(--bg); }
-  @media (max-width: 700px) { .md-handschrift-section { padding: 70px 20px; } }
-  .md-handschrift-inner { max-width: 1200px; margin: 0 auto; }
-  .md-handschrift-head { text-align: center; max-width: 720px; margin: 0 auto 70px; }
-  .md-handschrift-head h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 54px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.08; margin: 18px 0; }
-  .md-handschrift-head h2 em { font-style: normal; color: var(--copper-dark); }
-  .md-handschrift-head p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.6; color: var(--ink-soft); margin: 0; }
-
-  .md-block { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; margin-bottom: 90px; }
-  @media (max-width: 900px) { .md-block { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; } }
-  .md-block.reverse { direction: rtl; }
-  .md-block.reverse > * { direction: ltr; }
-
-  /* E-Book-Cover statt Foto — kantig, klare Farbfläche */
-  .eb-cover {
-    aspect-ratio: 4/5;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    padding: 48px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 30px 60px rgba(45, 31, 34, 0.14);
-  }
-  .eb-cover.familie { background: linear-gradient(160deg, #E8C4A8 0%, #C48B6C 100%); color: var(--ink); }
-  .eb-cover.reisen  { background: linear-gradient(160deg, #2a2a2a 0%, #C48B6C 100%); color: #fff; }
-  .eb-cover.aengste { background: linear-gradient(160deg, #955251 0%, #C48B6C 100%); color: #fff; }
-  .eb-cover .eb-nr { font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 700; opacity: 0.85; }
-  .eb-cover .eb-t { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.05; letter-spacing: -0.02em; margin-top: 14px; }
-  .eb-cover .eb-tag { align-self: flex-start; padding: 8px 16px; background: rgba(255,255,255,0.92); color: var(--ink); border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; }
-  .eb-cover.familie .eb-tag { background: var(--ink); color: #fff; }
-
-  /* Text-Spalte im reizdarm-Stil */
-  .md-block-txt .kicker { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; color: var(--copper-dark); font-weight: 700; text-transform: uppercase; margin-bottom: 18px; }
-  .md-block-txt h3 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(28px, 3.5vw, 42px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 22px; }
-  .md-block-txt h3 em { font-style: normal; color: var(--copper-dark); }
-  .md-block-txt p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 16px; }
-  .md-block-txt p strong { color: var(--copper-dark); font-weight: 700; }
-  .md-block-txt ul { list-style: none; padding: 0; margin: 10px 0 20px; }
-  .md-block-txt li { font-family: 'Quicksand', sans-serif; font-size: 15.5px; color: var(--ink-soft); padding: 4px 0 4px 18px; position: relative; line-height: 1.6; }
-  .md-block-txt li::before { content: "·"; position: absolute; left: 2px; color: var(--copper-dark); font-weight: 900; font-size: 22px; top: -3px; }
-
-  .eb-meta { display: flex; align-items: baseline; gap: 14px; padding: 16px 0; border-top: 1px solid rgba(45,31,34,0.10); margin-top: 8px; }
-  .eb-meta .price { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 26px; color: var(--ink); letter-spacing: -0.01em; }
-  .eb-meta .note { font-family: 'Quicksand', sans-serif; font-size: 13px; color: var(--ink-muted); }
-  .eb-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-  .eb-actions .primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: var(--bordeaux); color: #fff; border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; }
-  .eb-actions .primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(42,42,42,0.22); }
-  .eb-actions .ghost { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: transparent; color: var(--bordeaux); border: 1.5px solid var(--bordeaux); border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
-  .eb-actions .ghost:hover { background: var(--bordeaux); color: #fff; }
-
-  .health-disclaimer { max-width: 780px; margin: 60px auto 0; background: rgba(196, 139, 108, 0.08); border-left: 3px solid var(--copper-dark); border-radius: 0; padding: 24px 28px; font-family: 'Quicksand', sans-serif; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
-  .health-disclaimer strong { color: var(--copper-dark); font-weight: 700; }
-
-  /* Bilder-Teaser — dezent */
-  .eb-bilder-teaser { padding: 90px 32px; background: var(--bg-warm); text-align: center; }
-  .eb-bilder-teaser .inner { max-width: 620px; margin: 0 auto; }
-  .eb-bilder-teaser .kicker { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; color: var(--copper-dark); font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
-  .eb-bilder-teaser h2 { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(28px, 3.5vw, 42px); color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
-  .eb-bilder-teaser h2 em { font-style: normal; color: var(--copper-dark); }
-  .eb-bilder-teaser p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 24px; }
-  .eb-bilder-teaser a.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; background: var(--bordeaux); color: #fff; border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; }
-</style>
+<meta name="description" content="Meine E-Books über das Leben mit Histamin, Reisen, Ängsten und Depressionen. Ehrliche Erfahrungen, keine KI-Texte.">
+<link rel="stylesheet" href="assets/site-v3.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop current-parent">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
       </li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+<header class="hero-editorial">
+  <div class="hero-bg">
+    <img src="ebook-reisen/bilder/Titelbild.PNG" alt="Meine E-Books">
   </div>
-</div>
-<div class="nav-spacer"></div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">E-Books</span>
+        <p class="lead mt-md" style="color: var(--cream); max-width: 36ch;">
+          In den E-Books geht es um meine eigenen Erfahrungen.
+        </p>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--cream);">Meine<br><em class="italic">E-Books</em>.</h1>
+        <p class="mt-md" style="color: rgba(255,252,249,0.92); max-width: 44ch;">
+          Sowas kann keine KI schreiben. Daher ein E-Book ohne KI. Mittlerweile auch sehr selten.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
 
-<!-- HERO im reizdarm-Stil: dunkles Bild-BG mit Gold-Akzent -->
-<section class="page-hero page-hero-image" style="background-image: linear-gradient(180deg, rgba(45, 31, 34, 0.72), rgba(45, 31, 34, 0.9)), url('images/hey-ich-bin-julia.jpg'); background-size: cover; background-position: center 20%; color: var(--bg);">
+<!-- FEATURED: DIE PROBE -->
+<section class="section section-cream">
   <div class="container">
-    <div class="eyebrow reveal" style="color: var(--gold);">E-Books</div>
-    <h1 class="reveal d1" style="color: #fff;">Wissen zum <em style="color: var(--gold);">Mitnehmen</em>.</h1>
-    <p class="lede reveal d2" style="color: rgba(255, 255, 255, 0.88);">
-      Drei E-Books über Histamin-Problematik, MCAS und die Ängste drumherum.
-      <br>Aus meinem Alltag — nicht aus dem Lehrbuch.
-      <br><em style="color: var(--gold);">Aus meinen eigenen Erfahrungen.</em>
-    </p>
-  </div>
-</section>
-
-<div class="mini-marquee reveal">
-  <div class="track">
-    <span class="item">Familie</span><span class="sep"></span>
-    <span class="item">Reisen</span><span class="sep"></span>
-    <span class="item">Ängste loslassen</span><span class="sep"></span>
-    <span class="item">Packlisten</span><span class="sep"></span>
-    <span class="item">Restaurant-Fragen</span><span class="sep"></span>
-    <span class="item">Angehörige verstehen</span><span class="sep"></span>
-    <span class="item">Sofort umsetzbar</span><span class="sep"></span>
-    <span class="item">Aus dem Alltag</span><span class="sep"></span>
-    <span class="item">Familie</span><span class="sep"></span>
-    <span class="item">Reisen</span><span class="sep"></span>
-    <span class="item">Ängste loslassen</span><span class="sep"></span>
-    <span class="item">Packlisten</span><span class="sep"></span>
-    <span class="item">Restaurant-Fragen</span><span class="sep"></span>
-    <span class="item">Angehörige verstehen</span><span class="sep"></span>
-    <span class="item">Sofort umsetzbar</span><span class="sep"></span>
-    <span class="item">Aus dem Alltag</span><span class="sep"></span>
-  </div>
-</div>
-
-<!-- md-handschrift Sektion mit 3 E-Books -->
-<section class="md-handschrift-section">
-  <div class="md-handschrift-inner">
-    <div class="md-handschrift-head reveal">
-      <span style="display: inline-block; font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.32em; color: var(--copper-dark); font-weight: 700; text-transform: uppercase;">Meine E-Books</span>
-      <h2>Drei Bücher aus meinem <em>Alltag</em>.</h2>
-      <p>Für Angehörige. Für Reisende. Für alle, die Angst vor dem Essen entwickelt haben.</p>
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Jetzt verfügbar</span>
+      <h2 class="mt-sm">Nº 01 · <em class="italic">Die Probe</em></h2>
     </div>
 
-    <!-- #1 Familie -->
-    <div class="md-block reveal">
-      <div class="eb-cover familie">
-        <div>
-          <div class="eb-nr">E-Book #1 · Familie</div>
-          <div class="eb-t">Deine Familie versteht deine Histamin&shy;-Problematik nicht?</div>
-        </div>
-        <div class="eb-tag">Kostenlos</div>
+    <div class="grid-2 mt-lg" style="align-items: center;">
+      <div class="img-block" style="box-shadow: 0 20px 60px rgba(42,42,42,0.15);">
+        <img src="ebook-reisen/bilder/Titelbild.PNG" alt="Cover Die Probe">
       </div>
-      <div class="md-block-txt">
-        <span class="kicker">01 · Für Angehörige</span>
-        <h3>Was Angehörige <em>wissen</em> sollten.</h3>
-        <p>Über Histamin, MCAS, Ängste — und den <strong>Rückzug</strong>, den keiner versteht.</p>
-        <ul>
-          <li>Was Histamin-Problematik im Alltag bedeutet</li>
-          <li>Warum Rückzug kein „Zickig sein" ist</li>
-          <li>Was Angehörige tun können — und was nicht</li>
-          <li>Zum Weiterschicken, statt sich zu erklären</li>
-        </ul>
-        <div class="eb-meta">
-          <span class="price">Kostenlos</span>
-          <span class="note">~20 Seiten · PDF</span>
-        </div>
-        <div class="eb-actions">
-          <a class="primary" href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener">In Community holen →</a>
-        </div>
+      <div>
+        <span class="chapter-num">Reise-E-Book</span>
+        <h3 class="mt-sm">Meine erste Reise nach Darmverschluss und mit Histaminintoleranz.</h3>
+        <p class="mt-md">12 Kapitel. Packlisten. Rezepte. Flyer in 9 Sprachen. Meine Learnings.</p>
+        <p class="mt-md" style="color: var(--copper); font-style: italic; font-family: var(--serif); font-size: 20px;">
+          → Damit du sicher reisen kannst.
+        </p>
+        <a href="ebook-reisen.html" class="btn btn-copper mt-lg">Zum E-Book · 7,99 €</a>
       </div>
-    </div>
-
-    <!-- #2 Reisen -->
-    <div class="md-block reverse reveal">
-      <div class="eb-cover reisen">
-        <div>
-          <div class="eb-nr">E-Book #2 · Sommer 2026</div>
-          <div class="eb-t">Histamin&shy;arm reisen</div>
-        </div>
-        <div class="eb-tag">2,99 €</div>
-      </div>
-      <div class="md-block-txt">
-        <span class="kicker">02 · Für Reisende</span>
-        <h3>Reisen ohne <em>Angst</em>.</h3>
-        <p>Meine Packliste, meine Restaurant-Fragen, meine Länder-Tipps. Alles was ich mir vor meiner ersten Reise nach der Diagnose gewünscht hätte.</p>
-        <ul>
-          <li>Packliste mit den Basics, die den Unterschied machen</li>
-          <li>Restaurant-Fragen, die wirklich helfen</li>
-          <li>Snacks &amp; Notfall-Kit für Flug und unterwegs</li>
-          <li>Länder-Tipps: wo es leicht war, wo nicht</li>
-        </ul>
-        <div class="eb-meta">
-          <span class="price">2,99 €</span>
-          <span class="note">15–20 Seiten · PDF · Sofort-Download</span>
-        </div>
-        <div class="eb-actions">
-          <a class="primary" href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener">Auf die Warteliste →</a>
-          <a class="ghost" href="mailto:julia@bergles.net?subject=E-Book%3A%20Histaminarm%20reisen">Per Mail vorbestellen</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- #3 Ängste -->
-    <div class="md-block reveal">
-      <div class="eb-cover aengste">
-        <div>
-          <div class="eb-nr">E-Book #3 · Herbst 2026</div>
-          <div class="eb-t">Wie ich meine Ängste losgelassen habe</div>
-        </div>
-        <div class="eb-tag">ab 14,99 €</div>
-      </div>
-      <div class="md-block-txt">
-        <span class="kicker">03 · Für Betroffene mit Angst</span>
-        <h3>Meine <em>Geschichte</em>.</h3>
-        <p>Von Panik nach dem Essen bis wieder in den Urlaub — in einem Jahr.</p>
-        <ul>
-          <li>Wie die Angst kam und wie sie wieder ging</li>
-          <li>Übungen und Reflexionen, die geholfen haben</li>
-          <li>Was ich über Nervensystem und Körper gelernt habe</li>
-          <li>Wieder anfangen zu leben statt zu überleben</li>
-        </ul>
-        <div class="eb-meta">
-          <span class="price">14,99–19,99 €</span>
-          <span class="note">30–40 Seiten · PDF · Sofort-Download</span>
-        </div>
-        <div class="eb-actions">
-          <a class="primary" href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener">Auf die Warteliste →</a>
-          <a class="ghost" href="mailto:julia@bergles.net?subject=E-Book%3A%20Wie%20ich%20meine%20%C3%84ngste%20losgelassen%20habe">Per Mail vorbestellen</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="health-disclaimer">
-      <strong>Wichtig:</strong> Alle E-Books sind digitale Produkte (PDF). Kein Rückgaberecht nach Download. Meine Erfahrungen und Recherchen sind keine medizinische Beratung — bei ernsthaften Beschwerden bitte mit einem Arzt oder Therapeuten sprechen.
     </div>
   </div>
 </section>
 
-<!-- Bilder-Teaser -->
-<section class="eb-bilder-teaser">
-  <div class="inner">
-    <span class="kicker">Auch von mir</span>
-    <h2>Meine <em>Bilder</em>.</h2>
-    <p>Acryl auf Leinwand und Aquarell auf Papier. Aktuell auf Anfrage.</p>
-    <a class="btn" href="bilder.html">Zu den Bildern →</a>
-  </div>
-</section>
-
-<!-- WhatsApp Community CTA im reizdarm-Stil -->
-<section class="cta-block with-photo" id="community">
+<!-- IN ARBEIT -->
+<section class="section section-mint">
   <div class="container">
-    <div class="inner reveal">
-      <div class="mark"></div>
-      <h2>Neue E-Books zuerst — in der <em>Community</em>.</h2>
-      <p>
-        Direkter Draht. Ehrliche Antworten. Neue E-Books zuerst — und das Familien-Freebie gratis on top.
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">In Arbeit</span>
+      <h2 class="mt-sm">Weitere <em class="italic">E-Books</em>.</h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+        Diese schreibe ich gerade. Alles selbst — ohne KI.
       </p>
-      <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
-        <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" class="btn-red">WhatsApp-Community beitreten →</a>
-        <a href="gespraech.html" class="btn-outline-white">Direktes Gespräch</a>
-      </div>
+    </div>
+
+    <div class="grid-3 mt-lg">
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">Nº 02 · Kostenlos</span>
+        <h3 class="mt-sm">Histamin &amp; Ängste der Familie erklären</h3>
+        <p class="mt-sm">Für alle, die nicht mehr rechtfertigen wollen, warum sie nicht mitessen können.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">Kostenlos · Freebie · Erscheint 2026</p>
+      </article>
+
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">Nº 03 · Anker-Buch</span>
+        <h3 class="mt-sm">So wird man seine Ängste los</h3>
+        <p class="mt-sm">Meine echte Geschichte. Plus die Übungen, die bei mir was verändert haben.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">14,99 € · Erscheint 2026</p>
+      </article>
+
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">Nº 04 · Anker-Buch</span>
+        <h3 class="mt-sm">Was Depressionen mit einem machen</h3>
+        <p class="mt-sm">Meine ehrliche Perspektive. Wie es sich anfühlt, was mir geholfen hat.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">14,99 € · Erscheint 2026</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Julia</div>
-      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
-    </div>
-    <div class="footer-col">
-      <h5>App &amp; Diagnosen</h5>
-      <a href="app.html">TerraLuna App</a>
-      <a href="histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="mcas.html">MCAS</a>
-      <a href="reizdarm.html">Reizdarm</a>
-      <a href="selbsttest.html">Selbsttest</a>
-    </div>
-    <div class="footer-col">
-      <h5>Inhalte</h5>
-      <a href="blog/">Blog</a>
-      <a href="rezepte.html">Rezepte</a>
-      <a href="ebooks.html">E-Books</a>
-      <a href="bilder.html">Kunst</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-    <div class="footer-col">
-      <h5>Rechtliches</h5>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerruf</a>
-    </div>
+<!-- WARUM MEINE E-BOOKS -->
+<section class="section section-cream">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-copper">Warum meine E-Books</span>
+    <h2 class="mt-sm">Kein <em class="italic">KI</em>-Text.<br>Kein Coach-Sprech.</h2>
+    <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+      In meinen E-Books geht es um mein Erlebtes und vor allem meine Zweifel an das Gesundheitssystem. Viele Dinge, die nicht gut gelaufen sind.
+    </p>
+    <p class="mt-md" style="margin-left: auto; margin-right: auto; max-width: 60ch;">
+      Ich gehe auf meine persönlichen Erfahrungen ein. Sowas kann keine KI schreiben. Daher ein E-Book ohne KI. Mittlerweile auch sehr selten.
+    </p>
+    <div class="ornament">§</div>
+    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" class="btn btn-outline mt-md">WhatsApp-Community beitreten</a>
   </div>
-  <div class="footer-xxl">
-    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
-    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
+</section>
+
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
   </div>
 </footer>
-
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-</script>
 
 </body>
 </html>
