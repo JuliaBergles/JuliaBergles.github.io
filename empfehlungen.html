@@ -1,459 +1,251 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="index, follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Empfehlungen · Julia Bergles</title>
-<meta name="description" content="Meine echten Marken-Empfehlungen für Histamin-Problematik, MCAS und sensitive Ernährung. Aho.bio, Nigela, Histaminikus, HistaFOOD, Baelanse, Yamatogast — mit meinen Rabatt-Codes." />
-<link rel="canonical" href="https://www.juliabergles.de/empfehlungen.html" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.juliabergles.de/empfehlungen.html" />
-<meta property="og:title" content="Empfehlungen · Julia Bergles" />
-<meta property="og:description" content="Meine echten Marken-Empfehlungen für Histamin-Problematik, MCAS und sensitive Ernährung." />
-<meta property="og:image" content="https://www.juliabergles.de/images/empfehlungen.jpg" />
-<meta property="og:locale" content="de_DE" />
-<meta property="og:site_name" content="Julia Bergles" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap">
-<link rel="stylesheet" href="css/onpoint.css">
-<style>
-  /* EMPFEHLUNGS-BLOCKS — Runde Fotos + Text-Split, alternierend */
-  .empf-section { padding: 100px 32px; background: var(--bg); }
-  @media (max-width: 700px) { .empf-section { padding: 60px 20px; } }
-  .empf-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 80px; }
-  @media (max-width: 700px) { .empf-inner { gap: 60px; } }
-
-  .empf-block { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: center; }
-  @media (max-width: 780px) { .empf-block { grid-template-columns: 1fr; gap: 32px; text-align: center; } }
-  .empf-block.reverse { direction: rtl; }
-  .empf-block.reverse > * { direction: ltr; }
-  @media (max-width: 780px) { .empf-block.reverse { direction: ltr; } }
-
-  .empf-photo {
-    width: 280px; height: 280px; border-radius: 50%;
-    overflow: hidden; box-shadow: 0 30px 60px rgba(45, 31, 34, 0.18);
-    background: linear-gradient(135deg, #efe3da, #C48B6C);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .empf-photo:hover { transform: scale(1.03) rotate(-2deg); }
-  .empf-photo img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .empf-photo:hover img { transform: scale(1.08); }
-  .empf-photo .initial {
-    font-family: 'Raleway', sans-serif;
-    font-size: 90px; font-weight: 900;
-    color: #fffcf9;
-    letter-spacing: -0.03em;
-  }
-
-  .empf-name {
-    font-family: 'Raleway', sans-serif; font-weight: 900;
-    font-size: clamp(32px, 4vw, 48px);
-    line-height: 1; letter-spacing: -0.02em;
-    color: var(--bordeaux);
-    margin: 0 0 14px;
-  }
-
-  .empf-tags {
-    display: block;
-    margin: 0 0 16px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
-  @media (max-width: 780px) { .empf-tags { text-align: center; } }
-  .empf-tag {
-    display: inline;
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    color: inherit;
-    font: inherit;
-  }
-  .empf-tag + .empf-tag::before {
-    content: ' – ';
-    color: var(--copper-dark);
-    margin: 0 4px;
-    opacity: 0.6;
-  }
-
-  .empf-desc {
-    font-family: 'Quicksand', sans-serif; font-weight: 500;
-    font-size: 16px; line-height: 1.7;
-    color: var(--ink-soft);
-    margin: 0 0 20px;
-    max-width: 560px;
-  }
-  @media (max-width: 780px) { .empf-desc { margin-left: auto; margin-right: auto; } }
-  .empf-desc strong { color: var(--copper-dark); font-weight: 700; }
-
-  .empf-buys {
-    display: inline-block;
-    background: rgba(196, 139, 108, 0.08);
-    border-left: 3px solid var(--copper-dark);
-    padding: 14px 20px;
-    border-radius: 4px 12px 12px 4px;
-    margin: 0 0 20px;
-    text-align: left;
-  }
-  .empf-buys-label {
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--copper-dark); margin-bottom: 6px;
-  }
-  .empf-buys ul { list-style: none; padding: 0; margin: 0; }
-  .empf-buys li {
-    font-family: 'Quicksand', sans-serif; font-weight: 500;
-    font-size: 15px; color: var(--ink);
-    padding: 3px 0 3px 16px; position: relative;
-    line-height: 1.5;
-  }
-  .empf-buys li::before {
-    content: "·"; position: absolute; left: 3px; top: -3px;
-    color: var(--copper-dark); font-weight: 900; font-size: 20px;
-  }
-
-  .empf-actions {
-    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px;
-  }
-  @media (max-width: 780px) { .empf-actions { justify-content: center; } }
-  .empf-code {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, var(--copper) 0%, var(--copper-dark) 100%);
-    color: #fff;
-    border-radius: 999px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
-    text-transform: uppercase;
-    box-shadow: 0 10px 22px rgba(196, 139, 108, 0.32);
-  }
-  .empf-code-label { opacity: 0.78; font-size: 10px; }
-  .empf-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 22px;
-    background: var(--bordeaux); color: #fff;
-    border-radius: 999px;
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
-    text-transform: uppercase;
-    transition: transform 0.35s, box-shadow 0.35s, background 0.35s;
-    box-shadow: 0 10px 22px rgba(42, 42, 42, 0.2);
-  }
-  .empf-btn:hover { transform: translateY(-3px); background: #C48B6C; box-shadow: 0 16px 32px rgba(196, 139, 108, 0.32); }
-
-  .empf-note {
-    font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: 15px; line-height: 1.55;
-    color: var(--muted);
-    margin: 12px 0 20px;
-    max-width: 560px;
-  }
-  @media (max-width: 780px) { .empf-note { margin-left: auto; margin-right: auto; } }
-
-  .empf-warning {
-    background: rgba(196, 139, 108, 0.10);
-    border: 1px solid rgba(196, 139, 108, 0.32);
-    border-radius: 10px;
-    padding: 14px 18px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 13.5px; line-height: 1.55; color: var(--ink);
-    max-width: 560px; margin: 0 0 20px;
-  }
-  @media (max-width: 780px) { .empf-warning { margin-left: auto; margin-right: auto; } }
-  .empf-warning strong { color: var(--copper-dark); font-weight: 700; }
-
-  .empf-disclaimer-band {
-    padding: 30px 24px;
-    background: var(--bg-warm);
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 14px; color: var(--muted);
-    line-height: 1.55;
-  }
-  .empf-disclaimer-band a { color: var(--copper-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-</style>
+<meta name="description" content="Meine echten Marken-Empfehlungen für Histamin-Problematik, MCAS und sensitive Ernährung. Aho.bio, Nigela, Histaminikus, HistaFOOD, Balance Riegel, Yamatogast — mit meinen Rabatt-Codes.">
+<link rel="stylesheet" href="assets/site-v3.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
       </li>
-      <li><a href="empfehlungen.html" class="current">Empfehlungen</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;flex:1;min-width:200px;text-align:center;">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;flex:1;min-width:200px;text-align:center;">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+<header class="hero-editorial">
+  <div class="hero-bg">
+    <img src="images/empfehlungen.jpg" alt="Empfehlungen">
   </div>
-</div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Empfehlungen</span>
+        <p class="lead mt-md" style="color: var(--cream); max-width: 36ch;">Kein Katalog. Meine echten Alltags-Marken.</p>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--cream);">Was ich<br><em class="italic">selbst</em> nutze.</h1>
+        <p class="mt-md" style="color: rgba(255,252,249,0.9); max-width: 44ch;">
+          Bei Partner-Empfehlungen bekomme ich eine kleine Provision — dein Preis bleibt gleich.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
 
-<div class="nav-spacer"></div>
-
-<section class="page-hero page-hero-image" style="background-image: linear-gradient(180deg, rgba(45,31,34,0.72), rgba(45,31,34,0.9)), url('images/empfehlungen.jpg'); background-size: cover; background-position: center; color: var(--bg);">
+<section class="section section-cream">
   <div class="container">
-    <div class="eyebrow reveal" style="color: var(--gold);">Empfehlungen</div>
-    <h1 class="reveal d1" style="color: #fff;">Was ich <em style="color: var(--gold);">selbst</em> nutze.</h1>
-    <p class="lede reveal d2" style="color: rgba(255,255,255,0.88);">
-      Kein Katalog. Meine echten Alltags-Marken.
-      <br>Bei Partner-Empfehlungen bekomme ich eine kleine Provision — dein Preis bleibt gleich.
+
+    <!-- 1. Aho.bio -->
+    <article class="chapter-mark" style="padding-top: 0; margin-top: 0; border-top: none;">
+      <div class="grid-2">
+        <div class="img-block">
+          <img src="images/empf-aho.jpg" alt="Aho.bio" onerror="this.src='ebook-reisen/bilder/IMG_4680.jpg'">
+        </div>
+        <div>
+          <span class="chapter-num">Nº 01</span>
+          <h2 class="mt-sm">Aho.bio</h2>
+          <p class="text-copper mt-sm" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Bio · Regional · Plastikfrei</p>
+          <p class="mt-md">Nachhaltige Superfoods aus gekeimtem Urgetreide und Sprossen.</p>
+          <p class="mt-md"><strong>Kaufe ich:</strong> Sprossenmehl · Gekeimte Haferflocken · Gekeimter Reis · Histaminarme Belugalinsen</p>
+          <div class="editorial-card mint mt-md" style="padding: 20px 24px;">
+            <span class="chapter-num">Code</span>
+            <p style="font-family: var(--serif); font-size: 24px; color: var(--blue-dark); margin-top: 4px;"><strong>SMACADO10</strong> · 10 %</p>
+          </div>
+          <a href="https://aho.bio/smacado10" class="btn btn-copper mt-md">Zu Aho.bio →</a>
+        </div>
+      </div>
+    </article>
+
+    <hr class="divider">
+
+    <!-- 2. Nigela -->
+    <article class="chapter-mark" style="border-top: none;">
+      <div class="grid-2">
+        <div>
+          <span class="chapter-num">Nº 02</span>
+          <h2 class="mt-sm">Nigela</h2>
+          <p class="text-copper mt-sm" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Bio · Familienbetrieb · Kaltgepresst</p>
+          <p class="mt-md">Bayerisches Familienunternehmen. Bio-Schwarzkümmelöl — kaltgepresst und ungefiltert in eigener Manufaktur.</p>
+          <p class="mt-md"><strong>Kaufe ich:</strong> Schwarzkümmelöl</p>
+          <div class="editorial-card mint mt-md" style="padding: 20px 24px;">
+            <span class="chapter-num">Code</span>
+            <p style="font-family: var(--serif); font-size: 24px; color: var(--blue-dark); margin-top: 4px;"><strong>SMACADO10</strong></p>
+          </div>
+          <a href="https://nigela.de" class="btn btn-copper mt-md">Zu Nigela →</a>
+        </div>
+        <div class="img-block">
+          <img src="images/empf-nigela-1.jpg" alt="Nigela" onerror="this.src='images/neu-2026-08/IMG_3697.jpg'">
+        </div>
+      </div>
+    </article>
+
+    <hr class="divider">
+
+    <!-- 3. Histaminikus -->
+    <article class="chapter-mark" style="border-top: none;">
+      <div class="grid-2">
+        <div class="img-block">
+          <img src="images/empf-histaminikus.jpg" alt="Histaminikus" onerror="this.src='images/neu-2026-08/IMG_3612.jpg'">
+        </div>
+        <div>
+          <span class="chapter-num">Nº 03</span>
+          <h2 class="mt-sm">Histaminikus</h2>
+          <p class="text-copper mt-sm" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Histaminarm · Bio · Von Betroffenen</p>
+          <p class="mt-md">Histaminarme Produkte. Von Gewürzen bis Backmischungen. Meine liebsten Alltagsprodukte, wenn ich gerade wieder sehr empfindlich bin und auf Nummer Sicher gehen möchte.</p>
+          <p class="mt-md"><strong>Kaufe ich:</strong> Alle Gewürze</p>
+          <div class="editorial-card mint mt-md" style="padding: 20px 24px;">
+            <span class="chapter-num">Code</span>
+            <p style="font-family: var(--serif); font-size: 24px; color: var(--blue-dark); margin-top: 4px;"><strong>JULIA10734</strong></p>
+          </div>
+          <a href="https://histaminikus.de" class="btn btn-copper mt-md">Zu Histaminikus →</a>
+        </div>
+      </div>
+    </article>
+
+    <hr class="divider">
+
+    <!-- 4. HistaFOOD -->
+    <article class="chapter-mark" style="border-top: none;">
+      <div class="grid-2">
+        <div>
+          <span class="chapter-num">Nº 04</span>
+          <h2 class="mt-sm">HistaFOOD</h2>
+          <p class="text-copper mt-sm" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Histaminarm · Vegan · Ohne Zusatzstoffe</p>
+          <p class="mt-md">Bio-Lebensmittel und Nahrungsergänzung. Hier geeignet bei Histaminintoleranz und anderen Unverträglichkeiten.</p>
+          <p class="mt-md"><strong>Kaufe ich:</strong> Basilikum-Zucchini-Aufstrich · Beeren-Riegel · Proteinpulver · Gemüsebrühe</p>
+          <div class="editorial-card mint mt-md" style="padding: 20px 24px;">
+            <span class="chapter-num">Code</span>
+            <p style="font-family: var(--serif); font-size: 24px; color: var(--blue-dark); margin-top: 4px;"><strong>SMACADO10</strong></p>
+          </div>
+          <a href="https://histafood.eu" class="btn btn-copper mt-md">Zu HistaFOOD →</a>
+        </div>
+        <div class="img-block">
+          <img src="images/empf-histafood.jpg" alt="HistaFOOD" onerror="this.src='images/neu-2026-08/IMG_3631.jpg'">
+        </div>
+      </div>
+    </article>
+
+    <hr class="divider">
+
+    <!-- 5. Baelanse -->
+    <article class="chapter-mark" style="border-top: none;">
+      <div class="grid-2">
+        <div class="img-block">
+          <img src="images/empf-bealense-1.jpg" alt="Baelanse" onerror="this.src='images/neu-2026-08/IMG_3739.jpg'">
+        </div>
+        <div>
+          <span class="chapter-num">Nº 05</span>
+          <h2 class="mt-sm">Baelanse</h2>
+          <p class="text-copper mt-sm" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Riegel · Sensitive Ernährung</p>
+          <p class="mt-md">Snack-Riegel in der histaminarmen Variante. Praktisch für unterwegs.</p>
+          <p class="pullquote mt-md" style="font-size: 22px;">Ich vertrage da nur nicht so viel wegen Fructose. Aber ansonsten wirklich top!</p>
+          <a href="https://balancefoods.eu" class="btn btn-copper mt-md">Zu Baelanse →</a>
+        </div>
+      </div>
+    </article>
+
+    <hr class="divider">
+
+    <!-- 6. Yamatogast -->
+    <article class="chapter-mark" style="border-top: none;">
+      <div class="grid-2">
+        <div>
+          <span class="chapter-num">Nº 06</span>
+          <h2 class="mt-sm">Yamatogast</h2>
+          <p class="text-copper mt-sm" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Alternativmedizin · Verdauung</p>
+          <p class="mt-md">Kampro-Arzneimittel aus 8 Heilpflanzen. Für Magen, Bauch, Verdauung.</p>
+          <p class="pullquote mt-md" style="font-size: 22px;">Hat mir total bei Blähbauch geholfen.</p>
+          <div class="editorial-card beige mt-md">
+            <p><strong>Achtung:</strong> Meine eigene Erfahrung. Jeder reagiert anders auf Alternativmedizin — bei Beschwerden bitte mit Arzt oder Apotheke sprechen.</p>
+          </div>
+          <a href="https://www.google.com/search?q=Yamatogast" class="btn btn-outline mt-md">Mehr erfahren →</a>
+        </div>
+        <div class="img-block">
+          <img src="images/empf-yamatogast.jpg" alt="Yamatogast" onerror="this.src='images/neu-2026-08/IMG_3697.jpg'">
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section section-beige">
+  <div class="container-narrow">
+    <p class="text-center" style="font-style: italic; color: var(--dark-soft);">
+      <strong>Partner-Empfehlungen (Affiliate-Links).</strong> Ich bekomme eine kleine Provision — dein Preis bleibt gleich. Fragen zu einer Marke? Schreib mir in die WhatsApp-Community.
     </p>
+    <div class="text-center mt-md">
+      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" class="btn btn-outline">WhatsApp-Community</a>
+    </div>
   </div>
 </section>
 
-<section class="empf-section">
-  <div class="empf-inner">
-
-    <!-- AHO.BIO -->
-    <div class="empf-block reveal">
-      <div class="empf-photo"><span class="initial">A</span></div>
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
       <div>
-        <h2 class="empf-name">Aho.bio</h2>
-        <div class="empf-tags">
-          <span class="empf-tag">Bio</span>
-          <span class="empf-tag">Regional</span>
-          <span class="empf-tag">Plastikfrei</span>
-        </div>
-        <p class="empf-desc">Nachhaltige Superfoods aus <strong>gekeimtem Urgetreide und Sprossen</strong>.</p>
-        <div class="empf-buys">
-          <span class="empf-buys-label">Das kaufe ich</span>
-          <ul>
-            <li>Sprossenmehl</li>
-            <li>Gekeimte Haferflocken</li>
-            <li>Gekeimter Reis</li>
-            <li>Histaminarme Belugalinsen</li>
-          </ul>
-        </div>
-        <div class="empf-actions">
-          <span class="empf-code"><span class="empf-code-label">Code</span> SMACADO10 · 10%</span>
-          <a href="https://aho.bio/smacado10" target="_blank" rel="noopener" class="empf-btn">Zu Aho.bio →</a>
-        </div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop & Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
       </div>
     </div>
-
-    <!-- NIGELA -->
-    <div class="empf-block reverse reveal">
-      <div class="empf-photo"><img src="images/empf-nigela-1.jpg" alt="Nigela Schwarzkümmelöl" onerror="this.parentElement.innerHTML='<span class=\'initial\'>N</span>'"></div>
-      <div>
-        <h2 class="empf-name">Nigela</h2>
-        <div class="empf-tags">
-          <span class="empf-tag">Bio</span>
-          <span class="empf-tag">Familienbetrieb</span>
-          <span class="empf-tag">Kaltgepresst</span>
-        </div>
-        <p class="empf-desc">Bayerisches Familienunternehmen. <strong>Bio-Schwarzkümmelöl</strong> — kaltgepresst und ungefiltert in eigener Manufaktur.</p>
-        <div class="empf-buys">
-          <span class="empf-buys-label">Das kaufe ich</span>
-          <ul>
-            <li>Schwarzkümmelöl</li>
-          </ul>
-        </div>
-        <div class="empf-actions">
-          <span class="empf-code"><span class="empf-code-label">Code</span> SMACADO10</span>
-          <a href="https://nigela.de?sca_ref=10960285.t5W9jLLKpfk3vt" target="_blank" rel="noopener" class="empf-btn">Zu Nigela →</a>
-        </div>
-      </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
     </div>
-
-    <!-- HISTAMINIKUS -->
-    <div class="empf-block reveal">
-      <div class="empf-photo"><span class="initial">H</span></div>
-      <div>
-        <h2 class="empf-name">Histaminikus</h2>
-        <div class="empf-tags">
-          <span class="empf-tag">Histaminarm</span>
-          <span class="empf-tag">Bio</span>
-          <span class="empf-tag">Von Betroffenen</span>
-        </div>
-        <p class="empf-desc"><strong>Histaminarme Produkte.</strong> Von Gewürzen bis Backmischungen. Meine liebsten Alltagsprodukte, wenn ich gerade wieder sehr empfindlich bin und auf Nummer Sicher gehen möchte.</p>
-        <div class="empf-buys">
-          <span class="empf-buys-label">Das kaufe ich</span>
-          <ul>
-            <li>Alle Gewürze</li>
-          </ul>
-        </div>
-        <div class="empf-actions">
-          <span class="empf-code"><span class="empf-code-label">Code</span> JULIA10734</span>
-          <a href="https://histaminikus.de/?ref=cyxjbwzy" target="_blank" rel="noopener" class="empf-btn">Zu Histaminikus →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- HISTAFOOD -->
-    <div class="empf-block reverse reveal">
-      <div class="empf-photo"><img src="images/empf-histafood.jpg" alt="HistaFOOD Produkte" onerror="this.parentElement.innerHTML='<span class=\'initial\'>H</span>'"></div>
-      <div>
-        <h2 class="empf-name">HistaFOOD</h2>
-        <div class="empf-tags">
-          <span class="empf-tag">Histaminarm</span>
-          <span class="empf-tag">Vegan</span>
-          <span class="empf-tag">Ohne Zusatzstoffe</span>
-        </div>
-        <p class="empf-desc">Bio-Lebensmittel und Nahrungsergänzung. <strong>Hier geeignet bei Histaminintoleranz</strong> und anderen Unverträglichkeiten.</p>
-        <div class="empf-buys">
-          <span class="empf-buys-label">Das kaufe ich</span>
-          <ul>
-            <li>Basilikum-Zucchini-Aufstrich</li>
-            <li>Beeren-Riegel</li>
-            <li>Proteinpulver</li>
-            <li>Gemüsebrühe</li>
-          </ul>
-        </div>
-        <div class="empf-actions">
-          <span class="empf-code"><span class="empf-code-label">Code</span> SMACADO10</span>
-          <a href="https://histafood.eu/discount/smacado10" target="_blank" rel="noopener" class="empf-btn">Zu HistaFOOD →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- BALANCE -->
-    <div class="empf-block reveal">
-      <div class="empf-photo"><img src="images/empf-bealense-1.jpg" alt="Baelanse Riegel" onerror="this.parentElement.innerHTML='<span class=\'initial\'>B</span>'"></div>
-      <div>
-        <h2 class="empf-name">Baelanse</h2>
-        <div class="empf-tags">
-          <span class="empf-tag">Riegel</span>
-          <span class="empf-tag">Sensitive Ernährung</span>
-        </div>
-        <p class="empf-desc"><strong>Snack-Riegel</strong> in der histaminarmen Variante. Praktisch für unterwegs.</p>
-        <p class="empf-note">„Ich vertrage da nur nicht so viel wegen Fructose. Aber ansonsten wirklich top!" — Julia</p>
-        <div class="empf-actions">
-          <a href="https://balancefoods.eu/?ref=julia" target="_blank" rel="noopener" class="empf-btn">Zu Baelanse →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- YAMATOGAST -->
-    <div class="empf-block reverse reveal">
-      <div class="empf-photo"><img src="images/empf-yamatogast.jpg" alt="Yamatogast" onerror="this.parentElement.innerHTML='<span class=\'initial\'>Y</span>'"></div>
-      <div>
-        <h2 class="empf-name">Yamatogast</h2>
-        <div class="empf-tags">
-          <span class="empf-tag">Alternativmedizin</span>
-          <span class="empf-tag">Verdauung</span>
-        </div>
-        <p class="empf-desc">Kampro-Arzneimittel aus <strong>8 Heilpflanzen</strong>. Für Magen, Bauch, Verdauung.</p>
-        <p class="empf-note">„Hat mir total bei Blähbauch geholfen." — Julia</p>
-        <div class="empf-warning">
-          <strong>Achtung:</strong> Meine eigene Erfahrung. Jeder reagiert anders auf Alternativmedizin — bei Beschwerden bitte mit Arzt oder Apotheke sprechen.
-        </div>
-        <div class="empf-actions">
-          <a href="https://www.google.com/search?q=Yamatogast+kaufen" target="_blank" rel="noopener" class="empf-btn">Mehr erfahren →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="empf-disclaimer-band">
-  Partner-Empfehlungen (Affiliate-Links). Ich bekomme eine kleine Provision — dein Preis bleibt gleich.
-  <br>Fragen zu einer Marke? Schreib mir in die <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener">WhatsApp-Community</a>.
-</div>
-
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Julia</div>
-      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
-    </div>
-    <div class="footer-col">
-      <h5>App &amp; Diagnosen</h5>
-      <a href="app.html">TerraLuna App</a>
-      <a href="histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="mcas.html">MCAS</a>
-      <a href="reizdarm.html">Reizdarm</a>
-      <a href="selbsttest.html">Selbsttest</a>
-    </div>
-    <div class="footer-col">
-      <h5>Inhalte</h5>
-      <a href="blog/">Blog</a>
-      <a href="rezepte.html">Rezepte</a>
-      <a href="ebooks.html">E-Books</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-    <div class="footer-col">
-      <h5>Rechtliches</h5>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerruf</a>
-    </div>
-  </div>
-  <div class="footer-xxl">
-    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
-    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
   </div>
 </footer>
-
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-</script>
 
 </body>
 </html>

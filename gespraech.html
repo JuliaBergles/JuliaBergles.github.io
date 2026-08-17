@@ -1,183 +1,162 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="1:1 Peer-Support-Gespräch mit Julia Bergles. 30 Minuten am Telefon für 25 €. Ehrlicher Erfahrungsaustausch, keine Beratung.">
-  <title>Persönliches Gespräch. Julia Bergles</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="assets/site.css">
-  <style>
-    .price-block {
-      background: var(--warm-cream);
-      padding: 48px 40px;
-      text-align: center;
-      margin: 40px 0;
-    }
-    .price {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-size: 3rem; font-weight: 500;
-      color: var(--bordeaux);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .price span {
-      font-size: 1rem;
-      color: var(--text-muted);
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-weight: 500;
-    }
-    .price-label {
-      font-family: 'Rubik', 'Space Grotesk', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: none;
-      color: var(--copper);
-      margin-bottom: 20px;
-    }
-    .price-details {
-      color: var(--text-muted);
-      font-size: 15px;
-      margin: 20px 0 32px;
-    }
-  </style>
-  <link rel="stylesheet" href="css/onpoint.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persönliches Gespräch · Julia Bergles</title>
+<meta name="description" content="1:1 Peer-Support-Gespräch mit Julia Bergles. 30 Minuten am Telefon für 25 €. Ehrlicher Erfahrungsaustausch, keine Beratung.">
+<link rel="stylesheet" href="assets/site-v3.css">
 </head>
 <body>
 
-<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
-
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
       </li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER: App + Community + Instagram -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+<header class="hero-editorial">
+  <div class="hero-bg">
+    <img src="images/gespraech.jpg" alt="Peer-Support Gespräch" onerror="this.src='ebook-reisen/bilder/IMG_4680.jpg'">
   </div>
-</div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Peer-Support</span>
+        <p class="lead mt-md" style="color: var(--cream); max-width: 36ch;">30 Minuten am Telefon.<br>Ehrlicher Erfahrungsaustausch.</p>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--cream);">Wenn du mit jemandem<br><em class="italic">reden</em> willst,<br>der's kennt.</h1>
+      </div>
+    </div>
+  </div>
+</header>
 
-<section class="page-hero" style="background-image: linear-gradient(180deg, rgba(45,31,34,0.65) 0%, rgba(45,31,34,0.85) 100%), url('images/gespraech.jpg'); background-size: cover, cover; background-position: center, center; background-repeat: no-repeat, no-repeat; background-color: #5a1428;">
-  <div class="page-hero-inner">
-    <h1>Wenn du mit jemandem <em>reden</em> willst, der's kennt.</h1>
+<section class="section section-mint">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-blue">Peer-Support-Gespräch</span>
+    <h2 class="mt-sm">25 € · <em class="italic">30 Min</em>.</h2>
+    <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">Buchung über Calendly. Zahlung sicher über Stripe.</p>
+    <a href="https://calendly.com/julia-bergles/30min" class="btn btn-copper mt-lg">Termin buchen</a>
   </div>
 </section>
 
-<section class="content">
-  <div class="content-inner">
+<section class="section section-cream">
+  <div class="container-narrow">
+    <span class="eyebrow eyebrow-copper">Für wen das passt</span>
+    <h2 class="mt-sm">Für wen das <em class="italic">passt</em>.</h2>
+    <p class="lead mt-md text-mute">
+      📝 Julia schreibt: Für wen ist das Gespräch. Für Menschen, die gerade die Diagnose bekommen haben, für Angehörige, für alle die einfach mal reden wollen. Deine Worte.
+    </p>
+  </div>
+</section>
 
-    <div class="price-block">
-      <p class="price-label">Peer-Support-Gespräch</p>
-      <div class="price">25 € <span>/ 30 Min</span></div>
-      <p class="price-details">Buchung über Calendly. Zahlung sicher über Stripe.</p>
-      <a href="https://calendly.com/julia-bergles/30min" target="_blank" rel="noopener" class="btn btn-copper">Termin buchen</a>
-    </div>
+<section class="section section-cream">
+  <div class="container-narrow">
+    <span class="eyebrow eyebrow-copper">Was du bekommst</span>
+    <h2 class="mt-sm">Was du <em class="italic">bekommst</em>.</h2>
+    <p class="lead mt-md text-mute">
+      📝 Julia schreibt: Was passiert in den 30 Minuten. Deine Erfahrung, deine Perspektive, ehrliche Antworten auf konkrete Fragen. Was du NICHT bekommst: medizinische Beratung, Behandlungspläne, Diagnosen.
+    </p>
+  </div>
+</section>
 
-    <h2>Für wen das <em>passt</em></h2>
-    <div class="placeholder-block">Julia schreibt hier: Für wen ist das Gespräch. für Menschen, die gerade die Diagnose bekommen haben, für Angehörige, für alle die einfach mal reden wollen. Deine Worte.</div>
-
-    <h2>Was du <em>bekommst</em></h2>
-    <div class="placeholder-block">Julia schreibt hier: Was passiert in den 30 Minuten. Deine Erfahrung, deine Perspektive, ehrliche Antworten auf konkrete Fragen. Was du NICHT bekommst: medizinische Beratung, Behandlungspläne, Diagnosen.</div>
-
-    <h2>Wie es <em>abläuft</em></h2>
-    <ol>
-      <li>Du buchst einen Termin über den Calendly-Link oben.</li>
-      <li>Du bekommst eine Bestätigung mit den Zahlungsdetails und der Uhrzeit.</li>
-      <li>Zum vereinbarten Termin ruf ich dich an. oder du mich, je nach Absprache.</li>
-      <li>30 Minuten reden. was DU besprechen willst.</li>
+<section class="section section-mint">
+  <div class="container-narrow">
+    <span class="eyebrow eyebrow-blue">Wie es abläuft</span>
+    <h2 class="mt-sm">Wie es <em class="italic">abläuft</em>.</h2>
+    <ol style="list-style: none; padding: 0; margin-top: 40px; counter-reset: step;">
+      <li style="padding: 20px 0; border-bottom: 1px solid var(--line); display: flex; gap: 24px; align-items: baseline;">
+        <span class="chapter-num" style="min-width: 60px;">Nº 01</span>
+        <div><p>Du buchst einen Termin über den Calendly-Link oben.</p></div>
+      </li>
+      <li style="padding: 20px 0; border-bottom: 1px solid var(--line); display: flex; gap: 24px; align-items: baseline;">
+        <span class="chapter-num" style="min-width: 60px;">Nº 02</span>
+        <div><p>Du bekommst eine Bestätigung mit den Zahlungsdetails und der Uhrzeit.</p></div>
+      </li>
+      <li style="padding: 20px 0; border-bottom: 1px solid var(--line); display: flex; gap: 24px; align-items: baseline;">
+        <span class="chapter-num" style="min-width: 60px;">Nº 03</span>
+        <div><p>Zum vereinbarten Termin ruf ich dich an — oder du mich, je nach Absprache.</p></div>
+      </li>
+      <li style="padding: 20px 0; display: flex; gap: 24px; align-items: baseline;">
+        <span class="chapter-num" style="min-width: 60px;">Nº 04</span>
+        <div><p>30 Minuten reden. Was <em>du</em> besprechen willst.</p></div>
+      </li>
     </ol>
-
-    <div class="disclaimer-box">
-      <p><strong>Wichtig:</strong> Ich teile meine eigene Erfahrung. Das ist kein Ersatz für Arzt, Heilpraktiker oder Therapeut. Bei akuten Beschwerden sprich bitte immer mit einer medizinischen Fachperson.</p>
-    </div>
-
   </div>
 </section>
 
-<footer>
-  <a href="index.html" class="footer-logo">Julia</a>
-  <div class="footer-links">
-    <a href="ueber-mich.html">Über mich</a>
-    <a href="app.html">TerraLuna App</a>
-    <a href="histaminintoleranz.html">Histamin</a>
-    <a href="mcas.html">MCAS</a>
-    <a href="reizdarm.html">Reizdarm</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <a href="ebooks.html">E-Books</a>
-    <a href="gespraech.html">Gespräch</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+<section class="section section-beige">
+  <div class="container-narrow">
+    <p class="text-center" style="font-style: italic; color: var(--dark-soft);">
+      <strong>Wichtig:</strong> Ich teile meine eigene Erfahrung. Das ist kein Ersatz für Arzt, Heilpraktiker oder Therapeut. Bei akuten Beschwerden sprich bitte immer mit einer medizinischen Fachperson.
+    </p>
   </div>
-    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="footer-instagram">Folge mir auf Instagram</a>
-  <div class="footer-health">
-    <strong>Health-Disclaimer:</strong> Ich bin keine Ärztin. Alles auf dieser Seite sind persönliche Erfahrungen. Keine medizinische Beratung, kein Ersatz für Arzt oder Heilpraktiker. Bei Beschwerden bitte an eine Fachperson wenden.
+</section>
+
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop & Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
   </div>
-  <div class="footer-contact">Julia Bergles &middot; Singoldstrasse 5a &middot; 86517 Wehringen</div>
-  <div class="footer-disclaimer">Ich bin keine Ärztin. ich schreibe hier nur meine Erfahrungen. &copy; 2024–2026</div>
 </footer>
-
-<script>
-  document.querySelectorAll('.nav-left a, .nav-right a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open'));
-  });
-</script>
-
-<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  Instagram
-</a>
 
 </body>
 </html>
