@@ -50,6 +50,27 @@
   --max-w-narrow: 780px;
 }
 
+/* -----------  Reveal Animation  ----------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Stagger für Grid-Kinder */
+.grid-2 > .reveal:nth-child(2) { transition-delay: 0.1s; }
+.grid-3 > .reveal:nth-child(2) { transition-delay: 0.1s; }
+.grid-3 > .reveal:nth-child(3) { transition-delay: 0.2s; }
+.grid-3 > .reveal:nth-child(4) { transition-delay: 0.05s; }
+.grid-3 > .reveal:nth-child(5) { transition-delay: 0.15s; }
+.grid-3 > .reveal:nth-child(6) { transition-delay: 0.25s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .timeline-item { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
 /* -----------  Reset & Base  ----------- */
 * {
   box-sizing: border-box;
@@ -378,7 +399,19 @@ p.lead {
 .timeline-item {
   position: relative;
   padding-bottom: 56px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.timeline-item:nth-child(1) { transition-delay: 0.05s; }
+.timeline-item:nth-child(2) { transition-delay: 0.15s; }
+.timeline-item:nth-child(3) { transition-delay: 0.25s; }
+.timeline-item:nth-child(4) { transition-delay: 0.35s; }
+.timeline-item:nth-child(5) { transition-delay: 0.45s; }
 .timeline-item:last-child { padding-bottom: 0; }
 .timeline-item::before {
   content: "";

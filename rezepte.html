@@ -1,147 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="index, follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rezepte · Julia Bergles</title>
-<meta name="description" content="Histaminarme Rezepte von Julia Bergles — kommt bald. Bis dahin: Alle Rezepte in der TerraLuna-App." />
-<link rel="canonical" href="https://www.juliabergles.de/rezepte.html" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.juliabergles.de/rezepte.html" />
-<meta property="og:title" content="Rezepte · Julia Bergles" />
-<meta property="og:description" content="Histaminarme Rezepte — kommt bald. Bis dahin in der TerraLuna-App." />
-<meta property="og:image" content="https://www.juliabergles.de/images/header.jpg" />
-<meta property="og:locale" content="de_DE" />
-<meta property="og:site_name" content="Julia Bergles" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/onpoint.css">
+<meta name="description" content="Meine Rezepte für Histaminproblematik, Reizdarm und empfindlichen Darm. Frühstück, Snacks, warme Mahlzeiten, Mealprep, Süßes und Gebäck — alles selbst getestet.">
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
-      <li><a href="rezepte.html" class="current">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li><a href="rezepte.html">Rezepte</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
       </li>
+      <li><a href="app.html">App</a></li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;flex:1;min-width:200px;text-align:center;">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;flex:1;min-width:200px;text-align:center;">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+<header class="hero-editorial">
+  <div class="hero-bg">
+    <img src="images/neu-2026-08/IMG_3697.jpg" alt="Rezepte">
   </div>
-</div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Rezepte</span>
+        <p class="lead mt-md" style="color: var(--cream); max-width: 36ch;">Alles selbst getestet. Histaminfreundlich. Darmschonend.</p>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--cream);">Was ich <em class="italic">wirklich</em> esse.</h1>
+        <p class="mt-md" style="color: rgba(255,252,249,0.92); max-width: 42ch;">
+          📝 Julia schreibt einen kurzen Einleitungstext zu deinen Rezepten.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
 
-<div class="nav-spacer"></div>
-
-<section class="page-hero page-hero-image" style="background-image: linear-gradient(180deg, rgba(45,31,34,0.72), rgba(45,31,34,0.9)), url('images/header.jpg'); background-size: cover; background-position: center; color: var(--bg);">
+<section class="section section-cream">
   <div class="container">
-    <div class="eyebrow reveal" style="color: var(--gold);">Rezepte</div>
-    <h1 class="reveal d1" style="color: #fff;">Rezepte <em style="color: var(--gold);">kommt bald</em>.</h1>
-    <p class="lede reveal d2" style="color: rgba(255,255,255,0.88);">
-      Ich sammle gerade meine liebsten histaminarmen Rezepte.
-      <br>Bis dahin: 120+ Rezepte findest du in der TerraLuna-App.
-    </p>
-    <div class="reveal d3" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-      <a href="app.html" class="btn-red">TerraLuna App</a>
-      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" class="btn-outline-white">In der Community fragen</a>
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Kategorien</span>
+      <h2 class="mt-sm">Wo willst du <em class="italic">stöbern</em>?</h2>
+    </div>
+
+    <div class="grid-3 mt-lg">
+      <a href="rezepte/fruehstueck/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 01</span>
+        <h3 class="mt-sm">Frühstück</h3>
+        <p class="mt-sm">Ideen für morgens — histaminarm, sättigend, ohne langes Rühren.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      </a>
+
+      <a href="rezepte/snacks/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 02</span>
+        <h3 class="mt-sm">Snacks</h3>
+        <p class="mt-sm">Kleine Sachen für zwischendurch. Auch für unterwegs und im Rucksack.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      </a>
+
+      <a href="rezepte/warme-mahlzeiten/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 03</span>
+        <h3 class="mt-sm">Warme Mahlzeiten</h3>
+        <p class="mt-sm">Was ich koche, wenn ich mich pflege. Einfach, klar, verträglich.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      </a>
+
+      <a href="rezepte/mealprep/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 04</span>
+        <h3 class="mt-sm">Mealprep</h3>
+        <p class="mt-sm">Zum Vorbereiten für die Woche. Ohne dass Histamin durch Standzeit hochgeht.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      </a>
+
+      <a href="rezepte/suesses/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 05</span>
+        <h3 class="mt-sm">Süßes</h3>
+        <p class="mt-sm">Naschen, das den Bauch nicht verrückt macht.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      </a>
+
+      <a href="rezepte/gebaeck/" class="editorial-card blue-soft" style="text-decoration: none;">
+        <span class="chapter-num">Nº 06</span>
+        <h3 class="mt-sm">Gebäck</h3>
+        <p class="mt-sm">Brot, Kuchen, Kekse — glutenfrei und verträglich.</p>
+        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding: 100px 32px; background: var(--bg);">
-  <div class="container" style="max-width: 780px; margin: 0 auto; text-align: center;">
-    <p style="font-family: 'Quicksand', sans-serif; font-size: 18px; line-height: 1.7; color: var(--ink-soft);">
-      In den nächsten Wochen kommen hier meine Alltags-Rezepte rein — die Basis-Sachen die ich täglich koche, plus die kleinen Extras die für mich einen Unterschied machen. Alles histaminarm, aus meiner echten Küche.
+<section class="section section-mint">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-blue">Mehr in der App</span>
+    <h2 class="mt-sm">120+ Rezepte in <em class="italic">TerraLuna</em>.</h2>
+    <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+      Glutenfrei, ohne Industriezucker. Ampel pro Rezept (Histamin, Darm, Zyklus). Mit Mehl-Alternativen und Reflux-Filter.
     </p>
-    <p style="margin-top: 24px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: var(--copper-dark);">
-      Willst du Bescheid wissen wenn's soweit ist? Komm in die WhatsApp-Community.
+    <a href="app.html" class="btn btn-copper mt-lg">Zur TerraLuna App</a>
+  </div>
+</section>
+
+<section class="section section-beige">
+  <div class="container-narrow">
+    <p class="text-center" style="font-style: italic; color: var(--dark-soft);">
+      <strong>Wichtig:</strong> Alle Rezepte basieren auf meiner eigenen Erfahrung. Jeder Körper reagiert anders — teste vorsichtig, wenn du unsicher bist.
     </p>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Julia</div>
-      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-col">
-      <h5>App &amp; Diagnosen</h5>
-      <a href="app.html">TerraLuna App</a>
-      <a href="histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="mcas.html">MCAS</a>
-      <a href="reizdarm.html">Reizdarm</a>
-      <a href="selbsttest.html">Selbsttest</a>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
     </div>
-    <div class="footer-col">
-      <h5>Inhalte</h5>
-      <a href="blog/">Blog</a>
-      <a href="rezepte.html">Rezepte</a>
-      <a href="ebooks.html">E-Books</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-    <div class="footer-col">
-      <h5>Rechtliches</h5>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerruf</a>
-    </div>
-  </div>
-  <div class="footer-xxl">
-    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
-    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
   </div>
 </footer>
 
