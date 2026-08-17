@@ -337,6 +337,13 @@ p.lead {
 .editorial-card.blue { background: var(--blue); color: var(--cream); }
 .editorial-card.blue h3 { color: var(--cream); }
 .editorial-card.blue p  { color: rgba(255,252,249,0.85); }
+.editorial-card.blue-soft {
+  background: var(--mint);
+  color: var(--dark);
+  border: 1px solid rgba(135, 144, 193, 0.35);
+}
+.editorial-card.blue-soft h3 { color: var(--blue-dark); }
+.editorial-card.blue-soft p  { color: var(--dark-soft); }
 .editorial-card.mint { background: var(--mint); }
 .editorial-card.beige { background: var(--beige); }
 .editorial-card.pink { background: var(--pink); color: var(--dark); }
