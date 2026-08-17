@@ -1,741 +1,330 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TerraLuna App. Dein smarter Ernährungsbegleiter für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden.">
-  <title>TerraLuna App | Julia Bergles</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
-    @import url('https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      /* Agentur On Point Palette (Copper + Dark + warm Cream) */
-      --blush: #f6e7e7; --strawberry: #C48B6C; --cream: #fffcf9; --warmwhite: #fffcf9;
-      --rosegold: #C48B6C; --sand: #efe3da; --charcoal: #2a2a2a; --soft: #8a6f72;
-      --honey: #C48B6C; --lavender: #efe3da; --peach: #E8C4A8;
-      --glossy: #fffcf9; --white: #ffffff;
-      --navy: #2a2a2a; --wine: #2a2a2a; --gold: #C48B6C; --gold-hi: #E8C4A8;
-      --linen: #efe3da; --ink: #2D1F22; --bordeaux: #2a2a2a; --bg: #fffcf9;
-      --pink: #C48B6C; --copper: #C48B6C; --copper-dark: #A0705A;
-    }
-    body { font-family: 'Object Sans', 'Space Grotesk', -apple-system, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.65; overflow-x: hidden; font-weight: 400; }
-    h1, h2, h3, h4 { font-family: 'Raleway', 'Space Grotesk', sans-serif !important; font-weight: 900 !important; letter-spacing: -0.02em; line-height: 1.08; text-transform: none; }
-    h1 em, h2 em, h3 em { font-style: normal !important; background: linear-gradient(135deg, #A0705A 0%, #C48B6C 50%, #E8C4A8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-    /* ANIMATIONS */
-    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .fd1 { transition-delay: 0.1s; } .fd2 { transition-delay: 0.2s; } .fd3 { transition-delay: 0.3s; } .fd4 { transition-delay: 0.4s; }
-
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,246,240,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,144,138,0.1); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; padding: 0 24px; }
-    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .nav-logo span { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--rosegold); letter-spacing: 1px; display: flex; align-items: baseline; gap: 6px; }
-    .nav-logo .ema { font-size: 22px; font-weight: 600; letter-spacing: 4px; background: linear-gradient(135deg, var(--rosegold), #d4a49e, var(--rosegold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .nav-logo .ema-full { font-size: 11px; font-weight: 400; letter-spacing: 1px; color: var(--soft); }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--soft); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--rosegold); }
-    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 24px; border-radius: 50px; font-weight: 600 !important; box-shadow: 0 4px 16px rgba(149,82,81,0.2); transition: all 0.3s; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(149,82,81,0.3); }
-    .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--charcoal); }
-
-    /* HERO. dark navy */
-    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; background: var(--navy); position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: -30%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%); border-radius: 50%; }
-    .hero::after { content: ''; position: absolute; bottom: -20%; left: -15%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,144,138,0.06) 0%, transparent 70%); border-radius: 50%; }
-    .hero-content { position: relative; z-index: 1; max-width: 680px; }
-    .hero-label { font-size: 11px; font-weight: 600; color: var(--honey); letter-spacing: 4px; text-transform: none; margin-bottom: 20px; }
-    .hero h1 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 60px; font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-    .hero .subtitle { font-size: 17px; color: var(--sand); max-width: 540px; margin: 0 auto 44px; line-height: 1.8; font-weight: 300; }
-    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn { padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; display: inline-block; border: none; cursor: pointer; font-family: inherit; }
-    .btn-gold { background: linear-gradient(135deg, var(--gold) 0%, #d4b87a 50%, var(--gold) 100%); color: var(--white); box-shadow: 0 6px 24px rgba(201,169,110,0.3); }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,169,110,0.4); }
-    .btn-outline-light { background: transparent; color: var(--sand); border: 2px solid rgba(212,196,176,0.4); }
-    .btn-outline-light:hover { background: rgba(255,255,255,0.08); color: var(--white); border-color: rgba(255,255,255,0.4); }
-    .btn-rose { background: linear-gradient(135deg, var(--rosegold) 0%, #d4a0a0 50%, var(--rosegold) 100%); color: var(--white); box-shadow: 0 6px 24px rgba(201,144,138,0.25); }
-    .btn-rose:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,144,138,0.35); }
-    .btn-outline { background: transparent; color: var(--rosegold); border: 2px solid var(--rosegold); }
-    .btn-outline:hover { background: var(--rosegold); color: var(--white); }
-    .btn-sm { padding: 12px 28px; font-size: 14px; }
-
-    /* SECTIONS */
-    section { padding: 100px 24px; }
-    .section-inner { max-width: 1000px; margin: 0 auto; }
-    .section-label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 3px; text-transform: none; margin-bottom: 12px; }
-    .section-title { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; }
-    .section-sub { font-size: 16px; color: var(--soft); margin-bottom: 48px; max-width: 560px; line-height: 1.8; }
-
-    /* FEATURE ROWS */
-    .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
-    .feature-row:last-child { margin-bottom: 0; }
-    .feature-row.reverse { direction: rtl; }
-    .feature-row.reverse > * { direction: ltr; }
-    .feature-text .feature-number { font-size: 11px; font-weight: 600; color: var(--rosegold); letter-spacing: 3px; text-transform: none; margin-bottom: 10px; }
-    .feature-text h3 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; line-height: 1.2; }
-    .feature-text p { font-size: 15px; color: var(--soft); line-height: 1.8; margin-bottom: 16px; }
-    .feature-text ul { list-style: none; padding: 0; }
-    .feature-text ul li { font-size: 14px; color: var(--charcoal); padding: 5px 0 5px 20px; position: relative; }
-    .feature-text ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--rosegold); }
-    .feature-screenshots { display: flex; gap: 16px; align-items: flex-end; justify-content: center; }
-    .feature-screenshots img { width: 180px; border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); transition: transform 0.4s ease; }
-    .feature-screenshots img:hover { transform: scale(1.03); }
-    .tilted-left { transform: rotate(-3deg); }
-    .tilted-right { transform: rotate(3deg); }
-    .tilted-left:hover { transform: rotate(-3deg) scale(1.03); }
-    .tilted-right:hover { transform: rotate(3deg) scale(1.03); }
-
-    /* MORE FEATURES GRID */
-    .more-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .more-feature-card { background: var(--warmwhite); border-radius: 20px; padding: 32px 24px; text-align: center; transition: all 0.3s; border: 1px solid rgba(201,144,138,0.06); }
-    .more-feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(201,144,138,0.1); }
-    .more-feature-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--glossy); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-    .more-feature-icon svg { width: 24px; height: 24px; stroke: var(--rosegold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .more-feature-card h4 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 8px; }
-    .more-feature-card p { font-size: 13px; color: var(--soft); line-height: 1.7; }
-
-    /* PRICING */
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .pricing-card { background: var(--warmwhite); border-radius: 24px; padding: 36px 28px; display: flex; flex-direction: column; transition: all 0.4s; border: 1px solid rgba(201,144,138,0.08); position: relative; }
-    .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(201,144,138,0.12); }
-    .pricing-card.popular { border: 2px solid var(--navy); }
-    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: none; padding: 6px 20px; border-radius: 50px; }
-    .pricing-card h3 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
-    .pricing-price { font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .pricing-price span { font-size: 14px; font-weight: 400; color: var(--soft); }
-    .pricing-alt { font-size: 13px; color: var(--soft); margin-bottom: 20px; }
-    .pricing-divider { height: 1px; background: rgba(201,144,138,0.12); margin-bottom: 20px; }
-    .pricing-features { list-style: none; flex-grow: 1; margin-bottom: 24px; }
-    .pricing-features li { font-size: 14px; color: var(--charcoal); padding: 5px 0 5px 22px; position: relative; line-height: 1.6; }
-    .pricing-features li::before { content: ''; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--rosegold); }
-    .pricing-card.popular .pricing-features li::before { background: var(--navy); }
-    .pricing-with-image { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 900px; margin: 0 auto; }
-    .pricing-with-image .iphone-frame { margin: 0 auto; }
-    .pricing-with-image .pricing-card { max-width: 380px; margin: 0 auto; width: 100%; }
-
-    /* CTA SECTION */
-    .cta-section { background: var(--navy); text-align: center; color: var(--white); }
-    .cta-section h2 { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 300; color: var(--white); margin-bottom: 16px; }
-    .cta-section p { font-size: 16px; color: var(--sand); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
-
-    /* APP SCREENSHOTS. Carousel mit iPhone-Mockups */
-    .app-screens-section {
-      background: linear-gradient(180deg, var(--cream) 0%, var(--linen) 35%, #EAD9CB 100%);
-      position: relative;
-      overflow: hidden;
-      padding: 100px 24px;
-    }
-    .app-screens-section::before {
-      content: ''; position: absolute; top: -200px; left: 50%;
-      transform: translateX(-50%);
-      width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(196,139,108,0.18) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .screens-carousel { position: relative; margin: 40px -24px 0; }
-    .screens-track {
-      display: flex; gap: 32px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      padding: 48px 24px 64px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .screens-track::-webkit-scrollbar { display: none; }
-    .screen-item {
-      flex: 0 0 280px;
-      scroll-snap-align: center;
-      text-align: center;
-    }
-    .iphone-frame {
-      position: relative;
-      width: 280px; height: 580px;
-      margin: 0 auto 24px;
-      background: linear-gradient(145deg, #2a1f1a 0%, #1a1410 50%, #0f0a08 100%);
-      border-radius: 48px;
-      padding: 12px;
-      box-shadow:
-        0 28px 80px rgba(149,82,81,0.22),
-        0 8px 24px rgba(149,82,81,0.12),
-        inset 0 1px 2px rgba(255,255,255,0.08),
-        inset 0 -1px 2px rgba(0,0,0,0.4);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-    }
-    .iphone-frame::before {
-      content: ''; position: absolute;
-      top: 18px; left: 50%; transform: translateX(-50%);
-      width: 96px; height: 26px;
-      background: #050302; border-radius: 14px;
-      z-index: 2;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-    }
-    .iphone-frame::after {
-      content: ''; position: absolute;
-      top: 130px; right: -3px;
-      width: 4px; height: 80px;
-      background: linear-gradient(180deg, #1a1410, #2a1f1a, #1a1410);
-      border-radius: 0 2px 2px 0;
-    }
-    .iphone-frame img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      border-radius: 36px;
-      display: block;
-    }
-    .screen-item:hover .iphone-frame {
-      transform: translateY(-12px) rotate(-1deg);
-      box-shadow:
-        0 40px 100px rgba(149,82,81,0.32),
-        0 12px 32px rgba(196,139,108,0.18),
-        inset 0 1px 2px rgba(255,255,255,0.08),
-        inset 0 -1px 2px rgba(0,0,0,0.4);
-    }
-    .screen-label { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.2px; }
-    .screen-desc { font-size: 13px; color: var(--soft); letter-spacing: 0.04em; line-height: 1.5; }
-    .carousel-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 56px; height: 56px;
-      border-radius: 50%; border: none;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 8px 24px rgba(149,82,81,0.18), 0 2px 6px rgba(149,82,81,0.08);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--wine);
-      transition: all 0.3s ease;
-      z-index: 5;
-    }
-    .carousel-btn:hover {
-      background: linear-gradient(135deg, #e2ae61, #eec287);
-      color: white;
-      transform: translateY(-50%) scale(1.08);
-      box-shadow: 0 12px 32px rgba(196,139,108,0.32);
-    }
-    .carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: translateY(-50%); }
-    .carousel-btn.prev { left: 12px; }
-    .carousel-btn.next { right: 12px; }
-    .carousel-btn svg { width: 22px; height: 22px; }
-    .screens-hint {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 11px; color: var(--soft);
-      letter-spacing: 0.2em; text-transform: none;
-      margin-top: 8px; opacity: 0.6;
-    }
-
-    /* FOOTER */
-    footer { background: var(--navy); color: var(--sand); padding: 60px 24px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    .footer-logo { font-family: 'Raleway', 'Space Grotesk', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-    .footer-links a { color: var(--sand); text-decoration: none; font-size: 13px; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--white); }
-    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .menu-toggle { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(253,246,240,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
-      .hero h1 { font-size: 36px; }
-      .hero .subtitle { font-size: 15px; }
-      .feature-row { grid-template-columns: 1fr; gap: 32px; }
-      .feature-row.reverse { direction: ltr; }
-      .feature-screenshots { justify-content: center; }
-      .feature-screenshots img { width: 140px; }
-      .more-features-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .pricing-with-image { grid-template-columns: 1fr; gap: 40px; }
-      .section-title { font-size: 28px; }
-      .cta-section h2 { font-size: 32px; }
-    }
-
-    @media (max-width: 768px) {
-      .screen-item { flex-basis: 240px; }
-      .iphone-frame { width: 240px; height: 500px; border-radius: 42px; padding: 10px; }
-      .iphone-frame::before { width: 80px; height: 22px; top: 16px; }
-      .iphone-frame img { border-radius: 32px; }
-      .screen-label { font-size: 20px; }
-      .carousel-btn { width: 44px; height: 44px; }
-      .carousel-btn.prev { left: 4px; }
-      .carousel-btn.next { right: 4px; }
-    }
-
-    @media (max-width: 480px) {
-      .feature-screenshots img { width: 110px; }
-      .hero h1 { font-size: 30px; }
-      .feature-text h3 { font-size: 24px; }
-    }
-  </style>
-  <link rel="stylesheet" href="assets/site.css">
-  <link rel="stylesheet" href="css/onpoint.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TerraLuna App · Julia Bergles</title>
+<meta name="description" content="TerraLuna App. Dein smarter Ernährungsbegleiter für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden.">
+<link rel="stylesheet" href="assets/site-v3.css">
+<style>
+  .phone-mockup {
+    background: var(--dark);
+    border-radius: 42px;
+    padding: 12px;
+    box-shadow: 0 20px 60px rgba(42,42,42,0.2);
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .phone-mockup img {
+    border-radius: 32px;
+    width: 100%;
+    display: block;
+  }
+</style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop current-parent">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
       </li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER: App + Community + Instagram -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
-  </div>
-</div>
 <!-- HERO -->
-<section class="page-hero" style="background-color: #5a1428; background-image: linear-gradient(180deg, rgba(45,31,34,0.65) 0%, rgba(45,31,34,0.85) 100%), url('images/terraluna-logo.png'); background-size: cover, contain; background-position: center, center; background-repeat: no-repeat, no-repeat;">
-  <div class="page-hero-inner">
-    <h1>Dein smarter <em>Ernährungsbegleiter</em></h1>
-    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
-      <a href="https://apps.apple.com/de/app/terraluna/id6763492103" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">App Store</a>
-      <a href="https://play.google.com/store/search?q=TerraLuna+Julia+Bergles" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 32px; background: #e2ae61; color: #5a1428; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 32px rgba(226,174,97,0.3);">Google Play</a>
-    </div>
-    <p style="margin-top: 20px; font-size: 13px; color: rgba(251,242,237,0.75); letter-spacing: 0.05em;">Für Apple und Android</p>
-  </div>
-</section>
-
-<!-- INFO-BOX: Scanner-Reset + Kontakt -->
-<section style="padding: 60px 24px; background: var(--cream);">
-  <div style="max-width: 780px; margin: 0 auto;">
-    <div style="background: #fff; border-left: 4px solid #C48B6C; border-radius: 4px 14px 14px 4px; padding: 28px 32px; box-shadow: 0 8px 24px rgba(45,31,34,0.06);">
-      <p style="font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 700; color: #A0705A; margin: 0 0 12px;">Info</p>
-      <p style="font-family: 'Object Sans', 'Space Grotesk', sans-serif; font-size: 15.5px; line-height: 1.65; color: var(--charcoal); margin: 0 0 14px;">
-        Sollte der Scanner nach dem Kauf nicht funktionieren, klick bitte auch auf <strong>"Kauf wiederherstellen"</strong> in der App. Das findest du bei den Abo-Optionen.
-      </p>
-      <p style="font-family: 'Object Sans', 'Space Grotesk', sans-serif; font-size: 15.5px; line-height: 1.65; color: var(--charcoal); margin: 0;">
-        Ansonsten schreib mir über Instagram <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" style="color: #A0705A; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">@julia_bergles</a> oder per E-Mail an <a href="mailto:julia@bergles.net" style="color: #A0705A; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">julia@bergles.net</a>.
-      </p>
-    </div>
-  </div>
-</section>
-<!-- APP SCREENSHOTS. Carousel -->
-<section id="app-screens" class="app-screens-section">
-  <div class="section-inner" style="text-align: center; max-width: 1100px;">
-    <p class="section-label fade-up">Ein Blick in die App</p>
-    <h2 class="section-title fade-up" style="margin-left: auto; margin-right: auto;">TerraLuna von innen</h2>
-    <p class="section-sub fade-up" style="margin-left: auto; margin-right: auto;">Acht Bereiche. Eine App. Für dich gebaut, wenn dein Körper besondere Aufmerksamkeit braucht.</p>
-
-    <div class="screens-carousel fade-up">
-      <button class="carousel-btn prev" id="screensPrev" aria-label="Voriges Bild">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="screens-track" id="screensTrack">
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/01-heute.png" alt="Heute" loading="lazy" width="280" height="580"></div><p class="screen-label">Heute</p><p class="screen-desc">Dein Tag, deine Phase</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/02-heute-menu.png" alt="Schnellzugriff-Menü" loading="lazy" width="280" height="580"></div><p class="screen-label">Schnellzugriff</p><p class="screen-desc">Alles auf einen Tipp</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/03-lebensmittel.png" alt="Lebensmittel" loading="lazy" width="280" height="580"></div><p class="screen-label">Lebensmittel</p><p class="screen-desc">250+ mit Verträglichkeits-Check</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/04-rezepte.png" alt="Rezepte" loading="lazy" width="280" height="580"></div><p class="screen-label">Rezepte</p><p class="screen-desc">90+ glutenfrei, ohne Industriezucker</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/05-einkauf.png" alt="Einkauf" loading="lazy" width="280" height="580"></div><p class="screen-label">Einkauf</p><p class="screen-desc">Pro Supermarkt sortiert</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/09-zyklus.png" alt="Zyklus" loading="lazy" width="280" height="580"></div><p class="screen-label">Zyklus</p><p class="screen-desc">4 Phasen, dein innerer Frühling</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/10-zyklus-kalender.png" alt="Zyklus-Kalender" loading="lazy" width="280" height="580"></div><p class="screen-label">Kalender</p><p class="screen-desc">Seed Cycling, Symptome, Sport</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/06-profil-welten.png" alt="Welten" loading="lazy" width="280" height="580"></div><p class="screen-label">Welten</p><p class="screen-desc">Aktiviere, was zu dir passt</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/07-profil-uebersicht.png" alt="Profil" loading="lazy" width="280" height="580"></div><p class="screen-label">Profil</p><p class="screen-desc">Allergien, Ziele, Tägliche Abfrage</p></div>
-        <div class="screen-item"><div class="iphone-frame"><img src="images/app-v1.2/08-profil-plan.png" alt="Plan & Community" loading="lazy" width="280" height="580"></div><p class="screen-label">Plan & Community</p><p class="screen-desc">Dein Mond-Plan & WhatsApp</p></div>
-      </div>
-      <button class="carousel-btn next" id="screensNext" aria-label="Nächstes Bild">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-
-    <div class="screens-hint">Wischen oder Pfeile</div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section id="features">
-  <div class="section-inner">
-    <p class="section-label fade-up" style="text-align: center;">Features</p>
-    <h2 class="section-title fade-up" style="text-align: center;">Alles, was du brauchst. In einer App.</h2>
-    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">Jede Funktion wurde entwickelt, weil ich sie selbst gebraucht hätte. Für den Alltag mit Unverträglichkeiten, Allergien und hormonellen Beschwerden.</p>
-
-    <!-- Feature 1: Home & Mini-Julia -->
-    <div class="feature-row fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/01-heute.png" alt="Home Screen" class="tilted-left">
-        <img src="images/app-v1.2/02-heute-menu.png" alt="Mini-Julia Schnellzugriff" style="margin-bottom: 16px;">
-        <img src="images/app-v1.2/10-zyklus-kalender.png" alt="Zyklus-Kalender" class="tilted-right">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">01. Home</p>
-        <h3>Dein Tag auf einen Blick</h3>
-        <p>Mini-Julia begleitet dich. Shimmer-Logo, SOS-Hilfe, Schnellzugriff-Bubbles und phasenbasierte Motivation. Alles individuell auf dich abgestimmt.</p>
-        <ul>
-          <li>Mini-Julia Assistentin mit Schnellnavigation</li>
-          <li>Kalender-Modal mit Zyklusphase und Pollenflug</li>
-          <li>Phasenbasierte Tages-Motivation</li>
-          <li>SOS-Hilfe Button immer griffbereit</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Feature 2: Scanner + Food Tracker -->
-    <div class="feature-row reverse fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/Scanner.PNG" alt="Scanner" class="tilted-left">
-        <img src="images/app-v1.2/FoodTracker.PNG" alt="Food Tracker" class="tilted-right">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">02. Scanner und Food Tracker</p>
-        <h3>Scannen, Tracken, Verstehen</h3>
-        <p>Scanne Produkte im Supermarkt. Sieh sofort Verträglichkeit und Nährwerte. Tracke was du isst und welchen Sport du machst.</p>
-        <ul>
-          <li>Barcode-Scanner mit Ampel-System</li>
-          <li>Foto-Scanner mit KI-Analyse</li>
-          <li>Food Tracker mit Kalorien und Makros</li>
-          <li>30 Sportarten mit MET-Kalorienberechnung</li>
-          <li>Nährwerte direkt vom Scanner zum Tracker</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Feature 3: Profil & Welten -->
-    <div class="feature-row fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/06-profil-welten.png" alt="Welten-Auswahl" class="tilted-left">
-        <img src="images/app-v1.2/07-profil-uebersicht.png" alt="Profil-Übersicht" style="margin-bottom: 16px;">
-        <img src="images/app-v1.2/08-profil-plan.png" alt="Abo & Community" class="tilted-right">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">03. Profil und Welten</p>
-        <h3>Komplett auf dich abgestimmt</h3>
-        <p>Aktiviere deine Welten und die gesamte App passt sich an. Histaminarm, Darmfreundlich, Reflux, Zöliakie, Zyklus und mehr.</p>
-        <ul>
-          <li>10+ Welten: Histamin, Darm, Reflux, Laktose, Fructose, Zöliakie</li>
-          <li>Zyklus-Fragebogen mit Verhütung, PMS, Schmerzen</li>
-          <li>Food Tracker mit Essstörungs-Sicherheitsabfrage</li>
-          <li>Klares Abo-Modell: 3 Tage gratis, dann ein einziger Plan</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Feature 4: Reisen -->
-    <div class="feature-row reverse fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/Reisen.PNG" alt="Reise-Guide" style="margin-bottom: 0;">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">04. Reisen</p>
-        <h3>Sicher essen im Urlaub</h3>
-        <p>Restaurant-Karten in 8 Sprachen, Notfall-Snacks, Hotel-E-Mail-Vorlagen. Reisen ohne Angst.</p>
-        <ul>
-          <li>Erklärtexte in 8 Sprachen</li>
-          <li>Restaurant-Karten zum Vorzeigen</li>
-          <li>Notfall-Snack-Liste und Reise-Guide</li>
-          <li>E-Mail-Vorlage für Unterkünfte</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Feature 5: Einkaufen -->
-    <div class="feature-row fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/05-einkauf.png" alt="Einkauf nach Supermarkt" style="margin-bottom: 0;">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">05. Einkaufen</p>
-        <h3>Einkaufen ohne Unsicherheit</h3>
-        <p>13 Supermärkte mit verträglichen Produkten. Einkaufslisten erstellen, Online-Shop Links, alles gefiltert nach deinen Welten.</p>
-        <ul>
-          <li>600+ Produkte von REWE, dm, EDEKA, ALDI und mehr</li>
-          <li>Smarte Einkaufslisten mit Verträglichkeits-Check</li>
-          <li>Online-Shop Links pro Supermarkt</li>
-          <li>Markenprodukte: Schär, Oatly, Bauckhof, Alnatura</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Feature 6: Rezepte -->
-    <div class="feature-row reverse fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/04-rezepte.png" alt="Rezepte glutenfrei ohne Industriezucker" style="margin-bottom: 0;">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">06. Rezepte</p>
-        <h3>120+ Rezepte, die du wirklich essen kannst</h3>
-        <p>Glutenfrei, ohne Industriezucker. Jedes Rezept bewertet nach Histamin, Darm und Zyklus. Mit Hinweisen zu Hefe, Backpulver und Apfelessig.</p>
-        <ul>
-          <li>Histamin-, Darm- und Zyklus-Ampel pro Rezept</li>
-          <li>Hefe, Backpulver, Apfelessig Hinweise bei HIT</li>
-          <li>Mehl-Alternativen: Hafer, Reis oder Sprossenmehl</li>
-          <li>Reflux-Filter für Sodbrennen</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Feature 7: Lernbibliothek -->
-    <div class="feature-row fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/Lernen.PNG" alt="Lernbibliothek mit Karten zu Histamin, Darm, Zyklus" style="margin-bottom: 0;">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">07. Lernbibliothek</p>
-        <h3>Verstehen, was in deinem Körper passiert</h3>
-        <p>Fundierte Lerninhalte zu Histamin, Darmgesundheit, Zyklus, Reflux und Ernährung. Verständlich erklärt.</p>
-        <ul>
-          <li>Histamin, Darm, Zyklus, Reflux, Stress</li>
-          <li>Östrogen-Histamin-Zusammenhang</li>
-          <li>Probiotika-Guide (histamin-sichere Stämme)</li>
-          <li>Mentale Gesundheit und Ernährung</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Feature 8: SOS-Karten -->
-    <div class="feature-row reverse fade-up">
-      <div class="feature-screenshots">
-        <img src="images/app-v1.2/SOS-Karten.PNG" alt="SOS-Karten für akute Situationen" style="margin-bottom: 0;">
-      </div>
-      <div class="feature-text">
-        <p class="feature-number">08. SOS-Hilfe</p>
-        <h3>Schnelle Hilfe bei Beschwerden</h3>
-        <p>11 Notfall-Karten mit Soforthilfe. Von Histaminreaktion über Sodbrennen bis zu Angst vor dem Essen.</p>
-        <ul>
-          <li>Histaminreaktion, Bauchschmerzen, Durchfall</li>
-          <li>Sodbrennen/Reflux, Blähbauch, Krämpfe</li>
-          <li>Angst vor dem Essen, Migräne</li>
-          <li>Affirmationen und Soforthilfe-Schritte</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MORE FEATURES -->
-<section style="background: var(--warmwhite);">
-  <div class="section-inner">
-    <p class="section-label fade-up" style="text-align: center;">Und noch mehr</p>
-    <h2 class="section-title fade-up" style="text-align: center;">Weitere Funktionen</h2>
-    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">TerraLuna denkt weiter als nur Ernährung. Dein Wohlbefinden hängt von vielen Faktoren ab.</p>
-    <div class="more-features-grid">
-      <div class="more-feature-card fade-up">
-        <div class="more-feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+<header class="section section-dark" style="padding-top: 120px; padding-bottom: 100px;">
+  <div class="container">
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <span class="eyebrow" style="color: var(--copper);">TerraLuna · Meine App</span>
+        <h1 class="display mt-md" style="color: var(--cream);">Dein smarter<br><em class="italic">Ernährungs-</em><br>begleiter.</h1>
+        <p class="lead mt-md" style="color: rgba(255,252,249,0.9); max-width: 44ch;">
+          Für Histaminintoleranz, Darmprobleme, Zöliakie, Allergien und Zyklusbeschwerden.
+        </p>
+        <div class="mt-lg" style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#" class="btn btn-copper">App Store</a>
+          <a href="#" class="btn btn-outline" style="border-color: var(--cream); color: var(--cream);">Google Play</a>
         </div>
-        <h4>Stress und Nervensystem</h4>
-        <p>Verstehe, wie Stress deine Verträglichkeit beeinflusst. Vagusnerv, Darm-Hirn-Achse und Regulierung.</p>
+        <p class="mt-md" style="color: rgba(255,252,249,0.6); font-size: 13px;">Für Apple und Android</p>
       </div>
-      <div class="more-feature-card fade-up fd1">
-        <div class="more-feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg>
-        </div>
-        <h4>Food Tracker</h4>
-        <p>Kalorien, Makros und Ballaststoffe tracken. Phasenabhängige Tipps. Sport mit MET-Kalorienberechnung. Mit Essstörungs-Schutz.</p>
+      <div class="phone-mockup">
+        <img src="images/app-v1.2/01-heute.png" alt="TerraLuna Heute Screen">
       </div>
-      <div class="more-feature-card fade-up fd2">
-        <div class="more-feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </div>
-        <h4>Refluxfreundlich</h4>
-        <p>Neue Welt für Sodbrennen. Filtert Reflux-Trigger in Rezepten, Scanner und Lebensmitteln. SOS-Karte für akute Hilfe.</p>
+    </div>
+  </div>
+</header>
+
+<!-- INFO-BOX -->
+<section class="section section-mint" style="padding: 60px 0;">
+  <div class="container-narrow">
+    <div class="editorial-card">
+      <span class="eyebrow eyebrow-blue">Info</span>
+      <p class="mt-md">Sollte der Scanner nach dem Kauf nicht funktionieren, klick bitte auch auf „Kauf wiederherstellen" in der App. Das findest du bei den Abo-Optionen. Ansonsten schreib mir über Instagram <a href="https://instagram.com/julia_bergles" style="color: var(--copper);">@julia_bergles</a> oder per E-Mail an <a href="mailto:julia@bergles.net" style="color: var(--copper);">julia@bergles.net</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 1: HOME -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="chapter-num">Nº 01 · Home</span>
+        <h2 class="mt-sm">Dein Tag auf einen <em class="italic">Blick</em>.</h2>
+        <p class="lead mt-md">Mini-Julia begrüßt dich. Zyklusphase im Kalender. Phasenbasierte Motivation. SOS-Button für schnelle Hilfe.</p>
       </div>
-      <div class="more-feature-card fade-up">
-        <div class="more-feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h4>Histamin-Fass</h4>
-        <p>Visualisiere deinen Histamin-Füllstand. Verstehe welche Faktoren füllen und leeren. Mit Tausch-Vorschlägen.</p>
-      </div>
-      <div class="more-feature-card fade-up fd1">
-        <div class="more-feature-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <h4>Wetter und Pollen</h4>
-        <p>Pollenflug und Wetterdaten. Kreuzallergien-Warnung wenn Birke, Gräser oder Beifuß fliegen.</p>
-      </div>
-      <div class="more-feature-card fade-up fd2">
-        <div class="more-feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h4>Auch für Männer</h4>
-        <p>Histaminintoleranz und Darmprobleme betreffen nicht nur Frauen. TerraLuna funktioniert für alle.</p>
+      <div class="phone-mockup"><img src="images/app-v1.2/01-heute.png" alt="Home Screen"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 2: SCANNER -->
+<section class="section section-mint">
+  <div class="container">
+    <div class="grid-2">
+      <div class="phone-mockup"><img src="images/app-v1.2/03-lebensmittel.png" alt="Scanner"></div>
+      <div>
+        <span class="chapter-num">Nº 02 · Scanner &amp; Tracker</span>
+        <h2 class="mt-sm">Scannen, tracken,<br><em class="italic">verstehen</em>.</h2>
+        <p class="lead mt-md">Barcode-Scanner mit Ampel. Foto-Scanner mit KI. Food Tracker mit Kalorien und Makros. 30 Sportarten. Nährwerte direkt vom Scanner.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="section-inner">
-    <p class="section-label fade-up" style="text-align: center;">Preise</p>
-    <h2 class="section-title fade-up" style="text-align: center;">Ein klarer Plan</h2>
-    <p class="section-sub fade-up" style="text-align: center; margin-left: auto; margin-right: auto;">3 Tage gratis testen. danach 4,99 Euro im Monat oder 39,99 Euro im Jahr. Jederzeit kündbar, keine versteckten Kosten.</p>
+<!-- FEATURE 3: PROFIL & WELTEN -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="chapter-num">Nº 03 · Profil &amp; Welten</span>
+        <h2 class="mt-sm">Komplett auf <em class="italic">dich</em> abgestimmt.</h2>
+        <p class="lead mt-md">10+ Welten (Histamin, Darm, Reflux, Laktose, Fructose, Zöliakie, …). Zyklus-Fragebogen. Food Tracker mit Essstörungs-Sicherheitsabfrage. Klares Abo-Modell: 3 Tage gratis, dann 1 einziger Plan.</p>
+      </div>
+      <div class="phone-mockup"><img src="images/app-v1.2/06-profil-welten.png" alt="Profil Welten"></div>
+    </div>
+  </div>
+</section>
 
-    <div class="pricing-with-image">
-      <div class="iphone-frame fade-up"><img src="images/app-v1.2/01-heute.png" alt="TerraLuna Home-Screen" loading="lazy" width="280" height="580"></div>
-      <div class="pricing-card popular fade-up">
-        <div class="pricing-badge">3 Tage gratis testen</div>
-        <h3>TerraLuna</h3>
-        <div class="pricing-price">4,99 Euro <span>/ Monat</span></div>
-        <p class="pricing-alt">oder 39,99 Euro / Jahr · spare 33%</p>
-        <div class="pricing-divider"></div>
-        <p style="text-align: center; font-family: 'Raleway', sans-serif; font-size: 17px; color: var(--charcoal); font-weight: 700; margin: 20px 0;">Jetzt 3 Tage kostenlos testen<br>oder kostenfreie Version nutzen</p>
-        <a href="#" class="btn btn-gold btn-sm" style="text-align: center;">3 Tage gratis starten</a>
+<!-- FEATURE 4: REISEN -->
+<section class="section section-mint">
+  <div class="container">
+    <div class="grid-2">
+      <div class="phone-mockup"><img src="images/app-v1.2/09-zyklus.png" alt="Reisen"></div>
+      <div>
+        <span class="chapter-num">Nº 04 · Reisen</span>
+        <h2 class="mt-sm">Sicher essen im <em class="italic">Urlaub</em>.</h2>
+        <p class="lead mt-md">Restaurant-Karten in 8 Sprachen. Notfall-Snacks. Hotel-E-Mail-Vorlagen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 5: EINKAUFEN -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="chapter-num">Nº 05 · Einkaufen</span>
+        <h2 class="mt-sm">Einkaufen ohne <em class="italic">Unsicherheit</em>.</h2>
+        <p class="lead mt-md">13 Supermärkte (600+ Produkte). Smarte Einkaufslisten. Online-Shop Links. Markenprodukte (Schär, Oatly, Bauckhof, Alnatura).</p>
+      </div>
+      <div class="phone-mockup"><img src="images/app-v1.2/05-einkauf.png" alt="Einkauf"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 6: REZEPTE -->
+<section class="section section-mint">
+  <div class="container">
+    <div class="grid-2">
+      <div class="phone-mockup"><img src="images/app-v1.2/04-rezepte.png" alt="Rezepte"></div>
+      <div>
+        <span class="chapter-num">Nº 06 · Rezepte</span>
+        <h2 class="mt-sm">120+ Rezepte, die du<br><em class="italic">wirklich</em> essen kannst.</h2>
+        <p class="lead mt-md">Glutenfrei. Ohne Industriezucker. Ampel pro Rezept (Histamin, Darm, Zyklus). Hefe/Backpulver/Apfelessig-Hinweise. Mehl-Alternativen. Reflux-Filter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 7: LERNBIBLIOTHEK -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="chapter-num">Nº 07 · Lernbibliothek</span>
+        <h2 class="mt-sm">Verstehen, was in deinem<br><em class="italic">Körper</em> passiert.</h2>
+        <p class="lead mt-md">Histamin. Darm. Zyklus. Reflux. Stress. Östrogen-Histamin-Zusammenhang. Probiotika-Guide. Mentale Gesundheit.</p>
+      </div>
+      <div class="phone-mockup"><img src="images/app-v1.2/Lernen.PNG" alt="Lernen"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 8: SOS-HILFE -->
+<section class="section section-mint">
+  <div class="container">
+    <div class="grid-2">
+      <div class="phone-mockup"><img src="images/app-v1.2/08-profil-plan.png" alt="SOS"></div>
+      <div>
+        <span class="chapter-num">Nº 08 · SOS-Hilfe</span>
+        <h2 class="mt-sm">Schnelle Hilfe bei <em class="italic">Beschwerden</em>.</h2>
+        <p class="lead mt-md">11 Notfall-Karten (Histaminreaktion, Bauchschmerzen, Durchfall, Sodbrennen, Blähbauch, Krämpfe, Angst vor dem Essen, Migräne). Affirmationen. Soforthilfe-Schritte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEITERE FEATURES -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Weitere Features</span>
+      <h2 class="mt-sm">Und noch mehr, was <em class="italic">funktioniert</em>.</h2>
+    </div>
+    <div class="grid-3 mt-lg">
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">·</span>
+        <h3 class="mt-sm">Stress &amp; Nervensystem</h3>
+        <p class="mt-sm">Regulations-Übungen für den Alltag.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">·</span>
+        <h3 class="mt-sm">Food Tracker</h3>
+        <p class="mt-sm">Mit Essstörungs-Schutz.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">·</span>
+        <h3 class="mt-sm">Refluxfreundlich</h3>
+        <p class="mt-sm">Neue Welt für Sodbrennen.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">·</span>
+        <h3 class="mt-sm">Histamin-Fass</h3>
+        <p class="mt-sm">Visualisierung + Tausch-Vorschläge.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">·</span>
+        <h3 class="mt-sm">Wetter &amp; Pollen</h3>
+        <p class="mt-sm">Pollenflug + Kreuzallergien-Warnung.</p>
+      </article>
+      <article class="editorial-card blue-soft">
+        <span class="chapter-num">·</span>
+        <h3 class="mt-sm">Auch für Männer</h3>
+        <p class="mt-sm">Nicht nur für Frauen — Zyklus ist optional.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PREIS -->
+<section class="section section-mint">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">Ein klarer Plan</span>
+      <h2 class="mt-sm">3 Tage gratis <em class="italic">testen</em>.</h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">Danach 4,99 € im Monat oder 39,99 € im Jahr. Jederzeit kündbar, keine versteckten Kosten.</p>
+    </div>
+
+    <div class="grid-2 mt-lg" style="max-width: 900px; margin: 0 auto;">
+      <div class="phone-mockup"><img src="images/app-v1.2/01-heute.png" alt="App Home"></div>
+      <div class="editorial-card">
+        <span class="chapter-num" style="color: var(--copper);">Preis</span>
+        <p style="font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); color: var(--dark); line-height: 1.1; margin-top: 12px;">
+          <strong>4,99 €</strong> <span style="font-size: 20px; color: var(--mute);">/ Monat</span>
+        </p>
+        <p style="font-family: var(--serif); font-size: 24px; color: var(--dark-soft); margin-top: 8px;">
+          oder <strong>39,99 €</strong> / Jahr <span style="color: var(--copper); font-style: italic;">— spare 33 %</span>
+        </p>
+        <p class="mt-md">Jetzt 3 Tage kostenlos testen oder kostenfreie Version nutzen.</p>
+        <a href="#" class="btn btn-copper mt-md">3 Tage gratis starten</a>
       </div>
     </div>
 
-    <p class="fade-up" style="text-align: center; margin-top: 32px; font-size: 13px; color: var(--soft);">Medizinischer Hinweis: TerraLuna ist eine Orientierungshilfe und ersetzt keine ärztliche Diagnose oder Therapie.</p>
-    <p class="fade-up" style="text-align: center; margin-top: 12px; font-size: 12px; color: var(--soft);">TerraLuna Vollmond ist ein automatisch verlängerndes Abonnement. Nach Ablauf der Testphase werden 4,99 Euro / Monat bzw. 39,99 Euro / Jahr berechnet. Kündigung jederzeit über die Apple-ID- bzw. Google-Play-Einstellungen.</p>
+    <p class="mt-lg text-center text-mute" style="max-width: 780px; margin-left: auto; margin-right: auto; font-size: 13px;">
+      TerraLuna ist eine Orientierungshilfe und ersetzt keine ärztliche Diagnose oder Therapie. TerraLuna Vollmond ist ein automatisch verlängerndes Abonnement. Nach Ablauf der Testphase werden 4,99 € / Monat bzw. 39,99 € / Jahr berechnet. Kündigung jederzeit über die Apple-ID- bzw. Google-Play-Einstellungen.
+    </p>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="section-inner">
-    <h2 class="fade-up">Jetzt für iOS und Android verfügbar</h2>
-    <p class="fade-up">TerraLuna ist ab sofort im Apple App Store UND bei Google Play erhältlich.</p>
-    <div class="fade-up" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px;">
-      <a href="https://apps.apple.com/de/app/terraluna/id6763492103" class="btn btn-gold" target="_blank" rel="noopener">App Store</a>
-      <a href="https://play.google.com/store/search?q=TerraLuna+Julia+Bergles" target="_blank" rel="noopener" class="btn btn-outline-light">Google Play</a>
+<!-- FINAL CTA -->
+<section class="section section-dark">
+  <div class="container-narrow text-center">
+    <span class="eyebrow" style="color: var(--copper);">Verfügbar</span>
+    <h2 class="mt-md" style="color: var(--cream);">Jetzt für iOS und Android.</h2>
+    <p class="lead mt-md" style="color: rgba(255,252,249,0.9); margin-left: auto; margin-right: auto;">
+      TerraLuna ist ab sofort im Apple App Store UND bei Google Play erhältlich.
+    </p>
+    <div class="mt-lg" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+      <a href="#" class="btn btn-copper">App Store</a>
+      <a href="#" class="btn btn-outline" style="border-color: var(--cream); color: var(--cream);">Google Play</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Julia Bergles</div>
-    <div class="footer-links">
-      <a href="index.html">Startseite</a>
-      <a href="app.html">TerraLuna App</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="agb.html">AGB</a>
-      <a href="datenschutz.html">Datenschutzerklärung</a>
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
     </div>
-      <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="footer-instagram">Folge mir auf Instagram</a>
-  <div class="footer-health">
-    <strong>Health-Disclaimer:</strong> Ich bin keine Ärztin. Alles auf dieser Seite sind persönliche Erfahrungen. Keine medizinische Beratung, kein Ersatz für Arzt oder Heilpraktiker. Bei Beschwerden bitte an eine Fachperson wenden.
-  </div>
-  <div class="footer-disclaimer">
-      TerraLuna ist eine Ernährungs-App von Julia Bergles. Alle Inhalte dienen der Orientierung und ersetzen keine medizinische Beratung.<br>
-      Die App macht keine Heilversprechen. Bei gesundheitlichen Beschwerden wende dich an eine Ärztin oder einen Arzt.<br>
-      &copy; 2026 Julia Bergles
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
     </div>
   </div>
 </footer>
-
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-// App-Screenshot-Carousel: Pfeile + Disabled-States
-(function () {
-  const track = document.getElementById('screensTrack');
-  const prev = document.getElementById('screensPrev');
-  const next = document.getElementById('screensNext');
-  if (!track || !prev || !next) return;
-  function scrollStep() {
-    const item = track.querySelector('.screen-item');
-    if (!item) return 320;
-    const style = window.getComputedStyle(track);
-    const gap = parseInt(style.columnGap || style.gap || 32, 10);
-    return item.getBoundingClientRect().width + gap;
-  }
-  function updateButtons() {
-    const max = track.scrollWidth - track.clientWidth - 2;
-    prev.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft >= max;
-  }
-  prev.addEventListener('click', () => track.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
-  next.addEventListener('click', () => track.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
-  track.addEventListener('scroll', updateButtons, { passive: true });
-  window.addEventListener('resize', updateButtons);
-  updateButtons();
-})();
-</script>
-
-<!-- FLOATING BUTTONS: FAQ + Instagram mit Sprechblase -->
-<style>
-  .float-stack { position: fixed; bottom: 24px; right: 24px; z-index: 200; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
-  .float-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 12px 20px 12px 16px; border-radius: 999px;
-    text-decoration: none; font-family: 'Raleway', sans-serif;
-    font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 12px 28px rgba(45,31,34,0.22);
-  }
-  .float-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(45,31,34,0.32); }
-  .float-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
-  .float-btn.faq { background: #2a2a2a; color: #fff; }
-  .float-btn.faq:hover { background: #C48B6C; color: #fff; }
-  .float-btn.ig { background: #fff; color: #2a2a2a; border: 1px solid rgba(45,31,34,0.1); }
-  .float-btn.ig .bubble { display: inline; }
-  .float-btn.ig:hover { background: #C48B6C; color: #fff; }
-  @media (max-width: 640px) {
-    .float-btn { padding: 11px 16px 11px 14px; font-size: 12px; }
-    .float-btn.ig .bubble-full { display: none; }
-    .float-btn.ig .bubble-short { display: inline; }
-  }
-  @media (min-width: 641px) {
-    .float-btn.ig .bubble-short { display: none; }
-    .float-btn.ig .bubble-full { display: inline; }
-  }
-</style>
-<div class="float-stack">
-  <a href="#faq" class="float-btn faq" aria-label="Häufige Fragen">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-    <span>Häufige Fragen</span>
-  </a>
-  <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="float-btn ig" aria-label="Instagram — Fragen? Schreib mir!">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-    <span class="bubble-full">Hast du Fragen? Schreib mir!</span>
-    <span class="bubble-short">Schreib mir!</span>
-  </a>
-</div>
 
 </body>
 </html>
