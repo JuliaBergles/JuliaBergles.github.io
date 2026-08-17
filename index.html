@@ -1,2499 +1,285 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="index, follow" />
-<meta name="google-site-verification" content="zjdWnM2diljOGIRonIwIzcWVEGGknCIZNM5-0BK3e9A" />
-<meta name="msvalidate.01" content="4FE463F3FC5F26E2231BD9BCC31B9AD0" />
-<title>Julia Bergles · TerraLuna App, Erfahrungen, Blog</title>
-<meta name="description" content="TerraLuna-App, Blog, Rezepte und meine Erfahrungen mit Histaminintoleranz, MCAS und Reizdarm. Ehrlich, persönlich, ohne Bullshit." />
-<link rel="canonical" href="https://www.juliabergles.de/" />
-
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.juliabergles.de/" />
-<meta property="og:title" content="Julia Bergles · TerraLuna App, Erfahrungen, Blog" />
-<meta property="og:description" content="TerraLuna-App, Blog, Rezepte und meine Erfahrungen mit Histaminintoleranz, MCAS und Reizdarm." />
-<meta property="og:image" content="https://www.juliabergles.de/images/julia-1.jpg" />
-<meta property="og:locale" content="de_DE" />
-<meta property="og:site_name" content="Julia Bergles" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Julia Bergles · TerraLuna App, Erfahrungen, Blog" />
-<meta name="twitter:description" content="TerraLuna-App, Blog, Rezepte und meine Erfahrungen mit Histaminintoleranz, MCAS und Reizdarm." />
-<meta name="twitter:image" content="https://www.juliabergles.de/images/julia-1.jpg" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://www.juliabergles.de/#person",
-  "name": "Julia Bergles",
-  "url": "https://www.juliabergles.de/",
-  "image": "https://www.juliabergles.de/images/julia-1.jpg",
-  "email": "julia@bergles.net",
-  "jobTitle": "Gründerin TerraLuna-App",
-  "sameAs": [
-    "https://www.instagram.com/julia_bergles"
-  ]
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
-<style>
-  :root {
-    --bg: #fffcf9;
-    --bg-warm: #efe3da;
-    --bg-soft: #f6e7e7;
-    --bg-mint: #f4f3f1;
-    --card: #ffffff;
-
-    --ink: #2D1F22;
-    --ink-soft: #4a3236;
-    --muted: #8a6f72;
-    --muted-lite: #b09a9c;
-
-    --bordeaux: #2a2a2a;
-    --bordeaux-hi: #4a4a4a;
-    --bordeaux-deep: #0f0f0f;
-
-    --copper: #C48B6C;
-    --copper-dark: #A0705A;
-    --copper-light: #E8C4A8;
-    --copper-gradient: linear-gradient(135deg, #A0705A 0%, #C48B6C 25%, #E8C4A8 50%, #C48B6C 75%, #A0705A 100%);
-
-    --pink: #C48B6C;
-    --blue: #7993ae;
-    --orange: #C48B6C;
-
-    --gold: #C48B6C;
-    --gold-hi: #E8C4A8;
-
-    --line: rgba(42, 42, 42, 0.08);
-    --line-strong: rgba(42, 42, 42, 0.18);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Object Sans', -apple-system, sans-serif;
-    font-weight: 400;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  a { color: inherit; text-decoration: none; }
-  img, video { max-width: 100%; display: block; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-  @media (max-width: 700px) { .container { padding: 0 24px; } }
-
-  h1, h2 {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif !important;
-    font-weight: 900 !important;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    color: var(--ink);
-    text-transform: none;
-  }
-  h3, h4 {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif !important;
-    font-weight: 900 !important;
-    letter-spacing: -0.015em;
-    line-height: 1.08;
-    text-transform: none;
-  }
-  /* .serif nutzt Rubik (Julia will überall die gleiche Schrift) */
-  .serif {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  /* Circle-Signature (ohne kursiv) */
-  .circle-italic {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    position: relative;
-    display: inline-block;
-    padding: 0 12px;
-  }
-  .circle-italic::before {
-    content: "";
-    position: absolute; inset: -6% -4% -6% -4%;
-    border: 1.5px solid var(--ink);
-    border-radius: 55% 45% 55% 45% / 55% 45% 55% 45%;
-    transform: rotate(-3deg);
-    pointer-events: none;
-  }
-  .circle-italic.gold::before { border-color: var(--gold); }
-  .circle-italic.white::before { border-color: #fff; }
-
-  /* Reveal */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-  .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(251, 242, 237, 0.85);
-    backdrop-filter: saturate(1.3) blur(20px);
-    -webkit-backdrop-filter: saturate(1.3) blur(20px);
-    border-bottom: 1px solid var(--line);
-  }
-  nav .row {
-    max-width: 1200px; margin: 0 auto;
-    padding: 22px 40px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .brand {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-weight: 500; font-size: 26px;
-    color: var(--ink); letter-spacing: -0.02em;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .brand::before {
-    content: "";
-    display: inline-block; width: 16px; height: 16px;
-    background: var(--bordeaux); border-radius: 50%;
-  }
-  nav ul { display: flex; gap: 22px; list-style: none; flex-wrap: nowrap; }
-  nav ul a {
-    font-size: 11px; letter-spacing: 0.1em; text-transform: none;
-    color: var(--ink); font-weight: 500;
-    transition: color 0.3s;
-    white-space: nowrap;
-  }
-  nav ul a:hover { color: var(--bordeaux); }
-  .nav-cta {
-    padding: 13px 26px;
-    background: var(--bordeaux); color: var(--bg);
-    border-radius: 999px;
-    font-size: 11px; letter-spacing: 0.12em; text-transform: none;
-    font-weight: 500;
-    transition: all 0.4s;
-  }
-  .nav-cta:hover { background: var(--bordeaux); }
-
-  /* Burger + Mobile-Menu */
-  .nav-burger {
-    display: none;
-    width: 40px; height: 40px;
-    background: transparent; border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    cursor: pointer;
-    align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .nav-burger span { display: block; width: 16px; height: 1.5px; background: var(--bordeaux); position: relative; }
-  .nav-burger span::before, .nav-burger span::after {
-    content: ""; position: absolute; left: 0; width: 16px; height: 1.5px;
-    background: var(--bordeaux); transition: transform 0.3s;
-  }
-  .nav-burger span::before { top: -5px; }
-  .nav-burger span::after  { top:  5px; }
-  .nav-burger.open span { background: transparent; }
-  .nav-burger.open span::before { top: 0; transform: rotate(45deg); }
-  .nav-burger.open span::after  { top: 0; transform: rotate(-45deg); }
-
-  @media (max-width: 980px) {
-    nav ul { display: none; }
-    .nav-cta { display: none; }
-    .nav-burger { display: inline-flex; }
-    .mobile-menu {
-      position: fixed; top: 78px; left: 0; right: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--line);
-      padding: 24px 32px 32px;
-      display: none;
-      z-index: 99;
-    }
-    .mobile-menu.open { display: block; }
-    .mobile-menu a {
-      display: block; padding: 14px 0;
-      font-size: 14px; letter-spacing: 0.12em; text-transform: none;
-      color: var(--ink); font-weight: 500;
-      border-bottom: 1px solid var(--line);
-    }
-    .mobile-menu .mobile-cta {
-      display: inline-block; margin-top: 20px; padding: 14px 28px;
-      background: var(--bordeaux); color: var(--bg); border-radius: 999px;
-      font-size: 11px; letter-spacing: 0.12em; text-transform: none;
-      font-weight: 500; border-bottom: 0;
-    }
-  }
-  @media (min-width: 981px) { .mobile-menu { display: none !important; } }
-
-  /* ─── AUSWAHL-HERO (index.html) — dunkel editorial ─── */
-  .hero-choice {
-    padding: 180px 0 130px;
-    background: var(--bordeaux);
-    color: var(--bg);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-choice::before {
-    content: ""; position: absolute; top: 100px; left: -80px;
-    width: 500px; height: 500px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(67, 10, 20, 0.32), transparent 60%);
-    filter: blur(80px);
-    pointer-events: none; z-index: 0;
-    animation: floatA 22s ease-in-out infinite alternate;
-  }
-  .hero-choice::after {
-    content: ""; position: absolute; bottom: -120px; right: -60px;
-    width: 560px; height: 560px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 156, 109, 0.24), transparent 60%);
-    filter: blur(90px);
-    pointer-events: none; z-index: 0;
-    animation: floatB 26s ease-in-out infinite alternate;
-  }
-  .hero-choice .container { position: relative; z-index: 1; }
-  .hero-choice .eyebrow {
-    font-size: 10px; letter-spacing: 0.45em; text-transform: none;
-    color: var(--gold); font-weight: 700;
-    margin-bottom: 32px;
-    display: inline-block;
-  }
-  .hero-choice h1 {
-    font-size: clamp(52px, 8vw, 108px);
-    font-weight: 400;
-    margin-bottom: 28px;
-    letter-spacing: -0.03em;
-    line-height: 0.98;
-    color: var(--bg);
-  }
-  .hero-choice h1 em { font-style: normal; color: var(--gold); }
-  .hero-choice .lede {
-    font-size: 17px;
-    color: rgba(251, 242, 237, 0.7);
-    max-width: 560px;
-    margin: 0 auto 64px;
-    line-height: 1.65;
-  }
-  .choice-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-    max-width: 1200px; margin: 0 auto;
-  }
-  @media (max-width: 980px) { .choice-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 560px) { .choice-grid { grid-template-columns: 1fr; } }
-  .choice-card {
-    background: rgba(251, 242, 237, 0.04);
-    border: 1px solid rgba(255, 156, 109, 0.22);
-    border-radius: 12px;
-    padding: 40px 28px 32px;
-    text-align: left;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex; flex-direction: column;
-    position: relative;
-    min-height: 300px;
-    overflow: hidden;
-    backdrop-filter: blur(6px);
-  }
-  .choice-card::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 55%, rgba(255, 156, 109, 0.08));
-    opacity: 0; transition: opacity 0.6s;
-    pointer-events: none;
-  }
-  .choice-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--gold);
-    background: rgba(251, 242, 237, 0.06);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-  }
-  .choice-card:hover::after { opacity: 1; }
-  .choice-card .n {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-style: normal;
-    font-weight: 500; font-size: 44px;
-    color: var(--gold); line-height: 1;
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-  }
-  .choice-card h3 {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900; font-style: normal;
-    font-size: 28px; color: var(--bg);
-    margin-bottom: 14px; line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
-  .choice-card p {
-    font-size: 14px;
-    color: rgba(251, 242, 237, 0.65);
-    line-height: 1.65;
-    margin-bottom: 24px;
-    flex-grow: 1;
-  }
-  .choice-card .arrow {
-    font-size: 11px; letter-spacing: 0.2em; text-transform: none;
-    color: var(--gold); font-weight: 700;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: gap 0.4s;
-  }
-  .choice-card:hover .arrow { gap: 12px; }
-
-  /* Featured "Ich weiß noch nicht" */
-  .choice-card.warm {
-    background: linear-gradient(135deg, var(--bordeaux-deep), var(--bordeaux));
-    border: 1px solid var(--gold);
-  }
-  .choice-card.warm:hover {
-    background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-hi));
-    box-shadow: 0 40px 80px rgba(67, 10, 20, 0.5);
-  }
-  .choice-card.warm .n { color: var(--gold); }
-  .choice-card.warm p { color: rgba(251, 242, 237, 0.85); }
-
-  /* ─── FLOATING AUSWAHL MODAL ─── */
-  .choice-modal {
-    position: fixed;
-    bottom: 24px; right: 24px;
-    width: 380px;
-    max-width: calc(100vw - 48px);
-    background: linear-gradient(155deg, var(--bordeaux), var(--bordeaux-deep));
-    color: var(--bg);
-    border: 1px solid rgba(255, 156, 109, 0.32);
-    border-radius: 16px;
-    padding: 32px 28px 28px;
-    z-index: 300;
-    opacity: 0;
-    transform: translateY(30px) scale(0.96);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
-    overflow: hidden;
-  }
-  .choice-modal::before {
-    content: ""; position: absolute; top: -80px; right: -80px;
-    width: 240px; height: 240px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 156, 109, 0.28), transparent 65%);
-    filter: blur(30px); pointer-events: none;
-  }
-  .choice-modal.open {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-  }
-  .choice-modal > * { position: relative; z-index: 1; }
-  .choice-close {
-    position: absolute; top: 14px; right: 14px;
-    background: rgba(251, 242, 237, 0.08);
-    border: 0;
-    color: var(--bg);
-    cursor: pointer;
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    display: inline-flex; align-items: center; justify-content: center;
-    transition: background 0.3s, transform 0.3s;
-    z-index: 2;
-  }
-  .choice-close:hover {
-    background: rgba(255, 156, 109, 0.3);
-    transform: rotate(90deg);
-  }
-  .choice-modal-eyebrow {
-    font-size: 10px; letter-spacing: 0.35em; text-transform: none;
-    color: var(--gold); font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .choice-modal-h {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900;
-    font-size: 24px; color: var(--bg);
-    line-height: 1.15;
-    margin-bottom: 22px;
-    letter-spacing: -0.01em;
-  }
-  .choice-modal-h em { font-style: normal; color: var(--gold); }
-  .choice-modal-grid { display: flex; flex-direction: column; gap: 10px; }
-  .cm-card {
-    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
-    padding: 14px 16px;
-    background: rgba(251, 242, 237, 0.04);
-    border: 1px solid rgba(255, 156, 109, 0.18);
-    border-radius: 10px;
-    color: var(--bg);
-    text-decoration: none;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .cm-card:hover {
-    background: rgba(251, 242, 237, 0.08);
-    border-color: var(--gold);
-    transform: translateX(4px);
-  }
-  .cm-n {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900;
-    color: var(--gold); font-size: 22px; line-height: 1;
-    min-width: 26px;
-  }
-  .cm-body { display: flex; flex-direction: column; gap: 2px; }
-  .cm-h {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900;
-    color: var(--bg); font-size: 16px; line-height: 1.2;
-  }
-  .cm-sub {
-    font-size: 12px; color: rgba(251, 242, 237, 0.6); line-height: 1.3;
-  }
-  .cm-arrow {
-    color: var(--gold); font-size: 18px;
-    transition: transform 0.3s;
-  }
-  .cm-card:hover .cm-arrow { transform: translateX(4px); }
-  .cm-card.cm-warm {
-    background: linear-gradient(135deg, var(--bordeaux-deep), var(--bordeaux));
-    border-color: var(--gold);
-  }
-  .cm-card.cm-warm:hover {
-    background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-hi));
-  }
-
-  /* Re-Open Button */
-  .choice-reopen {
-    position: fixed;
-    bottom: 24px; right: 24px;
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: var(--bordeaux);
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    cursor: pointer;
-    display: inline-flex; align-items: center; justify-content: center;
-    z-index: 300;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    transition: all 0.4s;
-  }
-  .choice-reopen:hover {
-    transform: scale(1.08);
-    background: var(--gold);
-    color: var(--ink);
-  }
-  .choice-reopen .pulse {
-    position: absolute; inset: 0;
-    border-radius: 50%;
-    border: 1.5px solid var(--gold);
-    animation: pulseRing 2.4s ease-out infinite;
-    pointer-events: none;
-  }
-  @keyframes pulseRing {
-    0% { transform: scale(1); opacity: 0.6; }
-    100% { transform: scale(1.5); opacity: 0; }
-  }
-  @media (max-width: 500px) {
-    .choice-modal { width: calc(100vw - 32px); bottom: 16px; right: 16px; }
-    .choice-reopen { bottom: 16px; right: 16px; }
-  }
-
-  /* ─── HERO Full-Bleed ─── */
-  .hero {
-    min-height: 620px;
-    height: auto;
-    position: relative; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    text-align: center;
-    padding: 120px 40px 80px;
-  }
-  @media (max-width: 700px) {
-    .hero { min-height: 520px; padding: 90px 24px 60px; }
-  }
-  .hero-bg { position: absolute; inset: 0; z-index: 1; }
-  .hero-bg img {
-    width: 100%; height: 100%; object-fit: cover;
-    animation: kenburns 30s ease-in-out infinite alternate;
-  }
-  @keyframes kenburns {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.08); }
-  }
-  .hero-bg::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(45, 31, 34, 0.15) 0%, rgba(45, 31, 34, 0.5) 100%);
-    pointer-events: none;
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    color: #fff; max-width: 900px;
-  }
-  .hero-eyebrow {
-    font-size: 11px; letter-spacing: 0.4em; text-transform: none;
-    color: rgba(255, 255, 255, 0.85); font-weight: 500;
-    margin-bottom: 36px;
-    display: inline-flex; align-items: center; gap: 20px;
-  }
-  .hero-eyebrow::before, .hero-eyebrow::after {
-    content: ""; width: 60px; height: 1px; background: var(--gold);
-  }
-  .hero h1 {
-    color: #fff;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif !important;
-    font-size: clamp(52px, 8vw, 108px);
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 32px;
-    letter-spacing: -0.03em;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
-  }
-  .hero-sub {
-    font-size: 19px;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 620px;
-    margin: 0 auto 48px;
-    line-height: 1.55;
-    font-weight: 400;
-  }
-  .hero-buttons {
-    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-  }
-  .btn-red {
-    padding: 20px 44px;
-    background: var(--bordeaux); color: #fff;
-    border: 0; border-radius: 999px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none;
-    cursor: pointer;
-    transition: all 0.4s;
-    box-shadow: 0 20px 40px rgba(67, 10, 20, 0.35);
-    display: inline-block;
-  }
-  .btn-red:hover { background: var(--bordeaux-hi); transform: translateY(-3px); box-shadow: 0 25px 50px rgba(67, 10, 20, 0.5); }
-  .btn-outline-white {
-    padding: 20px 44px;
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 999px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none;
-    cursor: pointer; backdrop-filter: blur(8px);
-    transition: all 0.4s;
-    display: inline-block;
-  }
-  .btn-outline-white:hover { background: #fff; color: var(--ink); }
-
-  /* ─── VIELLEICHT KENNST DU UNS AUS ─── */
-  .press {
-    padding: 70px 0;
-    background: var(--bg);
-    text-align: center;
-  }
-  .press-header {
-    font-size: 12px; letter-spacing: 0.2em;
-    color: var(--muted); font-weight: 500;
-    text-transform: none;
-    margin-bottom: 36px;
-  }
-  .press-logos {
-    display: flex; gap: 60px; justify-content: center; align-items: center; flex-wrap: wrap;
-    max-width: 1000px; margin: 0 auto;
-  }
-  .press-logo {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-weight: 500; font-size: 22px;
-    color: var(--ink); opacity: 0.5;
-    transition: opacity 0.3s;
-    letter-spacing: 0.03em;
-  }
-  .press-logo:hover { opacity: 1; }
-  .press-logo.bold {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-weight: 700;
-    text-transform: lowercase; font-style: normal;
-  }
-  .press-logo.serif { font-style: normal; }
-
-  /* ─── MARQUEE Bilder ─── */
-  .marquee-strip {
-    padding: 40px 0 80px;
-    background: var(--bg);
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-  }
-  .marquee-track {
-    display: flex; gap: 28px; width: max-content;
-    animation: mScroll 60s linear infinite;
-  }
-  @keyframes mScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .marquee-card {
-    flex-shrink: 0; width: 260px; aspect-ratio: 4/5;
-    border-radius: 3px; overflow: hidden;
-    box-shadow: 0 20px 40px rgba(45, 31, 34, 0.1);
-  }
-  .marquee-card img, .marquee-card video { width: 100%; height: 100%; object-fit: cover; }
-
-  /* ─── 4 BAUSTEINE (Hell + freundlich) ─── */
-  .features {
-    padding: 160px 0;
-    background: var(--bg);
-    color: var(--ink);
-    position: relative;
-    overflow: hidden;
-  }
-  .features::before {
-    content: ""; position: absolute; top: -200px; right: -200px;
-    width: 500px; height: 500px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 156, 109, 0.12), transparent 70%);
-    pointer-events: none;
-  }
-  .features::after {
-    content: ""; position: absolute; bottom: -200px; left: -200px;
-    width: 500px; height: 500px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(67, 10, 20, 0.15), transparent 70%);
-    pointer-events: none;
-  }
-  .features-header { text-align: center; margin-bottom: 90px; max-width: 900px; margin-left: auto; margin-right: auto; position: relative; }
-  .features-eyebrow {
-    font-size: 11px; letter-spacing: 0.35em; text-transform: none;
-    color: var(--bordeaux); font-weight: 700;
-    margin-bottom: 24px; display: inline-block;
-  }
-  .features-header h2 {
-    font-size: clamp(48px, 6.5vw, 96px);
-    font-weight: 900 !important;
-    margin-bottom: 24px;
-    color: var(--ink);
-    -webkit-text-stroke: 1.5px currentColor;
-  }
-  .features-header h2 em { font-style: normal; color: #ff9c6d; -webkit-text-stroke: 1.5px #ff9c6d; }
-  .features-lede { font-size: 17px; color: var(--muted); line-height: 1.6; max-width: 620px; margin: 0 auto; }
-
-  .features-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-    max-width: 1200px; margin: 0 auto;
-    position: relative;
-  }
-  @media (max-width: 1100px) { .features-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } }
-
-  .feature-card {
-    background: #fff;
-    padding: 44px 36px;
-    border-radius: 14px;
-    border: 1.5px solid currentColor;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .feature-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: currentColor;
-  }
-  .feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 60px rgba(45, 31, 34, 0.15);
-  }
-  /* Farb-Varianten pro Card */
-  .feature-card.fc-orange { color: #ff9c6d; }
-  .feature-card.fc-pink   { color: #c74873; }
-  .feature-card.fc-red    { color: #430a14; }
-  .feature-card.fc-blue   { color: #7993ae; }
-  .feature-badge {
-    display: inline-block;
-    font-size: 10px; letter-spacing: 0.2em; text-transform: none;
-    color: currentColor; font-weight: 700;
-    margin-bottom: 20px;
-    margin-top: 8px;
-    opacity: 0.85;
-  }
-  .feature-card h3 {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 30px; color: currentColor !important;
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
-    line-height: 1.02;
-    text-transform: none;
-    -webkit-text-stroke: 1px currentColor;
-  }
-  .feature-card p {
-    font-size: 14px; color: var(--muted); line-height: 1.65;
-  }
-
-  /* ─── PORTFOLIO Tab-System (Wähle Ihre Welt) ─── */
-  .portfolio { padding: 160px 0; background: var(--bg); }
-  .portfolio-header { text-align: center; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto; }
-  .portfolio-header .eyebrow {
-    font-size: 11px; letter-spacing: 0.35em; text-transform: none;
-    color: var(--muted); font-weight: 500;
-    margin-bottom: 24px; display: inline-block;
-  }
-  .portfolio-header h2 { font-size: clamp(44px, 6vw, 88px); font-weight: 400; margin-bottom: 20px; }
-  .portfolio-header h2 em { font-style: normal; color: var(--bordeaux); }
-  .portfolio-header p { font-size: 16px; color: var(--muted); }
-
-  .port-tabs {
-    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-    margin-bottom: 60px;
-  }
-  .port-tab {
-    padding: 14px 26px;
-    background: var(--card);
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 13px; font-weight: 500;
-    color: var(--ink);
-    cursor: pointer;
-    transition: all 0.4s;
-  }
-  .port-tab:hover { border-color: var(--bordeaux); color: var(--bordeaux); }
-  .port-tab.active {
-    background: var(--bordeaux); border-color: var(--bordeaux); color: #fff;
-    box-shadow: 0 10px 20px rgba(67, 10, 20, 0.25);
-  }
-
-  .port-panel { display: none; animation: pFade 0.5s ease; }
-  .port-panel.active { display: block; }
-  @keyframes pFade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-  .port-inner {
-    max-width: 1100px; margin: 0 auto;
-    background: var(--card);
-    border-radius: 12px;
-    padding: 40px 36px;
-    border: 1px solid var(--line);
-  }
-  @media (max-width: 700px) { .port-inner { padding: 40px 24px; } }
-  .port-inner .k { font-size: 11px; letter-spacing: 0.3em; text-transform: none; color: var(--gold); font-weight: 600; margin-bottom: 20px; display: inline-block; }
-  .port-inner h3 {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900;
-    font-size: clamp(36px, 5vw, 60px);
-    margin-bottom: 20px; line-height: 1.05;
-  }
-  .port-inner p { font-size: 16px; color: var(--muted); max-width: 620px; margin-bottom: 40px; line-height: 1.65; }
-
-  .port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  @media (max-width: 700px) { .port-grid { grid-template-columns: 1fr 1fr; } }
-  .port-item {
-    border-radius: 4px; overflow: hidden; aspect-ratio: 4/5;
-    box-shadow: 0 10px 20px rgba(45, 31, 34, 0.08);
-    transition: transform 0.5s;
-  }
-  .port-item:hover { transform: translateY(-4px); }
-  .port-item img { width: 100%; height: 100%; object-fit: cover; }
-
-  .port-fitness-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-    background: #0e0e0e; padding: 40px 30px; border-radius: 8px;
-  }
-  @media (max-width: 700px) { .port-fitness-grid { grid-template-columns: 1fr; } }
-  .port-fitness-grid > div { border-radius: 4px; overflow: hidden; }
-  .port-fitness-grid img { width: 100%; height: auto; display: block; }
-
-  .port-mental-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-  }
-  @media (max-width: 700px) { .port-mental-grid { grid-template-columns: repeat(2, 1fr); } }
-  .port-mental-grid > div { border-radius: 4px; overflow: hidden; aspect-ratio: 3/4; }
-  .port-mental-grid img { width: 100%; height: 100%; object-fit: cover; }
-
-  .port-placeholder {
-    text-align: center; padding: 80px 30px;
-  }
-  .port-placeholder .icon {
-    width: 80px; height: 80px; border-radius: 50%;
-    background: var(--bg-soft); color: var(--bordeaux);
-    display: inline-flex; align-items: center; justify-content: center;
-    margin-bottom: 24px;
-  }
-
-  /* ─── ÜBER JULIA ─── */
-  .mentor { padding: 160px 0; background: var(--bg-warm); }
-  .mentor-inner {
-    display: grid; grid-template-columns: 0.9fr 1.1fr;
-    gap: 80px; align-items: center;
-    max-width: 1200px; margin: 0 auto;
-  }
-  @media (max-width: 900px) { .mentor-inner { grid-template-columns: 1fr; gap: 50px; } }
-  .mentor-portrait {
-    aspect-ratio: 4/5; border-radius: 3px; overflow: hidden;
-    box-shadow: 0 50px 100px rgba(45, 31, 34, 0.25);
-    position: relative;
-    padding: 12px;
-    background: linear-gradient(135deg, var(--gold), #b8925c 50%, var(--gold));
-  }
-  .mentor-portrait::after {
-    content: ""; position: absolute; inset: 12px;
-    border: 1px solid rgba(45, 31, 34, 0.15);
-    pointer-events: none; z-index: 2;
-  }
-  .mentor-portrait img { width: 100%; height: 100%; object-fit: cover; animation: kenburns 24s ease-in-out infinite alternate; position: relative; z-index: 1; }
-  .mentor-eyebrow {
-    color: var(--bordeaux) !important;
-  }
-  .mentor-eyebrow {
-    font-size: 11px; letter-spacing: 0.35em; text-transform: none;
-    color: var(--muted); font-weight: 500; margin-bottom: 24px;
-  }
-  .mentor-content h2 {
-    font-size: clamp(44px, 6vw, 82px); font-weight: 400;
-    margin-bottom: 32px;
-  }
-  .mentor-content h2 em { font-style: normal; color: var(--bordeaux); }
-  .mentor-content p {
-    font-size: 17px; color: var(--ink-soft);
-    line-height: 1.7; margin-bottom: 20px;
-  }
-  .mentor-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0; }
-  .mentor-chips span {
-    padding: 8px 16px;
-    background: var(--card); border: 1px solid var(--line-strong);
-    border-radius: 999px; font-size: 12px; color: var(--ink); font-weight: 500;
-    letter-spacing: 0.03em;
-  }
-
-  /* ─── RESULTS (Zahlen dunkel) ─── */
-  .results { padding: 160px 0; background: var(--bordeaux); color: var(--bg); text-align: center; }
-  .results-header { max-width: 900px; margin: 0 auto 90px; }
-  .results-header h2 { color: var(--bg); font-size: clamp(44px, 6vw, 90px); font-weight: 400; }
-  .results-header h2 em { color: var(--gold); font-style: normal; }
-  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 80px; max-width: 1100px; margin: 0 auto; }
-  @media (max-width: 700px) { .results-grid { grid-template-columns: 1fr; gap: 50px; } }
-  .result {
-    display: grid; grid-template-columns: auto 1fr;
-    gap: 30px; align-items: center;
-    text-align: left;
-  }
-  .result .num {
-    font-family: 'Object Sans', -apple-system, sans-serif;
-    font-weight: 700;
-    font-size: clamp(48px, 6vw, 82px);
-    color: var(--gold); line-height: 1;
-    letter-spacing: -0.03em;
-    white-space: nowrap;
-  }
-  .result-text { display: flex; flex-direction: column; gap: 6px; }
-  .result .lbl { font-size: 11px; letter-spacing: 0.25em; text-transform: none; color: rgba(251, 242, 237, 0.7); font-weight: 500; }
-  .result .hint { font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-size: 15px; color: rgba(251, 242, 237, 0.6); }
-
-  /* ─── NEWSLETTER Split ─── */
-  .newsletter-section { padding: 160px 0; background: var(--bg); }
-  .nl-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    max-width: 1200px; margin: 0 auto;
-    background: var(--card);
-    border-radius: 8px; overflow: hidden;
-    box-shadow: 0 50px 100px rgba(45, 31, 34, 0.15);
-  }
-  @media (max-width: 900px) { .nl-inner { grid-template-columns: 1fr; } }
-  .nl-image { aspect-ratio: 1/1; overflow: hidden; }
-  .nl-image img { width: 100%; height: 100%; object-fit: cover; animation: kenburns 20s ease-in-out infinite alternate; }
-  .nl-content { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; }
-  @media (max-width: 700px) { .nl-content { padding: 50px 30px; } }
-  .nl-mark { width: 60px; height: 2px; background: var(--gold); margin-bottom: 32px; }
-  .nl-content h2 { font-size: clamp(32px, 4vw, 52px); font-weight: 400; line-height: 1.1; margin-bottom: 24px; }
-  .nl-content h2 em { font-style: normal; color: var(--bordeaux); }
-  .nl-content p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
-  .nl-form {
-    display: flex; gap: 0;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px; padding: 6px 6px 6px 20px;
-    background: var(--bg);
-  }
-  .nl-form input { flex: 1; border: 0; background: transparent; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 14px; color: var(--ink); outline: none; }
-  .nl-form button {
-    padding: 14px 28px;
-    background: var(--bordeaux); color: #fff;
-    border: 0; border-radius: 999px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: none;
-    cursor: pointer; transition: background 0.4s;
-  }
-  .nl-form button:hover { background: var(--bordeaux-hi); }
-
-  /* ─── FOOTER ─── */
-  footer { background: var(--bordeaux); color: rgba(251, 242, 237, 0.6); padding: 80px 0 40px; }
-  .footer-top {
-    max-width: 1200px; margin: 0 auto 100px; padding: 0 40px;
-    display: grid; grid-template-columns: 1fr auto auto; gap: 60px;
-  }
-  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr; gap: 40px; } }
-  .footer-nav { display: flex; flex-direction: column; gap: 12px; }
-  .footer-nav a { font-size: 12px; letter-spacing: 0.15em; text-transform: none; color: var(--bg); font-weight: 500; transition: color 0.3s; }
-  .footer-nav a:hover { color: var(--gold); }
-  .footer-social-h { font-size: 12px; letter-spacing: 0.15em; text-transform: none; color: rgba(251, 242, 237, 0.5); margin-bottom: 12px; }
-  .footer-social { display: flex; gap: 16px; }
-  .footer-social a {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: rgba(251, 242, 237, 0.1);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--bg); transition: all 0.3s;
-    font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
-  }
-  .footer-social a:hover { background: var(--gold); color: var(--ink); }
-  .footer-legal a { display: block; font-size: 12px; letter-spacing: 0.15em; text-transform: none; color: var(--bg); margin-bottom: 8px; transition: color 0.3s; }
-  .footer-legal a:hover { color: var(--gold); }
-  .footer-xxl { text-align: center; padding: 0 20px; }
-  .footer-xxl .logo {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-weight: 900;
-    font-size: clamp(80px, 18vw, 240px);
-    color: var(--bg); letter-spacing: -0.03em; line-height: 0.85;
-  }
-  .footer-xxl .logo .g { color: var(--bordeaux); }
-  .footer-copy { margin-top: 50px; text-align: center; font-size: 11px; letter-spacing: 0.2em; text-transform: none; color: rgba(251, 242, 237, 0.35); }
-
-</style>
-  <link rel="stylesheet" href="css/onpoint.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julia Bergles · Erfahrungen mit Histamin, MCAS & allem was dazugehört</title>
+<meta name="description" content="Ehrliche Erfahrungen mit Histaminproblematik, MCAS, Reizdarm, Ängsten und Depressionen. Blog, E-Books, App und Peer-Support-Gespräche.">
+<link rel="stylesheet" href="assets/site-v3.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+        </ul>
       </li>
       <li><a href="empfehlungen.html">Empfehlungen</a></li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER: App + Community + Instagram -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
-  </div>
-</div>
-
-<!-- LANDING OVERLAY — Nahtloser Farbwechsel-State-Machine -->
-<style>
-  html.overlay-open, body.overlay-open { overflow: hidden !important; height: 100vh; }
-  .site-hidden { visibility: hidden; }
-
-  #landing-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    overflow: hidden;
-    transition: opacity 0.7s ease, visibility 0s linear 0.7s, background-color 0.3s ease;
-    background: #FBF2ED;
-  }
-  #landing-overlay.done {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-  }
-
-  /* Stage-Container für Cross-Slide zwischen Wörtern */
-  .lo-stage-wrap {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-  }
-  .lo-stage {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    transform: translateX(0);
-    will-change: transform, background-color, color;
-    transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-                color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  /* Slide-States: alter wischt nach LINKS raus, neuer kommt von RECHTS (Bewegung nach rechts) */
-  .lo-stage.leaving {
-    transform: translateX(-100%);
-    transition: transform 0.55s cubic-bezier(0.7, 0, 0.3, 1);
-  }
-  .lo-stage.incoming {
-    transform: translateX(100%);
-    transition: none;
-  }
-  .lo-stage.entering {
-    transform: translateX(0);
-    transition: transform 0.55s cubic-bezier(0.7, 0, 0.3, 1);
-  }
-  .lo-stage.hide { opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0s linear 0.5s; }
-
-  /* Metropolregion-Style Snap-Flip: 3 Farben rotierend (Cream #ECEAE6, Orange #ff8854, Oxblood #500011).
-     Jedes Wort bekommt einen Farbflip (a→b), dann nächstes Wort mit neuer Kombi. Harter Cut, keine Fades. */
-
-  /* GLUT — Cream + Oxblood */
-  .lo-stage.state-1a { background: #ECEAE6; }
-  .lo-stage.state-1a .lo-word, .lo-stage.state-1a .lo-sub { color: #500011; }
-  .lo-stage.state-1b { background: #500011; }
-  .lo-stage.state-1b .lo-word, .lo-stage.state-1b .lo-sub { color: #ECEAE6; }
-
-  /* PUNKT — Orange + Oxblood */
-  .lo-stage.state-2a { background: #ff8854; }
-  .lo-stage.state-2a .lo-word, .lo-stage.state-2a .lo-sub { color: #500011; }
-  .lo-stage.state-2b { background: #500011; }
-  .lo-stage.state-2b .lo-word, .lo-stage.state-2b .lo-sub { color: #ff8854; }
-
-  /* ZU SPÄT — Cream + Orange */
-  .lo-stage.state-3a { background: #ECEAE6; }
-  .lo-stage.state-3a .lo-word, .lo-stage.state-3a .lo-sub { color: #ff8854; }
-  .lo-stage.state-3b { background: #ff8854; }
-  .lo-stage.state-3b .lo-word, .lo-stage.state-3b .lo-sub { color: #ECEAE6; }
-
-  /* IHR TIMING — Oxblood + Orange */
-  .lo-stage.state-4a { background: #500011; }
-  .lo-stage.state-4a .lo-word, .lo-stage.state-4a .lo-sub { color: #ff8854; }
-  .lo-stage.state-4b { background: #ff8854; }
-  .lo-stage.state-4b .lo-word, .lo-stage.state-4b .lo-sub { color: #500011; }
-
-  /* Snap statt Fade — Farben wechseln sofort */
-  .lo-stage {
-    transition: none !important;
-  }
-
-  /* Legacy .lo-slide (nur noch für Choice-Sektion) */
-  .lo-slide {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.6s ease;
-  }
-  .lo-slide.active { opacity: 1; pointer-events: auto; }
-
-  .lo-slide .kicker,
-  .lo-stage .kicker {
-    position: absolute;
-    top: 32px; left: 40px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    text-transform: none;
-    font-weight: 600;
-    opacity: 0.65;
-  }
-  .lo-slide .brand-mark,
-  .lo-stage .brand-mark {
-    position: absolute;
-    top: 32px; right: 40px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    text-transform: none;
-    font-weight: 600;
-    opacity: 0.65;
-  }
-  @media (max-width: 700px) {
-    /* Handy: Kicker + Brand-Mark oben zentriert nebeneinander, "N°01 · Julia" statt getrennt */
-    .lo-slide .kicker, .lo-stage .kicker {
-      top: 20px; left: 50%; transform: translateX(-50%);
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: 10px;
-    }
-    .lo-slide .kicker::after, .lo-stage .kicker::after {
-      content: "·  Julia";
-      opacity: 0.9;
-    }
-    .lo-slide .brand-mark, .lo-stage .brand-mark { display: none; }
-    /* Slide-Padding reduzieren damit Wörter mehr Platz haben */
-    .lo-slide, .lo-stage { padding: 60px 12px 40px !important; }
-  }
-
-  .lo-wordstack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 100%;
-  }
-  .lo-word {
-    font-family: 'Archivo Black', 'Raleway', 'Rubik', sans-serif;
-    font-weight: 900;
-    font-size: clamp(72px, 18vw, 260px);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0;
-    max-width: 100%;
-    transition: none;
-  }
-  @media (max-width: 700px) {
-    .lo-word { font-size: clamp(56px, 20vw, 130px); line-height: 0.95; letter-spacing: -0.03em; }
-    .lo-wordstack { gap: 16px; padding: 0 12px; }
-    .lo-sub { font-size: 12px; }
-  }
-  @media (max-width: 400px) {
-    .lo-word { font-size: 60px; }
-    .lo-sub { font-size: 11px; }
-  }
-  .lo-word.fading { opacity: 0; }
-  .lo-sub {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: clamp(14px, 1.4vw, 18px);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-align: center;
-    max-width: 480px;
-    line-height: 1.4;
-    /* Sub kommt später mit einem kleinen Delay hinter dem Wort rein */
-    opacity: 0;
-    transform: translateX(-24px);
-    animation: subSlideIn 0.55s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
-    animation-delay: 0.3s;
-  }
-  @keyframes subSlideIn {
-    to { opacity: 0.85; transform: translateX(0); }
-  }
-  .lo-sub.fading { opacity: 0; }
-
-  /* Farb-Kombis pro Slide — 3 Wörter × 2 (invertiert) = 6 Slides */
-  .lo-slide.slide-1 { background: #2D1F22; color: #ff9c6d; } /* Sichtbarkeit — Schwarz · Orange */
-  .lo-slide.slide-2 { background: #ff9c6d; color: #2D1F22; } /* Sichtbarkeit — Orange · Schwarz */
-  .lo-slide.slide-3 { background: #2D1F22; color: #c74873; } /* Professionell — Schwarz · Pink */
-  .lo-slide.slide-4 { background: #c74873; color: #2D1F22; } /* Professionell — Pink · Schwarz */
-  .lo-slide.slide-5 { background: #2D1F22; color: #e7fffe; } /* Kein Aufwand — Schwarz · Mint */
-  .lo-slide.slide-6 { background: #e7fffe; color: #2D1F22; } /* Kein Aufwand — Mint · Schwarz */
-  .lo-slide.slide-choice { background: #FBF2ED; color: #2D1F22; }
-  .lo-slide .kicker, .lo-slide .brand-mark { color: currentColor; }
-
-  /* Progress-Punkte über dem Skip-Button */
-  .lo-progress {
-    position: fixed;
-    bottom: 76px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10000;
-    transition: opacity 0.4s;
-  }
-  .lo-progress.hide { opacity: 0; pointer-events: none; }
-  .lo-progress .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    transition: all 0.4s;
-  }
-  .lo-progress .dot.done { background: rgba(255, 255, 255, 0.9); width: 24px; border-radius: 3px; }
-
-  /* Skip-Button unten mittig */
-  .lo-skip {
-    position: fixed;
-    bottom: 24px; left: 50%;
-    transform: translateX(-50%);
-    z-index: 10001;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    color: currentColor;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 999px;
-    padding: 10px 22px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .lo-skip:hover { background: rgba(255, 255, 255, 0.3); }
-  .lo-skip.hide { display: none; }
-
-  /* Choice-Slide — mymiapage-Stil: helles Cream mit Bildkarten */
-  .lo-slide.slide-choice {
-    background: var(--bg);
-    align-items: flex-start !important;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 80px 24px 80px !important;
-  }
-  .choice-inner {
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-  }
-  @media (max-width: 700px) {
-    .lo-slide.slide-choice { padding: 60px 16px !important; }
-    .choice-inner { padding: 10px; }
-  }
-  .choice-tagline {
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.32em;
-    color: var(--copper-dark);
-    text-transform: uppercase;
-    margin: 0 0 20px;
-    display: block;
-  }
-  .choice-inner h2 {
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 900 !important;
-    font-size: clamp(38px, 5.5vw, 68px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--bordeaux);
-    margin: 0 auto 18px;
-    max-width: 720px;
-  }
-  .choice-inner h2 em {
-    font-style: normal;
-    background: var(--copper-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .choice-inner .sub {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: clamp(15px, 1.4vw, 18px);
-    color: var(--ink-soft);
-    max-width: 480px;
-    margin: 0 auto 60px;
-    line-height: 1.6;
-  }
-
-  .choice-grid-lo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto 60px;
-  }
-  @media (max-width: 1000px) { .choice-grid-lo { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px)  { .choice-grid-lo { grid-template-columns: 1fr; gap: 18px; } }
-
-  .choice-card-lo,
-  .choice-card-lo.c-orange,
-  .choice-card-lo.c-red,
-  .choice-card-lo.c-pink,
-  .choice-card-lo.c-blue,
-  .choice-card-lo.c-ink {
-    background: #fff;
-    border: 1px solid rgba(42, 42, 42, 0.06);
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    color: var(--ink);
-    text-decoration: none;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s;
-    box-shadow: 0 4px 14px rgba(45, 31, 34, 0.05);
-  }
-  .choice-card-lo:hover,
-  .choice-card-lo.c-orange:hover,
-  .choice-card-lo.c-red:hover,
-  .choice-card-lo.c-pink:hover,
-  .choice-card-lo.c-blue:hover,
-  .choice-card-lo.c-ink:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 48px rgba(45, 31, 34, 0.14);
-    border-color: rgba(196, 139, 108, 0.3);
-  }
-  .choice-card-lo .card-img {
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: var(--bg-warm);
-    position: relative;
-  }
-  .choice-card-lo .card-img img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .choice-card-lo:hover .card-img img { transform: scale(1.05); }
-  .choice-card-lo .card-body {
-    padding: 24px 26px 24px;
-    display: flex; flex-direction: column;
-    flex: 1;
-  }
-  .choice-card-lo .n {
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 800 !important;
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    color: var(--copper-dark) !important;
-    text-transform: uppercase;
-    margin: 0 0 8px !important;
-    opacity: 1;
-    display: block;
-  }
-  .choice-card-lo h3 {
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 22px;
-    color: var(--bordeaux) !important;
-    margin: 0 0 10px !important;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-  .choice-card-lo p {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--ink-soft) !important;
-    line-height: 1.55;
-    margin: 0 0 18px;
-    flex-grow: 1;
-    opacity: 1;
-  }
-  .choice-card-lo .card-more {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--bordeaux);
-    text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: gap 0.3s, color 0.3s;
-  }
-  .choice-card-lo:hover .card-more { gap: 14px; color: var(--copper-dark); }
-
-  /* Payoff (CTA) — mymiapage-Stil: prominent auf hellem Grund */
-  .choice-payoff {
-    margin: 40px auto 0;
-    max-width: 640px;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  .choice-payoff .cta-kicker {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.32em;
-    color: var(--copper-dark);
-    text-transform: uppercase;
-    margin: 0 0 20px;
-    display: block;
-  }
-  .choice-payoff .cta-line {
-    font-family: 'Raleway', sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    font-size: clamp(28px, 3.6vw, 42px);
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    color: var(--bordeaux);
-    margin: 0 0 22px;
-  }
-  .choice-payoff .cta-line strong {
-    font-style: normal;
-    font-weight: 900;
-    color: var(--copper-dark);
-  }
-  .choice-payoff .cta-sub {
-    font-family: 'Quicksand', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: clamp(14px, 1.4vw, 16px);
-    line-height: 1.6;
-    color: var(--ink-soft);
-    margin: 0 0 32px;
-  }
-  .choice-socials {
-    display: inline-flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .choice-socials a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 22px;
-    background: #fff;
-    border: 1.5px solid rgba(42, 42, 42, 0.2);
-    color: var(--bordeaux);
-    border-radius: 999px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transition: all 0.35s;
-  }
-  .choice-socials a:hover {
-    background: var(--bordeaux);
-    border-color: var(--bordeaux);
-    color: #fff;
-    transform: translateY(-2px);
-  }
-  .choice-socials svg { width: 14px; height: 14px; }
-
-  /* ─── Wobei kann ich Ihnen helfen? ─── */
-  .help-choice {
-    padding: 120px 40px;
-    background: #2D1F22;
-    color: #FBF2ED;
-  }
-  @media (max-width: 700px) { .help-choice { padding: 80px 24px; } }
-  .help-choice .container { max-width: 1200px; margin: 0 auto; }
-  .help-choice .eyebrow {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-weight: 600; font-size: 11px;
-    letter-spacing: 0.32em; text-transform: none;
-    color: #ff9c6d;
-    margin-bottom: 20px;
-  }
-  .help-choice h2 {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif !important;
-    font-weight: 900 !important;
-    font-size: clamp(42px, 6vw, 78px);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    color: #FBF2ED !important;
-    margin-bottom: 60px;
-    max-width: 900px;
-    text-transform: none;
-  }
-  .help-choice h2 em {
-    font-style: normal;
-    color: #ff9c6d;
-  }
-  .help-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-  }
-  @media (max-width: 1100px) { .help-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 720px)  { .help-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 480px)  { .help-grid { grid-template-columns: 1fr; } }
-  .help-card {
-    border-radius: 14px;
-    padding: 32px 24px 26px;
-    text-align: left;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex; flex-direction: column;
-    min-height: 220px;
-    position: relative;
-    overflow: hidden;
-  }
-  @media (max-width: 700px) {
-    .help-card { min-height: 180px; padding: 26px 22px 22px; }
-    .help-card h3 { font-size: 26px !important; }
-    .help-card .num { font-size: 38px; margin-bottom: 14px; }
-  }
-  .help-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  }
-  .help-card .num {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 44px; line-height: 1;
-    color: inherit;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
-    opacity: 0.85;
-  }
-  .help-card h3 {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif !important;
-    font-weight: 900 !important;
-    font-size: 30px;
-    color: inherit !important;
-    margin-bottom: 10px;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    text-transform: none;
-  }
-  .help-card p {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    line-height: 1.55;
-    flex-grow: 1;
-    margin-bottom: 20px;
-    opacity: 0.85;
-  }
-  .help-card .arrow {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 11px; letter-spacing: 0.18em; text-transform: none;
-    font-weight: 700;
-    color: inherit;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: gap 0.3s;
-    opacity: 0.9;
-  }
-  .help-card:hover .arrow { gap: 14px; opacity: 1; }
-  /* Farb-Varianten: jede Card VOLL in Signature-Farbe, Text als Kontrast */
-  .help-card.c-orange { background: #ff9c6d; color: #2D1F22; }
-  .help-card.c-red    { background: #430a14; color: #ff9c6d; }
-  .help-card.c-pink   { background: #c74873; color: #2D1F22; }
-  .help-card.c-blue   { background: #7993ae; color: #FBF2ED; }
-  .help-card.c-ink    { background: #e7fffe; color: #2D1F22; }
-</style>
-
-<!-- HERO — Intro + 5 Panel-Sektionen -->
-<!-- LANDING OVERLAY (5 Wörter auto + Wahl-Sektion) -->
-<div id="landing-overlay" role="dialog" aria-label="Willkommen">
-  <button class="lo-skip" id="lo-skip" type="button">Überspringen →</button>
-  <div class="lo-progress" id="lo-progress">
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-
-  <!-- STAGE-WRAP: zwei Stages können gleichzeitig existieren (Cross-Slide) -->
-  <div class="lo-stage-wrap" id="lo-stage-wrap">
-    <div class="lo-stage state-1a" data-current>
-      <span class="kicker">Julia</span>
-      <span class="brand-mark">juliabergles.de</span>
-      <div class="lo-wordstack">
-        <h1 class="lo-word">Blähbauch.</h1>
-        <p class="lo-sub">Jeden Tag. Kennst du das?</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="lo-slide slide-choice" data-slide="6">
-    <span class="kicker">Auswahl</span>
-    <span class="brand-mark">juliabergles.de</span>
-    <div class="choice-inner">
-      <span class="choice-tagline">App · Erfahrungen · Blog · Rezepte</span>
-      <h2>Wobei kann ich dir <em>helfen</em>?</h2>
-      <p class="sub">Wähl, wo du anfangen willst.</p>
-      <div class="choice-grid-lo">
-        <a href="app.html" class="choice-card-lo c-orange">
-          <div class="card-img"><img src="images/terraluna-logo.png" alt="TerraLuna App" onerror="this.src='images/julia-2.jpg'"></div>
-          <div class="card-body">
-            <span class="n">01 · App</span>
-            <h3>TerraLuna App</h3>
-            <p>Meine App für Histamin, MCAS und Reizdarm — Symptome tracken, Trigger finden, Rhythmus reinbekommen.</p>
-            <span class="card-more">Mehr erfahren →</span>
-          </div>
-        </a>
-        <a href="ueber-mich.html" class="choice-card-lo c-pink">
-          <div class="card-img"><img src="images/ueber-mich.jpg" alt="Meine Geschichte" onerror="this.src='images/julia-3.jpg'"></div>
-          <div class="card-body">
-            <span class="n">02 · Persönlich</span>
-            <h3>Meine Geschichte</h3>
-            <p>Wie ich hier gelandet bin. Diagnosen, Umwege, was wirklich geholfen hat.</p>
-            <span class="card-more">Mehr erfahren →</span>
-          </div>
-        </a>
-        <a href="histaminintoleranz.html" class="choice-card-lo c-red">
-          <div class="card-img"><img src="images/histamin.jpg" alt="Histaminintoleranz" onerror="this.src='images/header.jpg'"></div>
-          <div class="card-body">
-            <span class="n">03 · Diagnose</span>
-            <h3>Histamin, MCAS, Reizdarm</h3>
-            <p>Was das ist, was mir geholfen hat, was ich Ärzten heute anders erklären würde.</p>
-            <span class="card-more">Mehr erfahren →</span>
-          </div>
-        </a>
-        <a href="blog/" class="choice-card-lo c-orange">
-          <div class="card-img"><img src="images/blog-blaehbauch.jpg" alt="Blog" onerror="this.src='images/header.jpg'"></div>
-          <div class="card-body">
-            <span class="n">04 · Blog</span>
-            <h3>Blog</h3>
-            <p>Ehrliche Erfahrungen. Was hilft, was nicht. Kein Coach-Sprech.</p>
-            <span class="card-more">Mehr erfahren →</span>
-          </div>
-        </a>
-        <a href="empfehlungen.html" class="choice-card-lo c-blue">
-          <div class="card-img"><img src="images/empfehlungen.jpg" alt="Empfehlungen" onerror="this.src='images/header.jpg'"></div>
-          <div class="card-body">
-            <span class="n">05 · Alltag</span>
-            <h3>Erst mal stöbern</h3>
-            <p>Was ich täglich benutze — Lebensmittel, Ergänzungen, kleine Helfer.</p>
-            <span class="card-more">Mehr erfahren →</span>
-          </div>
-        </a>
-        <a href="ebooks.html" class="choice-card-lo c-ink">
-          <div class="card-img"><img src="images/julia-4.jpg" alt="E-Books" onerror="this.src='images/julia-5.jpg'"></div>
-          <div class="card-body">
-            <span class="n">06 · Kostenlos</span>
-            <h3>E-Books &amp; Community</h3>
-            <p>"Histaminarm reisen" und mehr — kostenlos über meine WhatsApp-Community.</p>
-            <span class="card-more">Mehr erfahren →</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="choice-payoff">
-        <span class="cta-kicker">Direkt. Persönlich.</span>
-        <p class="cta-sub">Meine Erfahrung mit Histamin, MCAS und Reizdarm.<br>Was mir geholfen hat — und was nicht.</p>
-        <div class="choice-socials">
-          <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            @julia_bergles
-          </a>
-          <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            WhatsApp-Community
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-(function () {
-  var overlay = document.getElementById('landing-overlay');
-  var stageWrap = document.getElementById('lo-stage-wrap');
-  var choiceSlide = overlay.querySelector('.slide-choice');
-  var dots = document.querySelectorAll('#lo-progress .dot');
-  var skipBtn = document.getElementById('lo-skip');
-  var progress = document.getElementById('lo-progress');
-  var timer;
-  var current = 0;
-
-  // Reduziert auf EIN Wort: 'Ihr Timing entscheidet alles.'
-  // 4-Wörter-Version war zu lang — Kunden bounced ab, bevor sie zur Auswahl kamen.
-  // Nur ein kurzer Doppel-Farbflip, dann direkt Choice-Screen.
-  var STATES = [
-    { cls: 'state-1a', kicker: 'Julia', word: 'Blähbauch.',         sub: 'Jeden Tag. Kennst du das?' },
-    { cls: 'state-1b', kicker: 'Julia', word: 'Blähbauch.',         sub: 'Jeden Tag. Kennst du das?' },
-    { cls: 'state-2a', kicker: 'Julia', word: 'Histamin.', sub: 'Mehr als nur Rotwein und Käse.' },
-    { cls: 'state-2b', kicker: 'Julia', word: 'Histamin.', sub: 'Mehr als nur Rotwein und Käse.' },
-    { cls: 'state-3a', kicker: 'Julia', word: 'Ängste.',            sub: 'Wenn der Körper im Alarm steht.' },
-    { cls: 'state-3b', kicker: 'Julia', word: 'Ängste.',            sub: 'Wenn der Körper im Alarm steht.' }
-  ];
-  var TOTAL_STATES = STATES.length;
-  var SLIDE_MS = 1100; // etwas länger, weil nur ein Wort — muss wirken
-
-  document.documentElement.classList.add('overlay-open');
-  document.body.classList.add('overlay-open');
-
-  function getCurrentStage() {
-    return stageWrap.querySelector('.lo-stage[data-current]');
-  }
-
-  function buildStage(s) {
-    var st = document.createElement('div');
-    st.className = 'lo-stage ' + s.cls;
-    st.innerHTML =
-      '<span class="kicker">' + s.kicker + '</span>' +
-      '<span class="brand-mark">juliabergles.de</span>' +
-      '<div class="lo-wordstack">' +
-        '<h1 class="lo-word">' + s.word + '</h1>' +
-        '<p class="lo-sub">' + s.sub + '</p>' +
-      '</div>';
-    return st;
-  }
-
-  function applyState(idx) {
-    var s = STATES[idx];
-    var currentStage = getCurrentStage();
-    var currentWord = currentStage.querySelector('.lo-word').textContent;
-    var wordChanges = currentWord !== s.word;
-
-    if (wordChanges) {
-      // Wort statisch: nur Text-Content wechseln, kein Stage-Slide.
-      // Wort snapt in 100ms, dann Sub fliegt neu ein.
-      var wordEl = currentStage.querySelector('.lo-word');
-      var subEl = currentStage.querySelector('.lo-sub');
-      var kickerEl = currentStage.querySelector('.kicker');
-
-      wordEl.style.opacity = '0';
-      setTimeout(function () {
-        // Farben snappen (State-Klasse wechseln)
-        STATES.forEach(function (st) { currentStage.classList.remove(st.cls); });
-        currentStage.classList.add(s.cls);
-        kickerEl.textContent = s.kicker;
-        wordEl.textContent = s.word;
-        wordEl.style.opacity = '1';
-
-        // Sub: Animation restart (fliegt neu von links ein)
-        subEl.textContent = s.sub;
-        subEl.style.animation = 'none';
-        void subEl.offsetHeight;
-        subEl.style.animation = '';
-      }, 100);
-    } else {
-      // Invert-Wechsel innerhalb eines Worts: gleiche Stage, State-Klasse wechseln (CSS-transition fadet Farben)
-      STATES.forEach(function (st) { currentStage.classList.remove(st.cls); });
-      currentStage.classList.add(s.cls);
-      currentStage.querySelector('.kicker').textContent = s.kicker;
-    }
-
-    // Progress-Dots: dot i wird "done" wenn Wort i+1 aktiv ist
-    dots.forEach(function (d, i) {
-      d.classList.toggle('done', i <= idx);
-    });
-  }
-
-  function showChoice() {
-    var st = getCurrentStage();
-    if (st) st.classList.add('hide');
-    choiceSlide.classList.add('active');
-    progress.classList.add('hide');
-    skipBtn.classList.add('hide');
-  }
-
-  function next() {
-    current++;
-    if (current >= TOTAL_STATES) {
-      showChoice();
-      return;
-    }
-    applyState(current);
-    timer = setTimeout(next, SLIDE_MS);
-  }
-
-  function closeOverlay() {
-    overlay.classList.add('done');
-    document.documentElement.classList.remove('overlay-open');
-    document.body.classList.remove('overlay-open');
-  }
-
-  skipBtn.addEventListener('click', function () {
-    clearTimeout(timer);
-    showChoice();
-  });
-
-  overlay.querySelectorAll('[data-explore]').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      closeOverlay();
-    });
-  });
-
-  // Starten Sie
-  timer = setTimeout(next, SLIDE_MS);
-})();
-</script>
-
-<!-- HERO — Editorial mit Video (nach dem Landing-Overlay) -->
-<section class="hero">
+<!-- HERO -->
+<header class="hero-editorial">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline poster="images/julia-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-      <source src="images/hero-video.mov" type="video/quicktime">
-      <source src="images/hero-video.mp4" type="video/mp4">
-      <img src="images/julia-1.jpg" alt="Julia Bergles" onerror="this.src='images/header.jpg'" style="width:100%;height:100%;object-fit:cover;" />
-    </video>
+    <img src="ebook-reisen/bilder/Header-Startseite.jpg" alt="Julia Bergles im babyblauen Kleid auf einer Piazza bei Sonnenuntergang">
   </div>
-  <div class="hero-content">
-    <div class="hero-eyebrow reveal">Julia Bergles</div>
-    <h1 class="reveal d1">Meine Erfahrung.<br />Nicht nur eine <span class="circle-italic white">Diagnose</span>.</h1>
-    <div class="hero-buttons reveal d3" style="margin-top: 40px;">
-      <a href="app.html" class="btn-red">TerraLuna App</a>
-      <a href="#features" class="btn-outline-white">Meine Themen</a>
-    </div>
-  </div>
-</section>
-
-<!-- THEMEN-STATEMENT — Julias echte Themen -->
-<section style="background: linear-gradient(135deg, #430a14 0%, #2d0508 100%); color: #fffcf9; padding: 120px 24px; text-align: center; position: relative; overflow: hidden;">
-  <div style="position: absolute; top: -20%; left: -10%; width: 45vw; height: 45vw; max-width: 600px; max-height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 139, 108, 0.28), transparent 65%); filter: blur(70px); pointer-events: none;"></div>
-  <div style="position: absolute; bottom: -20%; right: -10%; width: 40vw; height: 40vw; max-width: 500px; max-height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 156, 109, 0.22), transparent 65%); filter: blur(80px); pointer-events: none;"></div>
-
-  <div class="container" style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto;">
-    <p class="reveal" style="font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; font-weight: 700; color: #C48B6C; margin-bottom: 28px;">Was ich alles kenne</p>
-
-    <h2 class="reveal d1" style="font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(40px, 6.5vw, 92px); line-height: 1.15; letter-spacing: -0.02em; color: #fffcf9; margin: 0 auto 40px; max-width: 1100px;">
-      <span style="display: inline-block; margin: 0 12px;">Histamin.</span>
-      <span style="display: inline-block; margin: 0 12px; color: #C48B6C;">Reizdarm.</span>
-      <span style="display: inline-block; margin: 0 12px;">PMS.</span>
-      <span style="display: inline-block; margin: 0 12px; color: #ff9c6d;">Laktose.</span>
-      <span style="display: inline-block; margin: 0 12px;">Fructose.</span>
-      <span style="display: inline-block; margin: 0 12px; color: #C48B6C;">Allergien.</span>
-    </h2>
-
-    <p class="reveal d2" style="font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(20px, 2.8vw, 34px); color: rgba(255, 252, 249, 0.88); margin: 0 auto; max-width: 720px; line-height: 1.4;">
-      Das kenne ich alles nur zu gut.
-    </p>
-  </div>
-</section>
-
-<!-- VALUE-BANNER (Endlos-Marquee) -->
-<style>
-  .value-marquee {
-    background: var(--oxblood);
-    color: #ECEAE6;
-    padding: 22px 0;
-    overflow: hidden;
-    border-top: 1px solid rgba(236, 234, 230, 0.12);
-    border-bottom: 1px solid rgba(236, 234, 230, 0.12);
-  }
-  .value-marquee-track {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    width: max-content;
-    animation: valueScroll 32s linear infinite;
-    will-change: transform;
-  }
-  .value-marquee-track:hover { animation-play-state: paused; }
-  .value-marquee-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 32px;
-    font-family: 'Raleway', 'Rubik', sans-serif;
-    font-size: clamp(16px, 2.2vw, 26px);
-    font-weight: 900;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .value-marquee-dot {
-    display: inline-block;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: #ff8854;
-    flex-shrink: 0;
-  }
-  @keyframes valueScroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .value-marquee-track { animation: none; }
-  }
-</style>
-<div class="value-marquee" aria-label="Meine Themen">
-  <div class="value-marquee-track">
-    <span class="value-marquee-item">TerraLuna App<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">Histaminintoleranz<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">MCAS<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">Reizdarm<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">Blog · Rezepte<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">Ehrliche Erfahrungen<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">Kein Coach-Sprech<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">Selbst betroffen<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">WhatsApp-Community<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item">Kostenlose E-Books<span class="value-marquee-dot"></span></span>
-    <!-- Duplikat für nahtlose Endlos-Schleife -->
-    <span class="value-marquee-item" aria-hidden="true">TerraLuna App<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">Histaminintoleranz<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">MCAS<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">Reizdarm<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">Blog · Rezepte<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">Ehrliche Erfahrungen<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">Kein Coach-Sprech<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">Selbst betroffen<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">WhatsApp-Community<span class="value-marquee-dot"></span></span>
-    <span class="value-marquee-item" aria-hidden="true">Kostenlose E-Books<span class="value-marquee-dot"></span></span>
-  </div>
-</div>
-
-<!-- CUTOUT-EDITORIAL: Julia-Portraits als runde Cutouts, Text umfließt (Magazin-Layout) -->
-<style>
-  .cutout-editorial {
-    padding: 140px 40px 120px;
-    background: var(--bg);
-    position: relative;
-    overflow: hidden;
-  }
-  @media (max-width: 700px) { .cutout-editorial { padding: 90px 20px 70px; } }
-  .cutout-inner { max-width: 900px; margin: 0 auto; position: relative; }
-  .cutout-eyebrow {
-    display: inline-block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px; letter-spacing: 0.32em;
-    color: var(--oxblood); font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-  .cutout-h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 900;
-    font-size: clamp(38px, 5vw, 62px);
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    line-height: 1.06;
-    margin-bottom: 50px;
-    max-width: 720px;
-  }
-  .cutout-h2 em { font-style: normal; color: var(--oxblood); }
-  .cutout-text {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: clamp(16px, 1.6vw, 18px);
-    line-height: 1.9;
-    color: var(--ink-soft);
-  }
-  .cutout-text p { margin-bottom: 22px; }
-  .cutout-text strong { color: var(--oxblood); font-weight: 700; }
-  .cutout-text em { font-style: normal; color: var(--ink); font-weight: 700; }
-
-  /* Cutout-Bilder — runde/blob Rahmen, floaten und Text fließt drumrum */
-  .cutout-left {
-    float: left;
-    width: 220px; height: 220px;
-    margin: 4px 32px 16px 0;
-    border-radius: 50%;
-    overflow: hidden;
-    shape-outside: circle();
-    box-shadow: 0 24px 50px rgba(45, 31, 34, 0.14);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .cutout-right {
-    float: right;
-    width: 240px; height: 300px;
-    margin: 4px 0 16px 32px;
-    border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
-    overflow: hidden;
-    shape-outside: margin-box;
-    animation: cutoutBlob 14s ease-in-out infinite;
-    box-shadow: 0 24px 50px rgba(45, 31, 34, 0.14);
-  }
-  @keyframes cutoutBlob {
-    0%, 100% { border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%; }
-    50%      { border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%; }
-  }
-  .cutout-left img, .cutout-right img, .cutout-oval-tiny img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .cutout-left:hover img, .cutout-right:hover img, .cutout-oval-tiny:hover img {
-    transform: scale(1.08);
-  }
-  .cutout-oval-tiny {
-    float: left;
-    width: 140px; height: 180px;
-    margin: 4px 28px 16px 0;
-    border-radius: 50% / 60%;
-    overflow: hidden;
-    shape-outside: margin-box;
-    box-shadow: 0 16px 32px rgba(45, 31, 34, 0.12);
-  }
-
-  /* Decorative Oxblood-Streusel */
-  .cutout-dot {
-    position: absolute;
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background: var(--oxblood);
-    opacity: 0.6;
-  }
-  .cutout-dot.d1 { top: 100px; right: 80px; }
-  .cutout-dot.d2 { top: 380px; left: -20px; width: 24px; height: 24px; opacity: 0.15; }
-  .cutout-dot.d3 { bottom: 100px; right: 40px; width: 8px; height: 8px; opacity: 0.5; }
-
-  @media (max-width: 700px) {
-    .cutout-left, .cutout-right, .cutout-oval-tiny {
-      float: none;
-      display: block;
-      margin: 0 auto 24px;
-      shape-outside: none;
-    }
-    .cutout-left  { width: 200px; height: 200px; }
-    .cutout-right { width: 220px; height: 280px; }
-    .cutout-oval-tiny { width: 160px; height: 200px; }
-    .cutout-dot { display: none; }
-  }
-</style>
-<section class="cutout-editorial">
-  <div class="cutout-inner">
-    <span class="cutout-dot d1"></span>
-    <span class="cutout-dot d2"></span>
-    <span class="cutout-dot d3"></span>
-    <span class="cutout-eyebrow reveal">Wer hinter dem hier steckt</span>
-    <h2 class="cutout-h2 reveal d1">Julia. Selbst <em>betroffen</em>.</h2>
-    <div class="cutout-text reveal d2">
-      <div class="cutout-left">
-        <img src="images/julia-3.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Julia · Bergles · 2026</span>
+        <p class="lead mt-md" style="color: var(--cream); max-width: 36ch;">Ich teile was mir geholfen hat.<br>Ehrlich, ohne Coach-Sprech.</p>
       </div>
-      <p>
-        Ich bin Julia Bergles, aus Wehringen bei Augsburg. Ich schreibe alles hier <strong>selbst</strong>. Kein Team, keine Ghostwriter, keine Coaches, die im Hintergrund sitzen. Was du liest ist meine echte Erfahrung.
-      </p>
-      <p>
-        Ich lebe seit ich zurückdenken kann mit <em>Histaminintoleranz, MCAS und Reizdarm</em>. Jahre voller unklarer Diagnosen, Umwege und Ärzten die gesagt haben "damit müssen Sie leben". Bis irgendwann Puzzle-Teile Sinn ergaben.
-      </p>
-      <div class="cutout-right">
-        <img src="images/julia-5.jpg" alt="Julia Bergles" onerror="this.src='images/julia-2.jpg'">
-      </div>
-      <p>
-        Aus dem was <em>mir</em> geholfen hat ist die TerraLuna-App entstanden. Kein Diät-Programm, keine Wunder-Kur — einfach das Werkzeug das ich mir vor zehn Jahren gewünscht hätte, um Symptome, Ernährung und Alltag zusammen zu sehen.
-      </p>
-      <p>
-        Auf dieser Website findest du meine Geschichte, was ich über die drei Diagnosen gelernt habe, meinen Blog, kostenlose E-Books und die WhatsApp-Community — ein Ort für Leute die verstehen, wie es sich anfühlt.
-      </p>
-      <div class="cutout-oval-tiny">
-        <img src="images/julia-4.jpg" alt="Julia Bergles" onerror="this.src='images/julia-1.jpg'">
-      </div>
-      <p>
-        Wichtig: Ich bin <strong>kein Arzt, keine Therapeutin</strong>. Ich teile meine eigenen Erfahrungen. Alles hier ist meine persönliche Perspektive als Betroffene. Für medizinische Fragen: sprich mit einem Menschen der zuhört.
-      </p>
-      <div style="clear: both;"></div>
-    </div>
-  </div>
-</section>
-
-<!-- BRAND-STORY — Solange es noch glüht -->
-<style>
-  .brand-ember {
-    position: relative;
-    padding: 160px 40px 140px;
-    background: #1a0508 url('img/glut.jpg') center/cover no-repeat;
-    color: #FBF2ED;
-    overflow: hidden;
-    isolation: isolate;
-  }
-  @media (max-width: 700px) { .brand-ember { padding: 100px 24px 90px; } }
-  .brand-ember::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(180deg, rgba(26, 5, 8, 0.55) 0%, rgba(26, 5, 8, 0.75) 100%),
-      radial-gradient(circle at 50% 60%, transparent 20%, rgba(26, 5, 8, 0.6) 80%);
-    z-index: 0;
-    pointer-events: none;
-  }
-  .brand-ember::after {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(circle at 25% 40%, rgba(255, 140, 60, 0.15), transparent 50%),
-      radial-gradient(circle at 75% 60%, rgba(197, 60, 30, 0.12), transparent 50%);
-    animation: emberPulse 8s ease-in-out infinite;
-    z-index: 0;
-    pointer-events: none;
-  }
-  @keyframes emberPulse {
-    0%, 100% { opacity: 0.7; }
-    50%      { opacity: 1;   }
-  }
-  .brand-ember-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .brand-ember .whisper {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(18px, 2vw, 24px);
-    color: rgba(255, 220, 180, 0.85);
-    letter-spacing: 0.02em;
-    margin: 0 0 32px;
-  }
-  .brand-ember h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: clamp(72px, 12vw, 180px);
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    color: #FBF2ED;
-    margin: 0 0 20px;
-  }
-  .brand-ember h2 .dot {
-    color: #C5A46D;
-  }
-  .brand-ember .brand-sub {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.3em;
-    color: rgba(197, 164, 109, 0.85);
-    font-weight: 600;
-    margin: 0 0 70px;
-  }
-  .metaphor-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin: 0 auto 80px;
-    max-width: 1000px;
-    text-align: left;
-  }
-  @media (max-width: 900px) { .metaphor-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 520px) { .metaphor-grid { grid-template-columns: 1fr; } }
-  .metaphor-item {
-    padding: 28px 22px;
-    background: rgba(251, 242, 237, 0.04);
-    border: 1px solid rgba(197, 164, 109, 0.25);
-    border-radius: 12px;
-    backdrop-filter: blur(6px);
-    transition: all 0.4s;
-  }
-  .metaphor-item:hover {
-    border-color: rgba(197, 164, 109, 0.6);
-    background: rgba(251, 242, 237, 0.06);
-    transform: translateY(-4px);
-  }
-  .metaphor-item .num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: rgba(197, 164, 109, 0.15);
-    color: #C5A46D;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-  .metaphor-item h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 22px;
-    color: #FBF2ED;
-    margin: 0 0 10px;
-    line-height: 1.1;
-  }
-  .metaphor-item p {
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    line-height: 1.55;
-    color: rgba(251, 242, 237, 0.72);
-    margin: 0;
-  }
-  .brand-ember .payoff {
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: clamp(26px, 3.5vw, 42px);
-    line-height: 1.2;
-    color: #FBF2ED;
-    max-width: 720px;
-    margin: 0 auto 36px;
-  }
-  .brand-ember .payoff strong {
-    font-style: normal;
-    font-weight: 700;
-    color: #C5A46D;
-  }
-  .brand-ember .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 36px;
-    background: #C5A46D;
-    color: #1a0508;
-    border-radius: 999px;
-    font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-decoration: none;
-    transition: transform 0.35s, box-shadow 0.35s;
-    box-shadow: 0 16px 32px rgba(197, 164, 109, 0.28);
-  }
-  .brand-ember .cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 22px 44px rgba(197, 164, 109, 0.4);
-  }
-</style>
-<section class="brand-ember">
-  <div class="brand-ember-inner">
-    <p class="whisper reveal">Nicht nur ein Ratgeber-Blog.</p>
-    <h2 class="reveal d1">AUS<span class="dot">.</span><br>ERFAH<span class="dot">.</span><br>RUNG<span class="dot">.</span></h2>
-    <p class="brand-sub reveal d2">Meine Diagnosen. Meine Umwege. Was mir geholfen hat.</p>
-
-    <div class="metaphor-grid">
-      <div class="metaphor-item reveal d1">
-        <div class="num">01</div>
-        <h4>Ehrlich</h4>
-        <p>Auch wenn's nicht sexy klingt. Auch wenn's mich unbeliebt macht.</p>
-      </div>
-      <div class="metaphor-item reveal d2">
-        <div class="num">02</div>
-        <h4>Persönlich</h4>
-        <p>Aus meiner Perspektive als Betroffene. Nicht als Expertin.</p>
-      </div>
-      <div class="metaphor-item reveal d3">
-        <div class="num">03</div>
-        <h4>Handgemacht</h4>
-        <p>Alles selbst geschrieben. Kein Team, keine KI-Texte.</p>
-      </div>
-      <div class="metaphor-item reveal d4">
-        <div class="num">04</div>
-        <h4>Ohne Bullshit</h4>
-        <p>Keine Heilversprechen. Kein Coach-Sprech. Was hilft, was nicht.</p>
-      </div>
-    </div>
-
-    <p class="payoff reveal">
-      <strong>Für alle, die es verstehen.</strong>
-      <br>Und alle, die endlich wissen wollen was los ist.
-    </p>
-    <a href="app.html" class="cta-btn reveal d1">TerraLuna App ansehen →</a>
-  </div>
-</section>
-
-<!-- 4 BAUSTEINE — Themen -->
-<section class="features" id="features">
-  <div class="container">
-    <div class="features-header reveal">
-      <span class="features-eyebrow">Womit ich mich auskenne</span>
-      <h2>Nicht nur Infos.<br />Sondern was <em>funktioniert</em>.</h2>
-      <div style="margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-        <a href="app.html" style="display: inline-flex; align-items: center; gap: 12px; padding: 18px 36px; background: var(--bordeaux); color: #fff; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none; box-shadow: 0 20px 40px rgba(67, 10, 20, 0.3); transition: all 0.4s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">TerraLuna App <span style="font-size: 16px;">→</span></a>
-        <a href="blog/" style="display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px; background: transparent; color: var(--bg); border: 1.5px solid rgba(251, 242, 237, 0.35); border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: none; transition: all 0.4s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(251, 242, 237, 0.35)'; this.style.color='var(--bg)'">Zum Blog <span style="font-size: 16px;">→</span></a>
-      </div>
-    </div>
-
-    <div class="features-grid">
-      <a href="histaminintoleranz.html" class="feature-card fc-orange reveal d1" style="text-decoration: none;">
-        <div class="feature-badge">Diagnose</div>
-        <h3>Histaminintoleranz</h3>
-        <span style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none;">Was das ist <span>→</span></span>
-      </a>
-
-      <a href="mcas.html" class="feature-card fc-pink reveal d1" style="text-decoration: none;">
-        <div class="feature-badge">Diagnose</div>
-        <h3>MCAS</h3>
-        <span style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none;">Was das ist <span>→</span></span>
-      </a>
-
-      <a href="reizdarm.html" class="feature-card fc-red reveal d2" style="text-decoration: none;">
-        <div class="feature-badge">Diagnose</div>
-        <h3>Reizdarm</h3>
-        <span style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none;">Was das ist <span>→</span></span>
-      </a>
-
-      <a href="selbsttest.html" class="feature-card fc-blue reveal d2" style="text-decoration: none;">
-        <div class="feature-badge">Check</div>
-        <h3>Selbsttest</h3>
-        <span style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 18px; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: none;">Starten <span>→</span></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- E-BOOK FEATURE — Histaminarm reisen -->
-<section style="padding: 140px 40px; background: var(--bg-warm); position: relative; overflow: hidden;">
-  <div style="position: absolute; top: -120px; right: -100px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 139, 108, 0.30), transparent 65%); filter: blur(50px); pointer-events: none;"></div>
-  <div style="position: absolute; bottom: -140px; left: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(121, 147, 174, 0.24), transparent 70%); filter: blur(60px); pointer-events: none;"></div>
-
-  <div class="container" style="position: relative; z-index: 1;">
-    <div class="video-promo-grid" style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center;">
-      <div class="reveal" style="position: relative; order: 1;">
-        <div style="aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px rgba(45, 31, 34, 0.28); background: linear-gradient(160deg, #2a2a2a 0%, #C48B6C 100%); padding: 44px 34px; display: flex; flex-direction: column; justify-content: space-between; transform: rotate(-3deg); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" onmouseover="this.style.transform='rotate(-1deg) translateY(-8px)'" onmouseout="this.style.transform='rotate(-3deg)'">
-          <div>
-            <div style="font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 700; color: #E8C4A8; margin-bottom: 14px;">E-Book · Sommer 2026</div>
-            <div style="font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(34px, 4.2vw, 54px); text-transform: none; line-height: 1; letter-spacing: -0.02em; color: #fff;">Histamin&shy;arm reisen</div>
-          </div>
-          <div style="font-family: 'Raleway', sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: #2a2a2a; background: #E8C4A8; padding: 10px 16px; border-radius: 999px; align-self: flex-start;">Kostenlos</div>
-        </div>
-        <img src="images/hey-ich-bin-julia.jpg" alt="Julia" style="position: absolute; top: -34px; right: -30px; width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 6px solid var(--bg-warm); box-shadow: 0 22px 44px rgba(45, 31, 34, 0.32); z-index: 2;">
-        <div style="position: absolute; top: -20px; right: 10px; padding: 14px 22px; background: #C48B6C; color: #2a2a2a; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; box-shadow: 0 10px 24px rgba(196, 139, 108, 0.4); display: none;">Neu</div>
-      </div>
-
-      <div class="reveal d1" style="order: 2;">
-        <p style="font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: 0.28em; color: var(--bordeaux); font-weight: 700; margin-bottom: 20px; text-transform: uppercase;">Aktuell · frisch aus dem Alltag</p>
-        <h2 style="font-family: 'Raleway', sans-serif; font-weight: 900; font-size: clamp(38px, 5vw, 62px); line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 24px;">Reisen mit Histamin — <em style="font-style: normal; color: var(--copper-dark);">ohne</em> jeden zweiten Tag im Bad.</h2>
-        <p style="font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 17px; line-height: 1.65; color: var(--ink-soft); max-width: 560px; margin-bottom: 28px;">
-          Was ich in den Koffer packe, wie ich Restaurants durchgehe, was ich beim Fliegen mache, welche Snacks immer dabei sind. Alles was ich mir vor meiner ersten Reise nach der Diagnose gewünscht hätte.
+      <div>
+        <h1 class="display" style="color: var(--cream);">Histamin.<br>MCAS. <em class="italic">Und alles</em><br>was dazugehört.</h1>
+        <p class="mt-md" style="color: rgba(255,252,249,0.9); max-width: 44ch;">
+          Corona → Geschmack weg → Orthorexie → Darmverschluss mit 19.<br>
+          Zwei Jahre nur fünf Lebensmittel. Heute mehr — und ich schreibe drüber.
         </p>
-        <ul style="list-style: none; padding: 0; margin: 0 0 34px; display: grid; gap: 10px;">
-          <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink-soft); line-height: 1.55;"><span style="color: var(--copper-dark); font-weight: 800;">→</span> Packliste mit den Basics, die den Unterschied machen</li>
-          <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink-soft); line-height: 1.55;"><span style="color: var(--copper-dark); font-weight: 800;">→</span> Restaurant-Fragen, die wirklich helfen (nicht nervig sind)</li>
-          <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink-soft); line-height: 1.55;"><span style="color: var(--copper-dark); font-weight: 800;">→</span> Snacks &amp; Notfall-Kit für Flug und unterwegs</li>
-          <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink-soft); line-height: 1.55;"><span style="color: var(--copper-dark); font-weight: 800;">→</span> Länder-Tipps: wo ich es leicht hatte, wo nicht</li>
-        </ul>
-        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-          <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; background: var(--bordeaux); color: #fff; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: none; box-shadow: 0 16px 32px rgba(42, 42, 42, 0.25); transition: transform 0.35s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">Kostenlos via WhatsApp →</a>
-          <a href="ebooks.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: transparent; color: var(--bordeaux); border: 1.5px solid var(--bordeaux); border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: none; transition: all 0.35s;" onmouseover="this.style.background='var(--bordeaux)'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='var(--bordeaux)'">Alle E-Books</a>
+        <div class="mt-lg" style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#themen" class="btn btn-copper">Erst mal stöbern</a>
+          <a href="ueber-mich.html" class="btn btn-outline" style="border-color: var(--cream); color: var(--cream);">Meine Geschichte</a>
         </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- THEMEN — alle in Blau, wie Julia gewünscht -->
+<section class="section section-cream" id="themen">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">Themen</span>
+      <h2 class="mt-sm">Womit ich mich <em class="italic">wirklich</em> auskenne.</h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">Aus eigener Erfahrung. Keine Wunder-Kur. Kein Diät-Programm. Nur das, was mich Stück für Stück wieder ins Leben gebracht hat.</p>
+    </div>
+
+    <div class="grid-3 mt-lg">
+      <a href="histaminintoleranz.html" class="editorial-card blue" style="text-decoration: none;">
+        <span class="chapter-num" style="color: var(--mint);">Nº 01</span>
+        <h3 class="mt-sm">Histamin</h3>
+        <p class="mt-sm">Was Histaminproblematik bei mir bedeutet — und wie ich sie im Griff habe.</p>
+      </a>
+      <a href="mcas.html" class="editorial-card blue" style="text-decoration: none;">
+        <span class="chapter-num" style="color: var(--mint);">Nº 02</span>
+        <h3 class="mt-sm">MCAS</h3>
+        <p class="mt-sm">Mastzell-Aktivierung — was ich weiß, was ich vermute, was wir noch testen.</p>
+      </a>
+      <a href="reizdarm.html" class="editorial-card blue" style="text-decoration: none;">
+        <span class="chapter-num" style="color: var(--mint);">Nº 03</span>
+        <h3 class="mt-sm">Reizdarm</h3>
+        <p class="mt-sm">Blähbauch, Krämpfe, Durchfall — was ich probiert habe.</p>
+      </a>
+      <a href="blog/" class="editorial-card blue" style="text-decoration: none;">
+        <span class="chapter-num" style="color: var(--mint);">Nº 04</span>
+        <h3 class="mt-sm">Blähbauch</h3>
+        <p class="mt-sm">Meine 6-Punkte-Routine, die ihn (fast) verschwinden ließ.</p>
+      </a>
+      <a href="blog/angst-vor-essen/" class="editorial-card blue" style="text-decoration: none;">
+        <span class="chapter-num" style="color: var(--mint);">Nº 05</span>
+        <h3 class="mt-sm">Ängste</h3>
+        <p class="mt-sm">Angst vor dem Essen. Angst vor dem Restaurant. Angst vor dem Urlaub.</p>
+      </a>
+      <a href="blog/weg-aus-depressionen/" class="editorial-card blue" style="text-decoration: none;">
+        <span class="chapter-num" style="color: var(--mint);">Nº 06</span>
+        <h3 class="mt-sm">Depressionen</h3>
+        <p class="mt-sm">Was sie mit einem machen — und was mir wirklich rausgeholfen hat.</p>
+      </a>
+    </div>
+
+    <div class="text-center mt-lg">
+      <a href="selbsttest.html" class="btn btn-outline">Zum Symptom-Selbsttest</a>
+    </div>
+  </div>
+</section>
+
+<!-- FULL-BLEED BREAK -->
+<img class="full-image" src="ebook-reisen/bilder/IMG_4680.jpg" alt="Julia auf der Piazza mit Sonnenuntergang">
+
+<!-- BLOG — mit Rückenansicht -->
+<section class="section section-mint">
+  <div class="container">
+    <div class="grid-2">
+      <div class="img-block">
+        <img src="ebook-reisen/bilder/2481B2A9-65FF-4244-8E68-D5CADE3D7CF9.JPG" alt="Julia von hinten im blauen Kleid" style="min-height: 500px; object-fit: cover;">
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-blue">Blog · Journal</span>
+        <h2 class="mt-sm">Aus dem <em class="italic">Alltag</em>.</h2>
+        <p class="lead mt-md">Kurze Texte, ehrliche Momente. Was gerade funktioniert, was nicht. Was ich mir zu jung gewünscht hätte.</p>
+        <div class="mt-lg" style="display: flex; flex-direction: column; gap: 20px;">
+          <a href="blog/darmverschluss/" class="btn-ghost" style="display: inline-block; text-align: left;">
+            <span class="chapter-num">Nº 01</span> · Wie kam es zu meinem Darmverschluss →
+          </a>
+          <a href="blog/blaehbauch-in-griff/" class="btn-ghost" style="display: inline-block; text-align: left;">
+            <span class="chapter-num">Nº 02</span> · Blähbauch fast losgeworden →
+          </a>
+          <a href="blog/orthorexie-corona/" class="btn-ghost" style="display: inline-block; text-align: left;">
+            <span class="chapter-num">Nº 03</span> · Orthorexie nach Corona →
+          </a>
+        </div>
+        <a href="blog/" class="btn btn-blue mt-lg">Alle Blog-Artikel</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- E-BOOKS & COMMUNITY — mit Cover Die Probe -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="eyebrow eyebrow-copper">E-Books & Community</span>
+        <h2 class="mt-sm">Vertiefen —<br><em class="italic">und teilen.</em></h2>
+        <p class="lead mt-md">
+          Was in meinem Journal nur angeschnitten wird, findest du in den E-Books ausführlich. Und in der WhatsApp-Community reden wir drüber.
+        </p>
 
-<!-- WHATSAPP COMMUNITY -->
-<section style="padding: 140px 0; background: linear-gradient(135deg, #128C7E, #25D366); color: #fff; position: relative; overflow: hidden;">
-  <div style="position: absolute; top: -100px; right: -100px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 70%); filter: blur(60px); pointer-events: none;"></div>
-  <div style="position: absolute; bottom: -120px; left: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(231, 255, 254, 0.22), transparent 70%); filter: blur(70px); pointer-events: none;"></div>
+        <div class="chapter-mark mt-lg">
+          <span class="chapter-num">Nº 01 · Reise-E-Book</span>
+          <h3 class="mt-sm">Die Probe</h3>
+          <p class="mt-sm">Meine erste Reise nach dem Darmverschluss. 12 Kapitel. Flyer in 9 Sprachen. Notfalllisten. 7,99 €.</p>
+          <a href="ebook-reisen.html" class="btn btn-copper mt-md">Zum E-Book →</a>
+        </div>
 
-  <div class="container" style="position: relative; z-index: 1; text-align: center; max-width: 860px;">
-    <img src="images/hey-ich-bin-julia.jpg" alt="Julia" class="reveal" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 5px solid rgba(255,255,255,0.9); box-shadow: 0 22px 44px rgba(0, 0, 0, 0.25); margin: 0 auto 28px; display: block;">
-
-    <div class="reveal" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; background: rgba(255, 255, 255, 0.18); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 999px; margin-bottom: 32px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: none; color: #fff;">
-      <span style="width: 6px; height: 6px; border-radius: 50%; background: #e7fffe;"></span>
-      Community · Kostenlos
+        <div class="chapter-mark mt-lg">
+          <span class="chapter-num">Bonus</span>
+          <h3 class="mt-sm">WhatsApp-Community</h3>
+          <p class="mt-sm">Wir tauschen uns aus — ehrlich, ohne Filter. Kostenlos.</p>
+          <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" class="btn btn-outline mt-md">Community beitreten →</a>
+        </div>
+      </div>
+      <div class="img-block">
+        <img src="ebook-reisen/bilder/Titelbild.PNG" alt="Cover E-Book Die Probe" style="min-height: 700px; object-fit: cover;">
+      </div>
     </div>
+  </div>
+</section>
 
-    <h2 class="reveal d1" style="color: #fff; margin-bottom: 20px; font-size: clamp(42px, 6vw, 88px);">Komm in meine <em style="font-style: normal; color: #e7fffe;">WhatsApp-Community</em>.</h2>
+<!-- EMPFEHLUNGEN — Rosa/Blush wie Pfingstrosen-Bild -->
+<section class="section section-pink">
+  <div class="container">
+    <div class="grid-2">
+      <div class="img-block">
+        <img src="images/empfehlungen.jpg" alt="Julia mit rosa Pfingstrosen">
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-pink">Was ich täglich benutze</span>
+        <h2 class="mt-sm">Erst mal <em class="italic">stöbern</em>.</h2>
+        <p class="lead mt-md">
+          Lebensmittel, Nahrungsergänzung, kleine Helfer — das, was in meinem Alltag wirklich hilft. Ehrlich, auch wenn's Partner sind: alles was ich empfehle, kaufe ich selbst.
+        </p>
+        <p class="mt-md">
+          aho.bio · Histaminikus · HistaFOOD · Balance Riegel · Yamatogast — meine Codes und wo ich was wirklich kaufe.
+        </p>
+        <a href="empfehlungen.html" class="btn btn-pink mt-md">Zu meinen Empfehlungen →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <p class="reveal d2" style="font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.9); max-width: 620px; margin: 0 auto 44px;">
-      Direkter Draht. Echte Fragen. Ehrliche Antworten. Neue E-Books zuerst. Kein Newsletter-Spam — nur wenn wirklich was da ist.
+<!-- APP -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="eyebrow" style="color: var(--copper);">TerraLuna · Meine App</span>
+        <h2 class="mt-sm" style="color: var(--cream);">Alles auf<br><em class="italic">einen Blick</em>.</h2>
+        <p class="lead mt-md" style="color: rgba(255,252,249,0.9);">
+          Aus dem, was <em>mir</em> geholfen hat, ist die TerraLuna-App entstanden. Kein Diät-Programm, kein Wunder-Trick — einfach das Werkzeug, das ich mir vor Jahren gewünscht hätte, um Symptome, Ernährung und Alltag zusammen zu sehen.
+        </p>
+        <div class="mt-md" style="color: rgba(255,252,249,0.75);">
+          <p>· Lebensmittel-Ampel mit Barcode-Scanner</p>
+          <p>· Symptom-Tagebuch offline</p>
+          <p>· SOS-Karten für Kellner in 9 Sprachen</p>
+          <p>· 3 Tage kostenlos testen · 4,99 €/Monat · 39,99 €/Jahr</p>
+        </div>
+        <a href="app.html" class="btn btn-copper mt-lg">Zur App →</a>
+      </div>
+      <div class="img-block">
+        <img src="images/app-v1.2/01-heute.png" alt="TerraLuna App auf dem iPhone" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GESPRÄCH / PEER SUPPORT -->
+<section class="section section-beige">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-blue">Peer-Support</span>
+    <h2 class="mt-sm">Ein <em class="italic">Gespräch</em>, das dich versteht.</h2>
+    <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+      30 Minuten. 25 €. Ehrlicher Erfahrungsaustausch — keine Beratung, keine Therapie. Einfach jemand, der weiß wovon du redest.
     </p>
-
-    <div class="reveal d3" style="display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
-      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 34px; background: #fff; color: #128C7E; border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: none; transition: all 0.35s; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 22px 44px rgba(0, 0, 0, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 16px 32px rgba(0, 0, 0, 0.15)'">Beitreten →</a>
-      <a href="ueber-mich.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 34px; background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 999px; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: none; transition: all 0.35s;" onmouseover="this.style.borderColor='#e7fffe'; this.style.color='#e7fffe'" onmouseout="this.style.borderColor='rgba(255,255,255,0.5)'; this.style.color='#fff'">Mehr über mich</a>
-    </div>
+    <a href="gespraech.html" class="btn btn-copper mt-lg">Termin auswählen</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-nav">
-      <a href="app.html">TerraLuna App</a>
-      <a href="histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="mcas.html">MCAS</a>
-      <a href="reizdarm.html">Reizdarm</a>
-      <a href="selbsttest.html">Selbsttest</a>
-      <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <a href="ebooks.html">E-Books</a>
-      <a href="ebooks.html">E-Books</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-    <div>
-      <div class="footer-social-h">Folge mir</div>
-      <div class="footer-social">
-        <a href="https://instagram.com/julia_bergles" target="_blank" rel="noopener">IG</a>
-        <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener">WA</a>
-        <a href="mailto:julia@bergles.net">@</a>
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">
+          Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.
+        </p>
+        <p style="margin-top: 20px;"><a href="https://instagram.com/julia_bergles" style="color: var(--copper);">@julia_bergles</a></p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop & Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebook-reisen.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-legal">
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerruf</a>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung.
+      Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.
+      <br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
     </div>
   </div>
-  <div class="footer-xxl">
-    <div class="logo">JULIA<span class="g">·</span>BERGLES</div>
-  </div>
-  <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
 </footer>
-
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-
-  function switchPort(button, tabId) {
-    document.querySelectorAll('.port-tab').forEach(b => b.classList.remove('active'));
-    button.classList.add('active');
-    document.querySelectorAll('.port-panel').forEach(p => p.classList.remove('active'));
-    document.querySelector('.port-panel[data-panel="' + tabId + '"]').classList.add('active');
-  }
-
-  function switchBranche(button, brancheId) {
-    document.querySelectorAll('.branche-tab').forEach(b => b.classList.remove('active'));
-    button.classList.add('active');
-    document.querySelectorAll('.branche-panel').forEach(p => p.classList.remove('active'));
-    const target = document.querySelector('.branche-panel[data-panel="' + brancheId + '"]');
-    if (target) target.classList.add('active');
-  }
-
-  function toggleFragen() {
-    const panel = document.getElementById('fragen-panel');
-    const icon = document.getElementById('fragen-icon');
-    panel.classList.toggle('open');
-    icon.textContent = panel.classList.contains('open') ? '×' : '?';
-  }
-
-  // Floating Auswahl-Modal: auto-open nach 3 Sek.
-  setTimeout(() => {
-    const m = document.getElementById('choice-modal');
-    if (m && !sessionStorage.getItem('choiceModalClosed')) m.classList.add('open');
-  }, 3000);
-  function closeChoiceModal() {
-    document.getElementById('choice-modal').classList.remove('open');
-    sessionStorage.setItem('choiceModalClosed', '1');
-    setTimeout(() => {
-      document.getElementById('choice-reopen').style.display = 'inline-flex';
-    }, 600);
-  }
-  function openChoiceModal() {
-    document.getElementById('choice-modal').classList.add('open');
-    document.getElementById('choice-reopen').style.display = 'none';
-    sessionStorage.removeItem('choiceModalClosed');
-  }
-</script>
-
-<!-- FRAGEN-WIDGET (Sonne) -->
-<div id="fragen-widget" style="position: fixed; bottom: 24px; right: 24px; z-index: 300;">
-  <button id="fragen-toggle" aria-label="Häufige Fragen" style="width: 68px; height: 68px; border-radius: 50%; background: #430a14; border: 0; cursor: pointer; box-shadow: 0 15px 35px rgba(67, 10, 20, 0.4); position: relative; transition: all 0.4s; display: flex; align-items: center; justify-content: center;" onclick="toggleFragen()" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform=''">
-    <div style="position: absolute; inset: -8px; border-radius: 50%; pointer-events: none; animation: rotateSun 20s linear infinite;">
-      <svg width="84" height="84" viewBox="0 0 84 84" style="display: block;">
-        <g stroke="#ff9c6d" stroke-width="1.5" stroke-linecap="round" fill="none">
-          <line x1="42" y1="4" x2="42" y2="12"/>
-          <line x1="42" y1="72" x2="42" y2="80"/>
-          <line x1="4" y1="42" x2="12" y2="42"/>
-          <line x1="72" y1="42" x2="80" y2="42"/>
-          <line x1="15" y1="15" x2="21" y2="21"/>
-          <line x1="63" y1="63" x2="69" y2="69"/>
-          <line x1="15" y1="69" x2="21" y2="63"/>
-          <line x1="63" y1="21" x2="69" y2="15"/>
-        </g>
-      </svg>
-    </div>
-    <span id="fragen-icon" style="color: #ff9c6d; font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900; font-size: 30px; line-height: 1; position: relative; z-index: 2; pointer-events: none;">?</span>
-  </button>
-
-  <div id="fragen-panel" style="position: absolute; bottom: 84px; right: 0; width: 340px; max-width: calc(100vw - 48px); background: #fff; border-radius: 16px; box-shadow: 0 40px 80px rgba(45, 31, 34, 0.25); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.95); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid rgba(45, 31, 34, 0.08);">
-    <div style="padding: 22px 24px 18px; background: linear-gradient(135deg, #430a14, #c74873); color: #fff;">
-      <div style="font-size: 10px; letter-spacing: 0.25em; text-transform: none; color: #ff9c6d; font-weight: 700; margin-bottom: 6px;">Häufige Fragen</div>
-      <div style="font-family: 'Raleway', 'Rubik', 'Space Grotesk', sans-serif; font-style: normal; font-weight: 900; font-size: 22px; letter-spacing: -0.01em;">Was möchtest du wissen?</div>
-    </div>
-    <div style="padding: 12px; max-height: 380px; overflow-y: auto;">
-      <a href="app.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Was ist die TerraLuna App?</a>
-      <a href="histaminintoleranz.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Was ist Histaminintoleranz?</a>
-      <a href="mcas.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Was ist MCAS?</a>
-      <a href="selbsttest.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Könnte ich betroffen sein?</a>
-      <a href="ueber-mich.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Wer bist du eigentlich?</a>
-      <a href="gespraech.html" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Kann ich mit dir reden?</a>
-      <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="display: block; padding: 14px 16px; font-size: 14px; color: #2D1F22; text-decoration: none; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='#FBF2ED'" onmouseout="this.style.background=''">Was ist die WhatsApp-Community?</a>
-    </div>
-    <div style="padding: 14px 22px 18px; border-top: 1px solid rgba(45, 31, 34, 0.08); text-align: center;">
-      <a href="ueber-mich.html" style="font-size: 11px; letter-spacing: 0.2em; text-transform: none; color: #430a14; font-weight: 700; text-decoration: none;">Alles über mich →</a>
-    </div>
-  </div>
-</div>
-
-<style>
-  @keyframes rotateSun { to { transform: rotate(360deg); } }
-  #fragen-panel.open { opacity: 1 !important; visibility: visible !important; transform: translateY(0) scale(1) !important; }
-</style>
 
 </body>
 </html>
