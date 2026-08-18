@@ -1,561 +1,277 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Instagram Insights von @julia_bergles — Reichweite, Zielgruppe und Interaktionen im Überblick.">
-  <title>Instagram Insights · Julia Bergles</title>
-  <link rel="canonical" href="https://www.juliabergles.de/instagram-insights.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=object-sans@300,400,500,600,700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/onpoint.css">
-  <link rel="stylesheet" href="assets/site.css">
-  <style>
-    .ig-wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 80px 24px 100px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Insights · Julia Bergles</title>
+<meta name="description" content="Instagram Insights von @julia_bergles — Reichweite, Zielgruppe und Interaktionen im Überblick.">
+<link rel="canonical" href="https://www.juliabergles.de/instagram-insights.html">
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
+<style>
+  .ig-bignum {
+    font-family: var(--serif);
+    font-size: clamp(56px, 9vw, 108px);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--copper);
+  }
+  .ig-midnum {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: var(--copper);
+  }
+  .ig-smallnum {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--copper);
+  }
+  .ig-blue-num { color: var(--blue-dark); }
 
-    .ig-period {
-      text-align: center;
-      font-family: 'Rubik', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--copper, var(--gold));
-      margin-bottom: 12px;
-    }
-    .ig-handle {
-      text-align: center;
-      font-family: 'Rubik', sans-serif;
-      font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 60px;
-    }
-    .ig-handle a {
-      color: var(--bordeaux);
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .ig-handle a:hover { text-decoration: underline; }
+  .ig-bar-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 80px;
+    gap: 20px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(42, 42, 42, 0.08);
+  }
+  .ig-bar-row:last-child { border-bottom: none; }
+  .ig-bar-label {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  .ig-bar-track {
+    height: 6px;
+    background: rgba(42, 42, 42, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .ig-bar-fill {
+    height: 100%;
+    background: var(--copper);
+    border-radius: 999px;
+  }
+  .ig-bar-fill.blue { background: var(--blue-dark); }
+  .ig-bar-value {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--copper);
+    text-align: right;
+  }
+  .ig-bar-value.blue { color: var(--blue-dark); }
 
-    /* Hero-Zahlen — die drei Big-Numbers */
-    .ig-hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-    .ig-hero-stat {
-      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
-      color: var(--bg);
-      border-radius: 28px;
-      padding: 44px 28px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(90,20,40,0.18);
-    }
-    .ig-hero-stat::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(226,174,97,0.28), transparent 65%);
-      pointer-events: none;
-    }
-    .ig-hero-stat-value {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(38px, 6vw, 62px);
-      font-weight: 600;
-      line-height: 1;
-      color: var(--gold);
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-      position: relative;
-    }
-    .ig-hero-stat-label {
-      font-family: 'Rubik', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      opacity: 0.9;
-      position: relative;
-    }
-
-    /* Sekundär-Zahlen */
-    .ig-mini-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 72px;
-    }
-    .ig-mini-stat {
-      background: #fdf7ee;
-      border: 1.5px solid #dcd6cb;
-      border-radius: 20px;
-      padding: 28px 20px;
-      text-align: center;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-    .ig-mini-stat:hover {
-      transform: translateY(-3px);
-      border-color: var(--gold);
-    }
-    .ig-mini-stat-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      font-weight: 600;
-      color: var(--bordeaux);
-      line-height: 1;
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-    .ig-mini-stat-label {
-      font-family: 'Rubik', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-    /* Sektions-Titel */
-    .ig-section {
-      margin-bottom: 72px;
-    }
-    .ig-section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 500;
-      color: var(--ink);
-      text-align: center;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    .ig-section-title em {
-      font-style: normal;
-      color: var(--bordeaux);
-    }
-    .ig-section-sub {
-      text-align: center;
-      font-family: 'Rubik', sans-serif;
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 40px;
-    }
-
-    /* Bar-Charts */
-    .ig-bars {
-      max-width: 640px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .ig-bar-row {
-      display: grid;
-      grid-template-columns: 130px 1fr 60px;
-      gap: 16px;
-      align-items: center;
-    }
-    .ig-bar-label {
-      font-family: 'Rubik', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .ig-bar-track {
-      height: 14px;
-      background: rgba(90,20,40,0.08);
-      border-radius: 999px;
-      overflow: hidden;
-      position: relative;
-    }
-    .ig-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--bordeaux), var(--gold));
-      border-radius: 999px;
-      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
-    }
-    .ig-bar-value {
-      font-family: 'Rubik', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--bordeaux);
-      text-align: right;
-    }
-
-    /* Zielgruppe-Split (Frauen/Männer als Ring/Big-Number) */
-    .ig-audience-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 640px;
-      margin: 0 auto 60px;
-    }
-    .ig-split-card {
-      background: #fdf7ee;
-      border: 1.5px solid #dcd6cb;
-      border-radius: 24px;
-      padding: 36px 24px;
-      text-align: center;
-    }
-    .ig-split-card.primary {
-      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
-      border-color: transparent;
-    }
-    .ig-split-value {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(48px, 7vw, 72px);
-      font-weight: 600;
-      line-height: 1;
-      color: var(--bordeaux);
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-    .ig-split-card.primary .ig-split-value {
-      color: var(--gold);
-    }
-    .ig-split-label {
-      font-family: 'Rubik', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .ig-split-card.primary .ig-split-label {
-      color: rgba(251,242,237,0.85);
-    }
-
-    /* Länder */
-    .ig-countries {
-      max-width: 640px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .ig-country-row {
-      display: grid;
-      grid-template-columns: 50px 1fr 1fr 70px;
-      gap: 16px;
-      align-items: center;
-      padding: 14px 20px;
-      background: #fdf7ee;
-      border: 1px solid #dcd6cb;
-      border-radius: 16px;
-    }
-    .ig-country-flag {
-      font-size: 24px;
-      text-align: center;
-    }
-    .ig-country-name {
-      font-family: 'Rubik', sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .ig-country-bar {
-      height: 8px;
-      background: rgba(90,20,40,0.08);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .ig-country-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--bordeaux), var(--gold));
-    }
-    .ig-country-pct {
-      font-family: 'Rubik', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--bordeaux);
-      text-align: right;
-    }
-
-    /* Story-Sektion */
-    .ig-story-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .ig-story-card {
-      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
-      color: var(--bg);
-      border-radius: 24px;
-      padding: 36px 28px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .ig-story-card::before {
-      content: '';
-      position: absolute;
-      top: -40px; right: -40px;
-      width: 160px; height: 160px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(226,174,97,0.25), transparent 65%);
-      pointer-events: none;
-    }
-    .ig-story-value {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 5vw, 48px);
-      font-weight: 600;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 10px;
-      position: relative;
-    }
-    .ig-story-label {
-      font-family: 'Rubik', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.9;
-      position: relative;
-    }
-
-    /* CTA */
-    .ig-cta {
-      max-width: 720px;
-      margin: 100px auto 0;
-      background: linear-gradient(155deg, var(--bordeaux) 0%, var(--bordeaux-deep) 100%);
-      border-radius: 32px;
-      padding: 60px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .ig-cta::before {
-      content: '';
-      position: absolute;
-      top: -80px; left: -80px;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(226,174,97,0.22), transparent 65%);
-      pointer-events: none;
-    }
-    .ig-cta::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; right: -100px;
-      width: 380px; height: 380px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(226,174,97,0.14), transparent 65%);
-      pointer-events: none;
-    }
-    .ig-cta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 500;
-      color: var(--bg);
-      margin-bottom: 16px;
-      position: relative;
-    }
-    .ig-cta h2 em { font-style: normal; color: var(--gold); }
-    .ig-cta p {
-      font-family: 'Rubik', sans-serif;
-      font-size: 16px;
-      color: rgba(251,242,237,0.85);
-      margin-bottom: 28px;
-      position: relative;
-    }
-    .ig-cta .btn-malaga-gold {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--bordeaux-deep);
-      padding: 18px 40px;
-      font-family: 'Rubik', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      box-shadow: 0 12px 32px rgba(226,174,97,0.4);
-    }
-    .ig-cta .btn-malaga-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(226,174,97,0.5);
-    }
-
-    .ig-note {
-      text-align: center;
-      font-family: 'Rubik', sans-serif;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media (max-width: 780px) {
-      .ig-wrap { padding: 60px 20px 80px; }
-      .ig-hero-stats { grid-template-columns: 1fr; gap: 16px; }
-      .ig-mini-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .ig-audience-split { grid-template-columns: 1fr; gap: 16px; }
-      .ig-story-grid { grid-template-columns: 1fr; }
-      .ig-bar-row { grid-template-columns: 100px 1fr 50px; gap: 10px; }
-      .ig-bar-label, .ig-bar-value { font-size: 13px; }
-      .ig-country-row { grid-template-columns: 40px 1fr 1fr 60px; padding: 12px 14px; gap: 12px; }
-      .ig-country-name { font-size: 14px; }
-      .ig-cta { padding: 44px 24px; border-radius: 24px; }
-    }
-  </style>
+  @media (max-width: 640px) {
+    .ig-bar-row { grid-template-columns: 110px 1fr 60px; gap: 12px; }
+    .ig-bar-label { font-size: 13px; }
+    .ig-bar-value { font-size: 16px; }
+  }
+</style>
 </head>
 <body>
 
-<div class="topbar">Neu · TerraLuna App ist live im App Store. <a href="app.html">jetzt laden</a></div>
-
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">TerraLuna</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
-      <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+          <li><a href="rezepte/suesses/">Süßes</a></li>
+          <li><a href="rezepte/gebaeck/">Gebäck</a></li>
+        </ul>
       </li>
-      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="instagram-insights.html">Instagram</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Empfehlungen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="empfehlungen.html">Marken</a></li>
+          <li><a href="empfehlungen/lebensmittel/">Was ich vertrage</a></li>
+          <li><a href="empfehlungen/tausch/">Tausch-Liste</a></li>
+          <li><a href="empfehlungen/allergien/">Meine Allergien</a></li>
+        </ul>
+      </li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="instagram-insights.html">Insights</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<!-- TOP CTA BANNER: App + Community + Instagram -->
-<div class="tl-cta-strip" style="background:linear-gradient(135deg,#C48B6C 0%,#A0705A 100%);color:#fff;padding:11px 16px;text-align:center;font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:0.09em;position:relative;z-index:80;box-shadow:0 4px 12px rgba(45,31,34,0.15);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;gap:18px;flex-wrap:wrap;">
-    <a href="app.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Jetzt TerraLuna App laden →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="https://chat.whatsapp.com/Bld3QLjowCKBpW6dksoRVK" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">WhatsApp-Community beitreten →</a>
-    <span style="opacity:0.5;">·</span>
-    <a href="ebooks.html" style="color:#fff;text-decoration:none;transition:opacity 0.3s;flex:1;min-width:200px;text-align:center;" onmouseover="this.style.opacity=0.82" onmouseout="this.style.opacity=1">Alle E-Books →</a>
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Meine Website für Histamin</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Laktose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Fructose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Reizdarm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Träger Darm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Zöliakie</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Meine Website für Histamin</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Laktose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Fructose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Reizdarm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Träger Darm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Zöliakie</span><span class="marquee-item dot">·</span>
   </div>
 </div>
-<div class="nav-spacer"></div>
 
-<section class="page-hero page-hero-image" style="background-image: linear-gradient(180deg, rgba(45, 31, 34, 0.72), rgba(45, 31, 34, 0.9)), url('images/julia-beruflich.jpg'); background-size: cover; background-position: center; color: var(--bg);">
+<header class="hero-editorial">
+  <div class="hero-bg" style="background: linear-gradient(135deg, var(--beige), var(--mint));"></div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line">Instagram · @julia_bergles</span>
+        <p class="lead mt-md" style="max-width: 36ch;">Reichweite, Zielgruppe, Interaktionen. Was ich sehe, ehrlich geteilt.</p>
+      </div>
+      <div>
+        <h1 class="display">Meine <em class="italic">Insights</em>.</h1>
+        <p class="mt-md" style="max-width: 46ch; color: var(--dark-soft);">
+          Zahlen zeigen, was wirklich funktioniert.<br>
+          <strong>6.012 Follower</strong> · Zeitraum: 6. Juli – 4. August 2026.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Big Stats -->
+<section class="section section-mint">
   <div class="container">
-    <div class="eyebrow reveal" style="color: var(--gold);">Instagram · @julia_bergles</div>
-    <h1 class="reveal d1" style="color: #fff;">Meine <em style="color: var(--gold);">Insights</em>.</h1>
-    <p class="lede reveal d2" style="color: rgba(255, 255, 255, 0.88);">
-      Reichweite, Zielgruppe, Interaktionen.
-      <br>Was ich sehe, ehrlich geteilt.
-      <br><em style="color: var(--gold);">Weil Zahlen zeigen was wirklich funktioniert.</em>
-    </p>
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">Reichweite</span>
+      <h2 class="mt-sm">Die <em class="italic">grossen</em> Zahlen.</h2>
+    </div>
+
+    <div class="grid-3 mt-lg">
+      <div class="editorial-card blue-soft text-center">
+        <span class="chapter-num">Nº 01</span>
+        <p class="ig-bignum ig-blue-num mt-md">832.583</p>
+        <span class="eyebrow eyebrow-blue mt-md" style="display: block;">Aufrufe</span>
+      </div>
+      <div class="editorial-card blue-soft text-center">
+        <span class="chapter-num">Nº 02</span>
+        <p class="ig-bignum ig-blue-num mt-md">399.404</p>
+        <span class="eyebrow eyebrow-blue mt-md" style="display: block;">Erreichte Konten</span>
+      </div>
+      <div class="editorial-card blue-soft text-center">
+        <span class="chapter-num">Nº 03</span>
+        <p class="ig-bignum ig-blue-num mt-md">23.231</p>
+        <span class="eyebrow eyebrow-blue mt-md" style="display: block;">Interaktionen</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="ig-wrap">
+<!-- Mini Stats -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Weitere Kennzahlen</span>
+      <h2 class="mt-sm">Details <em class="italic">im Blick</em>.</h2>
+    </div>
 
-  <div class="ig-period">6. Juli – 4. August 2026</div>
-  <div class="ig-handle"><a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener">@julia_bergles</a> · 6.012 Follower</div>
-
-  <!-- Hero-Zahlen: Die drei Big-Numbers -->
-  <div class="ig-hero-stats">
-    <div class="ig-hero-stat">
-      <div class="ig-hero-stat-value">832.583</div>
-      <div class="ig-hero-stat-label">Aufrufe</div>
-    </div>
-    <div class="ig-hero-stat">
-      <div class="ig-hero-stat-value">399.404</div>
-      <div class="ig-hero-stat-label">Erreichte Konten</div>
-    </div>
-    <div class="ig-hero-stat">
-      <div class="ig-hero-stat-value">23.231</div>
-      <div class="ig-hero-stat-label">Interaktionen</div>
-    </div>
-  </div>
-
-  <!-- Mini-Zahlen -->
-  <div class="ig-mini-stats">
-    <div class="ig-mini-stat">
-      <div class="ig-mini-stat-value">+723</div>
-      <div class="ig-mini-stat-label">Neue Follower</div>
-    </div>
-    <div class="ig-mini-stat">
-      <div class="ig-mini-stat-value">16.774</div>
-      <div class="ig-mini-stat-label">Reel-Likes</div>
-    </div>
-    <div class="ig-mini-stat">
-      <div class="ig-mini-stat-value">8.144</div>
-      <div class="ig-mini-stat-label">Profilaufrufe</div>
-    </div>
-    <div class="ig-mini-stat">
-      <div class="ig-mini-stat-value">66</div>
-      <div class="ig-mini-stat-label">Bio-Klicks</div>
-    </div>
-  </div>
-
-  <!-- Zielgruppe: Geschlecht -->
-  <div class="ig-section">
-    <h2 class="ig-section-title">Zielgruppe <em>Geschlecht</em></h2>
-    <p class="ig-section-sub">Wer meinen Content sieht</p>
-
-    <div class="ig-audience-split">
-      <div class="ig-split-card primary">
-        <div class="ig-split-value">74,1&thinsp;%</div>
-        <div class="ig-split-label">Frauen</div>
+    <div class="grid-3 mt-lg">
+      <div class="editorial-card text-center">
+        <p class="ig-midnum">+723</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Neue Follower</span>
       </div>
-      <div class="ig-split-card">
-        <div class="ig-split-value">25,9&thinsp;%</div>
-        <div class="ig-split-label">Männer</div>
+      <div class="editorial-card text-center">
+        <p class="ig-midnum">16.774</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Reel-Likes</span>
+      </div>
+      <div class="editorial-card text-center">
+        <p class="ig-midnum">8.144</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Profilaufrufe</span>
+      </div>
+      <div class="editorial-card text-center">
+        <p class="ig-midnum">66</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Bio-Klicks</span>
+      </div>
+      <div class="editorial-card text-center">
+        <p class="ig-midnum">6.012</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Follower gesamt</span>
+      </div>
+      <div class="editorial-card text-center">
+        <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+          <p class="ig-midnum">@julia_bergles</p>
+          <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Auf Instagram folgen</span>
+        </a>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Zielgruppe: Alter -->
-  <div class="ig-section">
-    <h2 class="ig-section-title">Zielgruppe <em>Alter</em></h2>
-    <p class="ig-section-sub">Die zwei größten Altersgruppen</p>
+<!-- Zielgruppe Geschlecht -->
+<section class="section section-beige">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Zielgruppe</span>
+      <h2 class="mt-sm">Nach <em class="italic">Geschlecht</em>.</h2>
+      <p class="mt-sm text-mute">Wer meinen Content sieht.</p>
+    </div>
 
-    <div class="ig-bars">
+    <div class="grid-2 mt-lg" style="max-width: 780px; margin-left: auto; margin-right: auto;">
+      <div class="editorial-card text-center">
+        <span class="chapter-num">Nº 01</span>
+        <p class="ig-bignum mt-md">74,1&thinsp;%</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Frauen</span>
+      </div>
+      <div class="editorial-card blue-soft text-center">
+        <span class="chapter-num">Nº 02</span>
+        <p class="ig-bignum ig-blue-num mt-md">25,9&thinsp;%</p>
+        <span class="eyebrow eyebrow-blue mt-md" style="display: block;">Männer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Zielgruppe Alter -->
+<section class="section section-cream">
+  <div class="container-narrow">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Zielgruppe</span>
+      <h2 class="mt-sm">Nach <em class="italic">Alter</em>.</h2>
+      <p class="mt-sm text-mute">Die zwei grössten Altersgruppen.</p>
+    </div>
+
+    <div class="editorial-card mt-lg">
       <div class="ig-bar-row">
         <div class="ig-bar-label">25 – 34 Jahre</div>
         <div class="ig-bar-track"><div class="ig-bar-fill" style="width: 86.5%;"></div></div>
@@ -568,104 +284,119 @@
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Zielgruppe: Länder -->
-  <div class="ig-section">
-    <h2 class="ig-section-title">Zielgruppe <em>Länder</em></h2>
-    <p class="ig-section-sub">Wo meine Community lebt</p>
-
-    <div class="ig-countries">
-      <div class="ig-country-row">
-        <div class="ig-country-flag">🇩🇪</div>
-        <div class="ig-country-name">Deutschland</div>
-        <div class="ig-country-bar"><div class="ig-country-bar-fill" style="width: 100%;"></div></div>
-        <div class="ig-country-pct">85,5&thinsp;%</div>
-      </div>
-      <div class="ig-country-row">
-        <div class="ig-country-flag">🇦🇹</div>
-        <div class="ig-country-name">Österreich</div>
-        <div class="ig-country-bar"><div class="ig-country-bar-fill" style="width: 8.9%;"></div></div>
-        <div class="ig-country-pct">7,6&thinsp;%</div>
-      </div>
-      <div class="ig-country-row">
-        <div class="ig-country-flag">🇨🇭</div>
-        <div class="ig-country-name">Schweiz</div>
-        <div class="ig-country-bar"><div class="ig-country-bar-fill" style="width: 3.9%;"></div></div>
-        <div class="ig-country-pct">3,3&thinsp;%</div>
-      </div>
+<!-- Zielgruppe Länder -->
+<section class="section section-mint">
+  <div class="container-narrow">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">Zielgruppe</span>
+      <h2 class="mt-sm">Nach <em class="italic">Ländern</em>.</h2>
+      <p class="mt-sm text-mute">Wo meine Community lebt.</p>
     </div>
-  </div>
 
-  <!-- Story Insights -->
-  <div class="ig-section">
-    <h2 class="ig-section-title">Story <em>Insights</em></h2>
-    <p class="ig-section-sub">Wie meine Stories laufen</p>
-
-    <div class="ig-story-grid">
-      <div class="ig-story-card">
-        <div class="ig-story-value">56.652</div>
-        <div class="ig-story-label">Story-Aufrufe</div>
+    <div class="editorial-card blue-soft mt-lg">
+      <div class="ig-bar-row">
+        <div class="ig-bar-label">Deutschland</div>
+        <div class="ig-bar-track"><div class="ig-bar-fill blue" style="width: 100%;"></div></div>
+        <div class="ig-bar-value blue">85,5&thinsp;%</div>
       </div>
-      <div class="ig-story-card">
-        <div class="ig-story-value">999</div>
-        <div class="ig-story-label">Story-Likes</div>
+      <div class="ig-bar-row">
+        <div class="ig-bar-label">Österreich</div>
+        <div class="ig-bar-track"><div class="ig-bar-fill blue" style="width: 8.9%;"></div></div>
+        <div class="ig-bar-value blue">7,6&thinsp;%</div>
+      </div>
+      <div class="ig-bar-row">
+        <div class="ig-bar-label">Schweiz</div>
+        <div class="ig-bar-track"><div class="ig-bar-fill blue" style="width: 3.9%;"></div></div>
+        <div class="ig-bar-value blue">3,3&thinsp;%</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CTA -->
-  <div class="ig-cta">
-    <h2>Folge mir auf <em>Instagram</em>.</h2>
-    <p>Alltag mit Histaminintoleranz, MCAS &amp; Reizdarm — ehrlich und ungeschönt.</p>
-    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="btn-malaga-gold">@julia_bergles</a>
-  </div>
-
-  <p class="ig-note">Alle Zahlen aus den offiziellen Instagram-Insights. Zeitraum: 6. Juli – 4. August 2026.</p>
-
-</div>
-
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Julia</div>
-      <div class="adr">Julia Bergles<br>Wehringen bei Augsburg<br>julia@bergles.net</div>
+<!-- Story Insights -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Stories</span>
+      <h2 class="mt-sm">Story <em class="italic">Insights</em>.</h2>
+      <p class="mt-sm text-mute">Wie meine Stories laufen.</p>
     </div>
-    <div class="footer-col">
-      <h5>App &amp; Diagnosen</h5>
-      <a href="app.html">TerraLuna App</a>
-      <a href="histaminintoleranz.html">Histaminintoleranz</a>
-      <a href="mcas.html">MCAS</a>
-      <a href="reizdarm.html">Reizdarm</a>
-      <a href="selbsttest.html">Selbsttest</a>
-    </div>
-    <div class="footer-col">
-      <h5>Inhalte</h5>
-      <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <a href="ebooks.html">E-Books</a>
-      <a href="ebooks.html">E-Books</a>
-      <a href="empfehlungen.html">Empfehlungen</a>
-      <a href="instagram-insights.html">Insights</a>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-    <div class="footer-col">
-      <h5>Rechtliches</h5>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerruf</a>
+
+    <div class="grid-2 mt-lg" style="max-width: 780px; margin-left: auto; margin-right: auto;">
+      <div class="editorial-card text-center">
+        <p class="ig-midnum">56.652</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Story-Aufrufe</span>
+      </div>
+      <div class="editorial-card text-center">
+        <p class="ig-midnum">999</p>
+        <span class="eyebrow eyebrow-copper mt-md" style="display: block;">Story-Likes</span>
+      </div>
     </div>
   </div>
-  <div class="footer-xxl">
-    <div class="logo-big">JULIA<span class="g">·</span>BERGLES</div>
-    <div class="footer-copy">© 2026 Julia Bergles · Wehringen bei Augsburg</div>
+</section>
+
+<!-- CTA -->
+<section class="section section-beige">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-copper">Instagram</span>
+    <h2 class="mt-sm">Folge mir auf <em class="italic">Instagram</em>.</h2>
+    <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+      Alltag mit Histaminintoleranz, MCAS und Reizdarm — ehrlich und ungeschönt.
+    </p>
+    <a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="btn btn-copper mt-lg">@julia_bergles</a>
+  </div>
+</section>
+
+<!-- Footer-Note -->
+<section class="section section-cream" style="padding-top: 40px; padding-bottom: 40px;">
+  <div class="container-narrow text-center">
+    <p style="font-style: italic; color: var(--mute); font-size: 14px;">
+      Alle Zahlen aus den offiziellen Instagram-Insights.<br>
+      Zeitraum: 6. Juli – 4. August 2026.
+    </p>
+  </div>
+</section>
+
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
   </div>
 </footer>
-
-<a href="https://www.instagram.com/julia_bergles/" target="_blank" rel="noopener" class="floating-instagram" aria-label="Instagram">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  Instagram
-</a>
 
 </body>
 </html>
