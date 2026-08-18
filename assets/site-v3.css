@@ -615,10 +615,11 @@ p.lead {
 
 .nav-v3 ul.nav-main {
   display: flex;
-  gap: 28px;
+  gap: 24px;
   list-style: none;
   align-items: center;
   margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
 .nav-v3 ul.nav-main > li { position: relative; }
@@ -718,7 +719,7 @@ p.lead {
   color: var(--dark);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .nav-v3 ul.nav-main,
   .nav-v3 .nav-cta { display: none; }
   .nav-v3 .burger { display: block; }
@@ -767,11 +768,20 @@ p.lead {
     display: inline-block;
     margin: 8px 24px 20px;
   }
+}
 
+@media (max-width: 900px) {
   /* Hero-Editorial etwas kleiner auf Mobile — sonst pusht der viel Inhalt weg */
   .hero-editorial {
     min-height: 70vh;
     padding: 80px 0 60px;
+  }
+  /* Container-Padding auf Mobile enger */
+  .nav-v3 .container {
+    gap: 16px;
+  }
+  .nav-v3 .logo {
+    font-size: 22px;
   }
 }
 
