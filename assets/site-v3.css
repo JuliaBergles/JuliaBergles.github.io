@@ -726,19 +726,21 @@ p.lead {
   .nav-v3.open ul.nav-main {
     display: flex;
     position: fixed;
-    top: 60px;
+    top: 66px;
     left: 0;
     right: 0;
-    max-height: calc(100vh - 60px);
+    bottom: 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     flex-direction: column;
     background: var(--cream);
-    padding: 24px 24px 40px;
-    gap: 16px;
+    padding: 20px 24px 80px;
+    gap: 14px;
     border-bottom: 1px solid var(--line);
     box-shadow: 0 8px 24px rgba(42,42,42,0.08);
     margin: 0;
-    z-index: 200;
+    z-index: 90;
   }
   .nav-v3.open ul.nav-main a,
   .nav-v3.open ul.nav-main .nav-link {
