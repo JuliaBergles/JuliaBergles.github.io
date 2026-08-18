@@ -709,9 +709,12 @@ p.lead {
   display: none;
   background: none;
   border: none;
-  padding: 8px;
+  padding: 12px 8px;
+  min-width: 44px;
+  min-height: 44px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 1;
   color: var(--dark);
 }
 
@@ -722,19 +725,29 @@ p.lead {
 
   .nav-v3.open ul.nav-main {
     display: flex;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60px;
     left: 0;
     right: 0;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
     flex-direction: column;
     background: var(--cream);
-    padding: 24px;
+    padding: 24px 24px 40px;
     gap: 16px;
     border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(42,42,42,0.08);
     margin: 0;
+    z-index: 200;
+  }
+  .nav-v3.open ul.nav-main a,
+  .nav-v3.open ul.nav-main .nav-link {
+    font-size: 15px;
+    padding: 4px 0;
   }
   .nav-v3.open ul.nav-main .dropdown {
     position: static;
+    display: block;
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -743,9 +756,20 @@ p.lead {
     padding: 8px 0 0 16px;
     background: transparent;
   }
+  .nav-v3.open ul.nav-main .dropdown a {
+    font-size: 14px;
+    padding: 6px 0;
+    color: var(--dark-soft);
+  }
   .nav-v3.open .nav-cta {
     display: inline-block;
-    margin: 0 24px 20px;
+    margin: 8px 24px 20px;
+  }
+
+  /* Hero-Editorial etwas kleiner auf Mobile — sonst pusht der viel Inhalt weg */
+  .hero-editorial {
+    min-height: 70vh;
+    padding: 80px 0 60px;
   }
 }
 
