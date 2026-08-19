@@ -1,0 +1,321 @@
+# Julia's Content-Plan
+**Für Instagram @julia_bergles**
+Letzte Aktualisierung: 19. August 2026
+
+---
+
+## Übersicht
+
+- 4 Content-Säulen (was du postest)
+- Wochenplan (wann du was postest)
+- Serie „Meine Geschichte" — 12 Folgen chronologisch erzählt
+- POV-Reel-Ideen (30+ Vorlagen)
+- DILY-Themen (5 Varianten)
+- Rezept-Rotation (12 Wochen vorgeplant)
+- Live-Cooking-Konzept (monatlich)
+- Ambassador-Integration
+- Batching-Anleitung
+
+---
+
+## 4 Content-Säulen
+
+Jedes Post fällt in EINE Säule. Verteilung übers Monat:
+
+| Säule | Anteil | Beispiel |
+|-------|--------|----------|
+| **Histamin & Körper** | 30 % | Alltag mit HIT, Rezepte, Symptome verstehen |
+| **Meine Geschichte / Recovery** | 25 % | Storytelling-Serie, POV-Reels, Meilensteine |
+| **Zyklus & PMS** | 20 % | PMS-Wochen, Zusammenhang Zyklus-Verträglichkeit |
+| **Selbständig mit chronischer Krankheit** | 25 % | Behind-the-Scenes, DILY-Business, App-Entwicklung |
+
+---
+
+## Wochenplan
+
+**Ambitioniert (durchziehen wenn möglich):**
+
+| Tag | Was | Aufwand |
+|-----|-----|---------|
+| **Mo** | POV-Reel (aus POV-Vault) | 10 Min posten (Content aus Batch) |
+| **Di** | Klassischer Beitrag (Foto oder Zitat-Karussell) | 10 Min |
+| **Mi** | DILY-Reel oder „So arbeite ich"-Reel | 15 Min |
+| **Do** | Karussell (deeper Content, SAVES-driven) | 15 Min |
+| **Fr** | Story-Q&A (Sticker „Frag mich!") | 20 Min |
+| **Sa** | OFF — heilig | 0 |
+| **So (Woche 1, 2, 3, 5)** | Rezept-Sonntag (Reel oder Karussell) | 15 Min |
+| **So (Woche 4)** | Live-Cooking-Event 60 Min | Live |
+| **Täglich** | 2-4 Stories | 15 Min verteilt |
+
+**Realistisch für den Start (erste 4 Wochen):**
+Reduziere auf 5 Content-Stücke/Woche (Mo POV + Mi DILY + Do Karussell + So Rezept + 1 Wildcard). Wenn du das durchziehst, hochskalieren.
+
+---
+
+## SPECIAL-SERIE: „Meine Geschichte"
+
+**Format:** 1x/Woche als Reel (60-90 sec) ODER Karussell (8-10 Slides). Chronologisch. Jede Folge nummeriert („Nº 03 · Der Darmverschluss").
+
+**Ziel:** Menschen kommen wieder um „die nächste Folge" zu sehen — bindet Community wie eine Podcast-Reihe.
+
+**Die 12 Folgen:**
+
+1. **„Wie alles anfing"** — Corona 2022, plötzlich kein Geschmack mehr
+2. **„Der Geschmacksverlust und die Angst"** — Suche nach Erklärung, keine Antwort
+3. **„Meine Orthorexie kam schleichend"** — immer gesünder, immer weniger
+4. **„Die ersten Bauchschmerzen"** — Signale ignoriert
+5. **„20 Blutabnahmen ohne Ergebnis"** — Ärzte fanden nichts
+6. **„Nur noch 5 Lebensmittel"** — der Tiefpunkt
+7. **„Der Darmverschluss mit 19"** — Krankenhaus, Nacht der Wahrheit
+8. **„Die Diagnose Histamin"** — endlich ein Name
+9. **„Der lange Weg zurück"** — was mir wirklich geholfen hat
+10. **„Sport, Angst, Zyklus"** — was noch dazu kam
+11. **„Die App bauen"** — warum ich TerraLuna gemacht hab
+12. **„Wo ich heute stehe"** — Rückblick + was jetzt kommt
+
+**Post-Timing:** Jeden **Mittwoch** um 18:00 Uhr (nach der Arbeit, Peak-Engagement).
+
+**Nach 12 Wochen:** Alle Folgen in einem Story-Highlight zusammenfassen („Meine Geschichte" als Pinned Highlight). Neue Follower können nachverfolgen.
+
+**Weiterverwerten:**
+- Alle 12 Folgen später zu einem langen YouTube-Video zusammenschneiden
+- Als Chapter im nächsten E-Book verwenden
+- Ausschnitte für Podcast-Pitches nutzen
+
+---
+
+## POV-Reel-Vault (30+ Ideen)
+
+**Format:** 15-30 Sek, Trend-Audio, Text-Overlay „POV:"
+
+### Diagnose-Momente (Betroffenen-Realität)
+1. POV: du bekommst mit 19 die Diagnose Histaminintoleranz
+2. POV: der Arzt sagt zum 20. Mal „das ist nur Psyche"
+3. POV: du bekommst deine erste Cerascreen-Auswertung
+4. POV: du lernst was Histamin ist und plötzlich macht alles Sinn
+5. POV: du kaufst zum ersten Mal bewusst histaminarm ein
+
+### Alltag / Sozialleben
+6. POV: du bist auf einer Party und alle essen Käse + Wein
+7. POV: jemand fragt „kannst du das nicht mal probieren?"
+8. POV: du erklärst zum 100. Mal was Histamin ist
+9. POV: dein Partner kocht extra für dich und rührt kein Gewürz an
+10. POV: du gehst mit Freunden ins Restaurant
+11. POV: dich fragt jemand nach Rezepten und du kennst NUR histaminarme
+12. POV: du wirst zu einem Grillabend eingeladen
+
+### Recovery-Momente (Meilensteine)
+13. POV: du reist zum ersten Mal nach zwei Jahren mit HIT
+14. POV: du isst zum ersten Mal etwas Neues und es klappt
+15. POV: du feierst deinen ersten Geburtstag ohne Angst
+16. POV: du machst wieder Sport ohne Symptome
+17. POV: du merkst, dass du dich mit deinem Körper wieder verbunden fühlst
+
+### PMS & Zyklus
+18. POV: die PMS-Woche kommt und du vergisst alles was du sonst verträgst
+19. POV: du bist in der Ovulation und plötzlich verträgst du wieder alles
+20. POV: du erklärst deinem Freund, warum du in der PMS-Woche anders isst
+21. POV: du planst deine Woche nach deinem Zyklus
+
+### Business / Selbständig
+22. POV: du hast einen Termin und plötzlich Bauchweh
+23. POV: du sagst als 20-Jährige einen 5-stelligen Auftrag ab
+24. POV: du erklärst einem Kunden, warum du nur 4 h/Tag arbeitest
+25. POV: du kämpfst gegen den Sportzwang, statt weiter zu tracken
+26. POV: du baust mit 20 deine eigene App
+
+### Mindset & Recovery
+27. POV: du sagst zum ersten Mal „nein" zu einem Termin, der dir nicht guttut
+28. POV: du merkst, dass Ängste weniger werden je öfter du dich ihnen stellst
+29. POV: du realisierst, dass dein Körper dich schützt, nicht sabotiert
+30. POV: du hörst auf, dich zu vergleichen mit anderen 20-Jährigen
+31. POV: du legst deine Ticks im Urlaub ab
+
+**Regel:** Nutze Trend-Audios (Instagram-Musik-Bibliothek, sortiert nach „Angesagt"). Erhöht Reichweite +40-60 %.
+
+---
+
+## DILY-Varianten (Day in my Life)
+
+**Rotieren monatlich:**
+
+| Variante | Wann | Ton |
+|----------|------|-----|
+| **Ein normaler Tag mit mir** | Wenn's dir gut geht | Locker, ehrlich, unaufgeregt |
+| **Ein PMS-Tag mit mir** | Zyklus-Woche 4 | Verletzlich, vulnerabel |
+| **Ein Selbständigen-Tag mit chronischer Krankheit** | Wenn viel Business läuft | Behind-the-Scenes, inspirierend |
+| **Ein guter Bauchtag mit mir** | An guten Tagen | Feiernd, dankbar |
+| **Ein Reizdarm-Krisen-Tag mit mir** | An schlechten Tagen | Roh, ehrlich, community-bindend |
+
+**Trick:** Filmen als Story tagsüber (10-15 kurze Clips), abends zu Reel zusammenschneiden. Zwei Content-Stücke aus einem Tag.
+
+---
+
+## Rezept-Rotation (12 Wochen vorgeplant)
+
+Alle Rezepte kommen aus deiner Website (`/rezepte/`) — perfekt für Cross-Promo.
+
+| Woche | Rezept |
+|-------|--------|
+| 1 | Rote-Bete-Teller |
+| 2 | Zucchini-Aufstrich |
+| 3 | Protein Zucchini Pfanne |
+| 4 | LIVE-COOKING (kein Rezept-Sonntag) |
+| 5 | Süßkartoffel-Salat |
+| 6 | Winter-Eintopf |
+| 7 | Zucchini-Suppe mit Nudeln |
+| 8 | LIVE-COOKING |
+| 9 | Apfelwolken |
+| 10 | Knäckebrot |
+| 11 | 3-in-1 Schokoetwas |
+| 12 | LIVE-COOKING |
+
+**Danach:** Zyklus neu starten, ggf. neue Rezepte einbauen (Tiramisu, Kürbissuppe, Raffaellos, Sticky Rice sobald fertig).
+
+---
+
+## Live-Cooking-Event „Julia's Küchentisch"
+
+**1x/Monat**, jeder 4. Sonntag, 60-75 Min.
+
+- Instagram-Live (kostenlos, für Reichweite)
+- Optional: Zoom-Ticket 15 € für kleine intensivere Runde (10-25 Personen)
+- 1-2 Rezepte kochen, alle Partner-Marken integriert
+- Am Ende: App/E-Book erwähnt
+
+**Sponsoring:** Marken zahlen 150-300 €/Event für Erwähnung. Bei 4 Marken = 600-1200 € pro Live.
+
+**Vorbereitung:**
+- 2 Wochen vorher: Rezept festlegen + Marken anfragen
+- 1 Woche vorher: auf Website ankündigen + Story-Countdown starten
+- Am Tag: 30 Min vor Start Küche aufräumen + Licht + Handy positioniert
+
+---
+
+## Ambassador-Integration (Wo wann welche Marke)
+
+**Aho.bio** (SMACADO10):
+- In JEDEM Rezept mit Sprossenmehl/Haferflocken/Reis
+- Story „Meine Küchen-Grundausstattung"
+- Live-Cooking (jedes Mal)
+
+**Histaminikus** (JULIA0734 / JULIA10734):
+- Bei jedem Rezept mit Gewürzen
+- Karussell „Meine 5 Lieblings-Gewürze"
+
+**HistaFOOD** (SMACADO10):
+- Rezepte mit Aufstrichen, Proteinpulver, Gemüsebrühe
+- Story-Reel „Was ich vom HistaFOOD-Sortiment nutze"
+
+**Nigela** (SMACADO10):
+- Story-Serie „Meine Öl-Routine morgens"
+- Rezept mit Schwarzkümmelöl
+
+**Balance / Baelanse:**
+- POV-Reel „Snack unterwegs" mit Riegel
+- Nicht zu oft (kein Standard-Post)
+
+**Regel:** Max 1 Ambassador prominent pro Post. Sonst wirkt Werbung.
+
+**Codes-Übersicht:** immer in der Bio verlinken auf eine Codes-Seite (kann `codes.juliabergles.de` oder `juliabergles.de/codes.html` sein — bau ich dir wenn du willst).
+
+---
+
+## Batching-Anleitung
+
+**Ein Content-Tag pro Woche** (empfohlen: Samstag Vormittag ODER Sonntag ganz früh).
+
+**Zeitplan:**
+
+| Zeit | Was |
+|------|-----|
+| 8:00 - 8:30 | Zutaten für Rezept-Sonntag vorbereiten |
+| 8:30 - 10:00 | Rezept kochen + drehen |
+| 10:00 - 11:00 | 3-4 POV-Reels drehen (in verschiedenen Outfits für Variation) |
+| 11:00 - 12:00 | DILY-Clips vorbereiten (Setup-Shots) |
+| 12:00 - 13:00 | PAUSE |
+| 13:00 - 14:00 | Karussell in Canva bauen (Do-Post) |
+| 14:00 - 15:00 | Alle Reels editieren (CapCut oder InShot) |
+| 15:00 - 16:00 | Captions schreiben + Hashtags + Meta Business Suite planen |
+
+**Insgesamt: ~7 h Content-Tag = eine ganze Woche voller Content**
+
+Danach die Woche über nur noch: posten (1 min) + Community-Antworten (15-20 Min/Tag) + Story-Filmen (10-15 Min verteilt).
+
+---
+
+## Story-Strategie
+
+**Täglich 2-4 Sticker.** Kein Zwang zur Perfektion.
+
+**Story-Bausteine (rotieren):**
+- Alltags-Moment (Kaffee, Spaziergang, Blick aus dem Fenster)
+- „Was ich heute vertrage"-Update
+- Hinter-den-Kulissen (App-Screenshot, Notiz, E-Mail schreiben)
+- Ambassador-Produkt gezeigt („Frühstück mit Aho.bio")
+- Frage-Sticker („Was möchtest du heute wissen?")
+- Umfrage („Sonntag: Suppe oder Auflauf?")
+- Countdown zum Live-Event
+
+**Regel:** Mind. 1 Sticker mit direkter Interaktion (Frage/Umfrage) pro Tag. Erhöht Story-Views + Reichweite.
+
+---
+
+## Monatliche Rückschau
+
+**Jeden 1. des Monats: 30 Min Analytics-Check.**
+
+Was messen:
+- Follower-Wachstum (Ziel: +100-300/Monat)
+- Reichweite (welche Posts liefen am besten?)
+- Beste Post-Zeiten (in Insights)
+- Bio-Klicks (wie viele auf Website?)
+
+**Was daraus lernen:**
+- Welches Format performt am besten? Mehr davon.
+- Welche Themen bekommen SAVES? Mehr davon.
+- Welche Uhrzeiten sind Peak? Danach posten.
+
+---
+
+## Content-Ideen-Vault (Reserve wenn dir nix einfällt)
+
+**Karussell-Themen:**
+- „5 histaminarme Snacks für unterwegs"
+- „Meine Küchen-Grundausstattung"
+- „Was du im Restaurant fragen kannst"
+- „3 Anzeichen dass dein Bauch Ruhe braucht"
+- „Meine Zyklus-Ernährungs-Regeln"
+- „Der Unterschied zwischen HIT und Fructose-Malabsorption"
+- „Bücher, die mir geholfen haben"
+- „Was Ärzte mir NIE gesagt haben"
+- „Meine Reise-Checkliste"
+- „Symptome, die man nicht mit Histamin verbindet"
+
+**Reel-Themen:**
+- „Der schnellste histaminarme Snack aller Zeiten"
+- „So schlage ich Bauchweh KO"
+- „Was ich bei Panik esse"
+- „3 Sachen die ich seit meiner Diagnose NICHT mehr mache"
+- „Meine App zeigt was ich vertrage"
+
+**Zitat-Beiträge:**
+- „Gesund sein ist ein Marathon, kein Sprint."
+- „Manche Tage ist Aufstehen der ganze Sieg."
+- „Du bist nicht zu empfindlich. Du bist informierter."
+- „Wenn kein Arzt hilft, hilft manchmal eine Betroffene."
+
+---
+
+## Absolute Regeln
+
+1. **Samstag OFF.** Kein Content, keine Insta, kein Business.
+2. **Bei schlechten Bauchtagen:** Batch-Reserve nutzen. Nie zwingen.
+3. **Max 1 Ambassador-Erwähnung pro Post prominent** — sonst wirkt spammy.
+4. **Community-Antworten binnen 24 h** — verdoppelt Bindung.
+5. **Nie perfekt sein wollen.** Consistency > Perfection.
+
+---
+
+**Letzte Anmerkung:**
+Dieser Plan ist ein Startpunkt, kein Gesetz. Nach 2-4 Wochen: check was funktioniert, was nicht. Anpassen ohne Schuld. Deine Gesundheit vor allem anderen.
