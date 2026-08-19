@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julia's Master-Plan · Content, Business, Kochbuch</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --cream: #fffcf9;
+    --beige: #f4ede4;
+    --copper: #c48b6c;
+    --copper-dark: #a87556;
+    --blue: #8790c1;
+    --blue-dark: #6f78a8;
+    --mint: #e2fffe;
+    --pink-soft: #f9e0e6;
+    --dark: #2a2a2a;
+    --dark-soft: #4a4a4a;
+    --mute: #8a8a8a;
+    --line: rgba(42, 42, 42, 0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    color: var(--dark);
+    letter-spacing: -0.01em;
+  }
+
+  h1 { font-size: 48px; line-height: 1.1; margin-bottom: 8px; }
+  h1 em { color: var(--copper); font-style: italic; }
+  h2 { font-size: 32px; line-height: 1.2; margin: 60px 0 20px; padding-top: 40px; border-top: 1px solid var(--line); color: var(--copper-dark); }
+  h3 { font-size: 24px; line-height: 1.3; margin: 32px 0 12px; }
+  h4 { font-size: 18px; line-height: 1.4; margin: 20px 0 8px; color: var(--blue-dark); }
+
+  p { margin-bottom: 12px; color: var(--dark-soft); max-width: 68ch; }
+  strong { color: var(--dark); font-weight: 700; }
+  em { font-style: italic; }
+
+  ul, ol { margin: 12px 0 12px 24px; }
+  ul li, ol li { padding: 4px 0; color: var(--dark-soft); }
+
+  .subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--mute);
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--copper-dark);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--beige);
+    font-family: var(--sans);
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  tr:hover { background: rgba(196, 139, 108, 0.04); }
+
+  .card {
+    background: var(--mint);
+    padding: 24px 28px;
+    margin: 24px 0;
+    border-left: 3px solid var(--blue-dark);
+  }
+  .card-warn {
+    background: var(--pink-soft);
+    padding: 24px 28px;
+    margin: 24px 0;
+    border-left: 3px solid var(--copper);
+  }
+  .card h4 { margin-top: 0; }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 40px 0;
+  }
+
+  .toc {
+    background: var(--beige);
+    padding: 32px;
+    margin-bottom: 60px;
+  }
+  .toc h3 { margin-top: 0; color: var(--copper-dark); }
+  .toc ol { margin-left: 20px; }
+  .toc a { color: var(--dark); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .toc a:hover { color: var(--copper); border-bottom-color: var(--copper); }
+
+  .divider-orn {
+    text-align: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--copper);
+    margin: 40px 0;
+  }
+
+  @media print {
+    body { font-size: 12px; }
+    .container { padding: 20px; max-width: none; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 26px; page-break-before: always; }
+    h2:first-of-type { page-break-before: avoid; }
+    .toc { page-break-after: always; }
+    a { color: inherit; text-decoration: none; }
+    .no-print { display: none; }
+    table { page-break-inside: avoid; }
+  }
+
+  .print-hint {
+    background: var(--mint);
+    padding: 16px 24px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: var(--blue-dark);
+    border-left: 3px solid var(--blue-dark);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="print-hint no-print">
+    💡 <strong>Als PDF speichern:</strong> Cmd+P (Mac) oder Strg+P (Windows) → „Als PDF speichern".
+  </div>
+
+  <h1>Julia's <em>Master-Plan</em></h1>
+  <p class="subtitle">Content · Business · Kochbuch · September 2026 – Februar 2027</p>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Inhalt</h3>
+    <ol>
+      <li><a href="#uebersicht">Übersicht &amp; Ausgangslage</a></li>
+      <li><a href="#wochenplan">Wochenplan (der Rhythmus)</a></li>
+      <li><a href="#serien">Content-Serien</a></li>
+      <li><a href="#events">Monatliche Events</a></li>
+      <li><a href="#produkte">Produkte-Übersicht</a></li>
+      <li><a href="#business">Business-Zahlen 6 Monate</a></li>
+      <li><a href="#cliffhanger">Cliffhanger-Formel &amp; CTA-Vault</a></li>
+      <li><a href="#kochbuch">Kochbuch-Roadmap</a></li>
+      <li><a href="#regeln">Absolute Regeln</a></li>
+      <li><a href="#naechste-schritte">Deine nächsten Schritte</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. ÜBERSICHT -->
+  <h2 id="uebersicht">1 · Übersicht &amp; Ausgangslage</h2>
+
+  <span class="eyebrow">Stand August 2026</span>
+  <ul>
+    <li><strong>Instagram-Follower:</strong> 6.012</li>
+    <li><strong>App-Nutzer:</strong> klein, wachsend</li>
+    <li><strong>Fixkosten/Monat:</strong> ~450 € (150 € Essen + 300 € Software/Tools)</li>
+    <li><strong>B2B-Freelance-Kunden:</strong> 4 (Theresa Ross, Nicole Schleer, Bruckner, Relax Fitness)</li>
+  </ul>
+
+  <h3>Deine Ziele bis Februar 2027</h3>
+  <ul>
+    <li>12.000 Follower</li>
+    <li>170 App-User</li>
+    <li>270 E-Book-Verkäufe kumuliert</li>
+    <li><strong>9.000 € Ersparnisse</strong> auf dem Konto</li>
+    <li>Kochbuch launcht (Dezember 2026)</li>
+    <li>Kurs konzipiert für Q2 2027</li>
+  </ul>
+
+  <!-- 2. WOCHENPLAN -->
+  <h2 id="wochenplan">2 · Wochenplan</h2>
+
+  <table>
+    <thead>
+      <tr><th>Tag</th><th>Was</th><th>Format</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Montag</strong></td><td>Day in my Life</td><td>DILY-Reel 30-60 Sek</td></tr>
+      <tr><td><strong>Dienstag</strong></td><td>PMS/Zyklus (kurz + knackig)</td><td>Karussell max 5 Slides oder Reel 15-30 Sek</td></tr>
+      <tr><td><strong>Mittwoch</strong></td><td>Talk-Mittwoch: offener Talk Depressionen + Recovery</td><td>Talk-Reel 60-90 Sek oder Karussell</td></tr>
+      <tr><td><strong>Donnerstag</strong></td><td>Histamin-Wissen + App-Verknüpfung</td><td>Karussell (Save-Content)</td></tr>
+      <tr><td><strong>Freitag</strong></td><td>Thema Ärzte („verstehen einen nicht")</td><td>POV-Reel 15-30 Sek</td></tr>
+      <tr><td><strong>Samstag</strong></td><td>POV-Reel aus Vault</td><td>POV-Reel 15-30 Sek</td></tr>
+      <tr><td><strong>Sonntag 1, 2, 3, 5</strong></td><td>Rezept-Sonntag (passend zur Zutat-Woche)</td><td>Beitrag (Foto) + Reel</td></tr>
+      <tr><td><strong>Sonntag 4</strong></td><td>Live-Cooking-Event</td><td>Instagram-Live + optional Zoom-Ticket</td></tr>
+      <tr><td><strong>Täglich</strong></td><td>Stories</td><td>2-4 pro Tag: Alltag, Behind-the-Scenes, Sticker</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Insgesamt:</strong> 7-8 Feed-Posts/Woche + tägliche Stories + monatliches Live-Event.</p>
+
+  <div class="card-warn">
+    <h4>⚠️ Burnout-Regel</h4>
+    <p>7 Tage/Woche ohne festen OFF-Tag ist ambitioniert. <strong>Immer 1-2 Wochen Content-Reserve vorproduziert haben.</strong> Bei schlechten Bauchtagen sofort auf Reserve zurückgreifen. Nie zwingen. Sonntag Batch-Tag: 5-7 h für die ganze Woche.</p>
+  </div>
+
+  <!-- 3. SERIEN -->
+  <h2 id="serien">3 · Content-Serien</h2>
+
+  <h3>Serie 1: „Meine Geschichte" (Talk-Mittwoch, 12 Folgen)</h3>
+  <p>Chronologisch. Jede Folge nummeriert. Bindet Community wie eine Podcast-Reihe.</p>
+  <ol>
+    <li>Wie alles anfing (Corona 2022, Geschmack weg)</li>
+    <li>Der Geschmacksverlust und die Angst</li>
+    <li>Meine Orthorexie kam schleichend</li>
+    <li>Die ersten Bauchschmerzen</li>
+    <li>20 Blutabnahmen ohne Ergebnis</li>
+    <li>Nur noch 5 Lebensmittel</li>
+    <li>Der Darmverschluss mit 19</li>
+    <li>Die Diagnose Histamin</li>
+    <li>Der lange Weg zurück</li>
+    <li>Sport, Angst, Zyklus</li>
+    <li>Die App bauen</li>
+    <li>Wo ich heute stehe</li>
+  </ol>
+
+  <h3>Serie 2: „Kochen mit …" (Rezept-Sonntag, 12 Wochen)</h3>
+  <p>Eine Zutat pro Woche im Fokus. Zeigst 3-5 Rezepte damit. Community lernt ein ganzes Zutat-Vokabular.</p>
+
+  <table>
+    <thead>
+      <tr><th>Woche</th><th>Zutat</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Süßkartoffel</td></tr>
+      <tr><td>2</td><td>Zucchini</td></tr>
+      <tr><td>3</td><td>Rote Bete</td></tr>
+      <tr><td>4</td><td>Kürbis</td></tr>
+      <tr><td>5</td><td>Haferflocken</td></tr>
+      <tr><td>6</td><td>Carob</td></tr>
+      <tr><td>7</td><td>Quark/Hüttenkäse</td></tr>
+      <tr><td>8</td><td>Kürbiskerne</td></tr>
+      <tr><td>9</td><td>Gurke</td></tr>
+      <tr><td>10</td><td>Mais/Maiswaffeln</td></tr>
+      <tr><td>11</td><td>Belugalinsen</td></tr>
+      <tr><td>12</td><td>Reis (gekeimt)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Serie 3: „Wusstest du …?" (Donnerstag, Learning)</h3>
+  <p>Karussells mit 5-8 Slides, Cliffhanger-Struktur. SAVE-Content pur.</p>
+  <ul>
+    <li>Unterschied Allergie vs. Unverträglichkeit</li>
+    <li>DAO-Enzym erklärt</li>
+    <li>Östrogen + Histamin (Zyklus-Zusammenhang)</li>
+    <li>Reifer Käse: warum voll mit Histamin</li>
+    <li>Warum abends Histamin schlechter</li>
+    <li>Fructose vs. Fructan vs. Sorbit</li>
+    <li>Wein bei HIT</li>
+    <li>Fermentierte Lebensmittel</li>
+    <li>MCAS vs. HIT</li>
+    <li>Reizdarm erklärt</li>
+    <li>Die 10 histaminreichsten Lebensmittel</li>
+    <li>DAO-Enzym-Booster</li>
+    <li>Stress + Darm</li>
+    <li>Warum Frauen häufiger HIT haben</li>
+    <li>Das „Fass ohne Boden"-Modell</li>
+  </ul>
+
+  <h3>Weitere Serien-Formate</h3>
+  <ul>
+    <li><strong>„Es ist ein Privileg" — Bauch-Karussell</strong> (Julias eigene Formulierungen)</li>
+    <li><strong>„Für dich Sixpack — für Frauen bedeutet das …"</strong> (Fitness-Kultur-Kritik)</li>
+    <li><strong>„btw"-Reels</strong> (kurze ehrliche Statements)</li>
+    <li><strong>„Der Moment wenn …"</strong> (POV-Alltag)</li>
+    <li><strong>„Warum ich …"</strong> (Reizdarm, Hunger-Panik, Fahrrad-Therapie)</li>
+    <li><strong>„Kritik am Gesundheitssystem"</strong> (Privatpatienten, Frauenärztin)</li>
+  </ul>
+
+  <!-- 4. EVENTS -->
+  <h2 id="events">4 · Monatliche Events</h2>
+
+  <h3>Walk-and-Talk (kostenlos, 1x/Monat)</h3>
+  <p>Instagram-Live während du spazieren gehst. Community stellt Fragen live. 30-45 Min, entspannter Sonntagabend. Format perfekt: authentisch, ungeschminkt, low-effort. Wachstums-Booster (Meta pusht Live-Content).</p>
+
+  <h3>Kostenpflichtiger Themen-Live-Event (1x/Monat)</h3>
+  <p>Zoom-Webinar, 60-90 Min, 15-25 € pro Person, 20-50 Teilnehmerinnen.</p>
+
+  <h4>Themen (rotieren monatlich)</h4>
+  <ol>
+    <li>„Histamin erklärt — von einer Betroffenen"</li>
+    <li>„Zyklus und Histamin — der unterschätzte Zusammenhang"</li>
+    <li>„Was mir bei meinen Depressionen geholfen hat"</li>
+    <li>„Bauchgesundheit im Alltag"</li>
+    <li>„Reisen mit chronischer Krankheit"</li>
+    <li>„Selbständigkeit mit chronischer Krankheit"</li>
+  </ol>
+
+  <p>Am Ende jedes Events: App + Kurs + E-Books natürlich einbauen — nicht als Sales-Pitch, sondern als „wenn du tiefer einsteigen willst".</p>
+
+  <div class="card">
+    <h4>Kalkulation</h4>
+    <p>25 Personen × 19 € = 475 €/Event · 12 Events/Jahr = ~5.700 €/Jahr Zusatzumsatz. Plus: neue Follower + E-Book-Verkäufe im Anschluss.</p>
+  </div>
+
+  <h3>Live-Cooking (jeder 4. Sonntag)</h3>
+  <p>60-75 Min. Instagram-Live (kostenlos) + optional Zoom-Ticket (15 €). Rezept mit Ambassador-Marken. Sponsoring 150-300 €/Marke × 4 = 600-1200 €/Event möglich.</p>
+
+  <h3>Weiteres monatlich</h3>
+  <ul>
+    <li><strong>1 Podcast-Auftritt</strong> (extern, du als Gast)</li>
+    <li><strong>1 Newsletter/Woche</strong> an die E-Mail-Liste</li>
+    <li><strong>1 YouTube-Video</strong> alle 2 Monate</li>
+    <li><strong>1 neues E-Book</strong> alle 2-3 Monate</li>
+  </ul>
+
+  <!-- 5. PRODUKTE -->
+  <h2 id="produkte">5 · Produkte-Übersicht</h2>
+
+  <h3>Aktuell live</h3>
+  <table>
+    <thead>
+      <tr><th>Produkt</th><th>Preis</th><th>Vertriebsweg</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>TerraLuna App</td><td>4,99 €/Mo · 39,99 €/Jahr</td><td>App Store · Google Play</td></tr>
+      <tr><td>E-Book „Die Probe" (Reisen)</td><td>7,99 €</td><td>Mail-Vorkasse (PayPal/Überweisung)</td></tr>
+      <tr><td>Peer-Support-Gespräch (60 Min)</td><td>39 €</td><td>Calendly-Buchung, Vorkasse-Mail</td></tr>
+      <tr><td>Kostenloses Kennenlerngespräch</td><td>0 €</td><td>Calendly-Buchung</td></tr>
+      <tr><td>Ambassador/Affiliate</td><td>5-20% Provision</td><td>aho.bio, HistaFOOD, Histaminikus, Nigela, Balance</td></tr>
+    </tbody>
+  </table>
+
+  <h3>In Planung</h3>
+  <table>
+    <thead>
+      <tr><th>Produkt</th><th>Preis (geplant)</th><th>Launch</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Kochbuch PDF</td><td>19,99 €</td><td>November 2026</td></tr>
+      <tr><td>Kochbuch Print (Amazon KDP)</td><td>24,99-29,99 €</td><td>Februar 2027</td></tr>
+      <tr><td>Weitere E-Books (PMS, Ängste, Depressionen)</td><td>7,99-14,99 €</td><td>alle 2-3 Monate</td></tr>
+      <tr><td>Digital-Masterclass „4-Wochen-Bauch-Reset"</td><td>89-129 € (mit App-Bundle)</td><td>Mai 2027</td></tr>
+      <tr><td>Live-Themen-Events</td><td>15-25 €/Person</td><td>ab September monatlich</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 6. BUSINESS -->
+  <h2 id="business">6 · Business-Zahlen 6 Monate</h2>
+
+  <table>
+    <thead>
+      <tr><th>Monat</th><th>Umsatz</th><th>Fixkosten</th><th>Netto</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 · September</td><td>2.165 €</td><td>450 €</td><td>1.715 €</td></tr>
+      <tr><td>2 · Oktober</td><td>2.812 €</td><td>450 €</td><td>2.362 €</td></tr>
+      <tr><td>3 · November</td><td>3.538 €</td><td>450 €</td><td>3.088 €</td></tr>
+      <tr><td>4 · Dezember</td><td>3.970 €</td><td>450 €</td><td>3.520 €</td></tr>
+      <tr><td>5 · Januar</td><td>4.745 €</td><td>450 €</td><td>4.295 €</td></tr>
+      <tr><td>6 · Februar</td><td>4.665 €</td><td>450 €</td><td>4.215 €</td></tr>
+      <tr><td><strong>Gesamt Netto</strong></td><td></td><td></td><td><strong>~19.195 €</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    <h4>Aufteilung (grob)</h4>
+    <ul>
+      <li>Einkommensteuer-Rücklage (20-25 %): ~4.800 €</li>
+      <li>Lebenshaltung (6 × 800 €): ~4.800 €</li>
+      <li><strong>Ersparnisse-Ziel: 9.000 €</strong> ✅</li>
+    </ul>
+  </div>
+
+  <h3>Milestones pro Monat</h3>
+  <table>
+    <thead>
+      <tr><th>Monat</th><th>Follower</th><th>App-Downloads</th><th>E-Book-Verkäufe</th><th>Podcasts</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>6.500</td><td>10</td><td>15</td><td>1 Anfrage</td></tr>
+      <tr><td>2</td><td>7.200</td><td>25</td><td>40</td><td>1 Auftritt</td></tr>
+      <tr><td>3</td><td>8.000</td><td>50</td><td>80</td><td>2 Auftritte</td></tr>
+      <tr><td>4</td><td>9.000</td><td>80</td><td>140</td><td>2 Auftritte</td></tr>
+      <tr><td>5</td><td>10.500</td><td>130</td><td>210</td><td>3 Auftritte</td></tr>
+      <tr><td>6</td><td>12.000</td><td>170</td><td>270</td><td>3 Auftritte</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 7. CLIFFHANGER -->
+  <h2 id="cliffhanger">7 · Cliffhanger-Formel &amp; CTA-Vault</h2>
+
+  <h3>Post-Struktur (Eileen-Style)</h3>
+  <ol>
+    <li><strong>Massive Hook</strong> (Zeile 1-2) — provoziert Weiterlesen</li>
+    <li><strong>Story-Setup</strong> (Zeile 3-5) — persönliche Details</li>
+    <li><strong>Cliffhanger</strong> (mittendrin) — „Und dann passierte etwas, das alles veränderte..."</li>
+    <li><strong>Payoff / Value</strong> (Zeile 6-9) — Auflösung + Learning</li>
+    <li><strong>CTA</strong> (letzte 2 Zeilen) — klar + spezifisch</li>
+  </ol>
+
+  <h3>Starke Hook-Beispiele</h3>
+  <ul>
+    <li>„Ich hatte 5 Lebensmittel. Zwei Jahre lang."</li>
+    <li>„Der Arzt hat sich geirrt."</li>
+    <li>„Ich dachte, ich muss damit leben. Falsch."</li>
+    <li>„Wollte ich sterben? Nein. Aber essen wollte ich auch nicht."</li>
+    <li>„Mein Bauch war meine kritische Zone."</li>
+    <li>„20 Blutabnahmen. Nichts gefunden."</li>
+    <li>„Der Moment, an dem ich verstand, dass ich meine Ärztin sein muss."</li>
+  </ul>
+
+  <h3>CTA-Vault (nie zwei gleiche hintereinander)</h3>
+
+  <h4>Für SAVES (Algorithmus-Booster)</h4>
+  <ul>
+    <li>„Speichere diesen Post, wenn du das nicht vergessen willst"</li>
+    <li>„Speichere für deinen nächsten Bauchtag"</li>
+    <li>„Ab in die Favoriten — dieser Post ist deine Erinnerung"</li>
+  </ul>
+
+  <h4>Für Kommentare (Reichweiten-Explosion)</h4>
+  <ul>
+    <li>„Kennst du das auch? Schreib EIN Wort dazu"</li>
+    <li>„Schreib SÜSSKARTOFFEL, ich schicke dir das Rezept-Karussell"</li>
+    <li>„Wer sich verstanden fühlt: schreib ❤️"</li>
+  </ul>
+
+  <h4>Für Shares</h4>
+  <ul>
+    <li>„Teile diesen Post mit jemandem, der versteht"</li>
+    <li>„Schick das an die Freundin, die immer sagt ‚ist doch nur Psyche'"</li>
+    <li>„Tag jemanden, der das gerade durchmacht"</li>
+  </ul>
+
+  <h4>Für Follower-Wachstum</h4>
+  <ul>
+    <li>„Folge mir für mehr ehrliche Einblicke ins Leben mit Histamin"</li>
+    <li>„Wenn du 20 bist und deinen Bauch verstehen willst — folg mir"</li>
+  </ul>
+
+  <!-- 8. KOCHBUCH -->
+  <h2 id="kochbuch">8 · Kochbuch-Roadmap</h2>
+
+  <p><strong>Vision:</strong> Das erste histaminarme Kochbuch das nicht wie ein Kochbuch aussieht. 40-60 alltagstaugliche Rezepte für Menschen mit HIT, MCAS, Reizdarm.</p>
+
+  <h3>4 Formate parallel</h3>
+  <table>
+    <thead>
+      <tr><th>Format</th><th>Preis</th><th>Launch</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PDF-Kochbuch</td><td>19,99 €</td><td>November 2026</td></tr>
+      <tr><td>Print (Amazon KDP)</td><td>24,99-29,99 €</td><td>Februar 2027</td></tr>
+      <tr><td>App-Integration (Yearly-Bonus)</td><td>im 39,99 € Abo</td><td>parallel PDF</td></tr>
+      <tr><td>Video-Serie „Julias Küche"</td><td>Insta-Content</td><td>läuft schon</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Kalkulation 6 Monate nach Launch</h3>
+  <p>PDF + Print zusammen: <strong>~5.160 € Umsatz in 6 Monaten</strong>. Nicht spektakulär, aber passiv nach Erstellung.</p>
+
+  <h3>Kapitel-Struktur (10 Kapitel, ~50-60 Rezepte)</h3>
+  <ol>
+    <li>Einleitung + Grundlagen zu Histamin</li>
+    <li>Meine Küchen-Grundausstattung</li>
+    <li>Frühstück (6-8 Rezepte)</li>
+    <li>Snacks (4-6)</li>
+    <li>Vorspeisen &amp; Salate (5-7)</li>
+    <li>Warme Mahlzeiten (8-10)</li>
+    <li>Süßes (5-7)</li>
+    <li>Gebäck &amp; Brot (4-6)</li>
+    <li>Bauchschmerz-Rezepte (3-4)</li>
+    <li>Jahreszeiten &amp; Zyklus</li>
+  </ol>
+
+  <!-- 9. REGELN -->
+  <h2 id="regeln">9 · Absolute Regeln</h2>
+
+  <ol>
+    <li><strong>Content immer batchen</strong> (Sonntag Vormittag) — nie täglich neu produzieren.</li>
+    <li><strong>Immer 1-2 Wochen Content-Reserve</strong> — bei Bauchtagen oder Krisen greift der Backup.</li>
+    <li><strong>Max 1 Verkaufs-CTA pro Woche prominent</strong> — sonst wirst du „Werbe-Account".</li>
+    <li><strong>Community-Antworten binnen 24 h</strong> — verdoppelt Bindung.</li>
+    <li><strong>Nicht mehr als 5 B2B-Kunden gleichzeitig</strong> — sonst frisst dich Freelance auf.</li>
+    <li><strong>Bei Krise: pausieren ohne Schuldgefühl.</strong> Deine Gesundheit vor allem.</li>
+    <li><strong>Consistency &gt; Perfection.</strong> Lieber 30 gute Posts als 20 perfekte und 10 verpasste.</li>
+  </ol>
+
+  <!-- 10. NÄCHSTE SCHRITTE -->
+  <h2 id="naechste-schritte">10 · Deine nächsten Schritte</h2>
+
+  <h3>Diese Woche</h3>
+  <ol>
+    <li><strong>Sonntag 24. August:</strong> Content-Batching-Tag — 5 Reels + 1 Karussell + 1 Rezept-Reel produzieren</li>
+    <li><strong>Podcast-Anfragen:</strong> an 3 deutsche Health-Podcasts (Template im wochenplan.md)</li>
+    <li><strong>Nathalie Gleitmann DM</strong> verschicken (warme Erstansprache)</li>
+    <li><strong>Newsletter-Konto</strong> anlegen (Beehiiv oder brevo, kostenlos)</li>
+    <li><strong>Meta Business Suite</strong> einrichten für Stories-Planning</li>
+  </ol>
+
+  <h3>Nach 30 Tagen (Oktober)</h3>
+  <ul>
+    <li>Retrospektive: welche Formate liefen am besten? Davon mehr.</li>
+    <li>Reichweite-Check + Post-Zeiten optimieren</li>
+    <li>Oktober-Kalender bauen (basierend auf Erkenntnissen)</li>
+    <li>Rezept-Foto-Wochenende einplanen (fürs Kochbuch)</li>
+  </ul>
+
+  <h3>Nach 3 Monaten (November)</h3>
+  <ul>
+    <li>Kochbuch-PDF launcht</li>
+    <li>Live-Cooking-Format etabliert</li>
+    <li>2-3 Podcast-Auftritte hinter dir</li>
+  </ul>
+
+  <h3>Nach 6 Monaten (Februar 2027)</h3>
+  <ul>
+    <li>Ziel: 12k Follower, 9.000 € Ersparnisse</li>
+    <li>Print-Kochbuch launcht</li>
+    <li>Kurs konzipiert für Q2 2027</li>
+    <li>Retrospektive + Q2-Plan</li>
+  </ul>
+
+  <div class="divider-orn">§</div>
+
+  <p style="text-align: center; font-style: italic; color: var(--mute); margin-top: 40px;">
+    Dieser Plan ist ein Startpunkt, kein Gesetz. Nach 4 Wochen: check was funktioniert, was nicht. Anpassen ohne Schuld. Deine Gesundheit vor allem anderen.
+  </p>
+
+</div>
+</body>
+</html>
