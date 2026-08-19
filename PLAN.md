@@ -48,14 +48,16 @@ Stand: 19. August 2026
 | Tag | Was |
 |-----|-----|
 | **Mo** | Day in my Life |
-| **Di** | Zyklus-Dienstag |
-| **Mi** | Talk-Mittwoch — Meine Geschichte |
-| **Do** | Histamin-Learning + App |
-| **Fr** | POV-Reel „Ärzte verstehen einen nicht" |
-| **Sa** | OFF |
-| **So (1, 2, 3, 5)** | Rezept-Sonntag |
+| **Di** | PMS/Zyklus |
+| **Mi** | Talk-Mittwoch (offener Talk Depressionen + Recovery) |
+| **Do** | Histamin-Wissen + App |
+| **Fr** | Thema Ärzte |
+| **Sa** | Day in my Life (leicht, aus Batch) |
+| **So (1, 2, 3, 5)** | Rezept-Sonntag (Beitrag + Reel) |
 | **So (4)** | Live-Cooking-Event |
 | **Täglich** | 2-4 Stories |
+
+**7-8 Feed-Posts/Woche** — ambitioniert. Batching am Sonntag-Vormittag ist Pflicht.
 
 **Details:** siehe wochenplan.md
 

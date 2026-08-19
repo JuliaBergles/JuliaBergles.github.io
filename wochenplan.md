@@ -36,16 +36,22 @@ Jedes Post fällt in EINE Säule. Verteilung übers Monat:
 | Tag | Was | Format |
 |-----|-----|--------|
 | **Mo** | **Day in my Life** — mein Alltag mit Histamin & Selbständigkeit | DILY-Reel (30-60 Sek) |
-| **Di** | **Zyklus-Dienstag** — PMS, Östrogen-Histamin, was Frauen wissen müssen | Karussell oder Reel |
-| **Mi** | **Talk-Mittwoch** — meine Geschichte in Folgen erzählt (Storytelling-Serie) | Reel 60-90 Sek oder Karussell |
-| **Do** | **Histamin-Learning + App** — Wusstest-du-Content mit App-Verknüpfung | Karussell (Save-Content) |
-| **Fr** | **Reel „Ärzte verstehen einen nicht"** — POV, Systemkritik, ehrliche Momente | POV-Reel (15-30 Sek) |
-| **Sa** | **OFF** | Erholung, kein Content |
-| **So (Woche 1, 2, 3, 5)** | **Rezept-Sonntag** — passend zur Zutat-Woche | Reel oder Karussell |
+| **Di** | **PMS/Zyklus** — Wissen, Alltag, Zusammenhänge Östrogen-Histamin | Karussell oder Reel |
+| **Mi** | **Talk-Mittwoch** — offener Talk (Depressionen, mentale Gesundheit, wie es mir geht) + Recovery-Beitrag | Talk-Reel (60-90 Sek) oder Karussell mit persönlicher Story + Recovery-Learning |
+| **Do** | **Histamin-Wissen + App** — Wusstest-du-Content mit App-Verknüpfung | Karussell (Save-Content) |
+| **Fr** | **Thema Ärzte** — „Ärzte verstehen einen nicht", POV, Systemkritik | POV-Reel (15-30 Sek) |
+| **Sa** | **Day in my Life** — leichtes Wochenend-DILY (aus Batch, wenig Aufwand) | Reel oder Story-Highlight |
+| **So (Woche 1, 2, 3, 5)** | **Rezept-Sonntag** — passend zur Zutat-Woche | **Beitrag (Foto) + Reel** (zwei Posts) |
 | **So (Woche 4)** | **Live-Cooking-Event** (60-75 Min) | Instagram-Live + optional Zoom-Ticket |
 | **Täglich** | 2-4 Stories | Alltag, Behind-the-Scenes, Sticker |
 
-**Insgesamt:** 6 Feed-Posts/Woche + tägliche Stories + monatliches Live-Event.
+**Insgesamt:** 7-8 Feed-Posts/Woche + tägliche Stories + monatliches Live-Event.
+
+**⚠️ Ehrliche Anmerkung:** Das ist ambitioniert — 7 Tage/Woche ohne festen OFF-Tag. **Achtung Burnout-Gefahr.** Wenn du das durchziehst:
+- **Immer 1-2 Wochen Content-Reserve vorproduziert haben**
+- **Bei schlechten Bauchtagen sofort auf Reserve zurückgreifen** — nie zwingen
+- **Sonntag Batch-Tag → 8-10 Content-Stücke an einem Tag** (5-7 h Arbeit) für die ganze Woche
+- **Wenn PMS-Woche oder Krise → automatisch Sa (leichter DILY) auslassen** — kein schlechtes Gewissen
 
 ---
 
