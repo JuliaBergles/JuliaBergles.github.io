@@ -1,308 +1,287 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Allgemeine Geschäftsbedingungen - Smacado / TerraLuna App, Coaching & digitale Produkte">
-  <title>AGB | TerraLuna</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --wine: #5a1428; --cream: #F8F2EE; --charcoal: #5a1428; --cocoa: #c4b5a6;
-      --gold: #c9a96e; --rose: #df8585; --blush: #f0d5d0; --sage: #dbb88a;
-      --white: #fffdf9; --linen: #F0E8E4; --gray: #b5a99a; --terracotta: #c4704b;
-      --navy: #5a1428;
-    }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
-    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* NAV */
-    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.1); }
-    .site-nav .row { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; gap: 20px; }
-    .site-nav .brand { font-family: 'Raleway', sans-serif; font-size: 22px; font-weight: 700; color: #C48B6C; letter-spacing: 0.5px; text-decoration: none; }
-    .site-nav ul { display: flex; gap: 26px; list-style: none; align-items: center; flex-wrap: nowrap; margin: 0; padding: 0; }
-    .site-nav ul li { position: relative; }
-    .site-nav ul a { font-family: 'Raleway', sans-serif; font-size: 14px; letter-spacing: -0.005em; color: var(--charcoal); text-decoration: none; font-weight: 700; white-space: nowrap; transition: color 0.3s; }
-    .site-nav ul a:hover { color: var(--navy); }
-    .site-nav ul li.has-drop > a { display: inline-flex; align-items: center; gap: 4px; }
-    .site-nav .drop-caret { font-size: 9px; opacity: 0.6; transition: transform 0.3s; }
-    .site-nav ul li.has-drop:hover .drop-caret { transform: rotate(180deg); opacity: 1; }
-    .site-nav .drop-menu { position: absolute; top: 100%; left: -20px; min-width: 220px; background: #fff; border: 1px solid rgba(201,169,110,0.2); border-radius: 12px; padding: 12px 0; box-shadow: 0 24px 48px rgba(45,31,34,0.12); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s; z-index: 200; }
-    .site-nav ul li.has-drop:hover .drop-menu, .site-nav ul li.has-drop:focus-within .drop-menu { opacity: 1; visibility: visible; transform: translateY(6px); transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s; }
-    .site-nav .drop-menu a { display: block; padding: 10px 22px; font-family: 'Raleway', sans-serif; font-size: 14px; color: var(--charcoal); font-weight: 500; text-decoration: none; letter-spacing: 0; }
-    .site-nav .drop-menu a:hover { color: var(--navy); background: rgba(149,82,81,0.05); }
-    .site-nav ul li.has-drop > a[href="#"] { cursor: default; }
-    .site-nav .nav-cta { padding: 11px 24px; background: var(--navy); color: var(--white) !important; border-radius: 999px; font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 700 !important; text-decoration: none; letter-spacing: 0.02em; transition: all 0.3s; flex-shrink: 0; }
-    .site-nav .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(149,82,81,0.25); }
-    .nav-burger { display: none; width: 40px; height: 40px; background: transparent; border: 1px solid rgba(201,169,110,0.4); border-radius: 999px; cursor: pointer; align-items: center; justify-content: center; flex-shrink: 0; }
-    .nav-burger span { display: block; width: 16px; height: 1.5px; background: var(--navy); position: relative; }
-    .nav-burger span::before, .nav-burger span::after { content: ""; position: absolute; left: 0; width: 16px; height: 1.5px; background: var(--navy); transition: transform 0.3s; }
-    .nav-burger span::before { top: -5px; }
-    .nav-burger span::after { top: 5px; }
-    .nav-burger.open span { background: transparent; }
-    .nav-burger.open span::before { top: 0; transform: rotate(45deg); }
-    .nav-burger.open span::after { top: 0; transform: rotate(-45deg); }
-    .mobile-menu { display: none; }
-    @media (max-width: 980px) {
-      .site-nav .row { padding: 16px 24px; }
-      .site-nav ul { display: none; }
-      .site-nav .nav-cta { display: none; }
-      .nav-burger { display: inline-flex; }
-      .mobile-menu { position: fixed; top: 72px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid rgba(201,169,110,0.15); padding: 24px 32px 32px; display: none; z-index: 99; max-height: calc(100vh - 72px); overflow-y: auto; }
-      .mobile-menu.open { display: block; }
-      .mobile-menu a { display: block; padding: 12px 0; font-family: 'Raleway', sans-serif; font-size: 15px; color: var(--charcoal); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(201,169,110,0.12); letter-spacing: 0; }
-      .mobile-group-label { font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cocoa); font-weight: 700; margin: 18px 0 6px; padding: 8px 0 4px; }
-      .mobile-menu a.mobile-sub { padding-left: 20px; font-size: 14px; font-weight: 500; color: var(--cocoa); }
-      .mobile-menu .mobile-cta { display: inline-block; margin-top: 20px; padding: 12px 26px; background: var(--navy); color: var(--white) !important; border-radius: 999px; font-size: 12px; font-weight: 700; border-bottom: 0; letter-spacing: 0.05em; }
-    }
-
-    /* PAGE HERO */
-    .page-hero { padding-top: 140px; padding-bottom: 60px; text-align: center; }
-    .section-label { font-size: 11px; font-weight: 500; color: var(--navy); letter-spacing: 3px; text-transform: none; margin-bottom: 12px; }
-    .section-title { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 300; color: var(--charcoal); margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.5px; }
-    .section-sub { font-size: 16px; color: var(--cocoa); max-width: 550px; margin: 0 auto; line-height: 1.7; }
-
-    /* LEGAL CONTENT */
-    .legal-content { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
-    .legal-content h2 { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 400; color: var(--charcoal); margin: 40px 0 16px; }
-    .legal-content h3 { font-size: 18px; font-weight: 600; color: var(--charcoal); margin: 28px 0 12px; }
-    .legal-content p { font-size: 15px; color: var(--charcoal); line-height: 1.8; margin-bottom: 14px; }
-    .legal-content ul, .legal-content ol { margin: 12px 0 16px 24px; }
-    .legal-content li { font-size: 14px; color: var(--charcoal); line-height: 1.7; margin-bottom: 6px; }
-    .legal-content strong { font-weight: 600; }
-    .legal-content table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    .legal-content th, .legal-content td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--linen); font-size: 14px; }
-    .legal-content th { font-weight: 600; background: var(--linen); }
-
-    /* FOOTER */
-    footer { background: var(--navy); color: var(--gray); padding: 60px 24px; }
-    .footer-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    .footer-logo { font-family: 'Rubik', 'Space Grotesk', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-    .footer-links a { color: var(--gray); text-decoration: none; font-size: 13px; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--white); }
-    .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 24px; line-height: 1.6; }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .menu-toggle { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,253,249,0.98); padding: 24px; gap: 16px; backdrop-filter: blur(20px); }
-      .section-title { font-size: 32px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Allgemeine Geschäftsbedingungen · TerraLuna App, Coaching &amp; digitale Produkte">
+<title>AGB · Julia Bergles</title>
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
+<style>
+  .legal-hero { background: linear-gradient(135deg, var(--beige), var(--cream)); padding: clamp(120px, 16vw, 200px) 0 clamp(50px, 6vw, 80px); text-align: center; }
+  .legal-body { font-family: var(--sans); color: var(--dark-soft); line-height: 1.75; }
+  .legal-body h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 3vw, 34px); color: var(--dark); letter-spacing: -0.01em; line-height: 1.2; margin: 56px 0 18px; }
+  .legal-body h2:first-child { margin-top: 0; }
+  .legal-body h3 { font-family: var(--sans); font-weight: 700; font-size: 17px; color: var(--dark); margin: 28px 0 12px; letter-spacing: 0.01em; }
+  .legal-body p { font-size: 16px; line-height: 1.8; margin-bottom: 14px; color: var(--dark-soft); }
+  .legal-body a { color: var(--copper-dark); text-decoration: underline; text-underline-offset: 3px; }
+  .legal-body a:hover { color: var(--copper); }
+  .legal-body strong { color: var(--dark); font-weight: 600; }
+  .legal-body ul, .legal-body ol { margin: 12px 0 18px 22px; }
+  .legal-body li { font-size: 16px; line-height: 1.75; margin-bottom: 8px; color: var(--dark-soft); }
+</style>
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="row">
-    <a href="index.html" class="brand">Julia</a>
-    <ul>
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
       <li><a href="ueber-mich.html">Über mich</a></li>
-      <li class="has-drop">
-        <a href="#">Diagnosen <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="histaminintoleranz.html">Histaminintoleranz</a>
-          <a href="mcas.html">MCAS</a>
-          <a href="reizdarm.html">Reizdarm</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+        </ul>
       </li>
       <li><a href="selbsttest.html">Selbsttest</a></li>
       <li><a href="blog/">Blog</a></li>
-      <li><a href="rezepte.html">Rezepte</a></li>
-      <li class="has-drop">
-        <a href="#">Shop <span class="drop-caret">▾</span></a>
-        <div class="drop-menu">
-          <a href="ebooks.html">E-Books</a>
-          <a href="bilder.html">Kunst</a>
-          <a href="app.html">TerraLuna App</a>
-        </div>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+          <li><a href="rezepte/suesses/">Süßes</a></li>
+          <li><a href="rezepte/gebaeck/">Gebäck</a></li>
+        </ul>
       </li>
-      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="schulen.html">Schulen</a></li>
+      <li><a href="was-kommt.html">Content</a></li>
+      <li><a href="instagram-insights.html">Instagram</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Empfehlungen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="empfehlungen.html">Marken</a></li>
+          <li><a href="empfehlungen/lebensmittel/">Was ich vertrage</a></li>
+          <li><a href="empfehlungen/tausch/">Tausch-Liste</a></li>
+          <li><a href="empfehlungen/allergien/">Meine Allergien</a></li>
+        </ul>
+      </li>
     </ul>
     <a href="gespraech.html" class="nav-cta">Gespräch</a>
-    <button class="nav-burger" aria-label="Menü" onclick="document.getElementById('mobile-menu').classList.toggle('open'); this.classList.toggle('open');"><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="ueber-mich.html">Über mich</a>
-    <div class="mobile-group-label">Diagnosen</div>
-    <a href="histaminintoleranz.html" class="mobile-sub">Histaminintoleranz</a>
-    <a href="mcas.html" class="mobile-sub">MCAS</a>
-    <a href="reizdarm.html" class="mobile-sub">Reizdarm</a>
-    <a href="selbsttest.html">Selbsttest</a>
-    <a href="blog/">Blog</a>
-    <a href="rezepte.html">Rezepte</a>
-    <div class="mobile-group-label">Shop</div>
-    <a href="ebooks.html" class="mobile-sub">E-Books</a>
-    <a href="bilder.html" class="mobile-sub">Kunst</a>
-    <a href="app.html" class="mobile-sub">TerraLuna App</a>
-    <a href="empfehlungen.html">Empfehlungen</a>
-    <a href="gespraech.html" class="mobile-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
   </div>
 </nav>
 
-<div class="page-hero">
-  <p class="section-label">Rechtliches</p>
-  <h1 class="section-title">Allgemeine Geschäftsbedingungen</h1>
-  <p class="section-sub">TerraLuna App, Coaching & digitale Produkte. Stand: Mai 2026</p>
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Meine Website für Histamin</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Laktose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Fructose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Reizdarm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Träger Darm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Zöliakie</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Meine Website für Histamin</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Laktose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Fructose</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Reizdarm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Träger Darm</span><span class="marquee-item dot">·</span>
+    <span class="marquee-item">Zöliakie</span><span class="marquee-item dot">·</span>
+  </div>
 </div>
 
-<div class="legal-content fade-up">
+<header class="legal-hero">
+  <div class="container">
+    <span class="eyebrow eyebrow-copper">Rechtliches</span>
+    <h1 class="display mt-sm" style="font-size: clamp(48px, 7vw, 88px);">Allgemeine <em class="italic">Geschäfts</em>bedingungen</h1>
+    <p class="mt-md text-mute" style="font-size: 14px; letter-spacing: 0.05em;">TerraLuna App, Coaching &amp; digitale Produkte · Stand: Mai 2026</p>
+  </div>
+</header>
 
-  <h2>§ 1 Geltungsbereich</h2>
-  <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der App „TerraLuna", das Coaching-Angebot „Seelenbauch" sowie alle digitalen Produkte (E-Books, Affirmationskarten) der Anbieterin Julia Bergles, Singoldstraße 5a, 86517 Wehringen (nachfolgend „Anbieterin").</p>
-  <p>Die AGB gelten für alle Nutzerinnen und Nutzer, unabhängig davon, ob die kostenlose oder eine kostenpflichtige Version genutzt wird. Mit der Nutzung der App oder der Buchung eines Coachings erklärt die Nutzerin ihr Einverständnis mit diesen AGB.</p>
+<section class="section section-cream">
+  <div class="container-narrow legal-body">
 
-  <h2>§ 2 Leistungsbeschreibung</h2>
+    <h2>§ 1 Geltungsbereich</h2>
+    <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der App „TerraLuna", das Coaching-Angebot „Seelenbauch" sowie alle digitalen Produkte (E-Books, Affirmationskarten) der Anbieterin Julia Bergles, Singoldstraße 5a, 86517 Wehringen (nachfolgend „Anbieterin").</p>
+    <p>Die AGB gelten für alle Nutzerinnen und Nutzer, unabhängig davon, ob die kostenlose oder eine kostenpflichtige Version genutzt wird. Mit der Nutzung der App oder der Buchung eines Coachings erklärt die Nutzerin ihr Einverständnis mit diesen AGB.</p>
 
-  <h3>2.1 App „TerraLuna"</h3>
-  <p>Die App bietet unter anderem:</p>
-  <ul>
-    <li>Lebensmittel-Datenbank mit Verträglichkeitsbewertungen</li>
-    <li>Rezepte (glutenfrei, ohne Industriezucker)</li>
-    <li>Barcode + Food Scanner (Barcode-Scan und KI-Foto-Analyse)</li>
-    <li>Analyse für Histamin, Gluten, Laktose, Fructose, Sorbit, FODMAP</li>
-    <li>Personalisierte Alternativen und Anpassungsvorschläge</li>
-    <li>Zyklustracker</li>
-    <li>Tagebuch</li>
-    <li>Workout-Empfehlungen</li>
-    <li>Supplement-Empfehlungen</li>
-    <li>Einkaufslisten</li>
-    <li>Restaurant-Kommunikation</li>
-    <li>SOS-Karten</li>
-    <li>Lernbibliothek</li>
-  </ul>
-  <p><strong>Wichtig:</strong> Die App stellt keine medizinische Beratung, Diagnose oder Therapie dar. Alle Inhalte sind Orientierungshilfen.</p>
+    <h2>§ 2 Leistungsbeschreibung</h2>
 
-  <h3>2.2 Coaching „Seelenbauch"</h3>
-  <p>Das Coaching umfasst eine 1:1-Begleitung zu den Themen Histaminintoleranz und Unverträglichkeiten, Angst vor dem Essen (Food Anxiety) und Inneres Kind. Das Coaching ist keine medizinische Behandlung, Psychotherapie oder Heilbehandlung.</p>
+    <h3>2.1 App „TerraLuna"</h3>
+    <p>Die App bietet unter anderem:</p>
+    <ul>
+      <li>Lebensmittel-Datenbank mit Verträglichkeitsbewertungen</li>
+      <li>Rezepte (glutenfrei, ohne Industriezucker)</li>
+      <li>Barcode + Food Scanner (Barcode-Scan und KI-Foto-Analyse)</li>
+      <li>Analyse für Histamin, Gluten, Laktose, Fructose, Sorbit, FODMAP</li>
+      <li>Personalisierte Alternativen und Anpassungsvorschläge</li>
+      <li>Zyklustracker</li>
+      <li>Tagebuch</li>
+      <li>Workout-Empfehlungen</li>
+      <li>Supplement-Empfehlungen</li>
+      <li>Einkaufslisten</li>
+      <li>Restaurant-Kommunikation</li>
+      <li>SOS-Karten</li>
+      <li>Lernbibliothek</li>
+    </ul>
+    <p><strong>Wichtig:</strong> Die App stellt keine medizinische Beratung, Diagnose oder Therapie dar. Alle Inhalte sind Orientierungshilfen.</p>
 
-  <h3>2.3 Digitale Produkte</h3>
-  <p>E-Books und Affirmationskarten werden als digitale Downloads angeboten. Die Kaufabwicklung für E-Books erfolgt aktuell manuell per E-Mail (siehe § 5b). Affirmationskarten und weitere digitale Produkte werden separat ausgewiesen.</p>
+    <h3>2.2 Coaching „Seelenbauch"</h3>
+    <p>Das Coaching umfasst eine 1:1-Begleitung zu den Themen Histaminintoleranz und Unverträglichkeiten, Angst vor dem Essen (Food Anxiety) und Inneres Kind. Das Coaching ist keine medizinische Behandlung, Psychotherapie oder Heilbehandlung.</p>
 
-  <h2>§ 3 Vertragsschluss und Registrierung</h2>
-  <p>Der Vertrag kommt durch Download und erstmalige Nutzung der App zustande. Kostenpflichtige Funktionen erfordern ein Abonnement. Mindestalter: 16 Jahre (unter 16 mit Einverständnis der Erziehungsberechtigten).</p>
+    <h3>2.3 Digitale Produkte</h3>
+    <p>E-Books und Affirmationskarten werden als digitale Downloads angeboten. Die Kaufabwicklung für E-Books erfolgt aktuell manuell per E-Mail (siehe § 5b). Affirmationskarten und weitere digitale Produkte werden separat ausgewiesen.</p>
 
-  <h2>§ 4 Kostenlose Demo-Nutzung</h2>
-  <p>Die App kann ohne Abonnement in einem eingeschränkten Demo-Modus genutzt werden. Folgende Inhalte sind dauerhaft kostenlos:</p>
-  <ul>
-    <li>SOS-Karten bei akuten Beschwerden</li>
-    <li>Medizinische Hinweise und Disclaimer</li>
-  </ul>
-  <p>Weitere Funktionen sind im Demo-Modus eingeschränkt sichtbar und benötigen für die volle Nutzung das Vollmond-Abonnement.</p>
+    <h2>§ 3 Vertragsschluss und Registrierung</h2>
+    <p>Der Vertrag kommt durch Download und erstmalige Nutzung der App zustande. Kostenpflichtige Funktionen erfordern ein Abonnement. Mindestalter: 16 Jahre (unter 16 mit Einverständnis der Erziehungsberechtigten).</p>
 
-  <h2>§ 5 Kostenpflichtiger Tarif (Vollmond)</h2>
-  <p><strong>Vollmond:</strong> 4,99 €/Monat oder 39,99 €/Jahr</p>
-  <p><strong>Kostenlose Testphase:</strong> 3 Tage gratis bei Erstabschluss durch Neukundinnen und Neukunden.</p>
-  <p>Die Zahlung erfolgt über den Apple App Store oder Google Play Store. Das Abonnement verlängert sich automatisch zum gleichen Preis, sofern nicht mindestens 24 Stunden vor Ende der aktuellen Laufzeit über die Einstellungen des jeweiligen Stores gekündigt wird. Alle Preise verstehen sich inklusive Mehrwertsteuer.</p>
-  <p>Bestandsabos aus früheren Versionen der App (Halbmond, Supermond Lifetime) bleiben gültig und werden auf den vollen Funktionsumfang gemappt. Eine Neuanlage dieser Tarife ist nicht mehr möglich.</p>
+    <h2>§ 4 Kostenlose Demo-Nutzung</h2>
+    <p>Die App kann ohne Abonnement in einem eingeschränkten Demo-Modus genutzt werden. Folgende Inhalte sind dauerhaft kostenlos:</p>
+    <ul>
+      <li>SOS-Karten bei akuten Beschwerden</li>
+      <li>Medizinische Hinweise und Disclaimer</li>
+    </ul>
+    <p>Weitere Funktionen sind im Demo-Modus eingeschränkt sichtbar und benötigen für die volle Nutzung das Vollmond-Abonnement.</p>
 
-  <h2>§ 5a Seelenbauch Masterclass</h2>
-  <p>Die Seelenbauch Masterclass ist ein digitales Bildungsprodukt und wird in drei Paketen angeboten:</p>
-  <p><strong>Essentials:</strong> 249 € einmalig. Enthält: Alle E-Books (Premium), Seelenbauch Workbook, TerraLuna App Vollmond (1 Jahr), 10 Erklärvideos, Zugang zu Updates.</p>
-  <p><strong>Masterclass:</strong> 449 € einmalig. Enthält: Alles aus Essentials, WhatsApp-Community, monatliche Live-Calls, persönliche Willkommens-Sprachnachricht, monatliche Safe-Food-Empfehlung, Einkaufslisten, Partner-Rabattcodes.</p>
-  <p><strong>VIP:</strong> 699 € einmalig. Enthält: Alles aus Masterclass, 2x 1:1 Coaching mit Julia (je 45 Min), Notfallbox per Post, TerraLuna App Supermond (Lifetime), Wear Your Healing Charm 30% Rabatt, Prioritäts-Support per WhatsApp.</p>
+    <h2>§ 5 Kostenpflichtiger Tarif (Vollmond)</h2>
+    <p><strong>Vollmond:</strong> 4,99 €/Monat oder 39,99 €/Jahr</p>
+    <p><strong>Kostenlose Testphase:</strong> 3 Tage gratis bei Erstabschluss durch Neukundinnen und Neukunden.</p>
+    <p>Die Zahlung erfolgt über den Apple App Store oder Google Play Store. Das Abonnement verlängert sich automatisch zum gleichen Preis, sofern nicht mindestens 24 Stunden vor Ende der aktuellen Laufzeit über die Einstellungen des jeweiligen Stores gekündigt wird. Alle Preise verstehen sich inklusive Mehrwertsteuer.</p>
+    <p>Bestandsabos aus früheren Versionen der App (Halbmond, Supermond Lifetime) bleiben gültig und werden auf den vollen Funktionsumfang gemappt. Eine Neuanlage dieser Tarife ist nicht mehr möglich.</p>
 
-  <h3>§ 5a.1 Lifetime-Zugang</h3>
-  <p>"Lifetime" bedeutet: Zugang zu den digitalen Inhalten der Masterclass, solange das Unternehmen Julia Bergles / TerraLuna besteht. Die Anbieterin garantiert einen Mindestzugang von 3 Jahren ab Kaufdatum.</p>
-  <p>Sollte das Unternehmen innerhalb der ersten 3 Jahre nach Kauf eingestellt werden, erhalten Käuferinnen eine einmalige Rückzahlung von 50 €. Der Anspruch gilt nur für das Masterclass- und VIP-Paket.</p>
-  <p>Der WhatsApp-Community-Zugang besteht so lange die Community aktiv betrieben wird. Die Anbieterin behält sich vor, die Plattform zu wechseln (z.B. von WhatsApp zu Telegram), informiert darüber jedoch rechtzeitig.</p>
+    <h2>§ 5a Seelenbauch Masterclass</h2>
+    <p>Die Seelenbauch Masterclass ist ein digitales Bildungsprodukt und wird in drei Paketen angeboten:</p>
+    <p><strong>Essentials:</strong> 249 € einmalig. Enthält: Alle E-Books (Premium), Seelenbauch Workbook, TerraLuna App Vollmond (1 Jahr), 10 Erklärvideos, Zugang zu Updates.</p>
+    <p><strong>Masterclass:</strong> 449 € einmalig. Enthält: Alles aus Essentials, WhatsApp-Community, monatliche Live-Calls, persönliche Willkommens-Sprachnachricht, monatliche Safe-Food-Empfehlung, Einkaufslisten, Partner-Rabattcodes.</p>
+    <p><strong>VIP:</strong> 699 € einmalig. Enthält: Alles aus Masterclass, 2x 1:1 Coaching mit Julia (je 45 Min), Notfallbox per Post, TerraLuna App Supermond (Lifetime), Wear Your Healing Charm 30% Rabatt, Prioritäts-Support per WhatsApp.</p>
 
-  <h3>§ 5a.2 Coaching (VIP)</h3>
-  <p>Das VIP-Paket enthält 2 Coaching-Calls (je 45 Minuten). Die Calls finden per Videogespräch (Zoom oder vergleichbar) statt. Terminvereinbarung per E-Mail. Calls müssen innerhalb von 6 Monaten nach Kauf eingelöst werden.</p>
-  <p>Stornierung eines Calls: Bis 48 Stunden vorher kostenlos. Bei kurzfristiger Absage (unter 48 Stunden) verfällt der Call, sofern keine Krankheit vorliegt.</p>
+    <h3>§ 5a.1 Lifetime-Zugang</h3>
+    <p>"Lifetime" bedeutet: Zugang zu den digitalen Inhalten der Masterclass, solange das Unternehmen Julia Bergles / TerraLuna besteht. Die Anbieterin garantiert einen Mindestzugang von 3 Jahren ab Kaufdatum.</p>
+    <p>Sollte das Unternehmen innerhalb der ersten 3 Jahre nach Kauf eingestellt werden, erhalten Käuferinnen eine einmalige Rückzahlung von 50 €. Der Anspruch gilt nur für das Masterclass- und VIP-Paket.</p>
+    <p>Der WhatsApp-Community-Zugang besteht so lange die Community aktiv betrieben wird. Die Anbieterin behält sich vor, die Plattform zu wechseln (z.B. von WhatsApp zu Telegram), informiert darüber jedoch rechtzeitig.</p>
 
-  <h3>§ 5a.3 Notfallbox (VIP)</h3>
-  <p>Die physische Notfallbox wird einmalig per Post versendet. Versand innerhalb Deutschlands. Lieferzeit: 2-4 Wochen nach Kaufdatum. Inhalt kann variieren.</p>
+    <h3>§ 5a.2 Coaching (VIP)</h3>
+    <p>Das VIP-Paket enthält 2 Coaching-Calls (je 45 Minuten). Die Calls finden per Videogespräch (Zoom oder vergleichbar) statt. Terminvereinbarung per E-Mail. Calls müssen innerhalb von 6 Monaten nach Kauf eingelöst werden.</p>
+    <p>Stornierung eines Calls: Bis 48 Stunden vorher kostenlos. Bei kurzfristiger Absage (unter 48 Stunden) verfällt der Call, sofern keine Krankheit vorliegt.</p>
 
-  <h3>§ 5a.4 Widerrufsrecht Masterclass</h3>
-  <p>Es besteht ein 14-tägiges Widerrufsrecht ab Kaufdatum. Der Widerruf erfolgt per E-Mail an julia@bergles.net. Das Widerrufsrecht erlischt, wenn die Käuferin bereits auf die digitalen Inhalte (Videos, E-Books, App-Zugang) zugegriffen hat und dem bei Kauf ausdrücklich zugestimmt hat.</p>
+    <h3>§ 5a.3 Notfallbox (VIP)</h3>
+    <p>Die physische Notfallbox wird einmalig per Post versendet. Versand innerhalb Deutschlands. Lieferzeit: 2-4 Wochen nach Kaufdatum. Inhalt kann variieren.</p>
 
-  <h2>§ 5b Verkauf digitaler Produkte (E-Books)</h2>
-  <p>Der Verkauf von E-Books erfolgt aktuell manuell per E-Mail-Bestellung. Der Käufer schickt eine formlose Anfrage an <strong>julia@bergles.net</strong>. Nach Erhalt der Bestellanfrage stellt der Verkäufer eine Rechnung mit den Zahlungsdaten (PayPal oder Bankverbindung). Nach Zahlungseingang (Vorkasse) wird das bestellte E-Book als PDF-Datei per E-Mail an die vom Käufer angegebene E-Mail-Adresse übermittelt.</p>
-  <p>Als Kleinunternehmerin nach § 19 UStG erfolgt der Verkauf ohne Ausweis der Umsatzsteuer.</p>
+    <h3>§ 5a.4 Widerrufsrecht Masterclass</h3>
+    <p>Es besteht ein 14-tägiges Widerrufsrecht ab Kaufdatum. Der Widerruf erfolgt per E-Mail an julia@bergles.net. Das Widerrufsrecht erlischt, wenn die Käuferin bereits auf die digitalen Inhalte (Videos, E-Books, App-Zugang) zugegriffen hat und dem bei Kauf ausdrücklich zugestimmt hat.</p>
 
-  <h3>§ 5b.1 Nutzungslizenz</h3>
-  <p>Mit dem Kauf erhält der Käufer eine persönliche, nicht übertragbare Lizenz zur privaten Nutzung des E-Books. Die Weitergabe, Vervielfältigung, Veröffentlichung oder kommerzielle Nutzung. auch auszugsweise. ist nicht gestattet. Alle Rechte am Werk verbleiben bei der Autorin.</p>
-
-  <h2>§ 6 Kündigung</h2>
-  <p><strong>Kostenloser Tarif:</strong> Jederzeit durch Löschen der App.</p>
-  <p><strong>Kostenpflichtige Abonnements:</strong> Kündigung über die Plattform-Einstellungen (iOS: Einstellungen → Apple-ID → Abonnements; Android: Play Store → Abonnements). Die Kündigung muss mindestens 24 Stunden vor Verlängerung erfolgen. Der Zugang bleibt bis zum Ende des bezahlten Zeitraums bestehen.</p>
-
-  <h2>§ 7 Widerrufsrecht</h2>
-  <p>Es besteht ein 14-tägiges Widerrufsrecht ab Vertragsschluss ohne Angabe von Gründen. Der Widerruf erfolgt per E-Mail an julia@bergles.net. Das Widerrufsrecht erlischt vorzeitig, wenn die Anbieterin mit der Ausführung des Vertrags begonnen hat und die Nutzerin dem ausdrücklich zugestimmt hat. Für In-App-Käufe gelten die Bedingungen des jeweiligen App Stores.</p>
-
-  <h2>§ 8 Coaching. Buchung und Stornierung</h2>
-  <p>Die Buchung erfolgt per Kontaktformular, E-Mail oder WhatsApp. Ein kostenloses Erstgespräch ist unverbindlich.</p>
-  <p><strong>Stornierungsbedingungen:</strong></p>
-  <ul>
-    <li>Mehr als 48 Stunden vorher: kostenlose Stornierung</li>
-    <li>Weniger als 48 Stunden vorher: voller Betrag wird fällig, sofern keine Verschiebung möglich ist</li>
-    <li>Bei Krankheit: Verschiebung möglich</li>
-  </ul>
-  <p>Die Anbieterin kann bei triftigem Grund (z.B. Krankheit) absagen; es wird ein Ersatztermin angeboten oder erstattet. Das Coaching findet standardmäßig per Online-Videogespräch statt.</p>
-
-  <h2>§ 9 Coaching. Haftungsausschluss</h2>
-  <p>Das Coaching „Seelenbauch" ist kein Ersatz für:</p>
-  <ul>
-    <li>Ärztliche Behandlung oder Diagnose</li>
-    <li>Psychotherapie oder psychiatrische Behandlung</li>
-    <li>Ernährungsberatung durch zertifizierte Fachkräfte</li>
-    <li>Heilpraktische Behandlungen</li>
-  </ul>
-  <p>Die Anbieterin ist keine Ärztin, Therapeutin oder zertifizierte Ernährungsberaterin. Empfehlungen basieren auf persönlicher Erfahrung. Das Coaching ersetzt keine laufende medizinische oder therapeutische Behandlung. Die Anbieterin übernimmt keine Haftung für gesundheitliche oder psychische Folgen aus dem Coaching. Coaching-Inhalte sind vertraulich und werden nicht an Dritte weitergegeben.</p>
-
-  <h2>§ 10 Medizinischer Haftungsausschluss</h2>
-  <p>TerraLuna ist keine medizinische Anwendung. Die App ersetzt keine ärztliche Diagnose, Beratung oder Therapie. Alle Informationen sind Orientierungshilfen basierend auf persönlicher Erfahrung und öffentlich zugänglichen Quellen. Verträglichkeiten sind individuell verschieden; die Ampelbewertungen (grün/gelb/rot) sind Richtwerte, keine Garantien. Nutzerinnen sind eigenverantwortlich und sollten bei gesundheitlichen Beschwerden eine Ärztin oder einen Arzt aufsuchen. Die Anbieterin übernimmt keine Haftung für gesundheitliche Folgen. Supplement-Empfehlungen sind als Partnerempfehlungen gekennzeichnet und sollten nur nach Rücksprache mit einer Ärztin eingenommen werden.</p>
-
-  <h2>§ 11 Partnerempfehlungen und Affiliate-Links</h2>
-  <p>Die App enthält Partnerempfehlungen (Affiliate-Links), die mit „✦ Partnerempfehlung" gekennzeichnet sind. Die Anbieterin erhält Provisionen; der Preis für die Nutzerin bleibt gleich.</p>
-  <p><strong>Aktuelle Partner:</strong> HistaFood/HistaNutri, Histaminikus, Aho.bio, Nigela, Yamato Gast/C4 health GmbH.</p>
-  <p>Die Anbieterin empfiehlt ausschließlich selbst verwendete Produkte; ehrliche und kritische Bewertungen sind möglich.</p>
-
-  <h2>§ 12 Geistiges Eigentum</h2>
-  <p>Alle Inhalte der App (Texte, Rezepte, Bewertungen, Grafiken, Datenbanken, Software) sind urheberrechtlich geschützt. Nutzerinnen erhalten ein nicht übertragbares Nutzungsrecht für persönliche, nicht-kommerzielle Nutzung.</p>
-  <p>Untersagt ist: Kopieren, Reproduzieren oder Teilen von Inhalten; kommerzielle Nutzung der Rezepte oder Datenbank; Reverse Engineering. Rezeptfotos und Texte von Julia Bergles/Smacado bedürfen einer Genehmigung.</p>
-
-  <h2>§ 13 Datenschutz</h2>
-  <p>Die Datenverarbeitung erfolgt gemäß der <a href="datenschutz.html" style="color: var(--wine);">Datenschutzerklärung</a> (einsehbar in der App und auf der Website). Gesundheitsdaten (Zyklus, Symptome, Verträglichkeiten) werden ausschließlich lokal auf dem Gerät gespeichert.</p>
-
-  <h2>§ 14 Haftungsbeschränkung</h2>
-  <p>Die Anbieterin haftet für Schäden an Leben, Körper oder Gesundheit aus fahrlässiger oder vorsätzlicher Pflichtverletzung. Bei sonstigen Schäden haftet die Anbieterin nur bei Vorsatz oder grober Fahrlässigkeit.</p>
-  <p>Keine Gewähr für: ununterbrochene App-Verfügbarkeit, Richtigkeit der Lebensmittelbewertungen, Aktualität der Supermarkt-Sortimente und Restaurant-Informationen, Ergebnisse des Barcode + Food Scanners (Barcode-Analyse basiert auf Open Food Facts, Foto-Analyse auf KI-Bilderkennung).</p>
-  <p>Bei leichter Fahrlässigkeit ist die Haftung auf vorhersehbare, vertragstypische Schäden begrenzt, soweit gesetzlich zulässig.</p>
-
-  <h2>§ 15 Verfügbarkeit und Änderungen</h2>
-  <p>Die Anbieterin bemüht sich um unterbrechungsfreie App-Verfügbarkeit, kann diese jedoch nicht garantieren. Es besteht das Recht, die App jederzeit zu ändern, zu erweitern oder einzustellen. Bei wesentlichen Änderungen kostenpflichtiger Funktionen erfolgt eine vorherige Benachrichtigung.</p>
-
-  <h2>§ 16 Schlussbestimmungen</h2>
-  <p>Es gilt deutsches Recht. Salvatorische Klausel: Die Unwirksamkeit einzelner Bestimmungen berührt nicht die Wirksamkeit der übrigen. AGB können zukünftig geändert werden; die weitere Nutzung gilt als Zustimmung. Gerichtsstand ist der Wohnsitz der Anbieterin, soweit gesetzlich zulässig.</p>
-
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Julia Bergles</div>
-    <div class="footer-links">
-      <a href="index.html">Startseite</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="agb.html">AGB</a>
-      <a href="widerruf.html">Widerrufsbelehrung</a>
-      <a href="datenschutz.html">Datenschutzerklärung</a>
+    <div class="editorial-card mint" style="margin: 32px 0;">
+      <h3 style="margin-top: 0;">§ 5b Verkauf digitaler Produkte (E-Books)</h3>
+      <p>Der Verkauf von E-Books erfolgt aktuell manuell per E-Mail-Bestellung. Der Käufer schickt eine formlose Anfrage an <strong>julia@bergles.net</strong>. Nach Erhalt der Bestellanfrage stellt der Verkäufer eine Rechnung mit den Zahlungsdaten (PayPal oder Bankverbindung). Nach Zahlungseingang (Vorkasse) wird das bestellte E-Book als PDF-Datei per E-Mail an die vom Käufer angegebene E-Mail-Adresse übermittelt.</p>
+      <p style="margin-bottom: 0;">Als Kleinunternehmerin nach § 19 UStG erfolgt der Verkauf ohne Ausweis der Umsatzsteuer.</p>
     </div>
-    <div class="footer-disclaimer">
-      © 2024–2026 Smacado
+
+    <h3>§ 5b.1 Nutzungslizenz</h3>
+    <p>Mit dem Kauf erhält der Käufer eine persönliche, nicht übertragbare Lizenz zur privaten Nutzung des E-Books. Die Weitergabe, Vervielfältigung, Veröffentlichung oder kommerzielle Nutzung. auch auszugsweise. ist nicht gestattet. Alle Rechte am Werk verbleiben bei der Autorin.</p>
+
+    <h2>§ 6 Kündigung</h2>
+    <p><strong>Kostenloser Tarif:</strong> Jederzeit durch Löschen der App.</p>
+    <p><strong>Kostenpflichtige Abonnements:</strong> Kündigung über die Plattform-Einstellungen (iOS: Einstellungen → Apple-ID → Abonnements; Android: Play Store → Abonnements). Die Kündigung muss mindestens 24 Stunden vor Verlängerung erfolgen. Der Zugang bleibt bis zum Ende des bezahlten Zeitraums bestehen.</p>
+
+    <h2>§ 7 Widerrufsrecht</h2>
+    <p>Es besteht ein 14-tägiges Widerrufsrecht ab Vertragsschluss ohne Angabe von Gründen. Der Widerruf erfolgt per E-Mail an julia@bergles.net. Das Widerrufsrecht erlischt vorzeitig, wenn die Anbieterin mit der Ausführung des Vertrags begonnen hat und die Nutzerin dem ausdrücklich zugestimmt hat. Für In-App-Käufe gelten die Bedingungen des jeweiligen App Stores.</p>
+
+    <h2>§ 8 Coaching. Buchung und Stornierung</h2>
+    <p>Die Buchung erfolgt per Kontaktformular, E-Mail oder WhatsApp. Ein kostenloses Erstgespräch ist unverbindlich.</p>
+    <p><strong>Stornierungsbedingungen:</strong></p>
+    <ul>
+      <li>Mehr als 48 Stunden vorher: kostenlose Stornierung</li>
+      <li>Weniger als 48 Stunden vorher: voller Betrag wird fällig, sofern keine Verschiebung möglich ist</li>
+      <li>Bei Krankheit: Verschiebung möglich</li>
+    </ul>
+    <p>Die Anbieterin kann bei triftigem Grund (z.B. Krankheit) absagen; es wird ein Ersatztermin angeboten oder erstattet. Das Coaching findet standardmäßig per Online-Videogespräch statt.</p>
+
+    <h2>§ 9 Coaching. Haftungsausschluss</h2>
+    <p>Das Coaching „Seelenbauch" ist kein Ersatz für:</p>
+    <ul>
+      <li>Ärztliche Behandlung oder Diagnose</li>
+      <li>Psychotherapie oder psychiatrische Behandlung</li>
+      <li>Ernährungsberatung durch zertifizierte Fachkräfte</li>
+      <li>Heilpraktische Behandlungen</li>
+    </ul>
+    <p>Die Anbieterin ist keine Ärztin, Therapeutin oder zertifizierte Ernährungsberaterin. Empfehlungen basieren auf persönlicher Erfahrung. Das Coaching ersetzt keine laufende medizinische oder therapeutische Behandlung. Die Anbieterin übernimmt keine Haftung für gesundheitliche oder psychische Folgen aus dem Coaching. Coaching-Inhalte sind vertraulich und werden nicht an Dritte weitergegeben.</p>
+
+    <h2>§ 10 Medizinischer Haftungsausschluss</h2>
+    <p>TerraLuna ist keine medizinische Anwendung. Die App ersetzt keine ärztliche Diagnose, Beratung oder Therapie. Alle Informationen sind Orientierungshilfen basierend auf persönlicher Erfahrung und öffentlich zugänglichen Quellen. Verträglichkeiten sind individuell verschieden; die Ampelbewertungen (grün/gelb/rot) sind Richtwerte, keine Garantien. Nutzerinnen sind eigenverantwortlich und sollten bei gesundheitlichen Beschwerden eine Ärztin oder einen Arzt aufsuchen. Die Anbieterin übernimmt keine Haftung für gesundheitliche Folgen. Supplement-Empfehlungen sind als Partnerempfehlungen gekennzeichnet und sollten nur nach Rücksprache mit einer Ärztin eingenommen werden.</p>
+
+    <h2>§ 11 Partnerempfehlungen und Affiliate-Links</h2>
+    <p>Die App enthält Partnerempfehlungen (Affiliate-Links), die mit „✦ Partnerempfehlung" gekennzeichnet sind. Die Anbieterin erhält Provisionen; der Preis für die Nutzerin bleibt gleich.</p>
+    <p><strong>Aktuelle Partner:</strong> HistaFood/HistaNutri, Histaminikus, Aho.bio, Nigela, Yamato Gast/C4 health GmbH.</p>
+    <p>Die Anbieterin empfiehlt ausschließlich selbst verwendete Produkte; ehrliche und kritische Bewertungen sind möglich.</p>
+
+    <h2>§ 12 Geistiges Eigentum</h2>
+    <p>Alle Inhalte der App (Texte, Rezepte, Bewertungen, Grafiken, Datenbanken, Software) sind urheberrechtlich geschützt. Nutzerinnen erhalten ein nicht übertragbares Nutzungsrecht für persönliche, nicht-kommerzielle Nutzung.</p>
+    <p>Untersagt ist: Kopieren, Reproduzieren oder Teilen von Inhalten; kommerzielle Nutzung der Rezepte oder Datenbank; Reverse Engineering. Rezeptfotos und Texte von Julia Bergles/Smacado bedürfen einer Genehmigung.</p>
+
+    <h2>§ 13 Datenschutz</h2>
+    <p>Die Datenverarbeitung erfolgt gemäß der <a href="datenschutz.html">Datenschutzerklärung</a> (einsehbar in der App und auf der Website). Gesundheitsdaten (Zyklus, Symptome, Verträglichkeiten) werden ausschließlich lokal auf dem Gerät gespeichert.</p>
+
+    <h2>§ 14 Haftungsbeschränkung</h2>
+    <p>Die Anbieterin haftet für Schäden an Leben, Körper oder Gesundheit aus fahrlässiger oder vorsätzlicher Pflichtverletzung. Bei sonstigen Schäden haftet die Anbieterin nur bei Vorsatz oder grober Fahrlässigkeit.</p>
+    <p>Keine Gewähr für: ununterbrochene App-Verfügbarkeit, Richtigkeit der Lebensmittelbewertungen, Aktualität der Supermarkt-Sortimente und Restaurant-Informationen, Ergebnisse des Barcode + Food Scanners (Barcode-Analyse basiert auf Open Food Facts, Foto-Analyse auf KI-Bilderkennung).</p>
+    <p>Bei leichter Fahrlässigkeit ist die Haftung auf vorhersehbare, vertragstypische Schäden begrenzt, soweit gesetzlich zulässig.</p>
+
+    <h2>§ 15 Verfügbarkeit und Änderungen</h2>
+    <p>Die Anbieterin bemüht sich um unterbrechungsfreie App-Verfügbarkeit, kann diese jedoch nicht garantieren. Es besteht das Recht, die App jederzeit zu ändern, zu erweitern oder einzustellen. Bei wesentlichen Änderungen kostenpflichtiger Funktionen erfolgt eine vorherige Benachrichtigung.</p>
+
+    <h2>§ 16 Schlussbestimmungen</h2>
+    <p>Es gilt deutsches Recht. Salvatorische Klausel: Die Unwirksamkeit einzelner Bestimmungen berührt nicht die Wirksamkeit der übrigen. AGB können zukünftig geändert werden; die weitere Nutzung gilt als Zustimmung. Gerichtsstand ist der Wohnsitz der Anbieterin, soweit gesetzlich zulässig.</p>
+
+    <p class="text-mute" style="font-size: 13px; letter-spacing: 0.05em; margin-top: 48px;">Stand: Mai 2026</p>
+
+  </div>
+</section>
+
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="app.html">TerraLuna App</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
     </div>
   </div>
 </footer>
-
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
