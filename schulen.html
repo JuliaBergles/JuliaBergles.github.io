@@ -7,6 +7,64 @@
 <meta name="description" content="Vorträge für Schulen zu PMS, Zyklus, Unverträglichkeiten und Ernährung. 2 Stunden, ehrlich, aus Betroffenen-Perspektive — für Klassen 9-13.">
 <link rel="stylesheet" href="assets/site-v3.css">
 <script defer src="assets/reveal.js"></script>
+<style>
+  .school-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--mint);
+    margin-bottom: 16px;
+  }
+  .school-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--blue-dark);
+    stroke: currentColor;
+    stroke-width: 1.6;
+    fill: none;
+  }
+  .school-icon.copper { background: var(--beige); }
+  .school-icon.copper svg { color: var(--copper-dark); }
+  .portrait-round {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 24px;
+    border: 6px solid var(--cream);
+    box-shadow: 0 12px 40px rgba(42,42,42,0.15);
+  }
+  .portrait-round img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .quote-block {
+    background: var(--beige);
+    padding: 40px 48px;
+    border-left: 4px solid var(--copper);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.5vw, 30px);
+    line-height: 1.35;
+    color: var(--dark);
+    max-width: 720px;
+    margin: 40px auto;
+  }
+  .quote-block cite {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper-dark);
+    margin-top: 20px;
+    font-weight: 700;
+  }
+</style>
 </head>
 <body>
 
@@ -89,16 +147,28 @@
 <!-- Warum ich das mache -->
 <section class="section section-cream">
   <div class="container-narrow">
-    <span class="eyebrow eyebrow-copper">Warum ich das mache</span>
-    <h2 class="mt-sm">Weil <em class="italic">Aufklärung fehlt</em>.</h2>
-    <p class="lead mt-md">
+    <div class="portrait-round">
+      <img src="images/neu-2026-08/IMG_3697.jpg" alt="Julia Bergles Portrait">
+    </div>
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Warum ich das mache</span>
+      <h2 class="mt-sm">Weil <em class="italic">Aufklärung fehlt</em>.</h2>
+    </div>
+    <p class="lead">
       Mit 19 hatte ich einen Darmverschluss. Davor: zwei Jahre Orthorexie, verlorener Geschmack, immer weniger Essen, immer mehr Sport. Niemand hat mich gewarnt. Niemand hat mir gesagt: „Das ist gefährlich." Niemand hat mir Zyklus, Unverträglichkeiten oder Ernährung so erklärt, dass ich es verstanden hätte.
     </p>
     <p class="mt-md">
       Heute rede ich in Schulen über all das — bevor es zu spät ist. Ich bin 20. Ich bin nah dran an deinen Schülerinnen. Ich rede so, wie ich damals hätte hören wollen: ehrlich, direkt, ohne Coach-Sprech.
     </p>
+    <blockquote class="quote-block">
+      „Sowas hätte ich früher gerne gewusst. Weil ich stand komplett alleine da."
+      <cite>— Julia, 20 Jahre alt</cite>
+    </blockquote>
   </div>
 </section>
+
+<!-- Full-Bleed Bild -->
+<img class="full-image" src="ebook-reisen/bilder/Header-Startseite.jpg" alt="Julia im blauen Kleid">
 
 <!-- Was ich anbiete -->
 <section class="section section-mint">
@@ -153,36 +223,54 @@
 
     <div class="grid-2 mt-lg">
       <div class="editorial-card">
+        <div class="school-icon copper">
+          <svg viewBox="0 0 24 24"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 4v14a2 2 0 0 0 2 2h14"/></svg>
+        </div>
         <span class="chapter-num">01</span>
         <h3 class="mt-sm">Meine Geschichte</h3>
         <p class="mt-md">Vom Corona-Geschmacksverlust zum Darmverschluss. Was schiefging, was mir gefehlt hat, was ich heute weiß.</p>
       </div>
 
       <div class="editorial-card">
+        <div class="school-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg>
+        </div>
         <span class="chapter-num">02</span>
         <h3 class="mt-sm">Zyklus &amp; PMS</h3>
         <p class="mt-md">Was passiert im Körper. Warum PMS nicht „normal ist". Wie ihr euren Zyklus verstehen könnt.</p>
       </div>
 
       <div class="editorial-card">
+        <div class="school-icon copper">
+          <svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM5 5l7 7 7-7"/></svg>
+        </div>
         <span class="chapter-num">03</span>
         <h3 class="mt-sm">Unverträglichkeiten</h3>
         <p class="mt-md">Histamin, Fructose, Laktose, Gluten — was der Unterschied ist. Und warum es kein Charakter-Fehler ist.</p>
       </div>
 
       <div class="editorial-card">
+        <div class="school-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 12c0-4 4-8 8-8s8 4 8 8"/><path d="M8 12c0-2 2-4 4-4s4 2 4 4"/><circle cx="12" cy="12" r="1.5"/></svg>
+        </div>
         <span class="chapter-num">04</span>
         <h3 class="mt-sm">Auf den Körper hören</h3>
         <p class="mt-md">Signale erkennen bevor's zu spät ist. Warum „einfach durchziehen" gefährlich sein kann.</p>
       </div>
 
       <div class="editorial-card">
+        <div class="school-icon copper">
+          <svg viewBox="0 0 24 24"><path d="M12 3v18M6 8h12M6 16h12"/><circle cx="6" cy="12" r="1.5"/><circle cx="18" cy="12" r="1.5"/></svg>
+        </div>
         <span class="chapter-num">05</span>
         <h3 class="mt-sm">Ernährung ohne Zwang</h3>
         <p class="mt-md">Warum Diäten und „gesund essen" schnell zur Falle werden. Wie Balance geht.</p>
       </div>
 
       <div class="editorial-card">
+        <div class="school-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 6c-4 0-7 3-7 6 0 2 1 3 3 4l-1 4 4-3c4 0 7-2 7-6s-3-5-6-5z"/></svg>
+        </div>
         <span class="chapter-num">06</span>
         <h3 class="mt-sm">Offene Fragerunde</h3>
         <p class="mt-md">Alles kann gefragt werden — anonym oder direkt. Was Jugendliche wirklich wissen wollen.</p>
