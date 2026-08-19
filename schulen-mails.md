@@ -13,6 +13,72 @@
 
 ---
 
+## MAIL 0 — Persönliche Story-Anfrage (Fokus Zyklus-Aufklärung, für weibliche Ansprechpersonen)
+
+**Betreff:** Zyklus-Aufklärung an Schulen — was mir früher gefehlt hat (Julia, 20)
+
+```
+Sehr geehrte Frau [Nachname],
+
+ich bin Julia Bergles, 20 Jahre alt, aus Wehringen bei Augsburg. 
+Ich schreibe Ihnen als Betroffene — mit einem konkreten Anliegen 
+und einer persönlichen Geschichte.
+
+Ich bin selbst noch nicht lang aus der Schule raus. Und was mir 
+in der Schulzeit gefehlt hat, war echte Aufklärung zum Thema 
+Zyklus, PMS und wie Ernährung damit zusammenhängt. Ich wusste 
+nichts. Meine Mitschülerinnen wussten nichts. Und wir haben alle 
+gedacht, dass unsere Beschwerden „normal" sind — bis manche 
+von uns wirklich krank wurden.
+
+Bei mir kam es mit 19 zum Darmverschluss. Davor: zwei Jahre 
+Orthorexie, Sportzwang, immer weniger Essen. Niemand hat mir 
+gesagt, wo die roten Linien sind. Niemand hat mir erklärt, warum 
+mein Zyklus alles verändert. Niemand hat mir gezeigt, dass 
+Unverträglichkeiten kein Charakterfehler sind.
+
+Heute weiß ich: ich war nicht die Einzige. Sehr viele Mädchen 
+haben Probleme mit ihrer Periode — Krämpfe, Stimmungstiefs, 
+Beschwerden, die sie sich nicht erklären können. Und niemand 
+redet drüber.
+
+Deswegen gehe ich heute in Schulen. Ich halte 2-Stunden-Vorträge 
+für Klassen 9-13 über genau die Themen, die mir gefehlt haben:
+• Zyklus und PMS verstehen
+• Unverträglichkeiten (Histamin, Fructose, Laktose)
+• Auf den Körper hören — bevor es zu spät ist
+• Ernährung ohne Zwang
+
+Ich bin keine Ärztin. Ich rede aus Betroffenen-Perspektive. Genau 
+das kommt bei Jugendlichen an — weil ich näher dran bin als 
+klassische Vortragende.
+
+Alle Details, Themen und Konditionen: juliabergles.de/schulen.html
+
+Hätten Sie Interesse an einem unverbindlichen 20-Min-Gespräch, 
+um zu schauen ob so ein Vortrag zu Ihren Präventionsangeboten 
+passen könnte? Ich richte mich zeitlich nach Ihnen.
+
+Danke, dass Sie das lesen — und für Ihre Arbeit mit jungen Menschen.
+
+Liebe Grüße
+Julia Bergles
+
+—
+juliabergles.de · @julia_bergles · julia@bergles.net
+Autorin des E-Books „Die Probe — Reisen mit Histamin & MCAS"
+Gründerin der TerraLuna App
+```
+
+**Warum das funktioniert:**
+- Persönliche Geschichte VORWEG (nicht am Ende)
+- Sie erkennt sich als Ansprechperson wieder (Beratungslehrer:in kennt betroffene Mädchen)
+- Kein Verkaufsdruck — kein Preis in Mail 1
+- Konkreter nächster Schritt (20-Min-Gespräch)
+- Warme, respektvolle Ansprache am Ende
+
+---
+
 ## MAIL 1 — Erst-Anfrage an Beratungslehrer:in / Schulsozialpädagogik
 
 **Betreff:** Vortrags-Angebot: PMS, Zyklus, Unverträglichkeiten — von einer Betroffenen (20)
@@ -208,6 +274,43 @@ Wärst du grundsätzlich offen für so ein Format?
 Liebe Grüße
 Julia
 ```
+
+---
+
+## MAIL 5b — Persönliche Kurz-Version (wenn du an weibliche Kontakte direkt schreibst)
+
+**Betreff:** Zyklus-Aufklärung für Mädchen — von einer Betroffenen (20)
+
+```
+Hi [Vorname],
+
+kurz zu mir: Ich bin Julia, 20, und hätte mir in meiner 
+Schulzeit gewünscht, dass mir jemand erklärt, was Zyklus, PMS 
+und Ernährung mit meinem Körper machen. Hat niemand. Mit 19 
+hatte ich einen Darmverschluss.
+
+Heute gehe ich in Schulen und rede über genau das — 
+Betroffenen-Perspektive, ehrlich, für Klassen 9-13. 
+2-Stunden-Vortrag, 400-600 €.
+
+Warum ich dir schreibe: sehr viele Mädchen kämpfen mit ihrer 
+Periode, mit Beschwerden, mit Ernährungs-Fragen — und 
+bekommen keine Antworten. Vielleicht ist das ein Thema für 
+eure Schule?
+
+Alle Details: juliabergles.de/schulen.html
+
+Lass uns kurz reden — kostet dich nix. Wär interessant für 
+euch?
+
+Liebe Grüße
+Julia
+```
+
+**Nutze das wenn:**
+- Du eine persönliche Kontakt-Person hast (z.B. Bekannte, Kollegin)
+- Der Ton informeller sein darf
+- Die Person eher in Ehrenamt / Elternbeirat aktiv ist
 
 ---
 
