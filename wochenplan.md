@@ -36,11 +36,11 @@ Jedes Post fällt in EINE Säule. Verteilung übers Monat:
 | Tag | Was | Format |
 |-----|-----|--------|
 | **Mo** | **Day in my Life** — mein Alltag mit Histamin & Selbständigkeit | DILY-Reel (30-60 Sek) |
-| **Di** | **PMS/Zyklus** — Wissen, Alltag, Zusammenhänge Östrogen-Histamin | Karussell oder Reel |
+| **Di** | **PMS/Zyklus** — kurz und knackig, wenig reden. Beispiel: „Wie hängen PMS und Histamin zusammen?" | Kurzes Karussell (max 5 Slides) oder kurzes Reel (15-30 Sek) |
 | **Mi** | **Talk-Mittwoch** — offener Talk (Depressionen, mentale Gesundheit, wie es mir geht) + Recovery-Beitrag | Talk-Reel (60-90 Sek) oder Karussell mit persönlicher Story + Recovery-Learning |
 | **Do** | **Histamin-Wissen + App** — Wusstest-du-Content mit App-Verknüpfung | Karussell (Save-Content) |
 | **Fr** | **Thema Ärzte** — „Ärzte verstehen einen nicht", POV, Systemkritik | POV-Reel (15-30 Sek) |
-| **Sa** | **Day in my Life** — leichtes Wochenend-DILY (aus Batch, wenig Aufwand) | Reel oder Story-Highlight |
+| **Sa** | **POV-Reel** — aus dem POV-Vault (30+ Ideen fertig) | POV-Reel (15-30 Sek, Trend-Audio, Text-Overlay) |
 | **So (Woche 1, 2, 3, 5)** | **Rezept-Sonntag** — passend zur Zutat-Woche | **Beitrag (Foto) + Reel** (zwei Posts) |
 | **So (Woche 4)** | **Live-Cooking-Event** (60-75 Min) | Instagram-Live + optional Zoom-Ticket |
 | **Täglich** | 2-4 Stories | Alltag, Behind-the-Scenes, Sticker |
