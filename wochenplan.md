@@ -469,6 +469,40 @@ Motivations-Post, aber ehrlich statt Hustle-Kitsch.
 
 ---
 
+## NEUE SERIE: „Wusstest du...?" — Learning-Beiträge (2x/Woche)
+
+**Format:** Karussell mit 5-8 Slides. Klare Wissens-Vermittlung mit Cliffhanger-Struktur.
+
+**Wann posten:** Dienstag + Donnerstag (deep-Content-Tage). Immer als Karussell für SAVES.
+
+**Themen-Vault (starte hier — 12+ Themen):**
+
+1. Unterschied **Allergie vs. Unverträglichkeit**
+2. **DAO-Enzym** — was ist das, warum baut es Histamin ab
+3. **Östrogen + Histamin** — der Zyklus-Zusammenhang bei PMS
+4. **Reifer Käse** — warum voll mit Histamin
+5. **Warum du abends** Histamin schlechter verträgst
+6. **Fructose vs. Fructan vs. Sorbit** — der Unterschied
+7. **Wein** — warum besonders kritisch bei HIT
+8. **Fermentierte Lebensmittel** — Sauerkraut, Kefir, Kombucha
+9. **MCAS vs. HIT** — worin unterscheiden sie sich
+10. **Reizdarm** — was passiert da eigentlich
+11. **Die 10 histaminreichsten Lebensmittel**
+12. **DAO-Enzym-Booster** — was hilft, es zu unterstützen
+13. **Was Stress mit deinem Darm macht**
+14. **Warum Frauen häufiger HIT haben als Männer**
+15. **Das Fass-ohne-Boden-Modell** (dein Zitat: „Histamin ist ein Fass ohne Boden")
+
+**Cliffhanger-Struktur pro Karussell:**
+- Slide 1: **Hook** — „Wusstest du dass Allergie und Unverträglichkeit zwei komplett verschiedene Sachen sind?"
+- Slide 2: **Setup** — Kurze Erklärung Allergie (Immunsystem-Reaktion)
+- Slide 3: **Cliffhanger** — „Und was ist dann Unverträglichkeit? Das ist wichtig zu verstehen..."
+- Slide 4-6: **Payoff** — Erklärung Unverträglichkeit, Beispiele, was das für den Alltag heißt
+- Slide 7: **Zusammenfassung** — Kernaussage in einem Satz
+- Slide 8: **CTA** — „Speichern für später — du wirst es brauchen"
+
+---
+
 ## Cliffhanger-Content-Formel (Eileen-Style)
 
 **Jeder starker Post folgt dieser Struktur:**
