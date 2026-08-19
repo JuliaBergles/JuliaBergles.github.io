@@ -31,24 +31,118 @@ Jedes Post fällt in EINE Säule. Verteilung übers Monat:
 
 ---
 
-## Wochenplan
+## Wochenplan (Julias finaler Rhythmus)
 
-**Ambitioniert (durchziehen wenn möglich):**
+| Tag | Was | Format |
+|-----|-----|--------|
+| **Mo** | **Day in my Life** — mein Alltag mit Histamin & Selbständigkeit | DILY-Reel (30-60 Sek) |
+| **Di** | **Zyklus-Dienstag** — PMS, Östrogen-Histamin, was Frauen wissen müssen | Karussell oder Reel |
+| **Mi** | **Talk-Mittwoch** — meine Geschichte in Folgen erzählt (Storytelling-Serie) | Reel 60-90 Sek oder Karussell |
+| **Do** | **Histamin-Learning + App** — Wusstest-du-Content mit App-Verknüpfung | Karussell (Save-Content) |
+| **Fr** | **Reel „Ärzte verstehen einen nicht"** — POV, Systemkritik, ehrliche Momente | POV-Reel (15-30 Sek) |
+| **Sa** | **OFF** | Erholung, kein Content |
+| **So (Woche 1, 2, 3, 5)** | **Rezept-Sonntag** — passend zur Zutat-Woche | Reel oder Karussell |
+| **So (Woche 4)** | **Live-Cooking-Event** (60-75 Min) | Instagram-Live + optional Zoom-Ticket |
+| **Täglich** | 2-4 Stories | Alltag, Behind-the-Scenes, Sticker |
 
-| Tag | Was | Aufwand |
-|-----|-----|---------|
-| **Mo** | POV-Reel (aus POV-Vault) | 10 Min posten (Content aus Batch) |
-| **Di** | Klassischer Beitrag (Foto oder Zitat-Karussell) | 10 Min |
-| **Mi** | DILY-Reel oder „So arbeite ich"-Reel | 15 Min |
-| **Do** | Karussell (deeper Content, SAVES-driven) | 15 Min |
-| **Fr** | Story-Q&A (Sticker „Frag mich!") | 20 Min |
-| **Sa** | OFF — heilig | 0 |
-| **So (Woche 1, 2, 3, 5)** | Rezept-Sonntag (Reel oder Karussell) | 15 Min |
-| **So (Woche 4)** | Live-Cooking-Event 60 Min | Live |
-| **Täglich** | 2-4 Stories | 15 Min verteilt |
+**Insgesamt:** 6 Feed-Posts/Woche + tägliche Stories + monatliches Live-Event.
 
-**Realistisch für den Start (erste 4 Wochen):**
-Reduziere auf 5 Content-Stücke/Woche (Mo POV + Mi DILY + Do Karussell + So Rezept + 1 Wildcard). Wenn du das durchziehst, hochskalieren.
+---
+
+## Events & Calls (monatlich)
+
+### Walk-and-Talk (kostenlos, 1x/Monat)
+- Instagram-Live während Julia spazieren geht
+- Community stellt Fragen live
+- 30-45 Min, entspannter Sonntagabend
+- Format perfekt: authentisch, ungeschminkt, low-effort
+- Wachstums-Booster (Meta pusht Live-Content in der Reichweite)
+
+### Kostenpflichtige Themen-Live-Events (1x/Monat, rotierend)
+Zoom-Webinar, 60-90 Min, 15-25 € pro Person, 20-50 Teilnehmerinnen.
+
+**Themen (rotieren monatlich):**
+1. **„Histamin erklärt — von einer Betroffenen"** (Basics + Meine Erfahrungen)
+2. **„Zyklus und Histamin — der unterschätzte Zusammenhang"** (PMS-Woche, Östrogen, was hilft)
+3. **„Was mir bei meinen Depressionen geholfen hat"** (Mental Health, Recovery)
+4. **„Bauchgesundheit im Alltag — was wirklich hilft"**
+5. **„Reisen mit chronischer Krankheit"** (aufbauend auf E-Book „Die Probe")
+6. **„Selbständigkeit mit chronischer Krankheit"** (Business-Angle)
+
+**Am Ende jedes Events:** App + Kurs (später) + E-Books natürlich einbauen — nicht als Sales-Pitch, sondern als „Wenn du tiefer einsteigen willst, findest du hier mehr."
+
+**Preis-Kalkulation:**
+- 25 Personen × 19 € = 475 €/Event
+- 12 Events/Jahr = 5.700 €/Jahr Zusatzumsatz
+- Zusätzlich: gewonnene Follower + E-Book-Verkäufe im Anschluss
+
+---
+
+## Content-Kadenz (was wann rausgeht)
+
+| Frequenz | Was |
+|----------|-----|
+| **Täglich** | Stories (2-4) + Feed-Post |
+| **Wöchentlich** | Rezept-Sonntag (Wochen 1, 2, 3, 5) |
+| **Monatlich** | Live-Cooking (4. Sonntag) · Walk-and-Talk (kostenlos) · Themen-Event (kostenpflichtig) · Podcast-Auftritt (extern) · Newsletter |
+| **Alle 2 Monate** | 1 YouTube-Video (Rezept-Zusammenschnitt oder Talking-Head) |
+| **Alle 2-3 Monate** | Neues E-Book |
+| **Halbjährlich** | Kochbuch-Launch, Kurs-Launch, Business-Retrospektive |
+
+**Zu deinem Wunsch „jeden Monat ein neues E-Book":**
+Realistisch nicht schaffbar bei deiner sonstigen Auslastung. Ehrlich: **1 E-Book alle 2-3 Monate**. Sonst leidet Qualität. Deine Zielgruppe kauft lieber 4 gute E-Books pro Jahr als 12 durchschnittliche.
+
+---
+
+## Post-Ideen-Fundus pro Wochentag
+
+### Montag — Day in my Life (rotieren)
+- Ein normaler Selbständigen-Tag
+- Ein PMS-Tag mit mir
+- Ein Reise-Tag
+- Ein Home-Office-Tag mit Bauchweh
+- Ein „mein Bauch ist heute super"-Tag
+
+### Dienstag — Zyklus-Themen
+- „Warum du in der PMS-Woche weniger verträgst"
+- „Meine Zyklus-Routine"
+- „Östrogen + Histamin: der Verstärker"
+- „Was mir bei PMS-Depressionen hilft"
+- „Zyklus-Tracking mit meiner App"
+- „Frauen-Gesundheit wird nicht ernst genommen — meine Erfahrung"
+
+### Mittwoch — Talk-Mittwoch (Meine Geschichte)
+**Storytelling-Serie, 1 Folge/Woche.** Jede Folge nummeriert („Nº 03"). Chronologisch. Bindet Community wie eine Podcast-Reihe.
+
+- **Folge 1:** Wie alles anfing — Corona 2022, Geschmack weg
+- **Folge 2:** Der Geschmacksverlust und die Angst
+- **Folge 3:** Meine Orthorexie kam schleichend
+- **Folge 4:** Die ersten Bauchschmerzen
+- **Folge 5:** 20 Blutabnahmen ohne Ergebnis
+- **Folge 6:** Nur noch 5 Lebensmittel
+- **Folge 7:** Der Darmverschluss mit 19
+- **Folge 8:** Die Diagnose Histamin
+- **Folge 9:** Der lange Weg zurück
+- **Folge 10:** Sport, Angst, Zyklus
+- **Folge 11:** Die App bauen
+- **Folge 12:** Wo ich heute stehe — Rückblick + Zukunft
+
+**Nach 12 Wochen:** Alle Folgen als Story-Highlight („Meine Geschichte") pinnen. Neue Follower können nachverfolgen.
+
+**Recovery-Content** (Meilensteine, kleine Siege) integriert sich hier natürlich in die späteren Folgen (ab Folge 9-12). Zusätzlich Recovery-Momente in DILY-Reels am Montag verpacken.
+
+### Donnerstag — Histamin-Learning (immer mit App-CTA)
+- Wusstest-du-Karussells (siehe Themen-Vault)
+- „So filterst du in meiner App die Ampel"
+- „5 Lebensmittel die überraschend histaminhaltig sind"
+- „DAO-Enzym erklärt"
+
+### Freitag — „Ärzte verstehen einen nicht"
+- POV-Reels über Arzt-Erlebnisse
+- Der Frauenärztin-Dialog
+- „20 Blutabnahmen, nichts gefunden"
+- Systemkritik (Klassengesellschaft, Wartezimmer, Privatpatienten)
+- „Was Ärzte mir NIE gesagt haben"
 
 ---
 
