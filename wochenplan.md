@@ -278,6 +278,57 @@ Was messen:
 
 ---
 
+## NEUE SERIE: „Willkommen in der Serie — Kochen mit ..."
+
+**Format:** Jede Woche (oder alle 2 Wochen) EINE Zutat im Fokus. Zeigst 3-5 Rezepte damit. Community lernt ein ganzes Zutat-Vokabular.
+
+**Content-Ausrollung pro Zutat:**
+- Reel 1 (Montag/Mittwoch): „5 Sachen die du aus [ZUTAT] machen kannst — histaminarm" (Quick-Cuts, 45 Sek)
+- Reel 2 (Rezept-Sonntag): Ein Rezept ausführlich (60 Sek)
+- Karussell: Alle Rezept-Ideen als Übersicht (SAVE-Content)
+- Story-Umfrage am Wochenende: „Welche Zutat nehmen wir nächste Woche?"
+
+**Zutat-Kalender (12 Wochen):**
+
+| Woche | Zutat | Beispiel-Rezepte |
+|-------|-------|------------------|
+| 1 | Süßkartoffel | Salat · Pommes · Bowl · Puffer · Curry · Brownies |
+| 2 | Zucchini | Aufstrich · Pfanne · Suppe · Schoko-Eis · Puffer |
+| 3 | Rote Bete | Teller · Aufstrich · Salat · Bratlinge · Suppe |
+| 4 | Kürbis | Suppe · Ofen · Bowl · Bratlinge · Muffins |
+| 5 | Haferflocken | Porridge · Kekse · Bratlinge · Riegel · Brei |
+| 6 | Carob | Schoko-Etwas · Eis · Brownies · Pralinen · Heiße Schoki |
+| 7 | Quark/Hüttenkäse | Dip · Bowl · Aufstrich · Käsekuchen · Salat |
+| 8 | Kürbiskerne | Aufstrich · Pesto · Topping · Bratlinge · Kekse |
+| 9 | Gurke | Salat · kalt Suppe · Bowl · Aufstrich · Wraps |
+| 10 | Mais/Maiswaffeln | Belag-Ideen · Salat · Süß · Herzhaft · Pizza |
+| 11 | Belugalinsen | Salat · Suppe · Bowl · Frikadellen · Aufstrich |
+| 12 | Reis (gekeimt) | Bowl · Süßspeise · Suppe · Sushi-Style · Reisbrei |
+
+---
+
+## Weitere Serien aus deinen Post-Themen
+
+**„Was Ärzte dir NICHT sagen"** — 1x/Monat als Karussell oder Reel
+Basierend auf ehrlichen Arzt-Erlebnissen (Frauenärztin-Dialog, Diagnosen ohne Ergebnis etc.)
+
+**„Nimm das statt dem"** — alle 2 Wochen kurzes Reel
+Kakao → Carob · Spinat → Mangold · Himbeeren → Heidelbeeren · Milchschokolade → Weiße Schoki (oft OK) · Curry-Gewürze → Histaminikus etc.
+
+**„Meine DM-Favoriten"** — 1x/Monat
+Was du bei DM/Alnatura/Rewe kaufst und wieso. Budget-freundlich, realistisch. HistaFOOD Riegel, Mandelmus, Flohsamenschalen, gefriergetrocknete Heidelbeeren etc.
+
+**„Wenn die Psyche mitspielt"** — 1x/Monat
+Ehrlich zu Depression, Angst, Sportzwang, Orthorexie. Selten in Health-Accounts thematisiert = starkes Alleinstellungsmerkmal.
+
+**„Mein Grundgerüst"** — alle 6 Wochen Karussell
+Die 5-10 Lebensmittel die deine Woche bilden. Ehrlich. Anti-Inszenierung.
+
+**„Bei Bauchschmerzen esse ich..."** — 1x/Monat
+Verlinkt auf deine Bauchschmerz-Tipp-Seite. Zeigt 3 Sachen die dir helfen.
+
+---
+
 ## Content-Ideen-Vault (Reserve wenn dir nix einfällt)
 
 **Karussell-Themen:**
