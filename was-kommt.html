@@ -7,6 +7,120 @@
 <meta name="description" content="Was du diese Woche auf @julia_bergles erwarten kannst — Content-Rhythmus + monatliche Events. Für alle, die dranbleiben wollen.">
 <link rel="stylesheet" href="assets/site-v3.css">
 <script defer src="assets/reveal.js"></script>
+<style>
+  /* Kalender-Grid Sept 2026 */
+  .cal {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .cal-head {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+  .cal-head div {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper-dark);
+    text-align: center;
+    padding: 8px 0;
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  .cal-cell {
+    aspect-ratio: 1;
+    background: var(--beige);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 80px;
+  }
+  .cal-cell.empty { background: transparent; }
+  .cal-cell .day {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--dark);
+    line-height: 1;
+  }
+  .cal-cell .tag {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dark-soft);
+    line-height: 1.2;
+    margin-top: auto;
+  }
+  /* Content-Typ-Farben */
+  .cal-cell.mo { background: #f4ede4; }
+  .cal-cell.di { background: #e2fffe; }
+  .cal-cell.mi { background: #f9e0e6; }
+  .cal-cell.do { background: #e2fffe; }
+  .cal-cell.fr { background: #f4ede4; }
+  .cal-cell.sa { background: #f9e0e6; }
+  .cal-cell.so { background: var(--copper); color: var(--cream); }
+  .cal-cell.so .day, .cal-cell.so .tag { color: var(--cream); }
+  .cal-cell.live { background: var(--blue-dark); color: var(--cream); }
+  .cal-cell.live .day, .cal-cell.live .tag { color: var(--cream); }
+  .cal-cell.event {
+    outline: 3px solid var(--copper);
+    outline-offset: -3px;
+  }
+  .cal-cell.today {
+    box-shadow: 0 0 0 3px var(--dark);
+    transform: scale(1.03);
+    z-index: 2;
+  }
+  .cal-week-highlight {
+    background: rgba(196, 139, 108, 0.08);
+    border-left: 4px solid var(--copper);
+    padding: 20px 24px;
+    margin-top: 24px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--dark);
+  }
+  .cal-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    justify-content: center;
+    margin-top: 24px;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--dark-soft);
+  }
+  .cal-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cal-legend-swatch {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+  }
+  @media (max-width: 640px) {
+    .cal-cell { min-height: 56px; padding: 4px; }
+    .cal-cell .day { font-size: 15px; }
+    .cal-cell .tag { font-size: 7px; letter-spacing: 0.05em; }
+  }
+</style>
 </head>
 <body>
 
@@ -143,10 +257,92 @@
         <h3 class="mt-sm" style="color: var(--cream);">Rezept-Sonntag</h3>
         <p class="mt-md" style="color: rgba(255,252,249,0.9);">Ein neues histaminarmes Rezept — passend zur Zutat der Woche.</p>
       </div>
-      <div class="editorial-card" style="background: var(--blue); color: var(--cream);">
+      <div class="editorial-card" style="background: var(--blue-dark); color: var(--cream);">
         <span class="chapter-num" style="color: rgba(255,252,249,0.85);">Täglich</span>
         <h3 class="mt-sm" style="color: var(--cream);">Stories</h3>
         <p class="mt-md" style="color: rgba(255,252,249,0.9);">Kleine Alltags-Momente, Behind-the-Scenes, Fragen an dich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Full-Bleed Bild -->
+<img class="full-image" src="ebook-reisen/bilder/IMG_4680.jpg" alt="Julia im blauen Kleid">
+
+<!-- KALENDER September 2026 -->
+<!-- HIER ANPASSEN: um andere Woche als "aktuell" zu markieren, class="today" auf die richtigen 7 Zellen setzen -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">September 2026</span>
+      <h2 class="mt-sm">Mein <em class="italic">Kalender</em>.</h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+        Jeden Tag ein anderes Thema. Copper = Rezept-Sonntag · Dunkelblau = Live-Cooking · Rahmen = Themen-Event.
+      </p>
+    </div>
+
+    <div class="cal mt-lg">
+      <div class="cal-head">
+        <div>Mo</div><div>Di</div><div>Mi</div><div>Do</div><div>Fr</div><div>Sa</div><div>So</div>
+      </div>
+      <div class="cal-grid">
+        <!-- Woche 1 (Sep 1-6) — Sep 1 ist Dienstag -->
+        <div class="cal-cell empty"></div>
+        <div class="cal-cell di"><span class="day">1</span><span class="tag">PMS</span></div>
+        <div class="cal-cell mi"><span class="day">2</span><span class="tag">Talk</span></div>
+        <div class="cal-cell do"><span class="day">3</span><span class="tag">Histamin</span></div>
+        <div class="cal-cell fr"><span class="day">4</span><span class="tag">Ärzte</span></div>
+        <div class="cal-cell sa"><span class="day">5</span><span class="tag">POV</span></div>
+        <div class="cal-cell so"><span class="day">6</span><span class="tag">Rezept</span></div>
+
+        <!-- Woche 2 (Sep 7-13) — DIESE WOCHE aktuell markiert -->
+        <div class="cal-cell mo today"><span class="day">7</span><span class="tag">DILY</span></div>
+        <div class="cal-cell di today"><span class="day">8</span><span class="tag">PMS</span></div>
+        <div class="cal-cell mi today"><span class="day">9</span><span class="tag">Talk</span></div>
+        <div class="cal-cell do today"><span class="day">10</span><span class="tag">Histamin</span></div>
+        <div class="cal-cell fr today"><span class="day">11</span><span class="tag">Ärzte</span></div>
+        <div class="cal-cell sa today"><span class="day">12</span><span class="tag">POV</span></div>
+        <div class="cal-cell so today"><span class="day">13</span><span class="tag">Rezept</span></div>
+
+        <!-- Woche 3 (Sep 14-20) — Themen-Event am 15. Sep -->
+        <div class="cal-cell mo"><span class="day">14</span><span class="tag">DILY</span></div>
+        <div class="cal-cell di event"><span class="day">15</span><span class="tag">Zyklus-Event</span></div>
+        <div class="cal-cell mi"><span class="day">16</span><span class="tag">Talk</span></div>
+        <div class="cal-cell do"><span class="day">17</span><span class="tag">Histamin</span></div>
+        <div class="cal-cell fr"><span class="day">18</span><span class="tag">Ärzte</span></div>
+        <div class="cal-cell sa"><span class="day">19</span><span class="tag">POV</span></div>
+        <div class="cal-cell so"><span class="day">20</span><span class="tag">Rezept</span></div>
+
+        <!-- Woche 4 (Sep 21-27) — Live-Cooking Sep 27 -->
+        <div class="cal-cell mo"><span class="day">21</span><span class="tag">DILY</span></div>
+        <div class="cal-cell di"><span class="day">22</span><span class="tag">PMS</span></div>
+        <div class="cal-cell mi"><span class="day">23</span><span class="tag">Talk</span></div>
+        <div class="cal-cell do"><span class="day">24</span><span class="tag">Histamin</span></div>
+        <div class="cal-cell fr"><span class="day">25</span><span class="tag">Ärzte</span></div>
+        <div class="cal-cell sa"><span class="day">26</span><span class="tag">POV</span></div>
+        <div class="cal-cell live"><span class="day">27</span><span class="tag">Live-Cooking</span></div>
+
+        <!-- Woche 5 (Sep 28-30) -->
+        <div class="cal-cell mo"><span class="day">28</span><span class="tag">DILY</span></div>
+        <div class="cal-cell di"><span class="day">29</span><span class="tag">PMS</span></div>
+        <div class="cal-cell mi"><span class="day">30</span><span class="tag">Talk</span></div>
+        <div class="cal-cell empty"></div>
+        <div class="cal-cell empty"></div>
+        <div class="cal-cell empty"></div>
+        <div class="cal-cell empty"></div>
+      </div>
+
+      <div class="cal-week-highlight">
+        <strong>Diese Woche (7. – 13. September):</strong> Zutat der Woche = Süßkartoffel · Rezept-Sonntag am 13. Sep · Nächstes Themen-Event „Zyklus &amp; Histamin" am 15. Sep · 19 €
+      </div>
+
+      <div class="cal-legend">
+        <span class="cal-legend-item"><span class="cal-legend-swatch" style="background: #f4ede4;"></span>Mo / Fr</span>
+        <span class="cal-legend-item"><span class="cal-legend-swatch" style="background: #e2fffe;"></span>Di / Do</span>
+        <span class="cal-legend-item"><span class="cal-legend-swatch" style="background: #f9e0e6;"></span>Mi / Sa</span>
+        <span class="cal-legend-item"><span class="cal-legend-swatch" style="background: var(--copper);"></span>Rezept-Sonntag</span>
+        <span class="cal-legend-item"><span class="cal-legend-swatch" style="background: var(--blue-dark);"></span>Live-Cooking</span>
+        <span class="cal-legend-item"><span class="cal-legend-swatch" style="border: 2px solid var(--copper);"></span>Themen-Event</span>
       </div>
     </div>
   </div>
@@ -178,7 +374,7 @@
         <p class="mt-md" style="font-family: var(--serif); font-style: italic; color: var(--blue-dark);">Instagram-Live + optional Zoom</p>
       </div>
 
-      <div class="editorial-card" style="background: var(--copper); color: var(--cream);">
+      <div class="editorial-card" style="background: var(--blue-dark); color: var(--cream);">
         <span class="chapter-num" style="color: rgba(255,252,249,0.85);">Nº 03 · Themen-Event</span>
         <h3 class="mt-sm" style="color: var(--cream);">Deep-Dive Live</h3>
         <p class="mt-md" style="color: rgba(255,252,249,0.9);">1x im Monat ein tiefes Zoom-Event zu einem Thema — Histamin, Zyklus, Depressionen, Reisen, Selbständigkeit.</p>
@@ -187,6 +383,9 @@
     </div>
   </div>
 </section>
+
+<!-- Full-Bleed Bild -->
+<img class="full-image" src="images/empfehlungen.jpg" alt="Julia mit Pfingstrosen">
 
 <!-- Serien-Übersicht -->
 <section class="section section-cream">
