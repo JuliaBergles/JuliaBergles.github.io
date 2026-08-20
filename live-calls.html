@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Calls · Julia Bergles</title>
+<meta name="description" content="Live Calls mit Julia Bergles — Live-Austausch zu Histamin, Zyklus & Unverträglichkeiten. Immer inklusive passendes E-Book, WhatsApp-Community & Präsentation.">
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
+<style>
+  /* Live-Call-Karte */
+  .call-card {
+    background: white;
+    border: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 0;
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .call-card:hover { box-shadow: 0 20px 60px rgba(42,42,42,0.12); }
+  .call-card.past { opacity: 0.55; }
+  .call-image {
+    background: var(--beige);
+    min-height: 380px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .call-image img { width: 100%; height: 100%; object-fit: cover; }
+  .call-image .placeholder {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--copper-dark);
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+  }
+  .call-body { padding: 44px 40px; display: flex; flex-direction: column; }
+  .call-date {
+    display: inline-block;
+    background: var(--copper);
+    color: var(--cream);
+    padding: 8px 16px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-bottom: 20px;
+  }
+  .call-card.past .call-date { background: var(--mute); }
+  .call-title { font-family: var(--serif); font-size: 32px; font-weight: 500; line-height: 1.1; color: var(--dark); margin-bottom: 8px; }
+  .call-title em { color: var(--copper); font-style: italic; }
+  .call-subtitle { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--mute); margin-bottom: 20px; }
+  .call-desc { color: var(--dark-soft); margin-bottom: 24px; font-size: 15px; line-height: 1.6; }
+  .paket-liste {
+    background: var(--mint);
+    padding: 20px 24px;
+    border-left: 3px solid var(--blue-dark);
+    margin-bottom: 24px;
+    list-style: none;
+  }
+  .paket-liste li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 14px;
+    color: var(--dark);
+  }
+  .paket-liste li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--copper);
+    font-weight: 700;
+  }
+  .paket-liste-title {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue-dark);
+    margin-bottom: 10px;
+  }
+  .call-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .call-price {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--copper);
+  }
+  .call-price small { font-size: 14px; color: var(--mute); font-style: italic; margin-left: 6px; }
+
+  @media (max-width: 768px) {
+    .call-card { grid-template-columns: 1fr; }
+    .call-image { min-height: 240px; }
+    .call-body { padding: 32px 24px; }
+    .call-title { font-size: 26px; }
+    .call-footer { flex-direction: column; gap: 16px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Diagnosen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+        </ul>
+      </li>
+      <li><a href="selbsttest.html">Selbsttest</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+          <li><a href="rezepte/suesses/">Süßes</a></li>
+          <li><a href="rezepte/gebaeck/">Gebäck</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="live-calls.html">Live Calls</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="schulen.html">Schulen</a></li>
+      <li><a href="was-kommt.html">Content</a></li>
+      <li><a href="instagram-insights.html">Instagram</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Empfehlungen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="empfehlungen.html">Marken</a></li>
+          <li><a href="empfehlungen/lebensmittel/">Was ich vertrage</a></li>
+          <li><a href="empfehlungen/tausch/">Tausch-Liste</a></li>
+          <li><a href="empfehlungen/allergien/">Meine Allergien</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="gespraech.html" class="nav-cta">Gespräch</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
+  </div>
+</nav>
+
+<header class="hero-editorial">
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line">Live Calls</span>
+        <p class="lead mt-md" style="max-width: 36ch;">
+          Kein Vortrag von oben.<br>
+          Ein Austausch auf Augenhöhe.
+        </p>
+      </div>
+      <div>
+        <h1 class="display">Live <em class="italic">Calls</em>.</h1>
+        <p class="mt-md" style="max-width: 46ch;">
+          Anderthalb Stunden mit mir per Zoom. Ein Thema. Deine Fragen. Und du bekommst danach das passende E-Book, die Präsentation als PDF und Zugang zur WhatsApp-Community mit dazu.
+        </p>
+        <p class="mt-md" style="max-width: 46ch; font-family: var(--serif); font-style: italic; color: var(--copper); font-size: 20px;">
+          Für alle, die nicht mehr allein damit sein wollen.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="section section-cream">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-copper">Was du bekommst</span>
+    <h2 class="mt-sm">Ein <em class="italic">Paket</em>, das mitwächst.</h2>
+    <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+      Jeder Live Call ist ein komplettes Paket. Live-Zeit mit mir, ein passendes E-Book zum Nachlesen, die Präsentation als PDF zum Behalten — und die WhatsApp-Community, in der du weiter Fragen stellen kannst.
+    </p>
+    <div class="ornament">§</div>
+  </div>
+</section>
+
+<!-- KOMMENDE CALLS -->
+<section class="section section-cream" style="padding-top: 0;">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">Kommende Termine</span>
+      <h2 class="mt-sm">Nächste <em class="italic">Live Calls</em>.</h2>
+    </div>
+
+    <!-- CALL 1: 23.08.2026 - HISTAMIN & ZYKLUS -->
+    <article class="call-card">
+      <div class="call-image">
+        <img src="live-calls-bilder/23-08-histamin-zyklus.jpg" alt="Live Call Histamin & Zyklus" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Bild folgt<br><small style=&quot;font-size:12px; letter-spacing:0.14em; color:var(--mute); text-transform:uppercase; font-family:var(--sans); font-style:normal;&quot;>Julia liefert nach</small></div>'">
+      </div>
+      <div class="call-body">
+        <span class="call-date">Sonntag · 23. August 2026</span>
+        <h3 class="call-title">Histamin &amp; <em>Zyklus</em></h3>
+        <p class="call-subtitle">Warum du in der PMS-Woche plötzlich weniger verträgst.</p>
+        <p class="call-desc">
+          Der Live Call für alle Frauen, die spüren: irgendwas ist zyklisch — nur reden tut niemand darüber. Wir schauen uns an, wie Östrogen und Histamin zusammenhängen, was in welcher Zyklus-Phase im Körper passiert und was mir wirklich geholfen hat.
+        </p>
+        <div class="paket-liste-title">Im Paket enthalten</div>
+        <ul class="paket-liste">
+          <li>1,5 Stunden Live Call per Zoom (inkl. Fragerunde)</li>
+          <li>E-Book „Histamin &amp; Zyklus" (7,99 €) — kommt neu</li>
+          <li>Präsentation als PDF nach dem Call</li>
+          <li>Zugang zur WhatsApp-Community</li>
+        </ul>
+        <div class="call-footer">
+          <div class="call-price">32 €<small>· einmalig</small></div>
+          <a href="mailto:julia@bergles.net?subject=Anmeldung%20Live%20Call%20Histamin%20%26%20Zyklus%2023.08." class="btn btn-copper">Jetzt anmelden</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CALL 2: 27.09.2026 - HISTAMIN PUR -->
+    <article class="call-card">
+      <div class="call-image">
+        <img src="live-calls-bilder/27-09-histamin.jpg" alt="Live Call Histamin" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Bild folgt<br><small style=&quot;font-size:12px; letter-spacing:0.14em; color:var(--mute); text-transform:uppercase; font-family:var(--sans); font-style:normal;&quot;>Julia liefert nach</small></div>'">
+      </div>
+      <div class="call-body">
+        <span class="call-date">Sonntag · 27. September 2026 · 16 Uhr</span>
+        <h3 class="call-title">Nur <em>Histamin</em></h3>
+        <p class="call-subtitle">Was Histaminintoleranz wirklich bedeutet — von einer Betroffenen erklärt.</p>
+        <p class="call-desc">
+          Der Deep Dive nur zu Histamin. DAO-Enzym, das Fass-ohne-Boden-Modell, welche Lebensmittel wirklich problematisch sind, was Stress mit dem Ganzen zu tun hat — und wie ich meinen Alltag heute gestalte, dass er trotzdem lebbar bleibt.
+        </p>
+        <div class="paket-liste-title">Im Paket enthalten</div>
+        <ul class="paket-liste">
+          <li>1,5 Stunden Live Call per Zoom (inkl. Fragerunde)</li>
+          <li>Passendes E-Book zu Histamin</li>
+          <li>Präsentation als PDF nach dem Call</li>
+          <li>Zugang zur WhatsApp-Community</li>
+        </ul>
+        <div class="call-footer">
+          <div class="call-price">32 €<small>· einmalig</small></div>
+          <a href="mailto:julia@bergles.net?subject=Anmeldung%20Live%20Call%20Histamin%2027.09." class="btn btn-copper">Jetzt anmelden</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CALL 3: 20.10.2026 - UNVERTRÄGLICHKEITEN -->
+    <article class="call-card">
+      <div class="call-image">
+        <img src="live-calls-bilder/20-10-unvertraeglichkeiten.jpg" alt="Live Call Unverträglichkeiten" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Bild folgt<br><small style=&quot;font-size:12px; letter-spacing:0.14em; color:var(--mute); text-transform:uppercase; font-family:var(--sans); font-style:normal;&quot;>Julia liefert nach</small></div>'">
+      </div>
+      <div class="call-body">
+        <span class="call-date">Dienstag · 20. Oktober 2026 · 19 Uhr</span>
+        <h3 class="call-title">Unverträglich<em>keiten</em></h3>
+        <p class="call-subtitle">Histamin, Fructose, Laktose, Gluten — was ist was und was bedeutet was.</p>
+        <p class="call-desc">
+          Der Überblick über all die Unverträglichkeiten, die oft gleichzeitig auftauchen. Was ist der Unterschied zwischen Allergie und Unverträglichkeit, warum kommt oft eine zur anderen dazu — und wie sortierst du das für dich sinnvoll, ohne dich komplett zu verrückt zu machen.
+        </p>
+        <div class="paket-liste-title">Im Paket enthalten</div>
+        <ul class="paket-liste">
+          <li>1,5 Stunden Live Call per Zoom (inkl. Fragerunde)</li>
+          <li>Passendes E-Book zu Unverträglichkeiten</li>
+          <li>Präsentation als PDF nach dem Call</li>
+          <li>Zugang zur WhatsApp-Community</li>
+        </ul>
+        <div class="call-footer">
+          <div class="call-price">32 €<small>· einmalig</small></div>
+          <a href="mailto:julia@bergles.net?subject=Anmeldung%20Live%20Call%20Unvertr%C3%A4glichkeiten%2020.10." class="btn btn-copper">Jetzt anmelden</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- WIE LÄUFT DAS AB -->
+<section class="section section-mint">
+  <div class="container-narrow">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-blue">So läuft es ab</span>
+      <h2 class="mt-sm">Der <em class="italic">Ablauf</em>.</h2>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start;">
+        <div style="font-family: var(--serif); font-style: italic; color: var(--copper); font-size: 26px;">Nº 01</div>
+        <div>
+          <h3 style="font-family: var(--serif); font-size: 22px; margin-bottom: 6px;">Anmelden per E-Mail</h3>
+          <p>Du schreibst mir kurz an <a href="mailto:julia@bergles.net" style="color: var(--copper);">julia@bergles.net</a>, welchen Call du buchen möchtest. Ich schicke dir die Rechnung und Zahlungsdaten.</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start;">
+        <div style="font-family: var(--serif); font-style: italic; color: var(--copper); font-size: 26px;">Nº 02</div>
+        <div>
+          <h3 style="font-family: var(--serif); font-size: 22px; margin-bottom: 6px;">Zoom-Link + WhatsApp</h3>
+          <p>Sobald die Zahlung da ist, bekommst du den Zoom-Link und die Einladung zur WhatsApp-Community. Da kannst du auch schon vorher Fragen sammeln.</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start;">
+        <div style="font-family: var(--serif); font-style: italic; color: var(--copper); font-size: 26px;">Nº 03</div>
+        <div>
+          <h3 style="font-family: var(--serif); font-size: 22px; margin-bottom: 6px;">1,5 h live mit mir</h3>
+          <p>Erst der Input-Teil (ca. 45 min), dann Q&amp;A. Kein Vortrag von oben — mehr wie ein langer Kaffee mit einer, die es selbst durchgemacht hat.</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start;">
+        <div style="font-family: var(--serif); font-style: italic; color: var(--copper); font-size: 26px;">Nº 04</div>
+        <div>
+          <h3 style="font-family: var(--serif); font-size: 22px; margin-bottom: 6px;">E-Book + Präsentation danach</h3>
+          <p>Innerhalb von 48 Stunden nach dem Call bekommst du das passende E-Book und die Präsentation als PDF per E-Mail. Zum Nachlesen, Behalten, Weitergeben.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="section section-cream">
+  <div class="container-narrow text-center">
+    <div class="ornament">§</div>
+    <p style="font-family: var(--serif); font-style: italic; color: var(--mute); font-size: 16px; max-width: 60ch; margin: 0 auto;">
+      Live Calls sind Erfahrungsaustausch — keine medizinische Beratung. Ich bin selbst betroffen und teile meine Erfahrungen. Für Diagnose und Behandlung ist eine Ärztin oder ein Arzt zuständig.
+    </p>
+  </div>
+</section>
+
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="live-calls.html">Live Calls</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
