@@ -243,6 +243,45 @@ Und wenn ihr Histamin nicht gut vertragt — das ist die härteste Woche. Weil k
 
 ---
 
+### Slide 12c · Das ganze Bild — wie alles mit Histamin zusammenhängt
+**Titel:** Der rote Faden — Zyklus & Histamin
+**Inhalt (als 4 Zusammenhänge):**
+
+**1. Östrogen befeuert Histamin**
+- Östrogen aktiviert Mastzellen (die schütten Histamin aus)
+- Östrogen hemmt gleichzeitig das DAO-Enzym (das Histamin abbauen soll)
+- Ergebnis: hoch Östrogen = hoch Histamin
+
+**2. Progesteron beruhigt Histamin**
+- Progesteron stabilisiert die Mastzellen
+- Ergebnis: hoch Progesteron = ruhigeres Histamin
+
+**3. Deshalb schwankt Histamin mit deinem Zyklus**
+- Menstruation (beide niedrig): ruhig
+- Follikelphase (Östrogen steigt): steigt langsam
+- Ovulation (Östrogen-Peak): Peak — Migräne, Flush, Hautreaktionen
+- Lutealphase (Progesteron hoch): ruhiger
+- Kurz vor Periode (beide fallen): oft schlimmste Woche
+
+**4. Deshalb sind Frauen doppelt so oft betroffen wie Männer**
+- Histamin-Problematik: 80 % Frauen, 20 % Männer
+- Nicht Zufall — es sind die Hormone
+
+**Und wo alles zusammenläuft:**
+- PMS · PMDS · Endometriose · Migräne · Wechseljahre → alles zyklusgebunden, alles Histamin-verstärkt
+- Wer den Zyklus versteht, versteht Histamin. Und umgekehrt.
+
+**Speaker-Notes:**
+„Das hier ist der rote Faden, den ich damals nie erklärt bekommen hab. Ihr seht: euer Körper hat einen Rhythmus. Und Histamin schwingt mit diesem Rhythmus mit. Wenn ihr das versteht — versteht ihr warum ihr euch an manchen Tagen wie ein anderer Mensch fühlt.
+
+Und das erklärt auch, warum so viele Frauen mit PMS gleichzeitig auch Migräne haben. Oder warum Endometriose so oft mit Histamin-Problematik zusammen auftritt. Es ist alles derselbe Mechanismus — nur in verschiedener Ausprägung.
+
+Das Frustrierende: kein Arzt hat mir das je zusammenhängend erklärt. Ich hab's mir selbst zusammengebaut, aus Studien, aus Community, aus eigener Erfahrung. Deswegen erzähl ich's euch heute. Damit ihr's wisst — bevor euer Körper 20 Jahre lang für euch rätselt."
+
+**Visual:** Grafik mit 3 übereinandergelegten Kurven über 28 Tage — Östrogen (rot), Progesteron (blau), Histamin (kupfer). Alternativ ein Kreisdiagramm mit den 4 Phasen und Histamin-Level pro Phase eingefärbt.
+
+---
+
 ## PAUSE · 10 Minuten
 (Slide „Kurze Pause" · Wasser, Klo, Kärtchen abgeben)
 
