@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Info für Schulen · Vortrag mit Julia Bergles</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    --cream: #fffcf9; --beige: #f4ede4; --copper: #c48b6c;
+    --copper-dark: #a87556; --blue-dark: #6f78a8; --mint: #e2fffe;
+    --pink-soft: #f9e0e6;
+    --dark: #2a2a2a; --dark-soft: #4a4a4a; --mute: #8a8a8a;
+    --line: rgba(42, 42, 42, 0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--cream); color: var(--dark); line-height: 1.55; font-size: 13px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 44px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+  h1 { font-size: 38px; line-height: 1.05; margin-bottom: 6px; color: var(--dark); }
+  h1 em { color: var(--copper); font-style: italic; }
+  h2 { font-size: 22px; margin: 26px 0 10px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--copper-dark); }
+  h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--blue-dark); font-family: var(--sans); font-weight: 700; margin: 14px 0 6px; }
+  p { color: var(--dark-soft); margin-bottom: 8px; font-size: 13px; }
+  strong { color: var(--dark); }
+  ul, ol { margin: 6px 0 8px 20px; }
+  li { padding: 2px 0; color: var(--dark-soft); font-size: 13px; }
+  .subtitle { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--mute); margin-bottom: 24px; }
+  .eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 10px; }
+
+  .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .meta-box { background: var(--beige); padding: 14px 16px; }
+  .meta-box h3 { color: var(--blue-dark); margin: 0 0 4px 0; font-size: 11px; }
+  .meta-box p { font-size: 15px; font-family: var(--serif); color: var(--dark); margin: 0; }
+
+  .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 10px 0; }
+  .format-box { background: var(--cream); padding: 16px 18px; border: 1px solid var(--line); }
+  .format-box h3 { color: var(--copper-dark); font-family: var(--serif); font-size: 16px; text-transform: none; letter-spacing: normal; font-weight: 500; margin: 0 0 4px 0; }
+  .format-box .price { color: var(--copper); font-family: var(--serif); font-size: 20px; font-weight: 500; margin: 6px 0; }
+  .format-box p { font-size: 12px; margin: 0; }
+
+  .warning-box { background: var(--pink-soft); padding: 18px 22px; margin: 12px 0; border-left: 3px solid var(--copper); }
+  .warning-box h3 { color: var(--copper-dark); margin: 0 0 8px 0; }
+
+  .contact-box { background: var(--dark); color: var(--cream); padding: 22px 26px; margin: 20px 0; }
+  .contact-box h3 { color: var(--cream); margin: 0 0 10px 0; }
+  .contact-box p { color: rgba(255,252,249,0.85); font-size: 13px; margin-bottom: 4px; }
+  .contact-box a { color: var(--copper); }
+
+  .themen-liste { columns: 2; column-gap: 30px; margin: 8px 0; }
+  .themen-liste li { break-inside: avoid; padding: 3px 0; }
+
+  .page-break { page-break-before: always; }
+
+  .print-hint {
+    background: var(--mint); padding: 12px 20px; margin-bottom: 20px;
+    font-size: 12px; color: var(--blue-dark); border-left: 3px solid var(--blue-dark);
+  }
+
+  @media print {
+    .print-hint { display: none; }
+    body { font-size: 11px; }
+    .page { padding: 15mm; max-width: none; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 17px; page-break-after: avoid; }
+    a { color: inherit; text-decoration: none; }
+    .meta-grid, .format-grid, .warning-box, .contact-box { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="print-hint">
+    Zum PDF speichern: Cmd+P (Mac) oder Strg+P (Windows) → „Als PDF sichern". Für Broschüren-Druck: beidseitig, A4.
+  </div>
+
+  <span class="eyebrow">Info-Paket für Schulen · 2026</span>
+  <h1>Vortrag mit <em>Julia Bergles</em>.</h1>
+  <p class="subtitle">Aufklärung zu Zyklus, Körper und Gesundheit — von einer Betroffenen, die noch nah dran ist.</p>
+
+  <h2>Auf einen Blick</h2>
+  <div class="meta-grid">
+    <div class="meta-box">
+      <h3>Zielgruppe</h3>
+      <p>Klasse 9-13</p>
+    </div>
+    <div class="meta-box">
+      <h3>Gruppengröße</h3>
+      <p>bis 60 Schüler:innen</p>
+    </div>
+    <div class="meta-box">
+      <h3>Referentin</h3>
+      <p>Julia Bergles, 20</p>
+    </div>
+  </div>
+
+  <h2>Wer bin ich</h2>
+  <p>
+    Ich bin Julia Bergles, 20 Jahre alt, aus Wehringen bei Augsburg. Ich bin selbst noch nicht
+    lang aus der Schule raus. Nach Corona 2022 verlor ich meinen Geschmack, entwickelte eine
+    Orthorexie und hatte mit 19 einen Darmverschluss. Heute lebe ich mit Histaminintoleranz,
+    MCAS, Reizdarm und starkem PMS.
+  </p>
+  <p>
+    <strong>Ich bin keine Ärztin.</strong> Ich rede aus Betroffenen-Perspektive. Und genau
+    deshalb kommt es bei Jugendlichen an — weil ich näher dran bin als klassische Vortragende.
+  </p>
+  <p>
+    Ich habe die App <strong>TerraLuna</strong> für Menschen mit Unverträglichkeiten
+    entwickelt, schreibe E-Books und halte Vorträge in Schulen.
+  </p>
+
+  <h2>Was ich in den Vorträgen behandle</h2>
+  <ul class="themen-liste">
+    <li>Der weibliche Zyklus — vier Phasen einfach erklärt</li>
+    <li>PMS, PMDS, PCOS, Endometriose</li>
+    <li>Wechseljahre (kurzer Ausblick)</li>
+    <li>Histaminintoleranz, MCAS, Reizdarm</li>
+    <li>Zusammenhang Hormone × Histamin</li>
+    <li>Meine Geschichte: von Orthorexie zum Darmverschluss</li>
+    <li>Warnsignale des Körpers ernst nehmen</li>
+    <li>Wann zum Arzt / wenn Ärzt:innen nicht ernst nehmen</li>
+    <li>Umgang mit chronischer Krankheit im Alltag</li>
+    <li>Wo Jugendliche Hilfe finden</li>
+  </ul>
+
+  <h2>Formate</h2>
+  <div class="format-grid">
+    <div class="format-box">
+      <h3>Vortrag Kompakt</h3>
+      <p style="color: var(--mute); font-size: 11px;">90 Minuten</p>
+      <div class="price">299 €</div>
+      <p>Impuls + Q&amp;A. Für eine Schulstunde.</p>
+    </div>
+    <div class="format-box" style="border-color: var(--copper); background: var(--beige);">
+      <h3>Zyklus-Tag</h3>
+      <p style="color: var(--mute); font-size: 11px;">2 Stunden</p>
+      <div class="price">499 €</div>
+      <p>Vollständiger Vortrag mit Handout &amp; Anlaufstellen.</p>
+    </div>
+    <div class="format-box">
+      <h3>Projekttag</h3>
+      <p style="color: var(--mute); font-size: 11px;">4-6 Stunden</p>
+      <div class="price">899 €</div>
+      <p>Vortrag + Workshop-Formate + Kleingruppen.</p>
+    </div>
+  </div>
+  <p style="font-size: 12px; margin-top: 10px;">
+    <strong>Fahrtkosten:</strong> Umkreis Wehringen/Augsburg pauschal 30 € · darüber hinaus 0,40 €/km.<br>
+    <strong>Finanzierung:</strong> Krankenkassen-Präventionsprogramme, Fördervereine, Elternvertretungen. Ich unterstütze gerne bei der Antragsstellung.
+  </p>
+
+  <!-- SEITE 2 -->
+  <div class="page-break"></div>
+
+  <h2>Ablauf am Vortragstag (2h-Format)</h2>
+  <ul>
+    <li><strong>0-15 Min:</strong> Ankommen, meine Geschichte, Regeln für den Tag</li>
+    <li><strong>15-45 Min:</strong> Zyklus-Grundlagen — die 4 Phasen + Histamin-Bezug</li>
+    <li><strong>45-55 Min:</strong> Pause (Kärtchen für anonyme Fragen einsammeln)</li>
+    <li><strong>55-90 Min:</strong> Wenn's nicht rund läuft — PMS, PMDS, PCOS, Endometriose</li>
+    <li><strong>90-105 Min:</strong> Was hilft — Zyklus-Tracking, Ernährung, Bewegung, Selbstfürsorge</li>
+    <li><strong>105-120 Min:</strong> Fragerunde &amp; Abschluss</li>
+  </ul>
+
+  <h2>Wichtig — Inhaltliche Trigger-Warnung</h2>
+  <div class="warning-box">
+    <h3>Der Vortrag spricht offen über belastende Themen</h3>
+    <p style="color: var(--dark); font-size: 13px;">Ich rede — bewusst und offen — unter anderem über:</p>
+    <ul style="color: var(--dark);">
+      <li>Menstruation und Blut (auch bildlich beschrieben)</li>
+      <li>Körperbild und eigenes Körpergefühl</li>
+      <li>Essstörungen (meine eigene Geschichte: Orthorexie)</li>
+      <li>Depressionen und Angstzustände</li>
+      <li>Medizinische Diagnosen bei jungen Menschen</li>
+      <li>Meinen eigenen Zusammenbruch (Darmverschluss mit 19)</li>
+    </ul>
+    <p style="color: var(--dark); margin-top: 8px; font-size: 13px;">
+      <strong>Bitte:</strong> Informieren Sie Schüler:innen und ggf. Eltern <strong>eine Woche vorher</strong>.
+      Für Schüler:innen habe ich einen kurzen Info-Zettel vorbereitet, den Sie ausdrucken und
+      verteilen können: <strong>juliabergles.de/schulen/trigger-hinweis.html</strong>
+    </p>
+    <p style="color: var(--dark); margin-top: 8px; font-size: 13px;">
+      Schüler:innen, die aktuell selbst betroffen sind (Essstörung, akute psychische Belastung),
+      sollten die Möglichkeit haben, den Vortrag <strong>nicht zu besuchen</strong> — ohne Erklärung,
+      ohne Konsequenzen.
+    </p>
+  </div>
+
+  <h2>Was ich von der Schule brauche</h2>
+  <ul>
+    <li>Raum mit Beamer + Ton (WLAN nicht zwingend)</li>
+    <li>Stuhlkreis oder Reihen (beides geht)</li>
+    <li>Kasten oder Karton für anonyme Fragen (bringe ich mit)</li>
+    <li><strong>1 Ansprechperson</strong> (Beratungslehrer:in / Schulsozialpädagog:in), die während und nach dem Vortrag für Rückfragen der Schüler:innen erreichbar ist</li>
+    <li>Info an Schüler:innen und Eltern <strong>1 Woche vorher</strong> (Trigger-Zettel)</li>
+    <li>Wasser für die Referentin</li>
+  </ul>
+
+  <h2>Was die Schüler:innen mitbekommen</h2>
+  <ul>
+    <li><strong>Handout (A4 doppelseitig):</strong> die 4 Zyklus-Phasen, Wann-zum-Arzt-Checkliste, alle Anlaufstellen mit Telefonnummern (drucke ich vorab in Klassenstärke)</li>
+    <li><strong>Anlaufstellen:</strong> BZgA, Telefonseelsorge, Nummer gegen Kummer — alle kostenlos + anonym</li>
+    <li><strong>Kontakt zu mir:</strong> Instagram + E-Mail für spätere Rückfragen (ich beantworte jede DM persönlich)</li>
+  </ul>
+
+  <h2>Rechtliche Absicherung</h2>
+  <ul>
+    <li>Ich bin selbstständig, versichert, gewerblich angemeldet (Kleinunternehmerin nach § 19 UStG)</li>
+    <li>Erweitertes polizeiliches Führungszeugnis liegt vor (auf Anfrage)</li>
+    <li>Datenschutz: keine Foto-/Video-Aufnahmen, keine Datenerhebung der Schüler:innen</li>
+    <li>Ich rechne mit Rechnung ab, Zahlungsziel 14 Tage</li>
+  </ul>
+
+  <div class="contact-box">
+    <h3>Kontakt &amp; Buchung</h3>
+    <p><strong>Julia Bergles</strong></p>
+    <p>E-Mail: <a href="mailto:julia@bergles.net">julia@bergles.net</a></p>
+    <p>Website: <a href="https://juliabergles.de">juliabergles.de</a></p>
+    <p>Schul-Seite: <a href="https://juliabergles.de/schulen.html">juliabergles.de/schulen.html</a></p>
+    <p>Instagram: <strong>@julia_bergles</strong></p>
+    <p style="margin-top: 10px; font-size: 12px; font-style: italic;">
+      Für ein unverbindliches 20-Min-Vorgespräch schreiben Sie mir einfach eine E-Mail. Ich
+      richte mich zeitlich nach Ihnen.
+    </p>
+  </div>
+
+  <p style="margin-top: 20px; text-align: center; font-size: 11px; color: var(--mute); font-style: italic;">
+    Ich bin keine Ärztin. Der Vortrag ist Aufklärung + Prävention — keine medizinische Beratung.
+    Bei individuellen Beschwerden immer eine Ärztin oder einen Arzt konsultieren.
+  </p>
+
+</div>
+</body>
+</html>

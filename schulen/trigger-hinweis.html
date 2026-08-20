@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vorab-Info für dich · Vortrag mit Julia Bergles</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    --cream: #fffcf9; --beige: #f4ede4; --copper: #c48b6c;
+    --copper-dark: #a87556; --blue-dark: #6f78a8; --mint: #e2fffe;
+    --pink-soft: #f9e0e6;
+    --dark: #2a2a2a; --dark-soft: #4a4a4a; --mute: #8a8a8a;
+    --line: rgba(42, 42, 42, 0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--cream); color: var(--dark); line-height: 1.55; font-size: 14px; }
+  .page { max-width: 720px; margin: 0 auto; padding: 60px 50px; }
+  h1, h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+  h1 { font-size: 38px; line-height: 1.1; margin-bottom: 6px; color: var(--dark); }
+  h1 em { color: var(--copper); font-style: italic; }
+  h2 { font-size: 22px; margin: 30px 0 12px; color: var(--copper-dark); }
+  p { color: var(--dark-soft); margin-bottom: 12px; font-size: 14px; }
+  strong { color: var(--dark); }
+  .subtitle { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--mute); margin-bottom: 24px; }
+  .eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 12px; }
+
+  .box-warning {
+    background: var(--pink-soft); padding: 24px 28px; margin: 24px 0;
+    border-left: 4px solid var(--copper);
+  }
+  .box-warning ul { margin: 12px 0 0 22px; }
+  .box-warning li { padding: 4px 0; color: var(--dark); font-size: 14px; }
+
+  .box-support {
+    background: var(--mint); padding: 24px 28px; margin: 24px 0;
+    border-left: 4px solid var(--blue-dark);
+  }
+
+  .box-quiet {
+    background: var(--beige); padding: 20px 24px; margin: 20px 0;
+  }
+  .box-quiet p { margin-bottom: 6px; font-size: 13px; }
+
+  .ornament { text-align: center; font-family: var(--serif); font-size: 24px; color: var(--copper); margin: 30px 0 20px; font-style: italic; }
+
+  .signature { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--dark); margin-top: 30px; }
+  .signature small { display: block; font-family: var(--sans); font-style: normal; font-size: 12px; color: var(--mute); letter-spacing: 0.1em; margin-top: 4px; }
+
+  .print-hint {
+    background: var(--mint); padding: 12px 20px; margin-bottom: 30px;
+    font-size: 12px; color: var(--blue-dark); border-left: 3px solid var(--blue-dark);
+  }
+
+  @media print {
+    .print-hint { display: none; }
+    body { font-size: 12px; }
+    .page { padding: 20mm; max-width: none; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 18px; page-break-after: avoid; }
+    .box-warning, .box-support { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="print-hint">
+    Zum Drucken: Cmd+P (Mac) oder Strg+P (Windows) — passt auf 1-2 A4-Seiten.
+  </div>
+
+  <span class="eyebrow">Vor dem Vortrag · Bitte lesen</span>
+  <h1>Kurze Info <em>vorab</em>.</h1>
+  <p class="subtitle">Damit du entscheiden kannst, ob du dabei sein willst.</p>
+
+  <p>
+    Hi, ich bin Julia. Ich komme bald in eure Schule und halte einen Vortrag über
+    <strong>Zyklus, Körper und Gesundheit</strong>. Bevor ich komme, möchte ich, dass du weißt,
+    worüber ich sprechen werde. Damit du selbst entscheiden kannst, ob du dabei sein willst.
+  </p>
+
+  <h2>Über diese Themen werde ich sprechen</h2>
+  <div class="box-warning">
+    <p style="margin-bottom: 4px;"><strong>Der Vortrag ist offen und ehrlich. Ich rede unter anderem über:</strong></p>
+    <ul>
+      <li>Menstruation, Periode, Blut</li>
+      <li>Umgang mit dem eigenen Körper</li>
+      <li>Essen, Essstörungen (meine eigene Geschichte)</li>
+      <li>Depressionen, Ängste</li>
+      <li>Chronische Krankheiten bei jungen Menschen</li>
+      <li>Meinen eigenen Zusammenbruch mit 19 (Darmverschluss)</li>
+    </ul>
+  </div>
+
+  <p>
+    Diese Themen sind wichtig — genau darüber wird zu wenig gesprochen. Aber sie können auch
+    belastend sein. Vor allem wenn du <strong>gerade selbst mit einem dieser Themen kämpfst</strong>.
+  </p>
+
+  <h2>Du entscheidest selbst</h2>
+
+  <div class="box-support">
+    <p style="margin-bottom: 8px;"><strong>Wenn du mit einem dieser Themen aktuell Probleme hast — es ist völlig okay, nicht zu kommen.</strong></p>
+    <p style="margin-bottom: 0;">
+      Sag einfach deiner Lehrerin oder deinem Lehrer Bescheid. Du musst nichts erklären.
+      Niemand fragt nach. Es gibt keine Konsequenzen. Es ist deine Entscheidung — und die zählt.
+    </p>
+  </div>
+
+  <p>
+    Wenn du dabei bist und es zu viel wird: du darfst jederzeit aufstehen und den Raum verlassen.
+    Auch das ist okay.
+  </p>
+
+  <h2>Wenn du Hilfe brauchst</h2>
+  <div class="box-quiet">
+    <p><strong>An deiner Schule:</strong> Beratungslehrer:in · Schulsozialpädagog:in · Vertrauenslehrer:in</p>
+    <p><strong>Telefonseelsorge (24/7, kostenlos, anonym):</strong> 0800 111 0 222</p>
+    <p><strong>Nummer gegen Kummer (für Jugendliche):</strong> 116 111</p>
+    <p><strong>BZgA-Beratung Sexuelle Gesundheit:</strong> 0800 111 0 111</p>
+  </div>
+
+  <div class="ornament">§</div>
+
+  <p>
+    Danke, dass du das gelesen hast. Ich freue mich, dich (vielleicht) kennenzulernen.
+    Und egal wie du dich entscheidest — du machst das Richtige für dich.
+  </p>
+
+  <p class="signature">
+    Julia
+    <small>@julia_bergles · juliabergles.de</small>
+  </p>
+
+</div>
+</body>
+</html>

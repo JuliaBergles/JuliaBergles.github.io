@@ -378,3 +378,66 @@ Sonst verlierst du den Überblick — bei 20+ Anfragen wird's chaotisch.
 - 2-4 bezahlte Vorträge/Monat
 - 800-2.000 € Zusatzumsatz/Monat
 - Referenzen für Krankenkassen-Programme
+
+---
+
+## MAIL 7 — Trigger-Info an Schule (ca. 1 Woche vor Vortrag)
+
+**Betreff:** Wichtige Vorab-Info zum Vortrag am [Datum] · bitte an Klassen weiterleiten
+
+```
+Liebe Frau [Name] / Herr [Name],
+
+vielen Dank nochmal für die Buchung des Vortrags am [Datum, 
+Uhrzeit]. Ich freue mich auf den Termin bei Ihnen.
+
+Vorab ein wichtiger Hinweis, um den ich Sie bitten möchte 
+den Schüler:innen und Lehrkräften weiterzuleiten:
+
+Ich spreche in diesem Vortrag OFFEN und ehrlich über Themen, 
+die für manche belastend sein können:
+
+• Menstruation und Blut (auch bildlich beschrieben)
+• Körperbild und Umgang mit dem eigenen Körper
+• Essstörungen (meine eigene Geschichte)
+• Depressionen und Angstzustände
+• Medizinische Diagnosen bei jungen Menschen
+
+Diese Themen sind der Kern des Vortrags — genau darüber wird 
+in Schulen zu wenig gesprochen. Deshalb kann ich sie nicht 
+weglassen, ohne den Sinn zu verfehlen.
+
+Aber: wenn jemand in der Klasse mit diesen Themen aktuell 
+Schwierigkeiten hat (aktuelle Essstörung, akute psychische 
+Belastung, schwere Trauer o.ä.), bitte ich Sie, den 
+Schüler:innen die Option zu geben, den Vortrag NICHT zu 
+besuchen. Ohne Erklärung, ohne Nachfragen, ohne Konsequenzen.
+
+Ich habe dazu einen kurzen Info-Zettel für Ihre Schüler:innen 
+vorbereitet, den Sie eine Woche vor dem Termin verteilen können. 
+Sie finden ihn hier zum Ausdrucken: 
+juliabergles.de/schulen/trigger-hinweis.html
+
+Wenn Sie eine Ansprechperson (Beratungslehrer:in / 
+Schulsozialpädagog:in) benennen können, die während oder nach 
+dem Vortrag für Rückfragen der Schüler:innen bereitsteht, 
+wäre das ideal.
+
+Bei Rückfragen erreichen Sie mich jederzeit unter 
+julia@bergles.net oder 0[Handynummer].
+
+Herzlichen Dank für Ihr Verständnis und die gute 
+Zusammenarbeit.
+
+Liebe Grüße
+Julia Bergles
+
+—
+juliabergles.de · @julia_bergles · julia@bergles.net
+```
+
+**Warum das wichtig ist:**
+- Rechtlich absichern (Schule kann sich später nicht beschweren „das war unangekündigt")
+- Ethik gegenüber betroffenen Schüler:innen
+- Trigger-Zettel + Ansprechperson benannt = du hast alles getan
+- Wirkt professionell — Schulen schätzen sowas
