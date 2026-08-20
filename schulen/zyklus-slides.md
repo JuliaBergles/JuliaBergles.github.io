@@ -221,6 +221,28 @@ Und wenn ihr Histamin nicht gut vertragt — das ist die härteste Woche. Weil k
 
 ---
 
+### Slide 12b · Ausblick · Die Wechseljahre
+**Titel:** Und irgendwann — die Wechseljahre
+**Inhalt:**
+- Ab Mitte 40 fängt es langsam an (Perimenopause)
+- Ab ca. 50-55: letzte Periode (Menopause)
+- Was passiert: Östrogen und Progesteron sinken über Jahre ab
+- Symptome: Hitzewallungen, Schlafprobleme, Stimmungsschwankungen, unregelmäßiger Zyklus
+- Dauert insgesamt 5-10 Jahre — kein Schalter, ein langer Prozess
+
+**Und wenn du Histamin nicht gut verträgst:**
+- Sinkendes Östrogen kann die Histamin-Balance ordentlich durcheinanderbringen
+- Viele Frauen bekommen ERST in den Wechseljahren zum ersten Mal HIT-Symptome
+- Oder alte Symptome kommen zurück, obwohl sie jahrelang weg waren
+- {Julia ergänzt hier — was du dazu von älteren Frauen in deiner Community hörst}
+
+**Speaker-Notes:**
+„Das hier ist heute nicht euer Thema — aber eure Mutter, eure Tante, eure Lehrerin vielleicht mittendrin. Die Wechseljahre werden gerade genauso tabuisiert wie PMS. Wenn eure Mama in letzter Zeit öfter Hitzewallungen hat, schlecht schläft, gereizt ist — das kann das sein. Nehmt sie ernst. Und macht euch selbst schon jetzt schlau — dann geht's euch später einfacher."
+
+**Visual:** Zyklus-Kurve die langsam flach ausläuft · warme gedämpfte Farben
+
+---
+
 ## PAUSE · 10 Minuten
 (Slide „Kurze Pause" · Wasser, Klo, Kärtchen abgeben)
 
@@ -287,16 +309,41 @@ Und wenn ihr Histamin nicht gut vertragt — das ist die härteste Woche. Weil k
 
 ---
 
+### Slide 16b · Endometriose
+**Titel:** Endometriose
+**Inhalt:**
+- Was ist es: Gebärmutterschleimhaut wächst an falschen Stellen (Eierstöcke, Bauchraum, Blase, Darm)
+- Häufigkeit: 10-15 % aller Frauen — jede Zehnte
+- Trotzdem: durchschnittlich 7-10 Jahre bis zur Diagnose
+- Symptome: extreme Regelschmerzen, Schmerzen beim Sex, Bauchweh auch außerhalb der Periode, Erschöpfung, ungewollte Kinderlosigkeit
+- Diagnose: nur durch Bauchspiegelung wirklich sicher
+- Behandlung: Hormone, Schmerzmittel, OP — jede Frau anders
+
+**Und wenn du Histamin nicht gut verträgst:**
+- Endometriose ist eine Entzündungserkrankung — und Histamin ist ein Entzündungs-Botenstoff
+- Viele Endometriose-Betroffene reagieren besonders sensibel auf histaminhaltige Lebensmittel
+- Östrogen befeuert beides — Endometriose UND Histamin-Symptome
+- {Julia ergänzt hier — falls du in deiner Community Endometriose-Betroffene kennst}
+
+**Speaker-Notes:**
+„Das hier ist mir besonders wichtig: wenn ihr in der Periode SO Schmerzen habt, dass ihr euch übergeben müsst oder nicht in die Schule könnt — das ist KEIN normaler Regelschmerz. Das kann Endometriose sein. Und bis zur Diagnose dauert es im Schnitt 7 Jahre. Sieben Jahre. Weil Ärzte oft sagen ‚Regelschmerzen sind eben normal'. Sind sie nicht, wenn sie euch flachlegen. Bitte lasst euch nicht abwimmeln. Sagt es weiter — auch euren Freundinnen."
+
+**Visual:** Anatomie-Illustration · Zahl „10-15 %" groß
+
+---
+
 ### Slide 17 · Wann zum Arzt?
 **Titel:** Rote Flaggen
 **Inhalt (Checkliste):**
 - ☐ Zyklus länger als 3 Monate unregelmäßig
-- ☐ Schmerzen die dich flachlegen (mehr als 2 Tage)
+- ☐ Schmerzen die dich flachlegen (mehr als 2 Tage) → Endometriose-Verdacht
 - ☐ Blutung sehr stark (Binden reichen nicht)
 - ☐ Blutung länger als 7 Tage
-- ☐ Depression exakt vor der Periode
-- ☐ Massive Akne trotz Behandlung
+- ☐ Depression exakt vor der Periode → PMDS-Verdacht
+- ☐ Massive Akne trotz Behandlung → PCOS-Verdacht
 - ☐ Ausbleibende Periode (ohne Schwangerschaft)
+- ☐ Schmerzen beim Sex → Endometriose-Verdacht
+- ☐ Bauchschmerzen auch außerhalb der Periode
 
 **Speaker-Notes:**
 „Wenn eines davon zutrifft — Termin machen. Beim Frauenarzt. Und wenn der euch nicht ernst nimmt: wechselt. Das ist euer gutes Recht."
