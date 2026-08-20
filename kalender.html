@@ -449,9 +449,167 @@ const STORAGE_KEY = 'juliaKalender_v1';
 const IDEAS_KEY = 'juliaIdeen_v1';
 const CATEGORIES = ['Rezepte', 'PMS/Zyklus', 'Talk/Recovery', 'Histamin-Wissen', 'Thema Ärzte', 'POV allgemein', 'DILY', 'Sonstiges'];
 
+// Vorgefertigte Ideen — werden beim ersten Öffnen automatisch eingefüllt
+const SEED_IDEAS = {
+  'Rezepte': [
+    'Süßkartoffel-Brownies mit Carob',
+    'Süßkartoffel-Pommes aus dem Airfryer',
+    'Süßkartoffel-Bowl mit Belugalinsen',
+    'Süßkartoffel-Puffer aus geraspelter Süßkartoffel',
+    'Zucchini-Carob-Kuchen',
+    'Zucchini-Schoko-Eis',
+    '3-in-1 Schokoetwas (Mousse/Eis/Kuchen)',
+    'Rote-Bete-Aufstrich mit Ziegenfrischkäse',
+    'Rote-Bete-Bratlinge',
+    'Rote-Bete-Suppe cremig',
+    'Sticky Rice mit Mango',
+    'Zucchini-Pfanne mit Gemüsebrühe (Bauchschmerz-Rettung)',
+    'Kalte Zucchini-Suppe für heiße Tage',
+    'High Protein Tiramisu (histaminarm)',
+    'Winter-Eintopf mit gekeimten Dinkelnudeln',
+    'Meine 5 histaminarmen Frühstücks-Ideen',
+    'Meal-Prep-Ideen für die PMS-Woche',
+    'Kürbissuppe cremig',
+    'Kürbis-Bowl mit Pinienkernen',
+    'Was ich esse wenn ich unterwegs bin (Snack-Reihe)'
+  ],
+  'PMS/Zyklus': [
+    'Wie hängen PMS und Histamin zusammen?',
+    'Wusstest du dass dein Zyklus deine Verträglichkeit verändert?',
+    'Meine Zyklus-Routine — was ich pro Phase tue',
+    'Frauenärztin-Dialog: „Nehmen Sie die Pille" (POV)',
+    'Amenorrhoe — wenn die Periode ganz ausbleibt',
+    'PMDS — die schwere Form von PMS, die keiner kennt',
+    'PCOS erklärt — bis zu 10 % der Frauen betroffen',
+    'Warum du in der PMS-Woche weniger verträgst',
+    'Östrogen-Histamin-Zusammenhang',
+    'Zyklus-Tracking-Reihe: was ich sehe',
+    'Was mir bei PMS-Depressionen hilft',
+    'Meine PMS-Ernährungs-Regeln',
+    'Frauengesundheit wird nicht ernst genommen — meine Erfahrung',
+    'Unregelmäßiger Zyklus — wann zum Arzt?'
+  ],
+  'Talk/Recovery': [
+    'Meine Geschichte Nº 01 — Wie alles anfing (Corona 2022)',
+    'Meine Geschichte Nº 02 — Der Geschmacksverlust',
+    'Meine Geschichte Nº 03 — Meine Orthorexie kam schleichend',
+    'Meine Geschichte Nº 04 — Die ersten Bauchschmerzen',
+    'Meine Geschichte Nº 05 — 20 Blutabnahmen ohne Ergebnis',
+    'Meine Geschichte Nº 06 — Nur noch 5 Lebensmittel',
+    'Meine Geschichte Nº 07 — Der Darmverschluss mit 19',
+    'Meine Geschichte Nº 08 — Die Diagnose Histamin',
+    'Meine Geschichte Nº 09 — Der lange Weg zurück',
+    'Meine Geschichte Nº 10 — Sport, Angst, Zyklus',
+    'Meine Geschichte Nº 11 — Die App bauen',
+    'Meine Geschichte Nº 12 — Wo ich heute stehe',
+    'Es ist ein Privileg — Bauch-Karussell',
+    'Für dich Sixpack — für Frauen bedeutet das (Fitness-Kritik)',
+    'Meine kleinen Siege diese Woche',
+    'Vor 2 Jahren vs. heute (Vorher-Nachher)',
+    '3 Ängste die weniger geworden sind',
+    'Warum ich früher gehungert habe und heute Panik bei Hunger',
+    'Was mir bei meinen Depressionen geholfen hat',
+    'Ich brauche keine Angst mehr vor Reisen'
+  ],
+  'Histamin-Wissen': [
+    'Unterschied Allergie vs. Unverträglichkeit',
+    'DAO-Enzym erklärt — warum manche Histamin abbauen und andere nicht',
+    'Östrogen + Histamin (Zyklus-Zusammenhang)',
+    'Reifer Käse — warum voll mit Histamin',
+    'Warum du abends Histamin schlechter verträgst',
+    'Fructose vs. Fructan vs. Sorbit — der Unterschied',
+    'Wein bei HIT — was passiert wirklich',
+    'Fermentierte Lebensmittel (Sauerkraut, Kefir, Kombucha)',
+    'MCAS vs. HIT — worin unterscheiden sie sich',
+    'Reizdarm erklärt — was passiert im Körper',
+    'Die 10 histaminreichsten Lebensmittel',
+    'DAO-Enzym-Booster — was hilft',
+    'Was Stress mit deinem Darm macht',
+    'Warum Frauen häufiger HIT haben',
+    'Das Fass-ohne-Boden-Modell',
+    '5 Lebensmittel die überraschend histaminhaltig sind',
+    'So filterst du die Ampel in meiner App'
+  ],
+  'Thema Ärzte': [
+    '20 Blutabnahmen — nichts gefunden',
+    'Der Frauenärztin-Dialog (Pille trotz Ablehnung)',
+    'Privatpatienten vs Kassenpatienten (Wartezimmer)',
+    'Was Ärzte mir NIE gesagt haben',
+    'Der 3. Arzt hat endlich zugehört (POV)',
+    '„Das ist doch nur Psyche" — die 5 schlimmsten Ärzte-Sätze',
+    'Zwei-Klassen-Medizin — meine Erfahrung',
+    'Warum ich meine Ärztin gewechselt habe (3x)',
+    'Beim Arzt vorbereitet: was du fragen solltest',
+    'Wenn kein Arzt hilft — was ich stattdessen mache'
+  ],
+  'POV allgemein': [
+    'POV: du bekommst mit 19 die Diagnose Histamin',
+    'POV: du bist auf einer Party und alle essen Käse + Wein',
+    'POV: du erklärst zum 100. Mal was Histamin ist',
+    'POV: dein Freund kocht extra für dich und rührt kein Gewürz an',
+    'POV: du reist zum ersten Mal nach 2 Jahren',
+    'POV: du isst zum ersten Mal etwas Neues und es klappt',
+    'POV: du feierst deinen ersten Geburtstag ohne Angst',
+    'POV: dich fragt jemand „kannst du das nicht mal probieren?"',
+    'POV: Safe Food im Angebot 😍',
+    'POV: dein Safe Food ist leer und Läden zu (meine Slowenien-Story)',
+    'POV: die PMS-Woche kommt und plötzlich verträgst du nix',
+    'POV: du wachst mit flachem Bauch auf',
+    'POV: du sagst als 20-Jährige einen 5-stelligen Auftrag ab',
+    'POV: dich fragt jemand nach Rezepten und du kennst NUR histaminarme',
+    'btw — Ich hatte vor allem Angst',
+    'btw — Ich habe mich nicht getraut Auto zu fahren',
+    'btw — Bekomme im Wartezimmer immer Panikattacken'
+  ],
+  'DILY': [
+    'Ein normaler Selbständigen-Tag mit mir',
+    'Ein PMS-Tag mit mir (verletzlich)',
+    'Ein guter Bauchtag mit mir',
+    'Ein Reizdarm-Krisen-Tag mit mir (ehrlich)',
+    'Ein Reise-Tag',
+    'Home-Office-Tag mit Bauchweh',
+    'Ein Tag mit App-Meetings',
+    'Alltag mit Selbständigkeit + chronischer Krankheit',
+    'Meine Morgenroutine als Betroffene',
+    'Meine Abend-Routine für besseren Bauch',
+    'Ein Tag ohne Wehwehchen — was hab ich anders gemacht?',
+    'Ein Sonntag mit Meal-Prep + Content-Batching'
+  ],
+  'Sonstiges': [
+    'Meine DM-Favoriten (Mandelmus, Flohsamen, gefriergetrocknete Heidelbeeren)',
+    'Nimm das statt dem — Kakao → Carob',
+    'Nimm das statt dem — Spinat → Mangold',
+    'Nimm das statt dem — Himbeeren → Heidelbeeren',
+    'Mein Grundgerüst — die 5-10 Lebensmittel meiner Woche',
+    'Bei Bauchschmerzen esse ich (verlinkt auf bei-bauchschmerzen)',
+    'Wenn die Psyche mitspielt — mental health Reel',
+    'Ambassador-Feature: aho.bio Sprossenmehl',
+    'Ambassador-Feature: HistaFOOD-Riegel',
+    'Ambassador-Feature: Histaminikus-Gewürze',
+    'Ambassador-Feature: Nigela-Schwarzkümmelöl',
+    'Live-Cooking-Ankündigung + Countdown',
+    'Themen-Event-Ankündigung',
+    'Instagram-Insights-Highlight teilen',
+    'WhatsApp-Community-Aufbau (Einladung)',
+    'Kochbuch Sneak-Peek',
+    'E-Book „Die Probe" bewerben (Reisen)',
+    'Mein neues Bundle-Angebot (App + E-Book)',
+    'Peer-Support-Gespräch — was passiert im Call'
+  ]
+};
+
 let data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 let ideas = JSON.parse(localStorage.getItem(IDEAS_KEY) || '{}');
 CATEGORIES.forEach(c => { if (!ideas[c]) ideas[c] = []; });
+
+// Seed-Ideen einfüllen wenn Vault komplett leer ist (Erst-Öffnen)
+const allEmpty = CATEGORIES.every(c => ideas[c].length === 0);
+if (allEmpty) {
+  CATEGORIES.forEach(c => {
+    if (SEED_IDEAS[c]) ideas[c] = [...SEED_IDEAS[c]];
+  });
+  localStorage.setItem(IDEAS_KEY, JSON.stringify(ideas));
+}
 
 // Migration: alte Struktur (Objekt pro Tag) → neue Struktur (Array pro Tag)
 Object.keys(data).forEach(key => {
