@@ -155,6 +155,40 @@
   .cell.sa::before { background: var(--pink-soft); }
   .cell.so::before { background: var(--copper); height: 6px; }
 
+  /* Entries-Liste im Modal */
+  .entries-list { margin: 0 0 20px 0; padding: 0; list-style: none; }
+  .entry-item {
+    padding: 12px 14px; border: 1px solid var(--line); background: white;
+    margin-bottom: 8px; cursor: pointer; transition: all 0.2s;
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  }
+  .entry-item:hover { border-color: var(--copper); background: var(--beige); }
+  .entry-item.active { border-color: var(--copper); background: var(--beige); border-left: 4px solid var(--copper); }
+  .entry-item .entry-info { flex: 1; min-width: 0; }
+  .entry-item .entry-format {
+    display: inline-block; font-family: var(--sans); font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--copper-dark);
+    padding: 3px 8px; background: var(--mint); margin-right: 8px;
+  }
+  .entry-item .entry-topic {
+    font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--dark);
+  }
+  .entry-item .entry-del {
+    background: transparent; border: none; color: var(--mute); cursor: pointer;
+    font-size: 20px; font-family: var(--serif); line-height: 1; padding: 4px 8px;
+    flex-shrink: 0;
+  }
+  .entry-item .entry-del:hover { color: var(--copper); }
+  .btn-add-entry {
+    width: 100%; padding: 12px; background: transparent; border: 1px dashed var(--copper);
+    color: var(--copper-dark); font-family: var(--sans); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-add-entry:hover { background: var(--beige); border-style: solid; }
+  .form-section { display: none; padding-top: 20px; border-top: 1px solid var(--line); margin-top: 20px; }
+  .form-section.open { display: block; }
+
   /* Modal — editorial style */
   .modal-bg {
     position: fixed; inset: 0; background: rgba(42,42,42,0.72); display: none;
@@ -347,42 +381,64 @@
     <h2 id="modalTitle">Tag <em>bearbeiten</em></h2>
     <div class="modal-meta" id="modalMeta"></div>
 
-    <label>Thema / Format</label>
-    <select id="modalTheme">
-      <option value="Day in my Life">Mo — Day in my Life</option>
-      <option value="PMS/Zyklus">Di — PMS/Zyklus (kurz + knackig)</option>
-      <option value="Talk-Mittwoch">Mi — Talk-Mittwoch (Depressionen + Recovery)</option>
-      <option value="Histamin-Wissen">Do — Histamin-Wissen + App</option>
-      <option value="Thema Ärzte">Fr — Thema Ärzte (POV)</option>
-      <option value="Freies Reel">Sa — Freies Reel (was gerade einfällt)</option>
-      <option value="POV-Reel">— POV-Reel</option>
-      <option value="Rezept-Sonntag">So — Rezept-Sonntag</option>
-      <option value="Live-Cooking">So — Live-Cooking (4. Sonntag)</option>
-      <option value="Walk-and-Talk">Live: Walk-and-Talk (kostenlos)</option>
-      <option value="Themen-Event">Live: Themen-Event (kostenpflichtig)</option>
-      <option value="Podcast-Auftritt">Podcast-Auftritt (extern)</option>
-      <option value="Anderes">Anderes / manuell</option>
-    </select>
+    <label>Einträge an diesem Tag</label>
+    <ul class="entries-list" id="entriesList"></ul>
+    <button class="btn-add-entry" onclick="showForm(null)">+ Neuen Eintrag hinzufügen</button>
 
-    <label>Konkretes Thema (Titel für den Post)</label>
-    <input type="text" id="modalTopic" placeholder="z.B. „POV: der Frauenärztin-Dialog"">
+    <div class="form-section" id="formSection">
+      <label>Format</label>
+      <select id="modalFormat">
+        <option value="Reel">Reel</option>
+        <option value="Karussell">Karussell</option>
+        <option value="Beitrag">Beitrag (Einzelbild)</option>
+        <option value="Story-Reihe">Story-Reihe</option>
+        <option value="Live">Live (Instagram)</option>
+        <option value="Live-Zoom">Live (Zoom / Event)</option>
+        <option value="Podcast">Podcast-Auftritt</option>
+        <option value="Vortrag">Vortrag (Schule/extern)</option>
+        <option value="Sonstiges">Sonstiges</option>
+      </select>
 
-    <label>Caption (Fließtext für Instagram)</label>
-    <textarea id="modalCaption" placeholder="Deine komplette Caption inkl. Hooks, Story, CTA, Hashtags..."></textarea>
+      <label>Thema / Serie</label>
+      <select id="modalTheme">
+        <option value="Day in my Life">Day in my Life</option>
+        <option value="PMS/Zyklus">PMS/Zyklus</option>
+        <option value="Talk-Mittwoch">Talk-Mittwoch (Depressionen + Recovery)</option>
+        <option value="Histamin-Wissen">Histamin-Wissen + App</option>
+        <option value="Thema Ärzte">Thema Ärzte (POV)</option>
+        <option value="Freies Reel">Freies Reel (was gerade einfällt)</option>
+        <option value="POV-Reel">POV-Reel</option>
+        <option value="Rezept-Sonntag">Rezept-Sonntag</option>
+        <option value="Live-Cooking">Live-Cooking</option>
+        <option value="Walk-and-Talk">Walk-and-Talk (kostenlos)</option>
+        <option value="Themen-Event">Themen-Event (kostenpflichtig)</option>
+        <option value="Podcast-Auftritt">Podcast-Auftritt</option>
+        <option value="Anderes">Anderes / manuell</option>
+      </select>
 
-    <label>Was aufs Video / Reel geschrieben wird (Text-Overlay)</label>
-    <textarea id="modalOverlay" placeholder="Titel-Text, Sub-Titel, Punchlines..." style="min-height: 60px;"></textarea>
+      <label>Konkretes Thema (Titel für den Post)</label>
+      <input type="text" id="modalTopic" placeholder="z.B. „POV: der Frauenärztin-Dialog"">
 
-    <label>Canva-Link (Reel/Karussell)</label>
-    <input type="url" id="modalCanva" placeholder="https://canva.com/design/...">
+      <label>Caption (Fließtext für Instagram)</label>
+      <textarea id="modalCaption" placeholder="Deine komplette Caption inkl. Hooks, Story, CTA, Hashtags..."></textarea>
 
-    <label>Eigene Notizen / Ideen</label>
-    <textarea id="modalNotes" placeholder="Zusätzliche Ideen, Änderungen, Reminder..."></textarea>
+      <label>Was aufs Video / Reel geschrieben wird (Text-Overlay)</label>
+      <textarea id="modalOverlay" placeholder="Titel-Text, Sub-Titel, Punchlines..." style="min-height: 60px;"></textarea>
 
-    <div class="modal-buttons">
-      <button class="btn secondary" onclick="deleteEntry()">Löschen</button>
-      <button class="btn secondary" onclick="closeModal()">Abbrechen</button>
-      <button class="btn copper" onclick="saveEntry()">Speichern</button>
+      <label>Canva-Link (Reel/Karussell)</label>
+      <input type="url" id="modalCanva" placeholder="https://canva.com/design/...">
+
+      <label>Eigene Notizen / Ideen</label>
+      <textarea id="modalNotes" placeholder="Zusätzliche Ideen, Änderungen, Reminder..."></textarea>
+
+      <div class="modal-buttons">
+        <button class="btn secondary" onclick="cancelForm()">Zurück</button>
+        <button class="btn copper" onclick="saveEntry()">Speichern</button>
+      </div>
+    </div>
+
+    <div class="modal-buttons" style="margin-top: 24px;">
+      <button class="btn secondary" onclick="closeModal()">Schließen</button>
     </div>
   </div>
 </div>
@@ -397,6 +453,14 @@ let data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 let ideas = JSON.parse(localStorage.getItem(IDEAS_KEY) || '{}');
 CATEGORIES.forEach(c => { if (!ideas[c]) ideas[c] = []; });
 
+// Migration: alte Struktur (Objekt pro Tag) → neue Struktur (Array pro Tag)
+Object.keys(data).forEach(key => {
+  if (data[key] && !Array.isArray(data[key])) {
+    data[key] = [data[key]];
+  }
+});
+localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
 // Default Wochenrhythmus (nach Wochentag 0=So, 1=Mo, ...)
 const DEFAULT_THEMES = {
   1: 'Day in my Life',       // Mo
@@ -410,6 +474,7 @@ const DEFAULT_THEMES = {
 
 let currentDate = new Date(2026, 8, 1);  // Start: September 2026
 let editingKey = null;
+let editingIndex = null;  // Index innerhalb des Tages-Arrays
 
 // ============ RENDER ============
 
@@ -445,25 +510,28 @@ function renderMonth() {
     const date = new Date(year, month, d);
     const dow = date.getDay();  // 0=So, 1=Mo, ...
     const key = dateKey(date);
-    const entry = data[key];
+    const entries = data[key] || [];
 
     const cell = document.createElement('div');
     const dayClass = ['so','mo','di','mi','do','fr','sa'][dow];
     cell.className = 'cell ' + dayClass;
-    if (entry?.theme === 'Walk-and-Talk' || entry?.theme === 'Themen-Event' || entry?.theme === 'Podcast-Auftritt') {
-      cell.classList.add('event');
-    }
+    // Event-Highlight wenn irgendein Eintrag ein Live/Event ist
+    const hasEvent = entries.some(e => ['Walk-and-Talk', 'Themen-Event', 'Podcast-Auftritt', 'Live-Cooking'].includes(e.theme));
+    if (hasEvent) cell.classList.add('event');
     if (key === todayKey) cell.classList.add('today');
 
     const defaultTheme = DEFAULT_THEMES[dow];
-    const shownTheme = entry?.theme || defaultTheme;
-    const topic = entry?.topic;
+    const shownTheme = entries[0]?.theme || defaultTheme;
+    const topics = entries.filter(e => e.topic).map(e => e.topic);
+    const noteHtml = topics.length === 0 ? '' :
+      topics.length === 1 ? `<div class="note">${escapeHtml(topics[0])}</div>` :
+      `<div class="note">${escapeHtml(topics[0])}<br><span style="font-size:11px; color: var(--mute);">+${topics.length - 1} mehr</span></div>`;
 
     cell.innerHTML = `
       <div class="date">${d}</div>
       <div class="theme">${shownTheme}</div>
-      ${topic ? `<div class="note">${escapeHtml(topic)}</div>` : ''}
-      ${entry ? `<div class="has-content-badge"></div>` : ''}
+      ${noteHtml}
+      ${entries.length ? `<div class="has-content-badge"></div>` : ''}
     `;
     cell.onclick = () => openModal(key, defaultTheme);
     grid.appendChild(cell);
@@ -495,7 +563,7 @@ function renderIdeas() {
 
 function openModal(key, defaultTheme) {
   editingKey = key;
-  const entry = data[key] || {};
+  editingIndex = null;
   const date = keyToDate(key);
   const weekdayNames = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
   const monthNames = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
@@ -503,6 +571,38 @@ function openModal(key, defaultTheme) {
   document.getElementById('modalTitle').innerHTML = `Tag <em>bearbeiten</em>`;
   document.getElementById('modalMeta').textContent = `${weekdayNames[date.getDay()]} · ${date.getDate()}. ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
+  renderEntriesList();
+  hideForm();
+
+  document.getElementById('modalBg').classList.add('open');
+}
+
+function renderEntriesList() {
+  const list = document.getElementById('entriesList');
+  const entries = data[editingKey] || [];
+  if (entries.length === 0) {
+    list.innerHTML = `<li style="font-family: var(--serif); font-style: italic; color: var(--mute); padding: 12px 0;">Noch keine Einträge. Füge einen hinzu ↓</li>`;
+    return;
+  }
+  list.innerHTML = entries.map((e, i) => `
+    <li class="entry-item ${editingIndex === i ? 'active' : ''}" onclick="showForm(${i})">
+      <div class="entry-info">
+        <span class="entry-format">${escapeHtml(e.format || 'Reel')}</span>
+        <span class="entry-topic">${escapeHtml(e.topic || e.theme || '(unbenannt)')}</span>
+      </div>
+      <button class="entry-del" onclick="event.stopPropagation(); deleteEntry(${i})" title="Löschen">×</button>
+    </li>
+  `).join('');
+}
+
+function showForm(index) {
+  editingIndex = index;
+  const entries = data[editingKey] || [];
+  const date = keyToDate(editingKey);
+  const defaultTheme = DEFAULT_THEMES[date.getDay()];
+  const entry = index !== null ? entries[index] : {};
+
+  document.getElementById('modalFormat').value = entry.format || 'Reel';
   document.getElementById('modalTheme').value = entry.theme || defaultTheme;
   document.getElementById('modalTopic').value = entry.topic || '';
   document.getElementById('modalCaption').value = entry.caption || '';
@@ -510,17 +610,32 @@ function openModal(key, defaultTheme) {
   document.getElementById('modalCanva').value = entry.canva || '';
   document.getElementById('modalNotes').value = entry.notes || '';
 
-  document.getElementById('modalBg').classList.add('open');
+  document.getElementById('formSection').classList.add('open');
+  renderEntriesList();
+  // scroll form into view
+  setTimeout(() => document.getElementById('formSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+}
+
+function hideForm() {
+  document.getElementById('formSection').classList.remove('open');
+  editingIndex = null;
+  renderEntriesList();
+}
+
+function cancelForm() {
+  hideForm();
 }
 
 function closeModal() {
   document.getElementById('modalBg').classList.remove('open');
   editingKey = null;
+  editingIndex = null;
 }
 
 function saveEntry() {
   if (!editingKey) return;
   const entry = {
+    format: document.getElementById('modalFormat').value,
     theme: document.getElementById('modalTheme').value,
     topic: document.getElementById('modalTopic').value.trim(),
     caption: document.getElementById('modalCaption').value.trim(),
@@ -528,22 +643,31 @@ function saveEntry() {
     canva: document.getElementById('modalCanva').value.trim(),
     notes: document.getElementById('modalNotes').value.trim()
   };
-  // Nur speichern wenn was drin ist
-  if (Object.values(entry).some(v => v && v !== DEFAULT_THEMES[keyToDate(editingKey).getDay()])) {
-    data[editingKey] = entry;
+  // Nur speichern wenn was inhaltlich drin ist
+  const hasContent = entry.topic || entry.caption || entry.overlay || entry.canva || entry.notes;
+  if (!hasContent) {
+    alert('Bitte trage mindestens ein Thema oder eine Notiz ein.');
+    return;
+  }
+  if (!data[editingKey]) data[editingKey] = [];
+  if (editingIndex !== null) {
+    data[editingKey][editingIndex] = entry;
   } else {
-    delete data[editingKey];
+    data[editingKey].push(entry);
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  closeModal();
+  hideForm();
   render();
 }
 
-function deleteEntry() {
+function deleteEntry(index) {
   if (!editingKey) return;
-  delete data[editingKey];
+  if (!confirm('Diesen Eintrag wirklich löschen?')) return;
+  data[editingKey].splice(index, 1);
+  if (data[editingKey].length === 0) delete data[editingKey];
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  closeModal();
+  if (editingIndex === index) hideForm();
+  renderEntriesList();
   render();
 }
 
@@ -570,13 +694,16 @@ function deleteIdea(cat, idx) {
 function addEvent() {
   const dateStr = prompt('Datum (Format: 2026-09-15):');
   if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return;
-  const type = prompt('Was für ein Event? (Walk-and-Talk / Themen-Event / Podcast-Auftritt)');
+  const type = prompt('Was für ein Event? (Walk-and-Talk / Themen-Event / Podcast-Auftritt / Live-Cooking / Vortrag)');
   if (!type) return;
   const topic = prompt('Titel / Thema:');
-  editingKey = dateStr;
-  data[dateStr] = data[dateStr] || {};
-  data[dateStr].theme = type;
-  data[dateStr].topic = topic || '';
+  if (!data[dateStr]) data[dateStr] = [];
+  data[dateStr].push({
+    format: type === 'Podcast-Auftritt' ? 'Podcast' : type === 'Vortrag' ? 'Vortrag' : 'Live',
+    theme: type,
+    topic: topic || '',
+    caption: '', overlay: '', canva: '', notes: ''
+  });
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   render();
   openModal(dateStr, type);
