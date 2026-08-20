@@ -136,8 +136,16 @@
 - Was hilft: Wärme, Ruhe, sanfte Bewegung, eisenreiches Essen
 - Wichtig: das ist harte Arbeit vom Körper — kein Zeichen von Schwäche
 
+**Und wenn du Histamin nicht gut verträgst:**
+- Östrogen ist in dieser Phase am niedrigsten → dein Körper baut Histamin oft besser ab
+- Viele Frauen mit Histamin-Problematik berichten: das ist ihre „ruhigste" Phase
+- Krämpfe können aber Migräne triggern — auch bei Nicht-Betroffenen
+- {Julia ergänzt hier ihre eigene Erfahrung in der Menstruation}
+
 **Speaker-Notes:**
-„Wenn du in dieser Phase schläfrig bist — das ist normal. Wenn du liegen bleiben willst — das ist normal. Wenn du keinen Bock auf Sport hast — auch normal. Gnade mit dir."
+„Wenn du in dieser Phase schläfrig bist — das ist normal. Wenn du liegen bleiben willst — das ist normal. Wenn du keinen Bock auf Sport hast — auch normal. Gnade mit dir.
+
+Und jetzt kurz zu meinem Thema: Histamin. Das ist ein Botenstoff im Körper. Manche Menschen bauen Histamin nicht gut ab — dann bekommen sie Kopfschmerzen, Hautrötungen, Bauchweh von bestimmten Lebensmitteln. Und Histamin hängt mit deinem Zyklus zusammen. In der Menstruation, wenn dein Östrogen niedrig ist, ist Histamin oft am gutmütigsten. Bei mir ist das auch so."
 
 **Visual:** Rote/Kupfer-Kachel · Bild von Tee + Wärmflasche
 
@@ -151,8 +159,16 @@
 - Beste Zeit für: schwierige Prüfungen, neue Projekte, Verabredungen
 - Deine „Ich-kann-alles"-Phase
 
+**Und wenn du Histamin nicht gut verträgst:**
+- Östrogen steigt langsam an → hemmt das DAO-Enzym, das Histamin abbaut
+- Symptome können sich Richtung Eisprung schleichend verschlechtern
+- Erste Zeichen: leichte Kopfschmerzen, empfindlichere Haut, Konzentrationsknick
+- {Julia ergänzt hier ihre eigene Erfahrung in der Follikelphase}
+
 **Speaker-Notes:**
-„Wenn ihr wisst wo ihr im Zyklus seid, könnt ihr eure Woche planen. Prüfungen? Am besten in dieser Phase. Wichtige Gespräche? Auch."
+„Wenn ihr wisst wo ihr im Zyklus seid, könnt ihr eure Woche planen. Prüfungen? Am besten in dieser Phase. Wichtige Gespräche? Auch.
+
+Für die, die Histamin nicht gut vertragen: ausgerechnet in dieser Phase, in der ihr euch aktiv fühlt, fängt euer Körper an schlechter mit Histamin klarzukommen. Weil das Östrogen ansteigt und ein bestimmtes Enzym blockiert, das Histamin abbauen sollte. Also wenn ihr merkt: erste Woche nach der Periode top, zweite Woche kommt schon leichter Kopfschmerz — das ist kein Zufall."
 
 **Visual:** Helle Farben · Bild von Sonne oder Bewegung
 
@@ -166,8 +182,16 @@
 - Manchmal: leichte Schmerzen im Unterbauch („Mittelschmerz")
 - Dauert nur 24-48 Stunden
 
+**Und wenn du Histamin nicht gut verträgst:**
+- Östrogen erreicht seinen Höhepunkt → Histamin-Level oft auch am höchsten
+- Viele berichten: Migräne, Hautrötungen (Flush), Hitzewallungen, Herzrasen genau um den Eisprung
+- „Zyklus-Migräne" kennt fast jede Frau mit Histamin-Problematik
+- {Julia ergänzt hier ihre eigene Erfahrung um den Eisprung}
+
 **Speaker-Notes:**
-„Kurze aber intensive Phase. Viele merken sie gar nicht. Wenn ihr aber einen Zyklustag habt, an dem ihr euch besonders selbstsicher fühlt — high chance, das ist die Ovulation."
+„Kurze aber intensive Phase. Viele merken sie gar nicht. Wenn ihr aber einen Zyklustag habt, an dem ihr euch besonders selbstsicher fühlt — high chance, das ist die Ovulation.
+
+Aber gerade in dieser Phase reagieren viele Frauen mit Histamin-Problematik am stärksten. Weil das Östrogen jetzt am höchsten ist — und das befeuert Histamin. Wenn ihr Frauen kennt, die genau in der Zyklusmitte Migräne bekommen, ohne zu wissen warum — das ist Zyklus-Migräne. Sehr häufig. Ärzte sagen leider oft ‚das ist Stress'."
 
 **Visual:** Symbol Eizelle · warme Farbe
 
@@ -181,8 +205,17 @@
 - Manche haben mild-PMS, manche stark-PMS — beides individuell
 - Bei manchen: Wassereinlagerungen, Brustspannen, Akne
 
+**Und wenn du Histamin nicht gut verträgst:**
+- Progesteron beruhigt eigentlich die Mastzellen (die Histamin ausschütten)
+- Aber: kurz vor der Periode fallen beide Hormone ab → Histamin schlägt oft heftig zu
+- Verstärktes PMS bei HIT: Bauchweh, Blähungen, Migräne, Reizbarkeit werden extremer
+- Deshalb reagieren viele Frauen mit HIT in der PMS-Woche plötzlich auf Lebensmittel, die sie sonst vertragen
+- {Julia ergänzt hier ihre eigene PMS-Woche mit Histamin}
+
 **Speaker-Notes:**
-„Das ist die Phase, in der viele denken ‚mit mir stimmt was nicht'. Nein — das ist dein Progesteron. Es ist eine echte biologische Reaktion, keine Einbildung."
+„Das ist die Phase, in der viele denken ‚mit mir stimmt was nicht'. Nein — das ist dein Progesteron. Es ist eine echte biologische Reaktion, keine Einbildung.
+
+Und wenn ihr Histamin nicht gut vertragt — das ist die härteste Woche. Weil kurz vor der Periode beide Hormone abstürzen und Histamin dann quasi ‚entfesselt' ist. Deshalb kennen viele HIT-Frauen das Phänomen: dieselbe Tomate, die ich in der Follikelphase gut vertrage, macht mich in der PMS-Woche fertig. Das ist nicht Einbildung. Das ist Biologie. Und wer das nicht weiß, denkt: ich werde immer schlimmer krank. Dabei ist es nur zyklisch."
 
 **Visual:** Gedämpfte Farbe · Bild von Tee, Buch
 
