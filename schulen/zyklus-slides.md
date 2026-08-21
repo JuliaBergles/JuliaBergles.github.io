@@ -98,6 +98,48 @@
 
 ---
 
+### Slide 6b · Warum eure Periode so wichtig ist
+**Titel:** „Aber ist doch viel schöner wenn ich nicht blute." — Nein. Ist es nicht.
+
+**Inhalt:**
+
+**Eure Periode ist ein Vitalzeichen — wie Blutdruck oder Körpertemperatur.**
+- Regelmäßige Periode = euer Körper meldet: „alles okay, genug Energie, genug Ressourcen"
+- Ausbleibende Periode (außer bei Schwangerschaft/Pille) = der Körper spart
+
+**Warum Östrogen so wichtig ist:**
+- Schützt eure Knochen → ohne Östrogen sinkt die Knochendichte → Osteoporose
+- Schützt euer Herz → Frauen bekommen später Herzinfarkte als Männer, weil Östrogen schützt
+- Schützt euer Gehirn → Östrogenmangel = erhöhtes Demenz-Risiko im Alter
+- Beeinflusst Haut, Haare, Schleimhäute, Immunsystem
+
+**Wann fehlende Periode gefährlich wird:**
+- Bei Sportlerinnen (RED-S-Syndrom): sinkende Knochendichte → **Stressfrakturen mit 20 statt 60**
+- Bei Untergewicht + Diäten: Fortpflanzung wird komplett abgeschaltet
+- Über Monate ohne Periode → langfristige Folgen für Knochen, Herz, Kreislauf
+- **Wichtig:** Die Blutung unter der Pille ist KEINE echte Periode — sondern Hormonentzug. Der Zyklus ist unter der Pille komplett ausgeschaltet.
+
+**Kernbotschaft:**
+- Keine Periode = kein Sieg
+- Keine Periode = ein Notruf des Körpers
+
+**Speaker-Notes:**
+„Ich hör oft von jungen Frauen — meist heimlich, meist im Gespräch — ‚wäre doch entspannter ohne'. Und ich verstehe das. Krämpfe, Stimmung, Umständlichkeit. Wer will das schon.
+
+Aber die Wahrheit ist hart: eure Periode ist eines der wichtigsten Feedback-Signale eures Körpers. Wenn sie regelmäßig kommt, sagt er: ‚mir geht's gut, ich hab Energie über'. Wenn sie ausbleibt — nicht wegen Pille oder Schwangerschaft — dann spart der Körper. Er priorisiert. Und die Fortpflanzung ist das Erste, was er abschaltet.
+
+Aber gleichzeitig fahren andere Systeme runter. Die Knochen bauen ab. Das Herz-Kreislauf-System wird anfälliger. Sogar das Gehirn.
+
+Deshalb: keine Periode über Monate ohne Grund ist kein Sieg. Das ist ein Notruf.
+
+Und die Pillen-Blutung — das sag ich hart — die zählt nicht als ‚Periode'. Das ist nur eine Entzugsblutung, weil ihr die Hormone kurz absetzt. Der eigentliche Zyklus ist unter der Pille komplett ausgeschaltet. Das heißt nicht, dass die Pille per se schlecht ist. Aber ihr solltet wissen: ihr habt dann keinen natürlichen Zyklus mehr — und damit auch keinen Feedback-Kanal von eurem Körper mehr.
+
+{Julia ergänzt hier: eigene Geschichte — als deine Periode ausblieb, oder was du dazu in deiner Community hörst}"
+
+**Visual:** Starker Kontrast — z.B. „STOPP"-Ampel oder Warnschild · alternativ: Grafik „Was fehlt, wenn die Periode fehlt" mit Icons Knochen · Herz · Gehirn
+
+---
+
 ### Slide 7 · Die vier wichtigsten Hormone
 **Titel:** Deine 4 Hormone
 **Inhalt (als Karten):**
