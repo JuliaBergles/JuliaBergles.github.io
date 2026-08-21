@@ -406,6 +406,68 @@ Das Frustrierende: kein Arzt hat mir das je zusammenhängend erklärt. Ich hab's
 
 ---
 
+### Slide 18b · Was tun bei — Therapien im Überblick
+**Titel:** Behandlungswege — was es gibt
+**Untertitel:** Kein Heilversprechen. Jede Frau ist anders. Immer mit Ärzt:in besprechen.
+
+**Inhalt (als 4 Karten):**
+
+**PMS**
+- Schulmedizinisch: Magnesium (200-400 mg), Vitamin B6, Mönchspfeffer, Ibuprofen bei Krämpfen
+- Ergänzend: regelmäßiger Schlaf, Zucker + Alkohol reduzieren, moderate Bewegung, Wärme
+- Bei starker Ausprägung: Frauenärztin fragt oft nach der Pille — muss aber nicht die einzige Antwort sein
+- Bei HIT-Frauen: in der Lutealphase besonders auf histaminarme Ernährung achten
+
+**PMDS**
+- Braucht ärztliche Behandlung — nicht allein zu bewältigen
+- SSRIs (Antidepressiva) nur in der Lutealphase → anerkannter Standard, oft sehr wirksam
+- Hormonelle Verhütung durchgehend (ohne Pillenpause)
+- Kognitive Verhaltenstherapie
+- Alle PMS-Maßnahmen zusätzlich
+- Wichtig: kein „reiß dich zusammen" — professionelle Hilfe holen
+
+**Endometriose**
+- Schmerztherapie: NSAR (Ibuprofen, Diclofenac), in schweren Fällen stärker
+- Hormontherapie: Pille durchgehend, Hormonspirale, GnRH-Agonisten (dämpfen Östrogen)
+- OP (Laparoskopie): Herde entfernen — Goldstandard bei Beschwerden
+- Entzündungshemmende Ernährung (oft überschneidet sich mit histaminarm)
+- Reha + Physiotherapie bei Beckenschmerz
+- Endometriose-Zentrum aufsuchen für multimodale Therapie
+- Psychotherapie hilft — chronischer Schmerz belastet die Psyche
+
+**PCOS**
+- Metformin (bei Insulinresistenz, was bei PCOS oft dazukommt)
+- Inositol (Myo + D-Chiro) — gut untersucht, verbessert Zyklus + Insulin
+- Hormonelle Verhütung (Anti-Androgen-Pillen bei Akne + starkem Haarwuchs)
+- Lebensstil: Bewegung, Krafttraining, bei Übergewicht schon 5-10 % Gewichtsreduktion können viel bewirken
+- Ernährung: Low Carb, Mediterran oder anti-entzündlich
+- Bei Kinderwunsch später: Clomifen, Ovulationsauslöser
+- Regelmäßige Vorsorge — PCOS erhöht das Diabetes-Risiko
+
+**Unregelmäßige Periode**
+- Erst: Ursache finden. Nicht jede unregelmäßige Periode braucht Behandlung
+- Häufige Ursachen: Stress, Untergewicht, Sport-Amenorrhoe, PCOS, Schilddrüse
+- Bei Untergewicht/Sport-Amenorrhoe: Gewicht + Kalorien hoch, Sport runter
+- Bei PCOS: siehe oben
+- Bei Schilddrüsen-Störung: Schilddrüsen-Medikament
+- Bei Stress: Stress-Management, ggf. Therapie
+- Zyklus tracken über 3 Monate → Muster erkennen → dann zum Arzt
+
+**Speaker-Notes:**
+„Ich muss vorweg sagen: das ist kein Heilversprechen. Und ich bin keine Ärztin. Was ich euch zeige, sind die Wege, die es gibt — damit ihr wisst, wonach ihr fragen könnt, wenn ihr beim Frauenarzt sitzt.
+
+Wichtig ist: **die meisten Ärzt:innen greifen als Erstes zur Pille**. Das ist oft okay, aber nicht immer die beste Antwort. Es gibt viel mehr. Magnesium bei PMS ist zum Beispiel gut untersucht und kann viel bewirken. Bei PMDS gibt es SSRIs, die nur in der zweiten Zyklushälfte genommen werden — das kennen viele nicht mal, obwohl es Standard ist.
+
+Bei Endometriose ist die Wahrheit: es gibt kein Heilmittel. Man kann Symptome lindern, Herde operativ entfernen, Hormone unterdrücken. Aber es kommt oft zurück. Deshalb sind Endometriose-Zentren so wichtig — die kennen sich aus.
+
+Und bei unregelmäßiger Periode ist der wichtigste Schritt: erst mal die Ursache suchen. Nicht direkt behandeln. Weil eine unregelmäßige Periode kann viele Gründe haben — von Stress bis Schilddrüse.
+
+Was ich euch mitgeben möchte: **fragt nach. Lasst euch mehr als eine Option zeigen. Und wenn ein Arzt euch nur eine Antwort gibt — geht zu einer zweiten Meinung.**"
+
+**Visual:** 5 kompakte Karten in einem Grid (z.B. 3+2) in verschiedenen Farbtönen (PMS beige · PMDS blau · Endometriose kupfer · PCOS gelb-warm · Unregelmäßig mint)
+
+---
+
 ## SEKTION 4 · WAS HILFT (Slides 19-22, ~15 Min)
 
 ### Slide 19 · Zyklus-Tracking
