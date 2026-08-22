@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canva-Template-Anleitung · Julia intern</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --cream: #fffcf9; --beige: #f4ede4; --copper: #c48b6c;
+    --copper-dark: #a87556; --blue: #8790c1; --blue-dark: #6f78a8;
+    --mint: #e2fffe; --pink-soft: #f9e0e6; --red: #af4343;
+    --dark: #2a2a2a; --dark-soft: #4a4a4a; --mute: #8a8a8a;
+    --line: rgba(42, 42, 42, 0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--cream); color: var(--dark); line-height: 1.5; }
+  .page { max-width: 1200px; margin: 0 auto; padding: 40px 40px 80px; }
+
+  h1 { font-family: var(--serif); font-weight: 500; font-size: 44px; line-height: 1.05; margin-bottom: 6px; }
+  h1 em { color: var(--copper); font-style: italic; }
+  h2 { font-family: var(--serif); font-weight: 500; font-size: 28px; margin: 60px 0 8px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--copper-dark); }
+  h3 { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-dark); margin: 24px 0 10px; }
+  p { color: var(--dark-soft); margin-bottom: 10px; font-size: 14px; }
+  strong { color: var(--dark); }
+  ul { margin-left: 18px; margin-bottom: 10px; }
+  li { color: var(--dark-soft); font-size: 14px; padding: 2px 0; }
+  code { background: var(--beige); padding: 2px 6px; border-radius: 2px; font-size: 12px; font-family: 'SF Mono', Monaco, monospace; }
+
+  .intro { background: var(--beige); padding: 24px 28px; margin: 20px 0 40px; border-left: 3px solid var(--copper); }
+
+  .swatches { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+  .swatch { padding: 10px 14px; font-size: 12px; font-family: monospace; border-radius: 2px; }
+
+  /* Template layout */
+  .template { margin: 40px 0; padding: 30px; background: var(--beige); }
+  .template-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+  .template h4 { font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--dark); }
+  .template .format { font-family: monospace; font-size: 11px; background: var(--dark); color: var(--cream); padding: 4px 10px; }
+  .template-body { display: grid; grid-template-columns: minmax(200px, 350px) 1fr; gap: 40px; align-items: start; }
+
+  @media (max-width: 800px) {
+    .template-body { grid-template-columns: 1fr; }
+  }
+
+  /* Canva skizzen */
+  .canvas {
+    width: 100%;
+    background: var(--cream);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+  }
+  .canvas.square { aspect-ratio: 1; }
+  .canvas.portrait { aspect-ratio: 4/5; }
+  .canvas.story { aspect-ratio: 9/16; }
+
+  .spec ul { margin-left: 18px; }
+
+  /* --- Template-spezifische Skizzen --- */
+
+  /* 1. Karussell-Cover */
+  .t1 { background: var(--dark); color: var(--cream); padding: 24px; justify-content: space-between; }
+  .t1 .top { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); }
+  .t1 .title { font-family: var(--serif); font-size: 34px; line-height: 1.05; }
+  .t1 .title em { color: var(--copper); font-style: italic; }
+  .t1 .bottom { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; color: rgba(255,252,249,0.7); }
+
+  /* 2. Karussell-Content */
+  .t2 { background: var(--cream); padding: 26px; justify-content: center; }
+  .t2 .num { font-family: var(--serif); font-style: italic; font-size: 42px; color: var(--copper); line-height: 1; }
+  .t2 .body { font-family: var(--serif); font-size: 22px; line-height: 1.3; color: var(--dark); margin-top: 14px; }
+  .t2 .body em { font-style: italic; color: var(--copper); }
+  .t2 .bottom { position: absolute; bottom: 20px; right: 20px; font-family: var(--sans); font-size: 9px; letter-spacing: 0.15em; color: var(--mute); }
+
+  /* 3. Karussell-Ende */
+  .t3 { background: var(--copper); color: var(--cream); padding: 26px; justify-content: space-between; }
+  .t3 .cta { font-family: var(--serif); font-size: 28px; line-height: 1.1; }
+  .t3 .cta em { font-style: italic; }
+  .t3 .icons { display: flex; gap: 12px; font-size: 22px; }
+  .t3 .handle { font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+
+  /* 4. Reel-Cover (Feed) */
+  .t4 { background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7)); position: relative; padding: 20px; justify-content: flex-end; color: var(--cream); }
+  .t4::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--red) 0%, #7a2f2f 100%); z-index: -1; }
+  .t4 .label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85; }
+  .t4 .title { font-family: var(--serif); font-size: 26px; line-height: 1.05; margin-top: 6px; }
+
+  /* 5. Zitat */
+  .t5 { background: var(--beige); padding: 30px; justify-content: center; text-align: center; }
+  .t5 .quote-mark { font-family: var(--serif); font-size: 60px; color: var(--copper); line-height: 0.5; margin-bottom: 10px; }
+  .t5 .quote { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.3; color: var(--dark); }
+  .t5 .attribution { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); margin-top: 16px; }
+
+  /* 6. Rezept */
+  .t6 { background: var(--cream); padding: 0; }
+  .t6 .photo { flex: 1; background: linear-gradient(135deg, #d4b8a0, #a67550); display: flex; align-items: center; justify-content: center; color: rgba(255,252,249,0.7); font-family: var(--serif); font-style: italic; font-size: 12px; }
+  .t6 .txt { padding: 18px; background: var(--cream); }
+  .t6 .rezept-num { font-family: var(--serif); font-style: italic; font-size: 12px; color: var(--copper); }
+  .t6 .rezept-title { font-family: var(--serif); font-size: 20px; margin: 4px 0 8px; }
+  .t6 .rezept-tags { font-family: var(--sans); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mute); }
+
+  /* 7. POV-Reel-Cover */
+  .t7 { background: #1a1a1a; color: var(--cream); padding: 26px; justify-content: center; text-align: left; }
+  .t7 .pov-label { font-family: var(--sans); font-size: 14px; font-weight: 800; letter-spacing: 0.2em; color: var(--red); }
+  .t7 .pov-text { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.2; margin-top: 8px; }
+
+  /* 8. Info-Karussell */
+  .t8 { background: var(--mint); padding: 30px; justify-content: center; text-align: center; }
+  .t8 .big-num { font-family: var(--serif); font-size: 80px; color: var(--blue-dark); line-height: 1; font-weight: 500; }
+  .t8 .big-unit { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--copper-dark); margin-top: -8px; }
+  .t8 .big-desc { font-family: var(--sans); font-size: 14px; color: var(--dark-soft); margin-top: 12px; max-width: 240px; margin-left: auto; margin-right: auto; }
+
+  /* 9. Story-Frage */
+  .t9 { background: var(--cream); padding: 40px 30px; text-align: center; justify-content: center; }
+  .t9 .story-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-dark); }
+  .t9 .story-q { font-family: var(--serif); font-size: 24px; line-height: 1.2; margin: 16px 0; color: var(--dark); }
+  .t9 .story-q em { color: var(--copper); font-style: italic; }
+  .t9 .box { background: white; padding: 12px 18px; border: 1px solid var(--line); font-family: var(--sans); font-size: 11px; color: var(--mute); margin: 0 auto; max-width: 200px; }
+
+  /* 10. Highlight-Cover */
+  .t10 { background: var(--dark); color: var(--copper); padding: 20px; align-items: center; justify-content: center; text-align: center; }
+  .t10 .h-icon { font-family: var(--serif); font-size: 40px; }
+  .t10 .h-label { font-family: var(--sans); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Canva-<em>Templates</em>.</h1>
+  <p style="font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--mute); margin-top: 4px;">
+    Deine 10 Master-Vorlagen zum Nachbauen in Canva. Skizzen zeigen Layout, Farben, Text-Positionen.
+  </p>
+
+  <div class="intro">
+    <h3>Bevor du anfängst</h3>
+    <p><strong>1. Canva Pro-Konto</strong> → Marken-Kit anlegen mit deinen Farben + Fonts (einmal einrichten, dann in jedem Template verfügbar)</p>
+    <p><strong>2. Marken-Kit anlegen:</strong></p>
+    <div class="swatches">
+      <span class="swatch" style="background: var(--cream); border: 1px solid var(--line);">Cream · #fffcf9</span>
+      <span class="swatch" style="background: var(--beige);">Beige · #f4ede4</span>
+      <span class="swatch" style="background: var(--copper); color: white;">Copper · #c48b6c</span>
+      <span class="swatch" style="background: var(--blue); color: white;">Blue · #8790c1</span>
+      <span class="swatch" style="background: var(--blue-dark); color: white;">Blue-Dark · #6f78a8</span>
+      <span class="swatch" style="background: var(--red); color: white;">Rot · #af4343</span>
+      <span class="swatch" style="background: var(--dark); color: white;">Dark · #2a2a2a</span>
+      <span class="swatch" style="background: var(--mint);">Mint · #e2fffe</span>
+    </div>
+    <p><strong>3. Fonts installieren (Canva → Uploads):</strong> Cormorant Garamond, Manrope</p>
+    <p><strong>4. Templates jetzt bauen — einmal — dann bei jedem Post nur Text austauschen.</strong></p>
+  </div>
+
+  <h2>Nº 01 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Karussell-Cover</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Karussell-Cover (erste Slide)</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t1">
+        <div class="top">Nº 03 · Ärzte</div>
+        <div class="title">Was mir kein <em>Arzt</em> je gesagt hat.</div>
+        <div class="bottom">Save + Share ↓ · @julia_bergles</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Dark #2a2a2a</strong> (oder Rot #af4343 für ernste Themen, Cream für leichte)</li>
+          <li>Oben klein: <strong>Nº XX · Kategorie</strong> (Manrope, 10pt, Letter-Spacing 0.2em, Copper)</li>
+          <li>Mittig groß: <strong>Titel in Cormorant 34pt</strong>, eine ganze oder halbe Zeile in <em>italic + Copper</em></li>
+          <li>Unten: „Save + Share ↓" + @handle (Manrope, klein, hell)</li>
+        </ul>
+        <h3>Beispiele für Titel</h3>
+        <ul>
+          <li>Was mir kein <em>Arzt</em> je gesagt hat.</li>
+          <li>3 Zeichen, dass dein <em>Bauch</em> Ruhe braucht.</li>
+          <li>Warum du in der <em>PMS-Woche</em> weniger verträgst.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 02 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Karussell-Content-Slide</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Content-Slide (Slide 2-X)</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t2">
+        <div class="num">01</div>
+        <div class="body">„Sind halt Regel<em>schmerzen</em>."</div>
+        <div class="bottom">01 / 07</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Cream #fffcf9</strong></li>
+          <li>Oben groß: Slide-Nummer <strong>01, 02, 03…</strong> in Cormorant Italic 42pt Copper</li>
+          <li>Mittig: Kern-Aussage in <strong>Cormorant 22pt</strong>, ein Wort italic + Copper</li>
+          <li>Unten rechts klein: <strong>01 / 07</strong> als Slide-Zähler</li>
+        </ul>
+        <h3>Faustregel</h3>
+        <p>Ein Gedanke pro Slide. Maximal 25 Wörter. Wenn du mehr schreibst → neuer Slide.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 03 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Karussell-Ende (CTA)</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Ende-Slide (letzte Slide)</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t3">
+        <div class="cta">Wenn dir das <em>geholfen</em> hat — teile es mit einer Freundin.</div>
+        <div class="icons">💾 &nbsp; ✈️ &nbsp; ❤️</div>
+        <div class="handle">@julia_bergles · juliabergles.de</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Copper #c48b6c</strong> (kontrastiert mit Cream-Slides davor → Signal „hier ist Ende")</li>
+          <li>CTA in Cormorant 28pt, Cream — <em>ein Wort italic</em></li>
+          <li>Icon-Zeile: 💾 (Save) · ✈️ (Share) · ❤️ (Like) — Instagram-Aktionen visualisieren</li>
+          <li>Unten Handle + Website in Manrope, kleiner</li>
+        </ul>
+        <h3>CTA-Varianten (alterniere)</h3>
+        <ul>
+          <li>„Save damit du's wiederfindest."</li>
+          <li>„Teile es mit einer Freundin, die das braucht."</li>
+          <li>„Kommentier — was war für dich neu?"</li>
+          <li>„Folg mir für mehr davon."</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 04 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Reel-Cover für den Feed</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Reel-Cover (statisch, damit Feed einheitlich aussieht)</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5 (nicht 9:16!)</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t4">
+        <div class="label">Talk-Mittwoch</div>
+        <div class="title">Warum ich <em>nie</em> zurückwill.</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Foto von dir</strong> mit dunklem Overlay-Gradient (unten dunkler)</li>
+          <li>Oder: Solid-Farbe Rot #af4343 / Dark → wenn Feed-Konsistenz Priorität</li>
+          <li>Unten: kleiner Kategorie-Label (Talk-Mittwoch / POV / DILY / Rezept)</li>
+          <li>Darunter: großer Titel in Cormorant 26pt · Cream · <em>ein Wort italic</em></li>
+        </ul>
+        <h3>Wichtig für Feed-Look</h3>
+        <p>Alle Reel-Cover im gleichen Aufbau — dann sieht dein Instagram-Feed konsistent aus, wenn jemand auf deinem Profil scrollt.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 05 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Zitat-Post</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Zitat-Karte (Single Post)</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t5">
+        <div class="quote-mark">"</div>
+        <div class="quote">Ich hab so lange geglaubt, mit mir stimmt was nicht. Dabei war's mein Zyklus.</div>
+        <div class="attribution">Julia · 20 · Betroffene</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Beige #f4ede4</strong> (weich, editorial)</li>
+          <li>Oben groß: <strong>„</strong> (Cormorant 60pt, Copper)</li>
+          <li>Mittig: Zitat in <strong>Cormorant Italic 22pt</strong>, Dark</li>
+          <li>Unten: Attribution — dein Name + Alter + Rolle</li>
+        </ul>
+        <h3>Nutzen</h3>
+        <p>Perfekt für Aussagen aus deiner Community, oder eigene Punchlines. Sehr Save-tauglich.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 06 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Rezept-Karussell</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Rezept-Cover</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t6">
+        <div class="photo">Rezept-Foto</div>
+        <div class="txt">
+          <div class="rezept-num">Nº 12</div>
+          <div class="rezept-title">Süßkartoffel-Brownies mit <em style="font-style: italic; color: var(--copper);">Carob</em></div>
+          <div class="rezept-tags">Histaminarm · glutenfrei · 30 Min</div>
+        </div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Oben 60 %: <strong>Rezept-Foto</strong> (idealerweise Naturlicht, warm, unaufgeräumt)</li>
+          <li>Unten 40 %: Cream-Feld mit Rezept-Nummer + Titel + Tags</li>
+          <li>Titel: Cormorant 20pt, ein Wort italic Copper</li>
+          <li>Tags: Manrope 9pt, ALL CAPS, Letter-Spacing weit</li>
+        </ul>
+        <h3>Karussell-Slides danach</h3>
+        <ul>
+          <li>Slide 2: Zutaten (Liste, Cormorant)</li>
+          <li>Slide 3-5: Zubereitung Schritt für Schritt</li>
+          <li>Slide 6: Endresultat-Foto</li>
+          <li>Slide 7: CTA-Ende (Template 3)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 07 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">POV-Reel-Cover</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>POV-Cover (für POV-Reels)</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t7">
+        <div class="pov-label">POV:</div>
+        <div class="pov-text">Deine Ärztin sagt „das ist eben so"— zum 5. Mal.</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Fast-Schwarz #1a1a1a</strong> (dramatisch, ernst)</li>
+          <li>„POV:" in <strong>Manrope 800, ROT #af4343</strong>, Letter-Spacing weit</li>
+          <li>Darunter der Satz: Cormorant Italic 24pt Cream</li>
+        </ul>
+        <h3>Wichtig</h3>
+        <p>POV-Reels sind deine viralsten. Immer schwarz-rot als Signature. Cover soll man sofort erkennen.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 08 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Info-Karussell (Educational)</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Zahl-Highlight-Slide</h4>
+      <span class="format">1080 × 1350 px · Portrait 4:5</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas portrait t8">
+        <div class="big-num">80%</div>
+        <div class="big-unit">aller Frauen</div>
+        <div class="big-desc">haben mindestens einmal im Leben Symptome, die zu PMS zählen.</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Mint #e2fffe</strong> (Ruhe, Wissen)</li>
+          <li>Riesige Zahl in <strong>Cormorant 80pt Blue-Dark</strong></li>
+          <li>Kleine Einheit darunter in Cormorant Italic Copper</li>
+          <li>Erklärender Text: Manrope 14pt, max 25 Wörter</li>
+        </ul>
+        <h3>Nutzen</h3>
+        <p>„Wusstest du dass"-Content. Zahlen sind bombastisch für Reichweite — Save + Share ohne Ende.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 09 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Story-Template</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Story mit Frage-Box</h4>
+      <span class="format">1080 × 1920 px · Story 9:16</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas story t9">
+        <div class="story-label">Kurze Frage</div>
+        <div class="story-q">Was ist dein <em>Safe-Food</em> in einer Krise?</div>
+        <div class="box">Antworten hier ↓</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: Cream oder Foto mit Cream-Overlay</li>
+          <li>Kategorie-Label oben (Kurze Frage / Umfrage / Poll)</li>
+          <li>Frage in Cormorant 24pt, ein Wort italic Copper</li>
+          <li>Instagram-Frage-Box direkt in App drüber legen (nicht in Canva)</li>
+        </ul>
+        <h3>Story-Varianten</h3>
+        <ul>
+          <li>Story mit Frage-Box (interaktiv)</li>
+          <li>Story mit Poll (2 Optionen)</li>
+          <li>Story mit Quiz</li>
+          <li>Story reine Info (Karussell-Slide-Style)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Nº 10 · <em style="font-family: var(--serif); font-style: italic; color: var(--copper);">Highlight-Cover</em></h2>
+  <div class="template">
+    <div class="template-header">
+      <h4>Highlight-Cover (Profilseite)</h4>
+      <span class="format">1080 × 1920 px · Story 9:16</span>
+    </div>
+    <div class="template-body">
+      <div class="canvas story t10" style="max-width: 200px; margin: 0 auto;">
+        <div class="h-icon">§</div>
+        <div class="h-label">Über mich</div>
+      </div>
+      <div class="spec">
+        <h3>Aufbau</h3>
+        <ul>
+          <li>Hintergrund: <strong>Dark #2a2a2a</strong> (alle Highlights einheitlich)</li>
+          <li>Mittig: <strong>Symbol/Icon in Cormorant Copper</strong> — § · ○ · ✦ · § · ✱ · ♥ · ✿ · ⚭</li>
+          <li>Darunter kleine Beschriftung in Manrope 8pt Cream</li>
+          <li>Alle 8 Highlights → gleiche Struktur → einheitliches Profil</li>
+        </ul>
+        <h3>Deine 8 Highlights</h3>
+        <ul>
+          <li>§ · Über mich</li>
+          <li>○ · Meine Story</li>
+          <li>✦ · Histamin</li>
+          <li>♥ · Zyklus</li>
+          <li>✿ · Rezepte</li>
+          <li>⚭ · App TerraLuna</li>
+          <li>✱ · E-Books</li>
+          <li>≡ · Community</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-top: 80px;">Zeitplan für den Aufbau</h2>
+  <ul>
+    <li><strong>Tag 1 (2h):</strong> Canva Marken-Kit anlegen · Farben, Fonts importieren</li>
+    <li><strong>Tag 2 (2h):</strong> Templates 1-3 (Karussell-Cover, Content, Ende) bauen</li>
+    <li><strong>Tag 3 (2h):</strong> Templates 4-6 (Reel-Cover, Zitat, Rezept)</li>
+    <li><strong>Tag 4 (2h):</strong> Templates 7-10 (POV, Info, Story, Highlight)</li>
+    <li><strong>Tag 5:</strong> Erste 5 echte Posts in den Templates bauen → gefühl kriegen</li>
+  </ul>
+  <p style="margin-top: 20px; font-family: var(--serif); font-style: italic; color: var(--mute); font-size: 15px;">
+    Nach diesen 10h Einmalinvest baust du pro Post nur noch 5-10 Min statt 45 Min.
+  </p>
+
+</div>
+</body>
+</html>
