@@ -5,6 +5,96 @@
 
 ---
 
+## SIGNATURE-CAPTION (dein Standard-Text unter jeden Post)
+
+**Immer gleich — nur der individuelle Post-Text davor wechselt.**
+
+```
+Falls dich keiner ernst nimmt: Ich verstehe die Probleme mit Essen, 
+Depressionen, mentaler Gesundheit und Zyklusbeschwerden zu gut. 
+Aus eigener Erfahrung nach Orthorexie, Darmverschluss, PMS und 
+Histaminintoleranz kann ich dir definitiv weiterhelfen.
+
+Ich veranstalte immer wieder Live Calls zu verschiedenen Themen. 
+Wie z.B. wie Zyklus und Histamin zusammenhängen. Schreibe gerne 
+„Live Call" in die Kommentare, dann schicke ich dir alle Termine 
+für die nächsten Monate.
+
+Achso, und falls du am Call nicht dabei sein kannst: Ich habe auch 
+E-Books für dich. Alle Infos auf meiner Website.
+
+Wenn du auch in eine Gruppe mit lauter tollen Menschen willst, 
+schreibe „WhatsApp" in die Kommentare — hab nämlich eine tolle 
+Community. Alle Infos findest du auch in meiner eigenen 
+TerraLuna-App.
+
+Falls du Fragen hast, schreib mir jederzeit eine Privatnachricht. 
+Ich helfe dir gerne weiter.
+```
+
+---
+
+## HASHTAG-SETS (nach Content-Typ)
+
+**Set A · Zyklus / PMS / PMDS / Endometriose / PCOS**
+```
+#zyklusbeschwerden #pms #pmds #hormonchaos #zyklus #zykluswissen
+#frauengesundheit #periodetalk #endometrioseawareness #pcos
+#hormonellebeschwerden #achtsamerzyklus
+```
+
+**Set B · Histamin / MCAS / Reizdarm / Darm**
+```
+#histaminintoleranz #histaminarm #mcas #reizdarm #darmgesundheit
+#leakygut #unverträglichkeiten #chronischkrank #darmprobleme
+#bauchbeschwerden #histaminarmesrezept #histaminarmleben
+```
+
+**Set C · Meine Story / Ärzte / Recovery / Mental Health**
+```
+#chronischkrank #betroffenensprechen #meinegeschichte
+#eatingdisorderrecovery #orthorexierecovery #darmverschluss
+#patientenrechte #medizinversagen #mentalhealthawareness
+#depression #recovery #selfcare
+```
+
+**Set D · Rezepte (histaminarm)**
+```
+#histaminarm #glutenfrei #laktosefrei #zuckerfrei #cleaneating
+#histaminarmesrezept #veganerezepte #foodblogger_de #healthyfood
+#einfacherezepte #mealprep #histaminintoleranzrezepte
+```
+
+**Set E · App + E-Book + Community**
+```
+#terraluna #zyklustracker #ernährungsapp #ebook #histaminebook
+#gesundheitsapp #communitylove #frauenpower #selbständigefrauen
+```
+
+**Universal (immer dazu):**
+```
+#julia_bergles #juliabergles
+```
+
+---
+
+## POST-AUFBAU (Schablone für jeden Post)
+
+```
+[3-5 Zeilen individueller Post-Text zum konkreten Reel/Karussell]
+
+—
+
+[SIGNATURE-CAPTION komplett von oben]
+
+—
+
+[Passendes Hashtag-Set A/B/C/D/E]
+#julia_bergles #juliabergles
+```
+
+---
+
 ## Deine Standard-CTA-Formel (immer verwenden, in variiertem Wording)
 
 **Immer als erstes:**
