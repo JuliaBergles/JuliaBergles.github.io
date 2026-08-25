@@ -1,3 +1,21 @@
+// Mobile-Nav: Klick auf ein Dropdown-Label toggelt das Untermenü
+(function () {
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('.nav-v3 .has-dropdown > .nav-link');
+    if (!link) return;
+    const parent = link.parentElement;
+    // Nur im mobilen Zustand (wenn Nav "open" ist) toggeln
+    if (!document.getElementById('navV3') || !document.getElementById('navV3').classList.contains('open')) return;
+    e.preventDefault();
+    e.stopPropagation();
+    // Andere geöffnete Dropdowns zuklappen
+    parent.parentElement.querySelectorAll('.has-dropdown.open').forEach(function (li) {
+      if (li !== parent) li.classList.remove('open');
+    });
+    parent.classList.toggle('open');
+  });
+})();
+
 (function () {
   if (!('IntersectionObserver' in window)) return;
 
