@@ -724,6 +724,17 @@ p.lead {
   .nav-v3 .nav-cta { display: none; }
   .nav-v3 .burger { display: block; }
 
+  /* WICHTIG: backdrop-filter auf der Nav erzeugt einen "containing block"
+     — dadurch würde das position:fixed-Menü nur so groß wie die Nav-Leiste
+     werden (schmale Spalte). Beim geöffneten Menü entfernen wir den Filter
+     und machen den Hintergrund opak, damit das Overlay den ganzen Bildschirm
+     einnimmt. */
+  .nav-v3.open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--cream);
+  }
+
   .nav-v3.open ul.nav-main {
     display: flex;
     position: fixed;
