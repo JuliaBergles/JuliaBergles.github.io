@@ -1,18 +1,48 @@
-// Mobile-Nav: Klick auf ein Dropdown-Label toggelt das Untermenü
+// Mobile-Nav: Burger-Toggle, Body-Scroll-Lock, ✕-Icon, ESC-Close, Nav-Höhe messen
 (function () {
-  document.addEventListener('click', function (e) {
-    const link = e.target.closest('.nav-v3 .has-dropdown > .nav-link');
-    if (!link) return;
-    const parent = link.parentElement;
-    // Nur im mobilen Zustand (wenn Nav "open" ist) toggeln
-    if (!document.getElementById('navV3') || !document.getElementById('navV3').classList.contains('open')) return;
+  const nav = document.getElementById('navV3');
+  if (!nav) return;
+  const burger = nav.querySelector('.burger');
+  if (!burger) return;
+
+  const setNavHeight = () => {
+    document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+  };
+  setNavHeight();
+  window.addEventListener('resize', setNavHeight);
+  window.addEventListener('load', setNavHeight);
+
+  const openMenu = () => {
+    nav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    burger.textContent = '✕';
+    burger.setAttribute('aria-expanded', 'true');
+  };
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    document.body.style.overflow = '';
+    burger.textContent = '☰';
+    burger.setAttribute('aria-expanded', 'false');
+  };
+
+  // Inline-onclick entfernen, eigenen Handler dranhängen
+  burger.onclick = null;
+  burger.addEventListener('click', function (e) {
     e.preventDefault();
-    e.stopPropagation();
-    // Andere geöffnete Dropdowns zuklappen
-    parent.parentElement.querySelectorAll('.has-dropdown.open').forEach(function (li) {
-      if (li !== parent) li.classList.remove('open');
-    });
-    parent.classList.toggle('open');
+    nav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // ESC schließt
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu();
+  });
+
+  // Tap auf einen Link schließt (bei Hash-Links passiert sonst nichts)
+  nav.querySelectorAll('a[href]').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Beim Resize auf Desktop schließen
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1200 && nav.classList.contains('open')) closeMenu();
   });
 })();
 
