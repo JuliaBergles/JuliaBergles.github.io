@@ -844,7 +844,7 @@ p.lead {
 /* -----------  Marquee (Ticker unter der Nav) — Kleid-Hellblau  ----------- */
 .marquee {
   overflow: hidden;
-  background: #cbdeed;
+  background: #bec2d9;
   color: #2a4a68;
   padding: 14px 0;
   border-bottom: 1px solid rgba(42,74,104,0.15);
