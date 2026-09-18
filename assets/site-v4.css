@@ -115,15 +115,20 @@ body {
   background: var(--warm-cream);
   color: var(--warm-charcoal);
   font-family: var(--font-body);
+  font-weight: 400;
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.65;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1, "kern" 1;
 }
 
 img { max-width: 100%; height: auto; display: block; }
-a { color: var(--copper-dark); text-decoration: none; }
+a { color: inherit; text-decoration: none; }
 a:hover { color: var(--copper); }
+button { font: inherit; cursor: pointer; }
 
 /* -----------  Reveal Animation  ----------- */
 .reveal {
@@ -139,78 +144,105 @@ a:hover { color: var(--copper); }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
-/* -----------  Typografie  ----------- */
-h1, h2, h3, h4, h5, h6 {
+/* -----------  Typografie (v3-Skalen, v4-Farben)  ----------- */
+h1, h2, h3, h4, h5, h6, .display, .headline {
   font-family: var(--font-heading);
-  color: var(--malaga);
-  font-weight: 600;
-  line-height: 1.2;
-  margin: 0;
+  font-weight: 400;
+  line-height: 1.08;
   letter-spacing: -0.01em;
+  color: var(--malaga);
+  margin: 0;
 }
-h1 { font-size: clamp(28px, 4.5vw, 44px); }
-h2 { font-size: clamp(24px, 3.5vw, 34px); }
-h3 { font-size: clamp(20px, 2.5vw, 24px); }
-h4 { font-size: 18px; font-weight: 700; }
-
-p { margin: 0 0 var(--space-md); }
-p:last-child { margin-bottom: 0; }
 
 .display {
-  font-family: var(--font-display);
-  color: var(--malaga);
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 9vw, 132px);
   font-weight: 400;
-  font-size: clamp(48px, 7vw, 96px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--malaga);
 }
 .display .italic { font-style: italic; }
 
-.lead {
-  font-family: var(--font-heading);
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: 1.5;
-  color: var(--cocoa);
+h1, .h1 {
+  font-size: clamp(40px, 7vw, 96px);
   font-weight: 400;
-  max-width: 50ch;
+  letter-spacing: -0.015em;
+}
+h2, .h2 {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 400;
+}
+h3, .h3 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+h4, .h4 {
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.italic { font-style: italic; font-weight: 400; }
+.serif  { font-family: var(--font-heading); }
+.sans   { font-family: var(--font-body); }
+.bold   { font-weight: 700; }
+
+/* Body */
+p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--cocoa);
+  max-width: 68ch;
+  margin: 0 0 var(--space-md);
+}
+p:last-child { margin-bottom: 0; }
+
+.lead, p.lead {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--warm-charcoal);
+  max-width: 60ch;
+  font-family: var(--font-body);
 }
 
 em, .italic { font-style: italic; }
 strong { color: var(--warm-charcoal); font-weight: 700; }
 
 /* -----------  Eyebrow / Chapter-Num / Ornament  ----------- */
-.eyebrow {
+.eyebrow, .label {
   display: inline-block;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: var(--warm-charcoal);
 }
-.eyebrow-copper { color: var(--copper); }
+.eyebrow-copper { color: var(--copper-dark); }
 .eyebrow-gold   { color: var(--deep-gold); }
 .eyebrow-malaga { color: var(--malaga); }
-.eyebrow-blue   { color: var(--deep-gold); } /* v3-Alias: blau existiert nicht mehr, wird zu Gold */
-.eyebrow-line::before,
-.eyebrow-line::after {
-  content: '';
+.eyebrow-blue   { color: var(--deep-gold); } /* v3-Alias: Blau existiert nicht, wird Gold */
+.eyebrow-line::before {
+  content: "";
   display: inline-block;
-  width: 24px;
+  width: 32px;
   height: 1px;
   background: currentColor;
   vertical-align: middle;
-  margin: 0 12px;
-  opacity: 0.5;
+  margin-right: 12px;
+  margin-bottom: 3px;
 }
 
 .chapter-num {
   display: inline-block;
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-style: italic;
-  font-size: 20px;
-  color: var(--copper);
-  letter-spacing: 0.02em;
+  font-size: 15px;
+  color: var(--copper-dark);
+  letter-spacing: 0.05em;
 }
 
 .ornament {
