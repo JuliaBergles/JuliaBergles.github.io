@@ -299,6 +299,14 @@ p.lead {
 }
 .btn-blue:hover { background: var(--blue-dark); border-color: var(--blue-dark); color: var(--cream); }
 
+/* Kleid-Blau (aus dem Banner-Look, passt zur Themen-Sektion) */
+.btn-kleidblau {
+  background: #2a4a68;
+  border-color: #2a4a68;
+  color: #ffffff;
+}
+.btn-kleidblau:hover { background: #1a3550; border-color: #1a3550; color: #ffffff; }
+
 .btn-outline {
   background: transparent;
   color: var(--dark);
