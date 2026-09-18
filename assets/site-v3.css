@@ -347,12 +347,13 @@ p.lead {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(42,42,42,0.15) 0%, rgba(42,42,42,0.55) 100%);
+  background: none;
 }
 
 .hero-editorial .hero-content {
   color: var(--cream);
   position: relative;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
   z-index: 1;
 }
 
@@ -701,9 +702,9 @@ p.lead {
 .nav-v3 .nav-cta {
   flex-shrink: 0;
   padding: 12px 22px;
-  border: 1px solid var(--dark);
-  background: var(--dark);
-  color: var(--cream);
+  border: 1px solid #2a4a68;
+  background: #2a4a68;
+  color: #ffffff;
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 700;
@@ -711,7 +712,7 @@ p.lead {
   text-transform: uppercase;
   transition: all 0.2s;
 }
-.nav-v3 .nav-cta:hover { background: var(--copper); border-color: var(--copper); color: var(--cream); }
+.nav-v3 .nav-cta:hover { background: #1a3550; border-color: #1a3550; color: #ffffff; }
 
 /* Mobile Nav */
 .nav-v3 .burger {
@@ -840,13 +841,13 @@ p.lead {
   }
 }
 
-/* -----------  Marquee (Ticker unter der Nav)  ----------- */
+/* -----------  Marquee (Ticker unter der Nav) — Kleid-Hellblau  ----------- */
 .marquee {
   overflow: hidden;
-  background: var(--dark);
-  color: var(--cream);
+  background: #cbdeed;
+  color: #2a4a68;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255,252,249,0.08);
+  border-bottom: 1px solid rgba(42,74,104,0.15);
   position: relative;
 }
 .marquee-track {
@@ -864,7 +865,7 @@ p.lead {
   white-space: nowrap;
   color: var(--cream);
 }
-.marquee-item.dot { color: var(--copper); }
+.marquee-item.dot { color: rgba(42,74,104,0.4); }
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
