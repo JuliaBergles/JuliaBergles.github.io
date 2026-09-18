@@ -50,7 +50,7 @@
 
   /* Type — mit Fallbacks solange lokale Fonts fehlen */
   --font-display: 'Madelyn', 'Playfair Display', Georgia, serif;
-  --font-heading: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+  --font-heading: 'Cormorant Garamond', 'Source Serif 4', Georgia, serif;
   --font-body:    'Glacial Indifference', 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Alias für einfaches Umschreiben aus v3 */
