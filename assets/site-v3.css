@@ -286,11 +286,11 @@ p.lead {
 }
 
 .btn-copper {
-  background: var(--copper);
-  border-color: var(--copper);
-  color: var(--cream);
+  background: #e1ded5;
+  border-color: #d4d0c4;
+  color: var(--dark);
 }
-.btn-copper:hover { background: var(--copper-dark); border-color: var(--copper-dark); color: var(--cream); }
+.btn-copper:hover { background: #d4d0c4; border-color: #c4bfb1; color: var(--dark); }
 
 .btn-blue {
   background: var(--blue);
