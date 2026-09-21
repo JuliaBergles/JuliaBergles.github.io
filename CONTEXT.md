@@ -134,7 +134,7 @@ Volle Landing + Anmeldung + späterer Kursbereich läuft im separaten Repo `terr
 - **`histamin-masterclass.html`** → Meta-Refresh + JS-Redirect zur Vercel-URL (Julia hat das selbst eingerichtet)
 - **`masterclass-anmeldung.html`** → Redirect zu Vercel `/anmeldung`
 - **AGB § 5a** (Standard-Masterclass Self-Study 399 € + 1:1 780 €)
-- **AGB § 5c** (Herbstspecial 2026: feste Kohorte 01.10.–01.12., 3 Pakete 399/699/825 € + Ratenzahlung + Klein enthält Einstiegs- & Endcall + Notizbuch/Überraschungspaket für Mittel/VIP)
+- **AGB § 5c** (Herbstspecial 2026: feste Kohorte 01.10.–01.12., 3 Pakete 325/699/825 € + Ratenzahlung + Klein: Dashboard oder gedrucktes Arbeitsbuch + Start-/Endcall mit Julia + WhatsApp-Kontakt; Mittel: 3 Zwischen-Calls + 1× Kochen + Notizbuch/Überraschung; VIP: 2× Kochen + 2× 1:1 + 2 Kohorten-Calls + Sonntags-Wochenplan + Notizbuch/Überraschung)
 - **Datenschutz** (WhatsApp-Sonntags-Check-in, Videokonferenz-Anbieter für 1:1, Calendly)
 - **Widerruf** (Masterclass: 14 Tage, erlischt bei Zugriff auf digitale Inhalte; Peer-Support-Gespräche: 24-h-Storno)
 
