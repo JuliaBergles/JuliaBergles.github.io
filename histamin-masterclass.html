@@ -3,74 +3,1061 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Histamin Masterclass — Finde zurück zu deinem Seelenbauch · Julia Bergles</title>
-<meta name="description" content="Die Histamin Masterclass — 8 Wochen strukturiert durch Ernährung, Darm, Zyklus, Wechseljahre, Stress und Alltag mit Histaminproblematik. Self-Study 399 € oder 1:1 780 €.">
-<meta http-equiv="refresh" content="0; url=https://terra-luna-masterclass.vercel.app/">
-<link rel="canonical" href="https://terra-luna-masterclass.vercel.app/">
+<title>Histamin Masterclass · 8 Wochen · Julia Bergles</title>
+<meta name="description" content="8-Wochen-Masterclass für Ernährung, Darm, Zyklus, Nervensystem, Bewegung und deinen individuellen Umgang mit Histamin. Wissensvermittlung, keine medizinische Behandlung.">
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: #faf4eb;
-    color: #3d322a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* ---- Landing-spezifische Ergänzungen ---- */
+
+  /* Hero */
+  .mc-hero {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--beige) 100%);
+    padding: clamp(80px, 12vw, 140px) 0 clamp(60px, 9vw, 100px);
+    position: relative;
+    overflow: hidden;
   }
-  .center {
-    min-height: 100vh;
+  .mc-hero::before {
+    content: "";
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(196,139,108,0.14) 0%, rgba(196,139,108,0) 70%);
+    pointer-events: none;
+  }
+  .mc-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -180px; left: -160px;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(119,104,163,0.10) 0%, rgba(119,104,163,0) 70%);
+    pointer-events: none;
+  }
+  .mc-hero .container { position: relative; z-index: 1; }
+  .mc-hero h1 em {
+    color: var(--copper-dark);
+    font-weight: 400;
+  }
+  .mc-hero h1 .line-blue {
+    color: var(--blue-dark);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .mc-hero .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 24px;
+    margin-top: 40px;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .mc-hero .hero-meta span::before {
+    content: "·"; margin-right: 16px; color: var(--copper);
+  }
+  .mc-hero .hero-meta span:first-child::before { content: none; }
+
+  /* Karten-Grids */
+  .mc-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 36px 32px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .card {
-    max-width: 480px;
+  .mc-card:hover {
+    border-color: var(--copper);
+    transform: translateY(-2px);
   }
-  h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: normal;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    line-height: 1.1;
-    margin: 0 0 1.5rem;
-    color: #6d2e3a;
+  .mc-card .icon {
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 4px;
   }
-  p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #3d322a;
-    margin: 0 0 2rem;
-  }
-  a {
-    display: inline-block;
-    background: #6d2e3a;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 1rem 2rem;
+  .mc-card h3 {
+    font-family: var(--serif);
+    font-size: 24px;
     font-weight: 500;
-    transition: opacity 0.2s;
+    color: var(--dark);
+    line-height: 1.2;
   }
-  a:hover {
-    opacity: 0.9;
+  .mc-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--dark-soft);
+    margin: 0;
   }
-  .small {
-    margin-top: 1.5rem;
-    font-size: 0.85rem;
-    color: #8a7a6f;
+  .mc-card .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--copper-dark);
+    letter-spacing: 0.05em;
+  }
+
+  .mc-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 1100px) { .mc-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  { .mc-grid-4 { grid-template-columns: 1fr; } }
+
+  .mc-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 900px) { .mc-grid-3 { grid-template-columns: 1fr; } }
+
+  /* Problem-Sektion */
+  .mc-problem { background: var(--cream); }
+  .mc-problem ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 40px;
+    margin-top: 32px;
+    max-width: 900px;
+  }
+  @media (max-width: 720px) { .mc-problem ul { grid-template-columns: 1fr; } }
+  .mc-problem li {
+    padding-left: 28px;
+    position: relative;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--dark-soft);
+  }
+  .mc-problem li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px;
+    width: 14px; height: 1px;
+    background: var(--copper);
+  }
+  .mc-problem .close {
+    margin-top: 48px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.6vw, 30px);
+    color: var(--blue-dark);
+    line-height: 1.35;
+    max-width: 32ch;
+  }
+
+  /* Persönlicher Bereich — App-Card-Optik */
+  .mc-app-frame {
+    background: linear-gradient(180deg, var(--mint) 0%, #f0f8f7 100%);
+  }
+  .mc-app-card {
+    background: var(--cream);
+    padding: 32px 28px;
+    border: 1px solid rgba(119,104,163,0.15);
+    box-shadow: 0 12px 32px rgba(42,42,42,0.05);
+  }
+  .mc-app-card .icon {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 48px; height: 48px;
+    background: var(--mint);
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .mc-app-card h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--blue-dark);
+    line-height: 1.2;
+  }
+  .mc-app-card p {
+    font-size: 14px;
+    color: var(--dark-soft);
+    margin: 10px 0 0;
+    line-height: 1.6;
+  }
+
+  /* Timeline horizontal-vertikal Mix */
+  .mc-weeks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  @media (max-width: 900px) { .mc-weeks { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .mc-weeks { grid-template-columns: 1fr; } }
+
+  .mc-week {
+    padding: 32px 28px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 180px;
+  }
+  .mc-week .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--copper-dark);
+    letter-spacing: 0.05em;
+  }
+  .mc-week h3 {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-top: auto;
+  }
+
+  /* Checkliste „Das bekommst du" */
+  .mc-check-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 40px;
+    max-width: 960px;
+    margin: 40px auto 0;
+  }
+  @media (max-width: 720px) { .mc-check-list { grid-template-columns: 1fr; } }
+  .mc-check-list li {
+    padding-left: 32px;
+    position: relative;
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--dark);
+  }
+  .mc-check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--copper);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  /* Pull-Quote Ernährung */
+  .mc-quote-section {
+    background: var(--beige);
+    padding: clamp(80px, 12vw, 140px) 0;
+  }
+
+  /* Preisbereich */
+  .mc-price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+  @media (max-width: 900px) { .mc-price-grid { grid-template-columns: 1fr; } }
+
+  .mc-price-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 44px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: border-color 0.3s ease;
+  }
+  .mc-price-card:hover { border-color: var(--copper); }
+  .mc-price-card .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--copper-dark);
+    letter-spacing: 0.05em;
+  }
+  .mc-price-card h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+  .mc-price-card .price {
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--copper-dark);
+    letter-spacing: -0.01em;
+  }
+  .mc-price-card .price small {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mute);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 6px;
+  }
+  .mc-price-card .fits {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue-dark);
+  }
+  .mc-price-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 12px 0 24px;
+  }
+  .mc-price-card ul li {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--dark-soft);
+    padding-left: 22px;
+    position: relative;
+  }
+  .mc-price-card ul li::before {
+    content: "·";
+    position: absolute;
+    left: 6px; top: -2px;
+    color: var(--copper);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .mc-price-card .btn { margin-top: auto; text-align: center; }
+
+  .mc-price-card.middle {
+    background: var(--mint);
+    border-color: rgba(119,104,163,0.3);
+  }
+
+  /* FAQ */
+  .mc-faq {
+    max-width: 820px;
+    margin: 48px auto 0;
+    border-top: 1px solid var(--line);
+  }
+  .mc-faq details {
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+  }
+  .mc-faq summary {
+    font-family: var(--serif);
+    font-size: clamp(19px, 2vw, 22px);
+    font-weight: 500;
+    color: var(--dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    line-height: 1.3;
+  }
+  .mc-faq summary::-webkit-details-marker { display: none; }
+  .mc-faq summary::after {
+    content: "+";
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--copper);
+    font-weight: 300;
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .mc-faq details[open] summary::after { content: "−"; }
+  .mc-faq details p {
+    margin: 16px 0 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--dark-soft);
+    max-width: none;
+  }
+
+  /* Abschluss */
+  .mc-final {
+    background: var(--blue);
+    color: var(--cream);
+    text-align: center;
+    padding: clamp(100px, 15vw, 180px) 0;
+  }
+  .mc-final h2 {
+    color: var(--cream);
+    max-width: 22ch;
+    margin: 0 auto;
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    font-style: italic;
+  }
+  .mc-final .after-cta {
+    margin-top: 32px;
+    font-size: 14px;
+    color: rgba(255,252,249,0.75);
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.55;
+  }
+  .mc-final .btn {
+    background: var(--copper);
+    border-color: var(--copper);
+    color: var(--cream);
+    margin-top: 40px;
+  }
+  .mc-final .btn:hover {
+    background: var(--copper-dark);
+    border-color: var(--copper-dark);
+    color: var(--cream);
+  }
+
+  /* Sub-section spacing helper */
+  .section-head {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+  .section-head p.lead { margin: 20px auto 0; }
+
+  .story-block {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--cream);
+    padding: 60px 48px;
+    border: 1px solid var(--line);
+  }
+  .story-block p { font-size: 17px; margin-bottom: 20px; }
+  .story-block p:last-child { margin-bottom: 0; }
+  @media (max-width: 600px) { .story-block { padding: 40px 24px; } }
+
+  /* Kleine Ornament-Trennung */
+  .mini-orn {
+    text-align: center;
+    color: var(--copper);
+    font-family: var(--serif);
+    font-style: italic;
+    letter-spacing: 0.4em;
+    font-size: 22px;
+    margin: 24px 0 8px;
   }
 </style>
-<script>
-  window.location.replace("https://terra-luna-masterclass.vercel.app/");
-</script>
 </head>
 <body>
-  <div class="center">
-    <div class="card">
-      <h1>Deine Masterclass ist umgezogen.</h1>
-      <p>Ich leite dich gerade weiter auf die neue Histamin Masterclass. Falls es nicht automatisch weitergeht:</p>
-      <a href="https://terra-luna-masterclass.vercel.app/">Zur Histamin Masterclass →</a>
-      <p class="small">Deine Julia</p>
+
+<!-- NAV -->
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Themen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS &amp; Zyklus</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+          <li><a href="rezepte/suesses/">Süßes</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Masterclass ★ <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histamin-masterclass.html">Zur Masterclass</a></li>
+          <li><a href="masterclass-anmeldung.html">Anmeldung</a></li>
+        </ul>
+      </li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="ebooks.html">E-Books</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Mehr <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="live-calls.html">Live Calls</a></li>
+          <li><a href="gespraech.html">1:1 Gespräch</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a href="#pakete" class="nav-cta">Pakete ansehen</a>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="mc-hero">
+  <div class="container">
+    <span class="eyebrow eyebrow-line eyebrow-copper reveal">Histamin Masterclass · 8 Wochen</span>
+    <h1 class="reveal" style="margin-top: 32px; max-width: 18ch; font-size: clamp(44px, 8vw, 108px); line-height: 0.98;">
+      Histamin <em>verstehen.</em><br>
+      Deinen Körper <em>verstehen.</em><br>
+      <span class="line-blue">Wieder mehr Vertrauen entwickeln.</span>
+    </h1>
+    <p class="lead reveal" style="margin-top: 40px; max-width: 62ch;">
+      Eine 8-Wochen-Masterclass für Ernährung, Darm, Zyklus, Nervensystem, Bewegung und deinen individuellen Umgang mit Histamin.
+    </p>
+    <div class="reveal" style="margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap;">
+      <a href="#pakete" class="btn">Jetzt Masterclass entdecken</a>
+      <a href="#wochen" class="btn btn-outline">8 Wochen im Überblick</a>
+    </div>
+    <div class="hero-meta reveal">
+      <span>Ernährung</span>
+      <span>Darm</span>
+      <span>Zyklus</span>
+      <span>Nervensystem</span>
+      <span>Bewegung</span>
+      <span>Alltag</span>
     </div>
   </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section mc-problem">
+  <div class="container">
+    <div style="max-width: 720px;">
+      <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 01 · Vielleicht kennst du das</span>
+      <h2 class="reveal" style="margin-top: 24px;">
+        Vielleicht bist du <em class="italic">schon lange</em> auf der Suche.
+      </h2>
+    </div>
+    <ul>
+      <li class="reveal">Du weißt irgendwann gar nicht mehr, was du essen darfst.</li>
+      <li class="reveal">Du streichst immer mehr Lebensmittel.</li>
+      <li class="reveal">Du bekommst Beschwerden und hast Angst vor der nächsten Mahlzeit.</li>
+      <li class="reveal">Du fragst dich, warum du an manchen Tagen etwas verträgst und an anderen nicht.</li>
+      <li class="reveal">PMS scheint plötzlich alles schlimmer zu machen.</li>
+      <li class="reveal">Stress wirkt sich auf deinen Körper aus.</li>
+      <li class="reveal">Du möchtest dich bewegen, weißt aber nicht, wann es zu viel ist.</li>
+      <li class="reveal">Du möchtest gesund essen, hast aber Angst, etwas falsch zu machen.</li>
+    </ul>
+    <p class="close reveal">
+      Genau hier setzt meine Masterclass an.
+    </p>
+  </div>
+</section>
+
+<!-- WAS DU LERNST -->
+<section class="section section-beige">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 02 · Was du lernst</span>
+      <h2 class="reveal" style="margin-top: 24px;">
+        Kein weiterer <em class="italic">Verbotslisten-Kurs.</em>
+      </h2>
+      <p class="lead reveal">
+        Du lernst nicht einfach eine weitere Liste mit verbotenen Lebensmitteln.
+        Du lernst, deinen Körper besser zu verstehen.
+      </p>
+    </div>
+
+    <div class="mc-grid-4">
+      <div class="mc-card reveal">
+        <span class="icon">🧠</span>
+        <span class="num">Nº 01</span>
+        <h3>Histamin verstehen</h3>
+        <p>Was ist Histamin? Welche Rolle spielt es im Körper? Warum ist Histamin nicht einfach nur ein Lebensmittelthema?</p>
+      </div>
+      <div class="mc-card reveal">
+        <span class="icon">🦠</span>
+        <span class="num">Nº 02</span>
+        <h3>Darm &amp; Ernährung</h3>
+        <p>Darm, Verdauung, Ballaststoffe, Protein, Präbiotika, Probiotika und der schrittweise Aufbau einer individuellen Ernährung.</p>
+      </div>
+      <div class="mc-card reveal">
+        <span class="icon">🌸</span>
+        <span class="num">Nº 03</span>
+        <h3>Zyklus &amp; Histamin</h3>
+        <p>Verstehe deinen Zyklus und beobachte, wie sich deine Beschwerden im Verlauf verändern können.</p>
+      </div>
+      <div class="mc-card reveal">
+        <span class="icon">🧘</span>
+        <span class="num">Nº 04</span>
+        <h3>Nervensystem &amp; Stress</h3>
+        <p>Lerne, welche Rolle Stress, Schlaf und Regeneration in deinem persönlichen Gesamtbild spielen können.</p>
+      </div>
+      <div class="mc-card reveal">
+        <span class="icon">🏃</span>
+        <span class="num">Nº 05</span>
+        <h3>Bewegung &amp; Regeneration</h3>
+        <p>Finde heraus, welche Belastung zu deinem aktuellen Energielevel passt und warum mehr Sport nicht automatisch besser ist.</p>
+      </div>
+      <div class="mc-card reveal">
+        <span class="icon">🍽️</span>
+        <span class="num">Nº 06</span>
+        <h3>Lebensmittel wieder integrieren</h3>
+        <p>Lerne meine Schritt-für-Schritt-Methode kennen, mit der du neue Lebensmittel strukturiert beobachten kannst.</p>
+      </div>
+      <div class="mc-card reveal">
+        <span class="icon">🛒</span>
+        <span class="num">Nº 07</span>
+        <h3>Individueller Ernährungsplan</h3>
+        <p>Du bekommst einen auf deine Situation abgestimmten Ernährungsplan.</p>
+      </div>
+      <div class="mc-card reveal">
+        <span class="icon">📱</span>
+        <span class="num">Nº 08</span>
+        <h3>Terra Luna</h3>
+        <p>Nutze meine App als ergänzendes Tool für Tracking, Rezepte, Zyklus und deine tägliche Begleitung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEIN INDIVIDUELLER BEREICH -->
+<section class="section mc-app-frame">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 03 · Dein individueller Bereich</span>
+      <h2 class="reveal" style="margin-top: 24px; color: var(--blue-dark);">
+        Deine Masterclass.<br><em class="italic">Dein persönlicher Bereich.</em>
+      </h2>
+      <p class="lead reveal">
+        In der Masterclass bekommst du einen persönlichen Bereich mit allem, was du für deine 8 Wochen brauchst.
+      </p>
+    </div>
+
+    <div class="mc-grid-3 reveal" style="max-width: 1120px; margin: 0 auto;">
+      <div class="mc-app-card">
+        <div class="icon">🍽️</div>
+        <h3>Mein Ernährungsplan</h3>
+        <p>Hier findest du deinen individuellen Ernährungsplan.</p>
+      </div>
+      <div class="mc-app-card">
+        <div class="icon">🛒</div>
+        <h3>Meine Einkaufsliste</h3>
+        <p>Alles, was du für deine aktuelle Woche benötigst.</p>
+      </div>
+      <div class="mc-app-card">
+        <div class="icon">🧪</div>
+        <h3>Meine Lebensmittel-Tests</h3>
+        <p>Dokumentiere neue Lebensmittel und beobachte deine Reaktionen.</p>
+      </div>
+      <div class="mc-app-card">
+        <div class="icon">🌸</div>
+        <h3>Mein Zyklus</h3>
+        <p>Verfolge deinen Zyklus und deine individuellen Symptome.</p>
+      </div>
+      <div class="mc-app-card">
+        <div class="icon">📊</div>
+        <h3>Mein Fortschritt</h3>
+        <p>Erkenne Zusammenhänge zwischen Ernährung, Stress, Bewegung, Schlaf und Beschwerden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8-WOCHEN-ÜBERSICHT -->
+<section class="section section-cream" id="wochen">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 04 · 8 Wochen im Überblick</span>
+      <h2 class="reveal" style="margin-top: 24px;">Woche für Woche <em class="italic">Schritt für Schritt.</em></h2>
+    </div>
+
+    <div class="mc-weeks reveal">
+      <div class="mc-week">
+        <span class="num">Woche 1</span>
+        <h3>Histamin verstehen</h3>
+      </div>
+      <div class="mc-week">
+        <span class="num">Woche 2</span>
+        <h3>Deine individuelle Situation</h3>
+      </div>
+      <div class="mc-week">
+        <span class="num">Woche 3</span>
+        <h3>Darm &amp; Ernährung</h3>
+      </div>
+      <div class="mc-week">
+        <span class="num">Woche 4</span>
+        <h3>Lebensmittel integrieren</h3>
+      </div>
+      <div class="mc-week">
+        <span class="num">Woche 5</span>
+        <h3>Zyklus &amp; Histamin</h3>
+      </div>
+      <div class="mc-week">
+        <span class="num">Woche 6</span>
+        <h3>Stress &amp; Nervensystem</h3>
+      </div>
+      <div class="mc-week">
+        <span class="num">Woche 7</span>
+        <h3>Bewegung &amp; Regeneration</h3>
+      </div>
+      <div class="mc-week">
+        <span class="num">Woche 8</span>
+        <h3>Dein persönlicher Fahrplan</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAS BEKOMMST DU -->
+<section class="section section-beige">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 05 · Das bekommst du</span>
+      <h2 class="reveal" style="margin-top: 24px;">Du bekommst nicht nur <em class="italic">Videos.</em></h2>
+      <p class="lead reveal">Du bekommst:</p>
+    </div>
+
+    <ul class="mc-check-list reveal">
+      <li>8 Wochen strukturierte Begleitung</li>
+      <li>verständliche Lektionen</li>
+      <li>Übungen &amp; Reflexionsfragen</li>
+      <li>individuelle Ernährungsempfehlungen</li>
+      <li>persönlichen Ernährungsplan</li>
+      <li>persönliche Einkaufsliste</li>
+      <li>Lebensmittel-Tracker</li>
+      <li>Zyklus-Tracker</li>
+      <li>Stress-Tracker</li>
+      <li>Protein-Check</li>
+      <li>Bewegungs- &amp; Regenerations-Check</li>
+      <li>histaminarme Rezeptideen</li>
+      <li>meine persönliche Vorratsliste</li>
+      <li>meine persönlichen Produktempfehlungen</li>
+      <li>Verbindung zu meiner Terra Luna App</li>
+      <li>Coaching-/Community-Begleitung je nach gebuchter Option</li>
+    </ul>
+  </div>
+</section>
+
+<!-- BEWEGUNG -->
+<section class="section section-cream">
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 06 · Bewegung</span>
+      <h2 class="reveal" style="margin-top: 24px;">
+        Du musst dich nicht jeden Tag <em class="italic">komplett auspowern.</em>
+      </h2>
+      <p class="lead reveal" style="margin-top: 28px;">
+        Lerne, deine individuelle Belastungsgrenze wahrzunehmen.
+      </p>
+      <p class="reveal" style="margin-top: 20px;">
+        Spaziergänge, Schritte, Yoga, Mobility, individuell dosiertes Krafttraining oder E-Bike können mögliche Bestandteile deines Bewegungsalltags sein.
+      </p>
+
+      <div class="mini-orn reveal">§</div>
+
+      <blockquote class="pullquote reveal" style="margin: 24px 0 0;">
+        „Wie viel kann ich aushalten?" —<br>
+        <span style="color: var(--copper-dark);">sondern:</span><br>
+        „Was kann ich gut regenerieren?"
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ERNÄHRUNG -->
+<section class="mc-quote-section">
+  <div class="container">
+    <div style="max-width: 780px; margin: 0 auto; text-align: center;">
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 07 · Ernährung</span>
+      <h2 class="reveal" style="margin-top: 32px;">
+        Du brauchst nicht immer <em class="italic">weniger</em> Lebensmittel.<br>
+        Du brauchst <em class="italic">mehr Verständnis.</em>
+      </h2>
+      <p class="lead reveal" style="margin: 40px auto 0;">
+        Die Masterclass soll nicht dazu führen, dass Teilnehmerinnen immer mehr Lebensmittel streichen.
+      </p>
+      <p class="reveal" style="margin: 20px auto 0; max-width: 60ch;">
+        Stattdessen lernen sie:
+      </p>
+      <div class="reveal" style="margin-top: 32px; font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.4vw, 26px); color: var(--blue-dark); line-height: 1.6;">
+        stabilisieren&nbsp;→&nbsp;beobachten&nbsp;→&nbsp;testen<br>
+        →&nbsp;dokumentieren&nbsp;→&nbsp;erneut&nbsp;bewerten&nbsp;→&nbsp;individuell&nbsp;erweitern
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZU WENIG ESSEN -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="grid-2" style="align-items: start;">
+      <div class="reveal">
+        <span class="eyebrow eyebrow-line eyebrow-blue">Nº 08 · Energie</span>
+        <h2 style="margin-top: 24px;">
+          Dein Körper braucht <em class="italic">Energie.</em>
+        </h2>
+      </div>
+      <div class="reveal">
+        <p>
+          Eine ausreichende Energiezufuhr ist eine wichtige Grundlage für normale Körperfunktionen, Regeneration, Leistungsfähigkeit und Verdauung.
+        </p>
+        <p style="margin-top: 20px;">
+          Deshalb geht es in der Masterclass nicht darum, möglichst wenig zu essen.
+        </p>
+        <p style="margin-top: 20px;">
+          Es geht darum, eine Ernährung zu finden, die individuell verträglich ist und gleichzeitig ausreichend Energie und Protein liefert.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEINE GESCHICHTE -->
+<section class="section section-mint">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 09 · Meine Geschichte</span>
+      <h2 class="reveal" style="margin-top: 24px; color: var(--blue-dark);">
+        Warum diese Masterclass <em class="italic">überhaupt entstanden</em> ist.
+      </h2>
+    </div>
+
+    <div class="story-block reveal">
+      <p>
+        Ich habe selbst erlebt, wie schnell man in einen Kreislauf aus Beschwerden, Angst vor Essen, immer mehr Einschränkungen und zusätzlichem Stress geraten kann.
+      </p>
+      <p>
+        Aus meinen eigenen Erfahrungen und dem, was ich über die Jahre gelernt habe, ist diese Masterclass entstanden.
+      </p>
+      <p>
+        Ich möchte dir nicht versprechen, dass alles über Nacht verschwindet.
+      </p>
+      <p>
+        Ich möchte dir zeigen, wie du deinen Körper besser verstehen und Schritt für Schritt deinen eigenen Weg finden kannst.
+      </p>
+      <p style="margin-top: 32px; font-family: var(--serif); font-style: italic; color: var(--copper-dark); font-size: 20px;">
+        — Julia
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PREISBEREICH -->
+<section class="section section-cream" id="pakete">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 10 · Deine Optionen</span>
+      <h2 class="reveal" style="margin-top: 24px;">Drei Wege. <em class="italic">Ein Ziel.</em></h2>
+      <p class="lead reveal">
+        Wähle das, was gerade zu dir und deinem Alltag passt — nicht das, was am „größten" klingt.
+      </p>
+    </div>
+
+    <div class="mc-price-grid">
+      <div class="mc-price-card reveal">
+        <span class="num">Nº 01</span>
+        <h3>Basiszugang</h3>
+        <div class="price">[PREIS]<small>Selbstlern-Format</small></div>
+        <p class="fits">Für dich, wenn du in deinem Tempo arbeiten willst.</p>
+        <ul>
+          <li>8-Wochen-Masterclass</li>
+          <li>Lektionen</li>
+          <li>Workbook</li>
+          <li>Tracker</li>
+          <li>Rezepte</li>
+          <li>Einkaufsliste</li>
+        </ul>
+        <a href="mailto:julia@bergles.net?subject=Masterclass%20Basiszugang" class="btn btn-outline">Option auswählen</a>
+      </div>
+
+      <div class="mc-price-card middle reveal">
+        <span class="num">Nº 02</span>
+        <h3>Masterclass + persönliche Begleitung</h3>
+        <div class="price">[PREIS]<small>Mit Begleitung</small></div>
+        <p class="fits">Für dich, wenn du Struktur plus Community willst.</p>
+        <ul>
+          <li>alles aus Option 1</li>
+          <li>individueller Ernährungsplan</li>
+          <li>persönliche Empfehlungen</li>
+          <li>zusätzliche Begleitung</li>
+          <li>Community</li>
+        </ul>
+        <a href="mailto:julia@bergles.net?subject=Masterclass%20Begleitung" class="btn btn-blue">Option auswählen</a>
+      </div>
+
+      <div class="mc-price-card reveal">
+        <span class="num">Nº 03</span>
+        <h3>Intensive Begleitung</h3>
+        <div class="price">[PREIS]<small>1:1 mit Julia</small></div>
+        <p class="fits">Für dich, wenn du gezielt an deinem individuellen Weg arbeiten willst.</p>
+        <ul>
+          <li>alles aus Option 2</li>
+          <li>zusätzliche persönliche Betreuung</li>
+          <li>individuelle Auswertung</li>
+          <li>persönliche Anpassungen</li>
+        </ul>
+        <a href="mailto:julia@bergles.net?subject=Masterclass%20Intensiv" class="btn btn-outline">Option auswählen</a>
+      </div>
+    </div>
+
+    <p class="text-center reveal" style="margin: 48px auto 0; max-width: 60ch; font-size: 14px; color: var(--mute);">
+      Die drei Optionen sind bewusst als <em>drei unterschiedliche Wege</em> gedacht — nicht als „gut / besser / am besten". Wähle das, was zu deinem aktuellen Alltag passt.
+    </p>
+  </div>
+</section>
+
+<!-- TERRA LUNA -->
+<section class="section section-blue">
+  <div class="container">
+    <div class="grid-2" style="align-items: center;">
+      <div class="reveal">
+        <span class="eyebrow eyebrow-line" style="color: var(--mint);">Nº 11 · Terra Luna</span>
+        <h2 style="margin-top: 24px;">
+          Deine Begleitung — <em class="italic">auch nach der Masterclass.</em>
+        </h2>
+        <p class="lead" style="color: rgba(255,252,249,0.9); margin-top: 24px;">
+          Mit meiner Terra Luna App kannst du deine Erkenntnisse auch im Alltag weiter nutzen.
+        </p>
+        <a href="app.html" class="btn btn-copper" style="margin-top: 32px;">Terra Luna entdecken</a>
+      </div>
+      <div class="reveal">
+        <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; color: rgba(255,252,249,0.9); font-family: var(--sans); font-size: 15px;">
+          <li style="padding-left: 20px; position: relative;"><span style="position:absolute; left:0; color: var(--mint);">·</span>Symptomtracking</li>
+          <li style="padding-left: 20px; position: relative;"><span style="position:absolute; left:0; color: var(--mint);">·</span>Zyklus</li>
+          <li style="padding-left: 20px; position: relative;"><span style="position:absolute; left:0; color: var(--mint);">·</span>Rezepte</li>
+          <li style="padding-left: 20px; position: relative;"><span style="position:absolute; left:0; color: var(--mint);">·</span>Lebensmittel</li>
+          <li style="padding-left: 20px; position: relative;"><span style="position:absolute; left:0; color: var(--mint);">·</span>Persönliche Beobachtungen</li>
+          <li style="padding-left: 20px; position: relative;"><span style="position:absolute; left:0; color: var(--mint);">·</span>Einkauf</li>
+          <li style="padding-left: 20px; position: relative;"><span style="position:absolute; left:0; color: var(--mint);">·</span>Weitere praktische Tools</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 12 · FAQ</span>
+      <h2 class="reveal" style="margin-top: 24px;">Häufige <em class="italic">Fragen.</em></h2>
+    </div>
+
+    <div class="mc-faq reveal">
+      <details>
+        <summary>Für wen ist die Masterclass geeignet?</summary>
+        <p>Für Menschen, die sich mit Histaminintoleranz, Verdauungsbeschwerden, individuellen Lebensmittelunverträglichkeiten, Zyklus, Stress und Ernährung beschäftigen und ein besseres Verständnis für ihren Körper entwickeln möchten.</p>
+      </details>
+      <details>
+        <summary>Muss ich bereits eine Histaminintoleranz-Diagnose haben?</summary>
+        <p>Nein. Die Masterclass eignet sich auch, wenn du gerade dabei bist, dich zu orientieren. Bei starken oder unklaren Beschwerden gehört eine ärztliche Abklärung immer dazu.</p>
+      </details>
+      <details>
+        <summary>Muss ich alle Lebensmittel streichen?</summary>
+        <p>Nein. Genau das ist nicht das Ziel. In der Masterclass geht es darum zu stabilisieren, zu beobachten, schrittweise zu testen und deine Ernährung individuell zu erweitern — nicht immer weiter einzugrenzen.</p>
+      </details>
+      <details>
+        <summary>Ist die Masterclass eine Therapie?</summary>
+        <p>Nein. Die Masterclass dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine medizinische Diagnostik, Ernährungsmedizin, Psychotherapie oder heilpraktische Behandlung.</p>
+      </details>
+      <details>
+        <summary>Bekomme ich einen individuellen Ernährungsplan?</summary>
+        <p>Ja — je nach gebuchter Option. In den beiden Begleitungs-Optionen bekommst du einen auf deine Situation abgestimmten Plan.</p>
+      </details>
+      <details>
+        <summary>Gibt es eine Einkaufsliste?</summary>
+        <p>Ja. Zu deinem Ernährungsplan bekommst du eine passende Einkaufsliste, die du an deinen Alltag anpassen kannst.</p>
+      </details>
+      <details>
+        <summary>Kann ich meine Lebensmittel testen?</summary>
+        <p>Ja. Du bekommst eine strukturierte Schritt-für-Schritt-Methode, mit der du neue Lebensmittel beobachten und dokumentieren kannst.</p>
+      </details>
+      <details>
+        <summary>Wie funktioniert der Zyklus-Tracker?</summary>
+        <p>Du kannst deinen Zyklus über die 8 Wochen hinweg verfolgen und deine individuellen Symptome dokumentieren — so werden mögliche Muster zwischen Zyklus und Beschwerden sichtbar.</p>
+      </details>
+      <details>
+        <summary>Wie funktioniert die Terra Luna App?</summary>
+        <p>Die App begleitet dich mit Symptomtracking, Zyklus, Rezepten, Lebensmittel-Datenbank und Einkauf. Sie ist als ergänzendes Werkzeug zur Masterclass gedacht — nicht als Ersatz für die Lektionen.</p>
+      </details>
+      <details>
+        <summary>Was passiert, wenn ich ein Lebensmittel nicht vertrage?</summary>
+        <p>Du dokumentierst es im Lebensmittel-Tracker, gehst einen Schritt zurück in die Stabilisierung und testest zu einem späteren Zeitpunkt erneut. Genau dafür ist die Methode gemacht.</p>
+      </details>
+      <details>
+        <summary>Kann ich die Masterclass auch bei anderen Unverträglichkeiten nutzen?</summary>
+        <p>Die Struktur (stabilisieren → beobachten → testen → dokumentieren) lässt sich grundsätzlich auch auf andere Themen anwenden. Der inhaltliche Fokus liegt aber auf Histamin.</p>
+      </details>
+      <details>
+        <summary>Was ist der Unterschied zwischen Masterclass und Coaching?</summary>
+        <p>Die Masterclass ist ein strukturiertes 8-Wochen-Programm mit Lektionen, Trackern und Reflexion. In den Optionen mit persönlicher Begleitung ist zusätzlich individuelle Betreuung dabei — das kommt einem Coaching am nächsten.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ABSCHLUSS -->
+<section class="mc-final">
+  <div class="container">
+    <span class="eyebrow eyebrow-line reveal" style="color: rgba(255,252,249,0.7);">Nº 13 · Und jetzt</span>
+    <h2 class="reveal" style="margin-top: 32px;">
+      Du musst nicht alles über deinen Körper wissen.<br>
+      <span style="color: var(--mint);">Du darfst anfangen, ihn zu verstehen.</span>
+    </h2>
+    <a href="#pakete" class="btn reveal">Jetzt mit den 8 Wochen starten</a>
+    <p class="after-cta reveal">
+      Die Masterclass dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine individuelle medizinische Diagnostik oder Behandlung. Bei starken, neuen oder anhaltenden Beschwerden sollte medizinischer Rat eingeholt werden.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">
+          Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.
+        </p>
+        <p style="margin-top: 20px;"><a href="https://instagram.com/julia_bergles" style="color: var(--copper);">@julia_bergles</a></p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="histamin-masterclass.html">★ Histamin Masterclass</a></li>
+          <li><a href="ebooks.html">E-Books</a></li>
+          <li><a href="live-calls.html">Live Calls</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung.
+      Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.
+      <br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
