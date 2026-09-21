@@ -199,7 +199,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    min-height: 180px;
+    min-height: 240px;
   }
   .mc-week .num {
     font-family: var(--serif);
@@ -210,11 +210,17 @@
   }
   .mc-week h3 {
     font-family: var(--serif);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     color: var(--dark);
     line-height: 1.2;
-    margin-top: auto;
+  }
+  .mc-week p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--dark-soft);
+    margin: 0;
+    max-width: none;
   }
 
   /* Checkliste „Das bekommst du" */
@@ -517,9 +523,16 @@
     </p>
     <div class="reveal" style="margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap;">
       <a href="#pakete" class="btn">Jetzt Masterclass entdecken</a>
-      <a href="#wochen" class="btn btn-outline">8 Wochen im Überblick</a>
+      <a href="#was-erwartet" class="btn btn-outline">Was dich erwartet</a>
+      <a href="#wochen" class="btn btn-ghost" style="align-self: center;">8 Wochen ansehen →</a>
     </div>
     <div class="hero-meta reveal">
+      <span>Start 01.10.2026</span>
+      <span>Feste Kohorte bis 01.12.</span>
+      <span>Ratenzahlung möglich</span>
+      <span>Nur 4 VIP-Plätze</span>
+    </div>
+    <div class="hero-meta reveal" style="margin-top: 12px;">
       <span>Ernährung</span>
       <span>Darm</span>
       <span>Zyklus</span>
@@ -540,23 +553,35 @@
       </h2>
     </div>
     <ul>
+      <li class="reveal">Du fühlst dich nicht verstanden — von Ärztinnen, von Freunden, manchmal sogar von dir selbst.</li>
+      <li class="reveal">Dein Bauch ist ständig gebläht.</li>
       <li class="reveal">Du weißt irgendwann gar nicht mehr, was du essen darfst.</li>
-      <li class="reveal">Du streichst immer mehr Lebensmittel.</li>
+      <li class="reveal">Deine Einkaufsliste ist auf eine Handvoll Lebensmittel geschrumpft.</li>
+      <li class="reveal">Essen gehen? Lieber nicht.</li>
+      <li class="reveal">Reisen? Zu unsicher.</li>
+      <li class="reveal">Spontane Einladungen? Zu anstrengend.</li>
       <li class="reveal">Du bekommst Beschwerden und hast Angst vor der nächsten Mahlzeit.</li>
       <li class="reveal">Du fragst dich, warum du an manchen Tagen etwas verträgst und an anderen nicht.</li>
+      <li class="reveal">Nach jedem Essen machst du dich selbst fertig, wenn eine Reaktion kommt.</li>
+      <li class="reveal">Der Kopf dreht sich, bevor der Bauch überhaupt zur Ruhe kommt.</li>
       <li class="reveal">PMS scheint plötzlich alles schlimmer zu machen.</li>
       <li class="reveal">Stress wirkt sich auf deinen Körper aus.</li>
       <li class="reveal">Du möchtest dich bewegen, weißt aber nicht, wann es zu viel ist.</li>
       <li class="reveal">Du möchtest gesund essen, hast aber Angst, etwas falsch zu machen.</li>
+      <li class="reveal">Du hast das Gefühl, dass sich dein Leben immer mehr um das dreht, was du <em>nicht</em> kannst.</li>
     </ul>
     <p class="close reveal">
+      Und du willst endlich wieder einen Alltag, in dem Essen leichter wird.
+      In dem du dich in deinem Körper wohler fühlst. In dem du wieder dazugehörst.
+    </p>
+    <p class="reveal" style="margin-top: 16px; font-family: var(--sans); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper-dark);">
       Genau hier setzt meine Masterclass an.
     </p>
   </div>
 </section>
 
 <!-- WAS DU LERNST -->
-<section class="section section-beige">
+<section class="section section-beige" id="was-erwartet">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 02 · Was du lernst</span>
@@ -677,34 +702,42 @@
       <div class="mc-week">
         <span class="num">Woche 1</span>
         <h3>Histamin verstehen</h3>
+        <p>Was Histamin im Körper macht. Warum das „Fass" überläuft. Der Unterschied zwischen Histaminintoleranz, MCAS und Allergie. Deine Ausgangslage beobachten.</p>
       </div>
       <div class="mc-week">
         <span class="num">Woche 2</span>
         <h3>Deine individuelle Situation</h3>
+        <p>Frische, Lagerung, Einkauf ohne Angst. Einfache Mahlzeiten für stressige Tage. Die häufigsten Alltagsfehler — und wie du sie umgehst.</p>
       </div>
       <div class="mc-week">
         <span class="num">Woche 3</span>
         <h3>Darm &amp; Ernährung</h3>
+        <p>Wie Darm und Histamin zusammenhängen. Was mir bei Reizdarm geholfen hat. Stoffwechsel-Signale einordnen ohne Selbstdiagnose.</p>
       </div>
       <div class="mc-week">
         <span class="num">Woche 4</span>
         <h3>Lebensmittel integrieren</h3>
+        <p>Meine Schritt-für-Schritt-Methode: stabilisieren → beobachten → testen → dokumentieren → erweitern. Kein Weglassen aus Angst.</p>
       </div>
       <div class="mc-week">
         <span class="num">Woche 5</span>
         <h3>Zyklus &amp; Histamin</h3>
+        <p>Hormonelle Rhythmen und ihre Wirkung auf Histamin — vom Zyklus über PMS bis Wechseljahre. Was in welcher Phase gut tut.</p>
       </div>
       <div class="mc-week">
         <span class="num">Woche 6</span>
         <h3>Stress &amp; Nervensystem</h3>
+        <p>Warum Stress deine Symptome verschärft. Nervensystem-Regulation im Alltag. Drei Mini-Rituale, die wirklich wirken.</p>
       </div>
       <div class="mc-week">
         <span class="num">Woche 7</span>
         <h3>Bewegung &amp; Regeneration</h3>
+        <p>Wie viel Bewegung passt gerade zu deinem Körper? Spaziergänge, Yoga, Mobility, dosiertes Krafttraining — Regeneration statt Auspowern.</p>
       </div>
       <div class="mc-week">
         <span class="num">Woche 8</span>
         <h3>Dein persönlicher Fahrplan</h3>
+        <p>Wie du das Gelernte in deinen Alltag holst. Rückschläge einordnen ohne Selbstverurteilung. Dein persönlicher 6-Monats-Ausblick.</p>
       </div>
     </div>
   </div>
@@ -811,6 +844,42 @@
         </p>
       </div>
     </div>
+
+    <div class="mini-orn reveal" style="margin-top: 80px;">§</div>
+
+    <div class="reveal" style="max-width: 780px; margin: 32px auto 0; text-align: center; padding: 48px 40px; background: var(--mint); border: 1px solid rgba(119,104,163,0.2);">
+      <h3 style="font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); color: var(--blue-dark); line-height: 1.25; font-weight: 500;">
+        Weniger essen <em class="italic">macht alles schlimmer.</em>
+      </h3>
+      <p style="margin: 20px auto 0; color: var(--dark-soft); max-width: 60ch;">
+        Der Körper arbeitet dann im Überlebensmodus — nicht mehr für deinen Darm, sondern für Lunge, Herz und Gehirn. Genau deshalb wird's oft <em>noch</em> schwerer, wenn wir aus Angst weglassen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MEHR VIELFALT -->
+<section class="section section-beige">
+  <div class="container">
+    <div class="grid-2" style="align-items: center;">
+      <div class="reveal">
+        <span class="eyebrow eyebrow-line eyebrow-copper">Nº 09 · Mehr Vielfalt</span>
+        <h2 style="margin-top: 24px;">
+          Mehr Vielfalt auf <em class="italic">deinen Teller.</em>
+        </h2>
+      </div>
+      <div class="reveal">
+        <p>
+          Es geht darum, mehr Vielfalt auf den Teller zu bringen und sich ausgewogen und gesund zu ernähren. Nicht nur Maiswaffeln und Reis.
+        </p>
+        <p style="margin-top: 20px;">
+          Ich hab es geschafft, von <strong>5 Lebensmitteln auf eine lange Liste</strong> zu kommen. Und du schaffst das auch — nicht wie ich in einem Jahr, sondern das <em>Verständnis</em> dazu lernst du in 2 Monaten.
+        </p>
+        <p style="margin-top: 20px;">
+          Wie lange die Umsetzung dauert, kann man nicht sagen — es geht nicht ums Hetzen. Es geht darum, deinem Körper wirklich Zeit zu geben.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -818,7 +887,7 @@
 <section class="section section-mint">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 09 · Meine Geschichte</span>
+      <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 10 · Meine Geschichte</span>
       <h2 class="reveal" style="margin-top: 24px; color: var(--blue-dark);">
         Warum diese Masterclass <em class="italic">überhaupt entstanden</em> ist.
       </h2>
@@ -826,84 +895,138 @@
 
     <div class="story-block reveal">
       <p>
+        Ich war selbst dort, wo du vielleicht gerade stehst. Mein Weg hat mich an einen Punkt geführt, den ich niemandem wünsche. <strong>31 Kilo. Ein Darmverschluss. Ein Körper, der einfach nicht mehr konnte.</strong>
+      </p>
+      <p>
         Ich habe selbst erlebt, wie schnell man in einen Kreislauf aus Beschwerden, Angst vor Essen, immer mehr Einschränkungen und zusätzlichem Stress geraten kann.
       </p>
       <p>
-        Aus meinen eigenen Erfahrungen und dem, was ich über die Jahre gelernt habe, ist diese Masterclass entstanden.
+        Ich habe verstanden, dass mich niemand retten würde außer mir selbst. Nicht, weil es keine gute Medizin gibt, sondern weil ich lernen musste, meinen eigenen Körper wieder zu verstehen.
       </p>
       <p>
-        Ich möchte dir nicht versprechen, dass alles über Nacht verschwindet.
+        Heute bin ich nahezu beschwerdefrei. Ich koche wieder, reise wieder, fühle mich wohl in meinem Alltag.
       </p>
       <p>
-        Ich möchte dir zeigen, wie du deinen Körper besser verstehen und Schritt für Schritt deinen eigenen Weg finden kannst.
+        Aus meinen eigenen Erfahrungen und dem, was ich über die Jahre gelernt habe, ist diese Masterclass entstanden. Ich möchte dir nicht versprechen, dass alles über Nacht verschwindet — ich möchte dir zeigen, wie du deinen Körper besser verstehen und Schritt für Schritt deinen eigenen Weg finden kannst.
       </p>
       <p style="margin-top: 32px; font-family: var(--serif); font-style: italic; color: var(--copper-dark); font-size: 20px;">
-        — Julia
+        Deine Julia
       </p>
+    </div>
+    <div class="text-center reveal" style="margin-top: 40px;">
+      <a href="#pakete" class="btn btn-outline">Ist das etwas für mich? →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WARUM ES DIR WERT IST -->
+<section class="section section-cream">
+  <div class="container">
+    <div style="max-width: 780px; margin: 0 auto;">
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 11 · Warum es dir wert ist</span>
+      <h2 class="reveal" style="margin-top: 24px;">
+        Bevor du auf die Preise schaust —<br>
+        <em class="italic">ist es dir deine Gesundheit wert?</em>
+      </h2>
+      <div class="reveal" style="margin-top: 32px;">
+        <p>
+          Magst du noch länger von Arzt zu Arzt rennen, immer wieder Blut abnehmen lassen? Und am Ende heißt es doch, es sei die Psyche.
+        </p>
+        <p style="margin-top: 20px;">
+          Wie viel Geld hast du schon in den Sand gesetzt? Wie viele Supplemente hast du gekauft, die dann in der Schublade landen?
+        </p>
+        <p style="margin-top: 20px;">
+          Du weißt, was du bisher probiert hast. Und was dir bisher wirklich gefehlt hat: <em>wirkliches Verständnis von einer Betroffenen.</em>
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PREISBEREICH -->
-<section class="section section-cream" id="pakete">
+<section class="section section-beige" id="pakete">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 10 · Deine Optionen</span>
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 12 · Deine Optionen</span>
       <h2 class="reveal" style="margin-top: 24px;">Drei Wege. <em class="italic">Ein Ziel.</em></h2>
       <p class="lead reveal">
-        Wähle das, was gerade zu dir und deinem Alltag passt — nicht das, was am „größten" klingt.
+        Herbstspecial 2026 · Feste Kohorte 01.10. – 01.12. · Bis Weihnachten wieder freier mit deinem Bauch.
       </p>
     </div>
 
     <div class="mc-price-grid">
       <div class="mc-price-card reveal">
-        <span class="num">Nº 01</span>
+        <span class="num">Nº 01 · Klein</span>
         <h3>Basiszugang</h3>
-        <div class="price">[PREIS]<small>Selbstlern-Format</small></div>
+        <div class="price">399&nbsp;€<small>oder 3 × 139 €</small></div>
         <p class="fits">Für dich, wenn du in deinem Tempo arbeiten willst.</p>
         <ul>
-          <li>8-Wochen-Masterclass</li>
-          <li>Lektionen</li>
-          <li>Workbook</li>
-          <li>Tracker</li>
-          <li>Rezepte</li>
-          <li>Einkaufsliste</li>
+          <li>Alle 8 Wochenmodule (Selbstlern-Format)</li>
+          <li>Alle E-Books (inkl. Seelenbauchbuch als PDF)</li>
+          <li>Terra Luna App — 4 Monate</li>
+          <li>WhatsApp-Community</li>
+          <li>2 gemeinsame Gruppen-Calls (Einstieg &amp; Abschluss)</li>
+          <li>Tracker, Rezepte, Einkaufsliste</li>
         </ul>
-        <a href="mailto:julia@bergles.net?subject=Masterclass%20Basiszugang" class="btn btn-outline">Option auswählen</a>
+        <a href="mailto:julia@bergles.net?subject=Masterclass%20Klein%20-%20Anfrage" class="btn btn-outline">Option auswählen</a>
       </div>
 
       <div class="mc-price-card middle reveal">
-        <span class="num">Nº 02</span>
+        <span class="num">Nº 02 · Mittel · max. 6</span>
         <h3>Masterclass + persönliche Begleitung</h3>
-        <div class="price">[PREIS]<small>Mit Begleitung</small></div>
-        <p class="fits">Für dich, wenn du Struktur plus Community willst.</p>
+        <div class="price">699&nbsp;€<small>oder 3 × 245 €</small></div>
+        <p class="fits">Für dich, wenn du Struktur plus Kleingruppe willst.</p>
         <ul>
-          <li>alles aus Option 1</li>
-          <li>individueller Ernährungsplan</li>
-          <li>persönliche Empfehlungen</li>
-          <li>zusätzliche Begleitung</li>
-          <li>Community</li>
+          <li>Alles aus „Klein"</li>
+          <li>3 zusätzliche Live-Calls in der Gruppe</li>
+          <li>Persönlicher Sonntags-WhatsApp-Kontakt mit Julia</li>
+          <li>Wöchentlicher Wochenplan zum Essen &amp; Einkaufen</li>
+          <li>Notizbuch &amp; Überraschungspaket per Post</li>
         </ul>
-        <a href="mailto:julia@bergles.net?subject=Masterclass%20Begleitung" class="btn btn-blue">Option auswählen</a>
+        <a href="mailto:julia@bergles.net?subject=Masterclass%20Mittel%20-%20Anfrage" class="btn btn-blue">Option auswählen</a>
       </div>
 
       <div class="mc-price-card reveal">
-        <span class="num">Nº 03</span>
+        <span class="num">Nº 03 · VIP · nur 4 Plätze</span>
         <h3>Intensive Begleitung</h3>
-        <div class="price">[PREIS]<small>1:1 mit Julia</small></div>
+        <div class="price">825&nbsp;€<small>oder 3 × 285 €</small></div>
         <p class="fits">Für dich, wenn du gezielt an deinem individuellen Weg arbeiten willst.</p>
         <ul>
-          <li>alles aus Option 2</li>
-          <li>zusätzliche persönliche Betreuung</li>
-          <li>individuelle Auswertung</li>
-          <li>persönliche Anpassungen</li>
+          <li>Alles aus „Mittel"</li>
+          <li>3 persönliche 1:1-Calls mit Julia</li>
+          <li>2 × gemeinsam kochen live</li>
+          <li>2 × Austausch-Runde</li>
+          <li>Individueller Ernährungs- &amp; Einkaufsleitfaden</li>
         </ul>
-        <a href="mailto:julia@bergles.net?subject=Masterclass%20Intensiv" class="btn btn-outline">Option auswählen</a>
+        <a href="mailto:julia@bergles.net?subject=Masterclass%20VIP%20-%20Anfrage" class="btn btn-outline">Option auswählen</a>
       </div>
     </div>
 
-    <p class="text-center reveal" style="margin: 48px auto 0; max-width: 60ch; font-size: 14px; color: var(--mute);">
+    <p class="text-center reveal" style="margin: 48px auto 0; max-width: 62ch; font-size: 14px; color: var(--mute); line-height: 1.55;">
       Die drei Optionen sind bewusst als <em>drei unterschiedliche Wege</em> gedacht — nicht als „gut / besser / am besten". Wähle das, was zu deinem aktuellen Alltag passt.
+    </p>
+
+    <!-- Warteliste -->
+    <div class="reveal" style="max-width: 780px; margin: 80px auto 0; padding: 48px 40px; background: var(--cream); border: 1px solid var(--line); text-align: center;">
+      <div class="mini-orn" style="margin: 0 0 20px;">§</div>
+      <h3 style="font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); font-weight: 500;">
+        Interesse? <em class="italic">Trag dich auf die Warteliste ein.</em>
+      </h3>
+      <p style="margin: 16px auto 0; color: var(--dark-soft); max-width: 52ch;">
+        Ich melde mich persönlich bei dir und schauen zusammen, welche Option zu dir passt.
+      </p>
+      <div style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="mailto:julia@bergles.net?subject=Warteliste%20Histamin%20Masterclass%20Herbst%202026" class="btn">Warteliste per Mail</a>
+        <a href="https://wa.me/4915118515394?text=Hi%20Julia%2C%20ich%20interessiere%20mich%20für%20die%20Histamin%20Masterclass%20Herbst%202026." class="btn btn-outline">Warteliste per WhatsApp</a>
+      </div>
+      <p style="margin-top: 24px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute);">
+        Start 01.10.2026 · Ende 01.12.2026 · Nur 4 VIP-Plätze
+      </p>
+    </div>
+
+    <!-- Alternative Seelenbauchbuch -->
+    <p class="text-center reveal" style="margin: 40px auto 0; max-width: 60ch; font-size: 15px; color: var(--dark-soft);">
+      Alles zu teuer? Dann starte gerne mit dem <a href="ebooks.html" style="color: var(--copper-dark); border-bottom: 1px solid var(--copper);">Seelenbauchbuch für 15,99 €</a> — eine kleine Übersicht als sanfter Einstieg.
     </p>
   </div>
 </section>
@@ -913,7 +1036,7 @@
   <div class="container">
     <div class="grid-2" style="align-items: center;">
       <div class="reveal">
-        <span class="eyebrow eyebrow-line" style="color: var(--mint);">Nº 11 · Terra Luna</span>
+        <span class="eyebrow eyebrow-line" style="color: var(--mint);">Nº 13 · Terra Luna</span>
         <h2 style="margin-top: 24px;">
           Deine Begleitung — <em class="italic">auch nach der Masterclass.</em>
         </h2>
@@ -941,7 +1064,7 @@
 <section class="section section-cream">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 12 · FAQ</span>
+      <span class="eyebrow eyebrow-line eyebrow-copper reveal">Nº 14 · FAQ</span>
       <h2 class="reveal" style="margin-top: 24px;">Häufige <em class="italic">Fragen.</em></h2>
     </div>
 
@@ -994,6 +1117,34 @@
         <summary>Was ist der Unterschied zwischen Masterclass und Coaching?</summary>
         <p>Die Masterclass ist ein strukturiertes 8-Wochen-Programm mit Lektionen, Trackern und Reflexion. In den Optionen mit persönlicher Begleitung ist zusätzlich individuelle Betreuung dabei — das kommt einem Coaching am nächsten.</p>
       </details>
+      <details>
+        <summary>Wie viel Zeit brauche ich pro Woche?</summary>
+        <p>Rechne mit 60–90 Minuten pro Woche. Du kannst das an einem Stück machen oder in kleine Portionen aufteilen.</p>
+      </details>
+      <details>
+        <summary>Was, wenn ich mal eine Woche keine Zeit habe?</summary>
+        <p>Kein Problem. Du hast Zugriff auf alle digitalen Inhalte über die volle Kohorten-Zeit. Wenn du pausierst, holst du einfach nach — die Wochenmodule sind im Selbstlern-Format.</p>
+      </details>
+      <details>
+        <summary>Was passiert, wenn zu wenige Anmeldungen zusammenkommen?</summary>
+        <p>Kommen bis zum 25.09.2026 weniger als 3 Anmeldungen in einer Paket-Kohorte zusammen, kann das Herbstspecial ganz oder teilweise abgesagt werden. Bereits gezahlte Beträge werden in diesem Fall vollständig zurückerstattet.</p>
+      </details>
+      <details>
+        <summary>Kann ich in Raten zahlen?</summary>
+        <p>Ja. Alle drei Pakete gibt es auch in 3 Monatsraten (Klein 3 × 139 €, Mittel 3 × 245 €, VIP 3 × 285 €). Erste Rate bei Buchung, zweite und dritte nach 30 bzw. 60 Tagen.</p>
+      </details>
+      <details>
+        <summary>Bekomme ich eine Rechnung für mein Unternehmen?</summary>
+        <p>Ja. Bei der Anmeldung kannst du Firmendaten und USt-ID angeben.</p>
+      </details>
+      <details>
+        <summary>Kann ich später innerhalb der Pakete upgraden?</summary>
+        <p>Ja. Schreib mir persönlich per Mail oder WhatsApp — wir rechnen den Aufpreis fair ab, solange in der gewünschten Kohorte noch ein Platz frei ist.</p>
+      </details>
+      <details>
+        <summary>Was passiert nach den 8 Wochen mit der Terra Luna App?</summary>
+        <p>Der Kohorten-Zugang läuft für 4 Monate ab Zahlungseingang und wird danach automatisch deaktiviert. Eine anschließende reguläre Nutzung über die App-Stores ist optional möglich.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -1001,14 +1152,23 @@
 <!-- ABSCHLUSS -->
 <section class="mc-final">
   <div class="container">
-    <span class="eyebrow eyebrow-line reveal" style="color: rgba(255,252,249,0.7);">Nº 13 · Und jetzt</span>
+    <span class="eyebrow eyebrow-line reveal" style="color: rgba(255,252,249,0.7);">Nº 15 · Bereit für deinen Weg?</span>
     <h2 class="reveal" style="margin-top: 32px;">
       Du musst nicht alles über deinen Körper wissen.<br>
       <span style="color: var(--mint);">Du darfst anfangen, ihn zu verstehen.</span>
     </h2>
-    <a href="#pakete" class="btn reveal">Jetzt mit den 8 Wochen starten</a>
-    <p class="after-cta reveal">
-      Die Masterclass dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine individuelle medizinische Diagnostik oder Behandlung. Bei starken, neuen oder anhaltenden Beschwerden sollte medizinischer Rat eingeholt werden.
+    <p class="reveal" style="margin: 32px auto 0; color: rgba(255,252,249,0.9); font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.4vw, 26px); max-width: 44ch; line-height: 1.4;">
+      Ich freue mich, dich in den nächsten 8 Wochen zu begleiten.
+    </p>
+    <div class="reveal" style="margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+      <a href="#pakete" class="btn">Jetzt mit den 8 Wochen starten</a>
+      <a href="mailto:julia@bergles.net?subject=Unsicher%20-%20Masterclass" class="btn btn-outline" style="border-color: rgba(255,252,249,0.5); color: var(--cream);">Unsicher? Schreib mir</a>
+    </div>
+    <p class="after-cta reveal" style="margin-top: 40px;">
+      Die Masterclass dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine individuelle medizinische Diagnostik oder Behandlung. Bei starken, neuen oder anhaltenden Beschwerden sollte medizinischer Rat eingeholt werden. Bitte setze bestehende Medikamente oder Therapien nicht eigenmächtig ab.
+    </p>
+    <p class="reveal" style="margin-top: 24px; color: rgba(255,252,249,0.6); font-family: var(--serif); font-style: italic; font-size: 20px;">
+      Deine Julia
     </p>
   </div>
 </section>
