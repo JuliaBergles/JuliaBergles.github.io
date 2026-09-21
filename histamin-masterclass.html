@@ -306,6 +306,28 @@
     display: block;
     margin-top: 6px;
   }
+  .mc-price-card .price .was {
+    display: block;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--mute);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+  .mc-price-card .price .badge-special {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--copper-dark);
+    background: var(--beige);
+    padding: 4px 10px;
+    margin-top: 8px;
+  }
   .mc-price-card .fits {
     font-family: var(--sans);
     font-size: 13px;
@@ -994,7 +1016,12 @@
       <div class="mc-price-card reveal">
         <span class="num">Nº 03 · VIP · nur 4 Plätze</span>
         <h3>Intensive Begleitung</h3>
-        <div class="price">825&nbsp;€<small>oder 3 × 285 €</small></div>
+        <div class="price">
+          <span class="was">statt 899 €</span>
+          825&nbsp;€
+          <span class="badge-special">Herbstspecial-Preis</span>
+          <small>oder 3 × 285 €</small>
+        </div>
         <p class="fits">Für dich, wenn du gezielt an deinem individuellen Weg arbeiten willst.</p>
         <ul>
           <li>Alle 8 Wochenmodule</li>
