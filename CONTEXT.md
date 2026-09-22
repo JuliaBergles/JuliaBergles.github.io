@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-18
+> Letzte Aktualisierung: 2026-09-22
 
 ---
 
@@ -31,13 +31,13 @@ Die Website ist Teil eines größeren Öko-Systems. Klarheit welches Repo welche
 
 | | juliabergles.de | terra-luna-masterclass.vercel.app |
 |---|---|---|
-| Zweck | Persönliche Marke, Blog, E-Books, App-Info, Peer-Support | **Histamin Masterclass** (Landing + Anmeldung + Kursbereich) |
+| Zweck | Persönliche Marke, Blog, E-Books, App-Info, Peer-Support, **Masterclass-Sales-Landing** | Masterclass **Anmeldung + Kursbereich (Dashboard)** |
 | Repo | `github.com/JuliaBergles/JuliaBergles.github.io` | `github.com/JuliaBergles/terra-luna-masterclass` |
 | Lokal | `~/Library/Mobile Documents/com~apple~CloudDocs/juliabergles Website/` | `~/Projects/terra-luna-masterclass/` |
 | Stack | Statische HTML + `assets/site-v3.css` | Next.js 16 + Tailwind v4 + Supabase (Auth+DB) + Vercel |
 | Deploy | `git push` → GitHub Pages | `git push` → Vercel auto-deploy |
 
-Verlinkung: `histamin-masterclass.html` auf juliabergles.de ist ein Meta-Refresh-Redirect zu `terra-luna-masterclass.vercel.app` (Julia hat das so eingerichtet). Der Nav-Link „Masterclass ★" führt direkt zur Vercel-URL.
+Verlinkung: `histamin-masterclass.html` auf juliabergles.de ist seit 2026-09-20 eine **echte Editorial-Landing** (15 Sektionen, Preise, FAQ, Warteliste) — nicht mehr nur Redirect. CTAs zeigen aktuell auf `mailto:julia@bergles.net` (Betreff pro Paket) und WhatsApp — der Vercel-Checkout kann später verlinkt werden. Der Nav-Link „Masterclass ★" führt zur juliabergles.de-Landing; separater CTA-Button rechts zeigt weiter direkt auf Vercel.
 
 ---
 
@@ -126,17 +126,62 @@ Alle E-Books über Mail-Vorkasse (`julia@bergles.net`). Aktueller Katalog:
 
 ---
 
-## Histamin Masterclass — auf Vercel (nicht hier)
+## Histamin Masterclass — beide Sites synchron
 
-Volle Landing + Anmeldung + späterer Kursbereich läuft im separaten Repo `terra-luna-masterclass`. Auf juliabergles.de nur:
+### Landing (Sales) auf juliabergles.de/histamin-masterclass.html
 
-- **Nav-Link** „Masterclass ★" → Vercel
-- **`histamin-masterclass.html`** → Meta-Refresh + JS-Redirect zur Vercel-URL (Julia hat das selbst eingerichtet)
-- **`masterclass-anmeldung.html`** → Redirect zu Vercel `/anmeldung`
-- **AGB § 5a** (Standard-Masterclass Self-Study 399 € + 1:1 780 €)
-- **AGB § 5c** (Herbstspecial 2026: feste Kohorte 01.10.–01.12., 3 Pakete 325/699/825 € + Ratenzahlung + Klein: Dashboard oder gedrucktes Arbeitsbuch + Start-/Endcall mit Julia + WhatsApp-Kontakt; Mittel: 3 Zwischen-Calls + 1× Kochen + Notizbuch/Überraschung; VIP: 2× Kochen + 2× 1:1 + 2 Kohorten-Calls + Sonntags-Wochenplan + Notizbuch/Überraschung)
-- **Datenschutz** (WhatsApp-Sonntags-Check-in, Videokonferenz-Anbieter für 1:1, Calendly)
-- **Widerruf** (Masterclass: 14 Tage, erlischt bei Zugriff auf digitale Inhalte; Peer-Support-Gespräche: 24-h-Storno)
+Editorial-Landing mit 15 durchgehend nummerierten Sektionen (Nº 01–15):
+
+1. Hero („Histamin verstehen. Deinen Körper verstehen. Wieder mehr Vertrauen entwickeln.") + Meta-Bar (Start 01.10., Ratenzahlung, 4 VIP-Plätze)
+2. Nº 01 · Problem („Vielleicht kennst du das" — 16 Punkte)
+3. Nº 02 · Was du lernst (8 Themenkarten mit Emoji + Nummer)
+4. Nº 03 · Dein individueller Bereich (5 App-Karten in Mint)
+5. Nº 04 · 8 Wochen im Überblick (4×2-Grid, je Woche mit Kurzbeschreibung)
+6. Nº 05 · Das bekommst du (16-Punkte-Checkliste)
+7. Nº 06 · Bewegung + Pull-Quote „regenerieren statt aushalten"
+8. Nº 07 · Ernährung + „stabilisieren→erweitern"-Flow
+9. Nº 08 · Zu wenig essen + Karte „weniger essen macht alles schlimmer"
+10. Nº 09 · Mehr Vielfalt („von 5 Lebensmitteln auf lange Liste")
+11. Nº 10 · Meine Geschichte (Story-Block, 31 kg, Darmverschluss, „heute nahezu beschwerdefrei")
+12. Nº 11 · Warum es dir wert ist (Value-Sektion)
+13. Nº 12 · Deine Optionen (3 Preiskarten + Warteliste + Seelenbauchbuch-Alternative)
+14. Nº 13 · Terra Luna (in Blau)
+15. Nº 14 · FAQ (19 Fragen als Accordion)
+16. Nº 15 · Abschluss („Bereit für deinen Weg?") + Disclaimer
+
+CTAs: `mailto:julia@bergles.net` mit Betreff pro Paket + WhatsApp `+49 1511 8515394` für Warteliste.
+
+### Preise / Pakete (Herbstspecial 2026, feste Kohorte 01.10.–01.12.)
+
+| Paket | Preis | Rate | Kern-Inhalt |
+|---|---|---|---|
+| **Klein · Starter-Kurs** | **325 €** (statt 399 €) | 3 × 115 € = 345 € | Wochenmodule im Dashboard oder als gedrucktes Buch zum Ausfüllen, alle E-Books, App 4 Mo, Community, Sonntags-Impuls, Start-/Abschluss-Call mit Julia (je 30–45 Min), WhatsApp-Kontakt für Fragen |
+| **Mittel · max. 6** | **699 €** | 3 × 245 € = 735 € | Klein-Basis + 1 Austausch-Call in der Gruppe + 1× Live-Kochen + 1× gemeinsames Einkaufen + Notizbuch/Überraschungspaket per Post |
+| **VIP · max. 4** | **825 €** (statt 899 €) | 3 × 285 € = 855 € | Mittel-Basis + 1 Austausch-Call + 1× Live-Kochen + **2 persönliche 1:1-Calls mit Julia** + 2 Kohorten-Calls (Start & Abschluss) + persönlicher Sonntags-Wochenplan mit Einkaufsliste + Ernährungsplan + Notizbuch/Überraschung |
+
+**Streichpreise:** Klein „statt 399" ist rechtlich sauber (der 399 €-Preis stand tatsächlich vor der Reduktion im AGB). VIP „statt 899" ist Marketing-Anker — 899 € war nie realer Preis. Rechtlich angreifbar unter § 11 PreisAngV, wenn jemand es hinterfragt.
+
+### Standard-Angebot (jederzeit, § 5a AGB)
+
+- **Self-Study 399 €** (3 × 139 €) — 8 Wochenmodule, App 8 Wochen, E-Books, Community, Sonntags-Impuls
+- **1:1 mit Julia 780 €** (3 × 275 € = 825 € gesamt) — Masterclass Online oder gedrucktes Arbeitsbuch, alle E-Books, App, persönlicher Wochenplan + Einkaufsliste + Rezepte, WhatsApp-Support mit Sprachnachrichten, **1 Kennenlerncall (60 Min) + 1 Abschlusscall (60 Min) + 2 persönliche Austausch-Calls + 1 gemeinsame Live-Koch-Session**. Max. 3 Plätze parallel.
+
+### Was auf juliabergles.de passiert (Rechtstexte)
+
+- **AGB § 5a** — Standard-Masterclass (Self-Study 399 € + 1:1 780 €)
+- **AGB § 5c** — Herbstspecial 2026 (3 Pakete, feste Kohorte, Ratenzahlung, Ausfallregelung)
+- **AGB § 5c.5** — Physischer Versand: Notizbuch/Überraschungspaket für Mittel/VIP + optionales Arbeitsbuch für Klein (§ 312g Abs. 2 Nr. 1 BGB — individuell gebundenes Werk, Widerruf nach Versand ausgeschlossen)
+- **Datenschutz** — WhatsApp-Sonntags-Check-in, Videokonferenz-Anbieter für 1:1, Calendly
+- **Widerruf** — Masterclass: 14 Tage, erlischt bei Zugriff auf digitale Inhalte; Peer-Support-Gespräche: 24-h-Storno
+
+### Vercel-Site (Anmeldung + Kursbereich)
+
+Weiterhin unter `terra-luna-masterclass.vercel.app`:
+- `/` — kompakte Landing (Marquee, „Zwei Wege"-Sektion, Standard 2-Karten Self-Study/1:1, Herbstspecial 3-Karten Klein/Mittel/VIP)
+- `/anmeldung` — Anmeldeformular (aktuell nur Self-Study, muss auf 5 Varianten erweitert werden)
+- `/masterclass` — späterer Kursbereich (Dashboard mit Wochenkarten, Live-Calls-Übersicht, Notizen — noch in Arbeit)
+
+**Zentrale Preis-Config:** `src/lib/variants.ts` — alle Preise, Raten, Capacity und Kurz-Infos einer Stelle. Beim Ändern immer beide Sites synchron halten (juliabergles.de/histamin-masterclass.html + juliabergles.de/agb.html + Vercel `variants.ts` + Vercel `page.tsx`).
 
 ---
 
@@ -235,16 +280,20 @@ WYH („Wear Your Healing")/Seelenbauch-Coaching-Alttexte wurden aus allen Recht
 - [ ] **Cover-Bilder** für Seelenbauchbuch + Iss dich stabil (aktuell Placeholder) — Julia liefert
 - [ ] Konkrete Snacks im **Überraschungspaket** in AGB § 5c.5 benennen (optional)
 - [ ] Julia-Prosa für die 8 Wochen-Detail-Pages (falls diese auf juliabergles.de kommen — sonst nur auf Vercel)
+- [ ] **Masterclass-Screenshots** für die Landing (juliabergles.de/histamin-masterclass.html) — Julia macht 3–5 Screenshots vom Dashboard, einer Woche, Wochenplan/Einkaufsliste, Rezept-Screen und legt sie in `images/masterclass/`. Dann baue ich eine „So sieht der Kurs von innen aus"-Sektion (Editorial-Grid).
 
 ### Vercel-Masterclass (in `~/Projects/terra-luna-masterclass`)
 - [ ] Anmeldeformular auf 5 Optionen erweitern (Prompt in `PROMPTS.md` dort)
 - [ ] Kursbereich mit Cards + Live-Calls + Notizen (Prompt 3 in `PROMPTS.md` dort, State-Persistenz via Supabase)
 - [ ] Wochenthemen visuell schöner (aktuell Warmbeige-Accordion, könnte Bilder pro Woche vertragen)
 - [ ] Digistore24-Integration für automatisierte Zahlung (aktuell Julia manuell)
+- [ ] Julia hat parallel Änderungen an `dashboard-client.tsx`, `weeks.ts`, `week-cards.tsx` — unstaged (nicht anfassen ohne Nachfrage)
 
 ### juliabergles.de
 - [ ] `assets/site-v4.css` entweder löschen oder als optionalen Alt-Style dokumentieren
 - [ ] Instagram + Schulen (aktuell nur direkt per URL erreichbar, nicht mehr im Nav) — evtl. im Footer prominenter
+- [ ] **Masterclass-Landing-CTAs:** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen, sobald das die 5 Varianten kann
+- [ ] **Streichpreis „statt 899" bei VIP** rechtlich sauber machen (aktuell nur Marketing-Anker) oder streichen — siehe § 11 PreisAngV
 
 ---
 
