@@ -698,6 +698,20 @@ p.lead {
   background: var(--mint);
   color: var(--blue-dark);
 }
+.nav-v3 .dropdown-header {
+  padding: 14px 24px 6px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--mute);
+  border-top: 1px solid var(--line);
+  margin-top: 6px;
+}
+.nav-v3 .dropdown-header:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 4px;
+}
 
 .nav-v3 .nav-cta {
   flex-shrink: 0;
