@@ -112,7 +112,7 @@ Alle E-Books über Mail-Vorkasse (`julia@bergles.net`). Aktueller Katalog:
 | Nº | Titel | Preis | Status |
 |---|---|---|---|
 | 01 | Die Probe (Reisen mit Histamin) | 7,99 € | verfügbar, echtes Cover |
-| 02 | **Das Seelenbauchbuch** (138 S. Leitfaden Unverträglichkeiten) | **19,99 € Hardcover-Magazin · 7,99 € E-Book** | verfügbar, **Placeholder-Cover** |
+| 02 | **Das Seelenbauchbuch** (138 S. Leitfaden Unverträglichkeiten) | **19,99 € Hardcover-Magazin · 7,99 € E-Book** | verfügbar, Cover + Magazin-Preview (12 Seiten in `images/seelenbauchbuch/`) |
 | 03 | **Iss dich stabil** (Ernährungsleitfaden) | 19,99 € | verfügbar, **Placeholder-Cover** |
 | 04 | Zyklus-Leitfaden | 1,99 € | verfügbar |
 | 05 | Freebie „Histamin & Ängste der Familie erklären" | kostenlos | in Arbeit |
@@ -246,7 +246,8 @@ Kürzere, „lexikalische" Seiten:
 
 **Cover-Bilder:**
 - Die Probe: `ebook-reisen/bilder/Titelbild.PNG` ✓
-- Seelenbauchbuch + Iss dich stabil: **noch Placeholder** — Julia muss echte Cover liefern
+- Seelenbauchbuch: Cover + 12-Seiten-Magazin-Preview vorhanden (`images/seelenbauchbuch/1.jpg`–`12.jpg`) — geliefert 2026-09-23
+- Iss dich stabil: **noch Placeholder** — Julia muss echtes Cover liefern
 
 ---
 
@@ -277,7 +278,8 @@ WYH („Wear Your Healing")/Seelenbauch-Coaching-Alttexte wurden aus allen Recht
 ## Was gerade offen ist
 
 ### Content
-- [ ] **Cover-Bilder** für Seelenbauchbuch + Iss dich stabil (aktuell Placeholder) — Julia liefert
+- [x] Cover + Preview für Seelenbauchbuch — geliefert 2026-09-23
+- [ ] **Cover-Bild** für Iss dich stabil (aktuell Placeholder) — Julia liefert
 - [ ] Konkrete Snacks im **Überraschungspaket** in AGB § 5c.5 benennen (optional)
 - [ ] Julia-Prosa für die 8 Wochen-Detail-Pages (falls diese auf juliabergles.de kommen — sonst nur auf Vercel)
 - [ ] **Masterclass-Screenshots** für die Landing (juliabergles.de/histamin-masterclass.html) — Julia macht 3–5 Screenshots vom Dashboard, einer Woche, Wochenplan/Einkaufsliste, Rezept-Screen und legt sie in `images/masterclass/`. Dann baue ich eine „So sieht der Kurs von innen aus"-Sektion (Editorial-Grid).
