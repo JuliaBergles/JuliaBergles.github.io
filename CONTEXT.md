@@ -112,7 +112,7 @@ Alle E-Books über Mail-Vorkasse (`julia@bergles.net`). Aktueller Katalog:
 | Nº | Titel | Preis | Status |
 |---|---|---|---|
 | 01 | Die Probe (Reisen mit Histamin) | 7,99 € | verfügbar, echtes Cover |
-| 02 | **Das Seelenbauchbuch** (138 S. Leitfaden Unverträglichkeiten) | **15,99 €** | verfügbar, **Placeholder-Cover** |
+| 02 | **Das Seelenbauchbuch** (138 S. Leitfaden Unverträglichkeiten) | **19,99 € Hardcover-Magazin · 7,99 € E-Book** | verfügbar, **Placeholder-Cover** |
 | 03 | **Iss dich stabil** (Ernährungsleitfaden) | 19,99 € | verfügbar, **Placeholder-Cover** |
 | 04 | Zyklus-Leitfaden | 1,99 € | verfügbar |
 | 05 | Freebie „Histamin & Ängste der Familie erklären" | kostenlos | in Arbeit |
