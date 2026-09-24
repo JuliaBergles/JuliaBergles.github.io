@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-24
+> Letzte Aktualisierung: 2026-09-24 (spät · komplette Kurs-Umstrukturierung)
 
 ---
 
@@ -129,56 +129,75 @@ Seite heißt jetzt **„Bücher"** (nicht mehr „E-Books"). Bestellung weiterhi
 
 ## Histamin Seelenbauch Kurs
 
-**Wichtig:** Der Kurs wurde am 23.09.–24.09. komplett umstrukturiert:
-- Umbenannt zu **„Histamin Seelenbauch Kurs"** in Nav, Meta, Body und AGB (Dateiname `histamin-masterclass.html` bleibt aus URL-Stabilitätsgründen bestehen — auf der Website taucht das Wort nicht mehr auf)
-- 8 Wochen → **12 Wochen (3 Monate)** mit Weihnachtspause
-- App 4 → **6 Monate** in allen Paketen
-- Seelenbauchbuch als **gedrucktes Softcover** in Mittel + VIP (statt PDF)
-- „Einkaufen" → **Einkaufs-Talk** (Julia zeigt Vorratskammer statt gemeinsam einzukaufen)
-- Preis-Karten neu im Editorial-Look (`.mc-price-card` in `<style>` in histamin-masterclass.html) — Cream-BG mit blau-getönter Umrandung, Nº + Kategorie-Label getrennt, Preis mit Trennlinien, Serif-italic Fits-Zeile
-- Neuer Tagline im Hero: **„In 3 Monaten zu einem entspannteren Bauch."**
+**Wichtig:** Der Kurs wurde am 23.09.–24.09. komplett umstrukturiert. Aktueller Stand:
 
-### Landing (Sales) auf juliabergles.de/histamin-masterclass.html
+- **Name:** „Histamin Seelenbauch Kurs" (Dateiname `histamin-masterclass.html` bleibt aus URL-Stabilitätsgründen — auf der Website taucht das Wort „Masterclass" nirgends mehr auf)
+- **Dauer:** 12 Wochen (3 Monate), davon **10 Wochenmodule + 2 Wochen Pause** (davon Weihnachten 24.12. – 01.01.2027)
+- **App:** 6 Monate kostenlos in allen Paketen (Early-Bird: 12 Monate)
+- **Seelenbauchbuch:** als gedrucktes Softcover-Magazin (Warenwert 24,99 €) in **allen drei Paketen**
+- **E-Books im Kurs:** nur **E-Book Histaminarm Reisen** — nicht mehr „Alle E-Books"
+- **WhatsApp:** früher „WhatsApp-Community + Sonntags-Impuls" → **WhatsApp-Kontakt 24/7** (in allen Paketen)
+- **Einkaufen** umbenannt zu **Einkaufs-Talk** (Julia zeigt Vorratskammer statt gemeinsam einzukaufen)
+- **Preis-Karten** neu im Editorial-Look — Cream + blau-getönte Umrandung, Nº + Kategorie-Label getrennt, Preis mit Trennlinien, Serif-italic Fits-Zeile
+- **Hero-Tagline:** „In 3 Monaten zu einem entspannteren Bauch."
 
-Editorial-Landing mit 15 durchgehend nummerierten Sektionen (Nº 01–15). Hero-Titel bleibt „Histamin verstehen. Deinen Körper verstehen. Wieder mehr Vertrauen entwickeln." — der neue Kurs-Name „Histamin Seelenbauch Kurs" steht im Eyebrow drüber, die Tagline drunter.
+### Paket-Namen (24.09. spät umgetauft von Klein/Mittel/VIP)
 
-Die 8 Themenmodule bleiben inhaltlich gleich, sind aber entspannter über 12 Wochen verteilt. In der Übersicht heißen sie jetzt **„Modul 1–8"** (nicht mehr „Woche 1–8").
+- **Nº 01 · Basic Kurs** — 325 € (statt 399 €) · 3 × 115 € — Selbstlern-Dashboard
+- **Nº 02 · Gruppenkurs** — 699 € · 3 × 245 € — Kleingruppe max. 6
+- **Nº 03 · Seelenbauch Kurs** — 825 € (statt 899 €) · 3 × 285 € — max. 4 Plätze, mit 1:1
+
+### Landing auf juliabergles.de/histamin-masterclass.html
+
+Editorial-Landing mit 16 nummerierten Sektionen (Nº 01–16). Hero-H1 bleibt „Histamin verstehen. Deinen Körper verstehen. Wieder mehr Vertrauen entwickeln." — der Kurs-Name „Histamin Seelenbauch Kurs" steht im Eyebrow, die Tagline drunter.
+
+Sektionen: 01 Problem · 02 Was du lernst · 03 Persönlicher Bereich · 04 **10 Wochenmodule** im Überblick · 05 Das bekommst du · 06 Bewegung · 07 Ernährung · 08 Zu wenig essen · 09 Mehr Vielfalt · 10 Meine Geschichte · 11 Warum es dir wert ist · **12 Alle Termine (neu, 24.09.)** · 13 Deine Optionen (Preise + Early-Bird-Callout) · 14 Terra Luna · 15 FAQ · 16 Abschluss.
 
 CTAs: `mailto:julia@bergles.net` mit Betreff pro Paket + WhatsApp `+49 1511 8515394` für Warteliste.
 
 ### Herbstspecial 2026 — feste Kohorte
 
-**Zeitraum:** 01.10.2026 – 01.01.2027 (12 Wochen)
+**Zeitraum:** 01.10.2026 – 01.01.2027 (12 Kalenderwochen: 10 aktive Wochenmodule + 2 Pause-Wochen)
 **Weihnachtspause:** 24.12.2026 – 01.01.2027 (bewusste Pause, keine Live-Termine, keine WhatsApp-Betreuung)
 
-**Feste Kohorten-Termine** (alle werden aufgezeichnet, Aufzeichnung dient als Ersatz bei Abwesenheit):
-- **So 04.10.2026 · 10 Uhr** — Start-Call (Kohorte, alle Pakete)
-- **Sa 24.10.2026 · 18:30 Uhr** — Einkaufs-Talk (Mittel + VIP)
-- **Sa 14.11.2026 · 18:30 Uhr** — Austausch-Call (Mittel + VIP)
-- **Sa 28.11.2026 · 16:30 Uhr** — Live-Kochen (Mittel + VIP)
-- **Sa 19.12.2026 · 18:30 Uhr** — Abschluss-Call (Kohorte, alle Pakete)
-- **VIP-1:1**: 2 Termine flexibel nach Absprache
+**Feste Kohorten-Termine** (auf der Landing als eigene Nº-12-Sektion mit Editorial-Tabelle; alle werden aufgezeichnet, Aufzeichnung dient als Ersatz bei Abwesenheit):
 
-### Preise / Pakete
+| Datum | Uhrzeit | Termin | Für |
+|---|---|---|---|
+| So 04.10.2026 | 10:00 | Start-Call · 30–45 Min | Kohorte (alle Pakete) |
+| Sa 24.10.2026 | 18:30 | Einkaufs-Talk · Vorratskammer + Einkauf | Gruppenkurs + Seelenbauch Kurs |
+| Sa 14.11.2026 | 18:30 | Austausch-Call | Gruppenkurs + Seelenbauch Kurs |
+| Sa 28.11.2026 | 16:30 | Live-Kochen | Gruppenkurs + Seelenbauch Kurs |
+| Sa 19.12.2026 | 18:30 | Abschluss-Call · 30–45 Min | Kohorte (alle Pakete) |
+
+**Seelenbauch-Kurs 1:1-Calls:** 2 Stück, flexibel nach Absprache, **auch kurzfristig verlegbar** (weicher als Standard 24h-Storno).
+
+### 10 Wochenmodule (Inhalt der „Nº 04"-Sektion)
+
+1. Histamin verstehen · 2. Deine individuelle Situation · 3. Darm & Ernährung · 4. Lebensmittel integrieren · 5. Zyklus & Histamin · 6. Stress & Nervensystem · 7. Bewegung & Regeneration · 8. Dein persönlicher Fahrplan · **9. Angst vor Essen & innere Signale (neu)** · **10. Alltag, Familie & Reisen (neu)**
+
+Module 9 und 10 sind Platzhalter mit sinnvollen Themen. Julia kann Titel/Beschreibung noch anpassen.
+
+### Preise / Pakete (Detail)
 
 | Paket | Preis | Rate | Early-Bird (erste 5) | Kern-Inhalt |
 |---|---|---|---|---|
-| **Nº 01 · Klein · Starter-Kurs** | **325 €** (statt 399 €) | 3 × 115 € | **275 €** | 8 Module als Selbstlern-Dashboard oder gedrucktes Arbeitsbuch, alle E-Books (Seelenbauchbuch als PDF), App 6 Mo, WhatsApp-Community, Sonntags-Impuls, Start- & Abschluss-Call (Kohorte), WhatsApp-Kontakt für Fragen |
-| **Nº 02 · Mittel · max. 6** | **699 €** | 3 × 245 € | **649 €** | Klein-Basis + **Seelenbauchbuch als gedrucktes Softcover-Magazin** (24,99 €, Versand inkl.) + alle 5 Kohorten-/Gruppen-Termine + Notizbuch/Überraschungspaket per Post |
-| **Nº 03 · VIP · max. 4** | **825 €** (statt 899 €) | 3 × 285 € | **775 €** | Mittel-Basis + **2 persönliche 1:1-Calls mit Julia** (flexibel nach Absprache) + persönlicher Sonntags-Wochenplan mit Einkaufsliste + Ernährungsplan |
+| **Nº 01 · Basic Kurs** | **325 €** (statt 399 €) | 3 × 115 € | **275 €** | 10 Wochenmodule als Selbstlern-Dashboard, **Seelenbauchbuch als gedrucktes Softcover (24,99 €)**, E-Book Histaminarm Reisen, App 6 Mo, WhatsApp-Kontakt 24/7, Start- + Abschluss-Call (je 30–45 Min) |
+| **Nº 02 · Gruppenkurs** | **699 €** | 3 × 245 € | **649 €** | Basic-Basis + alle 5 Kohorten-/Gruppen-Termine (Start/Einkaufs-Talk/Austausch/Live-Kochen/Abschluss) + Notizbuch/Überraschungspaket per Post. Max. 6 Teilnehmerinnen. |
+| **Nº 03 · Seelenbauch Kurs** | **825 €** (statt 899 €) | 3 × 285 € | **775 €** | Gruppenkurs-Basis + **2 persönliche 1:1-Calls mit Julia** (flexibel, auch kurzfristig verlegbar) + persönlicher Sonntags-Wochenplan mit Einkaufsliste + Ernährungsplan. Max. 4 Plätze. |
 
-**Early-Bird ★ (seit 24.09.):** Die ersten 5 Buchungen bekommen **Terra Luna App 12 Monate statt 6 Monate + 50 € Rabatt** auf den Herbstspecial-Preis. Callout-Box direkt über den Preis-Karten. Legal geregelt in AGB § 5c.8.
+**Early-Bird ★:** Erste 5 Buchungen bekommen **Terra Luna App 12 Monate (statt 6) + 50 € Rabatt** auf den Herbstspecial-Preis. Callout-Box mit expliziten Preisen (275 / 649 / 775 €) direkt über den Preis-Karten. Legal in AGB § 5c.8.
 
-**Streichpreise:** Klein „statt 399 €" ist rechtlich sauber (399 € stand im alten AGB). VIP „statt 899 €" ist Marketing-Anker — 899 € war nie realer Preis. Rechtlich angreifbar unter § 11 PreisAngV, wenn jemand es hinterfragt (steht auf der offenen Liste).
+**Streichpreise:** Basic „statt 399 €" ist rechtlich sauber (399 € stand im alten AGB). Seelenbauch Kurs „statt 899 €" ist Marketing-Anker — 899 € war nie realer Preis. Rechtlich angreifbar unter § 11 PreisAngV.
 
 ### AGB (24.09. komplett überarbeitet)
 
-- **§ 4** — Kurs-Beschreibung auf 3-Paket-Herbstspecial ausgerichtet (alte Self-Study/1:1-Preise entfernt)
-- **§ 5a** — Allgemeine Bestimmungen (Buchung, Ratenzahlung, digitale Zugriffsdauer, WhatsApp-Support, Sonntags-Impuls, Nutzungslizenz, Widerrufsrecht, Haftungsausschluss, Wechsel zwischen Paketen) — gilt gemeinsam für alle drei aktuellen Pakete. Rolling Entry und alte Preise entfernt.
-- **§ 5c** — Herbstspecial 2026 mit festen Kohorten-Terminen (§ 5c.3 mit Aufzeichnungs-Regel + Weihnachtspause), Seelenbauchbuch als Softcover in Mittel + VIP (§ 5c.5), Ratenzahlung, Ausfallregelung
-- **§ 5c.8** — Neuer Early-Bird-Paragraph (erste 5 Buchungen, App 12 Monate + 50 € Rabatt, nach Zahlungseingang, nicht kombinierbar, nicht auszahlbar)
+- **§ 1** — Kurs-Beschreibung mit 3 Paket-Namen (Basic Kurs, Gruppenkurs, Seelenbauch Kurs)
+- **§ 5a** — Allgemeine Bestimmungen für alle drei Pakete (Buchung, Ratenzahlung, digitale Zugriffsdauer, WhatsApp-Kontakt 24/7, Sonntags-Impuls, Nutzungslizenz, Widerrufsrecht, Haftungsausschluss, Wechsel zwischen Paketen). Rolling Entry und alte 399/780 €-Preise entfernt.
+- **§ 5c** — Herbstspecial 2026 mit festen Kohorten-Terminen (§ 5c.3 mit Aufzeichnungs-Regel + Weihnachtspause), Seelenbauchbuch als Softcover in Gruppenkurs + Seelenbauch Kurs (§ 5c.5), Ratenzahlung
+- **§ 5c.8** — Early-Bird-Paragraph (erste 5 Buchungen, App 12 Monate + 50 € Rabatt, nach Zahlungseingang, nicht kombinierbar, nicht auszahlbar)
 
-**Achtung:** AGB rechtlich noch nicht von Anwalt geprüft — bei Gelegenheit prüfen lassen (besonders Widerrufsklauseln und Aufzeichnungs-Regel).
+**Achtung:** AGB nicht von Anwalt geprüft — bei Gelegenheit prüfen lassen (besonders Widerrufsklauseln und Aufzeichnungs-Regel + „24/7"-Support-Wording vs. tatsächliche Erreichbarkeit).
 
 ### Vercel-Site (Anmeldung + Kursbereich)
 
