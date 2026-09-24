@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-22
+> Letzte Aktualisierung: 2026-09-24
 
 ---
 
@@ -31,163 +31,170 @@ Die Website ist Teil eines größeren Öko-Systems. Klarheit welches Repo welche
 
 | | juliabergles.de | terra-luna-masterclass.vercel.app |
 |---|---|---|
-| Zweck | Persönliche Marke, Blog, E-Books, App-Info, Peer-Support, **Masterclass-Sales-Landing** | Masterclass **Anmeldung + Kursbereich (Dashboard)** |
+| Zweck | Persönliche Marke, Blog, Bücher, App-Info, Peer-Support, **Kurs-Sales-Landing** | Kurs **Anmeldung + Kursbereich (Dashboard)** |
 | Repo | `github.com/JuliaBergles/JuliaBergles.github.io` | `github.com/JuliaBergles/terra-luna-masterclass` |
 | Lokal | `~/Library/Mobile Documents/com~apple~CloudDocs/juliabergles Website/` | `~/Projects/terra-luna-masterclass/` |
 | Stack | Statische HTML + `assets/site-v3.css` | Next.js 16 + Tailwind v4 + Supabase (Auth+DB) + Vercel |
 | Deploy | `git push` → GitHub Pages | `git push` → Vercel auto-deploy |
 
-Verlinkung: `histamin-masterclass.html` auf juliabergles.de ist seit 2026-09-20 eine **echte Editorial-Landing** (15 Sektionen, Preise, FAQ, Warteliste) — nicht mehr nur Redirect. CTAs zeigen aktuell auf `mailto:julia@bergles.net` (Betreff pro Paket) und WhatsApp — der Vercel-Checkout kann später verlinkt werden. Der Nav-Link „Masterclass ★" führt zur juliabergles.de-Landing; separater CTA-Button rechts zeigt weiter direkt auf Vercel.
+Verlinkung: `histamin-masterclass.html` (Dateiname bleibt aus URL-Stabilitätsgründen) ist die Editorial-Landing für den **Histamin Seelenbauch Kurs** (15 Sektionen, Preise, FAQ, Warteliste). CTAs zeigen aktuell auf `mailto:julia@bergles.net` (Betreff pro Paket) und WhatsApp. Der Nav-Link „Kurs ★" führt zur juliabergles.de-Landing; separater CTA-Button rechts zeigt weiter direkt auf Vercel.
 
 ---
 
-## Aktueller Design-Stand (juliabergles.de, Stand 2026-09-18)
+## Aktueller Design-Stand (juliabergles.de)
 
 **Design-System v3 — Editorial (Cormorant + Manrope):**
 
 - Fonts: **Cormorant Garamond** (Headlines, weight 400) + **Manrope** (Body/UI)
 - Zentrales Stylesheet: `assets/site-v3.css`
-- v4 wurde probiert (App-Look angeglichen), dann per Rollback wieder auf v3 zurück. `assets/site-v4.css` liegt noch da, wird aber nicht mehr gebunden.
+- v4 wurde probiert, dann per Rollback wieder auf v3 zurück. `assets/site-v4.css` liegt noch da, wird aber nicht mehr gebunden.
 
 **Farbwelt aktuell:**
 - Basis: Cream `#fffcf9`, Beige `#f4ede4`, Dark `#2a2a2a`, Mute `#8a8a8a`
-- Warm: Copper `#c48b6c` — hell veränderbar (siehe Buttons)
-- Kleid-Blau (aus Julias PDF-Bild): `#2a4a68` dunkel, `#bec2d9` gedeckt (das ehemalige hellblaue #cbdeed wurde durch dieses gedecktere Blau ersetzt), `#eff5fa` fast weiß
-- Editorial-Blau (v3 default): `#7768a3` — kommt kaum noch vor
-- Mint: `#e2fffe`
+- Warm: Copper `#c48b6c`, Copper-Dark `#a87556`
+- Kühl: Blau `#8790c1` / Blau-Dark `#6f78a8`, Mint `#e2fffe`
+- Kleid-Blau (aus Julias PDF-Bild): `#2a4a68` dunkel, `#bec2d9` gedeckt
+- Kein Bordeaux/Grün mehr (Zyklus-Leitfaden hat der Bordeaux-BG abgelegt → beige)
 
-**Buttons (nach Julias Iterationen):**
-- **`.btn-kleidblau`** — Kleid-Blau BG `#2a4a68` + weiße Schrift (primärer CTA auf Startseite: Hero, Themen, Blog, Empfehlungen, App, Gespräch)
-- **`.btn-copper`** — jetzt Warmbeige `#e1ded5` mit dunkler Schrift (NICHT mehr braun/kupfer — Julia wollte alle „braunen" Buttons zu Warmbeige)
+**Buttons:**
+- **`.btn-kleidblau`** — Kleid-Blau BG `#2a4a68` + weiße Schrift (primärer CTA auf Startseite)
+- **`.btn-copper`** — jetzt Warmbeige `#e1ded5` mit dunkler Schrift
 - **`.btn-outline`** — transparent mit dark Border
-- **Nav-CTA „Masterclass"** oben rechts: Kleid-Blau
 
-**Marquee (Ticker unter Nav):** Kleid-Hellblau `#bec2d9` mit dunkelblauer Schrift (nicht mehr schwarz/malaga)
-
-**Hero:** kein dunkler Overlay-Filter mehr auf dem Bild — pur, mit Text-Shadow für Lesbarkeit
+**Marquee (Ticker unter Nav):** Kleid-Hellblau `#bec2d9` mit dunkelblauer Schrift
 
 ---
 
-## Nav (aktuell auf allen 72 aktiven Seiten)
+## Nav (aktuell auf allen aktiven Seiten)
 
 ```
-Über mich  |  Themen ▾  |  Rezepte ▾  |  Masterclass ★  |  App  |  E-Books  |  Mehr ▾    [Anmelden / Gespräch]
+Über mich  |  Themen ▾  |  Rezepte ▾  |  Kurs ★ ▾  |  App  |  Bücher ▾  |  Mehr ▾    [Kurs ★]
 ```
 
 - **Themen ▾**: Histamin · MCAS · Reizdarm · PMS & Zyklus · Angststörung · Selbsttest · Blog
 - **Rezepte ▾**: Übersicht + 6 Kategorien
-- **Masterclass ★**: direkter Link zu `terra-luna-masterclass.vercel.app` (externes Ziel)
+- **Kurs ★ ▾**: Zum Kurs · Anmeldung
 - **App**: direkt zu `app.html` (TerraLuna App-Landing)
-- **E-Books**: direkt zu `ebooks.html`
+- **Bücher ▾** (früher E-Books): Übersicht · **E-Books** (Histaminarm Reisen, Seelenbauchbuch) · **Softcover Bücher** (Seelenbauchbuch) — Dropdown mit Unter-Kategorien via `.dropdown-header` CSS
 - **Mehr ▾**: Live Calls · 1:1 Gespräch · Empfehlungen · Kunst
-- **CTA rechts**: „Anmelden" führt zu `masterclass-anmeldung.html` (Vercel-Redirect zur Anmeldeseite)
-
-Julia hat mehrfach zwischen Nav-Varianten iteriert. Vorherige Versionen mit „Angebote" / „Shop" wurden verworfen.
+- **CTA rechts**: „Kurs ★" führt aktuell zu Vercel
 
 ---
 
 ## Startseite (index.html) — Sektionsfolge
 
 1. Nav
-2. Marquee
-3. **Call-CTA-Banner** oben: Kleid-Hellblau, „Neu · Meine Histamin Masterclass ist da." → Vercel-Link
+2. Marquee (jetzt „★ NEU · Histamin Seelenbauch Kurs · 12 Wochen")
+3. **Call-CTA-Banner** oben: Kleid-Hellblau, „Neu · Mein Histamin Seelenbauch Kurs ist da." → Vercel-Link
 4. Hero (Full-Bleed Bild von Julia im blauen Kleid Piran, kein Filter)
-5. **„Kennst du das?"** Pain-Sektion (5 Karten inkl. „Kein Arzt versteht dich", „Psychisch krank abgestempelt")
-6. Themen-Sektion mit Pfingstrosen-Deko + 6 Copper-Karten (Histamin/MCAS/Reizdarm/Blähbauch/Ängste/Depressionen)
-7. Full-Bleed IMG_4680 (Julia auf Piazza)
-8. Blog-Sektion (3 aktuelle Artikel)
-9. **Masterclass-Herzstück** — Verweis auf Vercel-Landing
-10. E-Books & Community
+5. **„Kennst du das?"** Pain-Sektion
+6. Themen-Sektion mit Pfingstrosen-Deko + 6 Copper-Karten
+7. Full-Bleed IMG_4680
+8. Blog-Sektion
+9. **Kurs-Herzstück** — Verweis auf Vercel-Landing bzw. `histamin-masterclass.html`
+10. Bücher & Community
 11. Empfehlungen
-12. App (mit **„3 Tage kostenlos testen" + „Zur App"** Buttons)
+12. App
 13. Gespräch/Peer-Support
 14. Footer
 
 ---
 
-## E-Books (`ebooks.html`)
+## Bücher (`ebooks.html`)
 
-Alle E-Books über Mail-Vorkasse (`julia@bergles.net`). Aktueller Katalog:
+Seite heißt jetzt **„Bücher"** (nicht mehr „E-Books"). Bestellung weiterhin per Mail-Vorkasse. Aktueller Katalog:
 
 | Nº | Titel | Preis | Status |
 |---|---|---|---|
 | 01 | Die Probe (Reisen mit Histamin) | 7,99 € | verfügbar, echtes Cover |
-| 02 | **Das Seelenbauchbuch** (138 S. Leitfaden Unverträglichkeiten) | **24,99 € Softcover-Magazin (A5, zzgl. DHL 6,99 €) · 9,99 € E-Book** | verfügbar, Cover + Magazin-Preview (12 Seiten in `images/seelenbauchbuch/`) |
-| 03 | **Iss dich stabil** (Ernährungsleitfaden) | 19,99 € | verfügbar, **Placeholder-Cover** |
-| 04 | Zyklus-Leitfaden | 1,99 € | verfügbar |
-| 05 | Freebie „Histamin & Ängste der Familie erklären" | kostenlos | in Arbeit |
-| 06 | So wird man seine Ängste los | 14,99 € | in Arbeit |
-| 07 | Was Depressionen mit einem machen | 14,99 € | in Arbeit |
-| 08 | Live Calls (Format) | 32 €/Call | verfügbar |
+| 02 | **Das Seelenbauchbuch — Der Weg zurück zu deinem Seelenbauch** (144 S., Magazin-Stil, Seelenrezepte, Reflexionsfragen) | **24,99 € Softcover-Magazin · 9,99 € E-Book** | verfügbar, **aktuell 12 Stück auf Lager**, Cover + 12-Seiten-Preview + Quell-Bilder in `images/seelenbauchbuch/` |
+| 03 | Zyklus-Leitfaden | **Freebie · kostenlos** (vorher 1,99 €) | verfügbar, warmer beige Look |
+| 04 | Freebie „Histamin & Ängste der Familie erklären" | kostenlos | in Arbeit |
+| 05 | So wird man seine Ängste los | 14,99 € | in Arbeit |
+| 06 | Was Depressionen mit einem machen | 14,99 € | in Arbeit |
+| 07 | Live Calls (Format) | 32 €/Call | verfügbar |
 
-**Kein KI-Text · kein Coach-Sprech**-Formulierungen wurden auf Julias Wunsch entfernt. Ersetzt durch „Von einer Betroffenen. Für Betroffene."
+**Iss dich stabil** wurde am 24.09. auf Julias Wunsch vorerst entfernt („kannst du erstmal rausnehmen"). Kann später zurück.
 
-**Content-Regel:** die zwei E-Books Seelenbauchbuch + Iss dich stabil zeigen nur eine **Inhaltsliste**, keinen Verkaufstext (Julia's Ansage: „Leseprobe/Inhalt statt Direkttext").
+**Seelenbauchbuch-Versand (neue Regelung):**
+- Innerhalb Deutschlands **3,60 €** (statt vorher 6,99 € DHL)
+- **Ab 30 € Bestellwert kostenlos**
+- App-Kunden bekommen Versand kostenlos gegen Screenshot aus der App (egal welches Abo)
+
+**Content-Regel:** die zwei Verkaufs-Bücher (Seelenbauchbuch + Iss dich stabil, falls wieder aktiv) zeigen nur eine **Inhaltsliste**, keinen Verkaufstext.
+
+**Nav-Dropdown „Bücher"** verlinkt Übersicht + E-Books (Histaminarm Reisen, Seelenbauchbuch) + Softcover Bücher (Seelenbauchbuch als gedrucktes Magazin).
 
 ---
 
-## Histamin Masterclass — beide Sites synchron
+## Histamin Seelenbauch Kurs
+
+**Wichtig:** Der Kurs wurde am 23.09.–24.09. komplett umstrukturiert:
+- Umbenannt zu **„Histamin Seelenbauch Kurs"** in Nav, Meta, Body und AGB (Dateiname `histamin-masterclass.html` bleibt aus URL-Stabilitätsgründen bestehen — auf der Website taucht das Wort nicht mehr auf)
+- 8 Wochen → **12 Wochen (3 Monate)** mit Weihnachtspause
+- App 4 → **6 Monate** in allen Paketen
+- Seelenbauchbuch als **gedrucktes Softcover** in Mittel + VIP (statt PDF)
+- „Einkaufen" → **Einkaufs-Talk** (Julia zeigt Vorratskammer statt gemeinsam einzukaufen)
+- Preis-Karten neu im Editorial-Look (`.mc-price-card` in `<style>` in histamin-masterclass.html) — Cream-BG mit blau-getönter Umrandung, Nº + Kategorie-Label getrennt, Preis mit Trennlinien, Serif-italic Fits-Zeile
+- Neuer Tagline im Hero: **„In 3 Monaten zu einem entspannteren Bauch."**
 
 ### Landing (Sales) auf juliabergles.de/histamin-masterclass.html
 
-Editorial-Landing mit 15 durchgehend nummerierten Sektionen (Nº 01–15):
+Editorial-Landing mit 15 durchgehend nummerierten Sektionen (Nº 01–15). Hero-Titel bleibt „Histamin verstehen. Deinen Körper verstehen. Wieder mehr Vertrauen entwickeln." — der neue Kurs-Name „Histamin Seelenbauch Kurs" steht im Eyebrow drüber, die Tagline drunter.
 
-1. Hero („Histamin verstehen. Deinen Körper verstehen. Wieder mehr Vertrauen entwickeln.") + Meta-Bar (Start 01.10., Ratenzahlung, 4 VIP-Plätze)
-2. Nº 01 · Problem („Vielleicht kennst du das" — 16 Punkte)
-3. Nº 02 · Was du lernst (8 Themenkarten mit Emoji + Nummer)
-4. Nº 03 · Dein individueller Bereich (5 App-Karten in Mint)
-5. Nº 04 · 8 Wochen im Überblick (4×2-Grid, je Woche mit Kurzbeschreibung)
-6. Nº 05 · Das bekommst du (16-Punkte-Checkliste)
-7. Nº 06 · Bewegung + Pull-Quote „regenerieren statt aushalten"
-8. Nº 07 · Ernährung + „stabilisieren→erweitern"-Flow
-9. Nº 08 · Zu wenig essen + Karte „weniger essen macht alles schlimmer"
-10. Nº 09 · Mehr Vielfalt („von 5 Lebensmitteln auf lange Liste")
-11. Nº 10 · Meine Geschichte (Story-Block, 31 kg, Darmverschluss, „heute nahezu beschwerdefrei")
-12. Nº 11 · Warum es dir wert ist (Value-Sektion)
-13. Nº 12 · Deine Optionen (3 Preiskarten + Warteliste + Seelenbauchbuch-Alternative)
-14. Nº 13 · Terra Luna (in Blau)
-15. Nº 14 · FAQ (19 Fragen als Accordion)
-16. Nº 15 · Abschluss („Bereit für deinen Weg?") + Disclaimer
+Die 8 Themenmodule bleiben inhaltlich gleich, sind aber entspannter über 12 Wochen verteilt. In der Übersicht heißen sie jetzt **„Modul 1–8"** (nicht mehr „Woche 1–8").
 
 CTAs: `mailto:julia@bergles.net` mit Betreff pro Paket + WhatsApp `+49 1511 8515394` für Warteliste.
 
-### Preise / Pakete (Herbstspecial 2026, feste Kohorte 01.10.–01.12.)
+### Herbstspecial 2026 — feste Kohorte
 
-| Paket | Preis | Rate | Kern-Inhalt |
-|---|---|---|---|
-| **Klein · Starter-Kurs** | **325 €** (statt 399 €) | 3 × 115 € = 345 € | Wochenmodule im Dashboard oder als gedrucktes Buch zum Ausfüllen, alle E-Books, App 4 Mo, Community, Sonntags-Impuls, Start-/Abschluss-Call mit Julia (je 30–45 Min), WhatsApp-Kontakt für Fragen |
-| **Mittel · max. 6** | **699 €** | 3 × 245 € = 735 € | Klein-Basis + 1 Austausch-Call in der Gruppe + 1× Live-Kochen + 1× gemeinsames Einkaufen + Notizbuch/Überraschungspaket per Post |
-| **VIP · max. 4** | **825 €** (statt 899 €) | 3 × 285 € = 855 € | Mittel-Basis + 1 Austausch-Call + 1× Live-Kochen + **2 persönliche 1:1-Calls mit Julia** + 2 Kohorten-Calls (Start & Abschluss) + persönlicher Sonntags-Wochenplan mit Einkaufsliste + Ernährungsplan + Notizbuch/Überraschung |
+**Zeitraum:** 01.10.2026 – 01.01.2027 (12 Wochen)
+**Weihnachtspause:** 24.12.2026 – 01.01.2027 (bewusste Pause, keine Live-Termine, keine WhatsApp-Betreuung)
 
-**Streichpreise:** Klein „statt 399" ist rechtlich sauber (der 399 €-Preis stand tatsächlich vor der Reduktion im AGB). VIP „statt 899" ist Marketing-Anker — 899 € war nie realer Preis. Rechtlich angreifbar unter § 11 PreisAngV, wenn jemand es hinterfragt.
+**Feste Kohorten-Termine** (alle werden aufgezeichnet, Aufzeichnung dient als Ersatz bei Abwesenheit):
+- **So 04.10.2026 · 10 Uhr** — Start-Call (Kohorte, alle Pakete)
+- **Sa 24.10.2026 · 18:30 Uhr** — Einkaufs-Talk (Mittel + VIP)
+- **Sa 14.11.2026 · 18:30 Uhr** — Austausch-Call (Mittel + VIP)
+- **Sa 28.11.2026 · 16:30 Uhr** — Live-Kochen (Mittel + VIP)
+- **Sa 19.12.2026 · 18:30 Uhr** — Abschluss-Call (Kohorte, alle Pakete)
+- **VIP-1:1**: 2 Termine flexibel nach Absprache
 
-### Standard-Angebot (jederzeit, § 5a AGB)
+### Preise / Pakete
 
-- **Self-Study 399 €** (3 × 139 €) — 8 Wochenmodule, App 8 Wochen, E-Books, Community, Sonntags-Impuls
-- **1:1 mit Julia 780 €** (3 × 275 € = 825 € gesamt) — Masterclass Online oder gedrucktes Arbeitsbuch, alle E-Books, App, persönlicher Wochenplan + Einkaufsliste + Rezepte, WhatsApp-Support mit Sprachnachrichten, **1 Kennenlerncall (60 Min) + 1 Abschlusscall (60 Min) + 2 persönliche Austausch-Calls + 1 gemeinsame Live-Koch-Session**. Max. 3 Plätze parallel.
+| Paket | Preis | Rate | Early-Bird (erste 5) | Kern-Inhalt |
+|---|---|---|---|---|
+| **Nº 01 · Klein · Starter-Kurs** | **325 €** (statt 399 €) | 3 × 115 € | **275 €** | 8 Module als Selbstlern-Dashboard oder gedrucktes Arbeitsbuch, alle E-Books (Seelenbauchbuch als PDF), App 6 Mo, WhatsApp-Community, Sonntags-Impuls, Start- & Abschluss-Call (Kohorte), WhatsApp-Kontakt für Fragen |
+| **Nº 02 · Mittel · max. 6** | **699 €** | 3 × 245 € | **649 €** | Klein-Basis + **Seelenbauchbuch als gedrucktes Softcover-Magazin** (24,99 €, Versand inkl.) + alle 5 Kohorten-/Gruppen-Termine + Notizbuch/Überraschungspaket per Post |
+| **Nº 03 · VIP · max. 4** | **825 €** (statt 899 €) | 3 × 285 € | **775 €** | Mittel-Basis + **2 persönliche 1:1-Calls mit Julia** (flexibel nach Absprache) + persönlicher Sonntags-Wochenplan mit Einkaufsliste + Ernährungsplan |
 
-### Was auf juliabergles.de passiert (Rechtstexte)
+**Early-Bird ★ (seit 24.09.):** Die ersten 5 Buchungen bekommen **Terra Luna App 12 Monate statt 6 Monate + 50 € Rabatt** auf den Herbstspecial-Preis. Callout-Box direkt über den Preis-Karten. Legal geregelt in AGB § 5c.8.
 
-- **AGB § 5a** — Standard-Masterclass (Self-Study 399 € + 1:1 780 €)
-- **AGB § 5c** — Herbstspecial 2026 (3 Pakete, feste Kohorte, Ratenzahlung, Ausfallregelung)
-- **AGB § 5c.5** — Physischer Versand: Notizbuch/Überraschungspaket für Mittel/VIP + optionales Arbeitsbuch für Klein (§ 312g Abs. 2 Nr. 1 BGB — individuell gebundenes Werk, Widerruf nach Versand ausgeschlossen)
-- **Datenschutz** — WhatsApp-Sonntags-Check-in, Videokonferenz-Anbieter für 1:1, Calendly
-- **Widerruf** — Masterclass: 14 Tage, erlischt bei Zugriff auf digitale Inhalte; Peer-Support-Gespräche: 24-h-Storno
+**Streichpreise:** Klein „statt 399 €" ist rechtlich sauber (399 € stand im alten AGB). VIP „statt 899 €" ist Marketing-Anker — 899 € war nie realer Preis. Rechtlich angreifbar unter § 11 PreisAngV, wenn jemand es hinterfragt (steht auf der offenen Liste).
+
+### AGB (24.09. komplett überarbeitet)
+
+- **§ 4** — Kurs-Beschreibung auf 3-Paket-Herbstspecial ausgerichtet (alte Self-Study/1:1-Preise entfernt)
+- **§ 5a** — Allgemeine Bestimmungen (Buchung, Ratenzahlung, digitale Zugriffsdauer, WhatsApp-Support, Sonntags-Impuls, Nutzungslizenz, Widerrufsrecht, Haftungsausschluss, Wechsel zwischen Paketen) — gilt gemeinsam für alle drei aktuellen Pakete. Rolling Entry und alte Preise entfernt.
+- **§ 5c** — Herbstspecial 2026 mit festen Kohorten-Terminen (§ 5c.3 mit Aufzeichnungs-Regel + Weihnachtspause), Seelenbauchbuch als Softcover in Mittel + VIP (§ 5c.5), Ratenzahlung, Ausfallregelung
+- **§ 5c.8** — Neuer Early-Bird-Paragraph (erste 5 Buchungen, App 12 Monate + 50 € Rabatt, nach Zahlungseingang, nicht kombinierbar, nicht auszahlbar)
+
+**Achtung:** AGB rechtlich noch nicht von Anwalt geprüft — bei Gelegenheit prüfen lassen (besonders Widerrufsklauseln und Aufzeichnungs-Regel).
 
 ### Vercel-Site (Anmeldung + Kursbereich)
 
 Weiterhin unter `terra-luna-masterclass.vercel.app`:
-- `/` — kompakte Landing (Marquee, „Zwei Wege"-Sektion, Standard 2-Karten Self-Study/1:1, Herbstspecial 3-Karten Klein/Mittel/VIP)
-- `/anmeldung` — Anmeldeformular (aktuell nur Self-Study, muss auf 5 Varianten erweitert werden)
-- `/masterclass` — späterer Kursbereich (Dashboard mit Wochenkarten, Live-Calls-Übersicht, Notizen — noch in Arbeit)
+- `/` — kompakte Landing
+- `/anmeldung` — Anmeldeformular (muss auf 3 aktuelle Pakete umgestellt werden, Self-Study/1:1 sind Legacy)
+- `/masterclass` — späterer Kursbereich (Dashboard mit Modulen)
 
-**Zentrale Preis-Config:** `src/lib/variants.ts` — alle Preise, Raten, Capacity und Kurz-Infos einer Stelle. Beim Ändern immer beide Sites synchron halten (juliabergles.de/histamin-masterclass.html + juliabergles.de/agb.html + Vercel `variants.ts` + Vercel `page.tsx`).
+**Zentrale Preis-Config:** `src/lib/variants.ts` — beim Ändern immer beide Sites synchron halten (juliabergles.de/histamin-masterclass.html + agb.html + Vercel `variants.ts` + `page.tsx`).
 
 ---
 
 ## Peer-Support-Telefonate
 
-- 25 €/30 Minuten via Calendly (`calendly.com/julia-bergles/30min`)
+- Kostenloses 15-Min Kennenlerngespräch (Calendly `julia-bergles/kennenlerngesprach`)
+- 1-Stunden-Peer-Support-Gespräch: 39 € (Calendly `julia-bergles/gesprach-mit-julia`), inkl. PDF-Zusammenfassung
 - Positionierung: **„Erfahrungsaustausch" / „Peer-Support"** — NIEMALS „Beratung" oder „Coaching" (Heilpraktiker-Gesetz)
 - Disclaimer: „Ich teile meine eigene Erfahrung. Keine medizinische Beratung, kein Ersatz für Arzt/Therapeut."
 
@@ -195,71 +202,53 @@ Weiterhin unter `terra-luna-masterclass.vercel.app`:
 
 ## TerraLuna App
 
-- **App heißt TerraLuna** — überall so benannt (nicht mehr Vollmond/EatMoreArt)
 - Preise: 4,99 €/Monat oder 39,99 €/Jahr
-- **3 Tage kostenlose Testphase** — auf der Startseite jetzt als eigener Button „3 Tage kostenlos testen" prominent (zusätzlich zum „Zur App →")
+- **3 Tage kostenlose Testphase**
+- In allen Kurs-Paketen 6 Monate kostenlos, mit Early-Bird 12 Monate
 
 ---
 
 ## Blog (`blog/`)
 
-11 Artikel-Ordner (jeweils mit `index.html`):
-1. `darmverschluss/`
-2. `warum-wenig-essen/`
-3. `sport-histamin-mcas/`
-4. `blaehbauch-in-griff/`
-5. `auf-koerper-hoeren/`
-6. `enttaeuscht-von-aerzten/`
-7. `frische-diagnose/`
-8. `gym-transformation/`
-9. `weg-aus-depressionen/`
-10. `angst-vor-essen/`
-11. `orthorexie-corona/`
-
-Alle Artikel enden mit CTA zur TerraLuna-App oder Masterclass.
+11 Artikel-Ordner (jeweils mit `index.html`) — Themen: Darmverschluss, Warum wenig essen, Sport, Blähbauch, Auf Körper hören, Enttäuscht von Ärzten, Frische Diagnose, Gym-Transformation, Weg aus Depressionen, Angst vor Essen, Orthorexie/Corona. Alle enden mit CTA zur App oder zum Kurs.
 
 ---
 
-## Info-Seiten (kein Blog)
+## Ordner-Struktur (nach Cleanup 23.09.)
 
-Kürzere, „lexikalische" Seiten:
-- `histaminintoleranz.html` (mit „Wie ich bei Histamin reagiere"-Sektion)
-- `mcas.html`
-- `reizdarm.html`
-- `pms.html`
-- `angststoerung.html`
+Root: nur HTML-Seiten, `CLAUDE.md`, `CONTEXT.md`, `CONTEXT-CONTENT.md`, `CNAME` + Asset-/Content-Ordner.
+
+- **`docs/`** — alle Arbeits-MDs (Kalender, Konzepte, Design-Notizen, PLAN.md, Masterclass-Prompt, Kochbuch-Roadmap etc.)
+- **`assets/`**, **`css/`**, **`images/`** — Website-Assets
+- **`images/seelenbauchbuch/`** — Cover + 12-Seiten-Preview (JPGs) für die Website
+- **`images/seelenbauchbuch/_quellen/`** — PNG-Quellbilder (cover-final.png + page-1.png bis page-12.png) für spätere Neuerstellung
+- **`blog/`**, **`rezepte/`** — Content-Ordner
+- **`ebook-*/`** — pro E-Book ein Ordner mit Bildern + arbeitsmappe.md
 
 ---
 
 ## Bilder
 
 **Julias Portraits (Kleid-blaues Foto in Piran):**
-- `ebook-reisen/bilder/Header-Startseite.jpg` — Rückenansicht ganzer Körper blaues Kleid Piazza (Julia's Signature-Bild)
-- `ebook-reisen/bilder/IMG_4680.jpg` — Portrait Rückenansicht blaues Kleid Sonnenuntergang
-- `images/neu-2026-08/IMG_3639.jpg` — Portrait Julia vor Barock-Tür (lila Top)
-- `images/neu-2026-08/IMG_3545.jpg` — Portrait lila Kleid im Park (NICHT für „blaues Kleid" nutzen!)
-
-**Blumen-/Reise-Motive:**
-- `images/neu-2026-08/IMG_3835.jpg` — Rosa Oleander bei Nacht mit Palme (Pfingstrosen-Ersatz)
-- `images/neu-2026-08/IMG_3738.jpg` — Rosa Bougainvillea an Steinmauer mit Treppe
-- `images/pfingstrosen/IMG_7461.jpg` + `IMG_7460.jpg` — echte Pfingstrosen (auf Startseite Themen-Deko)
+- `ebook-reisen/bilder/Header-Startseite.jpg` — Signature-Bild
+- `ebook-reisen/bilder/IMG_4680.jpg` — Piazza-Portrait
+- `images/neu-2026-08/IMG_3639.jpg` — Portrait Barock-Tür (lila Top)
 
 **Cover-Bilder:**
 - Die Probe: `ebook-reisen/bilder/Titelbild.PNG` ✓
-- Seelenbauchbuch: Cover + 12-Seiten-Magazin-Preview vorhanden (`images/seelenbauchbuch/1.jpg`–`12.jpg`) — geliefert 2026-09-23
-- Iss dich stabil: **noch Placeholder** — Julia muss echtes Cover liefern
+- Seelenbauchbuch: `images/seelenbauchbuch/cover.png` (neues Cover vom 24.09., ersetzt das alte 1.jpg) + 12-Seiten-Preview
+- Zyklus-Leitfaden: **Placeholder** — Julia liefert Cover-Bild bei Gelegenheit
+- Freebook „Familie" / „Ängste" / „Depressionen": Placeholder
 
 ---
 
 ## Rechtstexte
 
 Alle auf Stand September 2026:
-- **`agb.html`** — mit § 5a Histamin Masterclass Standard und § 5c Herbstspecial 2026 (rechtssicher: Ratenzahlung, Ausfallregelung, Starterpaket-Klausel nur für Mittel/VIP, versiegelte Lebensmittel nach § 312g Abs. 2 Nr. 4 BGB)
-- **`datenschutz.html`** — mit WhatsApp-Sonntags-Check-in, Videokonferenz-Anbieter (Zoom/Meet/WhatsApp-Video), Calendly, keine Tally/WYH-Reste mehr
-- **`widerruf.html`** — mit 14-Tage-Regel für Masterclass + Peer-Support-Gespräche-Storno + Muster-Widerrufsformular
+- **`agb.html`** — 24.09. komplett auf 3-Paket-Struktur ausgerichtet, § 5a Allgemeine Bestimmungen + § 5c Herbstspecial + § 5c.8 Early-Bird
+- **`datenschutz.html`** — WhatsApp-Sonntags-Check-in, Videokonferenz, Calendly
+- **`widerruf.html`** — 14-Tage-Regel Kurs + Peer-Support-Storno + Muster-Widerrufsformular
 - **`impressum.html`** — Standard
-
-WYH („Wear Your Healing")/Seelenbauch-Coaching-Alttexte wurden aus allen Rechtstexten entfernt.
 
 ---
 
@@ -268,42 +257,44 @@ WYH („Wear Your Healing")/Seelenbauch-Coaching-Alttexte wurden aus allen Recht
 - Heilversprechen
 - Ärzte namentlich negativ nennen
 - KI-glattgebügelte Sprache in Julias Texten (nur Rechtschreibung/Grammatik/Kommas korrigieren — Formulierung bleibt Julia)
-- Perfekt-balancierte Dreier-Listen („gesund, glücklich und ausgeglichen")
+- Perfekt-balancierte Dreier-Listen
 - Werbe-Adjektive stapeln
 - Force-Push auf `main`
-- Bindestriche (em-dashes) in Julias Texten — sie mag die nicht und lässt sie durchgehend rausnehmen
+- Bindestriche (em-dashes) systematisch — Julia mag sie nicht
 
 ---
 
 ## Was gerade offen ist
 
 ### Content
-- [x] Cover + Preview für Seelenbauchbuch — geliefert 2026-09-23
-- [ ] **Cover-Bild** für Iss dich stabil (aktuell Placeholder) — Julia liefert
+- [ ] **Cover-Bild für Zyklus-Leitfaden** (aktuell Placeholder) — Julia liefert
+- [ ] **Zyklus-Leitfaden Inhalt** — Julia hat ein Zip im Ordner `E-Book Zyklus und Histamin/` gedroppt (nicht committet). Wenn Julia will, entpacken und einbauen.
 - [ ] Konkrete Snacks im **Überraschungspaket** in AGB § 5c.5 benennen (optional)
-- [ ] Julia-Prosa für die 8 Wochen-Detail-Pages (falls diese auf juliabergles.de kommen — sonst nur auf Vercel)
-- [ ] **Masterclass-Screenshots** für die Landing (juliabergles.de/histamin-masterclass.html) — Julia macht 3–5 Screenshots vom Dashboard, einer Woche, Wochenplan/Einkaufsliste, Rezept-Screen und legt sie in `images/masterclass/`. Dann baue ich eine „So sieht der Kurs von innen aus"-Sektion (Editorial-Grid).
+- [ ] **Kurs-Screenshots** für Landing (histamin-masterclass.html) — Julia macht 3–5 Screenshots vom Dashboard etc. und legt sie in `images/masterclass/`
+- [ ] Uhrzeiten für Austausch-Call 14.11. und Abschluss-Call 19.12. sind fix (jeweils 18:30) — Uhrzeit für Start-Call 04.10. ist 10 Uhr
 
-### Vercel-Masterclass (in `~/Projects/terra-luna-masterclass`)
-- [ ] Anmeldeformular auf 5 Optionen erweitern (Prompt in `PROMPTS.md` dort)
-- [ ] Kursbereich mit Cards + Live-Calls + Notizen (Prompt 3 in `PROMPTS.md` dort, State-Persistenz via Supabase)
-- [ ] Wochenthemen visuell schöner (aktuell Warmbeige-Accordion, könnte Bilder pro Woche vertragen)
-- [ ] Digistore24-Integration für automatisierte Zahlung (aktuell Julia manuell)
+### Vercel (in `~/Projects/terra-luna-masterclass`)
+- [ ] Anmeldeformular auf 3 aktuelle Pakete (Klein/Mittel/VIP) umstellen — Self-Study/1:1 sind Legacy
+- [ ] Preise aktualisieren (325/699/825 + Early-Bird)
+- [ ] Kursbereich mit Cards + Live-Calls + Notizen
+- [ ] Digistore24-Integration für automatisierte Zahlung
 - [ ] Julia hat parallel Änderungen an `dashboard-client.tsx`, `weeks.ts`, `week-cards.tsx` — unstaged (nicht anfassen ohne Nachfrage)
 
 ### juliabergles.de
-- [ ] `assets/site-v4.css` entweder löschen oder als optionalen Alt-Style dokumentieren
-- [ ] Instagram + Schulen (aktuell nur direkt per URL erreichbar, nicht mehr im Nav) — evtl. im Footer prominenter
-- [ ] **Masterclass-Landing-CTAs:** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen, sobald das die 5 Varianten kann
-- [ ] **Streichpreis „statt 899" bei VIP** rechtlich sauber machen (aktuell nur Marketing-Anker) oder streichen — siehe § 11 PreisAngV
+- [ ] `assets/site-v4.css` löschen oder als Alt-Style dokumentieren
+- [ ] **Kurs-Landing-CTAs** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen, sobald das die 3 Pakete kann
+- [ ] **Streichpreis „statt 899" bei VIP** rechtlich sauber machen oder streichen (§ 11 PreisAngV)
+- [ ] AGB rechtlich von Anwalt prüfen lassen (Widerrufs- und Aufzeichnungsklauseln)
+- [ ] Uhrzeit für Start-Call vs. andere Termine harmonisieren? Start 10 Uhr fällt aus dem 18:30-Schema — vielleicht auch 18:30 nachziehen? (Julia entscheidet)
 
 ---
 
 ## Feedback-Regeln aus laufenden Sessions
 
 - **Julia's Prosa gehört Julia.** Nur Rechtschreibung glätten, nicht umformulieren.
-- **Bindestriche (em-dashes) werden systematisch entfernt** — Julia lässt sie durchgehend rausnehmen, sie mag sie nicht.
+- **Bindestriche (em-dashes) werden systematisch entfernt** — Julia lässt sie durchgehend rausnehmen.
 - **Deploy = git push, direkt** — keine Preview-Umgebung, Julia testet live am Handy.
 - **Commit-Messages auf Deutsch, kurz.**
 - **Direkt handeln, nicht endlos fragen.** Bei Unklarheit EINE knappe Frage im Fließtext.
 - **Kein Anfassen ohne zu lesen.** Erst verstehen was existiert, dann ändern.
+- **Julia gibt Termine/Zeiten oft schrittweise** — nachfragen nur wenn etwas komplett fehlt, sonst sinnvoll defaulten und Julia korrigiert bei Bedarf.

@@ -108,7 +108,7 @@ Auf jeder Seite, in jedem Vortrag, in jedem Beitrag:
 - **Schul-Vorträge** (Landing: schulen.html) — 400-600 € pro 2h-Vortrag
 - **Kochbuch PDF** — 19,99 € (November 2026)
 - **Kochbuch Print via Amazon KDP** — 24,99-29,99 € (Februar 2027)
-- **Digital-Masterclass „4-Wochen-Bauch-Reset"** — 89-129 € mit App-Bundle (Mai 2027)
+- **Digital-Kurs „4-Wochen-Bauch-Reset"** — 89-129 € mit App-Bundle (Mai 2027)
 - **Monatliche Live-Themen-Events** — 15-25 €/Person (ab September)
 - **Weitere E-Books alle 2-3 Monate:** PMS, Ängste, Depressionen
 - **Nathalie Gleitmann Kooperation** (Nathalies Goodies) — geplant
