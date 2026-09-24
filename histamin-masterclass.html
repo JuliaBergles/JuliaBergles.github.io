@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Histamin Masterclass · 12 Wochen · Julia Bergles</title>
-<meta name="description" content="12-Wochen-Masterclass für Ernährung, Darm, Zyklus, Nervensystem, Bewegung und deinen individuellen Umgang mit Histamin. Wissensvermittlung, keine medizinische Behandlung.">
+<title>Histamin Seelenbauch Kurs · 12 Wochen · Julia Bergles</title>
+<meta name="description" content="12-Wochen-Kurs für Ernährung, Darm, Zyklus, Nervensystem, Bewegung und deinen individuellen Umgang mit Histamin. Wissensvermittlung, keine medizinische Behandlung.">
 <link rel="stylesheet" href="assets/site-v3.css">
 <script defer src="assets/reveal.js"></script>
 <style>
@@ -267,54 +267,71 @@
 
   .mc-price-card {
     background: var(--cream);
-    border: 1px solid var(--line);
-    padding: 44px 36px;
+    border: 1px solid rgba(119,104,163,0.18);
+    padding: 48px 36px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    transition: border-color 0.3s ease;
+    gap: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .mc-price-card:hover { border-color: var(--copper); }
+  .mc-price-card:hover {
+    border-color: var(--copper);
+    transform: translateY(-2px);
+  }
   .mc-price-card .num {
     font-family: var(--serif);
     font-style: italic;
     font-size: 14px;
-    color: var(--copper-dark);
+    color: var(--blue-dark);
     letter-spacing: 0.05em;
+  }
+  .mc-price-card .mc-price-category {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--copper);
+    font-weight: 600;
   }
   .mc-price-card h3 {
     font-family: var(--serif);
     font-size: 28px;
     font-weight: 500;
-    color: var(--dark);
-    line-height: 1.2;
+    color: var(--blue-dark);
+    line-height: 1.25;
+    margin-top: 4px;
   }
   .mc-price-card .price {
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin: 12px 0 4px;
     font-family: var(--serif);
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 400;
     color: var(--copper-dark);
     letter-spacing: -0.01em;
+    line-height: 1;
   }
   .mc-price-card .price small {
     font-family: var(--sans);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--mute);
     letter-spacing: 0.15em;
     text-transform: uppercase;
     display: block;
-    margin-top: 6px;
+    margin-top: 10px;
   }
   .mc-price-card .price .was {
     display: block;
     font-family: var(--sans);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.04em;
     color: var(--mute);
     text-decoration: line-through;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .mc-price-card .price .badge-special {
     display: inline-block;
@@ -326,35 +343,38 @@
     color: var(--copper-dark);
     background: var(--beige);
     padding: 4px 10px;
-    margin-top: 8px;
+    margin-left: 12px;
+    vertical-align: middle;
   }
   .mc-price-card .fits {
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--blue-dark);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--dark-soft);
+    line-height: 1.5;
+    margin-top: 8px;
   }
   .mc-price-card ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 12px 0 24px;
+    gap: 10px;
+    margin: 12px 0 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
   }
   .mc-price-card ul li {
     font-family: var(--sans);
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.55;
     color: var(--dark-soft);
-    padding-left: 22px;
+    padding-left: 20px;
     position: relative;
   }
   .mc-price-card ul li::before {
     content: "·";
     position: absolute;
-    left: 6px; top: -2px;
+    left: 4px; top: -3px;
     color: var(--copper);
     font-size: 20px;
     font-weight: 700;
@@ -362,9 +382,10 @@
   .mc-price-card .btn { margin-top: auto; text-align: center; }
 
   .mc-price-card.middle {
-    background: var(--mint);
-    border-color: rgba(119,104,163,0.3);
+    background: linear-gradient(180deg, var(--mint) 0%, #f4fbfa 100%);
+    border-color: rgba(119,104,163,0.32);
   }
+  .mc-price-card.middle h3 { color: var(--blue-dark); }
 
   /* FAQ */
   .mc-faq {
@@ -508,9 +529,9 @@
         </ul>
       </li>
       <li class="has-dropdown">
-        <span class="nav-link">Masterclass ★ <span class="caret">▾</span></span>
+        <span class="nav-link">Kurs ★ <span class="caret">▾</span></span>
         <ul class="dropdown">
-          <li><a href="histamin-masterclass.html">Zur Masterclass</a></li>
+          <li><a href="histamin-masterclass.html">Zum Kurs</a></li>
           <li><a href="masterclass-anmeldung.html">Anmeldung</a></li>
         </ul>
       </li>
@@ -544,17 +565,20 @@
 <!-- HERO -->
 <section class="mc-hero">
   <div class="container">
-    <span class="eyebrow eyebrow-line eyebrow-copper reveal">Histamin Masterclass · 12 Wochen</span>
+    <span class="eyebrow eyebrow-line eyebrow-copper reveal">Histamin Seelenbauch Kurs · 12 Wochen</span>
     <h1 class="reveal" style="margin-top: 32px; max-width: 18ch; font-size: clamp(44px, 8vw, 108px); line-height: 0.98;">
       Histamin <em>verstehen.</em><br>
       Deinen Körper <em>verstehen.</em><br>
       <span class="line-blue">Wieder mehr Vertrauen entwickeln.</span>
     </h1>
-    <p class="lead reveal" style="margin-top: 40px; max-width: 62ch;">
-      Eine 12-Wochen-Masterclass für Ernährung, Darm, Zyklus, Nervensystem, Bewegung und deinen individuellen Umgang mit Histamin.
+    <p class="reveal" style="margin-top: 32px; font-family: var(--serif); font-style: italic; font-size: clamp(24px, 3vw, 36px); color: var(--copper-dark); line-height: 1.3; max-width: 28ch;">
+      In 3 Monaten zu einem entspannteren Bauch.
+    </p>
+    <p class="lead reveal" style="margin-top: 24px; max-width: 62ch;">
+      Ein 12-Wochen-Kurs für Ernährung, Darm, Zyklus, Nervensystem, Bewegung und deinen individuellen Umgang mit Histamin.
     </p>
     <div class="reveal" style="margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap;">
-      <a href="#pakete" class="btn">Jetzt Masterclass entdecken</a>
+      <a href="#pakete" class="btn">Jetzt Kurs entdecken</a>
       <a href="#was-erwartet" class="btn btn-outline">Was dich erwartet</a>
       <a href="#wochen" class="btn btn-ghost" style="align-self: center;">Module ansehen →</a>
     </div>
@@ -608,7 +632,7 @@
       In dem du dich in deinem Körper wohler fühlst. In dem du wieder dazugehörst.
     </p>
     <p class="reveal" style="margin-top: 16px; font-family: var(--sans); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper-dark);">
-      Genau hier setzt meine Masterclass an.
+      Genau hier setzt mein Kurs an.
     </p>
   </div>
 </section>
@@ -686,10 +710,10 @@
     <div class="section-head">
       <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 03 · Dein individueller Bereich</span>
       <h2 class="reveal" style="margin-top: 24px; color: var(--blue-dark);">
-        Deine Masterclass.<br><em class="italic">Dein persönlicher Bereich.</em>
+        Dein Kurs.<br><em class="italic">Dein persönlicher Bereich.</em>
       </h2>
       <p class="lead reveal">
-        In der Masterclass bekommst du einen persönlichen Bereich mit allem, was du für deine 12 Wochen brauchst.
+        Im Kurs bekommst du einen persönlichen Bereich mit allem, was du für deine 12 Wochen brauchst.
       </p>
     </div>
 
@@ -842,7 +866,7 @@
         Du brauchst <em class="italic">mehr Verständnis.</em>
       </h2>
       <p class="lead reveal" style="margin: 40px auto 0;">
-        Die Masterclass soll nicht dazu führen, dass Teilnehmerinnen immer mehr Lebensmittel streichen.
+        Die Kurs soll nicht dazu führen, dass Teilnehmerinnen immer mehr Lebensmittel streichen.
       </p>
       <p class="reveal" style="margin: 20px auto 0; max-width: 60ch;">
         Stattdessen lernen sie:
@@ -870,7 +894,7 @@
           Eine ausreichende Energiezufuhr ist eine wichtige Grundlage für normale Körperfunktionen, Regeneration, Leistungsfähigkeit und Verdauung.
         </p>
         <p style="margin-top: 20px;">
-          Deshalb geht es in der Masterclass nicht darum, möglichst wenig zu essen.
+          Deshalb geht es im Kurs nicht darum, möglichst wenig zu essen.
         </p>
         <p style="margin-top: 20px;">
           Es geht darum, eine Ernährung zu finden, die individuell verträglich ist und gleichzeitig ausreichend Energie und Protein liefert.
@@ -922,7 +946,7 @@
     <div class="section-head">
       <span class="eyebrow eyebrow-line eyebrow-blue reveal">Nº 10 · Meine Geschichte</span>
       <h2 class="reveal" style="margin-top: 24px; color: var(--blue-dark);">
-        Warum diese Masterclass <em class="italic">überhaupt entstanden</em> ist.
+        Warum dieser Kurs <em class="italic">überhaupt entstanden</em> ist.
       </h2>
     </div>
 
@@ -940,7 +964,7 @@
         Heute bin ich nahezu beschwerdefrei. Ich koche wieder, reise wieder, fühle mich wohl in meinem Alltag.
       </p>
       <p>
-        Aus meinen eigenen Erfahrungen und dem, was ich über die Jahre gelernt habe, ist diese Masterclass entstanden. Ich möchte dir nicht versprechen, dass alles über Nacht verschwindet — ich möchte dir zeigen, wie du deinen Körper besser verstehen und Schritt für Schritt deinen eigenen Weg finden kannst.
+        Aus meinen eigenen Erfahrungen und dem, was ich über die Jahre gelernt habe, ist dieser Kurs entstanden. Ich möchte dir nicht versprechen, dass alles über Nacht verschwindet — ich möchte dir zeigen, wie du deinen Körper besser verstehen und Schritt für Schritt deinen eigenen Weg finden kannst.
       </p>
       <p style="margin-top: 32px; font-family: var(--serif); font-style: italic; color: var(--copper-dark); font-size: 20px;">
         Deine Julia
@@ -989,7 +1013,8 @@
 
     <div class="mc-price-grid">
       <div class="mc-price-card reveal">
-        <span class="num">Nº 01 · Klein · Starter-Kurs</span>
+        <span class="num">Nº 01</span>
+        <div class="mc-price-category">Klein · Starter-Kurs</div>
         <h3>Basiszugang</h3>
         <div class="price">
           <span class="was">statt 399 €</span>
@@ -999,22 +1024,23 @@
         </div>
         <p class="fits">Für dich, wenn du in deinem Tempo arbeiten willst.</p>
         <ul>
-          <li>Alle 8 Module als Masterclass in deinem eigenen Dashboard</li>
+          <li>Alle 8 Module als Kurs in deinem eigenen Dashboard</li>
           <li>Kein Online-Mensch? Auf Wunsch als gedrucktes Buch zum Ausfüllen</li>
           <li>Alle E-Books (inkl. Seelenbauchbuch als PDF)</li>
           <li>Terra Luna App — 6 Monate kostenlos</li>
           <li>WhatsApp-Community</li>
           <li>Sonntags-Impuls</li>
           <li>Start-Call · So 04.10.2026 · 10 Uhr (Kohorte)</li>
-          <li>Abschluss-Call · Sa 19.12.2026 (Kohorte)</li>
+          <li>Abschluss-Call · Sa 19.12.2026 · 18:30 Uhr (Kohorte)</li>
           <li>WhatsApp-Kontakt für Fragen</li>
         </ul>
-        <a href="mailto:julia@bergles.net?subject=Masterclass%20Klein%20-%20Anfrage" class="btn btn-outline">Option auswählen</a>
+        <a href="mailto:julia@bergles.net?subject=Kurs%20Klein%20-%20Anfrage" class="btn btn-outline">Option auswählen</a>
       </div>
 
       <div class="mc-price-card middle reveal">
-        <span class="num">Nº 02 · Mittel · max. 6</span>
-        <h3>Masterclass + persönliche Begleitung</h3>
+        <span class="num">Nº 02</span>
+        <div class="mc-price-category">Mittel · Kleingruppe · max. 6</div>
+        <h3>Kurs + persönliche Begleitung</h3>
         <div class="price">699&nbsp;€<small>oder 3 × 245 €</small></div>
         <p class="fits">Für dich, wenn du Struktur plus Kleingruppe willst.</p>
         <ul>
@@ -1025,17 +1051,18 @@
           <li>WhatsApp-Community</li>
           <li>Sonntags-Impuls</li>
           <li>Start-Call · So 04.10.2026 · 10 Uhr (Kohorte)</li>
-          <li>Einkaufs-Talk · Sa 24.10.2026 · 17 Uhr (Gruppe) — Julia zeigt ihre Vorratskammer und erklärt, was sie einkauft</li>
-          <li>Austausch-Call · Sa 14.11.2026 (Gruppe)</li>
+          <li>Einkaufs-Talk · Sa 24.10.2026 · 18:30 Uhr (Gruppe) — Julia zeigt ihre Vorratskammer und erklärt, was sie einkauft</li>
+          <li>Austausch-Call · Sa 14.11.2026 · 18:30 Uhr (Gruppe)</li>
           <li>Live-Kochen · Sa 28.11.2026 · 16:30 Uhr (Gruppe)</li>
-          <li>Abschluss-Call · Sa 19.12.2026 (Kohorte)</li>
+          <li>Abschluss-Call · Sa 19.12.2026 · 18:30 Uhr (Kohorte)</li>
           <li>Notizbuch mit Überraschungspaket per Post</li>
         </ul>
-        <a href="mailto:julia@bergles.net?subject=Masterclass%20Mittel%20-%20Anfrage" class="btn btn-blue">Option auswählen</a>
+        <a href="mailto:julia@bergles.net?subject=Kurs%20Mittel%20-%20Anfrage" class="btn btn-blue">Option auswählen</a>
       </div>
 
       <div class="mc-price-card reveal">
-        <span class="num">Nº 03 · VIP · nur 4 Plätze</span>
+        <span class="num">Nº 03</span>
+        <div class="mc-price-category">VIP · nur 4 Plätze</div>
         <h3>Intensive Begleitung</h3>
         <div class="price">
           <span class="was">statt 899 €</span>
@@ -1052,15 +1079,15 @@
           <li>WhatsApp-Community</li>
           <li>Sonntags-Impuls</li>
           <li>Start-Call · So 04.10.2026 · 10 Uhr (Kohorte)</li>
-          <li>Einkaufs-Talk · Sa 24.10.2026 · 17 Uhr (Gruppe) — Julia zeigt ihre Vorratskammer und erklärt, was sie einkauft</li>
-          <li>Austausch-Call · Sa 14.11.2026 (Gruppe)</li>
+          <li>Einkaufs-Talk · Sa 24.10.2026 · 18:30 Uhr (Gruppe) — Julia zeigt ihre Vorratskammer und erklärt, was sie einkauft</li>
+          <li>Austausch-Call · Sa 14.11.2026 · 18:30 Uhr (Gruppe)</li>
           <li>Live-Kochen · Sa 28.11.2026 · 16:30 Uhr (Gruppe)</li>
           <li>2 persönliche 1:1-Calls mit Julia (Termine flexibel nach Absprache)</li>
-          <li>Abschluss-Call · Sa 19.12.2026 (Kohorte)</li>
+          <li>Abschluss-Call · Sa 19.12.2026 · 18:30 Uhr (Kohorte)</li>
           <li>Persönlicher Sonntags-Wochenplan + Einkaufsliste + Ernährungsplan</li>
           <li>Notizbuch mit Überraschungspaket per Post</li>
         </ul>
-        <a href="mailto:julia@bergles.net?subject=Masterclass%20VIP%20-%20Anfrage" class="btn btn-outline">Option auswählen</a>
+        <a href="mailto:julia@bergles.net?subject=Kurs%20VIP%20-%20Anfrage" class="btn btn-outline">Option auswählen</a>
       </div>
     </div>
 
@@ -1082,8 +1109,8 @@
         Ich melde mich persönlich bei dir und schauen zusammen, welche Option zu dir passt.
       </p>
       <div style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
-        <a href="mailto:julia@bergles.net?subject=Warteliste%20Histamin%20Masterclass%20Herbst%202026" class="btn">Warteliste per Mail</a>
-        <a href="https://wa.me/4915118515394?text=Hi%20Julia%2C%20ich%20interessiere%20mich%20für%20die%20Histamin%20Masterclass%20Herbst%202026." class="btn btn-outline">Warteliste per WhatsApp</a>
+        <a href="mailto:julia@bergles.net?subject=Warteliste%20Histamin%20Seelenbauch%20Kurs%20Herbst%202026" class="btn">Warteliste per Mail</a>
+        <a href="https://wa.me/4915118515394?text=Hi%20Julia%2C%20ich%20interessiere%20mich%20für%20den%20Histamin%20Seelenbauch%20Kurs%20Herbst%202026." class="btn btn-outline">Warteliste per WhatsApp</a>
       </div>
       <p style="margin-top: 24px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute);">
         Start 01.10.2026 · Ende 01.01.2027 · Weihnachtspause 24.12. – 01.01. · Nur 4 VIP-Plätze
@@ -1104,7 +1131,7 @@
       <div class="reveal">
         <span class="eyebrow eyebrow-line" style="color: var(--mint);">Nº 13 · Terra Luna</span>
         <h2 style="margin-top: 24px;">
-          Deine Begleitung — <em class="italic">auch nach der Masterclass.</em>
+          Deine Begleitung — <em class="italic">auch nach dem Kurs.</em>
         </h2>
         <p class="lead" style="color: rgba(255,252,249,0.9); margin-top: 24px;">
           Mit meiner Terra Luna App kannst du deine Erkenntnisse auch im Alltag weiter nutzen.
@@ -1136,20 +1163,20 @@
 
     <div class="mc-faq reveal">
       <details>
-        <summary>Für wen ist die Masterclass geeignet?</summary>
+        <summary>Für wen ist der Kurs geeignet?</summary>
         <p>Für Menschen, die sich mit Histaminintoleranz, Verdauungsbeschwerden, individuellen Lebensmittelunverträglichkeiten, Zyklus, Stress und Ernährung beschäftigen und ein besseres Verständnis für ihren Körper entwickeln möchten.</p>
       </details>
       <details>
         <summary>Muss ich bereits eine Histaminintoleranz-Diagnose haben?</summary>
-        <p>Nein. Die Masterclass eignet sich auch, wenn du gerade dabei bist, dich zu orientieren. Bei starken oder unklaren Beschwerden gehört eine ärztliche Abklärung immer dazu.</p>
+        <p>Nein. Die Kurs eignet sich auch, wenn du gerade dabei bist, dich zu orientieren. Bei starken oder unklaren Beschwerden gehört eine ärztliche Abklärung immer dazu.</p>
       </details>
       <details>
         <summary>Muss ich alle Lebensmittel streichen?</summary>
-        <p>Nein. Genau das ist nicht das Ziel. In der Masterclass geht es darum zu stabilisieren, zu beobachten, schrittweise zu testen und deine Ernährung individuell zu erweitern — nicht immer weiter einzugrenzen.</p>
+        <p>Nein. Genau das ist nicht das Ziel. Im Kurs geht es darum zu stabilisieren, zu beobachten, schrittweise zu testen und deine Ernährung individuell zu erweitern — nicht immer weiter einzugrenzen.</p>
       </details>
       <details>
-        <summary>Ist die Masterclass eine Therapie?</summary>
-        <p>Nein. Die Masterclass dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine medizinische Diagnostik, Ernährungsmedizin, Psychotherapie oder heilpraktische Behandlung.</p>
+        <summary>Ist der Kurs eine Therapie?</summary>
+        <p>Nein. Die Kurs dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine medizinische Diagnostik, Ernährungsmedizin, Psychotherapie oder heilpraktische Behandlung.</p>
       </details>
       <details>
         <summary>Bekomme ich einen individuellen Ernährungsplan?</summary>
@@ -1169,19 +1196,19 @@
       </details>
       <details>
         <summary>Wie funktioniert die Terra Luna App?</summary>
-        <p>Die App begleitet dich mit Symptomtracking, Zyklus, Rezepten, Lebensmittel-Datenbank und Einkauf. Sie ist als ergänzendes Werkzeug zur Masterclass gedacht — nicht als Ersatz für die Lektionen.</p>
+        <p>Die App begleitet dich mit Symptomtracking, Zyklus, Rezepten, Lebensmittel-Datenbank und Einkauf. Sie ist als ergänzendes Werkzeug zum Kurs gedacht — nicht als Ersatz für die Lektionen.</p>
       </details>
       <details>
         <summary>Was passiert, wenn ich ein Lebensmittel nicht vertrage?</summary>
         <p>Du dokumentierst es im Lebensmittel-Tracker, gehst einen Schritt zurück in die Stabilisierung und testest zu einem späteren Zeitpunkt erneut. Genau dafür ist die Methode gemacht.</p>
       </details>
       <details>
-        <summary>Kann ich die Masterclass auch bei anderen Unverträglichkeiten nutzen?</summary>
+        <summary>Kann ich der Kurs auch bei anderen Unverträglichkeiten nutzen?</summary>
         <p>Die Struktur (stabilisieren → beobachten → testen → dokumentieren) lässt sich grundsätzlich auch auf andere Themen anwenden. Der inhaltliche Fokus liegt aber auf Histamin.</p>
       </details>
       <details>
-        <summary>Was ist der Unterschied zwischen Masterclass und Coaching?</summary>
-        <p>Die Masterclass ist ein strukturiertes 12-Wochen-Programm mit Lektionen, Trackern und Reflexion. In den Optionen mit persönlicher Begleitung ist zusätzlich individuelle Betreuung dabei — das kommt einem Coaching am nächsten.</p>
+        <summary>Was ist der Unterschied zwischen Kurs und Coaching?</summary>
+        <p>Die Kurs ist ein strukturiertes 12-Wochen-Programm mit Lektionen, Trackern und Reflexion. In den Optionen mit persönlicher Begleitung ist zusätzlich individuelle Betreuung dabei — das kommt einem Coaching am nächsten.</p>
       </details>
       <details>
         <summary>Wie viel Zeit brauche ich pro Woche?</summary>
@@ -1228,10 +1255,10 @@
     </p>
     <div class="reveal" style="margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
       <a href="#pakete" class="btn">Jetzt mit den 12 Wochen starten</a>
-      <a href="mailto:julia@bergles.net?subject=Unsicher%20-%20Masterclass" class="btn btn-outline" style="border-color: rgba(255,252,249,0.5); color: var(--cream);">Unsicher? Schreib mir</a>
+      <a href="mailto:julia@bergles.net?subject=Unsicher%20-%20Kurs" class="btn btn-outline" style="border-color: rgba(255,252,249,0.5); color: var(--cream);">Unsicher? Schreib mir</a>
     </div>
     <p class="after-cta reveal" style="margin-top: 40px;">
-      Die Masterclass dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine individuelle medizinische Diagnostik oder Behandlung. Bei starken, neuen oder anhaltenden Beschwerden sollte medizinischer Rat eingeholt werden. Bitte setze bestehende Medikamente oder Therapien nicht eigenmächtig ab.
+      Die Kurs dient der Wissensvermittlung und persönlichen Reflexion und ersetzt keine individuelle medizinische Diagnostik oder Behandlung. Bei starken, neuen oder anhaltenden Beschwerden sollte medizinischer Rat eingeholt werden. Bitte setze bestehende Medikamente oder Therapien nicht eigenmächtig ab.
     </p>
     <p class="reveal" style="margin-top: 24px; color: rgba(255,252,249,0.6); font-family: var(--serif); font-style: italic; font-size: 20px;">
       Deine Julia
@@ -1264,7 +1291,7 @@
       <div>
         <h4>Shop &amp; Rechtliches</h4>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
-          <li><a href="histamin-masterclass.html">★ Histamin Masterclass</a></li>
+          <li><a href="histamin-masterclass.html">★ Histamin Seelenbauch Kurs</a></li>
           <li><a href="ebooks.html">Bücher</a></li>
           <li><a href="live-calls.html">Live Calls</a></li>
           <li><a href="empfehlungen.html">Empfehlungen</a></li>
