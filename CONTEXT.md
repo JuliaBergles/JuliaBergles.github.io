@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-25 (Vercel-Design-Iterationen + Rolling-Entry zurück)
+> Letzte Aktualisierung: 2026-09-25 morgens (Vercel-Build-Fix + Kursbereich-Politur durch Julia)
 
 ---
 
@@ -154,6 +154,9 @@ Seite heißt jetzt **„Bücher"** (nicht mehr „E-Books"). Bestellung weiterhi
 
 Auf der **juliabergles.de/histamin-masterclass.html Landing** werden aktuell nur die 3 Herbstkohorten-Pakete gezeigt. Rolling-Entry taucht nur im Vercel-Anmeldeformular auf (2. Fieldset).
 
+**Startseite-Buttons (index.html, 25.09.):**
+- Beide blauen `.btn-kleidblau`-Buttons auf der Startseite sagen jetzt einheitlich **„Seelenbauch Kurs"** (zwei Wörter, ohne „Zur", ohne Pfeil) — vorher waren es „Zur Histamin Seelenbauch Kurs" und „Seelenbauchkurs →" (inkonsistent). Ein Button führt zu Vercel, der andere zur histamin-masterclass.html-Landing.
+
 ### Landing auf juliabergles.de/histamin-masterclass.html
 
 Editorial-Landing mit 16 nummerierten Sektionen (Nº 01–16). Hero-H1 bleibt „Histamin verstehen. Deinen Körper verstehen. Wieder mehr Vertrauen entwickeln." — der Kurs-Name „Histamin Seelenbauch Kurs" steht im Eyebrow, die Tagline drunter.
@@ -247,6 +250,23 @@ Post-Adresse-Feld erscheint nur wenn Paket physischen Versand hat (alle außer S
 Wunsch-Startdatum-Feld nur bei Rolling-Entry-Paketen.
 
 **Zentrale Preis-Config:** `src/lib/variants.ts` — enthält `raten` (3M) + `raten6` (6M) + `raten6Gesamt` je Variante. Bei Preisänderungen immer beide Sites synchron halten (juliabergles.de/histamin-masterclass.html + agb.html + Vercel `variants.ts` + `page.tsx`).
+
+**Kursbereich `/masterclass/*` — Julia's Politur 25.09. morgens:**
+Julia hat den geschützten Kursbereich (Dashboard, Wochen, Rezepte, Empfehlungen, Wochenplan, Editor) auf einheitliches Design gebracht:
+- Schrift: **Glacial Indifference** (font-sans) überall, kein Cormorant Serif mehr im Kurs-Bereich — passt zum E-Book-Stil
+- Keine kursive Schrift mehr
+- H1–H4 automatisch fett
+- Fließtexte 14/16px, Überschriften bleiben groß
+- Modul 2 (Ernährung im Alltag) ausführlicher, Modul 1 Card 5 mit fetten Headern und ▸-Punkten untereinander
+- Neues `renderInhalt()`: Zeilen mit ▸ als sichtbare Listen, **bold** Markdown → `<strong>`
+- Rosa Hintergrund für Wochenmodule
+- Reflexions-Card verweist explizit auf Notizbuch (Handschrift, keine Tastatur)
+- Kunsttherapie-/Kreativ-Impuls-Element im Notizbuch mit WhatsApp-Brücke
+
+**Vercel Build-History 25.09.:**
+- Commit `c5fbf08` (Anmeldung-Refactor) hat unbeabsichtigt `src/lib/email.ts` gebrochen (falsche Perl-Regex bei `data.zahlungsart === "raten"` → `data.(zahlungsart === "raten3" || zahlungsart === "raten6")` — kein valides JS)
+- Julia hat das mit Commit `00ef83e Fix Build-Error email.ts` selbst gefixt (Klammern richtig gesetzt)
+- Lehre: bei Perl-Regex mit Punkt vor Variablennamen aufpassen — `data.` wird mitverschluckt
 
 ---
 
