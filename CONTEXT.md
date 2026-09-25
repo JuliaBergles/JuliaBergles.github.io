@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-25 morgens (Vercel-Build-Fix + Kursbereich-Politur durch Julia)
+> Letzte Aktualisierung: 2026-09-25 nachmittags (AGB + Widerruf rechtssicher überarbeitet: § 5d Rolling Entry, § 5a.4/5 neu, „statt 899 €" gestrichen, Peer-Support-Preis 39 €, Grammatik „Der Kurs")
 
 ---
 
@@ -324,9 +324,10 @@ Root: nur HTML-Seiten, `CLAUDE.md`, `CONTEXT.md`, `CONTEXT-CONTENT.md`, `CNAME` 
 ## Rechtstexte
 
 Alle auf Stand September 2026:
-- **`agb.html`** — 24.09. komplett auf 3-Paket-Struktur ausgerichtet, § 5a Allgemeine Bestimmungen + § 5c Herbstspecial + § 5c.8 Early-Bird
+- **`agb.html`** — 25.09. nachmittags rechtlich abgeklopft: § 5a.4 WhatsApp klar definiert (24/7 erreichbar, Antwortzeit werktags 24 Std.), § 5a.5 neu (Storno 1:1 + Gruppen-Termine), § 5c Herbstspecial mit korrigierter Paket-Inhaltsliste (Seelenbauchbuch als Softcover in **allen 3** Paketen, nur E-Book Reisen als PDF), § 5c.3 Ausfall-Deadline von „25.09.2026" auf „7 Tage vor Kursstart" umgestellt, § 5c.8 Early-Bird, **neuer § 5d Rolling Entry** (Self Study 399 € + Seelenbauch 1:1 780 € mit 3M/6M Raten), Peer-Support-Preis in § 2.3 + § 8 auf 39 €/60 Min aktualisiert, Grammatik „Die Kurs" → „Der Kurs" durchgängig gefixt, „statt 899 €" beim Seelenbauch Kurs raus (§ 11 PreisAngV).
+- **`widerruf.html`** — 25.09. auf 5-Paket-Struktur ausgerichtet (Herbstspecial + Rolling Entry), 1:1-Termine allgemein statt „Startgespräch/Abschlussgespräch", Peer-Support-Preis 39 €/60 Min synchronisiert. Fix: hatte auf nicht existentes „AGB § 5a.5" verwiesen — Ziel-Paragraph existiert jetzt.
+- **`histamin-masterclass.html`** — Landing: „statt 899 €" beim Seelenbauch Kurs entfernt (Rest der Streichpreise sind rechtssaubere Herbstspecial-vs-Early-Bird bzw. Basic-vs-Rolling-Entry-Vergleiche).
 - **`datenschutz.html`** — WhatsApp-Sonntags-Check-in, Videokonferenz, Calendly
-- **`widerruf.html`** — 14-Tage-Regel Kurs + Peer-Support-Storno + Muster-Widerrufsformular
 - **`impressum.html`** — Standard
 
 ---
@@ -362,9 +363,9 @@ Alle auf Stand September 2026:
 ### juliabergles.de
 - [ ] `assets/site-v4.css` löschen oder als Alt-Style dokumentieren
 - [ ] **Kurs-Landing-CTAs** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen (das kann jetzt alle 5 Pakete)
-- [ ] **Streichpreis „statt 899" bei VIP** rechtlich sauber machen oder streichen (§ 11 PreisAngV)
-- [ ] AGB rechtlich von Anwalt prüfen lassen (Widerrufs- und Aufzeichnungsklauseln)
-- [ ] AGB muss um Self Study (399 €) und Seelenbauch 1:1 (780 €) ergänzt werden — Rolling-Entry ist wieder aktiv
+- [x] ~~**Streichpreis „statt 899" bei VIP**~~ am 25.09. nachmittags aus Landing + AGB gestrichen (rechtlich nicht haltbar unter § 11 PreisAngV)
+- [x] ~~AGB um Self Study/Seelenbauch 1:1 ergänzen~~ neuer § 5d Rolling Entry mit beiden Paketen, Preisen, Raten, Widerrufsrecht
+- [ ] AGB rechtlich von Anwalt prüfen lassen (jetzt strukturell sauber, aber Anwalts-Check bleibt sinnvoll — besonders § 5a.4 WhatsApp-Definition, § 5c.6 Erlöschensklausel, Aufzeichnungs-Regel)
 - [ ] Uhrzeit für Start-Call vs. andere Termine harmonisieren? Start 10 Uhr fällt aus dem 18:30-Schema — vielleicht auch 18:30 nachziehen? (Julia entscheidet)
 
 ---
