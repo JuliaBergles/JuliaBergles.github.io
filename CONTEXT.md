@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-24 (spät · komplette Kurs-Umstrukturierung)
+> Letzte Aktualisierung: 2026-09-25 (Vercel-Design-Iterationen + Rolling-Entry zurück)
 
 ---
 
@@ -143,9 +143,16 @@ Seite heißt jetzt **„Bücher"** (nicht mehr „E-Books"). Bestellung weiterhi
 
 ### Paket-Namen (24.09. spät umgetauft von Klein/Mittel/VIP)
 
-- **Nº 01 · Basic Kurs** — 325 € (statt 399 €) · 3 × 115 € — Selbstlern-Dashboard
-- **Nº 02 · Gruppenkurs** — 699 € · 3 × 245 € — Kleingruppe max. 6
-- **Nº 03 · Seelenbauch Kurs** — 825 € (statt 899 €) · 3 × 285 € — max. 4 Plätze, mit 1:1
+**Herbstkohorte (feste Kohorte 01.10.–01.01.):**
+- **Nº 01 · Basic Kurs** — 325 € (statt 399 €) · 3 × 115 € · 6 × 58 € — Selbstlern-Dashboard
+- **Nº 02 · Gruppenkurs** — 699 € · 3 × 245 € · 6 × 123 € — Kleingruppe max. 6
+- **Nº 03 · Seelenbauch Kurs** — 825 € (statt 899 €) · 3 × 285 € · 6 × 143 € — max. 4 Plätze, mit 1:1
+
+**Rolling Entry (Einstieg egal wann, seit 25.09. wieder aktiv):**
+- **Self Study** — 399 € · 3 × 139 € · 6 × 70 € — reine Selbstlern-Variante
+- **Seelenbauch 1:1** — 780 € · 3 × 275 € · 6 × 138 € — max. 4 Plätze parallel, mit 1:1
+
+Auf der **juliabergles.de/histamin-masterclass.html Landing** werden aktuell nur die 3 Herbstkohorten-Pakete gezeigt. Rolling-Entry taucht nur im Vercel-Anmeldeformular auf (2. Fieldset).
 
 ### Landing auf juliabergles.de/histamin-masterclass.html
 
@@ -199,14 +206,47 @@ Module 9 und 10 sind Platzhalter mit sinnvollen Themen. Julia kann Titel/Beschre
 
 **Achtung:** AGB nicht von Anwalt geprüft — bei Gelegenheit prüfen lassen (besonders Widerrufsklauseln und Aufzeichnungs-Regel + „24/7"-Support-Wording vs. tatsächliche Erreichbarkeit).
 
-### Vercel-Site (Anmeldung + Kursbereich)
+### Vercel-Site (Landing + Anmeldung + Kursbereich)
 
-Weiterhin unter `terra-luna-masterclass.vercel.app`:
-- `/` — kompakte Landing
-- `/anmeldung` — Anmeldeformular (muss auf 3 aktuelle Pakete umgestellt werden, Self-Study/1:1 sind Legacy)
-- `/masterclass` — späterer Kursbereich (Dashboard mit Modulen)
+Unter `terra-luna-masterclass.vercel.app`:
+- `/` — Landing mit Pfingstrosen-Hintergrund, transparente weiße Karten (Basic → Seelenbauch Kurs = 45% → 92% Opazität), Rosé-Buttons, aufklappbare Termine pro Karte
+- `/anmeldung` — Anmeldeformular mit 2 Sektionen (siehe unten)
+- `/masterclass` — Kursbereich mit Modul-Dashboard (Julia arbeitet parallel dran)
 
-**Zentrale Preis-Config:** `src/lib/variants.ts` — beim Ändern immer beide Sites synchron halten (juliabergles.de/histamin-masterclass.html + agb.html + Vercel `variants.ts` + `page.tsx`).
+**Design-Änderungen 25.09. (Vercel-Landing Herbstspecial-Sektion):**
+- Vollflächiges Pfingstrosen-Hintergrundbild `IMG_7461.jpg` (kein Cream-Overlay)
+- Weißer Text im Hero mit Text-Shadow (H2, Absätze, „HERBSTSPECIAL 2026")
+- Karten transparent-weiß mit Backdrop-Blur, Opazitäts-Gradient Basic → Seelenbauch
+- Karten in Glacial Indifference (Sans), nicht mehr Cormorant Serif
+- Karten-Breite: **10 cm** (max-w-[1200px] für 3 Karten)
+- Warteliste-Buttons + Early-Bird-Callout im **Rosé-Verlauf** (`--color-rose` + `--color-rosegold`)
+- Termine pro Karte aufklappbar (`<details>` mit Rosé-Button „Termine ansehen ↓"), enthält Datum + Titel + Kurzbeschreibung + Dauer
+- Keine separate Termine-Sektion mehr (steht alles in den Kartendetails)
+
+**Anmeldeformular (25.09. neu strukturiert):**
+
+Zwei Fieldsets zur Auswahl:
+
+1. **Herbstkohorte · ab 01.10. bis 01.01.**
+   - Basic Kurs — 325 €
+   - Gruppenkurs · max. 6 — 699 €
+   - Seelenbauch Kurs · max. 4 — 825 €
+
+2. **Einstieg egal wann · Rolling Entry** (Standard-Programm ist zurück)
+   - Self Study — 399 €
+   - Seelenbauch 1:1 — 780 €
+
+Jede Option zeigt nur **Name + Preis** — keine langen Inhaltsbeschreibungen mehr (war unübersichtlich).
+
+**Zahlungsart** dynamisch für das gewählte Paket in 3 Optionen:
+- Einmalzahlung
+- Ratenzahlung 3 Monate (`raten3`)
+- Ratenzahlung 6 Monate (`raten6`) — neu 25.09., Raten fair mit ~5% Uplift
+
+Post-Adresse-Feld erscheint nur wenn Paket physischen Versand hat (alle außer Self Study).
+Wunsch-Startdatum-Feld nur bei Rolling-Entry-Paketen.
+
+**Zentrale Preis-Config:** `src/lib/variants.ts` — enthält `raten` (3M) + `raten6` (6M) + `raten6Gesamt` je Variante. Bei Preisänderungen immer beide Sites synchron halten (juliabergles.de/histamin-masterclass.html + agb.html + Vercel `variants.ts` + `page.tsx`).
 
 ---
 
@@ -301,9 +341,10 @@ Alle auf Stand September 2026:
 
 ### juliabergles.de
 - [ ] `assets/site-v4.css` löschen oder als Alt-Style dokumentieren
-- [ ] **Kurs-Landing-CTAs** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen, sobald das die 3 Pakete kann
+- [ ] **Kurs-Landing-CTAs** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen (das kann jetzt alle 5 Pakete)
 - [ ] **Streichpreis „statt 899" bei VIP** rechtlich sauber machen oder streichen (§ 11 PreisAngV)
 - [ ] AGB rechtlich von Anwalt prüfen lassen (Widerrufs- und Aufzeichnungsklauseln)
+- [ ] AGB muss um Self Study (399 €) und Seelenbauch 1:1 (780 €) ergänzt werden — Rolling-Entry ist wieder aktiv
 - [ ] Uhrzeit für Start-Call vs. andere Termine harmonisieren? Start 10 Uhr fällt aus dem 18:30-Schema — vielleicht auch 18:30 nachziehen? (Julia entscheidet)
 
 ---
