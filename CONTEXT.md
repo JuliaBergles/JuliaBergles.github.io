@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-27 Abend (Aufräumen + 8 neue Rezepte: `site-v4.css` + HEIC-Originale gelöscht ~12 MB gespart; Rezepte-Dropdown auf allen 25 Hauptseiten komplettiert — Gebäck/Vorspeisen/Salate/Hüttenkäse fehlten alle; Einfrier-Disclaimer bei 5 Brot-Rezepten + Vanilleschnecken; 8 neue Rezepte: Protein-Pancakes (füllt leere Frühstück-Kategorie), Karottenkuchen, Karotten-Dampfnudeln, Karotten-Brötchen, Käsebrötchen, Mediterrane Paprika-Pfanne, Flammkuchen, Butternut-Kürbissuppe (war Placeholder))
+> Letzte Aktualisierung: 2026-09-27 spät (Nav vereinheitlicht auf allen 62 Unterseiten + „Masterclass" → „Seelenbauch Kurs" im sichtbaren Text überall; 7 Rezept-Fotos integriert; 8 neue Rezepte; Aufräumen; Rezepte-Dropdown komplettiert; Einfrier-Disclaimer)
 
 ---
 
