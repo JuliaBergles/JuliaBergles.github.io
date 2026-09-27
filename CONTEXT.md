@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-27 Abend (Aufräumen: `site-v4.css` + HEIC-Originale gelöscht ~12 MB gespart; Rezepte-Dropdown auf allen 25 Hauptseiten komplettiert — Gebäck + Vorspeisen + Salate + Hüttenkäse fehlten alle, jetzt identisch zu den Rezept-Unterseiten; Einfrier-Disclaimer bei 5 Brot-Rezepten + Vanilleschnecken)
+> Letzte Aktualisierung: 2026-09-27 Abend (Aufräumen + 8 neue Rezepte: `site-v4.css` + HEIC-Originale gelöscht ~12 MB gespart; Rezepte-Dropdown auf allen 25 Hauptseiten komplettiert — Gebäck/Vorspeisen/Salate/Hüttenkäse fehlten alle; Einfrier-Disclaimer bei 5 Brot-Rezepten + Vanilleschnecken; 8 neue Rezepte: Protein-Pancakes (füllt leere Frühstück-Kategorie), Karottenkuchen, Karotten-Dampfnudeln, Karotten-Brötchen, Käsebrötchen, Mediterrane Paprika-Pfanne, Flammkuchen, Butternut-Kürbissuppe (war Placeholder))
 
 ---
 
@@ -405,3 +405,4 @@ Alle auf Stand September 2026:
 - **Direkt handeln, nicht endlos fragen.** Bei Unklarheit EINE knappe Frage im Fließtext.
 - **Kein Anfassen ohne zu lesen.** Erst verstehen was existiert, dann ändern.
 - **Julia gibt Termine/Zeiten oft schrittweise** — nachfragen nur wenn etwas komplett fehlt, sonst sinnvoll defaulten und Julia korrigiert bei Bedarf.
+- **Website-Content-Strategie:** genug Wert für Vertrauen, aber nicht zu viel gratis. Der komplette Weg / die persönliche Begleitung / die Struktur bleibt im **Seelenbauchbuch + Seelencoaching (Kurs)**. Kostenlose Inhalte sind das Vertrauens-Vorspiel, nicht der Ersatz. Leere Rezept-Kategorien (Mealprep, Hüttenkäse, Alternativen) können bewusst als „das findest du im Kurs/Buch"-Positionierung dienen.
