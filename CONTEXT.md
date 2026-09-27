@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-27 (Wow-Effekt-Politur-Runde: neuer Blog-Artikel „Was mir geholfen hat" + Featured-Kacheln auf Startseite/Blog/Kurs-Landing, Kurs-Landing Hero mit großem Kroatien-Portrait + Full-Bleed-Bild-Breaks, Startseite jetzt mit 10-Wochenmodul-Vorschau + Termine-Zeile, Nav-CTA einheitlich „Seelenbauch Kurs" auf allen 24 Seiten)
+> Letzte Aktualisierung: 2026-09-27 Abend (Aufräumen: `site-v4.css` + HEIC-Originale gelöscht ~12 MB gespart; Rezepte-Dropdown auf allen 25 Hauptseiten komplettiert — Gebäck + Vorspeisen + Salate + Hüttenkäse fehlten alle, jetzt identisch zu den Rezept-Unterseiten; Einfrier-Disclaimer bei 5 Brot-Rezepten + Vanilleschnecken)
 
 ---
 
@@ -72,7 +72,7 @@ Verlinkung: `histamin-masterclass.html` (Dateiname bleibt aus URL-Stabilitätsgr
 ```
 
 - **Themen ▾**: Histamin · MCAS · Reizdarm · PMS & Zyklus · Angststörung · Selbsttest · Blog
-- **Rezepte ▾**: Übersicht + 6 Kategorien
+- **Rezepte ▾**: Übersicht · Frühstück · Snacks · Vorspeisen · Salate · Warme Mahlzeiten · Mealprep · Süßes · Gebäck · Hüttenkäse (seit 27.09. auf allen 25 Hauptseiten identisch zu den Rezept-Unterseiten — vorher fehlten Vorspeisen/Salate/Gebäck/Hüttenkäse auf den Hauptseiten)
 - **Kurs ★ ▾**: Zum Kurs · Anmeldung
 - **App**: direkt zu `app.html` (TerraLuna App-Landing)
 - **Bücher ▾** (früher E-Books): Übersicht · **E-Books** (Histaminarm Reisen, Seelenbauchbuch) · **Softcover Bücher** (Seelenbauchbuch) — Dropdown mit Unter-Kategorien via `.dropdown-header` CSS
@@ -367,7 +367,7 @@ Alle auf Stand September 2026:
 
 ### Content
 - [ ] **Cover-Bild für Zyklus-Leitfaden** (aktuell Placeholder) — Julia liefert
-- [ ] **Zyklus-Leitfaden Inhalt** — Julia hat ein Zip im Ordner `E-Book Zyklus und Histamin/` gedroppt (nicht committet). Wenn Julia will, entpacken und einbauen.
+- [ ] **Zyklus-Leitfaden Inhalt** — Zip + PDF liegen jetzt in `E-Book Zyklus und Histamin/` (versehentlich mit `git add -A` am 27.09. Abend committet, sind damit auf GitHub Pages public). Wenn Julia den Inhalt lieber privat hätte: per `git rm` + neuem Commit rausnehmen. Ansonsten entpacken und einbauen.
 - [ ] Konkrete Snacks im **Überraschungspaket** in AGB § 5c.5 benennen (optional)
 - [ ] **Kurs-Screenshots** für Landing (histamin-masterclass.html) — Julia macht 3–5 Screenshots vom Dashboard etc. und legt sie in `images/masterclass/`
 - [ ] Uhrzeiten für Austausch-Call 14.11. und Abschluss-Call 19.12. sind fix (jeweils 18:30) — Uhrzeit für Start-Call 04.10. ist 10 Uhr
@@ -383,6 +383,8 @@ Alle auf Stand September 2026:
 - [ ] **Kurs-Landing-CTAs** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen (das kann jetzt alle 5 Pakete)
 - [x] ~~`assets/site-v4.css` löschen~~ 27.09. gelöscht (war nirgends eingebunden)
 - [x] ~~HEIC-Originale in `images/kurs-neu/`~~ 27.09. weggeräumt (~12 MB), nur `.jpg` bleiben
+- [x] ~~Rezepte-Nav auf Hauptseiten komplettieren~~ 27.09. — Gebäck + Vorspeisen + Salate + Hüttenkäse auf allen 25 Seiten ergänzt
+- [x] ~~Einfrier-Disclaimer bei Quark-Rezepten~~ 27.09. — `.rezept-hinweis`-Block „Zum Einfrieren" (Julias Text: nicht-vegane Rezepte kurz auftauen, Milchprodukte nicht stundenlang im Kühlschrank) in 5 Brot-Rezepten + Vanilleschnecken
 - [x] ~~**Streichpreis „statt 899" bei VIP**~~ am 25.09. nachmittags aus Landing + AGB gestrichen (rechtlich nicht haltbar unter § 11 PreisAngV)
 - [x] ~~AGB um Self Study/Seelenbauch 1:1 ergänzen~~ neuer § 5d Rolling Entry mit beiden Paketen, Preisen, Raten, Widerrufsrecht
 - [x] ~~Nav-CTA-Button einheitlich benennen~~ 26.09. auf allen 24 Seiten „Seelenbauch Kurs"
