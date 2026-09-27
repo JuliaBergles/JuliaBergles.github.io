@@ -47,7 +47,7 @@ Verlinkung: `histamin-masterclass.html` (Dateiname bleibt aus URL-Stabilitätsgr
 
 - Fonts: **Cormorant Garamond** (Headlines, weight 400) + **Manrope** (Body/UI)
 - Zentrales Stylesheet: `assets/site-v3.css`
-- v4 wurde probiert, dann per Rollback wieder auf v3 zurück. `assets/site-v4.css` liegt noch da, wird aber nicht mehr gebunden.
+- v4 wurde probiert, dann per Rollback wieder auf v3 zurück. `assets/site-v4.css` am 27.09. gelöscht.
 
 **Farbwelt aktuell:**
 - Basis: Cream `#fffcf9`, Beige `#f4ede4`, Dark `#2a2a2a`, Mute `#8a8a8a`
@@ -330,7 +330,7 @@ Root: nur HTML-Seiten, `CLAUDE.md`, `CONTEXT.md`, `CONTEXT-CONTENT.md`, `CNAME` 
 - `IMG_8977.jpg` — Portrait (Full-Bleed-Break)
 - `IMG_8944 2.jpg` — blaues Top (Meine-Geschichte-Sektion, Nº 10)
 - `IMG_8974 2.jpg` · `IMG_9079.jpg` · `IMG_9085.jpg` — auf Vorrat
-- Alle als `.HEIC` und konvertierte `.jpg` im Repo (HEIC bleibt liegen, `.jpg` wird verwendet)
+- HEIC-Originale am 27.09. aus Repo entfernt (~12 MB gespart), nur `.jpg` bleibt
 
 **Cover-Bilder:**
 - Die Probe: `ebook-reisen/bilder/Titelbild.PNG` ✓
