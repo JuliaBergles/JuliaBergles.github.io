@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-25 nachmittags (AGB + Widerruf rechtssicher überarbeitet: § 5d Rolling Entry, § 5a.4/5 neu, „statt 899 €" gestrichen, Peer-Support-Preis 39 €, Grammatik „Der Kurs")
+> Letzte Aktualisierung: 2026-09-27 (Wow-Effekt-Politur-Runde: neuer Blog-Artikel „Was mir geholfen hat" + Featured-Kacheln auf Startseite/Blog/Kurs-Landing, Kurs-Landing Hero mit großem Kroatien-Portrait + Full-Bleed-Bild-Breaks, Startseite jetzt mit 10-Wochenmodul-Vorschau + Termine-Zeile, Nav-CTA einheitlich „Seelenbauch Kurs" auf allen 24 Seiten)
 
 ---
 
@@ -77,26 +77,29 @@ Verlinkung: `histamin-masterclass.html` (Dateiname bleibt aus URL-Stabilitätsgr
 - **App**: direkt zu `app.html` (TerraLuna App-Landing)
 - **Bücher ▾** (früher E-Books): Übersicht · **E-Books** (Histaminarm Reisen, Seelenbauchbuch) · **Softcover Bücher** (Seelenbauchbuch) — Dropdown mit Unter-Kategorien via `.dropdown-header` CSS
 - **Mehr ▾**: Live Calls · 1:1 Gespräch · Empfehlungen · Kunst
-- **CTA rechts**: „Kurs ★" führt aktuell zu Vercel
+- **CTA rechts**: Button-Text seit 26.09. einheitlich **„Seelenbauch Kurs"** (vorher „Kurs ★") — auf allen 24 Seiten synchron, führt zu Vercel
 
 ---
 
 ## Startseite (index.html) — Sektionsfolge
 
-1. Nav
-2. Marquee (jetzt „★ NEU · Histamin Seelenbauch Kurs · 12 Wochen")
-3. **Call-CTA-Banner** oben: Kleid-Hellblau, „Neu · Mein Histamin Seelenbauch Kurs ist da." → Vercel-Link
-4. Hero (Full-Bleed Bild von Julia im blauen Kleid Piran, kein Filter)
+1. Nav (CTA rechts: „Seelenbauch Kurs")
+2. Marquee („★ NEU · Histamin Seelenbauch Kurs · 12 Wochen")
+3. **Call-CTA-Banner** oben: Kleid-Hellblau, „Neu · Mein Histamin Seelenbauch Kurs ist da." → Button „Seelenbauch Kurs →" (Vercel)
+4. Hero (Full-Bleed Bild von Julia im blauen Kleid Piran, kein Filter) — CTAs „Erst mal stöbern" + „Meine Geschichte"
 5. **„Kennst du das?"** Pain-Sektion
-6. Themen-Sektion mit Pfingstrosen-Deko + 6 Copper-Karten
+6. Themen-Sektion mit Pfingstrosen-Deko + 6 Editorial-Karten (Histamin/MCAS/Reizdarm/Blähbauch/Ängste/Depressionen)
 7. Full-Bleed IMG_4680
-8. Blog-Sektion
-9. **Kurs-Herzstück** — Verweis auf Vercel-Landing bzw. `histamin-masterclass.html`
-10. Bücher & Community
-11. Empfehlungen
-12. App
-13. Gespräch/Peer-Support
-14. Footer
+8. **Kurs-Herzstück** — Portrait + Headline **„Histamin Seelenbauch"** (Rename 27.09., vorher „Histamin Kurs") + 3 Paket-Tiles (Basic/Gruppenkurs/Seelenbauch Kurs)
+9. **Nº 04 · 10 Wochenmodule** — kompakte Mini-Karten mit Copper-Border-Left (seit 26.09., damit Besucher sofort sehen was drankommt, ohne auf Landing klicken zu müssen)
+10. **Nº 05 · 5 Kohorten-Termine** — schmale Zeile mit Datum + Titel + Zielgruppe
+11. **Featured Blog-Card** „Was mir bei Histamin und Essensangst geholfen hat" — prominent oben, Copper-Border-Left, Badge „Neu · Ausführlich" (seit 27.09.)
+12. Blog-Sektion (3 Kacheln)
+13. Bücher & Community
+14. Empfehlungen
+15. App
+16. Gespräch/Peer-Support
+17. Footer
 
 ---
 
@@ -161,7 +164,13 @@ Auf der **juliabergles.de/histamin-masterclass.html Landing** werden aktuell nur
 
 Editorial-Landing mit 16 nummerierten Sektionen (Nº 01–16). Hero-H1 bleibt „Histamin verstehen. Deinen Körper verstehen. Wieder mehr Vertrauen entwickeln." — der Kurs-Name „Histamin Seelenbauch Kurs" steht im Eyebrow, die Tagline drunter.
 
-Sektionen: 01 Problem · 02 Was du lernst · 03 Persönlicher Bereich · 04 **10 Wochenmodule** im Überblick · 05 Das bekommst du · 06 Bewegung · 07 Ernährung · 08 Zu wenig essen · 09 Mehr Vielfalt · 10 Meine Geschichte · 11 Warum es dir wert ist · **12 Alle Termine (neu, 24.09.)** · 13 Deine Optionen (Preise + Early-Bird-Callout) · 14 Terra Luna · 15 FAQ · 16 Abschluss.
+**Wow-Effekt-Politur 27.09.:**
+- **Hero mit großem Kroatien-Portrait rechts** — `images/kurs-neu/IMG_9364.jpg` (Julia am Meer), mit sanfter Float-Animation. Vorher nur Text.
+- **Zwei Full-Bleed-Bild-Breaks zwischen Sektionen** — `IMG_9009.jpg` (Jeansjacke) + `IMG_8977.jpg` (Portrait) als Trenner-Bilder ohne Overlay, geben der Landing Atem.
+- **Nº 10 · Meine Geschichte** neu strukturiert — Portrait `IMG_8944 2.jpg` (blaues Top) direkt daneben, blauer Eyebrow, mehr persönlich.
+- **Blog-Teaser** nach Meine-Geschichte-Sektion: kleiner Verweis auf den neuen Blog-Artikel „Was mir bei Histamin und Essensangst geholfen hat" mit Copper-Underline-Link.
+
+Sektionen: 01 Problem · 02 Was du lernst · 03 Persönlicher Bereich · 04 **10 Wochenmodule** im Überblick · 05 Das bekommst du · 06 Bewegung · 07 Ernährung · 08 Zu wenig essen · 09 Mehr Vielfalt · 10 **Meine Geschichte (mit Portrait + Blog-Teaser)** · 11 Warum es dir wert ist · 12 Alle Termine · 13 Deine Optionen (Preise + Early-Bird-Callout) · 14 Terra Luna · 15 FAQ · 16 Abschluss.
 
 CTAs: `mailto:julia@bergles.net` mit Betreff pro Paket + WhatsApp `+49 1511 8515394` für Warteliste.
 
@@ -289,7 +298,9 @@ Julia hat den geschützten Kursbereich (Dashboard, Wochen, Rezepte, Empfehlungen
 
 ## Blog (`blog/`)
 
-11 Artikel-Ordner (jeweils mit `index.html`) — Themen: Darmverschluss, Warum wenig essen, Sport, Blähbauch, Auf Körper hören, Enttäuscht von Ärzten, Frische Diagnose, Gym-Transformation, Weg aus Depressionen, Angst vor Essen, Orthorexie/Corona. Alle enden mit CTA zur App oder zum Kurs.
+**12 Artikel-Ordner** (jeweils mit `index.html`) — Themen: Darmverschluss, Warum wenig essen, Sport, Blähbauch, Auf Körper hören, Enttäuscht von Ärzten, Frische Diagnose, Gym-Transformation, Weg aus Depressionen, Angst vor Essen, Orthorexie/Corona, **neu 27.09.: „Was mir bei Histamin und Essensangst geholfen hat"** (`blog/was-mir-geholfen-hat/`, 10 Sektionen, Julias Text 1:1, ausführlich). Alle enden mit CTA zur App oder zum Kurs.
+
+**Blog-Übersicht (`blog/index.html`)**: Oben Featured-Kachel für den neuen Artikel mit Badge „Neu · Ausführlich" (Beige-BG, Copper-Border-Left). Verlinkt auch prominent von Startseite (Featured Card oberhalb der 3 Standard-Kacheln) und Kurs-Landing (Teaser „Zum Weiterlesen" nach Meine-Geschichte-Sektion).
 
 ---
 
@@ -312,6 +323,14 @@ Root: nur HTML-Seiten, `CLAUDE.md`, `CONTEXT.md`, `CONTEXT-CONTENT.md`, `CNAME` 
 - `ebook-reisen/bilder/Header-Startseite.jpg` — Signature-Bild
 - `ebook-reisen/bilder/IMG_4680.jpg` — Piazza-Portrait
 - `images/neu-2026-08/IMG_3639.jpg` — Portrait Barock-Tür (lila Top)
+
+**Neue Bilder für Kurs-Landing (`images/kurs-neu/`, seit 27.09.):**
+- `IMG_9364.jpg` — Kroatien am Meer (Hero-Portrait rechts, mit Float-Animation)
+- `IMG_9009.jpg` — Jeansjacke, ruhig lächelnd (Full-Bleed-Break)
+- `IMG_8977.jpg` — Portrait (Full-Bleed-Break)
+- `IMG_8944 2.jpg` — blaues Top (Meine-Geschichte-Sektion, Nº 10)
+- `IMG_8974 2.jpg` · `IMG_9079.jpg` · `IMG_9085.jpg` — auf Vorrat
+- Alle als `.HEIC` und konvertierte `.jpg` im Repo (HEIC bleibt liegen, `.jpg` wird verwendet)
 
 **Cover-Bilder:**
 - Die Probe: `ebook-reisen/bilder/Titelbild.PNG` ✓
@@ -361,10 +380,15 @@ Alle auf Stand September 2026:
 - [ ] Julia hat parallel Änderungen an `dashboard-client.tsx`, `weeks.ts`, `week-cards.tsx` — unstaged (nicht anfassen ohne Nachfrage)
 
 ### juliabergles.de
-- [ ] `assets/site-v4.css` löschen oder als Alt-Style dokumentieren
 - [ ] **Kurs-Landing-CTAs** aktuell alle auf `mailto:` — evtl. auf Vercel-Anmeldeformular umbiegen (das kann jetzt alle 5 Pakete)
+- [x] ~~`assets/site-v4.css` löschen~~ 27.09. gelöscht (war nirgends eingebunden)
+- [x] ~~HEIC-Originale in `images/kurs-neu/`~~ 27.09. weggeräumt (~12 MB), nur `.jpg` bleiben
 - [x] ~~**Streichpreis „statt 899" bei VIP**~~ am 25.09. nachmittags aus Landing + AGB gestrichen (rechtlich nicht haltbar unter § 11 PreisAngV)
 - [x] ~~AGB um Self Study/Seelenbauch 1:1 ergänzen~~ neuer § 5d Rolling Entry mit beiden Paketen, Preisen, Raten, Widerrufsrecht
+- [x] ~~Nav-CTA-Button einheitlich benennen~~ 26.09. auf allen 24 Seiten „Seelenbauch Kurs"
+- [x] ~~Startseite-Buttons: „Seelenbauch Kurs"-Rename~~ 27.09. — Kurs-Herzstück-Überschrift + Call-CTA-Banner-Button angeglichen
+- [x] ~~Kurs-Landing-Wow-Effekt~~ 27.09. — Hero mit Kroatien-Portrait + 2 Full-Bleed-Bild-Breaks + Meine-Geschichte-Sektion mit Portrait
+- [x] ~~Neuer ausführlicher Blog-Artikel + prominente Verlinkung~~ 27.09. — „Was mir bei Histamin und Essensangst geholfen hat" mit Featured Cards auf Startseite/Blog-Übersicht/Kurs-Landing
 - [ ] AGB rechtlich von Anwalt prüfen lassen (jetzt strukturell sauber, aber Anwalts-Check bleibt sinnvoll — besonders § 5a.4 WhatsApp-Definition, § 5c.6 Erlöschensklausel, Aufzeichnungs-Regel)
 - [ ] Uhrzeit für Start-Call vs. andere Termine harmonisieren? Start 10 Uhr fällt aus dem 18:30-Schema — vielleicht auch 18:30 nachziehen? (Julia entscheidet)
 
