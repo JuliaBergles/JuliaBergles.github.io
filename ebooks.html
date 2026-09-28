@@ -115,30 +115,130 @@
   </div>
 </header>
 
-<!-- FEATURED: DIE PROBE -->
+<!-- BÜCHER ÜBERSICHT — 3 Cards nebeneinander, Seelenbauchbuch im Fokus -->
 <section class="section section-cream">
   <div class="container">
     <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-copper">Jetzt verfügbar</span>
-      <h2 class="mt-sm">Nº 01 · <em class="italic">Die Probe</em></h2>
+      <span class="eyebrow eyebrow-copper">Meine Bücher</span>
+      <h2 class="mt-sm">Drei Wege, mit mir zu <em class="italic">lesen</em>.</h2>
     </div>
 
-    <div class="grid-2 mt-lg" style="align-items: center;">
-      <div class="img-block" style="box-shadow: 0 20px 60px rgba(42,42,42,0.15);">
-        <img src="ebook-reisen/bilder/Titelbild.PNG" alt="Cover Die Probe">
-      </div>
-      <div>
-        <span class="chapter-num">Reise-E-Book</span>
-        <h3 class="mt-sm">Meine erste Reise nach Darmverschluss und mit Histaminintoleranz.</h3>
-        <p class="mt-md">12 Kapitel. Packlisten. Rezepte. Flyer in 9 Sprachen. Meine Learnings.</p>
-        <p class="mt-md" style="color: var(--copper); font-style: italic; font-family: var(--serif); font-size: 20px;">
-          → Damit du sicher reisen kannst.
-        </p>
-        <a href="ebook-reisen.html" class="btn btn-copper mt-lg">Zum E-Book · 7,99 €</a>
-      </div>
+    <div class="mt-lg" style="display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 24px; align-items: stretch;">
+
+      <!-- Nº 01: Die Probe -->
+      <a href="ebook-reisen.html" class="buch-card">
+        <div class="buch-cover" style="background-image: url('ebook-reisen/bilder/Titelbild.PNG');"></div>
+        <div class="buch-body">
+          <span class="chapter-num">Nº 01 · Reise-E-Book</span>
+          <h3 class="mt-sm">Die Probe</h3>
+          <p class="mt-sm">Meine erste Reise nach Darmverschluss und mit Histaminintoleranz. 12 Kapitel, Packlisten, Rezepte.</p>
+          <div class="buch-footer">
+            <span class="buch-preis">7,99 €</span>
+            <span class="buch-cta">Zum E-Book →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Nº 02: Seelenbauchbuch (FOKUS) -->
+      <a href="#seelenbauchbuch" class="buch-card buch-card-featured">
+        <div class="buch-cover" style="background-image: url('images/seelenbauchbuch/cover.png');"></div>
+        <div class="buch-body">
+          <span class="chapter-num" style="color: var(--copper);">Nº 02 · Der Fokus ★</span>
+          <h3 class="mt-sm">Seelenbauchbuch</h3>
+          <p class="mt-sm">144 Seiten im Magazin-Stil. Ein Kapitel pro Tag, 8 Wochen. Mit Reflexionsteil zum Ausfüllen.</p>
+          <div class="buch-footer" style="flex-direction: column; align-items: stretch; gap: 8px;">
+            <span class="buch-preis">24,99 € Softcover · 9,99 € E-Book</span>
+            <span class="buch-cta">Mehr &amp; bestellen →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Nº 03: Zyklus-Leitfaden (Freebie, WhatsApp) -->
+      <a href="https://wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20h%C3%A4tte%20gerne%20deinen%20kostenlosen%20Zyklus-Leitfaden.%20Danke%20dir!" class="buch-card buch-card-free">
+        <div class="buch-cover" style="background: var(--beige); display: flex; align-items: center; justify-content: center; padding: 30px;">
+          <div style="text-align: center;">
+            <div style="font-family: var(--serif); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper-dark); margin-bottom: 12px;">Julia Bergles</div>
+            <div style="font-family: var(--serif); font-size: 32px; line-height: 1.1; color: var(--dark);">Zyklus-<br><em style="color: var(--copper-dark); font-style: italic;">Leitfaden</em></div>
+          </div>
+        </div>
+        <div class="buch-body">
+          <span class="chapter-num" style="color: var(--copper);">Nº 03 · Kostenlos</span>
+          <h3 class="mt-sm">Zyklus-Leitfaden</h3>
+          <p class="mt-sm">Die 4 Phasen, PMS, PMDS, PCOS &amp; Endometriose auf einen Blick. Schreib mir per WhatsApp — schick ich dir zu.</p>
+          <div class="buch-footer">
+            <span class="buch-preis" style="color: var(--copper-dark);">Kostenlos</span>
+            <span class="buch-cta">Auf WhatsApp anfragen →</span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
+
+<style>
+  .buch-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--dark);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .buch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(42,42,42,0.12);
+  }
+  .buch-cover {
+    height: 340px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--beige);
+  }
+  .buch-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .buch-body h3 { font-size: 26px; }
+  .buch-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .buch-preis {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--copper-dark);
+  }
+  .buch-cta {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark);
+  }
+  .buch-card-featured {
+    border: 2px solid var(--copper);
+    box-shadow: 0 12px 40px rgba(196,139,108,0.18);
+  }
+  .buch-card-featured .buch-cover { height: 380px; }
+  .buch-card-featured .buch-preis { color: var(--copper); }
+  @media (max-width: 900px) {
+    .container [style*="grid-template-columns: 1fr 1.15fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
 
 <!-- SEELENBAUCHBUCH — Softcover Magazin 24,99 € · E-Book 9,99 € -->
 <section class="section section-beige" id="seelenbauchbuch">
