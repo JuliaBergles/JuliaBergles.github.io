@@ -2,7 +2,14 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-28 nachmittags (Feinschliff nach Redesign). **Diese Session zusätzlich:**
+> Letzte Aktualisierung: 2026-09-28 spätnachmittags (Session-Abschluss).
+> **Ganz zuletzt gefixt:**
+> - **EXIF-Orientation-Bug bei 3 Portraits** (`julia-piran-hero.jpg`, `julia-piazza.jpg`, `julia-strasse-kroatien.jpg`) — die JPGs hatten EXIF-Tag `Orientation=6` („rotate 90 CW"), obwohl die Pixel schon in Portrait waren. iOS Safari hat sie deshalb doppelt gedreht → verkehrt. Fix: EXIF-Metadaten mit Python-PIL gestrippt (`img.save(..., exif=b'')`), Pixel bleiben unverändert. Wichtig für zukünftige Bilder: nach `sips --rotate` immer noch die EXIF strippen, sonst Rendering-Chaos zwischen Read-Tool und Handy-Browser.
+> - **Startseite E-Books & Community-Sektion raus** — Die Sektion mit „Vertiefen — und teilen", Die-Probe-Verkaufstext und WhatsApp-Community-Bonus ist komplett entfernt. Bücher werden nur noch auf `ebooks.html` beworben.
+> - **ebooks.html: „Drei Wege, mit mir zu lesen"-H2 raus** — nur noch das Eyebrow „Meine Bücher" bleibt, die 3-Card-Übersicht steht direkt drunter.
+> - **histaminintoleranz.html Reaktions-Ablauf-Sektion:** neues Bild `julia-brille-nahaufnahme.jpg` (Portrait mit dunkler Brille) statt altem `julia-2.jpg`.
+>
+> **Vor diesem Feinschliff — Nachmittag-Redesign:**
 > - **Zyklus-Leitfaden → „Seelenzyklus"** umbenannt (Julias neuer Name) + echtes Cover integriert (`images/seelenzyklus-cover.png` — Portrait mit Brille + „HISTAMIN & ZYKLUS BRINGE DEINEN KÖRPER WIEDER IN BALANCE").
 > - **5 neue App-Screenshots** in `images/app-v1.2/`: `home-neu.png`, `home-neu-2.png`, `rezepte-neu.png`, `zyklus-neu.png`, `reisen-neu.png` — in app.html Feature-Grid integriert (Home + Reisen + Einkaufen + Rezepte). `zyklus-neu.png` liegt bereit für evtl. neue Zyklus-Card.
 > - **ebooks.html vereinfacht:** Hero-Text (2 Absätze) raus, alte Zyklus-Leitfaden-Detail-Sektion raus, „In Arbeit / Weitere E-Books"-Sektion raus, Live-Calls-Teaser raus. Nur noch 3-Card-Übersicht + Seelenbauchbuch-Detail.
@@ -103,25 +110,26 @@ Verlinkung: `histamin-masterclass.html` (Dateiname bleibt aus URL-Stabilitätsgr
 
 ---
 
-## Startseite (index.html) — Sektionsfolge (Stand 28.09. nachmittags)
+## Startseite (index.html) — Sektionsfolge (finale Version 28.09. spätnachmittags)
 
 1. Nav (CTA rechts: „Seelenbauch Kurs" → Vercel)
 2. Marquee (Beige BG)
-3. **Call-CTA-Banner** oben: Beige BG, Sans-Bold-Schrift, „Neu · Mein Histamin Seelenbauch Kurs ist da." → Dark-Button → Vercel
-4. Hero (Full-Bleed Piran-Portrait `images/portraits/julia-piran-hero.jpg` gedreht) — CTAs „Erst mal stöbern" + „Meine Geschichte"
-5. **★ Pain-Sektion „Kennst du das?" als Karussell** — 5 horizontal swipeable Slides mit scroll-snap-x + Dots-Navigation. Sans-Bold Titel. Letzter Highlight-Slide in Beige. Abschluss: „Ich verstehe dich. Ich war auch da."
-6. **★ Verkaufs-Sektion „Was ich dir anbieten kann"** — Julias Story-Headline: „Vom Darmverschluss und 5 Lebensmitteln zurück zu mir. Endlich bin ich wieder ich." + 3 Angebot-Karten: Nº 01 Seelenbauchbuch, **Nº 02 Seelenbauch Kurs (featured, Dark BG, Bild `julia-meer-sonnenuntergang.jpg`)**, Nº 03 TerraLuna App
-7. **Themen-Sektion Instagram-Post-Stil** — Straßenbild `julia-strasse-kroatien.jpg` als Full-Bleed-BG, dunkler Overlay, 6 Themen-Blocks in weiß mit Backdrop-Blur
-8. **Full-Bleed Piazza-Bild** — `julia-piazza.jpg` (gedreht 28.09.)
-9. **Kurs-Herzstück** — Portrait + Headline „Histamin Seelenbauch" + 3 Paket-Tiles
+3. **Call-CTA-Banner** — Beige, Sans-Bold-Schrift, „Neu · Mein Histamin Seelenbauch Kurs ist da." → Dark-Button → Vercel
+4. Hero (Full-Bleed `julia-piran-hero.jpg`) — CTAs „Erst mal stöbern" + „Meine Geschichte"
+5. **★ Pain-Karussell „Kennst du das?"** — 5 swipeable Slides mit Dots
+6. **★ Verkaufs-Sektion „Was ich dir anbieten kann"** — Story-Headline + 3 Angebot-Karten (Seelenbauchbuch / Seelenbauch Kurs featured / TerraLuna App)
+7. **Themen-Sektion Instagram-Style** — Straßenbild-BG + 6 weiße Blocks
+8. **Full-Bleed Piazza-Bild**
+9. **Kurs-Herzstück** — Portrait + Headline + 3 Paket-Tiles
 10. **Nº 04 · 10 Wochenmodule**
 11. **Nº 05 · 5 Kohorten-Termine**
-12. **Blog-Sektion** — nur 3 Blog-Kacheln (Intro + Featured-Card raus seit 28.09. nachmittags)
-13. Bücher & Community
-14. **Empfehlungen** — Foto `julia-strasse-kroatien.jpg`
-15. App
-16. Gespräch/Peer-Support
-17. Footer
+12. **Blog** — nur 3 Kacheln
+13. **Empfehlungen** — Foto `julia-strasse-kroatien.jpg`
+14. App
+15. Gespräch/Peer-Support
+16. Footer
+
+**Nicht mehr auf Startseite:** Featured-Blog-Card, Blog-Intro, E-Books-&-Community-Sektion (mit Die-Probe-Verkauf + WhatsApp-Community-Bonus) — alles am 28.09. entfernt für Fokus auf Verkaufs-Struktur.
 
 ---
 
