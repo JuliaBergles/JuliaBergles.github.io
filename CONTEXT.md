@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-28 morgens (Design-Shift: Headlines von Cormorant fein → Manrope Bold 700-800, Italic-Akzente bleiben Cormorant. Kleid-Blau `#2a4a68`/`#bec2d9` überall durch Dark `#2a2a2a` und Beige `#f4ede4` ersetzt — weniger Blau, mehr Beige, dickere Schrift. Nav-Links „Zum Kurs" + „Anmeldung" auf Vercel umgebogen. Über-mich Hero-Portrait + Startseite Blog-Blähbauch + Empfehlungen mit neuen Kroatien-Brillen-Bildern.)
+> Letzte Aktualisierung: 2026-09-28 mittags (Große Redesign-Runde: Startseite Verkaufs-Sektion „Was ich dir anbieten kann" mit 3 Angebot-Karten + Julia's Story-Headline; Bücher-Übersicht neu als 3-Card-Grid (Die Probe / Seelenbauchbuch featured / Zyklus-Leitfaden als WhatsApp-Freebie Lead-Magnet); App-Seite 8 Feature-Sektionen zu kompaktem 4-Spalten-Grid zusammengefasst; Startseite Themen-Sektion Instagram-Post-Stil; Rezepte-Seite Kategorien-Grid Instagram-Stil; Headlines auf Manrope Bold statt Cormorant fein; Blau als BG überall raus → Beige/Dark; Portraits + Piran-Hero mit neuen Brillen-Bildern.)
 
 ---
 
