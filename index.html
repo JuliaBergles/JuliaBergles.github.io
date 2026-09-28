@@ -140,30 +140,36 @@
       <h2 class="mt-sm">Kennst du <em class="italic">das</em>?</h2>
     </div>
 
-    <div class="grid-2 mt-lg" style="gap: 32px;">
-      <div class="editorial-card" style="padding: 32px;">
-        <p style="font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--dark);">Kein Arzt versteht dich.</p>
-        <p class="mt-sm">Du wirst weitergeschickt. Sie finden nichts. Sagen dir: „Da ist alles in Ordnung."</p>
+    <!-- Karussell (horizontal scroll-snap, swipeable, mit Dots) -->
+    <div class="pain-carousel-wrap mt-lg">
+      <div class="pain-carousel" id="painCarousel">
+        <div class="pain-slide">
+          <p class="pain-title">Kein Arzt versteht dich.</p>
+          <p class="pain-body">Du wirst weitergeschickt. Sie finden nichts. Sagen dir: „Da ist alles in Ordnung."</p>
+        </div>
+        <div class="pain-slide">
+          <p class="pain-title">Alle halten dich für psychisch krank.</p>
+          <p class="pain-body">„Geh zum Psychologen." „Iss einfach mehr." „Das ist nur Stress." Du fühlst dich allein gelassen.</p>
+        </div>
+        <div class="pain-slide">
+          <p class="pain-title">Dein Bauch ist ständig gebläht.</p>
+          <p class="pain-body">Du weißt nicht mehr, was du kochen sollst. Deine Einkaufsliste ist geschrumpft auf eine Handvoll Lebensmittel, bei denen du dir sicher bist.</p>
+        </div>
+        <div class="pain-slide">
+          <p class="pain-title">Essen gehen? Lieber nicht.</p>
+          <p class="pain-body">Reisen? Zu unsicher. Spontane Einladungen? Zu anstrengend. Du fühlst dich ausgeschlossen aus dem sozialen Leben.</p>
+        </div>
+        <div class="pain-slide pain-slide-highlight">
+          <p class="pain-title">Du hast das Gefühl, dass sich dein Leben immer mehr um das dreht, was du <strong>NICHT</strong> kannst.</p>
+          <p class="pain-body">Und du willst endlich wieder einen Alltag, in dem Essen leichter wird. In dem du dich in deinem Körper wohler fühlst. In dem du wieder dazugehörst.</p>
+        </div>
       </div>
-
-      <div class="editorial-card" style="padding: 32px;">
-        <p style="font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--dark);">Alle halten dich für psychisch krank.</p>
-        <p class="mt-sm">„Geh zum Psychologen." „Iss einfach mehr." „Das ist nur Stress." Du fühlst dich allein gelassen.</p>
-      </div>
-
-      <div class="editorial-card" style="padding: 32px;">
-        <p style="font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--dark);">Dein Bauch ist ständig gebläht.</p>
-        <p class="mt-sm">Du weißt nicht mehr, was du kochen sollst. Deine Einkaufsliste ist geschrumpft auf eine Handvoll Lebensmittel, bei denen du dir sicher bist.</p>
-      </div>
-
-      <div class="editorial-card" style="padding: 32px;">
-        <p style="font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--dark);">Essen gehen? Lieber nicht.</p>
-        <p class="mt-sm">Reisen? Zu unsicher. Spontane Einladungen? Zu anstrengend. Du fühlst dich ausgeschlossen aus dem sozialen Leben.</p>
-      </div>
-
-      <div class="editorial-card" style="padding: 32px; grid-column: 1 / -1; background: var(--beige); border: 1px solid var(--line);">
-        <p style="font-family: var(--sans); font-weight: 700; font-size: 22px; line-height: 1.4; color: #2a2a2a;">Du hast das Gefühl, dass sich dein Leben immer mehr um das dreht, was du <strong>NICHT</strong> kannst.</p>
-        <p class="mt-md">Und du willst endlich wieder einen Alltag, in dem Essen leichter wird. In dem du dich in deinem Körper wohler fühlst. In dem du wieder dazugehörst.</p>
+      <div class="pain-dots" id="painDots">
+        <button type="button" data-slide="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-slide="1" aria-label="Slide 2"></button>
+        <button type="button" data-slide="2" aria-label="Slide 3"></button>
+        <button type="button" data-slide="3" aria-label="Slide 4"></button>
+        <button type="button" data-slide="4" aria-label="Slide 5"></button>
       </div>
     </div>
 
@@ -172,6 +178,100 @@
     </div>
   </div>
 </section>
+
+<style>
+  .pain-carousel-wrap { position: relative; }
+  .pain-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 4px 16px;
+    scrollbar-width: none;
+  }
+  .pain-carousel::-webkit-scrollbar { display: none; }
+  .pain-slide {
+    flex: 0 0 min(85%, 520px);
+    scroll-snap-align: center;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 40px 32px;
+    box-shadow: 0 6px 24px rgba(42,42,42,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240px;
+  }
+  .pain-slide-highlight {
+    background: var(--beige);
+    border: 1px solid var(--line);
+  }
+  .pain-title {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.3;
+    color: var(--dark);
+    letter-spacing: -0.01em;
+  }
+  .pain-body {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark-soft);
+  }
+  .pain-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .pain-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(42,42,42,0.2);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .pain-dots button.active {
+    background: var(--copper);
+    transform: scale(1.3);
+  }
+</style>
+
+<script>
+  (function() {
+    var carousel = document.getElementById('painCarousel');
+    var dotsWrap = document.getElementById('painDots');
+    if (!carousel || !dotsWrap) return;
+    var slides = carousel.children;
+    var dots = dotsWrap.querySelectorAll('button');
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        var idx = parseInt(dot.dataset.slide, 10);
+        slides[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+    });
+    carousel.addEventListener('scroll', function() {
+      var center = carousel.scrollLeft + carousel.clientWidth / 2;
+      var closest = 0;
+      var minDist = Infinity;
+      for (var i = 0; i < slides.length; i++) {
+        var mid = slides[i].offsetLeft + slides[i].offsetWidth / 2;
+        var d = Math.abs(mid - center);
+        if (d < minDist) { minDist = d; closest = i; }
+      }
+      dots.forEach(function(d) { d.classList.remove('active'); });
+      if (dots[closest]) dots[closest].classList.add('active');
+    }, { passive: true });
+  })();
+</script>
 
 <!-- ANGEBOTE — Was ich dir anbieten kann (Verkaufs-Sektion mit Story) -->
 <section class="section section-cream" style="padding: clamp(80px, 12vw, 140px) 0;">
