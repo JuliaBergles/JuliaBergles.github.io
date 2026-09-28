@@ -13,11 +13,13 @@
 
 /* -----------  Design-Tokens  ----------- */
 :root {
-  /* Warm */
+  /* Warm — Malaga (Weinrot/Bordeaux) statt Copper (braun) */
   --cream:        #fffcf9;
   --beige:        #f4ede4;
-  --copper:       #c48b6c;
-  --copper-dark:  #a87556;
+  --copper:       #8B2E3E;
+  --copper-dark:  #6D2732;
+  --malaga:       #8B2E3E;
+  --malaga-dark:  #6D2732;
 
   /* Kühl */
   --blue:         #7768a3;
