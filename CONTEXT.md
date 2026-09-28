@@ -208,20 +208,20 @@ Sektionen: 01 Problem · 02 Was du lernst · 03 Persönlicher Bereich · 04 **10
 
 CTAs: `mailto:julia@bergles.net` mit Betreff pro Paket + WhatsApp `+49 1511 8515394` für Warteliste.
 
-### Herbstspecial 2026 — feste Kohorte
+### Winterspecial 2026/2027 — feste Kohorte (umbenannt 28.09. abends von Herbstspecial)
 
-**Zeitraum:** 01.10.2026 – 01.01.2027 (12 Kalenderwochen: 10 aktive Wochenmodule + 2 Pause-Wochen)
-**Weihnachtspause:** 24.12.2026 – 01.01.2027 (bewusste Pause, keine Live-Termine, keine WhatsApp-Betreuung)
+**Zeitraum:** 01.11.2026 – 01.02.2027 (12 Kalenderwochen: 10 aktive Wochenmodule + 2 Pause-Wochen)
+**Weihnachtspause:** 24.12.2026 – 01.01.2027 (bleibt gleich — fällt jetzt genau in die Kursmitte)
 
-**Feste Kohorten-Termine** (auf der Landing als eigene Nº-12-Sektion mit Editorial-Tabelle; alle werden aufgezeichnet, Aufzeichnung dient als Ersatz bei Abwesenheit):
+**Feste Kohorten-Termine** (auf der Landing als Editorial-Tabelle; alle werden aufgezeichnet):
 
 | Datum | Uhrzeit | Termin | Für |
 |---|---|---|---|
-| So 04.10.2026 | 10:00 | Start-Call · 30–45 Min | Kohorte (alle Pakete) |
-| Sa 24.10.2026 | 18:30 | Einkaufs-Talk · Vorratskammer + Einkauf | Gruppenkurs + Seelenbauch Kurs |
-| Sa 14.11.2026 | 18:30 | Austausch-Call | Gruppenkurs + Seelenbauch Kurs |
-| Sa 28.11.2026 | 16:30 | Live-Kochen | Gruppenkurs + Seelenbauch Kurs |
-| Sa 19.12.2026 | 18:30 | Abschluss-Call · 30–45 Min | Kohorte (alle Pakete) |
+| So 08.11.2026 | 10:00 | Start-Call · 30–45 Min | Kohorte (alle Pakete) |
+| Sa 28.11.2026 | 18:30 | Einkaufs-Talk · Vorratskammer + Einkauf | Gruppenkurs + Seelenbauch Kurs |
+| Sa 19.12.2026 | 18:30 | Austausch-Call | Gruppenkurs + Seelenbauch Kurs |
+| Sa 09.01.2027 | 16:30 | Live-Kochen | Gruppenkurs + Seelenbauch Kurs |
+| Sa 30.01.2027 | 18:30 | Abschluss-Call · 30–45 Min | Kohorte (alle Pakete) |
 
 **Seelenbauch-Kurs 1:1-Calls:** 2 Stück, flexibel nach Absprache, **auch kurzfristig verlegbar** (weicher als Standard 24h-Storno).
 
