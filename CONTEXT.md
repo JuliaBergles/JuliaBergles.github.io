@@ -2,7 +2,13 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-28 spätnachmittags (Session-Abschluss).
+> Letzte Aktualisierung: 2026-09-28 abends (Winter-Verschiebung + Vercel-Sync).
+> **Abschluss-Runde:**
+> - **Kurs verschoben: Herbstspecial 2026 → Winterspecial 2026/2027.** Neuer Zeitraum **01.11.2026 – 01.02.2027**. Alle 5 Kohorten-Termine neu (siehe unten). Weihnachtspause bleibt 24.12.2026 – 01.01.2027 — fällt jetzt genau in die Kursmitte (perfektes Timing). 47+ Ersetzungen in juliabergles.de (`index.html`, `agb.html`, `deine-speisekammer.html`, `histamin-masterclass.html`) + 60+ Ersetzungen im Vercel-Repo (`page.tsx`, `variants.ts`, `anmeldung-form.tsx`, `email.ts`, `CONTEXT.md`).
+> - **Vercel-Sync:** beide Repos jetzt konsistent auf Winterspecial. Anmeldungs-Formular-Label + Welcome-Email-Timeline auch überarbeitet.
+> - **EXIF-Bug-Fix Vercel:** 16 Bilder in `public/images/` (Header IMG_4680, Modul-Header, Rezepte, Portraits, Sponsoren) hatten `Orientation=6` und wurden vom Browser doppelt gedreht → EXIF gestrippt, Pixel bleiben.
+>
+> **Vorher (Session-Abschluss juliabergles.de):**
 > **Ganz zuletzt gefixt:**
 > - **EXIF-Orientation-Bug bei 3 Portraits** (`julia-piran-hero.jpg`, `julia-piazza.jpg`, `julia-strasse-kroatien.jpg`) — die JPGs hatten EXIF-Tag `Orientation=6` („rotate 90 CW"), obwohl die Pixel schon in Portrait waren. iOS Safari hat sie deshalb doppelt gedreht → verkehrt. Fix: EXIF-Metadaten mit Python-PIL gestrippt (`img.save(..., exif=b'')`), Pixel bleiben unverändert. Wichtig für zukünftige Bilder: nach `sips --rotate` immer noch die EXIF strippen, sonst Rendering-Chaos zwischen Read-Tool und Handy-Browser.
 > - **Startseite E-Books & Community-Sektion raus** — Die Sektion mit „Vertiefen — und teilen", Die-Probe-Verkaufstext und WhatsApp-Community-Bonus ist komplett entfernt. Bücher werden nur noch auf `ebooks.html` beworben.
