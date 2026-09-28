@@ -105,87 +105,64 @@
   </div>
 </header>
 
-<section class="section section-cream">
-  <div class="container">
+<!-- Kategorien Instagram-Post-Stil mit Rezept-Bild als Section-BG + transparente Karten -->
+<section class="section" style="position: relative; overflow: hidden; padding: clamp(80px, 12vw, 140px) 0; background: #2a2a2a;">
+  <div style="position: absolute; inset: 0; z-index: 0;">
+    <img src="images/rezepte/rote-bete.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35;">
+  </div>
+  <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.55) 100%);"></div>
+
+  <div class="container" style="position: relative; z-index: 2;">
     <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-copper">Kategorien</span>
-      <h2 class="mt-sm">Wo willst du <em class="italic">stöbern</em>?</h2>
+      <span class="eyebrow" style="color: rgba(255,255,255,0.8); letter-spacing: 0.22em;">Kategorien</span>
+      <h2 class="mt-sm" style="color: #ffffff;">Wo willst du <em class="italic" style="color: #ffffff;">stöbern</em>?</h2>
     </div>
 
-    <div class="grid-3 mt-lg">
-      <a href="rezepte/fruehstueck/" class="editorial-card blue-soft" style="text-decoration: none;">
-        <span class="chapter-num">Nº 01</span>
-        <h3 class="mt-sm">Frühstück</h3>
-        <p class="mt-sm">Ideen für morgens — histaminarm, sättigend, ohne langes Rühren.</p>
-        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+    <div class="themen-grid mt-lg">
+      <a href="rezepte/fruehstueck/" class="themen-block">
+        <span class="themen-num">Nº 01</span>
+        <h3 class="themen-title">Frühstück</h3>
+        <p class="themen-desc">Ideen für morgens — histaminarm, sättigend, ohne langes Rühren.</p>
       </a>
-
-      <a href="rezepte/snacks/" class="recipe-card" style="background-image: url('rezepte/snacks/maiswaffeln-butter/photo.jpg'); background-size: cover; background-position: center;">
-        <div class="recipe-card-body">
-          <span class="chapter-num">Nº 02</span>
-          <h3 class="mt-sm">Snacks</h3>
-          <p class="mt-sm">Kleine Sachen für zwischendurch. Auch für unterwegs.</p>
-          <p class="mt-md" style="font-size: 13px; color: var(--mint);">1 Rezept</p>
-        </div>
+      <a href="rezepte/snacks/" class="themen-block">
+        <span class="themen-num">Nº 02</span>
+        <h3 class="themen-title">Snacks</h3>
+        <p class="themen-desc">Kleine Sachen für zwischendurch. Auch für unterwegs.</p>
       </a>
-
-      <a href="rezepte/vorspeisen/" class="recipe-card" style="background-image: url('images/rezepte/rote-bete-teller.jpg'); background-size: cover; background-position: center;">
-        <div class="recipe-card-body">
-          <span class="chapter-num">Nº 03</span>
-          <h3 class="mt-sm">Vorspeisen</h3>
-          <p class="mt-sm">Rote-Bete-Teller · Zucchini-Aufstrich.</p>
-          <p class="mt-md" style="font-size: 13px; color: var(--mint);">2 Rezepte</p>
-        </div>
+      <a href="rezepte/vorspeisen/" class="themen-block">
+        <span class="themen-num">Nº 03</span>
+        <h3 class="themen-title">Vorspeisen</h3>
+        <p class="themen-desc">Rote-Bete-Teller · Zucchini-Aufstrich.</p>
       </a>
-
-      <a href="rezepte/warme-mahlzeiten/" class="recipe-card" style="background-image: url('images/rezepte/zucchini-suppe.jpg'); background-size: cover; background-position: center;">
-        <div class="recipe-card-body">
-          <span class="chapter-num">Nº 04</span>
-          <h3 class="mt-sm">Warme Mahlzeiten</h3>
-          <p class="mt-sm">Suppen, Eintopf, Zucchini-Pfanne.</p>
-          <p class="mt-md" style="font-size: 13px; color: var(--mint);">6 Rezepte</p>
-        </div>
+      <a href="rezepte/warme-mahlzeiten/" class="themen-block">
+        <span class="themen-num">Nº 04</span>
+        <h3 class="themen-title">Warme Mahlzeiten</h3>
+        <p class="themen-desc">Suppen, Eintopf, Zucchini-Pfanne.</p>
       </a>
-
-      <a href="rezepte/mealprep/" class="editorial-card blue-soft" style="text-decoration: none;">
-        <span class="chapter-num">Nº 05</span>
-        <h3 class="mt-sm">Mealprep</h3>
-        <p class="mt-sm">Zum Vorbereiten für die Woche. Ohne dass Histamin durch Standzeit hochgeht.</p>
-        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      <a href="rezepte/mealprep/" class="themen-block">
+        <span class="themen-num">Nº 05</span>
+        <h3 class="themen-title">Mealprep</h3>
+        <p class="themen-desc">Zum Vorbereiten für die Woche. Ohne dass Histamin hochgeht.</p>
       </a>
-
-      <a href="rezepte/suesses/" class="recipe-card" style="background-image: url('images/rezepte/schokoetwas.jpg'); background-size: cover; background-position: center;">
-        <div class="recipe-card-body">
-          <span class="chapter-num">Nº 06</span>
-          <h3 class="mt-sm">Süßes</h3>
-          <p class="mt-sm">Schokoetwas · Apfelwolken · Eis.</p>
-          <p class="mt-md" style="font-size: 13px; color: var(--mint);">4 Rezepte</p>
-        </div>
+      <a href="rezepte/suesses/" class="themen-block">
+        <span class="themen-num">Nº 06</span>
+        <h3 class="themen-title">Süßes</h3>
+        <p class="themen-desc">Schokoetwas · Apfelwolken · Eis.</p>
       </a>
-
-      <a href="rezepte/gebaeck/" class="recipe-card" style="background-image: url('rezepte/gebaeck/protein-brot/photo.jpg'); background-size: cover; background-position: center;">
-        <div class="recipe-card-body">
-          <span class="chapter-num">Nº 07</span>
-          <h3 class="mt-sm">Gebäck</h3>
-          <p class="mt-sm">Protein-Brot · Knäckebrot — glutenfrei und verträglich.</p>
-          <p class="mt-md" style="font-size: 13px; color: var(--mint);">2 Rezepte</p>
-        </div>
+      <a href="rezepte/gebaeck/" class="themen-block">
+        <span class="themen-num">Nº 07</span>
+        <h3 class="themen-title">Gebäck</h3>
+        <p class="themen-desc">Protein-Brot · Knäckebrot — glutenfrei und verträglich.</p>
       </a>
-
-      <a href="rezepte/salate/" class="recipe-card" style="background-image: url('rezepte/salate/suesskartoffel-salat/photo.jpg'); background-size: cover; background-position: center;">
-        <div class="recipe-card-body">
-          <span class="chapter-num">Nº 08</span>
-          <h3 class="mt-sm">Salate</h3>
-          <p class="mt-sm">Süßkartoffel-Salat mit Quark und Hüttenkäse.</p>
-          <p class="mt-md" style="font-size: 13px; color: var(--mint);">1 Rezept</p>
-        </div>
+      <a href="rezepte/salate/" class="themen-block">
+        <span class="themen-num">Nº 08</span>
+        <h3 class="themen-title">Salate</h3>
+        <p class="themen-desc">Süßkartoffel-Salat mit Quark und Hüttenkäse.</p>
       </a>
-
-      <a href="rezepte/huettenkaese/" class="editorial-card blue-soft" style="text-decoration: none;">
-        <span class="chapter-num">Nº 09</span>
-        <h3 class="mt-sm">Hüttenkäse</h3>
-        <p class="mt-sm">Rezepte mit körnigem Frischkäse — proteinreich und histaminarm.</p>
-        <p class="mt-md text-mute" style="font-size: 13px;">In Arbeit</p>
+      <a href="rezepte/huettenkaese/" class="themen-block">
+        <span class="themen-num">Nº 09</span>
+        <h3 class="themen-title">Hüttenkäse</h3>
+        <p class="themen-desc">Rezepte mit körnigem Frischkäse — proteinreich und histaminarm.</p>
       </a>
     </div>
   </div>
