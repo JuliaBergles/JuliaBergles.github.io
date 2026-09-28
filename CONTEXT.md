@@ -2,7 +2,16 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-28 mittags (Redesign + Verkaufs-Fokus). **Kernwechsel:**
+> Letzte Aktualisierung: 2026-09-28 nachmittags (Feinschliff nach Redesign). **Diese Session zusätzlich:**
+> - **Zyklus-Leitfaden → „Seelenzyklus"** umbenannt (Julias neuer Name) + echtes Cover integriert (`images/seelenzyklus-cover.png` — Portrait mit Brille + „HISTAMIN & ZYKLUS BRINGE DEINEN KÖRPER WIEDER IN BALANCE").
+> - **5 neue App-Screenshots** in `images/app-v1.2/`: `home-neu.png`, `home-neu-2.png`, `rezepte-neu.png`, `zyklus-neu.png`, `reisen-neu.png` — in app.html Feature-Grid integriert (Home + Reisen + Einkaufen + Rezepte). `zyklus-neu.png` liegt bereit für evtl. neue Zyklus-Card.
+> - **ebooks.html vereinfacht:** Hero-Text (2 Absätze) raus, alte Zyklus-Leitfaden-Detail-Sektion raus, „In Arbeit / Weitere E-Books"-Sektion raus, Live-Calls-Teaser raus. Nur noch 3-Card-Übersicht + Seelenbauchbuch-Detail.
+> - **Piazza-Bild (IMG_4680)** war upside-down → gedreht, jetzt `images/portraits/julia-piazza.jpg` als Full-Bleed auf Startseite.
+> - **Seelenbauch-Kurs-Angebot-Card** hat neues Bild: `julia-meer-sonnenuntergang.jpg` (IMG_9648 Meer + Sonnenuntergang) statt IMG_9364.
+> - **Pain-Sektion „Kennst du das?"** als **horizontales Karussell** umgebaut (`.pain-carousel` mit scroll-snap-x, swipeable auf Handy, Dots-Navigation). 5 Slides mit Sans-Bold Titeln statt Cormorant italic. Aktiver Dot in Malaga.
+> - **Blog-Sektion Intro** raus (Eyebrow „Blog · Journal", H2 „Aus dem Alltag", Text, Featured-Card „Neu · Ausführlich") — nur noch die 3 Blog-Kacheln bleiben.
+>
+> **Vorher (Redesign-Runde):**
 > - Headlines von Cormorant fein → **Manrope Bold 700-800** (dick, moderner). Italic-Akzente in Headlines bleiben Cormorant für Editorial-Kontrast, aber `p em` + `chapter-num` + `.lead` sind jetzt Sans-Bold statt schnörkelig-Serif-Italic.
 > - **Copper (braun) → Malaga (Weinrot `#8B2E3E`)** als Akzent-Farbe global.
 > - **Blau als BG überall raus** — Kleid-Blau, Mint, `section-blue`, `section-mint`, `.editorial-card.blue-soft`, Marquee, Call-CTA-Banner, Themen-Kacheln → alle auf **Beige/Dark** umgestellt.
@@ -94,42 +103,45 @@ Verlinkung: `histamin-masterclass.html` (Dateiname bleibt aus URL-Stabilitätsgr
 
 ---
 
-## Startseite (index.html) — Sektionsfolge (Stand 28.09.)
+## Startseite (index.html) — Sektionsfolge (Stand 28.09. nachmittags)
 
 1. Nav (CTA rechts: „Seelenbauch Kurs" → Vercel)
-2. Marquee (Beige BG, „★ NEU · Histamin Seelenbauch Kurs · 12 Wochen")
-3. **Call-CTA-Banner** oben: Beige BG (statt Kleid-Hellblau), Sans-Bold-Schrift, „Neu · Mein Histamin Seelenbauch Kurs ist da." → Dark-Button → Vercel
+2. Marquee (Beige BG)
+3. **Call-CTA-Banner** oben: Beige BG, Sans-Bold-Schrift, „Neu · Mein Histamin Seelenbauch Kurs ist da." → Dark-Button → Vercel
 4. Hero (Full-Bleed Piran-Portrait `images/portraits/julia-piran-hero.jpg` gedreht) — CTAs „Erst mal stöbern" + „Meine Geschichte"
-5. **„Kennst du das?"** Pain-Sektion (letzte Card jetzt Beige + Sans Bold statt Blau/Cormorant italic)
-6. **★ Verkaufs-Sektion „Was ich dir anbieten kann"** (NEU 28.09.) — Julias Story-Headline: „Vom Darmverschluss und 5 Lebensmitteln zurück zu mir. Endlich bin ich wieder ich." + 3 Angebot-Karten: Nº 01 Seelenbauchbuch, **Nº 02 Seelenbauch Kurs (featured, Dark BG)**, Nº 03 TerraLuna App
-7. **Themen-Sektion Instagram-Post-Stil** (redesign 27.09.) — Straßenbild `images/portraits/julia-strasse-kroatien.jpg` als Full-Bleed-BG, dunkler Overlay, 6 Themen-Blocks in weiß mit Backdrop-Blur. Histamin als Hero-Block über 4 Spalten. Weißer Button „Zum Symptom-Selbsttest →"
-8. Full-Bleed IMG_4680
-9. **Kurs-Herzstück** — Portrait + Headline „Histamin Seelenbauch" + 3 Paket-Tiles (Basic/Gruppenkurs/Seelenbauch Kurs)
-10. **Nº 04 · 10 Wochenmodule** — kompakte Mini-Karten
+5. **★ Pain-Sektion „Kennst du das?" als Karussell** — 5 horizontal swipeable Slides mit scroll-snap-x + Dots-Navigation. Sans-Bold Titel. Letzter Highlight-Slide in Beige. Abschluss: „Ich verstehe dich. Ich war auch da."
+6. **★ Verkaufs-Sektion „Was ich dir anbieten kann"** — Julias Story-Headline: „Vom Darmverschluss und 5 Lebensmitteln zurück zu mir. Endlich bin ich wieder ich." + 3 Angebot-Karten: Nº 01 Seelenbauchbuch, **Nº 02 Seelenbauch Kurs (featured, Dark BG, Bild `julia-meer-sonnenuntergang.jpg`)**, Nº 03 TerraLuna App
+7. **Themen-Sektion Instagram-Post-Stil** — Straßenbild `julia-strasse-kroatien.jpg` als Full-Bleed-BG, dunkler Overlay, 6 Themen-Blocks in weiß mit Backdrop-Blur
+8. **Full-Bleed Piazza-Bild** — `julia-piazza.jpg` (gedreht 28.09.)
+9. **Kurs-Herzstück** — Portrait + Headline „Histamin Seelenbauch" + 3 Paket-Tiles
+10. **Nº 04 · 10 Wochenmodule**
 11. **Nº 05 · 5 Kohorten-Termine**
-12. **Featured Blog-Card** „Was mir bei Histamin und Essensangst geholfen hat"
-13. Blog-Sektion (3 Kacheln) — Nº 03 Blähbauch mit neuem Brille-Portrait
-14. Bücher & Community
-15. **Empfehlungen** — neues Foto `julia-strasse-kroatien.jpg`
-16. App
-17. Gespräch/Peer-Support
-18. Footer
+12. **Blog-Sektion** — nur 3 Blog-Kacheln (Intro + Featured-Card raus seit 28.09. nachmittags)
+13. Bücher & Community
+14. **Empfehlungen** — Foto `julia-strasse-kroatien.jpg`
+15. App
+16. Gespräch/Peer-Support
+17. Footer
 
 ---
 
-## Bücher (`ebooks.html`) — 3-Card-Übersicht neu 28.09.
+## Bücher (`ebooks.html`) — schlanke 3-Card-Übersicht (Stand 28.09. nachmittags)
 
-Seite heißt „Bücher". Neue Übersicht am Seitenanfang: **3-Card-Grid, alle gleich hoch**, mittlere Card mit Malaga-Border als Fokus. Bestellung weiterhin per Mail-Vorkasse oder WhatsApp.
+Hero-Text komplett raus, nur H1 „Meine Bücher" bleibt. Danach 3-Card-Grid, alle Karten gleich hoch (grid `1fr 1fr 1fr`). Bestellung per Mail-Vorkasse oder WhatsApp.
 
 | Nº | Titel | Preis | CTA/Status |
 |---|---|---|---|
 | **01** | Die Probe (Reisen mit Histamin) | 7,99 € | Zum E-Book → `ebook-reisen.html` |
-| **02** ★ FOKUS | **Das Seelenbauchbuch — Der Weg zurück zu deinem Seelenbauch** (144 S., Magazin-Stil, Seelenrezepte, Reflexionsfragen) | **24,99 € Softcover · 9,99 € E-Book** | Mehr & bestellen → `#seelenbauchbuch` (Detail-Sektion mit 12-Seiten-Preview). **12 Stück auf Lager.** |
-| **03** | Zyklus-Leitfaden | **Kostenlos** | **WhatsApp-Freebie** (Lead-Magnet!) → Button öffnet `wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20h%C3%A4tte%20gerne%20deinen%20kostenlosen%20Zyklus-Leitfaden.` Julia bekommt die Nummer, sendet Leitfaden zu. |
+| **02** ★ FOKUS | **Das Seelenbauchbuch** (144 S., Magazin-Stil, Seelenrezepte, Reflexionsfragen) | **24,99 € Softcover · 9,99 € E-Book** | Mehr & bestellen → `#seelenbauchbuch` (Detail-Sektion drunter mit 12-Seiten-Preview). **12 Stück auf Lager.** Malaga-Border als Fokus. |
+| **03** | **Seelenzyklus** (28.09. umbenannt von „Zyklus-Leitfaden") | **Kostenlos** | **WhatsApp-Freebie Lead-Magnet** → Button öffnet `wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20h%C3%A4tte%20gerne%20deinen%20kostenlosen%20Seelenzyklus.` Cover: `images/seelenzyklus-cover.png` (echtes Portrait mit Brille + „HISTAMIN & ZYKLUS BRINGE DEINEN KÖRPER WIEDER IN BALANCE"). |
 
-**In Arbeit (weiter unten auf ebooks.html):** Freebie „Histamin & Ängste der Familie erklären", „So wird man seine Ängste los" (14,99 €), „Was Depressionen mit einem machen" (14,99 €).
+**Entfernt am 28.09. nachmittags aus ebooks.html:**
+- Hero-Absätze („E-Books, die nicht nur Tipps geben…" + „Ich möchte dich vor meinen Fehlern bewahren…")
+- Alte Zyklus-Leitfaden-Detail-Sektion (die separate Sektion mit Placeholder-Cover war doppelt zur Card)
+- „In Arbeit / Weitere E-Books"-Sektion (Nº 04 Familie-Freebie, Nº 05 „So wird man Ängste los" 14,99 €, Nº 06 „Was Depressionen mit einem machen" 14,99 €) — Julia will diese in-Arbeit-Bücher aktuell nicht mehr anzeigen
+- Live-Calls-Teaser (Nº 07 mit 32 € Live-Call-Box)
 
-**Iss dich stabil** wurde am 24.09. auf Julias Wunsch entfernt. Kann später zurück.
+**Iss dich stabil** wurde am 24.09. entfernt. Kann später zurück.
 
 **Live Calls** (32 €/Call) am 28.09. aus Nav + Angeboten entfernt. `live-calls.html` bleibt im Repo, aus Nav rausgenommen. Kann reaktiviert werden.
 
@@ -333,13 +345,23 @@ Root: nur HTML-Seiten, `CLAUDE.md`, `CONTEXT.md`, `CONTEXT-CONTENT.md`, `CNAME` 
 
 ## Bilder
 
-**Julias Portraits (organisiert in `images/portraits/` seit 28.09.):**
-- `images/portraits/julia-piran-hero.jpg` — Piran-Kleid-Portrait, gedreht (Startseite Hero)
-- `images/portraits/julia-sonnenuntergang.jpg` — IMG_9442 Kroatien Sonnenuntergang mit dunkler Brille (früher Über-mich Hero, jetzt ersetzt)
-- `images/portraits/julia-brille-nahaufnahme.jpg` — IMG_9621 Nahaufnahme mit Brille festhalten (Startseite Blähbauch-Blog-Kachel)
-- `images/portraits/julia-strasse-kroatien.jpg` — IMG_9715 kniend auf Kroatien-Straße, hellblauer Halter + Brille (Startseite Themen-Sektion BG + Empfehlungen-Sektion)
-- `images/hey-ich-bin-julia.jpg` — Nachtstraße Piran, blaues Kleid, kniend (Über-mich Hero seit 28.09.)
-- `images/hey-julia-2.jpg` — Zwinker mit Brille + Jeansjacke + hellblauem Rollkragen (Über-mich 2. Bild seit 28.09.)
+**Julias Portraits (`images/portraits/` seit 28.09.):**
+- `julia-piran-hero.jpg` — Piran-Kleid-Portrait Rückansicht, gedreht (Startseite Hero)
+- `julia-piazza.jpg` — IMG_4680 Piazza Triest, gedreht (Startseite Full-Bleed-Bild zwischen Themen und Kurs-Herzstück, seit 28.09. nachmittags)
+- `julia-sonnenuntergang.jpg` — IMG_9442 Kroatien Sonnenuntergang mit dunkler Brille (früher Über-mich Hero)
+- `julia-meer-sonnenuntergang.jpg` — IMG_9648 Meer + Sonnenuntergang mit Brille (Seelenbauch-Kurs-Angebot-Card, seit 28.09. nachmittags)
+- `julia-brille-nahaufnahme.jpg` — IMG_9621 Nahaufnahme mit Brille festhalten (Startseite Blähbauch-Blog-Kachel)
+- `julia-strasse-kroatien.jpg` — IMG_9715 kniend auf Kroatien-Straße (Themen-Sektion BG + Empfehlungen-Sektion)
+- `images/hey-ich-bin-julia.jpg` — Nachtstraße Piran, blaues Kleid, kniend (Über-mich Hero)
+- `images/hey-julia-2.jpg` — Zwinker mit Brille + Jeansjacke (Über-mich 2. Bild)
+- `images/seelenzyklus-cover.png` — Cover für Seelenzyklus-Buch-Card (seit 28.09. nachmittags)
+
+**Neue App-Screenshots (`images/app-v1.2/` seit 28.09. nachmittags):**
+- `home-neu.png` — TerraLuna Home mit Pfingstrose + Barcode-Scanner-Card (App-Seite Hero + Nº 01 Home)
+- `home-neu-2.png` — Home Screen 2 mit Wochenplan/Liste/Einkauf-Row (Nº 05 Einkaufen)
+- `rezepte-neu.png` — Rezepte-Screen mit Karottenkuchen + Protein-Pancakes (Nº 06 Rezepte)
+- `zyklus-neu.png` — Zyklus-Screen (bereit für evtl. neue Zyklus-Feature-Card)
+- `reisen-neu.png` — Reisen-Screen mit Restaurantkommunikation (Nº 04 Reisen)
 
 **Kurs-Landing (`images/kurs-neu/`, seit 27.09.):**
 - `IMG_9364.jpg` — Kroatien am Meer (Kurs-Landing Hero-Portrait rechts, mit Float-Animation)
@@ -418,13 +440,21 @@ Alle auf Stand September 2026:
 - [x] ~~Neue Portrait-Bilder integriert~~ 28.09. — Über-mich, Startseite (Blähbauch-Kachel + Empfehlungen), Piran-Hero gedreht
 - [x] ~~Bücher-Karten alle gleich hoch~~ 28.09.
 - [x] ~~8 neue Rezepte + 7 Rezept-Fotos + Einfrier-Disclaimer~~ 27.–28.09.
-- [ ] **Weitere Portrait-Bilder** (IMG_9648, 9707, 9720, Innenraum-Serie) noch nicht integriert — Julia entscheidet wo
-- [ ] **Cover-Bild für Zyklus-Leitfaden** (aktuell Text-Placeholder in Buch-Card)
-- [ ] **Zyklus-Leitfaden Inhalt** — Zip + PDF liegen jetzt in `E-Book Zyklus und Histamin/` (versehentlich mit `git add -A` committet, auf GitHub Pages public). Julia entscheidet: privat oder einbauen.
-- [ ] **Kurs-Screenshots** für `histamin-masterclass.html` — Julia macht 3–5 Screenshots vom Dashboard
-- [ ] **`histamin-masterclass.html` Kurs-Landing** — aktuell nicht mehr aus Nav verlinkt (Kurs geht direkt zu Vercel). Löschen oder ausbauen? Julia offen.
+- [x] ~~Zyklus-Leitfaden → Seelenzyklus umbenannt + echtes Cover~~ 28.09. nachmittags
+- [x] ~~Piazza-Bild (IMG_4680) gedreht~~ 28.09. nachmittags
+- [x] ~~Seelenbauch-Kurs-Angebot-Card mit neuem Meer-Sonnenuntergang-Bild~~ 28.09. nachmittags
+- [x] ~~Pain-Sektion als horizontales Karussell~~ 28.09. nachmittags
+- [x] ~~5 neue App-Screenshots integriert~~ 28.09. nachmittags
+- [x] ~~ebooks.html vereinfacht (3 alte Sektionen raus)~~ 28.09. nachmittags
+- [x] ~~Blog-Sektion Intro raus~~ 28.09. nachmittags
+- [ ] **Restliche Portrait-Bilder** (IMG_9707 verschwommen, IMG_9720 Rückansicht, Innenraum-Selfie-Serie 8865/8869/8872/8975/8978) noch nicht integriert
+- [ ] **Zyklus-Leitfaden PDF-Inhalt** — Zip + PDF in `E-Book Zyklus und Histamin/` (versehentlich mit `git add -A` committet, auf GitHub Pages public). Julia entscheidet: privat oder als Download-Link einbauen. **Aktuell:** wird per WhatsApp auf Anfrage von Julia manuell versendet.
+- [ ] **Kurs-Screenshots** für `histamin-masterclass.html`
+- [ ] **`histamin-masterclass.html` Kurs-Landing** — aktuell nicht mehr aus Nav verlinkt. Löschen oder ausbauen? Offen.
+- [ ] **Zyklus als eigene App-Feature-Card?** `zyklus-neu.png` liegt bereit, aktuell nicht auf App-Seite integriert
 - [ ] AGB rechtlich von Anwalt prüfen lassen
 - [ ] Uhrzeit für Start-Call vs. andere Termine harmonisieren
+- [ ] **Handy-Test:** die neuen Sektionen (Pain-Karussell, Themen Instagram-Grid, Bücher 3-Card, App-Feature-Grid) sind responsive geschrieben, aber noch nicht live auf Handy verifiziert
 
 ---
 
