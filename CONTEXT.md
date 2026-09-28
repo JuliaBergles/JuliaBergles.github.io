@@ -2,7 +2,7 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-27 spät (Nav vereinheitlicht auf allen 62 Unterseiten + „Masterclass" → „Seelenbauch Kurs" im sichtbaren Text überall; 7 Rezept-Fotos integriert; 8 neue Rezepte; Aufräumen; Rezepte-Dropdown komplettiert; Einfrier-Disclaimer)
+> Letzte Aktualisierung: 2026-09-28 morgens (Design-Shift: Headlines von Cormorant fein → Manrope Bold 700-800, Italic-Akzente bleiben Cormorant. Kleid-Blau `#2a4a68`/`#bec2d9` überall durch Dark `#2a2a2a` und Beige `#f4ede4` ersetzt — weniger Blau, mehr Beige, dickere Schrift. Nav-Links „Zum Kurs" + „Anmeldung" auf Vercel umgebogen. Über-mich Hero-Portrait + Startseite Blog-Blähbauch + Empfehlungen mit neuen Kroatien-Brillen-Bildern.)
 
 ---
 
