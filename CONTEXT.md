@@ -2,7 +2,13 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-28 abends (Winter-Verschiebung + Vercel-Sync).
+> Letzte Aktualisierung: 2026-09-30 (Paket-Struktur neu: 3 Pakete → 2 mit Fokus auf 1:1-Positionierung).
+> **Große Umstellung:** 3 alte Pakete (Basic 325 / Gruppen 699 / Seelenbauch 825) sowie Rolling Entry (Self Study 399 / Seelenbauch 1:1 780) — **alle raus**. Nur noch **zwei aktive Pakete**:
+> - **Seelenbauchkurs (Gruppe) — 349 €** (Raten 3×125 / 6×65). Winterkohorte 01.11.2026 – 01.02.2027. 10 Wochenmodule Dashboard + Seelenbauch-Momente + Tagebuch-Konzept · App 6 Monate · E-Book Seelenbauchbuch (Softcover optional) · E-Book Reisen · Community · 2 Gruppen-Calls (Einkaufs-Talk + Live-Kochen).
+> - **Seelenbauch 1:1 — 499 € Einführungspreis** (Raten 3×175 / 6×88). 3 Monate persönliche Begleitung. **Julias detailliertes Konzept:** 10 Wochenmodule Dashboard + Seelenbauch-Momente · **gedruckte Kursinhalte** + gedrucktes Seelenbauchbuch · E-Book Reisen · App 6 Monate · **kostenloser Kennenlern-Call** + persönlicher Einstiegs-Call + Abschluss-Call · **persönliche WhatsApp-Begleitung während der gesamten 3 Monate inkl. Sprachnachrichten** (NICHT „24/7" formulieren) · Sonntags-Impuls (wöchentliche Sprachnachricht) · individuelles Ernährungstagebuch mit Rezepten · angepasste Rezepte + Wochenimpulse · **Erinnerungsbox mit kreativen Materialien** · persönliches Post-Paket (Buch + Materialien + histaminarme Snacks + Lebensmittel-Basics + Überraschungen). Zusatz-Calls: 30 € pro Call. **Nur 4 Plätze.**
+> - **Seelenbauch-Momente:** Julias neues Konzept — kleine kreative/reflektierende Aufgabe am Ende geeigneter Lektionen (Journaling, Zeichnen, Vision Board, Brief ans zukünftige Ich etc.). Bestehende Inhalte bleiben, werden nur ergänzt.
+> - **Erinnerungsbox:** physische Sammlung kleiner Meilensteine über die 3 Monate — z.B. Verpackung eines wieder-getesteten Lebensmittels + Reflexion (Was habe ich gedacht? Wie habe ich mich gefühlt?). Materialien im 1:1-Post-Paket.
+> - **Vorher (Session-Abschluss):**
 > **Abschluss-Runde:**
 > - **Kurs verschoben: Herbstspecial 2026 → Winterspecial 2026/2027.** Neuer Zeitraum **01.11.2026 – 01.02.2027**. Alle 5 Kohorten-Termine neu (siehe unten). Weihnachtspause bleibt 24.12.2026 – 01.01.2027 — fällt jetzt genau in die Kursmitte (perfektes Timing). 47+ Ersetzungen in juliabergles.de (`index.html`, `agb.html`, `deine-speisekammer.html`, `histamin-masterclass.html`) + 60+ Ersetzungen im Vercel-Repo (`page.tsx`, `variants.ts`, `anmeldung-form.tsx`, `email.ts`, `CONTEXT.md`).
 > - **Vercel-Sync:** beide Repos jetzt konsistent auf Winterspecial. Anmeldungs-Formular-Label + Welcome-Email-Timeline auch überarbeitet.
