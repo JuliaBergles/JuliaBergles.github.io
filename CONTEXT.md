@@ -2,7 +2,44 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-09-30 (Paket-Struktur neu: 3 Pakete → 2 mit Fokus auf 1:1-Positionierung).
+> Letzte Aktualisierung: 2026-10-01 (Finaler Paket-Stand + Vercel-Landing-Feinschliff).
+> **Finale Preisstruktur (nach mehreren Iterationen 30.09.–01.10.):**
+> - **Seelenbauchkurs (Gruppe) · 525 €** · 3×185 / 6×93 · Winterkohorte 01.11.2026 – 01.02.2027. Julia will Gruppe teurer, weil zusätzlich zu persönlichen Basis-Calls noch 2 Gruppen-Calls (Einkaufs-Talk + Live-Kochen) dabei sind.
+> - **Seelenbauch 1:1 · 499 € Einführungspreis** · 3×175 / 6×88 · nur 4 Plätze. Später regulärer Preis (699+). Aktuell günstiger als Gruppe — das ist der „Einführungs"-Charm.
+> - Zusatz-Calls im 1:1: 30 € pro Call.
+> **Was im 1:1 drin ist (Julias detaillierter Konzept-Brief vom 30.09.):**
+> - 10 Wochenmodule mit 2 Wochen Puffer — Wissen, Erfahrungen, Reflexionen und Nervensystemarbeit
+> - **Seelenbauch-Momente:** kleine kreative/reflektierende Aufgaben am Lektions-Ende (Journaling, Zeichnen, Vision Board, Brief ans zukünftige Ich etc.)
+> - **Seelenbauch-Tagebuch** als Konzept
+> - Ernährungstagebuch mit Rezepten im Dashboard
+> - **Gedrucktes Seelenbauchbuch** · auf Wunsch gedruckte Kursinhalte im Ordner (+5 € Upgrade)
+> - E-Book Reisen · TerraLuna App 6 Monate
+> - **Kostenloser Kennenlern-Call** (60 Min) + persönlicher Einstiegs-Call + Abschluss-Call
+> - **Persönliche WhatsApp-Begleitung während der gesamten 3 Monate inklusive Sprachnachrichten** — WICHTIG: NICHT als „24/7" formulieren!
+> - **Sonntags-Impuls** (wöchentliche Sprachnachricht zur Reflexion)
+> - Individuelles Ernährungstagebuch mit angepassten Rezepten + Wochenimpulsen
+> - **Erinnerungsbox mit kreativen Materialien** · Teilnehmerin sammelt kleine Meilenstein-Erinnerungen (z.B. Verpackung eines wieder-getesteten Lebensmittels) mit Reflexion
+> - **Persönliches Post-Paket** · Lebensmittel-Basics + histaminarme Snacks + Materialien + Überraschungen
+>
+> **Was im Kurs (Gruppe) zusätzlich zu dem gleichen Content-Basis drin ist:** Community-Zugang · 2 Gruppen-Calls (Einkaufs-Talk + Live-Kochen) · Seelenbauchbuch als E-Book (statt gedruckt). Keine persönliche WhatsApp, kein Sonntags-Impuls, keine Erinnerungsbox-Materialien, kein Post-Paket.
+>
+> **Vercel-Landing (terra-luna-masterclass.vercel.app) Feinschliff heute:**
+> - Hero-Bild: `hero-sunset-meer.jpg` → `julia-piazza.jpg` (Piazza-Sonnenuntergang mit Palazzo)
+> - „Kennst du das?"-Sektion: Blau-BG → `bg-white/75` (weiß-transparent) + Piazza-Bild als BG statt Pfingstrose
+> - IMG_3776.jpg (E-Books-Sektion) war upside-down, physisch rotiert + EXIF gestrippt
+> - **„Das bekommst du & deine Optionen"-Sektion** komplett aus Landing-Flow entfernt (Funktion `DasBekommstDu()` bleibt als Legacy im Code)
+> - **Early-Bird-Callout** („Erste 5 · App 1 Jahr statt 6 + 50 € Rabatt · 475/449 €") komplett raus
+> - „Wir starten am 01. November bis zum 01. Februar 2027" raus — nur „Pünktlich zur Weihnachtszeit kennst du deinen Körper besser." bleibt
+> - Textblock „Kohorte bis 01.02.2027 · Einstieg jederzeit möglich. 12 Wochen · 10 Wochenmodule · 2 Wochen Pause …" raus
+> - Neue Zeile unter Weihnachtszeit-Text: „10 Wochenmodule mit 2 Wochen Puffer — Wissen, Erfahrungen, Reflexionen und Nervensystemarbeit."
+> - Beide Preis-Karten strukturell angeglichen (gleiche Basis-Punkte in gleicher Reihenfolge, TerraLuna App als eigener Bullet-Punkt)
+>
+> **Variants-Config (`src/lib/variants.ts`):**
+> - Aktive IDs: `seelenbauchkurs` + `seelenbauch-1zu1`
+> - Legacy IDs (alle auf `isLegacy: true`): `self-study`, `1zu1`, `herbst-klein`, `herbst-mittel`, `herbst-vip` — bleiben erhalten für Legacy-URL-Weiterleitungen (`/anmeldung?variante=herbst-vip` → `seelenbauch-1zu1`)
+> - `HERBSTSPECIAL_KOHORTE.slug` = `winter-2026-2027`
+>
+> **Vorher — Hintergrund:**
 > **Große Umstellung:** 3 alte Pakete (Basic 325 / Gruppen 699 / Seelenbauch 825) sowie Rolling Entry (Self Study 399 / Seelenbauch 1:1 780) — **alle raus**. Nur noch **zwei aktive Pakete**:
 > - **Seelenbauchkurs (Gruppe) — 349 €** (Raten 3×125 / 6×65). Winterkohorte 01.11.2026 – 01.02.2027. 10 Wochenmodule Dashboard + Seelenbauch-Momente + Tagebuch-Konzept · App 6 Monate · E-Book Seelenbauchbuch (Softcover optional) · E-Book Reisen · Community · 2 Gruppen-Calls (Einkaufs-Talk + Live-Kochen).
 > - **Seelenbauch 1:1 — 499 € Einführungspreis** (Raten 3×175 / 6×88). 3 Monate persönliche Begleitung. **Julias detailliertes Konzept:** 10 Wochenmodule Dashboard + Seelenbauch-Momente · **gedruckte Kursinhalte** + gedrucktes Seelenbauchbuch · E-Book Reisen · App 6 Monate · **kostenloser Kennenlern-Call** + persönlicher Einstiegs-Call + Abschluss-Call · **persönliche WhatsApp-Begleitung während der gesamten 3 Monate inkl. Sprachnachrichten** (NICHT „24/7" formulieren) · Sonntags-Impuls (wöchentliche Sprachnachricht) · individuelles Ernährungstagebuch mit Rezepten · angepasste Rezepte + Wochenimpulse · **Erinnerungsbox mit kreativen Materialien** · persönliches Post-Paket (Buch + Materialien + histaminarme Snacks + Lebensmittel-Basics + Überraschungen). Zusatz-Calls: 30 € pro Call. **Nur 4 Plätze.**
