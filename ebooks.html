@@ -57,6 +57,7 @@
           <li class="dropdown-header">E-Books</li>
           <li><a href="ebook-reisen.html">Histaminarm Reisen</a></li>
           <li><a href="ebooks.html#seelenbauchbuch">Seelenbauchbuch</a></li>
+          <li><a href="ebooks.html#seelenkueche">Seelenküche</a></li>
           <li class="dropdown-header">Softcover Bücher</li>
           <li><a href="ebooks.html#seelenbauchbuch">Seelenbauchbuch</a></li>
         </ul>
@@ -115,7 +116,7 @@
       <span class="eyebrow eyebrow-copper">Meine Bücher</span>
     </div>
 
-    <div class="mt-lg" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch;">
+    <div class="mt-lg buecher-grid">
 
       <!-- Nº 01: Die Probe -->
       <a href="ebook-reisen.html" class="buch-card">
@@ -145,11 +146,31 @@
         </div>
       </a>
 
-      <!-- Nº 03: Seelenzyklus (Freebie, WhatsApp) -->
+      <!-- Nº 03: Seelenküche (Vorbestellung) -->
+      <a href="#seelenkueche" class="buch-card buch-card-preorder">
+        <div class="buch-cover buch-cover-placeholder">
+          <div class="placeholder-inner">
+            <span class="placeholder-chapter">Nº 03</span>
+            <span class="placeholder-title">Seelen<em>küche</em></span>
+            <span class="placeholder-sub">Kochbuch · Vorbestellen</span>
+          </div>
+        </div>
+        <div class="buch-body">
+          <span class="chapter-num" style="color: var(--copper);">Nº 03 · Vorbestellen ★</span>
+          <h3 class="mt-sm">Seelenküche</h3>
+          <p class="mt-sm">80 histaminarme &amp; glutenfreie Rezepte. Vegetarisch, ausgewogen, zyklustauglich. Mit großem Listen-Tausch nach Sighi.</p>
+          <div class="buch-footer" style="flex-direction: column; align-items: stretch; gap: 8px;">
+            <span class="buch-preis">29,99 €</span>
+            <span class="buch-cta">Mehr &amp; vorbestellen →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Nº 04: Seelenzyklus (Freebie, WhatsApp) -->
       <a href="https://wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20h%C3%A4tte%20gerne%20deinen%20kostenlosen%20Seelenzyklus.%20Danke%20dir!" class="buch-card buch-card-free">
         <div class="buch-cover" style="background-image: url('images/seelenzyklus-cover.png');"></div>
         <div class="buch-body">
-          <span class="chapter-num" style="color: var(--copper);">Nº 03 · Kostenlos</span>
+          <span class="chapter-num" style="color: var(--copper);">Nº 04 · Kostenlos</span>
           <h3 class="mt-sm">Seelenzyklus</h3>
           <p class="mt-sm">Die 4 Phasen, PMS, PMDS, PCOS &amp; Endometriose auf einen Blick. Schreib mir per WhatsApp — schick ich dir zu.</p>
           <div class="buch-footer">
@@ -163,6 +184,12 @@
 </section>
 
 <style>
+  .buecher-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: stretch;
+  }
   .buch-card {
     display: flex;
     flex-direction: column;
@@ -179,19 +206,19 @@
     box-shadow: 0 20px 50px rgba(42,42,42,0.12);
   }
   .buch-cover {
-    height: 340px;
+    height: 300px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--beige);
   }
   .buch-body {
-    padding: 28px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-  .buch-body h3 { font-size: 26px; }
+  .buch-body h3 { font-size: 24px; }
   .buch-footer {
     margin-top: auto;
     padding-top: 20px;
@@ -219,10 +246,47 @@
     box-shadow: 0 12px 40px rgba(196,139,108,0.18);
   }
   .buch-card-featured .buch-preis { color: var(--copper); }
-  @media (max-width: 900px) {
-    .container [style*="grid-template-columns: 1fr 1.15fr 1fr"] {
-      grid-template-columns: 1fr !important;
-    }
+  .buch-card-preorder { border: 1px dashed var(--copper); }
+  .buch-cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--beige) 0%, #ebe2d4 100%);
+  }
+  .placeholder-inner {
+    text-align: center;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .placeholder-chapter {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--copper-dark);
+    letter-spacing: 0.08em;
+  }
+  .placeholder-title {
+    font-family: var(--serif);
+    font-size: 38px;
+    line-height: 1.05;
+    color: var(--dark);
+  }
+  .placeholder-title em { font-style: italic; color: var(--copper); }
+  .placeholder-sub {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-top: 6px;
+  }
+  @media (max-width: 1100px) {
+    .buecher-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .buecher-grid { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -315,6 +379,68 @@
       <p class="text-center mt-lg text-mute" style="font-size: 13px; letter-spacing: 0.08em;">
         12 Seiten Vorschau · Klick zum Vergrößern
       </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SEELENKÜCHE — Kochbuch · Vorbestellung 29,99 € -->
+<section class="section section-cream" id="seelenkueche">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Neu · Vorbestellen</span>
+      <h2 class="mt-sm">Nº 03 · Die <em class="italic">Seelenküche</em></h2>
+      <p class="lead mt-md" style="margin-left: auto; margin-right: auto; max-width: 55ch;">
+        Mein neues Kochbuch. 80 Rezepte, die histaminarm und gleichzeitig glutenfrei sind.
+      </p>
+    </div>
+
+    <div class="grid-2 mt-lg" style="align-items: center;">
+      <div class="img-block" style="box-shadow: 0 20px 60px rgba(42,42,42,0.15); min-height: 480px; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, var(--beige) 0%, #ebe2d4 100%);">
+        <div style="text-align: center; padding: 48px;">
+          <span style="font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--copper-dark); letter-spacing: 0.08em; display: block;">Nº 03</span>
+          <span style="font-family: var(--serif); font-size: 76px; line-height: 1.05; color: var(--dark); display: block; margin-top: 12px;">Seelen<em style="font-style: italic; color: var(--copper);">küche</em></span>
+          <span style="font-family: var(--sans); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); display: block; margin-top: 18px;">Kochbuch · Fotos folgen</span>
+        </div>
+      </div>
+      <div>
+        <span class="chapter-num">80 Rezepte · histaminarm &amp; glutenfrei</span>
+        <h3 class="mt-sm">Rezepte, die zu <em class="italic">deinem Körper</em> passen.</h3>
+
+        <p class="mt-md" style="font-style: italic;">
+          Alle Rezepte sind histaminarm, glutenfrei und vegetarisch. Ausgewogen, zyklustauglich und entzündungshemmend.
+        </p>
+
+        <p class="mt-md">
+          Du kannst Dinkelmehl verwenden, wenn du es verträgst. Die Rezepte sind nach Sighi 0, Sighi 1 und wenigen Sighi 2 sortiert, damit du sie an deine individuelle Verträglichkeit anpassen kannst. Immer wieder nenne ich auch Alternativen.
+        </p>
+
+        <div class="mt-lg" style="padding: 20px 24px; background: var(--beige); border-left: 3px solid var(--copper);">
+          <span class="eyebrow eyebrow-copper">Was drin ist</span>
+          <ul style="list-style: none; padding: 0; margin-top: 12px; font-size: 15px; line-height: 1.85;">
+            <li>· 80 histaminarme, glutenfreie Rezepte — alle vegetarisch</li>
+            <li>· Rezepte nach <strong>Sighi 0, 1 und wenigen 2</strong> sortiert</li>
+            <li>· Filter: Laktose · FODMAP · Fructose · vegan</li>
+            <li>· Großer <strong>Listen-Tausch</strong>: typische Lebensmittel nach Sighi bewertet, mit Alternativen</li>
+            <li>· Sortiert nach <strong>Fructose, Laktose, FODMAP und veganer Ernährung</strong></li>
+            <li>· Zyklustauglich · entzündungshemmend · ausgewogen</li>
+            <li>· Dinkelmehl möglich, wenn du es verträgst</li>
+          </ul>
+        </div>
+
+        <div class="mt-lg" style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="mailto:julia@bergles.net?subject=Vorbestellung%20Seelenk%C3%BCche&body=Hallo%20Julia%2C%0A%0Aich%20m%C3%B6chte%20dein%20Kochbuch%20Seelenk%C3%BCche%20f%C3%BCr%2029%2C99%20%E2%82%AC%20vorbestellen.%0A%0AName%3A%20%0AVersandadresse%3A%20%0AE-Mail%3A%20%0A%0ADanke%20dir!" class="btn btn-copper">Per E-Mail vorbestellen · 29,99 €</a>
+          <a href="https://wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20m%C3%B6chte%20dein%20Kochbuch%20Seelenk%C3%BCche%20vorbestellen.%20Danke%20dir!" class="btn btn-outline">Per WhatsApp vorbestellen</a>
+        </div>
+
+        <p class="mt-md" style="font-family: var(--serif); font-style: italic; color: var(--copper-dark); font-size: 15px;">
+          Aktuell <strong style="font-style: normal; font-family: var(--sans); font-weight: 700; letter-spacing: 0.02em;">in Arbeit</strong> — Vorbestellen jetzt möglich.
+        </p>
+
+        <p class="mt-md text-mute" style="font-size: 13px;">
+          Nach deiner Vorbestellung bekommst du eine Nachricht von mir, sobald das Buch fertig ist. Zahlung erst bei Versand.
+        </p>
+      </div>
     </div>
   </div>
 </section>

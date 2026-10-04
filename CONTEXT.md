@@ -184,13 +184,14 @@ Verlinkung: `histamin-masterclass.html` (Dateiname bleibt aus URL-Stabilitätsgr
 
 ## Bücher (`ebooks.html`) — schlanke 3-Card-Übersicht (Stand 28.09. nachmittags)
 
-Hero-Text komplett raus, nur H1 „Meine Bücher" bleibt. Danach 3-Card-Grid, alle Karten gleich hoch (grid `1fr 1fr 1fr`). Bestellung per Mail-Vorkasse oder WhatsApp.
+Hero-Text komplett raus, nur H1 „Meine Bücher" bleibt. Danach **4-Card-Grid** (ab 04.10.: Seelenküche neu dazu), alle Karten gleich hoch. Bestellung per Mail-Vorkasse oder WhatsApp.
 
 | Nº | Titel | Preis | CTA/Status |
 |---|---|---|---|
 | **01** | Die Probe (Reisen mit Histamin) | 7,99 € | Zum E-Book → `ebook-reisen.html` |
 | **02** ★ FOKUS | **Das Seelenbauchbuch** (144 S., Magazin-Stil, Seelenrezepte, Reflexionsfragen) | **24,99 € Softcover · 9,99 € E-Book** | Mehr & bestellen → `#seelenbauchbuch` (Detail-Sektion drunter mit 12-Seiten-Preview). **12 Stück auf Lager.** Malaga-Border als Fokus. |
-| **03** | **Seelenzyklus** (28.09. umbenannt von „Zyklus-Leitfaden") | **Kostenlos** | **WhatsApp-Freebie Lead-Magnet** → Button öffnet `wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20h%C3%A4tte%20gerne%20deinen%20kostenlosen%20Seelenzyklus.` Cover: `images/seelenzyklus-cover.png` (echtes Portrait mit Brille + „HISTAMIN & ZYKLUS BRINGE DEINEN KÖRPER WIEDER IN BALANCE"). |
+| **03** NEU · Vorbestellung | **Seelenküche** (Kochbuch, 80 histaminarme + glutenfreie Rezepte, alle vegetarisch) | **29,99 €** | Vorbestellen → `#seelenkueche` (Detail-Sektion mit Pre-Order-CTAs E-Mail + WhatsApp). Rezepte nach Sighi 0/1/2, Filter Laktose/FODMAP/Fructose/vegan. Großer Listen-Tausch (Lebensmittel nach Sighi mit Alternativen). Zyklustauglich, entzündungshemmend, ausgewogen. Dinkelmehl möglich wenn verträglich. **Cover-Fotos stehen noch aus** — aktuell Serif-Typografie-Placeholder. Vorbestell-Status: Zahlung erst bei Versand. |
+| **04** | **Seelenzyklus** (28.09. umbenannt von „Zyklus-Leitfaden") | **Kostenlos** | **WhatsApp-Freebie Lead-Magnet** → Button öffnet `wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20h%C3%A4tte%20gerne%20deinen%20kostenlosen%20Seelenzyklus.` Cover: `images/seelenzyklus-cover.png` (echtes Portrait mit Brille + „HISTAMIN & ZYKLUS BRINGE DEINEN KÖRPER WIEDER IN BALANCE"). |
 
 **Entfernt am 28.09. nachmittags aus ebooks.html:**
 - Hero-Absätze („E-Books, die nicht nur Tipps geben…" + „Ich möchte dich vor meinen Fehlern bewahren…")
