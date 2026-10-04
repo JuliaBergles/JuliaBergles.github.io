@@ -733,6 +733,15 @@ p em, p em.italic, p .italic, .lead em, .lead em.italic, .lead .italic {
   margin-top: 0;
   padding-top: 4px;
 }
+.nav-v3 .dropdown a.dropdown-featured {
+  color: var(--copper);
+  font-weight: 700;
+  background: var(--beige);
+}
+.nav-v3 .dropdown a.dropdown-featured:hover {
+  background: var(--copper);
+  color: var(--cream);
+}
 
 .nav-v3 .nav-cta {
   flex-shrink: 0;
