@@ -10,3 +10,7 @@ blog-bilder/
 
 # Aufgeräumter Fundus — lokal aufrufbar, nicht deployen
 _archiv/
+
+# Seelenkueche-Kochbuch Roh-PNGs (~100MB) — nur web-optimierte JPGs ins Repo
+images/seelenkueche/Kochbuch/
+images/seelenkueche/Kochbuch.zip
