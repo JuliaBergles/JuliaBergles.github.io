@@ -2,7 +2,87 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-01 (Finaler Paket-Stand + Vercel-Landing-Feinschliff).
+> Letzte Aktualisierung: 2026-10-08 (Shop-Ausbau + E-Books raus — Phase 1 in Arbeit).
+
+---
+
+## ⚡ Aktueller Umbau · 2026-10-08 · Seelenbauch-Shop
+
+**Julias Entscheidung:** Website soll zu einer vollständigen Seelenbauch-Plattform werden. Alle physischen Produkte + App + Kurs an einem Ort, mit echtem Shop im Hintergrund.
+
+### Shop-System: Shopify (Phase 2)
+
+Nach Abwägung Webador / Instagram+Lexware / Snipcart / Shopify entschieden für **Shopify auf `shop.juliabergles.de`**:
+- Design-Freiheit, kann Editorial-Look (Cream/Malaga/Manrope/Cormorant) nachbauen
+- **Lexware-Sync via Billbee** (~10 €/Monat) — Rechnungen laufen automatisch
+- Admin-Dashboard für Bestellstatus / Trackingnummer
+- Varianten (Notizbuch liniert/kariert/blanko) + Bundles + Addons (Gelschreiber) nativ
+- ~27 €/Monat Shopify + 2 % Transaktion + Stripe-Gebühren
+- **Phase 2 Setup** (Julia muss Shopify + Stripe Konto anlegen, dann baue ich Theme + Produkte)
+
+### Phase 1 — Vorarbeit in bestehender HTML (in Arbeit)
+
+Buttons zeigen vorerst auf `mailto:julia@bergles.net`, werden später auf Shopify umgehängt. Was passiert:
+
+1. **E-Books überall raus** — Julia bietet keine E-Books mehr an.
+   - `ebook-reisen.html` (Die Probe 7,99 €) aus Nav + Bücher-Übersicht raus (Datei bleibt vorerst im Repo, nicht verlinkt — WYH-Prinzip)
+   - Seelenbauchbuch-E-Book-Option (9,99 €) auf `ebooks.html` raus — nur noch Softcover 24,99 €
+   - Nav-Dropdown „Bücher" → „Shop" umbenennen, E-Books-Sektion raus
+   - `ebooks.html` bleibt als Dateiname (URL-Stabilität), wird aber inhaltlich zur Shop-Übersicht
+   - **Seelenzyklus** bleibt als kostenloser WhatsApp-Lead-Magnet (nicht als „E-Book" positioniert, als „Guide/Freebie")
+
+2. **Neue Produktseiten** (Root-Level HTML):
+   - `tagebuch.html` — Seelenbauch Tagebuch · 25,99 € · Gelschreiber inkl.
+   - `notizbuch.html` — Seelenbauch Notizbuch · 9,99 € · 3 Varianten (liniert/kariert/blanko) · optional Gelschreiber +1,50 €
+   - `bundles.html` — Duo + Komplett-Set
+   - Seelenbauchbuch + Kochbuch bleiben als Sektionen in `ebooks.html` (umbenannt zu „Shop" bzw. „Bücher & Shop")
+
+3. **„Dein Seelenbauch Weg"-Sektion** auf `index.html`:
+   6 Stationen (Verstehen → Beobachten → Ausprobieren → Festhalten → Digital → Tiefer) mit Chapter-Nº, Link zum Produkt
+
+4. **Cross-Selling-Blöcke** passend zum Kontext (nicht jede Seite kriegt alles):
+   - Blog-Enden → Buch + App
+   - Rezept-Seiten → Kochbuch + App
+   - Histamin/MCAS/Reizdarm → Buch + Kurs + App
+   - Buch-Seite → Tagebuch + Kochbuch + App
+   - App-Seite → analog: Buch + Tagebuch + Kochbuch
+
+5. **Kurs-Inhalt erweitern** (`histamin-masterclass.html` + Angebot-Card auf Startseite):
+   Neu dazu: **Wärmflasche · Wärmflaschengürtel · Sticker fürs Tagebuch · HistaFood-Überraschungen · Seelenbauch Coaching Buch**. Preise bleiben: **525 € Gruppe · 499 € 1:1**.
+
+### Bestätigte Produkt-Preise (2026-10-08)
+
+| Produkt | Preis | Notiz |
+|---|---|---|
+| **Seelenbauchbuch** | 24,99 € | Softcover-Magazin · 144 Seiten (E-Book-Option entfällt) |
+| **Seelenbauch Tagebuch** | 25,99 € | **Gelschreiber inklusive** |
+| **Seelenbauch Notizbuch** | 9,99 € | 3 Varianten: liniert · kariert · blanko · optional Gelschreiber +1,50 € |
+| **Seelenküche Kochbuch** | 29,99 € | Hardcover DIN A4 · 80 Rezepte · Vorbestellung |
+| **Gelschreiber (Addon)** | +1,50 € | Zubuchbar bei Buch / Notizbuch / Kochbuch · **nicht** beim Tagebuch (dort inkl.) |
+| **Bundle Seelenbauch Duo** | **BITTE PREIS PRÜFEN** | Buch + Tagebuch (Gelschreiber inkl.) — Vorschlag ~44,99 € (statt 50,98 € einzeln) |
+| **Bundle Komplett-Set** | **BITTE PREIS PRÜFEN** | Buch + Notizbuch + Tagebuch + Kochbuch — Vorschlag ~79,99 € (statt 90,96 € einzeln) |
+
+### Bestätigte Versand-Konditionen (2026-10-08)
+
+- **DHL Standard · 4,19 €**
+- **DHL mit Sendungsverfolgung · 6,19 €**
+- Alte „ab 30 € kostenlos" + „App-Screenshot kostenlos"-Regel — aktuell nicht erwähnt in Julias neuem Prompt. **BITTE PRÜFEN** ob Regel bleibt oder entfällt.
+
+### Technische Grenzen klargemacht
+
+- GitHub Pages ist statisch — Warenkorb/Checkout/Zahlung/Admin-Dashboard **nicht möglich** auf dieser Seite selbst.
+- Deshalb Shopify auf Subdomain, Hauptseite verlinkt rüber. „Jetzt bestellen"-Buttons bekommen in Phase 2 Shopify-Produkt-URLs.
+- E-Mail-Benachrichtigungen + Rechnungen übernimmt Shopify + Lexware (via Billbee).
+
+### Offene Fragen an Julia
+
+- [ ] **Bundle-Preise** Duo + Komplett-Set final festlegen
+- [ ] **Versand-Regel „ab 30 € kostenlos" + App-Screenshot** — bleibt oder entfällt?
+- [ ] **Shopify-Account** anlegen auf shopify.com (14 Tage kostenlos, keine Zahlungsinfo nötig) → sobald da, API-Zugriff weitergeben
+- [ ] **Stripe-Konto** anlegen → wird im Shopify-Setup-Wizard verbunden
+- [ ] **Produktfotos** für Tagebuch + Notizbuch + Gelschreiber + Wärmflasche + Gürtel + Sticker + HistaFood-Paket → in `images/shop/` legen
+
+---
 > **Finale Preisstruktur (nach mehreren Iterationen 30.09.–01.10.):**
 > - **Seelenbauchkurs (Gruppe) · 525 €** · 3×185 / 6×93 · Winterkohorte 01.11.2026 – 01.02.2027. Julia will Gruppe teurer, weil zusätzlich zu persönlichen Basis-Calls noch 2 Gruppen-Calls (Einkaufs-Talk + Live-Kochen) dabei sind.
 > - **Seelenbauch 1:1 · 499 € Einführungspreis** · 3×175 / 6×88 · nur 4 Plätze. Später regulärer Preis (699+). Aktuell günstiger als Gruppe — das ist der „Einführungs"-Charm.
