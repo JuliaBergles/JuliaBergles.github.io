@@ -2,23 +2,66 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-08 (Shop-Ausbau + E-Books raus — Phase 1 in Arbeit).
+> Letzte Aktualisierung: 2026-10-09 (Shop live via Webador auf smacado.de — Shopify-Weg verworfen).
 
 ---
 
-## ⚡ Aktueller Umbau · 2026-10-08 · Seelenbauch-Shop
+## ⚡ Aktueller Stand · 2026-10-09 · Shop live via Webador
 
-**Julias Entscheidung:** Website soll zu einer vollständigen Seelenbauch-Plattform werden. Alle physischen Produkte + App + Kurs an einem Ort, mit echtem Shop im Hintergrund.
+**Julias Entscheidung:** Shop läuft auf **Webador unter smacado.de** (NICHT Shopify, NICHT shop.juliabergles.de). Grund: Shopify war zu komplex + zu teuer (36 €/Mo Basic), Julia kennt Webador schon und findet es intuitiver. Ihre Website juliabergles.de bleibt 1:1 wie sie ist, nur die Bestell-Buttons zeigen jetzt auf Webador-Produktseiten.
 
-### Shop-System: Shopify (Phase 2)
+### Entscheidungs-Historie (08.–09.10.)
 
-Nach Abwägung Webador / Instagram+Lexware / Snipcart / Shopify entschieden für **Shopify auf `shop.juliabergles.de`**:
-- Design-Freiheit, kann Editorial-Look (Cream/Malaga/Manrope/Cormorant) nachbauen
-- **Lexware-Sync via Billbee** (~10 €/Monat) — Rechnungen laufen automatisch
-- Admin-Dashboard für Bestellstatus / Trackingnummer
-- Varianten (Notizbuch liniert/kariert/blanko) + Bundles + Addons (Gelschreiber) nativ
-- ~27 €/Monat Shopify + 2 % Transaktion + Stripe-Gebühren
-- **Phase 2 Setup** (Julia muss Shopify + Stripe Konto anlegen, dann baue ich Theme + Produkte)
+1. **Erste Runde (08.10.):** Shopify Basic (36 €/Mo) geplant, Theme im Editorial-Look nachbauen, eigenes shop.juliabergles.de. Phase 1 (E-Books raus, neue Produktseiten tagebuch/notizbuch/bundles, Seelenbauch-Weg, Cross-Selling, Kurs-Erweiterung) wurde live gepusht.
+2. **Shopify-Account angelegt (08.10. abends):** Store „Seelenbauch" auf `nhs1w4-bn.myshopify.com`, Grundeinstellungen durch (Adresse, Zeitzone, Shop-Admin julia@bergles.net, Bestell-ID-Format #1001, Bestell-Abwicklung manuell). Steuer-Status Kleinunternehmerin § 19 UStG geklärt. Länder: nur Deutschland.
+3. **Pivot (09.10. mittags):** Nach Diskussion über Preise (36 € → Starter 5 € → Mailto) hat Julia entschieden: **doch Webador** — sie kennt es, lower learning curve, direkt loslegen.
+4. **Webador-Shop live (09.10.):** Produkte angelegt auf `smacado.de` mit Produkt-URLs. Siehe unten.
+
+### Webador-Shop · smacado.de
+
+**Produkt-URLs (Stand 09.10.):**
+- Seelenbauchbuch · `https://www.smacado.de/seelenbauch-buch` · 24,99 €
+- Kochbuch Seelenküche · `https://www.smacado.de/seelenkueche-kochbuch` · 29,99 € (Vorbestellung)
+- Seelenbauch Tagebuch · `https://www.smacado.de/tagebuch` · 25,99 €
+- Seelenbauch Notizbuch · `https://www.smacado.de/notizbuch` · 9,99 € (Varianten vermutlich im Shop selbst)
+- **Bundle Duo** · URL **noch offen** · 44,99 €
+- **Bundle Komplett-Set** · URL **noch offen** · 79,99 €
+
+**Buy-Buttons auf juliabergles.de** (umgehängt 09.10.):
+- ✅ `ebooks.html` — Seelenbauchbuch + Kochbuch Buttons auf Webador
+- ✅ `tagebuch.html` — Button auf Webador
+- ✅ `notizbuch.html` — alle 3 Varianten-Cards auf Webador (eine URL, Varianten-Auswahl im Webador-Shop)
+- ⏳ `bundles.html` — Buttons noch mailto, warten auf Bundle-URLs
+- ⏳ Startseite Angebot-Cards + Seelenbauch-Weg — zeigen aktuell noch auf juliabergles.de-Produktseiten (nicht direkt auf Webador). Kann so bleiben weil juliabergles.de als Landing fungiert.
+
+**Alte "Shop wird bald auf Online-Zahlung umgestellt"-Hinweise** entfernt auf ebooks/tagebuch/notizbuch — ersetzt durch "Bezahlung und Bestellabwicklung läuft direkt über den Shop auf smacado.de."
+
+### Shopify-Account killen
+
+Julia hat Basic-Trial angelegt (3 Tage gratis dann 1 €/Mo für 3 Mo). Muss noch Trial beenden damit nix abgebucht wird → Einstellungen → Plan → "Shop deaktivieren".
+
+### Billbee-Lexware-Anbindung (offen)
+
+Für automatische Rechnungserstellung + Lexware-Sync wäre **Billbee** (~9,90 €/Mo) später sinnvoll. Aber: nicht jetzt. Erst wenn Bestellvolumen reicht (~15+/Monat), dann einbauen. Bis dahin: Rechnungen manuell in Lexware eintippen anhand der Webador-Bestelldaten.
+
+### Rechtstexte für Shop
+
+**Zu machen (10.10. / nächste Session):**
+- `datenschutz.html` erweitern um Webador-Hosting + Zahlungsabwickler (Stripe/PayPal/Klarna via Webador) + Versand (DHL)
+- `widerruf.html` erweitern um Sektion "Physische Produkte (Shop)" — 14-tägiges Widerrufsrecht, Muster-Formular, Rückversandkosten
+- Datum "Stand: September 2026" → "Oktober 2026"
+- Entsprechende Standard-Vorlagen für Webador liegen bereit (siehe vorige Session-Nachrichten)
+
+### Phase 1 (abgeschlossen 08.10.)
+
+1. ✅ **E-Books überall raus** — ebook-reisen.html + Seelenbauchbuch-E-Book-Option auf ebooks.html raus, Nav-Dropdown "Bücher" → "Shop" umbenannt, E-Books-Sektion raus. Seelenzyklus bleibt als kostenloser WhatsApp-Lead-Magnet (nicht als "E-Book" positioniert).
+2. ✅ **3 neue Produktseiten** (Root-Level HTML):
+   - `tagebuch.html` — Seelenbauch Tagebuch · 25,99 € · Gelschreiber inkl.
+   - `notizbuch.html` — Seelenbauch Notizbuch · 9,99 € · 3 Varianten (liniert/kariert/blanko) · optional Gelschreiber +1,50 €
+   - `bundles.html` — Duo 44,99 € + Komplett-Set 79,99 €
+3. ✅ **„Dein Seelenbauch Weg"-Sektion** auf `index.html` — 6 Stationen (Verstehen → Beobachten → Ausprobieren → Festhalten → Digital → Tiefer)
+4. ✅ **Cross-Selling-Blöcke** — 12 Blog-Artikel (Buch + App) · 48 Rezept-Seiten (Kochbuch + App) · Histamin/MCAS/Reizdarm (Buch + Kurs + App) · app.html (Buch + Tagebuch + Kochbuch)
+5. ✅ **Kurs-Inhalt erweitert** (`histamin-masterclass.html`) — "Das bekommst du" mit Post-Paket-Spalte: Buch, Tagebuch, Notizbuch, Kochbuch, Wärmflasche, Gürtel, Sticker, HistaFood-Überraschungen, Coaching-Buch
 
 ### Phase 1 — Vorarbeit in bestehender HTML (in Arbeit)
 
@@ -66,7 +109,7 @@ Buttons zeigen vorerst auf `mailto:julia@bergles.net`, werden später auf Shopif
 
 - **DHL Standard · 4,19 €**
 - **DHL mit Sendungsverfolgung · 6,19 €**
-- Alte „ab 30 € kostenlos" + „App-Screenshot kostenlos"-Regel — aktuell nicht erwähnt in Julias neuem Prompt. **BITTE PRÜFEN** ob Regel bleibt oder entfällt.
+- Alte „ab 30 € kostenlos" + „App-Screenshot kostenlos"-Regel ist **raus** (Julia bestätigt 08.10.: Versand ist nicht kostenlos). Shop-Seiten (tagebuch/notizbuch/bundles/ebooks) zeigen nur noch die zwei DHL-Preise.
 
 ### Technische Grenzen klargemacht
 
@@ -77,8 +120,8 @@ Buttons zeigen vorerst auf `mailto:julia@bergles.net`, werden später auf Shopif
 ### Offene Fragen an Julia
 
 - [ ] **Bundle-Preise** Duo + Komplett-Set final festlegen
-- [ ] **Versand-Regel „ab 30 € kostenlos" + App-Screenshot** — bleibt oder entfällt?
-- [ ] **Shopify-Account** anlegen auf shopify.com (14 Tage kostenlos, keine Zahlungsinfo nötig) → sobald da, API-Zugriff weitergeben
+- [x] ~~Versand-Regel „ab 30 € kostenlos" + App-Screenshot~~ 08.10. — raus. Versand kostet immer DHL 4,19 € / 6,19 €.
+- [x] ~~**Shopify-Account** anlegen~~ 08.10. — Julia hat Account angelegt. Status in Setup folgt.
 - [ ] **Stripe-Konto** anlegen → wird im Shopify-Setup-Wizard verbunden
 - [ ] **Produktfotos** für Tagebuch + Notizbuch + Gelschreiber + Wärmflasche + Gürtel + Sticker + HistaFood-Paket → in `images/shop/` legen
 
