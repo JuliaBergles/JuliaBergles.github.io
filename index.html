@@ -114,7 +114,6 @@
   </div>
   <div class="container hero-content">
     <div class="grid-hero">
-      <div></div>
       <div>
         <h1 class="display" style="color: var(--cream);">Histamin.<br>MCAS.<br><em class="italic">Und alles</em> was<br>dazugehört.</h1>
         <p class="mt-md" style="color: rgba(255,252,249,0.92); max-width: 44ch; line-height: 1.7;">
@@ -125,6 +124,7 @@
           <a href="ueber-mich.html" class="btn btn-outline" style="border-color: var(--cream); color: var(--cream);">Meine Geschichte</a>
         </div>
       </div>
+      <div></div>
     </div>
   </div>
 </header>
@@ -292,7 +292,7 @@
       <h2>So kam ich zurück zu <em class="italic">MIR</em>.</h2>
     </div>
 
-    <div class="angebote-grid-3plus1 mt-lg" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    <div class="angebote-grid-4 mt-lg" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
 
       <a href="ebooks.html#seelenbauchbuch" class="angebot-card">
         <div class="angebot-img" style="background-image: url('images/seelenbauchbuch/cover.png');"></div>
@@ -330,15 +330,8 @@
   </div>
 
 <style>
-  .angebote-grid-3plus1 > :nth-child(4) { grid-column: 2; }
-  @media (max-width: 1024px) {
-    .angebote-grid-3plus1 { grid-template-columns: repeat(2, 1fr) !important; }
-    .angebote-grid-3plus1 > :nth-child(4) { grid-column: auto; }
-  }
-  @media (max-width: 640px) {
-    .angebote-grid-3plus1 { grid-template-columns: 1fr !important; }
-    .angebote-grid-3plus1 > :nth-child(4) { grid-column: auto; }
-  }
+  @media (max-width: 1024px) { .angebote-grid-4 { grid-template-columns: repeat(2, 1fr) !important; } }
+  @media (max-width: 640px)  { .angebote-grid-4 { grid-template-columns: 1fr !important; } }
 </style>
 </section>
 
