@@ -2,55 +2,150 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-09 (Shop live via Webador auf smacado.de — Shopify-Weg verworfen).
+> Letzte Aktualisierung: 2026-10-12 (Shop komplett live, Startseite + ebooks.html radikal entrumpelt, 3 Bundles mit Fotos, Rechtstexte verstärkt + Kurs-Preise umgestellt).
 
 ---
 
-## ⚡ Aktueller Stand · 2026-10-09 · Shop live via Webador
+## ⚡ Aktueller Stand · 2026-10-11/12 · Shop + Entrumpelt-Welle + Rechtstexte
 
-**Julias Entscheidung:** Shop läuft auf **Webador unter smacado.de** (NICHT Shopify, NICHT shop.juliabergles.de). Grund: Shopify war zu komplex + zu teuer (36 €/Mo Basic), Julia kennt Webador schon und findet es intuitiver. Ihre Website juliabergles.de bleibt 1:1 wie sie ist, nur die Bestell-Buttons zeigen jetzt auf Webador-Produktseiten.
+Riesige Session. Website ist jetzt radikal minimalistischer (Webador-Vibe), Shop vollständig verlinkt, alle Rechtstexte auf Oktober 2026 + Shop-ready.
 
-### Entscheidungs-Historie (08.–09.10.)
+### Webador-Shop · smacado.de · komplett live
 
-1. **Erste Runde (08.10.):** Shopify Basic (36 €/Mo) geplant, Theme im Editorial-Look nachbauen, eigenes shop.juliabergles.de. Phase 1 (E-Books raus, neue Produktseiten tagebuch/notizbuch/bundles, Seelenbauch-Weg, Cross-Selling, Kurs-Erweiterung) wurde live gepusht.
-2. **Shopify-Account angelegt (08.10. abends):** Store „Seelenbauch" auf `nhs1w4-bn.myshopify.com`, Grundeinstellungen durch (Adresse, Zeitzone, Shop-Admin julia@bergles.net, Bestell-ID-Format #1001, Bestell-Abwicklung manuell). Steuer-Status Kleinunternehmerin § 19 UStG geklärt. Länder: nur Deutschland.
-3. **Pivot (09.10. mittags):** Nach Diskussion über Preise (36 € → Starter 5 € → Mailto) hat Julia entschieden: **doch Webador** — sie kennt es, lower learning curve, direkt loslegen.
-4. **Webador-Shop live (09.10.):** Produkte angelegt auf `smacado.de` mit Produkt-URLs. Siehe unten.
+**Alle Produkt-URLs eingebaut und live:**
 
-### Webador-Shop · smacado.de
+| Produkt | URL | Preis |
+|---|---|---|
+| Seelenbauchbuch | `smacado.de/seelenbauch-buch` | 24,99 € |
+| Seelenküche Kochbuch | `smacado.de/seelenkueche-kochbuch` | 29,99 € (Vorbestellung) |
+| Seelenbauch Tagebuch | `smacado.de/tagebuch` | 25,99 € |
+| Seelenbauch Notizbuch | `smacado.de/notizbuch` | 9,99 € |
+| **Bundle DUO-Kreativ** (Kochbuch + Notizbuch + Stift) | `smacado.de/product/24487723/seelenbauch-kreativ` | **37,99 €** |
+| **Bundle DUO-Relax** (Buch + Notizbuch + Stift) | `smacado.de/product/24487735/seelenbauch-relax` | **32,99 €** |
+| **Bundle Trio** (Buch + Kochbuch + Notizbuch + Stift) | `smacado.de/product/24487747/seelenbauch-trio` | **59,99 €** |
+| Bundles-Übersicht | `smacado.de/seelenbauch-bundles` | — |
+| Seelenbauch Kurs | `smacado.de/seelenbauch-kurs` | ab 499 € |
 
-**Produkt-URLs (Stand 09.10.):**
-- Seelenbauchbuch · `https://www.smacado.de/seelenbauch-buch` · 24,99 €
-- Kochbuch Seelenküche · `https://www.smacado.de/seelenkueche-kochbuch` · 29,99 € (Vorbestellung)
-- Seelenbauch Tagebuch · `https://www.smacado.de/tagebuch` · 25,99 €
-- Seelenbauch Notizbuch · `https://www.smacado.de/notizbuch` · 9,99 € (Varianten vermutlich im Shop selbst)
-- **Bundle Duo** · URL **noch offen** · 44,99 €
-- **Bundle Komplett-Set** · URL **noch offen** · 79,99 €
+**Versand-Konditionen:**
+- Einzel-Produkte: DHL Standard 4,19 € oder DHL mit Sendungsverfolgung 6,19 €
+- **Bundles: DHL mit Sendungsverfolgung pauschal 6,50 €** (nicht 4,19/6,19)
+- Nur Deutschland
+- Kleinunternehmerin § 19 UStG — keine Umsatzsteuer auf Rechnungen
 
-**Buy-Buttons auf juliabergles.de** (umgehängt 09.10.):
-- ✅ `ebooks.html` — Seelenbauchbuch + Kochbuch Buttons auf Webador
-- ✅ `tagebuch.html` — Button auf Webador
-- ✅ `notizbuch.html` — alle 3 Varianten-Cards auf Webador (eine URL, Varianten-Auswahl im Webador-Shop)
-- ⏳ `bundles.html` — Buttons noch mailto, warten auf Bundle-URLs
-- ⏳ Startseite Angebot-Cards + Seelenbauch-Weg — zeigen aktuell noch auf juliabergles.de-Produktseiten (nicht direkt auf Webador). Kann so bleiben weil juliabergles.de als Landing fungiert.
+**Alle juliabergles.de-Buttons auf Webador umgehängt** — mailto ist komplett weg aus den Shop-Flows (ebooks.html, tagebuch.html, notizbuch.html, bundles.html, index.html Angebote + Call-CTA-Banner).
 
-**Alte "Shop wird bald auf Online-Zahlung umgestellt"-Hinweise** entfernt auf ebooks/tagebuch/notizbuch — ersetzt durch "Bezahlung und Bestellabwicklung läuft direkt über den Shop auf smacado.de."
+**Shopify-Account killen** (noch offen bei Julia): Trial einfach auslaufen lassen oder in Einstellungen → Plan → „Shop deaktivieren".
 
-### Shopify-Account killen
+### Bundle-Struktur umgebaut (3 Bundles, jedes mit Stift)
 
-Julia hat Basic-Trial angelegt (3 Tage gratis dann 1 €/Mo für 3 Mo). Muss noch Trial beenden damit nix abgebucht wird → Einstellungen → Plan → "Shop deaktivieren".
+Statt der alten „Duo (Buch+Tagebuch) + Komplett-Set (alle 4)" jetzt drei saubere Bundles — Tagebuch ist aus den Bundles komplett raus:
 
-### Billbee-Lexware-Anbindung (offen)
+- **DUO-Kreativ** · Kochbuch + Notizbuch + Stift · **37,99 €** (statt 41,48 einzeln)
+- **DUO-Relax** · Seelenbauchbuch + Notizbuch + Stift · **32,99 €** (statt 36,48 einzeln)
+- **Trio** · Buch + Kochbuch + Notizbuch + Stift · **59,99 €** (statt 66,47 einzeln)
 
-Für automatische Rechnungserstellung + Lexware-Sync wäre **Billbee** (~9,90 €/Mo) später sinnvoll. Aber: nicht jetzt. Erst wenn Bestellvolumen reicht (~15+/Monat), dann einbauen. Bis dahin: Rechnungen manuell in Lexware eintippen anhand der Webador-Bestelldaten.
+Fotos liegen in `images/bundles/` (duo-kochbuch-notizbuch.png · trio-buch-notizbuch-kochbuch.png · duo-buch-notizbuch.png).
 
-### Rechtstexte für Shop
+### Startseite entrumpelt (`index.html`)
 
-**Zu machen (10.10. / nächste Session):**
-- `datenschutz.html` erweitern um Webador-Hosting + Zahlungsabwickler (Stripe/PayPal/Klarna via Webador) + Versand (DHL)
-- `widerruf.html` erweitern um Sektion "Physische Produkte (Shop)" — 14-tägiges Widerrufsrecht, Muster-Formular, Rückversandkosten
-- Datum "Stand: September 2026" → "Oktober 2026"
-- Entsprechende Standard-Vorlagen für Webador liegen bereit (siehe vorige Session-Nachrichten)
+Alle folgenden Sektionen sind **komplett raus** aus der Startseite:
+- „Julia · Bergles · 2026 / Ich teile was mir geholfen hat" (Hero-Prosa links)
+- Pfeile-Prosa „Corona → Orthorexie → …" (Hero-Prosa rechts)
+- Masterclass-Herzstück-Section (12 Wochenmodule + 5 Termine groß)
+- Seelenbauch-Weg-Section (6 Stationen Verstehen→Beobachten→…)
+- TerraLuna App Dark-Section
+- @julia_bergles Instagram-Button (im Blog-Teaser)
+- Full-Bleed Piazza-Bild
+
+**Hero-Bild:** neu `images/portraits/julia-blau-blick.jpg` (IMG_8973 — nach oben links schauend, dunkler Schrank im Hintergrund). Hero-Content jetzt **links** (frei von Julias Kopf im Bild).
+
+**Neue Hero-Prosa unter der Headline:**
+> „Hey, ich bin Julia. Ich teile hier meine Erfahrungen über Reizdarm, PMS, Blähbauch, Histamin und Darmprobleme."
+
+**Angebote-Section:**
+- Headline: „So kam ich zurück zu MIR."
+- 4 Cards nebeneinander (nicht mehr 3+1), **radikal minimal**: nur Bild + Titel + Pfeil, kein Beschreibungstext, kein Preis. Seelenbauchbuch · Seelenküche Kochbuch · Seelenbauch Kurs (featured) · TerraLuna App.
+- Kurs-Card-Text und Call-CTA-Banner zeigen jetzt auf **smacado.de/seelenbauch-kurs** (vorher Vercel).
+
+**Kochbuch-Banner oben:** „Neu · Mein Kochbuch Seelenküche" + „80 histaminarme & glutenfreie Seelenrezepte" (statt vorher „jetzt vorbestellen · Hardcover DIN A4 · 29,99 €").
+
+### Nav aufgeräumt (alle 90 Seiten)
+
+- **Shop-Dropdown:** flache Liste ohne Zwischen-Header (Übersicht · Seelenbauchbuch · Kochbuch · Tagebuch · Notizbuch · Bundles)
+- **Empfehlungen:** als eigener Top-Level-Nav-Punkt zwischen App und Shop (vorher in „Mehr"-Dropdown versteckt)
+- „Mehr"-Dropdown reduziert auf: 1:1 Gespräch · Kunst
+- **Nº-Nummerierungen (Nº 01, Nº 02…) global entfernt:** 228 Replacements auf 90 Seiten (103 Prefix-Removals + 125 Standalone-Spans)
+
+### ebooks.html entrumpelt
+
+- „Shop"-Eyebrow + Hero-Prosa „Bücher, Tagebuch, Notizbuch…" raus
+- „Mein Shop"-Eyebrow über der Übersicht raus
+- **6 Produkt-Cards verkürzt** auf nur Cover + Titel + Preis + CTA (keine Beschreibungen mehr)
+- Buecher-Grid von 4 auf 3 Spalten (2 Reihen à 3 Cards)
+- Gelschreiber-Addon-Hinweis-Box raus
+- „Warum meine Bücher"-Sektion + WhatsApp-Community-Button komplett raus
+- Kochbuch-Vorbestellungs-Text neu: „Das Buch wird direkt nach dem Launch zu dir geliefert. Dies ist schon eine endgültige Bestellung." (statt „Zahlung erst bei Versand")
+- „Per WhatsApp vorbestellen" → „Fragen per WhatsApp"
+
+### Produkt-Fotos eingebaut
+
+- `images/notizbuch-cover.jpg` — Vorderseite (Spiralbindung mit Blumen + „Seelenbauch"-Schrift)
+- `images/notizbuch-rueckseite.jpg` — Rückseite (Line-Art-Illustration)
+- `images/tagebuch-cover.png` — Line-Art-Illustration mit Tulpen + „Seelenbauch"-Schrift auf Beige
+- `images/bundles/duo-kochbuch-notizbuch.png`
+- `images/bundles/trio-buch-notizbuch-kochbuch.png`
+- `images/bundles/duo-buch-notizbuch.png`
+
+Alle verwendet in jeweiligen Produkt-Hero-Blocks und Shop-Übersichts-Cards.
+
+### Produkt-Detail-Seiten entrumpelt
+
+**notizbuch.html** — Hero-Eyebrow „Nº 03 · Shop" + „Für alles, was dir durch den Kopf geht"-Hero-Prosa + Chapter-Num „Nº 03 · Notizbuch" + „Bewusst schlicht gehalten"-Prosa + „Klassische Begleitung"-Prosa + Mail-Hinweis + Versand-Text raus. H2 „Für alles, was Raum braucht" → „Seelenbauch Notizbuch." Gelschreiber-Box → nur noch „9,99 € · Gelschreiber ist dabei".
+
+**tagebuch.html + bundles.html** — Beige Hero-Platzhalter mit Serif-Schriftzügen („Das Tagebuch", „Das Duo", „Das Komplett-Set") → entweder reines Beige ohne Schrift ODER echte Fotos.
+
+**app.html** — Info-Text aktualisiert (bei App-Problem neu installieren statt Scanner-Fix, Kontakt via WhatsApp statt Instagram/Mail). „E-Book gratis zur App"-Bonus-Sektion mit Kaufbeleg-Flow komplett raus.
+
+**ueber-mich.html** — „Ganze Geschichte im E-Book Die Probe"-Button raus.
+
+### Kurs-Struktur umgestellt (final 2 Pakete)
+
+**Alte Struktur raus:**
+- 3 Pakete Winterspecial: Basic 325 € / Gruppenkurs 699 € / Seelenbauch Kurs 825 €
+- Rolling Entry: Self Study 399 € / Seelenbauch 1:1 780 €
+- Early-Bird-Bonus (ersetzt durch Einführungspreis)
+
+**Neue Struktur:**
+- **Seelenbauchkurs (Gruppe)** · 525 € · max. 6 Plätze · Raten 3×185 oder 6×93 — Dashboard-Module + Seelenbauch-Momente + Seelenbauchbuch als E-Book + TerraLuna App 6 Mo + Community + alle 5 Gruppen-/Kohorten-Calls. **Keine 1:1-Termine.**
+- **Seelenbauch 1:1** · 499 € **Einführungspreis** · nur 4 Plätze · Raten 3×175 oder 6×88 — Alles aus Gruppe plus Kennenlern-Call + Einstiegs-Call + Abschluss-Call + persönliche WhatsApp-Begleitung 3 Monate + Sonntags-Impuls + gedrucktes Buch + individuelles Ernährungstagebuch + Erinnerungsbox + persönliches Post-Paket. Weitere Einzel-Calls bei Bedarf 30 €/Call.
+- Winterkohorte 01.11.2026 – 01.02.2027 · Weihnachtspause 24.12.2026 – 01.01.2027
+
+### Rechtstexte (AGB + Datenschutz + Widerruf) · Stand Oktober 2026
+
+**AGB (`agb.html`):**
+- § 1 Geltungsbereich erweitert um Shop smacado.de
+- § 2.5 Shop NEU (Webador, DHL, Zahlungsdienstleister, Kleinunternehmerin)
+- § 5c komplett neu auf 2-Pakete-Struktur (Gruppe + 1:1) + „Herbstspecial" → „Winterkohorte"
+- § 5c.1 + § 5c.5 Versand nur noch beim 1:1
+- § 5c.8 Early-Bird raus
+- § 5d Rolling Entry komplett raus
+- **§ 10 Medizinischer Haftungsausschluss** komplett neu — gilt jetzt für **alle Angebote** (App, Kurs, Bücher, Rezepte, Shop, juliabergles.de): „Ich bin keine Ärztin, Therapeutin, Heilpraktikerin…"
+- **§ 10a Individuelle Verträglichkeit** NEU — Sighi-Skala-Orientierung, Rezept-Haftungsausschluss, „teste schrittweise", keine Haftung für Reaktionen
+- **§ 10b Coaching + WhatsApp** NEU — Peer-Support, kein Coaching im Berufssinne, kein Ernährungsberater (Heilpraktiker-Gesetz-Schutz)
+
+**Datenschutz (`datenschutz.html`):**
+- § 2 Geltungsbereich um Shop smacado.de erweitert
+- **§ 3a Shop smacado.de** NEU — komplette Datenverarbeitung Webador + Stripe/PayPal/Klarna + DHL + 10 Jahre Aufbewahrung + Kleinunternehmerin
+
+**Widerruf (`widerruf.html`):**
+- Verweise auf alte 5-Paket-Struktur ersetzt durch Winterkohorte 2026/2027 (Gruppe + 1:1)
+- Noch offen: physische Shop-Produkte Widerrufsrecht-Section erweitern (14 Tage, Muster-Formular, Rücksendekosten)
+
+**Alle drei:** Stand jetzt „Oktober 2026".
+
+### Billbee-Lexware-Anbindung (offen, nicht jetzt)
+
+Für automatische Rechnungserstellung + Lexware-Sync wäre Billbee (~9,90 €/Mo) später sinnvoll. Aber: nicht jetzt. Erst wenn Bestellvolumen reicht (~15+/Monat). Bis dahin: Rechnungen manuell in Lexware eintippen anhand Webador-Bestelldaten.
 
 ### Phase 1 (abgeschlossen 08.10.)
 
@@ -595,18 +690,27 @@ Alle auf Stand September 2026:
 ### Content
 - [ ] **Cover-Bild für Zyklus-Leitfaden** (aktuell Placeholder) — Julia liefert
 - [ ] **Zyklus-Leitfaden Inhalt** — Zip + PDF liegen jetzt in `E-Book Zyklus und Histamin/` (versehentlich mit `git add -A` am 27.09. Abend committet, sind damit auf GitHub Pages public). Wenn Julia den Inhalt lieber privat hätte: per `git rm` + neuem Commit rausnehmen. Ansonsten entpacken und einbauen.
-- [ ] Konkrete Snacks im **Überraschungspaket** in AGB § 5c.5 benennen (optional)
 - [ ] **Kurs-Screenshots** für Landing (histamin-masterclass.html) — Julia macht 3–5 Screenshots vom Dashboard etc. und legt sie in `images/masterclass/`
-- [ ] Uhrzeiten für Austausch-Call 14.11. und Abschluss-Call 19.12. sind fix (jeweils 18:30) — Uhrzeit für Start-Call 04.10. ist 10 Uhr
+- [ ] **Visitenkarte** — Julia überlegt. Vorgeschlagen: 250–500 Stück bei moo.com / Flyeralarm / Vistaprint, Editorial-Look (Cream + Malaga, Cormorant + Manrope), Vorderseite Logo + Tagline, Rückseite Website + Insta + Mail + WhatsApp.
+- [ ] **Flyer** — eher noch nicht (kein Verteil-Kanal). Erst sinnvoll bei konkretem Plan (HistaFood Paket-Beilage, Messe, Ärzte-Praxis).
 
 ### Vercel (in `~/Projects/terra-luna-masterclass`)
-- [ ] Anmeldeformular auf 3 aktuelle Pakete (Klein/Mittel/VIP) umstellen — Self-Study/1:1 sind Legacy
-- [ ] Preise aktualisieren (325/699/825 + Early-Bird)
+- [ ] **Anmeldeformular auf 2 aktuelle Pakete umstellen** (Seelenbauchkurs Gruppe 525 € + Seelenbauch 1:1 499 € Einführungspreis) — alte Herbstspecial 325/699/825 € + Rolling Entry 399/780 € sind Legacy, schon aus juliabergles.de raus
 - [ ] Kursbereich mit Cards + Live-Calls + Notizen
-- [ ] Digistore24-Integration für automatisierte Zahlung
+- [ ] Digistore24-Integration für automatisierte Zahlung (optional — Webador übernimmt Zahlung schon für die anderen Produkte, Vercel-Formular könnte zu Webador-Kurs-URL weiterleiten)
 - [ ] Julia hat parallel Änderungen an `dashboard-client.tsx`, `weeks.ts`, `week-cards.tsx` — unstaged (nicht anfassen ohne Nachfrage)
 
 ### juliabergles.de
+- [x] ~~Shop auf Webador (smacado.de) komplett verlinkt~~ 10.–12.10. — alle Produkt-Buttons + Bundle-Buttons + Kurs-Button auf spezifische Webador-URLs
+- [x] ~~Startseite entrumpelt~~ 10.–12.10. — Masterclass-Herzstück + Seelenbauch-Weg + App-Dark-Section + Piazza-Bild + Instagram-Button alle raus
+- [x] ~~Hero-Bild + Hero-Prosa neu~~ 11.10. — `julia-blau-blick.jpg` (IMG_8973) + „Hey, ich bin Julia…"
+- [x] ~~Angebote-Section radikal minimal~~ 11.10. — 4 Cards nebeneinander, nur Bild + Titel + Pfeil, Headline „So kam ich zurück zu MIR."
+- [x] ~~Nº 01/02/03… Nummerierungen global entfernt~~ 10.10. — 228 Replacements auf 90 Seiten
+- [x] ~~Nav: Empfehlungen eigener Punkt + Shop flache Liste~~ 10.10. — auf 90 Seiten konsistent
+- [x] ~~ebooks.html entrumpelt~~ 10.10. — Hero-Prosa + Mein-Shop-Eyebrow + Gelschreiber-Box + Warum-meine-Bücher-Section raus, Produkt-Cards verkürzt, Grid 3-spaltig
+- [x] ~~3 Bundles mit Fotos + neuen Preisen~~ 11.–12.10. — DUO-Kreativ 37,99 · DUO-Relax 32,99 · Trio 59,99
+- [x] ~~Notizbuch + Tagebuch Cover-Fotos integriert~~ 11.10.
+- [x] ~~Rechtstexte komplett verstärkt~~ 12.10. — AGB § 10 + § 10a + § 10b (Haftung Bücher/Rezepte/Coaching), Datenschutz § 3a (Shop smacado.de), Kurs-Preise auf 2 Pakete umgestellt, Stand Oktober 2026
 - [x] ~~Nav vereinheitlicht auf 88 Seiten~~ 28.09. — Master-Nav aus index.html, keine Nav-Wechsel mehr zwischen Seiten
 - [x] ~~„Zum Kurs" + „Anmeldung" auf Vercel umgebogen~~ 28.09.
 - [x] ~~Live Calls aus Nav raus~~ 28.09. — Datei bleibt, kann reaktiviert werden
@@ -628,14 +732,15 @@ Alle auf Stand September 2026:
 - [x] ~~5 neue App-Screenshots integriert~~ 28.09. nachmittags
 - [x] ~~ebooks.html vereinfacht (3 alte Sektionen raus)~~ 28.09. nachmittags
 - [x] ~~Blog-Sektion Intro raus~~ 28.09. nachmittags
-- [ ] **Restliche Portrait-Bilder** (IMG_9707 verschwommen, IMG_9720 Rückansicht, Innenraum-Selfie-Serie 8865/8869/8872/8975/8978) noch nicht integriert
+- [ ] **Restliche Portrait-Bilder** (IMG_9707 verschwommen, IMG_9720 Rückansicht, IMG_8869/8872/8975/8978 Innenraum-Selfie-Serie) noch nicht integriert
 - [ ] **Zyklus-Leitfaden PDF-Inhalt** — Zip + PDF in `E-Book Zyklus und Histamin/` (versehentlich mit `git add -A` committet, auf GitHub Pages public). Julia entscheidet: privat oder als Download-Link einbauen. **Aktuell:** wird per WhatsApp auf Anfrage von Julia manuell versendet.
 - [ ] **Kurs-Screenshots** für `histamin-masterclass.html`
-- [ ] **`histamin-masterclass.html` Kurs-Landing** — aktuell nicht mehr aus Nav verlinkt. Löschen oder ausbauen? Offen.
-- [ ] **Zyklus als eigene App-Feature-Card?** `zyklus-neu.png` liegt bereit, aktuell nicht auf App-Seite integriert
-- [ ] AGB rechtlich von Anwalt prüfen lassen
-- [ ] Uhrzeit für Start-Call vs. andere Termine harmonisieren
-- [ ] **Handy-Test:** die neuen Sektionen (Pain-Karussell, Themen Instagram-Grid, Bücher 3-Card, App-Feature-Grid) sind responsive geschrieben, aber noch nicht live auf Handy verifiziert
+- [ ] **`histamin-masterclass.html` Kurs-Landing** — aktuell nicht aus Nav verlinkt, dient als Content-Landing für smacado.de/seelenbauch-kurs. Könnte komplett auf 2-Pakete-Struktur umgebaut werden (525/499).
+- [ ] **Shopify-Account killen** — Julia hat Trial angelegt am 08.10., jetzt deaktivieren bevor Kreditkarte belastet wird
+- [ ] **widerruf.html** um physische Shop-Produkte erweitern (14 Tage, Muster-Formular, Rücksendekosten)
+- [ ] **AGB rechtlich von Anwalt prüfen lassen** — besonders § 10a Verträglichkeits-Haftung + § 10b Coaching/WhatsApp
+- [ ] **Billbee + Lexware anbinden** — später wenn Bestellvolumen reicht (~15+/Monat)
+- [ ] **Handy-Test** aller neuen Sektionen (Hero-Bildwechsel, Angebote 4-in-Reihe, Bundle-Seite mit Fotos, ebooks 3-Spalten-Grid)
 
 ---
 
