@@ -34,9 +34,10 @@
           <li><a href="ebooks.html#seelenkueche" class="dropdown-featured">★ Kochbuch Seelenküche</a></li>
           <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
           <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
           <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
           <li><a href="rezepte/mealprep/">Mealprep</a></li>
-          <li><a href="rezepte/suesses/">Süßes</a></li>
         </ul>
       </li>
       <li class="has-dropdown">
@@ -105,7 +106,7 @@
 </header>
 
 <!-- Kategorien Instagram-Post-Stil mit Rezept-Bild als Section-BG + transparente Karten -->
-<section class="section" style="position: relative; overflow: hidden; padding: clamp(80px, 12vw, 140px) 0; background: #2a2a2a;">
+<section class="section" style="position: relative; overflow: hidden; padding: clamp(60px, 10vw, 120px) 0; background: #2a2a2a;">
   <div style="position: absolute; inset: 0; z-index: 0;">
     <img src="images/rezepte/rote-bete.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35;">
   </div>
@@ -138,21 +139,9 @@
         <h3 class="themen-title">Mealprep</h3>
         <p class="themen-desc">Zum Vorbereiten für die Woche. Ohne dass Histamin hochgeht.</p>
       </a>
-      <a href="rezepte/suesses/" class="themen-block">
-        <h3 class="themen-title">Süßes</h3>
-        <p class="themen-desc">Schokoetwas · Apfelwolken · Eis.</p>
-      </a>
-      <a href="rezepte/gebaeck/" class="themen-block">
-        <h3 class="themen-title">Gebäck</h3>
-        <p class="themen-desc">Protein-Brot · Knäckebrot — glutenfrei und verträglich.</p>
-      </a>
       <a href="rezepte/salate/" class="themen-block">
         <h3 class="themen-title">Salate</h3>
-        <p class="themen-desc">Süßkartoffel-Salat mit Quark und Hüttenkäse.</p>
-      </a>
-      <a href="rezepte/huettenkaese/" class="themen-block">
-        <h3 class="themen-title">Hüttenkäse</h3>
-        <p class="themen-desc">Rezepte mit körnigem Frischkäse — proteinreich und histaminarm.</p>
+        <p class="themen-desc">High-Protein-Kartoffelsalat ohne Mayo.</p>
       </a>
       <a href="ebooks.html#seelenkueche" class="themen-block themen-block-featured">
         <span class="themen-num">Nº 10 ★</span>
@@ -164,15 +153,125 @@
 </section>
 
 <style>
+  /* --- Rezept-Kategorien-Grid (Desktop + Mobile) --- */
+  .themen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .themen-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 28px;
+    background: rgba(255, 252, 249, 0.95);
+    border: 1px solid rgba(255, 252, 249, 0.4);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--dark);
+    min-height: 190px;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+  }
+  .themen-block:hover {
+    background: var(--cream);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  }
+  .themen-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.1;
+    color: var(--dark);
+    margin: 0 0 10px;
+  }
+  .themen-desc {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--dark-soft);
+    margin: 0 0 20px;
+    flex: 1;
+  }
+  .themen-block::after {
+    content: "Zum Rezept →";
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper-dark);
+  }
+  .themen-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--copper-dark);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 6px;
+  }
   .themen-block-featured {
-    border: 1px solid rgba(196, 139, 108, 0.6) !important;
-    background: rgba(196, 139, 108, 0.15) !important;
+    border: 1px solid var(--copper) !important;
+    background: rgba(196, 139, 108, 0.95) !important;
+    color: var(--cream) !important;
+    grid-column: span 1;
   }
   .themen-block-featured:hover {
-    background: rgba(196, 139, 108, 0.28) !important;
+    background: var(--copper-dark) !important;
+  }
+  .themen-block-featured .themen-title,
+  .themen-block-featured .themen-desc {
+    color: var(--cream);
   }
   .themen-block-featured .themen-num {
-    color: #e8c3a8 !important;
+    color: var(--cream) !important;
+    opacity: 0.85;
+  }
+  .themen-block-featured::after {
+    color: var(--cream);
+  }
+
+  @media (max-width: 1000px) {
+    .themen-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .themen-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 480px;
+    }
+    .themen-block {
+      padding: 26px 22px;
+      min-height: 0;
+      background: var(--cream);
+      border: 2px solid var(--copper);
+    }
+    .themen-block:hover {
+      transform: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+    .themen-title {
+      font-size: 26px;
+    }
+    .themen-desc {
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .themen-block::after {
+      font-size: 11px;
+    }
+    .themen-block-featured {
+      background: var(--copper) !important;
+      border-color: var(--copper-dark) !important;
+    }
   }
 </style>
 
