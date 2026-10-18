@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seelenküche · Kochbuch · Julia Bergles</title>
+<meta name="description" content="Mein Kochbuch Seelenküche: Über 80 histaminarme, glutenfreie Rezepte für die ganze Familie. Hardcover DIN A4. Jetzt vorbestellen für 32,99 €.">
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  .btn-xl {
+    display: inline-block;
+    padding: 28px 56px;
+    font-size: clamp(18px, 2.4vw, 24px);
+    font-family: var(--sans);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: var(--copper);
+    color: var(--cream);
+    border: 2px solid var(--copper);
+    text-decoration: none;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .btn-xl:hover {
+    background: var(--copper-dark);
+    border-color: var(--copper-dark);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Themen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS &amp; Zyklus</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html" class="dropdown-featured">★ Kochbuch Seelenküche</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Kurs ★ <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="https://terra-luna-masterclass.vercel.app/">Zum Kurs</a></li>
+          <li><a href="https://terra-luna-masterclass.vercel.app/anmeldung">Anmeldung</a></li>
+        </ul>
+      </li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html">Seelenküche · Kochbuch</a></li>
+          <li><a href="seelenbauch-workbook.html">Seelenbauch Workbook</a></li>
+          <li><a href="seelenbauchbuch.html">Seelenbauchbuch</a></li>
+          <li><a href="tagebuch.html">Tagebuch</a></li>
+          <li><a href="notizbuch.html">Notizbuch</a></li>
+          <li><a href="bundles.html" class="dropdown-featured">★ Seelenbauch-Bundles</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Mehr <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="gespraech.html">1:1 Gespräch</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero-editorial" style="min-height: 60vh;">
+  <div class="hero-bg" style="background: linear-gradient(160deg, #c48b6c 0%, #a87556 100%);"></div>
+  <div class="container hero-content">
+    <div class="grid-hero">
+      <div>
+        <span class="eyebrow eyebrow-line" style="color: var(--cream);">Kochbuch · Vorbestellen</span>
+      </div>
+      <div>
+        <h1 class="display" style="color: var(--cream);">Die <em class="italic">Seelenküche</em>.</h1>
+        <p class="mt-md" style="color: rgba(255,252,249,0.92); max-width: 44ch; line-height: 1.7;">
+          Mein neues Kochbuch. Über 80 histaminarme und gleichzeitig glutenfreie Rezepte für die ganze Familie.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PRODUKT-DETAIL -->
+<section class="section section-cream" id="produkt">
+  <div class="container">
+    <div class="grid-2" style="align-items: center;">
+      <div class="img-block" style="box-shadow: 0 20px 60px rgba(42,42,42,0.15);">
+        <img src="images/seelenkueche/cover.jpg" alt="Seelenküche · Über 80 Rezepte für die Seele — Cover" style="display: block; width: 100%; height: auto;">
+      </div>
+      <div>
+        <span class="chapter-num">Über 80 Rezepte · Hardcover DIN A4</span>
+        <h2 class="mt-sm">Für alle, die mehr als nur <em class="italic">Reis und Hähnchen</em> essen wollen.</h2>
+
+        <div class="mt-lg" style="padding: 20px 24px; background: var(--beige); border-left: 3px solid var(--copper);">
+          <span class="eyebrow eyebrow-copper">Was drin ist</span>
+          <ul style="list-style: none; padding: 0; margin-top: 12px; font-size: 15px; line-height: 1.85;">
+            <li>· Über 80 histaminarme, glutenfreie Rezepte für die ganze Familie</li>
+            <li>· Alle vegetarisch &amp; alltagstauglich</li>
+            <li>· Alle Rezepte gut verträglich (primär Sighi 0)</li>
+            <li>· Ohne Industriezucker</li>
+            <li>· Protein- und nährstoffreich</li>
+            <li>· Nahezu eifrei (nur eine Handvoll Rezepte mit Ei)</li>
+            <li>· Lebensmittel-Listen gefiltert nach <strong>Laktose, Fructose, FODMAP und vegan</strong></li>
+            <li>· Rezepte mit Filtern: Laktose · FODMAP · Fructose · vegan</li>
+            <li>· Zyklustauglich · entzündungshemmend · ausgewogen</li>
+            <li>· Dinkelmehl möglich, wenn du es verträgst</li>
+            <li>· <strong>Hardcover im DIN-A4-Format</strong></li>
+          </ul>
+        </div>
+
+        <p class="mt-md text-mute" style="font-size: 13px;">
+          Viele Rezepte enthalten Milchprodukte. Wenn du keine Milchprodukte verträgst, ist das Buch eher nicht für dich geeignet. Alle Rezepte sind dafür mit laktosefreien Milchprodukten machbar.
+        </p>
+
+        <div class="mt-lg" style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="https://www.smacado.de/seelenkueche-kochbuch" class="btn btn-copper">Jetzt vorbestellen · 32,99 €</a>
+          <a href="https://wa.me/4915118515394?text=Hallo%20Julia%2C%20ich%20habe%20eine%20Frage%20zu%20deinem%20Kochbuch%20Seelenk%C3%BCche." class="btn btn-outline">Fragen per WhatsApp</a>
+        </div>
+
+        <p class="mt-md" style="font-family: var(--serif); font-style: italic; color: var(--copper-dark); font-size: 15px;">
+          Aktuell <strong style="font-style: normal; font-family: var(--sans); font-weight: 700; letter-spacing: 0.02em;">in Arbeit</strong> — Vorbestellen jetzt möglich.
+        </p>
+
+        <p class="mt-md text-mute" style="font-size: 13px;">
+          Das Buch wird direkt nach dem Launch zu dir geliefert. Dies ist schon eine endgültige Bestellung. Versand mit DHL · <strong>4,19 €</strong> Standard oder <strong>6,19 €</strong> mit Sendungsverfolgung. Bezahlung und Bestellabwicklung läuft direkt über den Shop auf <a href="https://www.smacado.de" style="color: var(--copper-dark); text-decoration: underline;">smacado.de</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUTTON-CTA: Das erwartet dich -->
+<section class="section section-beige" style="padding: clamp(60px, 10vw, 100px) 0; text-align: center;">
+  <div class="container">
+    <a href="#details" class="btn-xl">Das erwartet dich in deinem Kochbuch →</a>
+  </div>
+</section>
+
+<!-- DETAIL-SEKTIONEN -->
+<section class="section section-cream" id="details">
+  <div class="container">
+
+    <!-- DAS ERWARTET DICH -->
+    <div>
+      <div class="text-center mb-lg">
+        <span class="eyebrow eyebrow-copper">Was dich erwartet</span>
+        <h2 class="mt-sm">Das erwartet dich in <em class="italic">deinem Kochbuch</em>.</h2>
+      </div>
+
+      <div class="mt-lg" style="max-width: 780px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; gap: 48px;">
+
+        <div>
+          <span class="chapter-num">Nº 01</span>
+          <h3 class="mt-sm" style="font-size: 24px;">Meine persönliche Geschichte</h3>
+          <p class="mt-md">
+            Erfahre, wie es bei mir überhaupt dazu kam, mich intensiv mit Histamin und Ernährung zu beschäftigen. Ich teile meine Erfahrungen und zeige dir, warum dieses Kochbuch entstanden ist.
+          </p>
+        </div>
+
+        <div>
+          <span class="chapter-num">Nº 02</span>
+          <h3 class="mt-sm" style="font-size: 24px;">Deine Lebensmittelliste für mehr Orientierung</h3>
+          <p class="mt-md">
+            Du erhältst eine praktische Übersicht mit Lebensmitteln, die bei einer Histaminintoleranz Probleme bereiten können, sowie Lebensmitteln, die häufig besser vertragen werden.
+          </p>
+        </div>
+
+        <div>
+          <span class="chapter-num">Nº 03</span>
+          <h3 class="mt-sm" style="font-size: 24px;">Praktische Alltagstipps</h3>
+          <ul class="mt-md" style="list-style: none; padding: 0; line-height: 1.9;">
+            <li>· <strong>Meal Prep bei Histamin:</strong> So kannst du deine Mahlzeiten besser planen.</li>
+            <li>· <strong>Einfrieren und Aufbewahren:</strong> Worauf du bei der Vorbereitung deiner Gerichte achten solltest.</li>
+            <li>· <strong>Individuelle Anpassungen:</strong> So kannst du Rezepte nach deinen Vorlieben gestalten.</li>
+            <li>· Zusätzliche Sparcodes für ausgewählte Produkte.</li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="chapter-num">Nº 04</span>
+          <h3 class="mt-sm" style="font-size: 24px;">Über 80 kreative Rezepte</h3>
+          <p class="mt-md">
+            Von herzhaften Mahlzeiten über selbst gebackene Brote bis hin zu süßen Snacks und Desserts: Hier ist für viele Gelegenheiten etwas dabei.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- REZEPT-KATEGORIEN -->
+    <div style="margin-top: clamp(80px, 12vw, 140px);">
+      <div class="text-center mb-lg">
+        <span class="eyebrow eyebrow-copper">Rezepte</span>
+        <h2 class="mt-sm">Ein kleiner <em class="italic">Vorgeschmack</em>.</h2>
+      </div>
+
+      <div class="mt-lg" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto;">
+
+        <div style="padding: 24px; background: var(--beige); border-left: 3px solid var(--copper);">
+          <h3 style="font-size: 20px;">Frühstück, Snacks und kleine Mahlzeiten</h3>
+          <ul class="mt-md" style="list-style: none; padding: 0; line-height: 1.9; font-size: 15px;">
+            <li>· Spiegelei-Frühstück mit Wrap</li>
+            <li>· Süßkartoffel-Sandwich</li>
+            <li>· High-Protein-Marmeladen-Skyr-Brot</li>
+            <li>· Maiswaffeln mit Heidelbeer-Topping</li>
+            <li>· Selbst gemachte Kräuterbutter</li>
+            <li>· Frischkäsebällchen und Käseroulade</li>
+            <li>· Radieschenbutter</li>
+            <li>· Lunchbox-Ideen</li>
+            <li>· Apfelschnitze-Snack</li>
+          </ul>
+        </div>
+
+        <div style="padding: 24px; background: var(--beige); border-left: 3px solid var(--copper);">
+          <h3 style="font-size: 20px;">Brot, Brötchen und Gebäck</h3>
+          <ul class="mt-md" style="list-style: none; padding: 0; line-height: 1.9; font-size: 15px;">
+            <li>· Selbst gebackenes Brot mit Maronen-Aufstrich</li>
+            <li>· Bauernbrot, Weißbrot und Vollkornbrot</li>
+            <li>· Hafer-Kastenbrot</li>
+            <li>· Knäckebrot</li>
+            <li>· Kräuterbutter-Baguette</li>
+            <li>· Brezen</li>
+            <li>· Käsebrötchen</li>
+            <li>· Karottenbrötchen</li>
+            <li>· Zucchini-Brötchen und Zucchini-Protein-Brötchen</li>
+            <li>· Vanilleschnecken und Zimtschnecken</li>
+          </ul>
+        </div>
+
+        <div style="padding: 24px; background: var(--beige); border-left: 3px solid var(--copper);">
+          <h3 style="font-size: 20px;">Süße Rezepte und Desserts</h3>
+          <ul class="mt-md" style="list-style: none; padding: 0; line-height: 1.9; font-size: 15px;">
+            <li>· Protein-Kaiserschmarrn sowie Zimt- und Vanille-Kaiserschmarrn</li>
+            <li>· Pfannkuchen und Pancakes</li>
+            <li>· Waffeln</li>
+            <li>· Dampfnudeln und Karotten-Dampfnudeln</li>
+            <li>· Apfelküchlein</li>
+            <li>· Kokoskuchen und Karottenkuchen</li>
+            <li>· Mini-Donuts</li>
+            <li>· Granola</li>
+            <li>· Raffaellos und Energy Balls, auch mit Karotte</li>
+            <li>· Reiswaffel-Tiramisu</li>
+            <li>· Heidelbeer-Pocket aus Reispapier</li>
+            <li>· Eiskaffee und Protein-Eiskaffee</li>
+            <li>· Heidelbeer-Kaffee-Dessert</li>
+            <li>· Aprikosen-Dessert</li>
+            <li>· Käsekuchen und kleine Törtchen</li>
+            <li>· Mango-Eis</li>
+            <li>· Kokosmakronen</li>
+            <li>· Sticky Rice mit Mango</li>
+          </ul>
+        </div>
+
+        <div style="padding: 24px; background: var(--beige); border-left: 3px solid var(--copper);">
+          <h3 style="font-size: 20px;">Herzhaft kochen und genießen</h3>
+          <ul class="mt-md" style="list-style: none; padding: 0; line-height: 1.9; font-size: 15px;">
+            <li>· Rote-Bete-Vorspeise und Rote-Bete-Roulade</li>
+            <li>· Rote-Bete-Pfannkuchen</li>
+            <li>· Zucchini-Suppe und Kürbissuppe</li>
+            <li>· Tomaten-Paprika-Suppe</li>
+            <li>· Zucchini-Aufstrich und Maronen-Aufstrich</li>
+            <li>· Glasierte Karotten</li>
+            <li>· Karotten-Gurken-Salat</li>
+            <li>· Gegrillte Zucchini</li>
+            <li>· Gefüllter Ofenkürbis</li>
+            <li>· Käsefondue im Kürbis</li>
+            <li>· Kartoffelsalat und Süßkartoffelsalat</li>
+            <li>· Veganes Schnitzel mit Süßkartoffel-Pommes und Quark</li>
+            <li>· Pizza</li>
+            <li>· Kässpätzle</li>
+            <li>· Pesto-Nudeln mit Zucchini</li>
+            <li>· Cremige Zucchini-One-Pot-Pfanne</li>
+            <li>· Reis mit Pesto und Reisauflauf</li>
+            <li>· Selbst gemachte Kürbisgnocchi</li>
+            <li>· Sprossenmehl-Burger</li>
+            <li>· Paprikasoße</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GLUTENFREI + PROTEINREICH -->
+    <div style="margin-top: clamp(80px, 12vw, 140px); max-width: 1100px; margin-left: auto; margin-right: auto;">
+      <div class="grid-2" style="gap: 60px; align-items: start;">
+
+        <div>
+          <span class="eyebrow eyebrow-copper">Mehl</span>
+          <h2 class="mt-sm" style="font-size: 28px;">Glutenfrei oder mit <em class="italic">Dinkelmehl</em> — du entscheidest.</h2>
+          <p class="mt-md">
+            Die Rezepte sind glutenfrei konzipiert und lassen sich vielfach auch mit Dinkelmehl zubereiten.
+          </p>
+          <p class="mt-md">
+            Wenn du Dinkelmehl verwenden möchtest, kannst du bei den dafür geeigneten Rezepten die verwendeten Mehle und Speisestärken durch Dinkelmehl ersetzen. Beachte dabei, dass sich Konsistenz und Backeigenschaften verändern können. Dinkel enthält Gluten und ist daher nicht für Menschen mit Zöliakie oder einer medizinisch erforderlichen glutenfreien Ernährung geeignet.
+          </p>
+        </div>
+
+        <div>
+          <span class="eyebrow eyebrow-copper">Süßen</span>
+          <h2 class="mt-sm" style="font-size: 28px;">Proteinreich und ohne klassischen <em class="italic">Industriezucker</em>.</h2>
+          <p class="mt-md">
+            Viele Rezepte setzen auf proteinreiche Zutaten und sind bewusst zuckerarm gestaltet.
+          </p>
+          <p class="mt-md">
+            Zum Süßen verwende ich beispielsweise Monk Fruit, Reissirup oder Kokosblütenzucker. Je nach Rezept kannst du die Süßungsmittel nach deinen Vorlieben austauschen. Beachte dabei, dass Süßkraft, Flüssigkeitsgehalt und Konsistenz variieren können.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FÜR WEN -->
+    <div style="margin-top: clamp(80px, 12vw, 140px); max-width: 780px; margin-left: auto; margin-right: auto;">
+      <div class="text-center mb-lg">
+        <span class="eyebrow eyebrow-copper">Für dich</span>
+        <h2 class="mt-sm">Für wen ist <em class="italic">Seelenküche</em> geeignet?</h2>
+      </div>
+
+      <p class="mt-lg">Für dich, wenn du …</p>
+
+      <ul class="mt-md" style="list-style: none; padding: 0; line-height: 1.95; font-size: 16px;">
+        <li>· dich mit histaminarmer Ernährung beschäftigst;</li>
+        <li>· neue Rezeptideen für deinen Alltag suchst;</li>
+        <li>· gerne selbst Brot, Brötchen und süße Leckereien zubereitest;</li>
+        <li>· praktische Tipps für Meal Prep und das Einfrieren möchtest;</li>
+        <li>· dir mehr Abwechslung auf deinem Teller wünschst;</li>
+        <li>· beim Kochen gerne selbst entscheidest, welche Zutaten du verwendest.</li>
+      </ul>
+
+      <div class="mt-lg" style="padding: 20px 24px; background: var(--beige); border-left: 3px solid var(--copper); font-size: 14px; line-height: 1.7;">
+        <strong>Wichtig:</strong> Die Verträglichkeit von Lebensmitteln ist individuell. Die Rezepte und Lebensmittellisten dienen der Orientierung und ersetzen keine medizinische Beratung. Auch als histaminarm gedachte Rezepte können individuell unverträgliche Zutaten enthalten.
+      </div>
+    </div>
+
+    <!-- BLICK INS BUCH — Vorschau-Galerie -->
+    <div style="margin-top: clamp(80px, 12vw, 140px);">
+      <div class="text-center mb-lg">
+        <span class="eyebrow eyebrow-copper">Blick ins Buch</span>
+        <h2 class="mt-sm">So <em class="italic">sieht es aus.</em></h2>
+        <p class="lead mt-md" style="margin-left: auto; margin-right: auto; max-width: 52ch;">
+          Die Lebensmittel sind nach der Sighi-Liste eingeordnet. Dazu Tauschtabellen für jede Gruppe und farbige Filter-Ecken an jedem Rezept.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 40px auto 0;">
+        <a href="images/seelenkueche/preview-7.jpg" target="_blank" class="img-block" style="box-shadow: 0 10px 30px rgba(42,42,42,0.08); background: var(--cream);">
+          <img src="images/seelenkueche/preview-7.jpg" alt="Seelenküche · Icons und Sighi-Skala erklärt" style="display: block; width: 100%; height: auto;">
+        </a>
+        <a href="images/seelenkueche/preview-8.jpg" target="_blank" class="img-block" style="box-shadow: 0 10px 30px rgba(42,42,42,0.08); background: var(--cream);">
+          <img src="images/seelenkueche/preview-8.jpg" alt="Seelenküche · Tauschtabelle Milchprodukte" style="display: block; width: 100%; height: auto;">
+        </a>
+        <a href="images/seelenkueche/preview-40.jpg" target="_blank" class="img-block" style="box-shadow: 0 10px 30px rgba(42,42,42,0.08); background: var(--cream);">
+          <img src="images/seelenkueche/preview-40.jpg" alt="Seelenküche · Rote-Bete-Rezept" style="display: block; width: 100%; height: auto;">
+        </a>
+        <a href="images/seelenkueche/preview-41.jpg" target="_blank" class="img-block" style="box-shadow: 0 10px 30px rgba(42,42,42,0.08); background: var(--cream);">
+          <img src="images/seelenkueche/preview-41.jpg" alt="Seelenküche · Reiswaffel mit Kräuter-Dip" style="display: block; width: 100%; height: auto;">
+        </a>
+        <a href="images/seelenkueche/preview-79.jpg" target="_blank" class="img-block" style="box-shadow: 0 10px 30px rgba(42,42,42,0.08); background: var(--cream);">
+          <img src="images/seelenkueche/preview-79.jpg" alt="Seelenküche · Knäckebrot aus Samen" style="display: block; width: 100%; height: auto;">
+        </a>
+        <a href="images/seelenkueche/preview-101.jpg" target="_blank" class="img-block" style="box-shadow: 0 10px 30px rgba(42,42,42,0.08); background: var(--cream);">
+          <img src="images/seelenkueche/preview-101.jpg" alt="Seelenküche · Zucchini-Pfanne" style="display: block; width: 100%; height: auto;">
+        </a>
+      </div>
+
+      <p class="text-center mt-lg text-mute" style="font-size: 13px; letter-spacing: 0.08em;">
+        6 Seiten Vorschau · Klick zum Vergrößern
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CROSS-SELLING -->
+<section class="section section-beige">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Das könnte auch passen</span>
+      <h2 class="mt-sm">Dein <em class="italic">Seelenbauch</em> Weg.</h2>
+    </div>
+
+    <div class="mt-lg" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+      <a href="seelenbauch-workbook.html" style="display: block; padding: 32px; background: var(--cream); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--dark); transition: transform 0.3s;">
+        <span class="chapter-num" style="color: var(--copper);">Workbook</span>
+        <h3 class="mt-sm" style="font-size: 22px;">Seelenbauch Workbook</h3>
+        <p class="mt-sm" style="color: var(--dark-soft); font-size: 15px; line-height: 1.6;">
+          12 Wochen Begleitung durch 12 Module. Mit oder ohne persönliche Begleitung.
+        </p>
+        <p class="mt-md" style="color: var(--copper-dark); font-family: var(--sans); font-weight: 700; font-size: 14px;">Zum Workbook →</p>
+      </a>
+      <a href="seelenbauchbuch.html" style="display: block; padding: 32px; background: var(--cream); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--dark); transition: transform 0.3s;">
+        <span class="chapter-num" style="color: var(--copper);">Buch</span>
+        <h3 class="mt-sm" style="font-size: 22px;">Seelenbauchbuch</h3>
+        <p class="mt-sm" style="color: var(--dark-soft); font-size: 15px; line-height: 1.6;">
+          Dein kompakter Begleiter für mehr Verständnis und Vertrauen in deinen Körper.
+        </p>
+        <p class="mt-md" style="color: var(--copper-dark); font-family: var(--sans); font-weight: 700; font-size: 14px;">Zum Buch →</p>
+      </a>
+      <a href="app.html" style="display: block; padding: 32px; background: var(--cream); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--dark); transition: transform 0.3s;">
+        <span class="chapter-num" style="color: var(--copper);">App</span>
+        <h3 class="mt-sm" style="font-size: 22px;">TerraLuna</h3>
+        <p class="mt-sm" style="color: var(--dark-soft); font-size: 15px; line-height: 1.6;">
+          Ernährung und Symptome digital festhalten.
+        </p>
+        <p class="mt-md" style="color: var(--copper-dark); font-family: var(--sans); font-weight: 700; font-size: 14px;">Zur App →</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.</p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ebooks.html">Shop</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung. Bei akuten Beschwerden bitte einen Arzt oder Therapeuten kontaktieren.<br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -2,11 +2,118 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-12 (Shop komplett live, Startseite + ebooks.html radikal entrumpelt, 3 Bundles mit Fotos, Rechtstexte verstärkt + Kurs-Preise umgestellt).
+> Letzte Aktualisierung: 2026-10-17 (Rezept-Umbau live, Workbook V7 Review, neues Ernährungsplan-Produkt für Webador, Begleitungsvertrag-Vorlage).
 
 ---
 
-## ⚡ Aktueller Stand · 2026-10-11/12 · Shop + Entrumpelt-Welle + Rechtstexte
+## ⚡ Aktueller Stand · 2026-10-15/17 · Rezept-Umbau + Workbook V7 + Ernährungsplan
+
+### Website · Rezeptebereich komplett überarbeitet (live gepusht)
+
+**Gelöscht (12 Rezepte + 3 ganze Kategorien):**
+- Kategorie **Süßes** komplett (8 Rezepte: Apfelwolken, Tiramisu, Karotten-Dampfnudeln, Karottenkuchen, Mango-Eis, Raffaellos, Schokoetwas, Vanilleschnecken, Zucchini-Schoko-Eis)
+- Kategorie **Gebäck** komplett (8 Rezepte: Bauernbrot, Brezen, Gemüse-Brötchen, Käsebrötchen, Karotten-Brötchen, Knäckebrot, Protein-Brot, Sprossenmehl-Brötchen)
+- Kategorie **Hüttenkäse** komplett (eigene Übersichtsseite)
+- Warme Mahlzeiten: Protein-Zucchini-Pfanne, Winter-Eintopf, Kalte Zucchini-Suppe, Cremige Kürbissuppe, Protein-Zucchini-Nudelpfanne, Cremige Paprikasoße, Mediterrane Paprika-Gemüsepfanne, **Zucchini-Pfanne mit Gemüsebrühe**
+- Salate: Süßkartoffel-Salat, Viraler Kartoffelsalat (hatten Hüttenkäse)
+
+**Rezepte überarbeitet:**
+- Rote-Bete-Teller: komplett neu — Hüttenkäse + Ziegenfrischkäse aus dem Ofen (statt Beluga-Linsen + Pinienkerne)
+- Zucchini-Suppe: Nudeln + Grieß raus, Gemüsebrühe von HistaFood + 250 ml Wasser rein
+- Flammkuchen: Teig + Belag sauber getrennt (zwei Grid-Blöcke)
+- Butter-Snack (ehem. Maiswaffeln mit Butter): Zutaten + Werbehinweis „Spare mit Code Smakado 10"
+- Protein-Pancakes: Beschreibung raus
+- Zucchini-Aufstrich: Formulierung geglättet
+- Gegrillte Zucchini: Link zum Aufstrich-Rezept
+
+**Struktur jetzt:** 7 Rezepte-Kategorien übrig — Frühstück · Snacks · Vorspeisen · Warme Mahlzeiten · Salate · Mealprep · Alternativen. **11 Rezepte** insgesamt.
+
+**Nav-Dropdowns global:** 61 HTML-Dateien automatisch gefixt (Hüttenkäse/Süßes/Gebäck-Links entfernt).
+
+**Mobile Rezept-Übersicht neu gestylt:**
+- Kacheln jetzt **hell** (Cream-Hintergrund + Copper-Rand 2px) statt dunkel-transparent
+- Einspaltig unter 640px, Mindestabstand 16px
+- „Zum Rezept →" Hinweis automatisch über ::after
+- Section-Padding reduziert für schnellere Kategorien-Sichtbarkeit
+
+### Workbook „Zurück zum Seelenbuch" · Reviews V4 → V7
+
+**Status:** Julia arbeitet aktuell am großen Workbook (212 Seiten in V7, in Canva). Mehrere Review-Runden mit Fehlerlisten + Inhaltsverzeichnis-Aufbau.
+
+**Wichtige Dateien im `Seelenbauch Bücher/`-Ordner (iCloud):**
+- `Fehlerliste-V5.txt` — ca. 150 Fehler nach Modulen sortiert (Rechtschreibung, Grammatik, Kommas, Satzbau). Julia hat Modul 1–10 bereits durchgegangen.
+- `Inhaltsverzeichnis-V7-KORREKT.txt` — 4-Seiten-Inhaltsverzeichnis mit **verifizierten Seitenzahlen** (Seite für Seite aus PDF-Bildern geprüft, da pdftotext Canva-Grafiken nicht ausliest).
+
+**V7-Struktur (bestätigt):**
+- S. 3–6: Inhaltsverzeichnis (4 Seiten)
+- S. 7: Impressum · S. 10: About Me · S. 11–20: Meine Geschichte
+- Woche 1 S. 21 → Modul-Titel S. 22
+- Woche 2 S. 36 → Modul 2 S. 37
+- Woche 3 S. 57 → Modul 3 S. 58
+- Vertiefung Woche 4: Allergie? S. 64, Woche 4 Trennblatt S. 65
+- Praxis Woche 5: Was bei Bauchschmerzen hilft S. 78
+- Woche 6 S. 89 → Modul 4 Zyklus S. 90
+- Woche 7 S. 109 → Modul 5 Stress S. 110
+- Woche 8–9 S. 125 → Modul 6 Alltag/Reisen S. 126
+- Woche 10 S. 167 → Modul 7 Muster S. 168
+- **Neue Seite „Wenn Muster tiefer liegen / Kindheitsmuster"** S. 175 (ersetzt die doppelte App-Seite)
+- Modul 8 Langfristige Strategie S. 184, Woche 11 S. 185
+- Modul 9 Bewegung S. 200, Woche 12 S. 199 davor
+- Modul 10 Zukunft S. 203 (Dein Neuanfang) → Rückfallplan S. 204 → Wenn es nicht mehr geht S. 205 → Dein Weg endet nicht S. 206
+
+**Noch zu tun (Julia in Canva):**
+- Fehlerliste komplett durchgehen (Modul 1–10 bereits abgehakt in dieser Session)
+- Inhaltsverzeichnis-Seiten 3–6 mit korrekten V7-Seitenzahlen überschreiben
+- Prüfen: fehlen „Essen – eine Qual" / „Meine Motivation" / „Nichts ist perfekt" bewusst oder sollen sie zurück ins Buch?
+- Beim Durchblättern Startseiten der Module einmal verifizieren
+
+### Neues Produkt in Planung · 12-Wochen-Ernährungsplan auf Webador
+
+**Konzept:** Standard-PDF-Plan mit 5 Varianten zur Auswahl beim Kauf. Kundin wählt im Checkout → bekommt PDF direkt per Mail. Keine Extra-Arbeit pro Verkauf.
+
+**Varianten:**
+1. Histaminarm (Basis)
+2. Histaminarm + Fructose
+3. Histaminarm + Laktose
+4. Histaminarm + MCAS (strenger)
+5. Histaminarm + Reflux
+
+**Preis:** 65,99 € (Julia's Wunsch — kleiner Hinweis von mir: 59,99 oder 69,99 psychologisch stärker, aber Julia entscheidet).
+
+**Inhalt pro Plan:**
+- 12 Wochen Mahlzeiten (Frühstück/Mittag/Abend/Snacks)
+- Wochen-Einkaufslisten
+- Mealprep-Tipps
+- Zyklus-Anpassung PMS-Phase
+- Rabattcodes (HistaFood, Aho.bio, Nigela, Histaminikus)
+
+**Verkaufstext-Entwurf:** bereits geschrieben, Julia muss ihn in Webador einbauen. Später eventuell Upgrade-Variante für +90 € mit Fragebogen + Anpassung.
+
+### Begleitungsvertrag · 1:1-Kurs (Seelenbauch 1:1)
+
+**Neu angelegt:** `_vertraege/begleitungsvereinbarung-vorlage.md`
+
+Rechtlich sauberer Rahmen für die 1:1-Begleitung über 12 Wochen (499 € Einführungspreis). Wichtige Punkte:
+
+- **Klar als „Erfahrungsaustausch" / „Peer-Support" formuliert** — ausdrücklich **keine Heilbehandlung** im Sinne des Heilpraktikergesetzes
+- Julia ist „keine Ärztin, Heilpraktikerin, Ernährungstherapeutin, Psychotherapeutin"
+- Vollständiger Leistungsumfang (Dashboard, WhatsApp-Begleitung, 3 Calls, Erinnerungsbox, Post-Paket)
+- Widerrufsrecht 14 Tage + ausdrücklicher Verzicht bei sofortigem Beginn
+- Datenschutz + Vertraulichkeit (WhatsApp-Nachrichten!)
+- Haftungsausschluss für individuelle Verträglichkeiten
+- Krisen-Klausel (Pflicht zum Hinweis auf prof. Hilfe bei Anzeichen einer Essstörungs-Verschlimmerung)
+- Ratenzahlung 3× oder 6× möglich
+- Anlaufstellen in Krisen aufgelistet
+
+**TODO Julia:**
+- IBAN/BIC einsetzen (§ 3)
+- Datum einsetzen pro Klientin (§ 4)
+- Von Anwalt prüfen lassen vor dem ersten Einsatz (empfohlen)
+- Als PDF exportieren und als Standardvorlage ablegen
+
+---
+
+## ⚡ Vorheriger Stand · 2026-10-11/12 · Shop + Entrumpelt-Welle + Rechtstexte
 
 Riesige Session. Website ist jetzt radikal minimalistischer (Webador-Vibe), Shop vollständig verlinkt, alle Rechtstexte auf Oktober 2026 + Shop-ready.
 
