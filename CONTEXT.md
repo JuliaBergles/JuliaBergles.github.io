@@ -2,11 +2,106 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-17 (Rezept-Umbau live, Workbook V7 Review, neues Ernährungsplan-Produkt für Webador, Begleitungsvertrag-Vorlage).
+> Letzte Aktualisierung: 2026-10-18 (Shop als Produktshop umgebaut: 3 Einzelseiten pro Buch, Vorbestellung komplett, neues Workbook-Produkt, Preise angepasst).
 
 ---
 
-## ⚡ Aktueller Stand · 2026-10-15/17 · Rezept-Umbau + Workbook V7 + Ernährungsplan
+## ⚡ Aktueller Stand · 2026-10-18 · Shop als Produktshop · Vorbestellung komplett
+
+### Preise & Status (alle 3 Hauptbücher auf Vorbestellung)
+
+| Produkt | Preis | Status | URL (Webador) |
+|---|---|---|---|
+| **Seelenküche Kochbuch** | 32,99 € | Vorbestellung (vorher 29,99) | `smacado.de/seelenkueche-kochbuch` |
+| **Seelenbauch Workbook** · NEU | 29,99 € | Vorbestellung | `smacado.de/seelenbauch-workbook` (⚠️ URL noch bestätigen) |
+| **Seelenbauchbuch** | 24,99 € | Vorbestellung (neu — vorher „12 Stück auf Lager") | `smacado.de/seelenbauch-buch` |
+| Seelenbauch Tagebuch | 25,99 € | Lagerware | `smacado.de/tagebuch` |
+| Seelenbauch Notizbuch | 9,99 € | Lagerware | `smacado.de/notizbuch` |
+| DUO-Kreativ (Kochbuch+Notizbuch+Stift) | 37,99 € (statt **44,48**) | Vorbestellung | `smacado.de/product/24487723/seelenbauch-kreativ` |
+| DUO-Relax (Buch+Notizbuch+Stift) | 32,99 € (statt 36,48) | Vorbestellung | `smacado.de/product/24487735/seelenbauch-relax` |
+| Trio (Buch+Kochbuch+Notizbuch+Stift) | 59,99 € (statt **69,47**) | Vorbestellung | `smacado.de/product/24487747/seelenbauch-trio` |
+
+**Statt-Preise bei DUO-Kreativ + Trio an neuen Kochbuchpreis (32,99) angeglichen.** Bundles-Buttons alle auf „Jetzt vorbestellen" (nicht mehr „Jetzt kaufen"), weil mind. ein Vorbestell-Buch drin.
+
+**Noch offen:** Workbook-URL auf Webador — vermutet `smacado.de/seelenbauch-workbook`, muss Julia bestätigen. Bundle-Preise auf Webador: aktuell auf Website wie vorher (37,99 / 59,99 / 32,99) — falls Julia auf Webador andere Preise hat, hier anpassen.
+
+### Shop-Struktur komplett umgebaut (produktshop-Style wie Webador)
+
+**Vorher:** `ebooks.html` war eine Riesen-Scrollseite mit Produktgrid oben + 3 langen Detail-Sektionen (Seelenbauchbuch + Workbook + Kochbuch) auf einer Seite. Nav-Links gingen auf Anchor (`ebooks.html#seelenkueche` etc.) → man hat beim Scrollen auch die anderen Produkte gesehen.
+
+**Jetzt:** 3 Standalone-Produktseiten pro Buch, `ebooks.html` nur noch reine Übersicht.
+
+**Neue Dateien:**
+- `seelenkueche.html` · Kochbuch-Detail · Hero (Copper-Gradient) + Produkt-Grid-2 + **grosser Button-CTA „Das erwartet dich in deinem Kochbuch →"** + 4 Nº-Sektionen + 4 Rezept-Kategorien + Glutenfrei/Proteinreich + Für wen + Blick ins Buch + Cross-Sell
+- `seelenbauch-workbook.html` · Workbook-Detail · Hero (Blau-Gradient) + Produkt + **Button-CTA „Das erwartet dich in den 12 Wochen →"** + 12 Module (Modul 01-10 + Vertiefung + Praxis) + „Dazu in jedem Modul" + Blick ins Workbook + Cross-Sell
+- `seelenbauchbuch.html` · Buch-Detail · Hero (Dark-Gradient) + Produkt + **Button-CTA „Das erwartet dich im Seelenbauch-Buch →"** + 5 Nº-Sektionen + Für wen + Vergleich Buch-vs-Workbook + Dein-Weg-muss-nicht-perfekt + Blick ins Buch + Cross-Sell
+
+**Button-CTA = `.btn-xl`** (lokal pro Seite im `<style>`): 28/56px padding, Copper-BG, Cream-Schrift, ALL CAPS Letter-Spacing 0.04em, smooth-scroll zu `#details` darunter. **Ziel:** Produkt-Hero + CTAs zuerst, dann Klick zum Detail — wie bei Webador.
+
+**ebooks.html verkürzt:** 738 Zeilen Detail-Content entfernt (SEELENBAUCHBUCH + WORKBOOK + SEELENKÜCHE Sektionen), stehen jetzt nur noch auf den Einzelseiten. ebooks.html = Hero + Grid + Footer.
+
+**Produkt-Grid neu sortiert (Shop-mäßig, Kochbuch zuerst):**
+1. Seelenküche Kochbuch (featured, Preorder)
+2. Seelenbauch Workbook (Preorder)
+3. Seelenbauchbuch (Preorder)
+4. Tagebuch (Lagerware)
+5. Notizbuch (Lagerware)
+6. Bundles (featured)
+7. Seelenzyklus (kostenlos, WhatsApp-Freebie)
+
+### Nav sitewide umgestellt (61 Dateien)
+
+**Python-Script mit grep + regex replace:**
+- `ebooks.html#seelenbauchbuch` → `seelenbauchbuch.html`
+- `ebooks.html#seelenkueche` → `seelenkueche.html`
+- `ebooks.html#seelenbauch-workbook` → `seelenbauch-workbook.html`
+- Im Shop-Dropdown: Buch+Kochbuch-Paar ersetzt durch **Kochbuch → Workbook → Buch** (3 Zeilen, Workbook neu dazu)
+
+**Rezepte-Dropdown-Highlight** `★ Kochbuch Seelenküche` zeigt jetzt auf `seelenkueche.html` statt Anchor.
+
+### Workbook-Bilder integriert
+
+**7 Bilder in `images/seelenbauch-workbook/`:**
+- `seelenbauch-workbook-cover.png` · Hero-Bild (Julia mit Pancakes-Bokeh, hält Seelenbauchbuch, Titel SEELENBAUCH WORKBOOK HISTAMIN · IN 12 WOCHEN ZURÜCK ZU DEINEM SEELENBAUCH)
+- `seelenbauch-workbook-1.png` bis `-6.png` · Vorschauseiten (werden in Blick-ins-Workbook-Galerie gezeigt, 3er-Grid)
+
+**Seelenbauchbuch-Cover ersetzt:** `images/seelenbauchbuch/cover.png` ist jetzt das neue Piran-Portrait (Julia mit Brille, hellblaues Top, Titel SEELENBAUCH · HISTAMIN, NERVENSYSTEM & WAS DAZUGEHÖRT · BRINGE DEINEN KÖRPER WIEDER IN BALANCE · WIE SCHAFFE ICH EIN LEBEN OHNE BAUCHSCHMERZEN? INTERAKTIVES BUCH). Alte Cover-Datei überschrieben → index.html + alle Produktkarten automatisch aktualisiert.
+
+### Content-Updates (Julia's eigene Texte eingebaut)
+
+**Kochbuch Seelenküche „Was drin ist":**
+- Über 80 histaminarme, glutenfreie Rezepte für die ganze Familie
+- Alle vegetarisch & alltagstauglich · primär Sighi 0
+- Ohne Industriezucker · Protein- und nährstoffreich
+- Nahezu eifrei (nur eine Handvoll Rezepte mit Ei)
+- Lebensmittel-Listen gefiltert nach Laktose, Fructose, FODMAP, vegan
+- Zyklustauglich · entzündungshemmend · ausgewogen
+- Dinkelmehl möglich, Hardcover DIN A4
+- Hinweis: viele Rezepte enthalten Milchprodukte, laktosefreie Alternativen OK
+
+Zusätzlich: 4 Nº-Punkte (Geschichte · Lebensmittelliste · Alltagstipps · Rezepte), 4 Rezept-Kategorien mit ALLEN Rezept-Namen (Frühstück/Snacks · Brot/Gebäck · Süß/Desserts · Herzhaft).
+
+**Seelenbauchbuch:**
+- Lead: „Der Weg zurück zu deinem Seelenbauch. Dein Leitfaden bei Histaminintoleranz."
+- Headline: „Verstehe deinen Bauch. Verstehe dich selbst."
+- 5 Nº-Sektionen: Darm&Körper · Darm&Seele · Seelenbauch-Teil mit Übungen · Alltagsimpulse · Seelenrezepte
+- Vergleichs-Box „Seelenbauch-Buch oder Seelenbauch-Workbook?" + Abschluss „Dein Weg muss nicht perfekt sein."
+
+**Seelenbauch Workbook:**
+- Lead: „Dein Weg zurück zu dir. 12 Wochen, 12 Module — mit oder ohne persönliche Begleitung."
+- 12 Module: 01 Histamin · 02 Ernährung · 03 Darm/Stoffwechsel · Vertiefung andere Bauchschmerz-Ursachen (SIBO, ARFID, Morbus Crohn…) · Praxis 28 Alltagstipps · 04 Zyklus/Wechseljahre · 05 Stress/Nervensystem · 06 Alltag/Reisen/Restaurants + Notfall-Karten · 07 Muster · 08 Strategie · 09 Bewegung · 10 Zukunft/Kompass
+- „Dazu in jedem Modul": Reflexionsfragen · Seelenbauch-Momente · Wochen-Aufgaben · Notizplatz
+
+### Offene Punkte
+
+- [ ] **Workbook-URL auf Webador bestätigen** (`smacado.de/seelenbauch-workbook` ist Vermutung)
+- [ ] Bundle-Preise auf Webador prüfen — hier auf Website 37,99 / 59,99 / 32,99 unverändert; Statt-Preise an neuen Kochbuchpreis angepasst (44,48 / 69,47)
+- [ ] `index.html` Angebote-Card könnte Workbook noch dazukriegen (steht aktuell nur Buch / Kochbuch / Kurs / App)
+- [ ] `Bilder /` Dropbox-Ordner mit Original-PNGs ist mitcommittet (~16 MB im Repo) — könnte man aufräumen
+
+---
+
+## ⚡ Vorheriger Stand · 2026-10-15/17 · Rezept-Umbau + Workbook V7 + Ernährungsplan
 
 ### Website · Rezeptebereich komplett überarbeitet (live gepusht)
 
