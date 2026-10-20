@@ -47,7 +47,11 @@
 })();
 
 (function () {
-  if (!('IntersectionObserver' in window)) return;
+  // Fallback für ältere Browser ohne IntersectionObserver: alle .reveal sofort sichtbar machen
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
 
   const selectors = [
     'section h2', 'section .lead', 'section .display', 'section h1',
@@ -56,8 +60,8 @@
     '.grid-2 > *', '.grid-3 > *', '.grid-hero > *'
   ];
 
-  const els = document.querySelectorAll(selectors.join(','));
-  els.forEach(el => el.classList.add('reveal'));
+  // Automatische .reveal-Klasse für die Selektoren setzen
+  document.querySelectorAll(selectors.join(',')).forEach(el => el.classList.add('reveal'));
 
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -68,5 +72,15 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  els.forEach(el => obs.observe(el));
+  // ALLE .reveal-Elemente beobachten (auch manuell gesetzte, z.B. Formulare)
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Zusätzlicher Fallback: nach 2 Sekunden alle noch unsichtbaren .reveal zwangs-anzeigen
+  // (falls Observer aus irgendeinem Grund nicht triggert, z.B. bei lang gescrollten Seiten)
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  }, 2000);
 })();
