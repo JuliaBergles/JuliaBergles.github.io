@@ -668,11 +668,15 @@
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify(asObj)
       });
-      if (res.ok) {
+      // Response-JSON parsen (Formspree gibt { ok: true } oder { errors: [...] })
+      const data = await res.json().catch(() => ({}));
+      const success = res.ok || data.ok === true || data.next;
+      if (success) {
         successBox.classList.add('visible');
         form.style.display = 'none';
         successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
+        console.warn('[retreat form] formspree response:', res.status, data);
         throw new Error('Submit failed');
       }
     } catch (err) {
