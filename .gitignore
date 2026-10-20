@@ -14,3 +14,6 @@ _archiv/
 # Seelenkueche-Kochbuch Roh-PNGs (~100MB) — nur web-optimierte JPGs ins Repo
 images/seelenkueche/Kochbuch/
 images/seelenkueche/Kochbuch.zip
+
+# Retreat-Rohbilder (HEIC) — nur die konvertierten JPGs in images/retreat/ ins Repo
+/Retreat/

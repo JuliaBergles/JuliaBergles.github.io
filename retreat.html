@@ -17,12 +17,15 @@
     // Veranstaltungsort — leicht änderbar
     ort:        "Wehringen bei Augsburg",
     adresse:    "Singoldstraße 5a, 86517 Wehringen",
-    datum:      "21. November 2026",
+    datum:      "Samstag, 21. November 2026",
     datumIso:   "2026-11-21",
     beginn:     "15:00 Uhr",
+    ende:       "ca. 20:00 Uhr",
     preis:      "99 €",
     maxTeilnehmer: 12,
     uebernachtung: "15 € (inkl. Frühstück)",
+    whatsapp:   "+49 1511 8515 594",
+    whatsappLink: "https://wa.me/4915118515594",
 
     // Formular-Zielort:
     //   Variante A — Formspree: hier eine echte Formspree-URL eintragen (https://formspree.io/f/XXXXXX)
@@ -71,15 +74,24 @@
     color: var(--cream);
   }
 
-  /* Hero mit warmem Herbst-Gradient (bis Julia Fotos liefert) */
+  /* Hero mit Foto vom Veranstaltungsort (bei Julia zuhause) */
   .retreat-hero {
     background:
       linear-gradient(135deg,
-        rgba(42,42,42,0.55) 0%,
-        rgba(139,46,62,0.35) 55%,
-        rgba(196,139,108,0.4) 100%),
-      linear-gradient(160deg, #8B2E3E 0%, #a87556 50%, #d9c7b2 100%);
+        rgba(42,42,42,0.65) 0%,
+        rgba(42,42,42,0.45) 55%,
+        rgba(42,42,42,0.55) 100%),
+      url('images/retreat/ort-1.jpg') center/cover no-repeat;
     min-height: 88vh;
+  }
+  @media (max-width: 900px) {
+    .retreat-hero {
+      background:
+        linear-gradient(135deg,
+          rgba(42,42,42,0.7) 0%,
+          rgba(42,42,42,0.55) 100%),
+        url('images/retreat/ort-1.jpg') center/cover no-repeat;
+    }
   }
 
   /* Fact-Chip-Row direkt im Hero */
@@ -525,6 +537,54 @@
     margin-top: 8px;
   }
 
+  /* Ort-Galerie */
+  .ort-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+    aspect-ratio: 3/2;
+  }
+  .ort-image {
+    overflow: hidden;
+    background: var(--beige);
+  }
+  .ort-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .ort-image:hover img { transform: scale(1.04); }
+  .ort-image.ort-main {
+    grid-row: 1 / 3;
+  }
+  @media (max-width: 700px) {
+    .ort-gallery {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      aspect-ratio: auto;
+    }
+    .ort-image { aspect-ratio: 4/3; }
+    .ort-image.ort-main { grid-row: auto; aspect-ratio: 4/3; }
+  }
+
+  /* Flyer */
+  .flyer-wrap {
+    max-width: 540px;
+    margin: 0 auto;
+    box-shadow: 0 24px 80px rgba(42,42,42,0.18);
+    border: 1px solid var(--line);
+    background: var(--cream);
+  }
+  .flyer-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   /* Honeypot */
   .honeypot {
     position: absolute;
@@ -607,27 +667,30 @@
 <header class="hero-editorial retreat-hero">
   <div class="container hero-content">
     <div style="max-width: 820px;">
-      <span class="eyebrow eyebrow-line" style="color: var(--cream);">Histamin-Retreat · Nº 01</span>
+      <span class="eyebrow eyebrow-line" style="color: var(--cream);">Seelenbauch-Retreat Nº 01 · Für Frauen mit Histaminintoleranz</span>
       <h1 class="display mt-sm" style="color: var(--cream);">
-        Eine Auszeit für dich.<br>
-        Und für deinen <em class="italic">Histaminbauch</em>.
+        Satt &amp; glücklich<br>
+        <em class="italic">trotz</em> Histamin.
       </h1>
       <p class="lead mt-md" style="color: rgba(255,252,249,0.95); max-width: 56ch;">
-        Gemeinsam kochen, zur Ruhe kommen, neue Menschen kennenlernen und erleben, wie schön es ist, mit seinen Herausforderungen nicht allein zu sein. Ein Nachmittag voller Austausch, Genuss und kleiner Wohlfühlmomente.
+        Ein Nachmittag für Genuss, Begegnung und dich selbst. Gemeinsam kochen, zur Ruhe kommen und erleben, wie schön es ist, mit seinen Herausforderungen nicht allein zu sein – bei mir zu Hause im Raum Augsburg.
       </p>
 
       <div class="fact-row">
-        <span class="fact-chip"><strong>Datum</strong> <span id="heroDatum">21. November 2026</span></span>
+        <span class="fact-chip"><strong>Datum</strong> <span id="heroDatum">Samstag, 21. November 2026</span></span>
+        <span class="fact-chip"><strong>Zeit</strong> <span id="heroZeit">15:00 – ca. 20:00 Uhr</span></span>
         <span class="fact-chip"><strong>Ort</strong> <span id="heroOrt">Wehringen bei Augsburg</span></span>
-        <span class="fact-chip"><strong>Beginn</strong> <span id="heroBeginn">15:00 Uhr</span></span>
-        <span class="fact-chip"><strong>Preis</strong> <span id="heroPreis">99 € p. P.</span></span>
+        <span class="fact-chip"><strong>Preis</strong> <span id="heroPreis">99 € inkl. Verpflegung &amp; Kreativmaterial</span></span>
         <span class="fact-chip"><strong>Max.</strong> <span id="heroMax">12 Teilnehmerinnen</span></span>
       </div>
 
       <div class="mt-lg" style="display: flex; gap: 14px; flex-wrap: wrap;">
         <a href="#anmelden" class="btn-xl">Jetzt Platz anfragen</a>
-        <a href="#staedte" class="btn-xl outline" style="color: var(--cream); border-color: var(--cream);">Weitere Retreats mitbestimmen</a>
+        <a id="heroWhatsapp" href="https://wa.me/4915118515594" class="btn-xl outline" style="color: var(--cream); border-color: var(--cream);" target="_blank" rel="noopener">Per WhatsApp anmelden</a>
       </div>
+      <p class="mt-sm" style="color: rgba(255,252,249,0.75); font-size: 13px; letter-spacing: 0.08em;">
+        <span id="heroWhatsappNum">+49 1511 8515 594</span> · <a href="#staedte" style="color: var(--cream); text-decoration: underline; text-underline-offset: 3px;">Für zukünftige Städte abstimmen</a>
+      </p>
     </div>
   </div>
 </header>
@@ -725,11 +788,15 @@
         <p>Wir schreiben einen Brief an uns selbst. Was wünschen wir uns für die Zukunft? Was möchten wir uns mitgeben? Was darf in unserem Leben mehr Raum bekommen?</p>
       </div>
       <div class="timeline-item">
-        <span class="timeline-time">Zum Abschluss</span>
+        <span class="timeline-time">ca. 20:00 Uhr</span>
         <h3>Gemütliches Ausklingen &amp; Goodie-Bags</h3>
         <p>Wir lassen den Nachmittag gemütlich ausklingen, quatschen noch ein bisschen und genießen glutenfreie Snacks. Zum Abschluss bekommst du eine Goodie-Bag von HistaFood mit nach Hause.</p>
       </div>
     </div>
+
+    <p class="text-center mt-lg" style="margin-left: auto; margin-right: auto; font-family: var(--sans); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 13px; color: var(--copper-dark);">
+      15:00 Uhr – ca. 20:00 Uhr · ca. 5 Stunden
+    </p>
   </div>
 </section>
 
@@ -748,6 +815,36 @@
         <p class="mt-md" style="padding: 20px; background: var(--mint); border-left: 3px solid var(--blue); font-size: 15px; font-style: italic;">
           Transparent gesagt: Ich kann nicht garantieren, dass alles für dich perfekt verträglich ist. Aber ich kann dir versprechen, dass wir dein Thema ernst nehmen und gemeinsam schauen, was passt.
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORT ============ -->
+<section class="section section-cream" id="ort">
+  <div class="container">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper reveal">Hier findet es statt</span>
+      <h2 class="mt-sm reveal">Bei mir <em class="italic">zu Hause</em>.</h2>
+      <p class="lead mt-md reveal" style="margin-left: auto; margin-right: auto; max-width: 48ch;">
+        Ein warmes, ruhiges Zuhause im Raum Augsburg. Kein Studio, keine sterile Location – ein Ort, an dem du einfach ankommen kannst.
+      </p>
+      <p class="mt-md reveal" style="margin-left: auto; margin-right: auto; font-family: var(--sans); font-weight: 700; letter-spacing: 0.12em; font-size: 15px; color: var(--copper-dark);">
+        <span id="ortAdresse">Singoldstraße 5a · 86517 Wehringen</span>
+        &nbsp;·&nbsp;
+        <a href="https://www.google.com/maps/search/?api=1&query=Singoldstra%C3%9Fe+5a+86517+Wehringen" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline; text-underline-offset: 3px;">In Google Maps öffnen →</a>
+      </p>
+    </div>
+
+    <div class="ort-gallery">
+      <div class="ort-image reveal ort-main">
+        <img src="images/retreat/ort-2.jpg" alt="Wohnbereich mit Julias Acryl-Gemälde – Veranstaltungsort des Retreats" loading="lazy">
+      </div>
+      <div class="ort-image reveal">
+        <img src="images/retreat/ort-1.jpg" alt="Warmer Eingangsbereich mit Heimat-Schriftzug" loading="lazy">
+      </div>
+      <div class="ort-image reveal">
+        <img src="images/retreat/ort-4.jpg" alt="Julias Kunstwerk im Flur" loading="lazy">
       </div>
     </div>
   </div>
@@ -778,9 +875,9 @@
       </div>
       <div class="editorial-card reveal">
         <span class="chapter-num">Nº 03</span>
-        <h3 class="mt-sm" style="font-size: 22px;">Veranstaltungsort</h3>
+        <h3 class="mt-sm" style="font-size: 22px;">Kleine Runde</h3>
         <p class="mt-md" style="font-size: 15px; color: var(--dark-soft);">
-          <span id="adresse">Singoldstraße 5a, 86517 Wehringen</span> – ruhig gelegen, in der Nähe von Augsburg.
+          Max. 12 Teilnehmerinnen – bewusst klein gehalten, damit genug Raum für echten Austausch bleibt. Wer früh anfragt, bekommt den Platz.
         </p>
       </div>
     </div>
@@ -801,19 +898,19 @@
 
     <div class="price-card reveal">
       <div class="price-amount">99<span class="cur">€</span></div>
-      <div class="price-sub">pro Person · Teilnahme am Retreat</div>
+      <div class="price-sub">pro Person · inkl. Verpflegung &amp; Kreativmaterial</div>
 
       <ul class="price-list">
-        <li>Alle gemeinsamen Aktivitäten des Nachmittags</li>
+        <li>Alle gemeinsamen Aktivitäten des Nachmittags (ca. 5 Stunden)</li>
         <li>Angeleitete Neuro-Yoga-Einheit</li>
-        <li>Gemeinsames Kochen und Essen</li>
-        <li>Kreative Auszeit &amp; Brief an dein Zukunfts-Ich</li>
+        <li>Gemeinsames Kochen und Essen (Kürbissuppe, glutenfreies Baguette, Dips)</li>
+        <li>Kreative Auszeit &amp; Material für den Brief an dein Zukunfts-Ich</li>
         <li>Glutenfreie Snacks und Getränke</li>
         <li>Goodie-Bag von HistaFood</li>
       </ul>
 
       <p class="mt-md" style="font-size: 14px; color: var(--mute); font-style: italic;">
-        Übernachtung mit Frühstück 15 € zusätzlich · Shuttle und individuelle Zusatzkosten werden separat abgestimmt.
+        Übernachtung mit Frühstück 15 € zusätzlich · Shuttle vom Augsburger Bahnhof nach Absprache.
       </p>
     </div>
 
@@ -872,8 +969,32 @@
   </div>
 </section>
 
+<!-- ============ FLYER ============ -->
+<section class="section section-cream" id="flyer">
+  <div class="container">
+    <div class="grid-2" style="align-items: center;">
+      <div class="reveal">
+        <span class="eyebrow eyebrow-copper">Zum Mitnehmen</span>
+        <h2 class="mt-sm">Der <em class="italic">Original-Flyer</em>.</h2>
+        <p class="mt-md">
+          Alles Wichtige auf einen Blick. Teile ihn gerne mit Freundinnen, die dich verstehen würden, oder druck ihn dir für den Kühlschrank aus.
+        </p>
+        <div class="mt-lg" style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="images/retreat/flyer.jpg" download="Seelenbauch-Retreat-Augsburg.png" class="btn btn-copper">Flyer herunterladen</a>
+          <a href="images/retreat/flyer.jpg" target="_blank" rel="noopener" class="btn btn-outline">In groß ansehen</a>
+        </div>
+      </div>
+      <div class="reveal flyer-wrap">
+        <a href="images/retreat/flyer.jpg" target="_blank" rel="noopener">
+          <img src="images/retreat/flyer.jpg" alt="Seelenbauch Retreat Augsburg – Flyer mit allen Infos" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ STÄDTE-ABSTIMMUNG ============ -->
-<section class="section section-cream" id="staedte">
+<section class="section section-beige" id="staedte">
   <div class="container">
     <div class="text-center mb-lg">
       <span class="eyebrow eyebrow-copper reveal">Weitere Retreats</span>
@@ -924,6 +1045,9 @@
       <h2 class="mt-sm reveal">Komm <em class="italic">dazu</em>.</h2>
       <p class="mt-md reveal" style="margin-left: auto; margin-right: auto; max-width: 56ch;">
         Fülle das Formular aus. Ich melde mich persönlich bei dir und bestätige deinen Platz oder wir sprechen über deine Fragen.
+      </p>
+      <p class="mt-md reveal" style="margin-left: auto; margin-right: auto; max-width: 48ch; font-size: 15px; color: var(--dark-soft);">
+        Lieber per WhatsApp? Schreib mir direkt an <a id="formWhatsapp" href="https://wa.me/4915118515594" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline; text-underline-offset: 3px; font-weight: 700;">+49 1511 8515 594</a>.
       </p>
     </div>
 
@@ -1127,7 +1251,7 @@
     <div>
       <details class="faq-item">
         <summary>Für wen ist das Histamin-Retreat geeignet?</summary>
-        <p>Für Erwachsene, die mit Histaminintoleranz, MCAS, Reizdarm oder anderen Unverträglichkeiten leben – oder sich einfach nach Austausch und einer bewussten Auszeit sehnen. Du musst keine Diagnose mitbringen.</p>
+        <p>Für Frauen, die mit Histaminintoleranz, MCAS, Reizdarm oder anderen Unverträglichkeiten leben – oder sich einfach nach Austausch und einer bewussten Auszeit sehnen. Du musst keine Diagnose mitbringen.</p>
       </details>
       <details class="faq-item">
         <summary>Muss ich eine diagnostizierte Histaminintoleranz haben?</summary>
@@ -1250,10 +1374,18 @@
   const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
   setText('heroDatum',  C.datum);
   setText('heroOrt',    C.ort);
-  setText('heroBeginn', C.beginn);
-  setText('heroPreis',  C.preis ? C.preis + ' p. P.' : '');
+  setText('heroZeit',   (C.beginn || '') + (C.ende ? ' – ' + C.ende : ''));
+  setText('heroPreis',  C.preis ? C.preis + ' inkl. Verpflegung & Kreativmaterial' : '');
   setText('heroMax',    C.maxTeilnehmer ? `${C.maxTeilnehmer} Teilnehmerinnen` : '');
+  setText('heroWhatsappNum', C.whatsapp);
   setText('adresse',    C.adresse);
+  setText('ortAdresse', C.adresse ? C.adresse.replace(',', ' ·') : '');
+  // WhatsApp-Links aktualisieren, falls Nummer in Config geändert wurde
+  const waLinks = ['heroWhatsapp', 'formWhatsapp'];
+  waLinks.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && C.whatsappLink) el.href = C.whatsappLink;
+  });
 
   // ========================================================
   // CONDITIONAL FIELDS
