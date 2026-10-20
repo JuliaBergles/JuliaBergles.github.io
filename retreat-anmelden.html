@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anmeldung · Seelenbauch-Retreat · Julia Bergles</title>
+<meta name="description" content="Melde dich zum Seelenbauch-Retreat am 21. November 2026 in Wehringen bei Augsburg an. Nur 12 Plätze.">
+
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
+
+<script>
+  window.RETREAT_ANMELDEN = {
+    formspreeUrl: "https://formspree.io/f/xaeqgwee",
+    whatsapp: "+49 1511 8515 594",
+    whatsappLink: "https://wa.me/4915118515594"
+  };
+</script>
+
+<style>
+  .btn-xl {
+    display: inline-block;
+    padding: 22px 44px;
+    font-size: clamp(15px, 1.6vw, 18px);
+    font-family: var(--sans);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--copper);
+    color: var(--cream);
+    border: 2px solid var(--copper);
+    text-decoration: none;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .btn-xl:hover { background: var(--copper-dark); border-color: var(--copper-dark); }
+  .btn-xl:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Hero mit Julias blauem Gemälde */
+  .anmelden-hero {
+    position: relative;
+    min-height: 56vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: clamp(80px, 10vw, 140px) 0;
+    background: var(--dark);
+  }
+  .anmelden-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/retreat/ort-2.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+  .anmelden-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(42,42,42,0.75) 0%,
+      rgba(119,104,163,0.55) 50%,
+      rgba(42,42,42,0.75) 100%);
+    z-index: 1;
+  }
+  .anmelden-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--cream);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+
+  /* Formular */
+  .form-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: clamp(28px, 4vw, 56px);
+  }
+  .form-section {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .form-section:first-child { padding-top: 0; }
+  .form-section:last-of-type { border-bottom: none; }
+  .form-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .form-section .form-hint {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--mute);
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .field label {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+  .field label .req { color: var(--copper); }
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"],
+  .field input[type="number"],
+  .field textarea {
+    font-family: var(--sans);
+    font-size: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    color: var(--dark);
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .field input:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--copper);
+  }
+  .field textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: var(--sans);
+  }
+  .field .err {
+    color: var(--copper-dark);
+    font-size: 13px;
+    display: none;
+  }
+  .field.has-error input,
+  .field.has-error textarea {
+    border-color: var(--copper-dark);
+  }
+  .field.has-error .err { display: block; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) {
+    .field-row { grid-template-columns: 1fr; }
+  }
+
+  .radio-group,
+  .check-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .radio-group label,
+  .check-group label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #fdfbf7;
+    border: 1px solid var(--line);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--dark);
+    transition: all 0.15s;
+  }
+  .radio-group label:hover,
+  .check-group label:hover {
+    border-color: var(--copper);
+    background: var(--beige);
+  }
+  .radio-group label:has(input:checked),
+  .check-group label:has(input:checked) {
+    border-color: var(--copper);
+    background: var(--beige);
+  }
+  .radio-group input,
+  .check-group input {
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--copper);
+    width: 18px;
+    height: 18px;
+  }
+
+  .conditional {
+    display: none;
+    margin-top: 12px;
+    padding: 16px;
+    background: var(--mint);
+    border-left: 3px solid var(--blue);
+  }
+  .conditional.visible { display: block; }
+
+  .form-notice {
+    font-size: 13px;
+    color: var(--mute);
+    font-family: var(--serif);
+    font-style: italic;
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  .form-success,
+  .form-error {
+    display: none;
+    padding: 24px;
+    margin-top: 24px;
+    border: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .form-success { background: var(--mint); border-left: 3px solid var(--blue); }
+  .form-error   { background: #fce9ec; border-left: 3px solid var(--copper-dark); }
+  .form-success.visible,
+  .form-error.visible { display: block; }
+
+  .honeypot {
+    position: absolute;
+    left: -5000px;
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    width: 0;
+  }
+
+  .zurueck-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.85;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    width: fit-content;
+  }
+  .zurueck-link:hover { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Themen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS &amp; Zyklus</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html" class="dropdown-featured">★ Kochbuch Seelenküche</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Kurs ★ <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="https://terra-luna-masterclass.vercel.app/">Zum Kurs</a></li>
+          <li><a href="https://terra-luna-masterclass.vercel.app/anmeldung">Anmeldung</a></li>
+        </ul>
+      </li>
+      <li><a href="retreat.html" style="color: var(--copper); font-weight: 700;">Retreat ★</a></li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html">Seelenküche · Kochbuch</a></li>
+          <li><a href="seelenbauch-workbook.html">Seelenbauch Workbook</a></li>
+          <li><a href="seelenbauchbuch.html">Seelenbauchbuch</a></li>
+          <li><a href="tagebuch.html">Tagebuch</a></li>
+          <li><a href="notizbuch.html">Notizbuch</a></li>
+          <li><a href="bundles.html" class="dropdown-featured">★ Seelenbauch-Bundles</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Mehr <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="gespraech.html">1:1 Gespräch</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="anmelden-hero">
+  <div class="anmelden-hero-bg"></div>
+  <div class="anmelden-hero-overlay"></div>
+  <div class="container anmelden-hero-content">
+    <a href="retreat.html" class="zurueck-link">← Zurück zum Retreat</a>
+    <h1 class="display mt-md" style="color: var(--cream);">
+      Deine <em class="italic">Anmeldung</em>.
+    </h1>
+    <p class="lead mt-md" style="color: rgba(255,252,249,0.95); max-width: 56ch;">
+      Fülle das Formular aus – ich melde mich persönlich bei dir und bestätige deinen Platz oder wir sprechen über deine Fragen.
+    </p>
+    <p class="mt-md" style="color: rgba(255,252,249,0.85); font-size: 14px; letter-spacing: 0.08em;">
+      Samstag, 21. November 2026 · 15:00 – ca. 20:00 Uhr · Wehringen bei Augsburg · nur 12 Plätze
+    </p>
+  </div>
+</header>
+
+<!-- FORMULAR -->
+<section class="section section-cream">
+  <div class="container">
+    <form class="form-wrap reveal" id="anmeldenForm" novalidate autocomplete="on">
+
+      <div class="honeypot">
+        <label>Nicht ausfüllen <input type="text" name="hp_website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <!-- A. Kontaktdaten -->
+      <div class="form-section">
+        <h3>Deine Kontaktdaten</h3>
+        <p class="form-hint">Damit ich mich bei dir zurückmelden kann.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f_vorname">Vorname <span class="req">*</span></label>
+            <input type="text" id="f_vorname" name="vorname" required autocomplete="given-name">
+            <span class="err">Bitte Vornamen eintragen.</span>
+          </div>
+          <div class="field">
+            <label for="f_nachname">Nachname <span class="req">*</span></label>
+            <input type="text" id="f_nachname" name="nachname" required autocomplete="family-name">
+            <span class="err">Bitte Nachnamen eintragen.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f_email">E-Mail-Adresse <span class="req">*</span></label>
+          <input type="email" id="f_email" name="email" required autocomplete="email">
+          <span class="err">Bitte gültige E-Mail-Adresse eintragen.</span>
+        </div>
+
+        <div class="field">
+          <label for="f_tel">Telefon / WhatsApp (optional)</label>
+          <input type="tel" id="f_tel" name="telefon" autocomplete="tel">
+        </div>
+      </div>
+
+      <!-- B. Teilnahmeplanung -->
+      <div class="form-section">
+        <h3>Wie sieht deine Planung aus?</h3>
+        <p class="form-hint">Verbindlich oder erst mal unverbindlich – beides ist willkommen.</p>
+
+        <div class="radio-group">
+          <label><input type="radio" name="plan" value="verbindlich" required><span><strong>Verbindlich anmelden</strong> – ich möchte beim Retreat am 21. November 2026 dabei sein.</span></label>
+          <label><input type="radio" name="plan" value="anderes_datum"><span>Ich wäre gerne dabei, aber ein anderes Datum wäre für mich besser.</span></label>
+          <label><input type="radio" name="plan" value="andere_stadt"><span>Ich interessiere mich für ein Retreat in einer anderen Stadt.</span></label>
+          <label><input type="radio" name="plan" value="infos"><span>Ich möchte erst einmal weitere Informationen erhalten.</span></label>
+        </div>
+        <span class="err" id="err_plan">Bitte eine Option auswählen.</span>
+
+        <div class="conditional" id="cond_datum">
+          <div class="field" style="margin: 0;">
+            <label for="f_wunschdatum">Welche Wochentage oder Zeiträume wären für dich besser? (optional)</label>
+            <input type="text" id="f_wunschdatum" name="wunschdatum" placeholder="z. B. Samstage, Dezember, Frühjahr…">
+          </div>
+        </div>
+
+        <div class="conditional" id="cond_wunschstadt">
+          <div class="field" style="margin: 0;">
+            <label for="f_wunschstadt">In welcher Stadt wärst du gerne dabei?</label>
+            <input type="text" id="f_wunschstadt" name="wunschstadt" placeholder="z. B. Köln, München, Hamburg…">
+          </div>
+        </div>
+
+        <p class="form-notice">
+          Deine verbindliche Anmeldung bestätige ich dir per Mail. Bei allen anderen Optionen bekommst du einfach eine persönliche Antwort – ohne Verpflichtung.
+        </p>
+      </div>
+
+      <!-- C. Anreise & Übernachtung -->
+      <div class="form-section">
+        <h3>Anreise &amp; Übernachtung</h3>
+        <p class="form-hint">Mehrfachauswahl möglich.</p>
+
+        <div class="check-group">
+          <label><input type="checkbox" name="anreise[]" value="auto"><span>Ich komme mit dem Auto.</span></label>
+          <label><input type="checkbox" name="anreise[]" value="bahn_shuttle"><span>Ich komme mit der Bahn und würde gerne vom Augsburger Bahnhof abgeholt werden.</span></label>
+          <label><input type="checkbox" name="anreise[]" value="bahn_selbst"><span>Ich komme mit der Bahn und organisiere mich selbst.</span></label>
+          <label><input type="checkbox" name="anreise[]" value="uebernachtung"><span>Ich würde gerne übernachten (15 € extra inkl. Frühstück).</span></label>
+          <label><input type="checkbox" name="anreise[]" value="keine_uebernachtung"><span>Ich benötige keine Übernachtung.</span></label>
+        </div>
+      </div>
+
+      <!-- D. Essen -->
+      <div class="form-section">
+        <h3>Essen &amp; individuelle Bedürfnisse</h3>
+        <p class="form-hint">Hilft mir beim Einkaufen und Planen.</p>
+
+        <div class="check-group">
+          <label><input type="checkbox" name="essen[]" value="passt"><span>Das geplante Essen passt für mich.</span></label>
+          <label><input type="checkbox" name="essen[]" value="eigenes"><span>Ich bringe mein eigenes Essen mit.</span></label>
+          <label><input type="checkbox" name="essen[]" value="alternative"><span>Ich würde gerne etwas anderes essen.</span></label>
+        </div>
+
+        <div class="field" style="margin-top: 20px;">
+          <label for="f_unver">Welche Lebensmittel verträgst du nicht?</label>
+          <textarea id="f_unver" name="unvertraeglichkeiten" placeholder="z. B. Milchprodukte, Tomaten, Zitrusfrüchte …"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="f_sonstiges">Gibt es sonst etwas, das ich vorab wissen sollte?</label>
+          <textarea id="f_sonstiges" name="sonstiges" placeholder="Allergien, Besonderheiten, offene Fragen …"></textarea>
+        </div>
+
+        <p class="form-notice">
+          Angaben zu Allergien und Unverträglichkeiten nutze ich ausschließlich, um den Nachmittag für dich gut zu organisieren.
+        </p>
+      </div>
+
+      <!-- E. Freiwilliger Beitrag -->
+      <div class="form-section">
+        <h3>Freiwilliger Unterstützungsbeitrag</h3>
+        <p class="form-hint">Komplett optional. Kein Zahlungsvorgang – nur eine Angabe, wenn du magst.</p>
+
+        <div class="radio-group">
+          <label><input type="radio" name="beitrag" value="0"><span>Kein zusätzlicher Beitrag</span></label>
+          <label><input type="radio" name="beitrag" value="5"><span>5 €</span></label>
+          <label><input type="radio" name="beitrag" value="10"><span>10 €</span></label>
+          <label><input type="radio" name="beitrag" value="individuell"><span>Individueller Betrag</span></label>
+        </div>
+
+        <div class="conditional" id="cond_beitrag">
+          <div class="field" style="margin: 0;">
+            <label for="f_beitrag_ind">Dein Wunschbetrag in Euro</label>
+            <input type="number" id="f_beitrag_ind" name="beitrag_individuell" min="0" step="1" placeholder="z. B. 15">
+          </div>
+        </div>
+      </div>
+
+      <!-- F. Abschluss -->
+      <div class="form-section">
+        <h3>Zum Abschluss</h3>
+
+        <div class="check-group">
+          <label>
+            <input type="checkbox" name="dsgvo" required>
+            <span><strong>Ich willige ein</strong>, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und an Julia Bergles übermittelt werden. Siehe <a href="datenschutz.html" style="color: var(--copper-dark); text-decoration: underline;">Datenschutzerklärung</a>. <span class="req">*</span></span>
+          </label>
+          <label>
+            <input type="checkbox" name="newsletter">
+            <span>Ich möchte zukünftig Informationen zu weiteren Retreats und Angeboten per E-Mail erhalten (optional, jederzeit widerrufbar).</span>
+          </label>
+        </div>
+        <span class="err" id="err_dsgvo">Bitte Einwilligung zur Datenverarbeitung bestätigen.</span>
+      </div>
+
+      <div style="text-align: center; margin-top: 32px;">
+        <button type="submit" class="btn-xl" id="submitBtn">Anmeldung absenden</button>
+        <p style="margin-top: 16px; font-size: 13px; color: var(--mute);">
+          Du bekommst eine persönliche Antwort von mir per Mail.
+        </p>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <strong>Danke, deine Nachricht ist auf dem Weg!</strong><br>
+        Ich melde mich bei dir, meistens innerhalb weniger Tage. Wenn du keine Antwort bekommst, schreib mir gerne nochmal an <a href="mailto:julia@bergles.net" style="color: var(--copper-dark); text-decoration: underline;">julia@bergles.net</a> oder per WhatsApp an <a href="https://wa.me/4915118515594" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline;">+49 1511 8515 594</a>.
+      </div>
+      <div class="form-error" id="formError">
+        Da ist etwas schiefgegangen. Du kannst mir deine Anfrage auch direkt an <a href="mailto:julia@bergles.net" style="color: var(--copper-dark); text-decoration: underline;">julia@bergles.net</a> oder per WhatsApp schicken.
+      </div>
+    </form>
+
+    <!-- WhatsApp-Alternative unter dem Formular -->
+    <div class="text-center mt-lg" style="margin-top: 48px;">
+      <p style="font-size: 15px; color: var(--dark-soft);">
+        Lieber direkt reden? Schreib mir auf WhatsApp:<br>
+        <a href="https://wa.me/4915118515594" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline; text-underline-offset: 3px; font-weight: 700;">+49 1511 8515 594</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">
+          Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.
+        </p>
+        <p style="margin-top: 20px;"><a href="https://instagram.com/julia_bergles" style="color: var(--copper);">@julia_bergles</a></p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="retreat.html">Retreat</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="https://terra-luna-masterclass.vercel.app/">★ Histamin Seelenbauch Kurs</a></li>
+          <li><a href="ebooks.html">Bücher</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      Ich bin keine Ärztin. Alles hier ist meine Erfahrung — kein Ersatz für medizinische Beratung.
+      <br><br>
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const C = window.RETREAT_ANMELDEN || {};
+  const form = document.getElementById('anmeldenForm');
+  const successBox = document.getElementById('formSuccess');
+  const errorBox = document.getElementById('formError');
+  const submitBtn = document.getElementById('submitBtn');
+
+  // Conditional fields
+  const toggleCond = (name, value, targetId) => {
+    const inputs = document.querySelectorAll(`input[name="${name}"]`);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    inputs.forEach(inp => inp.addEventListener('change', () => {
+      const checked = document.querySelector(`input[name="${name}"]:checked`);
+      target.classList.toggle('visible', checked && checked.value === value);
+    }));
+  };
+  toggleCond('plan', 'anderes_datum', 'cond_datum');
+  toggleCond('plan', 'andere_stadt', 'cond_wunschstadt');
+  toggleCond('beitrag', 'individuell', 'cond_beitrag');
+
+  const showError = (field, show) => {
+    const wrap = field.closest('.field') || field;
+    if (wrap.classList) wrap.classList.toggle('has-error', show);
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Honeypot
+    if (form.querySelector('[name="hp_website"]').value.trim() !== '') {
+      successBox.classList.add('visible');
+      form.style.display = 'none';
+      return;
+    }
+
+    successBox.classList.remove('visible');
+    errorBox.classList.remove('visible');
+    let hasErr = false;
+
+    ['f_vorname', 'f_nachname', 'f_email'].forEach(id => {
+      const inp = document.getElementById(id);
+      const valid = inp.value.trim() !== '' && (inp.type !== 'email' || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value));
+      showError(inp, !valid);
+      if (!valid) hasErr = true;
+    });
+
+    const planChecked = form.querySelector('input[name="plan"]:checked');
+    document.getElementById('err_plan').style.display = planChecked ? 'none' : 'block';
+    if (!planChecked) hasErr = true;
+
+    const dsgvo = form.querySelector('input[name="dsgvo"]').checked;
+    document.getElementById('err_dsgvo').style.display = dsgvo ? 'none' : 'block';
+    if (!dsgvo) hasErr = true;
+
+    if (hasErr) {
+      const firstErr = form.querySelector('.has-error, .err[style*="block"]');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    const data = new FormData(form);
+    const asObj = {};
+    for (const [k, v] of data.entries()) {
+      if (k.endsWith('[]')) continue;
+      asObj[k] = v;
+    }
+    asObj.anreise = data.getAll('anreise[]').join(', ');
+    asObj.essen = data.getAll('essen[]').join(', ');
+    asObj._subject = `Retreat-Anmeldung: ${asObj.vorname || ''} ${asObj.nachname || ''}`;
+
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wird gesendet…';
+
+    try {
+      const res = await fetch(C.formspreeUrl, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(asObj)
+      });
+      if (res.ok) {
+        successBox.classList.add('visible');
+        form.style.display = 'none';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error('Submit failed');
+      }
+    } catch (err) {
+      console.error('[retreat form]', err);
+      errorBox.classList.add('visible');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+
+  // Nav-Height
+  const setNavHeight = () => {
+    const nav = document.getElementById('navV3');
+    if (nav) document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+  };
+  setNavHeight();
+  window.addEventListener('resize', setNavHeight);
+})();
+</script>
+
+</body>
+</html>

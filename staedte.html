@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Städte-Abstimmung · Seelenbauch-Retreat · Julia Bergles</title>
+<meta name="description" content="Stimme ab und sag mir, in welcher Stadt das nächste Seelenbauch-Retreat stattfinden soll. Berlin, Köln, Hamburg, München und viele mehr.">
+
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
+
+<script>
+  window.STAEDTE_CONFIG = {
+    // Supabase-Setup (siehe docs/RETREAT-SETUP.md):
+    //   leer lassen → lokale Abstimmung (jede Besucherin sieht nur ihre Stimme)
+    supabaseUrl: "",
+    supabaseAnonKey: ""
+  };
+</script>
+
+<style>
+  /* Hero */
+  .staedte-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: clamp(80px, 10vw, 140px) 0;
+    background: var(--dark);
+  }
+  .staedte-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/retreat/ort-4.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+  .staedte-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(42,42,42,0.75) 0%,
+      rgba(139,46,62,0.60) 50%,
+      rgba(42,42,42,0.75) 100%);
+    z-index: 1;
+  }
+  .staedte-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--cream);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+
+  .zurueck-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.85;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    width: fit-content;
+  }
+  .zurueck-link:hover { opacity: 1; }
+
+  /* Städte-Abstimmung */
+  .vote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .vote-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 24px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--dark);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  .vote-option:hover:not(.voted) {
+    border-color: var(--copper);
+    background: var(--beige);
+    transform: translateY(-2px);
+  }
+  .vote-option.selected {
+    border-color: var(--copper);
+    background: var(--beige);
+  }
+  .vote-option .bar {
+    position: absolute;
+    inset: 0;
+    background: rgba(196, 139, 108, 0.15);
+    width: 0%;
+    transition: width 0.6s ease;
+    z-index: 0;
+  }
+  .vote-option .city,
+  .vote-option .count {
+    position: relative;
+    z-index: 1;
+  }
+  .vote-option .count {
+    font-size: 13px;
+    color: var(--mute);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+  }
+  .vote-option.voted { cursor: default; }
+  .vote-option.voted .count { color: var(--copper-dark); }
+
+  .vote-feedback {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: var(--mint);
+    border-left: 3px solid var(--blue);
+    font-size: 15px;
+    color: var(--dark);
+    display: none;
+  }
+  .vote-feedback.visible { display: block; }
+
+  .vote-other-wrap {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .vote-other-wrap input[type="text"] {
+    flex: 1 1 240px;
+    font-family: var(--sans);
+    font-size: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    color: var(--dark);
+  }
+  .vote-other-wrap input[type="text"]:focus {
+    outline: none;
+    border-color: var(--copper);
+  }
+
+  .vote-attend-wrap {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: var(--beige);
+    border-left: 3px solid var(--copper);
+  }
+  .vote-attend-wrap label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .vote-attend-wrap input {
+    accent-color: var(--copper);
+    width: 20px;
+    height: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Themen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS &amp; Zyklus</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html" class="dropdown-featured">★ Kochbuch Seelenküche</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Kurs ★ <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="https://terra-luna-masterclass.vercel.app/">Zum Kurs</a></li>
+          <li><a href="https://terra-luna-masterclass.vercel.app/anmeldung">Anmeldung</a></li>
+        </ul>
+      </li>
+      <li><a href="retreat.html" style="color: var(--copper); font-weight: 700;">Retreat ★</a></li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html">Seelenküche · Kochbuch</a></li>
+          <li><a href="seelenbauch-workbook.html">Seelenbauch Workbook</a></li>
+          <li><a href="seelenbauchbuch.html">Seelenbauchbuch</a></li>
+          <li><a href="tagebuch.html">Tagebuch</a></li>
+          <li><a href="notizbuch.html">Notizbuch</a></li>
+          <li><a href="bundles.html" class="dropdown-featured">★ Seelenbauch-Bundles</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Mehr <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="gespraech.html">1:1 Gespräch</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="staedte-hero">
+  <div class="staedte-hero-bg"></div>
+  <div class="staedte-hero-overlay"></div>
+  <div class="container staedte-hero-content">
+    <a href="retreat.html" class="zurueck-link">← Zurück zum Retreat</a>
+    <h1 class="display mt-md" style="color: var(--cream);">
+      Deine Stadt könnte die <em class="italic">nächste</em> sein.
+    </h1>
+    <p class="lead mt-md" style="color: rgba(255,252,249,0.95); max-width: 56ch;">
+      Ich möchte mit den Seelenbauch-Retreats noch mehr Frauen erreichen. Hilf mir dabei, die nächsten Standorte auszuwählen.
+    </p>
+  </div>
+</header>
+
+<!-- ABSTIMMUNG -->
+<section class="section section-cream">
+  <div class="container" style="max-width: 920px;">
+    <div class="text-center mb-lg">
+      <span class="eyebrow eyebrow-copper">Abstimmung</span>
+      <h2 class="mt-sm">Wo soll ich als Nächstes <em class="italic">hinkommen</em>?</h2>
+      <p class="mt-md" style="margin-left: auto; margin-right: auto; max-width: 52ch;">
+        Wähle deine Wunschstadt – oder trag eine andere ein. Eine Stimme pro Browser.
+      </p>
+    </div>
+
+    <div class="vote-grid" id="voteGrid" role="radiogroup" aria-label="Städte-Abstimmung">
+      <button class="vote-option" data-city="Berlin"      type="button"><div class="bar"></div><span class="city">Berlin</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="Düsseldorf"  type="button"><div class="bar"></div><span class="city">Düsseldorf</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="Köln"        type="button"><div class="bar"></div><span class="city">Köln</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="Hamburg"     type="button"><div class="bar"></div><span class="city">Hamburg</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="München"     type="button"><div class="bar"></div><span class="city">München</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="Stuttgart"   type="button"><div class="bar"></div><span class="city">Stuttgart</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="Leipzig"     type="button"><div class="bar"></div><span class="city">Leipzig</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="Frankfurt"   type="button"><div class="bar"></div><span class="city">Frankfurt</span><span class="count">—</span></button>
+      <button class="vote-option" data-city="__OTHER__"   type="button"><div class="bar"></div><span class="city">Andere Stadt →</span><span class="count">—</span></button>
+    </div>
+
+    <div class="vote-other-wrap" id="voteOtherWrap" style="display:none;">
+      <input type="text" id="voteOtherCity" placeholder="Welche Stadt?" maxlength="60">
+      <button class="btn btn-copper" id="voteOtherSubmit" type="button">Abstimmen</button>
+    </div>
+
+    <div class="vote-attend-wrap">
+      <label>
+        <input type="checkbox" id="voteWouldAttend">
+        <span>Ich würde dort auch tatsächlich teilnehmen.</span>
+      </label>
+    </div>
+
+    <div class="vote-feedback" id="voteFeedback"></div>
+
+    <p style="text-align: center; margin-top: 40px; font-size: 13px; color: var(--mute); font-style: italic;">
+      Eine Stimme pro Browser · <span id="voteStatus">Lade Ergebnisse…</span>
+    </p>
+  </div>
+</section>
+
+<!-- CTA Zurück -->
+<section class="section section-beige">
+  <div class="container-narrow text-center">
+    <h3 style="font-size: clamp(24px, 3vw, 32px);">Auch für Augsburg schon dabei?</h3>
+    <p class="mt-md" style="margin-left: auto; margin-right: auto;">
+      Das erste Retreat findet am 21. November 2026 in Wehringen bei Augsburg statt.
+    </p>
+    <div class="mt-lg" style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
+      <a href="retreat-anmelden.html" class="btn btn-kleidblau">Zur Anmeldung Augsburg</a>
+      <a href="retreat.html" class="btn btn-outline">Zum Retreat</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">
+          Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.
+        </p>
+        <p style="margin-top: 20px;"><a href="https://instagram.com/julia_bergles" style="color: var(--copper);">@julia_bergles</a></p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="retreat.html">Retreat</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="https://terra-luna-masterclass.vercel.app/">★ Histamin Seelenbauch Kurs</a></li>
+          <li><a href="ebooks.html">Bücher</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const C = window.STAEDTE_CONFIG || {};
+  const VOTE_KEY_LOCAL = 'retreat_vote_v1';
+  const VOTE_TOKEN_KEY = 'retreat_vote_token_v1';
+  const voteStatus = document.getElementById('voteStatus');
+  const voteFeedback = document.getElementById('voteFeedback');
+  const voteOtherWrap = document.getElementById('voteOtherWrap');
+  const voteGrid = document.getElementById('voteGrid');
+  const voteWouldAttend = document.getElementById('voteWouldAttend');
+
+  let voterToken = localStorage.getItem(VOTE_TOKEN_KEY);
+  if (!voterToken) {
+    voterToken = (crypto && crypto.randomUUID) ? crypto.randomUUID()
+      : (Date.now().toString(36) + Math.random().toString(36).slice(2));
+    localStorage.setItem(VOTE_TOKEN_KEY, voterToken);
+  }
+
+  const supaReady = !!(C.supabaseUrl && C.supabaseAnonKey);
+  const supaHeaders = {
+    'apikey': C.supabaseAnonKey || '',
+    'Authorization': `Bearer ${C.supabaseAnonKey || ''}`,
+    'Content-Type': 'application/json'
+  };
+
+  const renderResults = (counts) => {
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    document.querySelectorAll('.vote-option').forEach(btn => {
+      const city = btn.dataset.city;
+      const count = counts[city] || 0;
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      btn.querySelector('.count').textContent = total === 0 ? '—' : `${count} · ${pct}%`;
+      btn.querySelector('.bar').style.width = `${pct}%`;
+    });
+    voteStatus.textContent = total === 0
+      ? 'Noch keine Stimmen – mach den Anfang!'
+      : `${total} ${total === 1 ? 'Stimme' : 'Stimmen'} insgesamt.`;
+  };
+
+  const loadResultsLocal = () => {
+    try {
+      const raw = localStorage.getItem(VOTE_KEY_LOCAL + '_counts');
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  };
+
+  const saveResultLocal = (city) => {
+    const counts = loadResultsLocal();
+    counts[city] = (counts[city] || 0) + 1;
+    localStorage.setItem(VOTE_KEY_LOCAL + '_counts', JSON.stringify(counts));
+    localStorage.setItem(VOTE_KEY_LOCAL, city);
+    return counts;
+  };
+
+  const alreadyVoted = () => localStorage.getItem(VOTE_KEY_LOCAL);
+
+  const markVoted = (city) => {
+    document.querySelectorAll('.vote-option').forEach(btn => {
+      btn.classList.add('voted');
+      if (btn.dataset.city === city) btn.classList.add('selected');
+    });
+  };
+
+  const showVoteFeedback = (city, source) => {
+    voteFeedback.classList.add('visible');
+    const attendText = voteWouldAttend.checked
+      ? ' Ich habe mir notiert, dass du dort auch tatsächlich teilnehmen würdest.'
+      : '';
+    voteFeedback.innerHTML = source === 'local'
+      ? `<strong>Danke, deine Stimme für ${city} ist gespeichert.</strong>${attendText} <em style="display:block; margin-top:8px; font-size:13px; color:var(--mute);">Hinweis: Noch läuft die Abstimmung lokal in deinem Browser. Sobald die Datenbank-Anbindung live ist, werden Stimmen gemeinsam sichtbar.</em>`
+      : `<strong>Danke, deine Stimme für ${city} ist gezählt.</strong>${attendText}`;
+  };
+
+  const supabaseVote = async (city, wouldAttend) => {
+    const body = { city: city, would_attend: !!wouldAttend, voter_token: voterToken };
+    const res = await fetch(`${C.supabaseUrl}/rest/v1/retreat_votes`, {
+      method: 'POST',
+      headers: Object.assign({}, supaHeaders, { 'Prefer': 'return=minimal' }),
+      body: JSON.stringify(body)
+    });
+    if (!res.ok && res.status !== 409) {
+      throw new Error('Supabase insert failed: ' + res.status);
+    }
+    return supabaseLoadCounts();
+  };
+
+  const supabaseLoadCounts = async () => {
+    const res = await fetch(`${C.supabaseUrl}/rest/v1/retreat_votes?select=city`, { headers: supaHeaders });
+    if (!res.ok) throw new Error('Supabase load failed');
+    const rows = await res.json();
+    const counts = {};
+    for (const r of rows) counts[r.city] = (counts[r.city] || 0) + 1;
+    return counts;
+  };
+
+  const submitVote = async (city) => {
+    if (!city) return;
+    if (alreadyVoted()) {
+      voteFeedback.classList.add('visible');
+      voteFeedback.innerHTML = `<strong>Du hast schon abgestimmt.</strong> Pro Browser ist eine Stimme möglich.`;
+      return;
+    }
+    const wouldAttend = voteWouldAttend.checked;
+    try {
+      let counts;
+      if (supaReady) {
+        counts = await supabaseVote(city, wouldAttend);
+        localStorage.setItem(VOTE_KEY_LOCAL, city);
+        showVoteFeedback(city, 'remote');
+      } else {
+        counts = saveResultLocal(city);
+        showVoteFeedback(city, 'local');
+      }
+      renderResults(counts);
+      markVoted(city);
+    } catch (err) {
+      console.error('[vote]', err);
+      const counts = saveResultLocal(city);
+      renderResults(counts);
+      markVoted(city);
+      showVoteFeedback(city, 'local');
+    }
+  };
+
+  voteGrid.addEventListener('click', (e) => {
+    const btn = e.target.closest('.vote-option');
+    if (!btn) return;
+    if (alreadyVoted()) {
+      voteFeedback.classList.add('visible');
+      voteFeedback.innerHTML = `<strong>Du hast schon abgestimmt.</strong> Pro Browser ist eine Stimme möglich.`;
+      return;
+    }
+    const city = btn.dataset.city;
+    if (city === '__OTHER__') {
+      voteOtherWrap.style.display = 'flex';
+      document.getElementById('voteOtherCity').focus();
+      return;
+    }
+    submitVote(city);
+  });
+
+  document.getElementById('voteOtherSubmit').addEventListener('click', () => {
+    const input = document.getElementById('voteOtherCity');
+    const city = input.value.trim();
+    if (city.length < 2) { input.focus(); return; }
+    submitVote(city);
+  });
+
+  (async () => {
+    try {
+      let counts = supaReady ? await supabaseLoadCounts() : loadResultsLocal();
+      renderResults(counts);
+      const prev = alreadyVoted();
+      if (prev) markVoted(prev);
+    } catch (err) {
+      console.error('[vote load]', err);
+      renderResults(loadResultsLocal());
+    }
+  })();
+
+  const setNavHeight = () => {
+    const nav = document.getElementById('navV3');
+    if (nav) document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+  };
+  setNavHeight();
+  window.addEventListener('resize', setNavHeight);
+})();
+</script>
+
+</body>
+</html>

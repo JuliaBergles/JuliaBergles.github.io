@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Häufige Fragen · Seelenbauch-Retreat · Julia Bergles</title>
+<meta name="description" content="Alle wichtigen Fragen zum Seelenbauch-Retreat: Für wen, Unverträglichkeiten, Shuttle, Übernachtung, Stornierung – alles beantwortet.">
+
+<link rel="stylesheet" href="assets/site-v3.css">
+<script defer src="assets/reveal.js"></script>
+
+<style>
+  .faq-hero {
+    position: relative;
+    min-height: 44vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: clamp(80px, 10vw, 120px) 0;
+    background: var(--dark);
+  }
+  .faq-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/retreat/ort-1.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+  .faq-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(42,42,42,0.78) 0%,
+      rgba(139,46,62,0.5) 100%);
+    z-index: 1;
+  }
+  .faq-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--cream);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+
+  .zurueck-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.85;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    width: fit-content;
+  }
+  .zurueck-link:hover { opacity: 1; }
+
+  details.faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+  }
+  details.faq-item summary {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary::after {
+    content: "+";
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--copper);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  details.faq-item[open] summary::after { content: "–"; }
+  details.faq-item p {
+    margin-top: 16px;
+    color: var(--dark-soft);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .btn-xl {
+    display: inline-block;
+    padding: 22px 44px;
+    font-size: clamp(15px, 1.6vw, 18px);
+    font-family: var(--sans);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--copper);
+    color: var(--cream);
+    border: 2px solid var(--copper);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .btn-xl:hover { background: var(--copper-dark); border-color: var(--copper-dark); }
+  .btn-xl.outline { background: transparent; color: var(--dark); border-color: var(--dark); }
+  .btn-xl.outline:hover { background: var(--dark); color: var(--cream); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-v3" id="navV3">
+  <div class="container">
+    <a href="index.html" class="logo">Julia<span class="amp"> ·</span> Bergles</a>
+    <ul class="nav-main">
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Themen <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="reizdarm.html">Reizdarm</a></li>
+          <li><a href="pms.html">PMS &amp; Zyklus</a></li>
+          <li><a href="angststoerung.html">Angststörung</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Rezepte <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="rezepte.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html" class="dropdown-featured">★ Kochbuch Seelenküche</a></li>
+          <li><a href="rezepte/fruehstueck/">Frühstück</a></li>
+          <li><a href="rezepte/snacks/">Snacks</a></li>
+          <li><a href="rezepte/vorspeisen/">Vorspeisen</a></li>
+          <li><a href="rezepte/salate/">Salate</a></li>
+          <li><a href="rezepte/warme-mahlzeiten/">Warme Mahlzeiten</a></li>
+          <li><a href="rezepte/mealprep/">Mealprep</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Kurs ★ <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="https://terra-luna-masterclass.vercel.app/">Zum Kurs</a></li>
+          <li><a href="https://terra-luna-masterclass.vercel.app/anmeldung">Anmeldung</a></li>
+        </ul>
+      </li>
+      <li><a href="retreat.html" style="color: var(--copper); font-weight: 700;">Retreat ★</a></li>
+      <li><a href="app.html">App</a></li>
+      <li><a href="empfehlungen.html">Empfehlungen</a></li>
+      <li class="has-dropdown">
+        <span class="nav-link">Shop <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="ebooks.html">Übersicht</a></li>
+          <li><a href="seelenkueche.html">Seelenküche · Kochbuch</a></li>
+          <li><a href="seelenbauch-workbook.html">Seelenbauch Workbook</a></li>
+          <li><a href="seelenbauchbuch.html">Seelenbauchbuch</a></li>
+          <li><a href="tagebuch.html">Tagebuch</a></li>
+          <li><a href="notizbuch.html">Notizbuch</a></li>
+          <li><a href="bundles.html" class="dropdown-featured">★ Seelenbauch-Bundles</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <span class="nav-link">Mehr <span class="caret">▾</span></span>
+        <ul class="dropdown">
+          <li><a href="gespraech.html">1:1 Gespräch</a></li>
+          <li><a href="bilder.html">Kunst</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="burger" onclick="document.getElementById('navV3').classList.toggle('open')" aria-label="Menü">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="faq-hero">
+  <div class="faq-hero-bg"></div>
+  <div class="faq-hero-overlay"></div>
+  <div class="container faq-hero-content">
+    <a href="retreat.html" class="zurueck-link">← Zurück zum Retreat</a>
+    <h1 class="display mt-md" style="color: var(--cream);">
+      Häufige <em class="italic">Fragen</em>.
+    </h1>
+    <p class="lead mt-md" style="color: rgba(255,252,249,0.95); max-width: 56ch;">
+      Alles, was du vielleicht noch wissen möchtest – von Essen über Shuttle bis Stornierung.
+    </p>
+  </div>
+</header>
+
+<!-- FAQ -->
+<section class="section section-cream">
+  <div class="container-narrow">
+    <details class="faq-item">
+      <summary>Für wen ist das Histamin-Retreat geeignet?</summary>
+      <p>Für Frauen, die mit Histaminintoleranz, MCAS, Reizdarm oder anderen Unverträglichkeiten leben – oder sich einfach nach Austausch und einer bewussten Auszeit sehnen. Du musst keine Diagnose mitbringen.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Muss ich eine diagnostizierte Histaminintoleranz haben?</summary>
+      <p>Nein. Das Retreat ist offen für alle, die sich mit dem Thema beschäftigen – ob mit Diagnose, auf dem Weg dahin oder einfach aus Interesse.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Was passiert, wenn ich bestimmte Lebensmittel nicht vertrage?</summary>
+      <p>Teile uns das bitte in der Anmeldung mit. Wir schauen gemeinsam nach einer Alternative. Falls das nicht möglich ist, kannst du auch dein eigenes Essen mitbringen – das ist völlig in Ordnung.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Ist das Essen komplett histaminfrei?</summary>
+      <p>Ich plane das Essen bewusst mit histaminärmeren Zutaten. Für die Kürbissuppe nutze ich die Gemüsebrühe von <a href="https://histafood.eu" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline;">HistaFood</a>, für das Baguette das Kräutersalz von HistaFood. Eine komplette Histaminfreiheit kann ich aber nicht garantieren – jede Person reagiert unterschiedlich. Transparent zu bleiben ist mir hier wichtiger als Marketing-Versprechen.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Muss ich Yoga-Erfahrung haben?</summary>
+      <p>Nein. Die Neuro-Yoga-Einheit ist für alle Levels gedacht. Es geht nicht um Leistung, sondern ums Ankommen im Körper.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Kann ich alleine kommen?</summary>
+      <p>Ja, die meisten kommen alleine. Genau das ist der Sinn – Menschen zusammenbringen, die sich sonst nirgends begegnen würden.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Gibt es Übernachtungsmöglichkeiten?</summary>
+      <p>Ja, für 15 € extra kannst du bei uns übernachten – inklusive Frühstück am nächsten Morgen. Wolldecken, Kissen und eine Matratze sind vor Ort. Die Plätze sind begrenzt, Verfügbarkeit und Details klären wir nach deiner Anmeldung.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Wie funktioniert der Shuttle vom Augsburger Bahnhof?</summary>
+      <p>Wenn du mit dem Zug anreist, gib das in der Anmeldung an. Wir planen einen Shuttle vom Hauptbahnhof Augsburg zum Veranstaltungsort und sprechen die genauen Abholzeiten individuell mit dir ab.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Kann ich mich anmelden, wenn ich am 21. November nicht kann?</summary>
+      <p>Ja, kreuze im Formular an, dass ein anderes Datum besser wäre. Deine Antwort hilft mir, zukünftige Termine zu planen – du bleibst unverbindlich und wirst informiert.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Wie groß ist die Gruppe?</summary>
+      <p>Bewusst klein: Maximal 12 Teilnehmerinnen. Das hält die Runde intim genug für echten Austausch und lässt beim Yoga und Kochen genug Raum für jede.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Wie erfahre ich von zukünftigen Retreats?</summary>
+      <p>Setze im Anmeldeformular das Häkchen „Ich möchte zukünftig Informationen erhalten" – dann melde ich mich, sobald ein neues Datum oder eine neue Stadt feststeht. Oder stimme auf der <a href="staedte.html" style="color: var(--copper-dark); text-decoration: underline;">Städte-Seite</a> ab, in welcher Stadt du gerne dabei wärst.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Sind Bücher vor Ort erhältlich?</summary>
+      <p>Ja, meine Bücher und Kochbücher sind beim Retreat vor Ort. Du kannst sie dir in Ruhe anschauen und bei Interesse direkt mitnehmen.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Was passiert, wenn ich meine Anmeldung stornieren muss?</summary>
+      <p><em>— Platzhalter: Stornierungsbedingungen werden vor dem Livegang ergänzt. Grundsätzlich melde dich bitte so früh wie möglich bei mir, dann finden wir eine faire Lösung.</em></p>
+    </details>
+    <details class="faq-item">
+      <summary>Was ist, wenn ich noch andere Fragen habe?</summary>
+      <p>Schreib mir einfach – am schnellsten per WhatsApp: <a href="https://wa.me/4915118515594" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline;">+49 1511 8515 594</a>. Oder per Mail an <a href="mailto:julia@bergles.net" style="color: var(--copper-dark); text-decoration: underline;">julia@bergles.net</a>.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-beige">
+  <div class="container-narrow text-center">
+    <h2>Noch Fragen offen?</h2>
+    <p class="lead mt-md" style="margin-left: auto; margin-right: auto;">
+      Schreib mir direkt – ich antworte dir persönlich.
+    </p>
+    <div class="mt-lg" style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
+      <a href="https://wa.me/4915118515594" target="_blank" rel="noopener" class="btn-xl">WhatsApp schreiben</a>
+      <a href="retreat-anmelden.html" class="btn-xl outline">Zur Anmeldung</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-v3">
+  <div class="container">
+    <div class="grid-3" style="align-items: start; gap: 60px;">
+      <div>
+        <div class="logo" style="font-family: var(--serif); font-size: 32px; color: var(--cream);">Julia<span style="color: var(--copper);"> ·</span> Bergles</div>
+        <p style="color: rgba(255,252,249,0.7); font-size: 15px; margin-top: 20px; max-width: 32ch;">
+          Erfahrungsaustausch für Menschen mit Histaminproblematik, MCAS und allem was dazugehört.
+        </p>
+        <p style="margin-top: 20px;"><a href="https://instagram.com/julia_bergles" style="color: var(--copper);">@julia_bergles</a></p>
+      </div>
+      <div>
+        <h4>Inhalte</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="retreat.html">Retreat</a></li>
+          <li><a href="histaminintoleranz.html">Histamin</a></li>
+          <li><a href="mcas.html">MCAS</a></li>
+          <li><a href="selbsttest.html">Selbsttest</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Shop &amp; Rechtliches</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li><a href="https://terra-luna-masterclass.vercel.app/">★ Histamin Seelenbauch Kurs</a></li>
+          <li><a href="ebooks.html">Bücher</a></li>
+          <li><a href="empfehlungen.html">Empfehlungen</a></li>
+          <li><a href="gespraech.html">Gespräch</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="widerruf.html">Widerruf</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      © 2026 Julia Bergles · Wehringen bei Augsburg
+    </div>
+  </div>
+</footer>
+
+<script>
+  const setNavHeight = () => {
+    const nav = document.getElementById('navV3');
+    if (nav) document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+  };
+  setNavHeight();
+  window.addEventListener('resize', setNavHeight);
+</script>
+
+</body>
+</html>

@@ -289,7 +289,39 @@
     flex-shrink: 0;
   }
 
-  /* Städte-Abstimmung */
+  /* Städte-Teaser mit Hintergrund */
+  .staedte-teaser {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: clamp(80px, 12vw, 160px) 0;
+  }
+  .staedte-teaser-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/retreat/ort-4.jpg') center/cover no-repeat;
+    z-index: 0;
+    transform: scale(1.03);
+  }
+  .staedte-teaser-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(42,42,42,0.78) 0%,
+      rgba(139,46,62,0.65) 60%,
+      rgba(42,42,42,0.75) 100%);
+    z-index: 1;
+  }
+  .staedte-teaser-content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  /* Städte-Abstimmung (nur noch auf staedte.html genutzt) */
   .vote-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -794,12 +826,9 @@
       </div>
 
       <div class="mt-lg" style="display: flex; gap: 14px; flex-wrap: wrap;">
-        <a href="#anmelden" class="btn-xl">Jetzt Platz anfragen</a>
-        <a id="heroWhatsapp" href="https://wa.me/4915118515594" class="btn-xl outline" style="color: var(--cream); border-color: var(--cream);" target="_blank" rel="noopener">Per WhatsApp anmelden</a>
+        <a href="#anmelden" class="btn-xl">Jetzt anfragen</a>
+        <a href="staedte.html" class="btn-xl outline" style="color: var(--cream); border-color: var(--cream);">Für andere Stadt abstimmen</a>
       </div>
-      <p class="mt-sm" style="color: rgba(255,252,249,0.75); font-size: 13px; letter-spacing: 0.08em;">
-        <span id="heroWhatsappNum">+49 1511 8515 594</span> · <a href="#staedte" style="color: var(--cream); text-decoration: underline; text-underline-offset: 3px;">Für zukünftige Städte abstimmen</a>
-      </p>
     </div>
   </div>
 </header>
@@ -949,7 +978,7 @@
 
     <div class="text-center mt-lg reveal" style="max-width: 680px; margin: 56px auto 0;">
       <p>Ich weiß selbst, wie herausfordernd Essen mit Unverträglichkeiten sein kann. Deshalb ist mir wichtig, dass du dich bei unserem Retreat wohlfühlst.</p>
-      <p class="mt-md">Geplant sind Kürbissuppe, glutenfreies Kräuterbutter-Baguette, Dips, Gemüsesticks und weitere glutenfreie Snacks.</p>
+      <p class="mt-md">Geplant sind Kürbissuppe, glutenfreies Kräuterbutter-Baguette, Dips, Gemüsesticks und weitere glutenfreie Snacks. Für die Kürbissuppe nutze ich die <strong>Gemüsebrühe</strong> von <a href="https://histafood.eu" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline;">HistaFood</a>, für das Baguette das <strong>Kräutersalz</strong> von HistaFood.</p>
       <p class="mt-md">Wenn du einzelne Zutaten nicht verträgst, kannst du uns das bereits bei der Anmeldung mitteilen. Wir schauen gemeinsam, welche Alternativen möglich sind.</p>
       <p class="mt-lg" style="padding: 24px 28px; background: var(--mint); border-left: 3px solid var(--blue); font-size: 15px; font-style: italic; text-align: left;">
         Transparent gesagt: Ich kann nicht garantieren, dass alles für dich perfekt verträglich ist. Aber ich kann dir versprechen, dass wir dein Thema ernst nehmen und gemeinsam schauen, was passt.
@@ -1110,338 +1139,66 @@
 <!-- ============ FLYER ============ -->
 <section class="section section-cream" id="flyer">
   <div class="container">
-    <div class="grid-2" style="align-items: center;">
-      <div class="reveal">
-        <span class="eyebrow eyebrow-copper">Zum Mitnehmen</span>
-        <h2 class="mt-sm">Der <em class="italic">Original-Flyer</em>.</h2>
-        <p class="mt-md">
-          Alles Wichtige auf einen Blick. Teile ihn gerne mit Freundinnen, die dich verstehen würden, oder druck ihn dir für den Kühlschrank aus.
-        </p>
-        <div class="mt-lg" style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="images/retreat/flyer.jpg" download="Seelenbauch-Retreat-Augsburg.png" class="btn btn-copper">Flyer herunterladen</a>
-          <a href="images/retreat/flyer.jpg" target="_blank" rel="noopener" class="btn btn-outline">In groß ansehen</a>
-        </div>
-      </div>
-      <div class="reveal flyer-wrap">
-        <a href="images/retreat/flyer.jpg" target="_blank" rel="noopener">
-          <img src="images/retreat/flyer.jpg" alt="Seelenbauch Retreat Augsburg – Flyer mit allen Infos" loading="lazy">
-        </a>
-      </div>
+    <div class="reveal flyer-wrap">
+      <a href="images/retreat/flyer.jpg" target="_blank" rel="noopener">
+        <img src="images/retreat/flyer.jpg" alt="Seelenbauch Retreat Augsburg – Flyer mit allen Infos" loading="lazy">
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ STÄDTE-ABSTIMMUNG ============ -->
-<section class="section section-beige" id="staedte">
-  <div class="container">
-    <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-copper reveal">Weitere Retreats</span>
-      <h2 class="mt-sm reveal">Deine Stadt könnte die <em class="italic">nächste</em> sein.</h2>
-      <p class="lead mt-md reveal" style="margin-left: auto; margin-right: auto;">
-        Ich möchte mit den Histamin-Retreats noch mehr Menschen erreichen. Hilf mir dabei, die nächsten Standorte auszuwählen. Stimme ab und verrate mir, wo du gerne dabei wärst.
-      </p>
-    </div>
-
-    <div style="max-width: 820px; margin: 0 auto;">
-      <div class="vote-grid" id="voteGrid" role="radiogroup" aria-label="Städte-Abstimmung">
-        <button class="vote-option" data-city="Berlin"      type="button"><div class="bar"></div><span class="city">Berlin</span><span class="count">—</span></button>
-        <button class="vote-option" data-city="Düsseldorf"  type="button"><div class="bar"></div><span class="city">Düsseldorf</span><span class="count">—</span></button>
-        <button class="vote-option" data-city="Köln"        type="button"><div class="bar"></div><span class="city">Köln</span><span class="count">—</span></button>
-        <button class="vote-option" data-city="Hamburg"     type="button"><div class="bar"></div><span class="city">Hamburg</span><span class="count">—</span></button>
-        <button class="vote-option" data-city="München"     type="button"><div class="bar"></div><span class="city">München</span><span class="count">—</span></button>
-        <button class="vote-option" data-city="Stuttgart"   type="button"><div class="bar"></div><span class="city">Stuttgart</span><span class="count">—</span></button>
-        <button class="vote-option" data-city="Leipzig"     type="button"><div class="bar"></div><span class="city">Leipzig</span><span class="count">—</span></button>
-        <button class="vote-option" data-city="__OTHER__"   type="button"><div class="bar"></div><span class="city">Andere Stadt →</span><span class="count">—</span></button>
-      </div>
-
-      <div class="vote-other-wrap" id="voteOtherWrap" style="display:none;">
-        <input type="text" id="voteOtherCity" placeholder="Welche Stadt?" maxlength="60">
-        <button class="btn btn-copper" id="voteOtherSubmit" type="button">Abstimmen</button>
-      </div>
-
-      <div style="margin-top: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-        <label style="display: inline-flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer;">
-          <input type="checkbox" id="voteWouldAttend" style="accent-color: var(--copper); width: 18px; height: 18px;">
-          <span>Ich würde dort auch tatsächlich teilnehmen.</span>
-        </label>
-      </div>
-
-      <div class="vote-feedback" id="voteFeedback"></div>
-
-      <p style="text-align: center; margin-top: 32px; font-size: 13px; color: var(--mute); font-style: italic;">
-        Eine Stimme pro Browser · <span id="voteStatus">Lade Ergebnisse…</span>
-      </p>
+<!-- ============ STÄDTE-TEASER ============ -->
+<section class="staedte-teaser" id="staedte">
+  <div class="staedte-teaser-bg"></div>
+  <div class="staedte-teaser-overlay"></div>
+  <div class="container staedte-teaser-content">
+    <span class="eyebrow eyebrow-line" style="color: var(--cream);">Weitere Retreats</span>
+    <h2 class="display mt-sm" style="color: var(--cream);">
+      Deine Stadt könnte die <em class="italic">nächste</em> sein.
+    </h2>
+    <p class="lead mt-md" style="color: rgba(255,252,249,0.92); max-width: 56ch; margin-left: auto; margin-right: auto;">
+      Berlin, Köln, Hamburg, München, Leipzig … hilf mir dabei, die nächsten Standorte auszuwählen. Stimme ab und verrate mir, wo du gerne dabei wärst.
+    </p>
+    <div class="mt-lg">
+      <a href="staedte.html" class="btn-xl">Hier abstimmen</a>
     </div>
   </div>
 </section>
 
-<!-- ============ ANMELDUNG ============ -->
+
+<!-- ============ ANMELDUNG-TEASER ============ -->
 <section class="section section-beige" id="anmelden">
   <div class="container">
-    <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-copper reveal">Anmeldung &amp; Interesse</span>
+    <div class="text-center" style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow eyebrow-copper reveal">Anmeldung</span>
       <h2 class="mt-sm reveal">Komm <em class="italic">dazu</em>.</h2>
-      <p class="mt-md reveal" style="margin-left: auto; margin-right: auto; max-width: 56ch;">
-        Fülle das Formular aus. Ich melde mich persönlich bei dir und bestätige deinen Platz oder wir sprechen über deine Fragen.
+      <p class="lead mt-md reveal" style="margin-left: auto; margin-right: auto;">
+        Nur 12 Plätze. Fülle in 2 Minuten das Anmeldeformular aus – ich melde mich persönlich bei dir und bestätige deinen Platz.
       </p>
+      <div class="mt-lg">
+        <a href="retreat-anmelden.html" class="btn-xl">Jetzt anmelden</a>
+      </div>
       <p class="mt-md reveal" style="margin-left: auto; margin-right: auto; max-width: 48ch; font-size: 15px; color: var(--dark-soft);">
-        Lieber per WhatsApp? Schreib mir direkt an <a id="formWhatsapp" href="https://wa.me/4915118515594" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline; text-underline-offset: 3px; font-weight: 700;">+49 1511 8515 594</a>.
+        Noch Fragen? Schreib mir direkt auf WhatsApp: <a href="https://wa.me/4915118515594" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline; text-underline-offset: 3px; font-weight: 700;">+49 1511 8515 594</a>
       </p>
     </div>
-
-    <form class="form-wrap reveal" id="retreatForm" novalidate autocomplete="on">
-
-      <!-- Honeypot -->
-      <div class="honeypot">
-        <label>Nicht ausfüllen <input type="text" name="hp_website" tabindex="-1" autocomplete="off"></label>
-      </div>
-
-      <!-- A. Kontaktdaten -->
-      <div class="form-section">
-        <h3>Deine Kontaktdaten</h3>
-        <p class="form-hint">Damit ich mich bei dir zurückmelden kann.</p>
-
-        <div class="field-row">
-          <div class="field">
-            <label for="f_vorname">Vorname <span class="req">*</span></label>
-            <input type="text" id="f_vorname" name="vorname" required autocomplete="given-name">
-            <span class="err">Bitte Vornamen eintragen.</span>
-          </div>
-          <div class="field">
-            <label for="f_nachname">Nachname <span class="req">*</span></label>
-            <input type="text" id="f_nachname" name="nachname" required autocomplete="family-name">
-            <span class="err">Bitte Nachnamen eintragen.</span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="f_email">E-Mail-Adresse <span class="req">*</span></label>
-          <input type="email" id="f_email" name="email" required autocomplete="email">
-          <span class="err">Bitte gültige E-Mail-Adresse eintragen.</span>
-        </div>
-
-        <div class="field">
-          <label for="f_tel">Telefonnummer (optional)</label>
-          <input type="tel" id="f_tel" name="telefon" autocomplete="tel">
-        </div>
-      </div>
-
-      <!-- B. Welches Retreat -->
-      <div class="form-section">
-        <h3>Für welches Retreat interessierst du dich?</h3>
-        <p class="form-hint">Mehrfachauswahl nicht nötig – wähl das, was am besten passt.</p>
-
-        <div class="radio-group">
-          <label><input type="radio" name="retreat_wahl" value="augsburg" required><span>Augsburg / Wehringen – 21. November 2026</span></label>
-          <label><input type="radio" name="retreat_wahl" value="andere_stadt"><span>Ein zukünftiges Retreat in einer anderen Stadt</span></label>
-          <label><input type="radio" name="retreat_wahl" value="info"><span>Ich möchte erst einmal über zukünftige Termine informiert werden</span></label>
-        </div>
-        <span class="err" id="err_retreat_wahl">Bitte eine Option auswählen.</span>
-
-        <div class="conditional" id="cond_wunschstadt">
-          <div class="field" style="margin: 0;">
-            <label for="f_wunschstadt">In welcher Stadt wärst du gerne dabei?</label>
-            <input type="text" id="f_wunschstadt" name="wunschstadt" placeholder="z. B. Köln, München, Hamburg…">
-          </div>
-        </div>
-      </div>
-
-      <!-- C. Teilnahmeplanung -->
-      <div class="form-section">
-        <h3>Wie sieht deine Teilnahmeplanung aus?</h3>
-        <p class="form-hint">Verbindlich oder erst mal unverbindlich – beides ist willkommen.</p>
-
-        <div class="radio-group">
-          <label><input type="radio" name="plan" value="verbindlich" required><span><strong>Verbindlich anmelden</strong> – ich möchte beim Retreat in Augsburg dabei sein.</span></label>
-          <label><input type="radio" name="plan" value="anderes_datum"><span>Ich wäre gerne dabei, aber ein anderes Datum wäre für mich besser.</span></label>
-          <label><input type="radio" name="plan" value="andere_stadt"><span>Ich interessiere mich für ein Retreat in einer anderen Stadt.</span></label>
-          <label><input type="radio" name="plan" value="infos"><span>Ich möchte erst einmal weitere Informationen erhalten.</span></label>
-        </div>
-        <span class="err" id="err_plan">Bitte eine Option auswählen.</span>
-
-        <div class="conditional" id="cond_datum">
-          <div class="field" style="margin: 0;">
-            <label for="f_wunschdatum">Welche Wochentage oder Zeiträume wären für dich besser? (optional)</label>
-            <input type="text" id="f_wunschdatum" name="wunschdatum" placeholder="z. B. Samstage, Dezember, Frühjahr…">
-          </div>
-        </div>
-
-        <p class="form-notice">
-          Verbindliche Anmeldung ist noch keine Platzreservierung, bis ich sie dir per Mail bestätigt habe. Bei allen anderen Optionen entsteht keine Verpflichtung – du bekommst von mir eine persönliche Antwort.
-        </p>
-      </div>
-
-      <!-- D. Anreise & Übernachtung -->
-      <div class="form-section">
-        <h3>Anreise &amp; Übernachtung</h3>
-        <p class="form-hint">Mehrfachauswahl möglich.</p>
-
-        <div class="check-group">
-          <label><input type="checkbox" name="anreise[]" value="auto"><span>Ich komme mit dem Auto.</span></label>
-          <label><input type="checkbox" name="anreise[]" value="bahn_shuttle"><span>Ich komme mit der Bahn und würde gerne vom Augsburger Bahnhof abgeholt werden.</span></label>
-          <label><input type="checkbox" name="anreise[]" value="bahn_selbst"><span>Ich komme mit der Bahn und organisiere mich selbst.</span></label>
-          <label><input type="checkbox" name="anreise[]" value="uebernachtung"><span>Ich würde gerne übernachten (15 € extra inkl. Frühstück).</span></label>
-          <label><input type="checkbox" name="anreise[]" value="keine_uebernachtung"><span>Ich benötige keine Übernachtung.</span></label>
-        </div>
-      </div>
-
-      <!-- E. Essen & individuelle Bedürfnisse -->
-      <div class="form-section">
-        <h3>Essen &amp; individuelle Bedürfnisse</h3>
-        <p class="form-hint">Freiwillige Angaben. Wenn du teilnimmst, hilft es mir aber sehr beim Einkaufen.</p>
-
-        <div class="check-group">
-          <label><input type="checkbox" name="essen[]" value="passt"><span>Das geplante Essen passt für mich.</span></label>
-          <label><input type="checkbox" name="essen[]" value="eigenes"><span>Ich bringe mein eigenes Essen mit.</span></label>
-          <label><input type="checkbox" name="essen[]" value="alternative"><span>Ich würde gerne etwas anderes essen.</span></label>
-        </div>
-
-        <div class="field" style="margin-top: 20px;">
-          <label for="f_unver">Welche Lebensmittel verträgst du nicht?</label>
-          <textarea id="f_unver" name="unvertraeglichkeiten" placeholder="z. B. Milchprodukte, Tomaten, Zitrusfrüchte …"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="f_allergien">Allergien oder Zutaten, die ich berücksichtigen soll?</label>
-          <textarea id="f_allergien" name="allergien" placeholder="Diagnostizierte Allergien, Medikamentenwechselwirkungen bei bestimmten Lebensmitteln usw."></textarea>
-        </div>
-
-        <div class="field">
-          <label for="f_sonstiges">Gibt es sonst etwas, das ich vorab wissen sollte?</label>
-          <textarea id="f_sonstiges" name="sonstiges" placeholder="Alles, was du mir noch mitgeben möchtest."></textarea>
-        </div>
-
-        <p class="form-notice">
-          Angaben zu Allergien und Unverträglichkeiten können Gesundheitsdaten sein. Ich nutze sie ausschließlich, um den Nachmittag für dich gut zu organisieren – nicht für etwas anderes.
-        </p>
-      </div>
-
-      <!-- F. Unterstützungsbeitrag -->
-      <div class="form-section">
-        <h3>Freiwilliger Unterstützungsbeitrag</h3>
-        <p class="form-hint">Komplett optional. Kein Zahlungsvorgang – nur eine Angabe, wenn du magst.</p>
-
-        <div class="radio-group">
-          <label><input type="radio" name="beitrag" value="0"><span>Kein zusätzlicher Beitrag</span></label>
-          <label><input type="radio" name="beitrag" value="5"><span>5 €</span></label>
-          <label><input type="radio" name="beitrag" value="10"><span>10 €</span></label>
-          <label><input type="radio" name="beitrag" value="individuell"><span>Individueller Betrag</span></label>
-        </div>
-
-        <div class="conditional" id="cond_beitrag">
-          <div class="field" style="margin: 0;">
-            <label for="f_beitrag_ind">Dein Wunschbetrag</label>
-            <input type="number" id="f_beitrag_ind" name="beitrag_individuell" min="0" step="1" placeholder="z. B. 15">
-          </div>
-        </div>
-
-        <p class="form-notice">
-          Das ist keine Spende an eine gemeinnützige Organisation. Wenn du den Beitrag angibst, besprechen wir die Zahlung persönlich – bitte sende hier keine Kontodaten oder Zahlungsinformationen.
-        </p>
-      </div>
-
-      <!-- G. Abschluss / Einwilligungen -->
-      <div class="form-section">
-        <h3>Zum Abschluss</h3>
-
-        <div class="check-group">
-          <label>
-            <input type="checkbox" name="dsgvo" required>
-            <span><strong>Ich willige ein</strong>, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und per E-Mail an Julia Bergles übermittelt werden. Siehe <a href="datenschutz.html" style="color: var(--copper-dark); text-decoration: underline;">Datenschutzerklärung</a>. <span class="req">*</span></span>
-          </label>
-          <label>
-            <input type="checkbox" name="newsletter">
-            <span>Ich möchte zukünftig Informationen zu weiteren Retreats und Angeboten per E-Mail erhalten (optional, jederzeit widerrufbar).</span>
-          </label>
-        </div>
-        <span class="err" id="err_dsgvo">Bitte Einwilligung zur Datenverarbeitung bestätigen.</span>
-      </div>
-
-      <!-- Submit -->
-      <div style="text-align: center; margin-top: 32px;">
-        <button type="submit" class="btn-xl" id="submitBtn">
-          Anmeldung absenden
-        </button>
-        <p style="margin-top: 16px; font-size: 13px; color: var(--mute);">
-          Du bekommst eine persönliche Antwort von mir per Mail.
-        </p>
-      </div>
-
-      <div class="form-success" id="formSuccess">
-        <strong>Danke, deine Nachricht ist auf dem Weg!</strong><br>
-        Ich melde mich bei dir, meistens innerhalb weniger Tage. Wenn du keine Antwort bekommst, schreib mir gerne nochmal an <a href="mailto:julia@bergles.net" style="color: var(--copper-dark); text-decoration: underline;">julia@bergles.net</a>.
-      </div>
-      <div class="form-error" id="formError">
-        Da ist etwas schiefgegangen. Du kannst mir deine Anfrage auch direkt an <a href="mailto:julia@bergles.net" style="color: var(--copper-dark); text-decoration: underline;">julia@bergles.net</a> schicken.
-      </div>
-    </form>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section class="section section-cream" id="faq">
-  <div class="container-narrow">
-    <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-copper">Häufige Fragen</span>
-      <h2 class="mt-sm">Was du vielleicht noch <em class="italic">wissen möchtest</em>.</h2>
-    </div>
-
-    <div>
-      <details class="faq-item">
-        <summary>Für wen ist das Histamin-Retreat geeignet?</summary>
-        <p>Für Frauen, die mit Histaminintoleranz, MCAS, Reizdarm oder anderen Unverträglichkeiten leben – oder sich einfach nach Austausch und einer bewussten Auszeit sehnen. Du musst keine Diagnose mitbringen.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Muss ich eine diagnostizierte Histaminintoleranz haben?</summary>
-        <p>Nein. Das Retreat ist offen für alle, die sich mit dem Thema beschäftigen – ob mit Diagnose, auf dem Weg dahin oder einfach aus Interesse.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Was passiert, wenn ich bestimmte Lebensmittel nicht vertrage?</summary>
-        <p>Teil uns das bitte in der Anmeldung mit. Wir schauen gemeinsam nach einer Alternative. Falls das nicht möglich ist, kannst du auch dein eigenes Essen mitbringen – das ist völlig in Ordnung.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Ist das Essen komplett histaminfrei?</summary>
-        <p>Ich plane das Essen bewusst mit histaminärmeren Zutaten. Eine komplette Histaminfreiheit kann ich aber nicht garantieren – jede Person reagiert unterschiedlich. Transparent zu bleiben ist mir hier wichtiger als Marketing-Versprechen.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Muss ich Yoga-Erfahrung haben?</summary>
-        <p>Nein. Die Neuro-Yoga-Einheit ist für alle Levels gedacht. Es geht nicht um Leistung, sondern ums Ankommen im Körper.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Kann ich alleine kommen?</summary>
-        <p>Ja, die meisten kommen alleine. Genau das ist der Sinn – Menschen zusammenbringen, die sich sonst nirgends begegnen würden.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Gibt es Übernachtungsmöglichkeiten?</summary>
-        <p>Ja, für 15 € extra kannst du bei uns übernachten – inklusive Frühstück am nächsten Morgen. Wolldecken, Kissen und eine Matratze sind vor Ort. Die Plätze sind begrenzt, Verfügbarkeit und Details klären wir nach deiner Anmeldung.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Wie funktioniert der Shuttle vom Augsburger Bahnhof?</summary>
-        <p>Wenn du mit dem Zug anreist, gib das in der Anmeldung an. Wir planen einen Shuttle vom Hauptbahnhof Augsburg zum Veranstaltungsort und sprechen die genauen Abholzeiten individuell mit dir ab.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Kann ich mich anmelden, wenn ich am 21. November nicht kann?</summary>
-        <p>Ja, kreuze im Formular an, dass ein anderes Datum besser wäre. Deine Antwort hilft mir, zukünftige Termine zu planen – du bleibst unverbindlich und wirst informiert.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Wie groß ist die Gruppe?</summary>
-        <p>Bewusst klein: Maximal 12 Teilnehmerinnen. Das hält die Runde intim genug für echten Austausch und lässt beim Yoga und Kochen genug Raum für jede.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Wie erfahre ich von zukünftigen Retreats?</summary>
-        <p>Setze im Formular das Häkchen „Ich möchte zukünftig Informationen erhalten" – dann melde ich mich, sobald ein neues Datum oder eine neue Stadt feststeht.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Sind Bücher vor Ort erhältlich?</summary>
-        <p>Ja, meine Bücher und Kochbücher sind beim Retreat vor Ort. Du kannst sie dir in Ruhe anschauen und bei Interesse direkt mitnehmen.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Was passiert, wenn ich meine Anmeldung stornieren muss?</summary>
-        <p><em>— Platzhalter: Stornierungsbedingungen werden vor dem Livegang ergänzt. Grundsätzlich melde dich bitte so früh wie möglich bei mir, dann finden wir eine faire Lösung.</em></p>
-      </details>
+<!-- ============ FAQ-TEASER ============ -->
+<section class="section section-cream" id="faq-teaser">
+  <div class="container-narrow text-center">
+    <span class="eyebrow eyebrow-copper reveal">Häufige Fragen</span>
+    <h2 class="mt-sm reveal">Was du vielleicht noch <em class="italic">wissen möchtest</em>.</h2>
+    <p class="mt-md reveal" style="margin-left: auto; margin-right: auto; max-width: 52ch;">
+      Für wen das Retreat ist, was mit Unverträglichkeiten passiert, Shuttle, Übernachtung, Stornierung – alle Antworten gesammelt auf einer Seite.
+    </p>
+    <div class="mt-lg">
+      <a href="retreat-faq.html" class="btn-xl outline">Zu den Fragen</a>
     </div>
   </div>
 </section>
+
 
 <!-- ============ ABSCHLUSS-CTA ============ -->
 <section class="section section-beige">
@@ -1455,6 +1212,20 @@
       <a href="#anmelden" class="btn-xl">Platz anfragen</a>
       <a href="#staedte" class="btn-xl outline">Für zukünftige Retreats abstimmen</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ SPONSOR ============ -->
+<section class="section section-cream" style="padding: clamp(50px, 7vw, 80px) 0;">
+  <div class="container text-center">
+    <span class="eyebrow eyebrow-copper reveal">Mit freundlicher Unterstützung von</span>
+    <h3 class="mt-sm reveal" style="font-size: clamp(28px, 4vw, 42px); color: var(--copper-dark);">
+      <a href="https://histafood.eu" target="_blank" rel="noopener" style="color: var(--copper-dark); border-bottom: 2px solid var(--copper); padding-bottom: 4px;">HistaFood</a>
+    </h3>
+    <p class="mt-md reveal" style="margin-left: auto; margin-right: auto; max-width: 48ch; font-size: 15px; color: var(--dark-soft);">
+      HistaFood stiftet die Goodie-Bags für jede Teilnehmerin und begleitet uns mit Gemüsebrühe und Kräutersalz durchs gemeinsame Kochen.
+    </p>
+    <a href="https://histafood.eu" target="_blank" rel="noopener" class="btn btn-outline mt-md" style="font-size: 12px;">histafood.eu →</a>
   </div>
 </section>
 
@@ -1525,332 +1296,6 @@
     if (el && C.whatsappLink) el.href = C.whatsappLink;
   });
 
-  // ========================================================
-  // CONDITIONAL FIELDS
-  // ========================================================
-  const toggleCond = (name, value, targetId) => {
-    const inputs = document.querySelectorAll(`input[name="${name}"]`);
-    const target = document.getElementById(targetId);
-    if (!target) return;
-    inputs.forEach(inp => {
-      inp.addEventListener('change', () => {
-        const checked = document.querySelector(`input[name="${name}"]:checked`);
-        target.classList.toggle('visible', checked && checked.value === value);
-      });
-    });
-  };
-  toggleCond('retreat_wahl', 'andere_stadt', 'cond_wunschstadt');
-  toggleCond('plan', 'anderes_datum', 'cond_datum');
-  toggleCond('beitrag', 'individuell', 'cond_beitrag');
-
-  // ========================================================
-  // FORM: Validation + Submit
-  // ========================================================
-  const form = document.getElementById('retreatForm');
-  const successBox = document.getElementById('formSuccess');
-  const errorBox = document.getElementById('formError');
-  const submitBtn = document.getElementById('submitBtn');
-
-  const showError = (field, show) => {
-    const wrap = field.closest('.field') || field;
-    if (wrap.classList) wrap.classList.toggle('has-error', show);
-  };
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Honeypot — Bot erkannt → Submit täuschen
-    if (form.querySelector('[name="hp_website"]').value.trim() !== '') {
-      successBox.classList.add('visible');
-      form.style.display = 'none';
-      return;
-    }
-
-    // Reset-States
-    successBox.classList.remove('visible');
-    errorBox.classList.remove('visible');
-    let hasErr = false;
-
-    // Pflichtfelder prüfen
-    ['f_vorname', 'f_nachname', 'f_email'].forEach(id => {
-      const inp = document.getElementById(id);
-      const valid = inp.value.trim() !== '' && (inp.type !== 'email' || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value));
-      showError(inp, !valid);
-      if (!valid) hasErr = true;
-    });
-
-    const retreatChecked = form.querySelector('input[name="retreat_wahl"]:checked');
-    document.getElementById('err_retreat_wahl').style.display = retreatChecked ? 'none' : 'block';
-    if (!retreatChecked) hasErr = true;
-
-    const planChecked = form.querySelector('input[name="plan"]:checked');
-    document.getElementById('err_plan').style.display = planChecked ? 'none' : 'block';
-    if (!planChecked) hasErr = true;
-
-    const dsgvo = form.querySelector('input[name="dsgvo"]').checked;
-    document.getElementById('err_dsgvo').style.display = dsgvo ? 'none' : 'block';
-    if (!dsgvo) hasErr = true;
-
-    if (hasErr) {
-      const firstErr = form.querySelector('.has-error, .err[style*="block"]');
-      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-
-    // Daten sammeln
-    const data = new FormData(form);
-    const asObj = {};
-    for (const [k, v] of data.entries()) {
-      if (asObj[k] !== undefined) {
-        asObj[k] = [].concat(asObj[k], v);
-      } else {
-        asObj[k] = v;
-      }
-    }
-    // Mehrfach-Checkboxen separat behandeln
-    asObj.anreise = data.getAll('anreise[]');
-    asObj.essen = data.getAll('essen[]');
-
-    // Submit-Button sperren
-    const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Wird gesendet…';
-
-    try {
-      let ok = false;
-
-      // Variante A: Formspree
-      if (C.formspreeUrl && /^https:\/\//.test(C.formspreeUrl)) {
-        const res = await fetch(C.formspreeUrl, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(asObj)
-        });
-        ok = res.ok;
-      } else {
-        // Variante B: mailto-Fallback
-        const subject = `Retreat-Anmeldung: ${asObj.vorname || ''} ${asObj.nachname || ''}`.trim();
-        const bodyLines = [];
-        bodyLines.push(`Vorname: ${asObj.vorname || ''}`);
-        bodyLines.push(`Nachname: ${asObj.nachname || ''}`);
-        bodyLines.push(`E-Mail: ${asObj.email || ''}`);
-        if (asObj.telefon) bodyLines.push(`Telefon: ${asObj.telefon}`);
-        bodyLines.push('');
-        bodyLines.push(`Retreat-Wahl: ${asObj.retreat_wahl || ''}`);
-        if (asObj.wunschstadt) bodyLines.push(`Wunschstadt: ${asObj.wunschstadt}`);
-        bodyLines.push(`Plan: ${asObj.plan || ''}`);
-        if (asObj.wunschdatum) bodyLines.push(`Wunschdatum: ${asObj.wunschdatum}`);
-        bodyLines.push('');
-        bodyLines.push(`Anreise: ${(asObj.anreise || []).join(', ')}`);
-        bodyLines.push(`Essen: ${(asObj.essen || []).join(', ')}`);
-        if (asObj.unvertraeglichkeiten) bodyLines.push(`Unverträglichkeiten: ${asObj.unvertraeglichkeiten}`);
-        if (asObj.allergien)            bodyLines.push(`Allergien: ${asObj.allergien}`);
-        if (asObj.sonstiges)            bodyLines.push(`Sonstiges: ${asObj.sonstiges}`);
-        bodyLines.push('');
-        bodyLines.push(`Beitrag: ${asObj.beitrag || '0'}${asObj.beitrag_individuell ? ' / individuell: ' + asObj.beitrag_individuell + ' €' : ''}`);
-        bodyLines.push(`Newsletter: ${asObj.newsletter ? 'ja' : 'nein'}`);
-        bodyLines.push(`DSGVO-Einwilligung: ja`);
-
-        const mailto = `mailto:${encodeURIComponent(C.mailto || 'julia@bergles.net')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-        window.location.href = mailto;
-        ok = true;
-      }
-
-      if (ok) {
-        successBox.classList.add('visible');
-        form.style.display = 'none';
-        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        throw new Error('Submit failed');
-      }
-    } catch (err) {
-      console.error('[retreat form]', err);
-      errorBox.classList.add('visible');
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-    }
-  });
-
-  // ========================================================
-  // STÄDTE-ABSTIMMUNG
-  // ========================================================
-  const VOTE_KEY_LOCAL = 'retreat_vote_v1';
-  const VOTE_TOKEN_KEY = 'retreat_vote_token_v1';
-  const voteStatus = document.getElementById('voteStatus');
-  const voteFeedback = document.getElementById('voteFeedback');
-  const voteOtherWrap = document.getElementById('voteOtherWrap');
-  const voteGrid = document.getElementById('voteGrid');
-  const voteWouldAttend = document.getElementById('voteWouldAttend');
-
-  // Anonymer Abstimm-Token (einmalig je Browser)
-  let voterToken = localStorage.getItem(VOTE_TOKEN_KEY);
-  if (!voterToken) {
-    voterToken = (crypto && crypto.randomUUID) ? crypto.randomUUID()
-      : (Date.now().toString(36) + Math.random().toString(36).slice(2));
-    localStorage.setItem(VOTE_TOKEN_KEY, voterToken);
-  }
-
-  const supaReady = !!(C.supabaseUrl && C.supabaseAnonKey);
-  const supaHeaders = {
-    'apikey': C.supabaseAnonKey || '',
-    'Authorization': `Bearer ${C.supabaseAnonKey || ''}`,
-    'Content-Type': 'application/json'
-  };
-
-  const renderResults = (counts) => {
-    const total = Object.values(counts).reduce((a, b) => a + b, 0);
-    document.querySelectorAll('.vote-option').forEach(btn => {
-      const city = btn.dataset.city;
-      const count = counts[city] || 0;
-      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
-      btn.querySelector('.count').textContent = total === 0 ? '—' : `${count} · ${pct}%`;
-      btn.querySelector('.bar').style.width = `${pct}%`;
-    });
-    voteStatus.textContent = total === 0
-      ? 'Noch keine Stimmen – mach den Anfang!'
-      : `${total} ${total === 1 ? 'Stimme' : 'Stimmen'} insgesamt.`;
-  };
-
-  const loadResultsLocal = () => {
-    try {
-      const raw = localStorage.getItem(VOTE_KEY_LOCAL + '_counts');
-      return raw ? JSON.parse(raw) : {};
-    } catch (e) { return {}; }
-  };
-
-  const saveResultLocal = (city) => {
-    const counts = loadResultsLocal();
-    counts[city] = (counts[city] || 0) + 1;
-    localStorage.setItem(VOTE_KEY_LOCAL + '_counts', JSON.stringify(counts));
-    localStorage.setItem(VOTE_KEY_LOCAL, city);
-    return counts;
-  };
-
-  const alreadyVoted = () => localStorage.getItem(VOTE_KEY_LOCAL);
-
-  const markVoted = (city) => {
-    document.querySelectorAll('.vote-option').forEach(btn => {
-      btn.classList.add('voted');
-      if (btn.dataset.city === city || (city && city !== '__OTHER__' && btn.dataset.city === '__OTHER__' && !['Berlin','Düsseldorf','Köln','Hamburg','München','Stuttgart','Leipzig'].includes(city))) {
-        btn.classList.add('selected');
-      }
-    });
-  };
-
-  const showVoteFeedback = (city, source) => {
-    voteFeedback.classList.add('visible');
-    const attendText = voteWouldAttend.checked
-      ? ' Ich habe mir notiert, dass du dort auch tatsächlich teilnehmen würdest.'
-      : '';
-    voteFeedback.innerHTML = source === 'local'
-      ? `<strong>Danke, deine Stimme für ${city} ist gespeichert.</strong>${attendText} <em style="display:block; margin-top:6px; font-size:13px; color:var(--mute);">Hinweis: Noch läuft die Abstimmung lokal in deinem Browser. Sobald die Datenbank-Anbindung live ist, werden Stimmen gemeinsam sichtbar.</em>`
-      : `<strong>Danke, deine Stimme für ${city} ist gezählt.</strong>${attendText}`;
-  };
-
-  const supabaseVote = async (city, wouldAttend) => {
-    const body = {
-      city: city,
-      would_attend: !!wouldAttend,
-      voter_token: voterToken
-    };
-    const res = await fetch(`${C.supabaseUrl}/rest/v1/retreat_votes`, {
-      method: 'POST',
-      headers: Object.assign({}, supaHeaders, { 'Prefer': 'return=minimal' }),
-      body: JSON.stringify(body)
-    });
-    if (!res.ok && res.status !== 409) {
-      throw new Error('Supabase insert failed: ' + res.status);
-    }
-    return supabaseLoadCounts();
-  };
-
-  const supabaseLoadCounts = async () => {
-    // Erwartet eine View oder RPC "retreat_vote_counts" mit (city, count)
-    // Fallback: einfache SELECT auf retreat_votes und client-side gruppieren
-    const res = await fetch(`${C.supabaseUrl}/rest/v1/retreat_votes?select=city`, {
-      headers: supaHeaders
-    });
-    if (!res.ok) throw new Error('Supabase load failed');
-    const rows = await res.json();
-    const counts = {};
-    for (const r of rows) counts[r.city] = (counts[r.city] || 0) + 1;
-    return counts;
-  };
-
-  const submitVote = async (city) => {
-    if (!city) return;
-    if (alreadyVoted()) {
-      voteFeedback.classList.add('visible');
-      voteFeedback.innerHTML = `<strong>Du hast schon abgestimmt.</strong> Pro Browser ist eine Stimme möglich.`;
-      return;
-    }
-    const wouldAttend = voteWouldAttend.checked;
-    try {
-      let counts;
-      if (supaReady) {
-        counts = await supabaseVote(city, wouldAttend);
-        localStorage.setItem(VOTE_KEY_LOCAL, city);
-        showVoteFeedback(city, 'remote');
-      } else {
-        counts = saveResultLocal(city);
-        showVoteFeedback(city, 'local');
-      }
-      renderResults(counts);
-      markVoted(city);
-    } catch (err) {
-      console.error('[vote]', err);
-      const counts = saveResultLocal(city);
-      renderResults(counts);
-      markVoted(city);
-      showVoteFeedback(city, 'local');
-    }
-  };
-
-  // Click-Handler für Städte-Buttons
-  voteGrid.addEventListener('click', (e) => {
-    const btn = e.target.closest('.vote-option');
-    if (!btn) return;
-    if (alreadyVoted()) {
-      voteFeedback.classList.add('visible');
-      voteFeedback.innerHTML = `<strong>Du hast schon abgestimmt.</strong> Pro Browser ist eine Stimme möglich.`;
-      return;
-    }
-    const city = btn.dataset.city;
-    if (city === '__OTHER__') {
-      voteOtherWrap.style.display = 'flex';
-      document.getElementById('voteOtherCity').focus();
-      return;
-    }
-    submitVote(city);
-  });
-
-  document.getElementById('voteOtherSubmit').addEventListener('click', () => {
-    const input = document.getElementById('voteOtherCity');
-    const city = input.value.trim();
-    if (city.length < 2) {
-      input.focus();
-      return;
-    }
-    submitVote(city);
-  });
-
-  // Beim Laden: Ergebnisse zeigen
-  (async () => {
-    try {
-      let counts;
-      if (supaReady) {
-        counts = await supabaseLoadCounts();
-      } else {
-        counts = loadResultsLocal();
-      }
-      renderResults(counts);
-      const prev = alreadyVoted();
-      if (prev) markVoted(prev);
-    } catch (err) {
-      console.error('[vote load]', err);
-      renderResults(loadResultsLocal());
-    }
-  })();
 
   // ========================================================
   // Nav-Height für Mobile-Menü (gleich wie andere Seiten)
