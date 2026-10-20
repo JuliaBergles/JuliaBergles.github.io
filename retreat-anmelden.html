@@ -637,6 +637,31 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Wird gesendet…';
 
+    // Mailto-Fallback-Link für Fehler-Fall vorbereiten
+    const buildMailto = () => {
+      const subject = `Retreat-Anmeldung: ${asObj.vorname || ''} ${asObj.nachname || ''}`.trim();
+      const lines = [
+        `Vorname: ${asObj.vorname || ''}`,
+        `Nachname: ${asObj.nachname || ''}`,
+        `E-Mail: ${asObj.email || ''}`,
+        asObj.telefon ? `Telefon/WhatsApp: ${asObj.telefon}` : '',
+        '',
+        `Plan: ${asObj.plan || ''}`,
+        asObj.wunschdatum ? `Wunschdatum: ${asObj.wunschdatum}` : '',
+        asObj.wunschstadt ? `Wunschstadt: ${asObj.wunschstadt}` : '',
+        '',
+        `Anreise: ${asObj.anreise || ''}`,
+        `Essen: ${asObj.essen || ''}`,
+        asObj.unvertraeglichkeiten ? `Unverträglichkeiten: ${asObj.unvertraeglichkeiten}` : '',
+        asObj.sonstiges ? `Sonstiges: ${asObj.sonstiges}` : '',
+        '',
+        `Beitrag: ${asObj.beitrag || '0'}${asObj.beitrag_individuell ? ' / individuell: ' + asObj.beitrag_individuell + ' €' : ''}`,
+        `Newsletter: ${asObj.newsletter ? 'ja' : 'nein'}`,
+        'DSGVO-Einwilligung: ja'
+      ].filter(Boolean).join('\n');
+      return `mailto:julia@bergles.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
+    };
+
     try {
       const res = await fetch(C.formspreeUrl, {
         method: 'POST',
@@ -652,6 +677,10 @@
       }
     } catch (err) {
       console.error('[retreat form]', err);
+      // Fallback: Mailto öffnen (klappt immer, braucht keinen Formspree-Account)
+      window.location.href = buildMailto();
+      // Zusätzlich Error-Box mit alternativer Info
+      errorBox.innerHTML = 'Falls sich kein Mail-Programm öffnet: Schreib direkt an <a href="mailto:julia@bergles.net" style="color: var(--copper-dark); text-decoration: underline; font-weight: 700;">julia@bergles.net</a> oder per WhatsApp an <a href="https://wa.me/4915118515394" target="_blank" rel="noopener" style="color: var(--copper-dark); text-decoration: underline; font-weight: 700;">+49 1511 8515 394</a>.';
       errorBox.classList.add('visible');
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
