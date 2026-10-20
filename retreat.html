@@ -292,6 +292,52 @@
     flex-shrink: 0;
   }
 
+  /* Anreise-Sektion mit Hintergrundbild */
+  .anreise-section {
+    position: relative;
+    padding: var(--pad-section-y) 0;
+    overflow: hidden;
+  }
+  .anreise-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/retreat/ort-3.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+  .anreise-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(42,42,42,0.82) 0%,
+      rgba(119,104,163,0.65) 50%,
+      rgba(42,42,42,0.82) 100%);
+    z-index: 1;
+  }
+  .anreise-content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  /* Cards auf dunklem BG — cream Hintergrund, kein Text-Shadow */
+  .anreise-content .editorial-card {
+    background: var(--cream);
+    color: var(--dark);
+    text-shadow: none;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  }
+  .anreise-content .editorial-card h3,
+  .anreise-content .editorial-card p,
+  .anreise-content .editorial-card .chapter-num {
+    text-shadow: none;
+    color: var(--dark);
+  }
+  .anreise-content .editorial-card .chapter-num {
+    color: var(--copper-dark);
+  }
+  .anreise-content .editorial-card p {
+    color: var(--dark-soft);
+  }
+
   /* Städte-Teaser mit Hintergrund */
   .staedte-teaser {
     position: relative;
@@ -1021,11 +1067,13 @@
 </section>
 
 <!-- ============ ÜBERNACHTUNG & ANREISE ============ -->
-<section class="section section-beige" id="anreise">
-  <div class="container">
+<section class="anreise-section" id="anreise">
+  <div class="anreise-bg"></div>
+  <div class="anreise-overlay"></div>
+  <div class="container anreise-content">
     <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-copper reveal">Übernachtung &amp; Anreise</span>
-      <h2 class="mt-sm reveal">Du kommst von <em class="italic">weiter weg</em>?</h2>
+      <span class="eyebrow eyebrow-line reveal" style="color: var(--cream);">Übernachtung &amp; Anreise</span>
+      <h2 class="mt-sm reveal" style="color: var(--cream);">Du kommst von <em class="italic">weiter weg</em>?</h2>
     </div>
 
     <div class="grid-3">
@@ -1052,7 +1100,7 @@
       </div>
     </div>
 
-    <p class="text-center mt-lg" style="margin-left: auto; margin-right: auto; color: var(--dark-soft); font-size: 15px; font-style: italic;">
+    <p class="text-center mt-lg" style="margin-left: auto; margin-right: auto; color: rgba(255,252,249,0.85); font-size: 15px; font-style: italic;">
       Alles Weitere – Verfügbarkeit, genaue Abholzeiten, Zimmer – klären wir nach deiner Anmeldung per Mail.
     </p>
   </div>
