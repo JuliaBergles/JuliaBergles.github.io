@@ -292,6 +292,50 @@
     flex-shrink: 0;
   }
 
+  /* Retreat-Seite: Sektionen enger — weniger Luft, wie auf index.html */
+  body .section {
+    padding: clamp(50px, 8vw, 90px) 0;
+  }
+
+  /* Ablauf-Sektion mit Pfingstrosen-Hintergrund (transparent) */
+  .ablauf-section {
+    position: relative;
+    padding: clamp(60px, 9vw, 110px) 0;
+    overflow: hidden;
+  }
+  .ablauf-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/pfingstrosen/IMG_7461.jpg') center/cover no-repeat;
+    z-index: 0;
+    opacity: 0.35;
+  }
+  .ablauf-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgba(244, 237, 228, 0.75) 0%,
+      rgba(249, 224, 230, 0.6) 50%,
+      rgba(244, 237, 228, 0.85) 100%);
+    z-index: 1;
+  }
+  .ablauf-content {
+    position: relative;
+    z-index: 2;
+  }
+  /* Timeline-Items auf dem Hintergrund gut lesbar */
+  .ablauf-content .timeline::before {
+    background: var(--copper);
+    opacity: 0.6;
+  }
+  .ablauf-content .timeline-item::before {
+    background: var(--cream);
+    border-color: var(--copper);
+  }
+  .ablauf-content .timeline-time {
+    color: var(--copper-dark);
+  }
+
   /* Info-Karussell "Gut zu wissen" — mit Pastell-Farben, Lichteffekt + Textur */
   .info-carousel-wrap { position: relative; }
   .info-carousel {
@@ -369,12 +413,21 @@
   .info-slide-highlight .info-body  { color: rgba(255,252,249,0.9); }
   .info-slide-highlight .info-body a { color: var(--cream); }
 
-  .info-icon {
-    font-size: 44px;
+  .info-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 48px;
     line-height: 1;
-    margin-bottom: 18px;
+    color: var(--copper);
     display: inline-block;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    margin-bottom: 16px;
+    opacity: 0.75;
+    letter-spacing: -0.02em;
+  }
+  .info-slide-highlight .info-num {
+    color: var(--cream);
+    opacity: 0.85;
   }
   .info-title {
     font-family: var(--sans);
@@ -1028,8 +1081,10 @@
 </section>
 
 <!-- ============ ABLAUF / TIMELINE ============ -->
-<section class="section section-beige" id="ablauf">
-  <div class="container">
+<section class="ablauf-section" id="ablauf">
+  <div class="ablauf-bg"></div>
+  <div class="ablauf-overlay"></div>
+  <div class="container ablauf-content">
     <div class="text-center mb-lg">
       <span class="eyebrow eyebrow-copper reveal">Der Ablauf</span>
       <h2 class="mt-sm reveal">So verbringen wir den <em class="italic">Nachmittag</em>.</h2>
@@ -1151,42 +1206,42 @@
     <div class="info-carousel-wrap mt-lg">
       <div class="info-carousel" id="infoCarousel">
         <div class="info-slide info-slide-pink">
-          <span class="info-icon">🏠</span>
+          <span class="info-num">01</span>
           <p class="info-title">Übernachtung möglich</p>
           <p class="info-body">Für <strong>15 €</strong> extra kannst du bei uns übernachten – inklusive Frühstück. Wolldecken, Kissen und Matratze sind vor Ort.</p>
         </div>
         <div class="info-slide info-slide-beige">
-          <span class="info-icon">🚂</span>
+          <span class="info-num">02</span>
           <p class="info-title">Shuttle vom Bahnhof</p>
           <p class="info-body">Kommst du mit dem Zug? Wir holen dich vom Hauptbahnhof Augsburg ab. Abholzeiten sprechen wir individuell ab.</p>
         </div>
         <div class="info-slide info-slide-sand">
-          <span class="info-icon">👯‍♀️</span>
+          <span class="info-num">03</span>
           <p class="info-title">Kleine Runde</p>
           <p class="info-body">Max. <strong>12 Teilnehmerinnen</strong> – bewusst klein gehalten, damit genug Raum für echten Austausch bleibt.</p>
         </div>
         <div class="info-slide info-slide-cream">
-          <span class="info-icon">🥦</span>
+          <span class="info-num">04</span>
           <p class="info-title">Essen passt für dich</p>
           <p class="info-body">Alles glutenfrei &amp; histaminarm. Unverträglichkeiten teilst du uns bei der Anmeldung mit – wir finden eine Lösung.</p>
         </div>
         <div class="info-slide info-slide-mint">
-          <span class="info-icon">🧘‍♀️</span>
+          <span class="info-num">05</span>
           <p class="info-title">Yoga für Anfängerinnen</p>
           <p class="info-body">Keine Vorerfahrung nötig. Die Neuro-Yoga-Einheit ist sanft und für jeden Körper gedacht – nichts muss, alles darf.</p>
         </div>
         <div class="info-slide info-slide-earth">
-          <span class="info-icon">👕</span>
+          <span class="info-num">06</span>
           <p class="info-title">Was anziehen?</p>
           <p class="info-body">Bequeme Kleidung in der du dich wohlfühlst – fürs Yoga, fürs Kochen und fürs gemütlich-Sitzen danach.</p>
         </div>
         <div class="info-slide info-slide-dusk">
-          <span class="info-icon">💬</span>
-          <p class="info-title">Alleine kommen?</p>
-          <p class="info-body">Ja, bitte – die meisten kommen alleine. Genau das ist der Sinn: Menschen zusammenbringen, die sich sonst nirgends treffen würden.</p>
+          <span class="info-num">07</span>
+          <p class="info-title">Freundin mitbringen?</p>
+          <p class="info-body">Bringe gerne eine Freundin mit, auch wenn sie keine Histaminintoleranz hat. Es ist ein schöner Abend für alle.</p>
         </div>
         <div class="info-slide info-slide-highlight">
-          <span class="info-icon">💌</span>
+          <span class="info-num">08</span>
           <p class="info-title">Noch eine Frage offen?</p>
           <p class="info-body">Schreib mir auf WhatsApp: <a href="https://wa.me/4915118515394" target="_blank" rel="noopener">+49 1511 8515 394</a>. Oder <a href="retreat-faq.html">schau in die FAQ</a>.</p>
         </div>
