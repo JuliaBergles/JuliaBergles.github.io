@@ -292,50 +292,124 @@
     flex-shrink: 0;
   }
 
-  /* Anreise-Sektion mit Hintergrundbild */
-  .anreise-section {
-    position: relative;
-    padding: var(--pad-section-y) 0;
-    overflow: hidden;
+  /* Info-Karussell "Gut zu wissen" — mit Pastell-Farben, Lichteffekt + Textur */
+  .info-carousel-wrap { position: relative; }
+  .info-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 4px 20px;
+    scrollbar-width: none;
   }
-  .anreise-bg {
+  .info-carousel::-webkit-scrollbar { display: none; }
+  .info-slide {
+    flex: 0 0 min(80%, 420px);
+    scroll-snap-align: center;
+    border-radius: 24px;
+    padding: 40px 36px;
+    box-shadow:
+      0 12px 36px rgba(42,42,42,0.08),
+      0 2px 8px rgba(42,42,42,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .info-slide:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 48px rgba(42,42,42,0.12),
+      0 4px 12px rgba(42,42,42,0.06);
+  }
+  /* Lichteffekt: weicher radialer Verlauf oben rechts */
+  .info-slide::before {
+    content: "";
     position: absolute;
-    inset: 0;
-    background: url('images/retreat/ort-3.jpg') center/cover no-repeat;
+    top: -40%;
+    right: -30%;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 65%);
+    pointer-events: none;
     z-index: 0;
   }
-  .anreise-overlay {
+  /* Textur: feine Noise/Grain via SVG-Pattern */
+  .info-slide::after {
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg,
-      rgba(42,42,42,0.82) 0%,
-      rgba(119,104,163,0.65) 50%,
-      rgba(42,42,42,0.82) 100%);
-    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: multiply;
   }
-  .anreise-content {
-    position: relative;
-    z-index: 2;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  .info-slide > * { position: relative; z-index: 1; }
+
+  /* Farb-Varianten — gedecktes Rosa, Beige, Erdtöne */
+  .info-slide-pink   { background: linear-gradient(135deg, #f9e0e6 0%, #f3cbd4 100%); }
+  .info-slide-beige  { background: linear-gradient(135deg, #f4ede4 0%, #e8dcc9 100%); }
+  .info-slide-cream  { background: linear-gradient(135deg, #fffcf9 0%, #f5ead6 100%); }
+  .info-slide-earth  { background: linear-gradient(135deg, #e8d5c4 0%, #d9bfaa 100%); }
+  .info-slide-mint   { background: linear-gradient(135deg, #e2fffe 0%, #c9ebea 100%); }
+  .info-slide-dusk   { background: linear-gradient(135deg, #e0d8e8 0%, #c9bfd4 100%); }
+  .info-slide-sand   { background: linear-gradient(135deg, #f0e4d2 0%, #ddc8a8 100%); }
+  .info-slide-highlight {
+    background: linear-gradient(135deg, #8B2E3E 0%, #6D2732 100%);
+    color: var(--cream);
   }
-  /* Cards auf dunklem BG — cream Hintergrund, kein Text-Shadow */
-  .anreise-content .editorial-card {
-    background: var(--cream);
+  .info-slide-highlight .info-title { color: var(--cream); }
+  .info-slide-highlight .info-body  { color: rgba(255,252,249,0.9); }
+  .info-slide-highlight .info-body a { color: var(--cream); }
+
+  .info-icon {
+    font-size: 44px;
+    line-height: 1;
+    margin-bottom: 18px;
+    display: inline-block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+  }
+  .info-title {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(19px, 2.2vw, 23px);
+    line-height: 1.3;
     color: var(--dark);
-    text-shadow: none;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    letter-spacing: -0.01em;
   }
-  .anreise-content .editorial-card h3,
-  .anreise-content .editorial-card p,
-  .anreise-content .editorial-card .chapter-num {
-    text-shadow: none;
-    color: var(--dark);
-  }
-  .anreise-content .editorial-card .chapter-num {
-    color: var(--copper-dark);
-  }
-  .anreise-content .editorial-card p {
+  .info-body {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.65;
     color: var(--dark-soft);
+  }
+  .info-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .info-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(42,42,42,0.2);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .info-dots button.active {
+    background: var(--copper);
+    transform: scale(1.3);
   }
 
   /* Städte-Teaser mit Hintergrund */
@@ -1066,42 +1140,71 @@
   </div>
 </section>
 
-<!-- ============ ÜBERNACHTUNG & ANREISE ============ -->
-<section class="anreise-section" id="anreise">
-  <div class="anreise-bg"></div>
-  <div class="anreise-overlay"></div>
-  <div class="container anreise-content">
+<!-- ============ GUT ZU WISSEN · KARUSSELL ============ -->
+<section class="section section-beige" id="anreise">
+  <div class="container">
     <div class="text-center mb-lg">
-      <span class="eyebrow eyebrow-line reveal" style="color: var(--cream);">Übernachtung &amp; Anreise</span>
-      <h2 class="mt-sm reveal" style="color: var(--cream);">Du kommst von <em class="italic">weiter weg</em>?</h2>
+      <span class="eyebrow eyebrow-copper reveal">Gut zu wissen</span>
+      <h2 class="mt-sm reveal">Was dich <em class="italic">interessieren</em> könnte.</h2>
     </div>
 
-    <div class="grid-3">
-      <div class="editorial-card reveal">
-        <span class="chapter-num">Nº 01</span>
-        <h3 class="mt-sm" style="font-size: 22px;">Übernachtung möglich</h3>
-        <p class="mt-md" style="font-size: 15px; color: var(--dark-soft);">
-          Für <strong style="color: var(--dark);">15 €</strong> extra kannst du bei uns übernachten – inklusive Frühstück am nächsten Morgen. Wolldecken, Kissen und eine Matratze sind vor Ort. Verfügbarkeit und Details bekommst du nach deiner Anmeldung.
-        </p>
+    <div class="info-carousel-wrap mt-lg">
+      <div class="info-carousel" id="infoCarousel">
+        <div class="info-slide info-slide-pink">
+          <span class="info-icon">🏠</span>
+          <p class="info-title">Übernachtung möglich</p>
+          <p class="info-body">Für <strong>15 €</strong> extra kannst du bei uns übernachten – inklusive Frühstück. Wolldecken, Kissen und Matratze sind vor Ort.</p>
+        </div>
+        <div class="info-slide info-slide-beige">
+          <span class="info-icon">🚂</span>
+          <p class="info-title">Shuttle vom Bahnhof</p>
+          <p class="info-body">Kommst du mit dem Zug? Wir holen dich vom Hauptbahnhof Augsburg ab. Abholzeiten sprechen wir individuell ab.</p>
+        </div>
+        <div class="info-slide info-slide-sand">
+          <span class="info-icon">👯‍♀️</span>
+          <p class="info-title">Kleine Runde</p>
+          <p class="info-body">Max. <strong>12 Teilnehmerinnen</strong> – bewusst klein gehalten, damit genug Raum für echten Austausch bleibt.</p>
+        </div>
+        <div class="info-slide info-slide-cream">
+          <span class="info-icon">🥦</span>
+          <p class="info-title">Essen passt für dich</p>
+          <p class="info-body">Alles glutenfrei &amp; histaminarm. Unverträglichkeiten teilst du uns bei der Anmeldung mit – wir finden eine Lösung.</p>
+        </div>
+        <div class="info-slide info-slide-mint">
+          <span class="info-icon">🧘‍♀️</span>
+          <p class="info-title">Yoga für Anfängerinnen</p>
+          <p class="info-body">Keine Vorerfahrung nötig. Die Neuro-Yoga-Einheit ist sanft und für jeden Körper gedacht – nichts muss, alles darf.</p>
+        </div>
+        <div class="info-slide info-slide-earth">
+          <span class="info-icon">👕</span>
+          <p class="info-title">Was anziehen?</p>
+          <p class="info-body">Bequeme Kleidung in der du dich wohlfühlst – fürs Yoga, fürs Kochen und fürs gemütlich-Sitzen danach.</p>
+        </div>
+        <div class="info-slide info-slide-dusk">
+          <span class="info-icon">💬</span>
+          <p class="info-title">Alleine kommen?</p>
+          <p class="info-body">Ja, bitte – die meisten kommen alleine. Genau das ist der Sinn: Menschen zusammenbringen, die sich sonst nirgends treffen würden.</p>
+        </div>
+        <div class="info-slide info-slide-highlight">
+          <span class="info-icon">💌</span>
+          <p class="info-title">Noch eine Frage offen?</p>
+          <p class="info-body">Schreib mir auf WhatsApp: <a href="https://wa.me/4915118515394" target="_blank" rel="noopener">+49 1511 8515 394</a>. Oder <a href="retreat-faq.html">schau in die FAQ</a>.</p>
+        </div>
       </div>
-      <div class="editorial-card reveal">
-        <span class="chapter-num">Nº 02</span>
-        <h3 class="mt-sm" style="font-size: 22px;">Shuttle vom Bahnhof</h3>
-        <p class="mt-md" style="font-size: 15px; color: var(--dark-soft);">
-          Für Teilnehmende, die mit dem Zug anreisen, planen wir einen Shuttle vom Hauptbahnhof Augsburg zum Veranstaltungsort. Abholzeiten sprechen wir individuell ab.
-        </p>
-      </div>
-      <div class="editorial-card reveal">
-        <span class="chapter-num">Nº 03</span>
-        <h3 class="mt-sm" style="font-size: 22px;">Kleine Runde</h3>
-        <p class="mt-md" style="font-size: 15px; color: var(--dark-soft);">
-          Max. 12 Teilnehmerinnen – bewusst klein gehalten, damit genug Raum für echten Austausch bleibt. Wer früh anfragt, bekommt den Platz.
-        </p>
+      <div class="info-dots" id="infoDots">
+        <button type="button" data-slide="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-slide="1" aria-label="Slide 2"></button>
+        <button type="button" data-slide="2" aria-label="Slide 3"></button>
+        <button type="button" data-slide="3" aria-label="Slide 4"></button>
+        <button type="button" data-slide="4" aria-label="Slide 5"></button>
+        <button type="button" data-slide="5" aria-label="Slide 6"></button>
+        <button type="button" data-slide="6" aria-label="Slide 7"></button>
+        <button type="button" data-slide="7" aria-label="Slide 8"></button>
       </div>
     </div>
 
-    <p class="text-center mt-lg" style="margin-left: auto; margin-right: auto; color: rgba(255,252,249,0.85); font-size: 15px; font-style: italic;">
-      Alles Weitere – Verfügbarkeit, genaue Abholzeiten, Zimmer – klären wir nach deiner Anmeldung per Mail.
+    <p class="text-center mt-md" style="margin-left: auto; margin-right: auto; color: var(--mute); font-size: 13px; font-style: italic;">
+      Zum Durchwischen · nach rechts scrollen
     </p>
   </div>
 </section>
@@ -1347,6 +1450,32 @@
     if (el && C.whatsappLink) el.href = C.whatsappLink;
   });
 
+
+  // ========================================================
+  // Info-Karussell "Gut zu wissen"
+  // ========================================================
+  const infoCarousel = document.getElementById('infoCarousel');
+  const infoDots = document.getElementById('infoDots');
+  if (infoCarousel && infoDots) {
+    const slides = infoCarousel.children;
+    const dots = infoDots.querySelectorAll('button');
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.dataset.slide, 10);
+        if (slides[idx]) slides[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+    });
+    infoCarousel.addEventListener('scroll', () => {
+      const center = infoCarousel.scrollLeft + infoCarousel.clientWidth / 2;
+      let closest = 0, minDist = Infinity;
+      for (let i = 0; i < slides.length; i++) {
+        const mid = slides[i].offsetLeft + slides[i].offsetWidth / 2;
+        const dist = Math.abs(mid - center);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      }
+      dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+    });
+  }
 
   // ========================================================
   // Nav-Height für Mobile-Menü (gleich wie andere Seiten)
