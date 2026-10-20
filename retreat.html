@@ -643,6 +643,43 @@
     .ort-image.ort-main { grid-row: auto; aspect-ratio: 4/3; }
   }
 
+  /* Essen-Bilder */
+  .essen-bilder {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .essen-bild {
+    margin: 0;
+    overflow: hidden;
+    background: var(--beige);
+  }
+  .essen-bild img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .essen-bild:hover img { transform: scale(1.03); }
+  .essen-bild figcaption {
+    padding: 14px 4px 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--mute);
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    .essen-bilder {
+      grid-template-columns: 1fr;
+    }
+    .essen-bild img { aspect-ratio: 4/3; }
+  }
+
   /* Flyer */
   .flyer-wrap {
     max-width: 540px;
@@ -894,19 +931,29 @@
 <!-- ============ ESSEN ============ -->
 <section class="section section-cream" id="essen">
   <div class="container">
-    <div class="grid-2">
-      <div class="reveal">
-        <span class="eyebrow eyebrow-copper">Essen &amp; Unverträglichkeiten</span>
-        <h2 class="mt-sm">Du musst dich beim Essen <em class="italic">nicht erklären</em>.</h2>
-      </div>
-      <div class="reveal">
-        <p>Ich weiß selbst, wie herausfordernd Essen mit Unverträglichkeiten sein kann. Deshalb ist mir wichtig, dass du dich bei unserem Retreat wohlfühlst.</p>
-        <p class="mt-md">Geplant sind Kürbissuppe, glutenfreies Kräuterbutter-Baguette, Dips, Gemüsesticks und weitere glutenfreie Snacks.</p>
-        <p class="mt-md">Wenn du einzelne Zutaten nicht verträgst, kannst du uns das bereits bei der Anmeldung mitteilen. Wir schauen gemeinsam, welche Alternativen möglich sind.</p>
-        <p class="mt-md" style="padding: 20px; background: var(--mint); border-left: 3px solid var(--blue); font-size: 15px; font-style: italic;">
-          Transparent gesagt: Ich kann nicht garantieren, dass alles für dich perfekt verträglich ist. Aber ich kann dir versprechen, dass wir dein Thema ernst nehmen und gemeinsam schauen, was passt.
-        </p>
-      </div>
+    <div class="text-center mb-lg" style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow eyebrow-copper reveal">Essen &amp; Unverträglichkeiten</span>
+      <h2 class="mt-sm reveal">Du musst dich beim Essen <em class="italic">nicht erklären</em>.</h2>
+    </div>
+
+    <div class="essen-bilder">
+      <figure class="reveal essen-bild essen-bild-main">
+        <img src="images/retreat/essen-1.jpg" alt="Kürbissuppe serviert im ausgehöhlten Hokkaido mit Kartoffeln, Karotten und Granatapfel" loading="lazy">
+        <figcaption>Kürbissuppe – serviert im Kürbis</figcaption>
+      </figure>
+      <figure class="reveal essen-bild">
+        <img src="images/retreat/essen-2.jpg" alt="Frisch gebackenes glutenfreies Kräuterbutter-Baguette mit Zierkürbis und Granatapfel" loading="lazy">
+        <figcaption>Glutenfreies Kräuterbutter-Baguette</figcaption>
+      </figure>
+    </div>
+
+    <div class="text-center mt-lg reveal" style="max-width: 680px; margin: 56px auto 0;">
+      <p>Ich weiß selbst, wie herausfordernd Essen mit Unverträglichkeiten sein kann. Deshalb ist mir wichtig, dass du dich bei unserem Retreat wohlfühlst.</p>
+      <p class="mt-md">Geplant sind Kürbissuppe, glutenfreies Kräuterbutter-Baguette, Dips, Gemüsesticks und weitere glutenfreie Snacks.</p>
+      <p class="mt-md">Wenn du einzelne Zutaten nicht verträgst, kannst du uns das bereits bei der Anmeldung mitteilen. Wir schauen gemeinsam, welche Alternativen möglich sind.</p>
+      <p class="mt-lg" style="padding: 24px 28px; background: var(--mint); border-left: 3px solid var(--blue); font-size: 15px; font-style: italic; text-align: left;">
+        Transparent gesagt: Ich kann nicht garantieren, dass alles für dich perfekt verträglich ist. Aber ich kann dir versprechen, dass wir dein Thema ernst nehmen und gemeinsam schauen, was passt.
+      </p>
     </div>
   </div>
 </section>
