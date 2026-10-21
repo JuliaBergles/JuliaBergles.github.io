@@ -2,11 +2,79 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-18 (Shop als Produktshop umgebaut: 3 Einzelseiten pro Buch, Vorbestellung komplett, neues Workbook-Produkt, Preise angepasst).
+> Letzte Aktualisierung: 2026-10-21 (Seelenbauch-Retreat Nº 01 komplett aufgesetzt — 4 neue Seiten, Formspree-Anmeldung, Städte-Abstimmung, sitewide Nav).
 
 ---
 
-## ⚡ Aktueller Stand · 2026-10-18 · Shop als Produktshop · Vorbestellung komplett
+## ⚡ Aktueller Stand · 2026-10-21 · Seelenbauch-Retreat Nº 01 ist live
+
+### Das Retreat
+
+| | |
+|---|---|
+| **Datum** | Samstag, 28. November 2026 (vorher 21.11., verschoben weil zu wenige konnten) |
+| **Zeit** | 15:00 – ca. 20:00 Uhr |
+| **Ort** | Singoldstraße 5a, 86517 Wehringen bei Augsburg (bei Julia zuhause) |
+| **Preis** | 99 € · alles inklusive |
+| **Max.** | 12 Teilnehmerinnen (bewusst kleine Runde) |
+| **Zielgruppe** | Frauen mit Histaminintoleranz oder Darmproblemen |
+| **Übernachtung** | 15 € extra inkl. Frühstück (Decken/Kissen/Matratze vor Ort) |
+| **Shuttle** | Vom Hauptbahnhof Augsburg nach Absprache |
+| **Anmeldung** | WhatsApp +49 1511 8515 394 **oder** Formular auf `retreat-anmelden.html` |
+
+**Programm:** Ankommen (15:00) → Kleine Yoga-Einheit (16:00, ohne externe Lehrerin – Julia macht's selbst) → Gemeinsames Kochen & Einkaufs-Tipps (17:00) → Essen → Spaziergang → Kreative Auszeit (Malen auf Leinwand, Fimo-Safe-Foods, Goodiebags gestalten oder Brief an Körper/Zukunfts-Ich) → Ausklingen mit Goodie-Bag von HistaFood.
+
+**Essen:** Kürbissuppe (im ausgehöhlten Kürbis), glutenfreies Kräuterbutter-Baguette, Dips, Gemüsesticks. Mit **HistaFood Gemüsebrühe + Kräutersalz** (Partner-Sponsor).
+
+### 4 neue Seiten
+
+1. **`retreat.html`** · Hauptseite mit Hero (Foto ort-1 „Heimat-Flur" + warmes Overlay), 6-Karten-Grid „Was ist das Retreat" (alle einheitlich rosa, Serif-Nummern 01-06, keine Emojis), Timeline-Ablauf mit **Pfingstrosen als Hintergrund** (`images/pfingstrosen/IMG_7461.jpg`, 35% opacity, beige/rosa Overlay), 2 Essens-Fotos, Ort-Galerie 3 Bilder + Google-Maps-Link, Info-Karussell „Gut zu wissen" (9 Slides zum Durchwischen, alle rosa, Highlight-Slide Weinrot), Preis-Karte 99 €, 4 Bücher mit 5% Rabatt + klickbare Shop-Links, Flyer-Bild groß, Städte-Teaser mit Pfingstrosen-BG, FAQ-Teaser, HistaFood-Sponsor-Credit, Footer.
+
+2. **`retreat-anmelden.html`** · Komplettes Anmeldeformular mit Formspree-Integration (`https://formspree.io/f/xaeqgwee` – Domain `juliabergles.de` muss in Formspree-Settings erlaubt sein, nicht nur `www.juliabergles.de`). Felder: Kontakt / Teilnahmeplanung (verbindlich/anderes Datum/andere Stadt/Infos) / Anreise+Übernachtung (Multi-Select) / Essen+Unverträglichkeiten / Freiwilliger Beitrag (0/10/20/30 € oder individuell) / DSGVO + Newsletter. Honeypot gegen Bots. **Mailto-Fallback:** wenn Formspree aus irgendeinem Grund scheitert, öffnet sich automatisch Mail-Programm mit allen Daten an `julia@bergles.net`. Hero mit `ort-2.jpg` (Julias blaues Gemälde).
+
+3. **`staedte.html`** · Städte-Abstimmung (Berlin, Düsseldorf, Köln, Hamburg, München, Stuttgart, Leipzig, Frankfurt, Andere). Läuft aktuell nur mit **localStorage** (jede Besucherin sieht nur ihre eigene Stimme). Für echte gemeinsame Abstimmung müsste **Supabase** eingerichtet werden – Setup-Anleitung mit SQL steht in `docs/RETREAT-SETUP.md`. Hero mit `pfingstrosen/IMG_7460.jpg` + warmes Weinrot-Copper-Overlay.
+
+4. **`retreat-faq.html`** · 13 FAQ-Fragen als Accordion. Hero mit `ort-1.jpg`. CTA am Ende: WhatsApp + Zur Anmeldung.
+
+### Nav sitewide
+
+Retreat-Link **„Retreat ★"** (Copper, fett) auf **65 HTML-Dateien** in Root + Unterordnern eingefügt (zwischen „Kurs ★" und „App"). Script mit `grep -L 'retreat.html">Retreat'` + `sed` – idempotent.
+
+### Teaser auf `index.html`
+
+Prominenter Retreat-Teaser direkt nach dem Kurs-Banner: Grid-2 mit Hero-Foto + Datum-Overlay (28. Nov 2026) + Checkliste (99 € inkl. Verpflegung, Kochen & Kreativmaterial) + 2 Buttons zum Retreat / Platz anfragen + WhatsApp-Link.
+
+### Technische Details
+
+- **reveal.js Fix:** Vorher wurden manuell markierte `.reveal`-Elemente (Formulare, Lead-Absätze) nicht beobachtet und blieben unsichtbar. Jetzt beobachtet reveal.js ALLE `.reveal` + hat Fallback nach 2s zwangs-sichtbar + Fallback für Browser ohne IntersectionObserver.
+- **Bilder:** `images/retreat/` enthält `flyer.jpg` (99 € Version, zeigt aber noch 21.11. – muss noch aktualisiert werden!), `ort-1` bis `ort-4.jpg` (Zuhause-Fotos), `essen-1.jpg` (Kürbissuppe), `essen-2.jpg` (Baguette). Rohdaten-HEIC-Ordner `/Retreat/` ist in `.gitignore`. Pfingstrosen liegen in `images/pfingstrosen/`.
+- **WhatsApp sitewide:** `+49 1511 8515 394` (nicht 594!) – war ursprünglich falsch, wurde korrigiert.
+- **Fonts/Design:** Standard v3-Design-System (Cormorant + Manrope, Copper/Beige/Pink-Soft/Mint). Warme Töne überall (Blau komplett rausgenommen für Retreat).
+- **Flyer-Bild:** Zeigt noch 21.11.2026 – Julia muss neuen Flyer mit „Samstag, 28. November 2026" liefern, dann in `images/retreat/flyer.jpg` austauschen.
+
+### Formspree-Setup — wichtig zu wissen
+
+- Form-ID: `xaeqgwee`
+- Konto läuft auf `julia@bergles.net`
+- **Business-Trial ist ausgelaufen** → Julia sollte auf Free-Plan downgraden (50 Submissions/Monat gratis, reicht für Retreat mit 12 Plätzen)
+- **Domain-Restriktion** war das Hauptproblem: Formspree hatte nur `www.juliabergles.de` erlaubt, Website läuft aber auf `juliabergles.de` (ohne www). Beide Domains sind jetzt freigegeben.
+- Mails kommen bei `julia@bergles.net` an
+
+### Noch offen
+
+- [ ] Flyer-Bild updaten (21.11. → 28.11.)
+- [ ] Formspree-Plan ggf. auf Free downgraden
+- [ ] Stornierungsbedingungen in FAQ ergänzen (aktuell Platzhalter)
+- [ ] Instagram-Promotion starten → `juliabergles.de/retreat.html`
+- [ ] Falls Städte-Abstimmung ernst genommen werden soll: Supabase einrichten (siehe `docs/RETREAT-SETUP.md`)
+
+### Memory-File
+
+`memory/project_retreat.md` enthält Retreat-Kerndaten (28.11., 99 €, Wehringen, max 12, Formspree-URL, offene Punkte). Beim nächsten Mal zuerst dort reinschauen.
+
+---
+
+## 2026-10-18 · Shop als Produktshop · Vorbestellung komplett
 
 ### Preise & Status (alle 3 Hauptbücher auf Vorbestellung)
 
