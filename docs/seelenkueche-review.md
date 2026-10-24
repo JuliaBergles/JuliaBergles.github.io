@@ -287,3 +287,589 @@ Diese Fehler ziehen sich durch viele Rezepte — am besten einmal zentral korrig
 📌 **Histamin-Info fehlt.** Vorschlag:
 > *„Reisprotein ist ein pflanzliches, gut verträgliches Protein ohne Milchbestandteile. Für den Darmaufbau und die Hormonbalance ist eine ausreichende Proteinzufuhr wichtig — gerade bei Histaminproblematik."*
 
+### Seite 84 · Dattel-Kokos-Kugeln (Kategorie KUGELN)
+✎ Kennzeichnung oben: **„Laktose: fei"** → **„frei"** (das „r" fehlt!)
+✎ „Zutaten:" → **„Zubereitung:"**
+✎ „10min" → **„10 min"** (Leerzeichen)
+✎ „in lauwarmen Wasser" → **„in lauwarmem Wasser"** (Dativ: warm**em**)
+✎ „in eine Mixer geben" → **„in einen Mixer geben"** (Akkusativ)
+✎ „Achten beim Kauf unbedingt darauf …" → **„Achte beim Kauf …"** (Imperativ Singular, konsistent mit dem Rest)
+✓ Histamin-Info gut (Hinweis zu Schwefeldioxid/Sulfiten).
+
+### Seite 86 · Karotten-Kokos-Bällchen mit Schokolade (Kategorie BÄLLCHEN)
+✎ „Zutaten:" → **„Zubereitung:"**
+✓ Rest OK. Histamin-Info schön (Beta-Carotin).
+
+### Seite 88 · Apfel-Wolken (Kategorie WOLKEN)
+✎ „Zutaten:" → **„Zubereitung:"**
+✎ „Apfelmarkt und geriebene Äpfel" → **„Apfelmark"** (ohne „t")
+✎ „MIt einem Löffel" → **„Mit"** (nicht alle in Großbuchstaben)
+✓ Histamin-Info gut (süße vs. saure Apfelsorten).
+
+### Seite 90 · Kokos-Kuchen (Kategorie KUCHEN)
+✎ „Zutaten:" → **„Zubereitung:"**
+✎ „1 Tl" → **„1 TL"** (konsistent groß)
+✎ „hinzfügen" → **„hinzufügen"** (ein „u" fehlt)
+✎ „mit Kokosrapseln bestreute" → **„Kokosraspeln"** (siehe schon Seite 31)
+? Zutatenliste nennt „Milch, Reisdrink oder Haferdrink", die Zubereitung aber „Kokosmilch". Inkonsistent — bitte vereinheitlichen (entweder beides „Milch nach Wahl" oder beides „Kokosmilch").
+✓ Histamin-Info OK.
+
+### Seite 92 · Vanille-Zimt-Donuts (Kategorie DONUTS)
+✎ „Zutaten:" → **„Zubereitung:"**
+✎ „Vanillepuddinpulver" → **„Vanillepuddingpulver"** (siehe schon Seite 10 — zieht sich durch, bitte überall)
+✎ „Sykr" → **„Skyr"** (Buchstabendreher)
+✎ „nach belieben dekorieren" → **„nach Belieben"** (groß, Substantiv)
+✓ Histamin-Info gut (biogene Amine in Vanille).
+
+### Seite 94 · Knuspriges Granola (Kategorie GRANOLA)
+✎ „Zutaten:" → **„Zubereitung:"**
+✎ „in ein Hochleistungmixer geben" → **„in einen Hochleistungsmixer geben"** (Akkusativ + fehlendes Fugen-s)
+✎ „chrunchy" → **„crunchy"** (Buchstabendreher)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Haferflocken, Flohsamenschalen und Chiasamen liefern Ballaststoffe, die eine gesunde Darmflora unterstützen — Grundvoraussetzung für ein stabiles DAO-Enzym. Dieses Granola ist frei von Nüssen wie Walnüssen oder Cashews, die als Histaminliberatoren gelten."*
+
+### Seite 96 · Quark-Zimtschnecken (Kategorie SCHNECKEN)
+✎ „glutenfei" → **„glutenfrei"** (r fehlt)
+✎ „4cm" → **„4 cm"**
+✎ „1 Tl" → **„1 TL"**
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Zimt (am besten Ceylon-Zimt) ist von Natur aus histaminarm und kann sogar entzündungshemmend wirken. Magerquark liefert Protein und wenig Histamin, solange er frisch verarbeitet wird."*
+
+### Seite 98 · Mohn-Dampfnudeln mit Vanillesoße (Kategorie NUDELN)
+✎ „Vanillepuddinpulver" (2×) → **„Vanillepuddingpulver"**
+✎ „Ein Topf mit Wasser zum kochen bringen." → **„Einen Topf mit Wasser zum Kochen bringen."** (Akkusativ + groß)
+✎ „zwei gleichgroße Kugeln" → **„zwei gleich große Kugeln"** (getrennt)
+✓ Histamin-Info OK (Mohn vs. Walnüsse/Cashews).
+
+### Seite 100 · Quark-Kaiserschmarrn mit Apfelmark (Kategorie SCHMARRN)
+✎ **„Kaiserschmarnn"** → **„Kaiserschmarrn"** (zwei „r", ein „n" — gleicher Fehler auf S. 102 und S. 104!)
+✓ Histamin-Info gut (Ceylon- vs. Cassia-Zimt).
+
+### Seite 102 · Quark-Kaiserschmarrn mit Vanillesoße (Kategorie SCHMARRN)
+? **Sehr ähnlich zu Seite 100** — fast gleicher Teig, nur Vanillesoße statt Apfelmark. Wenn das bewusst zwei Varianten sind: ✓ ok. Falls dir das zu dicht beieinander ist, könntest du beides in einem Rezept zusammenfassen mit „2 Varianten" (siehe Hinweis bei S. 104 auch).
+✎ „Kaiserschmarnn" → **„Kaiserschmarrn"**
+✓ Histamin-Info gut (Reisdrink).
+
+### Seite 104 · Veganer Kaiserschmarrn (Kategorie SCHMARRN)
+✎ „Kaiserschmarnn" → **„Kaiserschmarrn"**
+📌 Hinweis: Hier sind jetzt **3 Kaiserschmarrn-Rezepte** direkt hintereinander (100/102/104) — als Varianten einer Grundidee gut, aber vielleicht als ein Doppelseiten-Rezept mit „3 Variationen" strukturierter.
+✓ Histamin-Info gut (gekauftes Apfelkompott).
+
+### Seite 106 · Tiramisu-Törtchen (Kategorie TÖRTCHEN)
+✎ Rezeptname → besser **„TIRAMISU-TÖRTCHEN"** oder **„KAFFEE-QUARK-TÖRTCHEN"** (statt nur „TÖRTCHEN").
+? Zubereitung Schritt 3 sagt „Reissirup" — Zutat ist aber nicht aufgeführt (nur „Süße nach Wahl"). Bitte vereinheitlichen.
+✓ Histamin-Info sehr gut (Pistazien → Vitamin B6 → DAO).
+
+### Seite 108 · Reis-Mais-Pancakes (Kategorie KUCHEN)
+✎ Rezeptname **„KUCHEN"** → besser **„PANCAKES"** oder **„KLEINE PFANNKUCHEN"**.
+✎ „flüssigerer Teig" → sprachlich besser **„flüssiger Teig"**.
+✓ Histamin-Info gut (Kokosöl).
+
+### Seite 110 · Hafer-Mais-Pancakes
+✓ Rezeptblock OK (keine Kategorie-Überschrift sichtbar, ggf. „PANCAKES" ergänzen).
+✓ Histamin-Info gut (Haferdrink).
+
+### Seite 112 · Vanille-Quark-Schnecken (Kategorie SCHNECKEN)
+✓ Zubereitung sauber (eine der wenigen Seiten mit „Zubereitung:" korrekt!).
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Vanillepuddingpulver ohne Aroma kann bei empfindlichen Personen Reaktionen auslösen (biogene Amine durch Fermentation echter Vanille). In dieser kleinen Menge pro Portion ist es für die meisten gut verträglich — individuell testen."*
+
+### Seite 114 · Schoko-Cookies (Kategorie COOKIE)
+✓ Zubereitung + Hinweis sauber.
+✓ Histamin-Info implizit über den Hinweis-Block (dunkle vs. weiße Schokolade).
+
+### Seite 116 · Teff-Pfannkuchen
+✎ **Rezeptname fehlt oben** — nur die drei Kennzeichnungen (Laktose/Gluten/FODMAP) stehen da. Vorschlag: **„TEFF-PFANNKUCHEN"** oder **„PFANNKUCHEN"**.
+✎ „50 ml" (mit Leerzeichen) vs. „250ml" (ohne) auf gleicher Seite → vereinheitlichen.
+✎ „60g" / „50g" → **„60 g" / „50 g"**
+✓ Histamin-Info super (Teffmehl, Darmbakterien, DAO).
+
+### Seite 117 · Hinweis „Nicht histaminarm!"
+? Diese einzelne Zeile wirkt verloren. Vermutlich soll sie das folgende Rezept (Seite 118) kennzeichnen? Dann besser direkt in die Rezept-Kennzeichnung integrieren.
+
+### Seite 118 · Waffeln
+✎ **Rezeptname fehlt** — nur Kennzeichnungen oben. Vorschlag: **„LOCKERE WAFFELN"**.
+✎ „voheizen" → **„vorheizen"** (r fehlt)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Diese Waffeln sind vegan möglich und bleiben dann bei richtiger Lagerung lange histaminstabil. Vegane Version einfrieren und bei Bedarf toasten — perfekt für unterwegs."*
+
+### Seite 120 · Sticky Reis mit Mango oder Kürbis (Kategorie STICKY-REIS)
+✎ „Wasser zum kochen bringen" → **„Wasser zum Kochen bringen"** (groß)
+✎ „mit frischen Mangospalten oder gekochten Kürbis" → **„gekochtem Kürbis"** (Dativ)
+✓ Histamin-Info gut (Kürbis bei Fructoseintoleranz).
+
+### Seite 122 · Karotten-Vanille-Quark-Kuchen (Kategorie KUCHEN)
+✎ Rezeptname → besser **„KAROTTEN-QUARK-KUCHEN"**.
+✎ „Karotten, gersaspelt" → **„Karotten, geraspelt"** (Buchstabendreher + s zu viel)
+✎ „Vanillepuddinpulver" → **„Vanillepuddingpulver"**
+✎ „Ober-Unterhitze" → **„Ober-/Unterhitze"** (mit Schrägstrich — konsistent zu anderen Seiten im Buch)
+✓ Histamin-Info gut (Hafer → Vitamin B6 → DAO). Formulierung redundant: „Er ist reich an Vitamin B6 und eine hervorragende Quelle für Vitamin B6." → **einmal reicht**: „Hafer ist eine hervorragende Quelle für Vitamin B6. Dieses Vitamin ist ein essenzieller Co-Faktor für das Enzym Diaminoxidase (DAO) …"
+
+### Seite 124 · Karotten-Vanille-Dampfnudeln (Kategorie NUDELN)
+✎ Rezeptname → besser **„KAROTTEN-DAMPFNUDELN"**.
+✎ „gersaspelt" → **„geraspelt"**
+✎ „Vanillepuddinpulver" → **„Vanillepuddingpulver"**
+✎ „Ein Kochtopf mit Wasser zum kochen bringen" → **„Einen Kochtopf mit Wasser zum Kochen bringen"** (Akkusativ + groß)
+✎ „solange kochen, bis sie an der Oberfläche schwimmen" → **„so lange kochen, bis …"** (getrennt, temporal)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Karotten sind von Natur aus histaminarm und reich an Beta-Carotin, das antioxidativ und zellschützend wirkt."*
+
+### Seite 126 · Apfel-Hüttenkäse-Snackteller (Kategorie SNACKTELLER)
+✓ Kompakte Zubereitung, gut.
+✓ Histamin-Info sehr gut (Kakao vs. biogene Amine).
+
+### Seite 128 · Heidelbeer-Reispapier-Tasche (Kategorie TASCHE)
+✎ Rezeptname → besser **„HEIDELBEER-REISPAPIER-TASCHE"**.
+✎ „Vanillepuddinpulver" → **„Vanillepuddingpulver"**
+✎ „oder Tiefgekühlt" → **„oder tiefgekühlt"** (klein, Adjektiv)
+✎ „von allen vier Seiten von außen, nach Innen einklappen" → **„von außen nach innen einklappen"** (klein, kein Komma)
+✎ „Airfyer" → **„Airfryer"**
+✎ „darin wälzen" → **Punkt am Ende setzen**
+✎ „jedes anderes Obst" → **„jedes andere Obst"** (das „s" am Ende weg)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Reispapier ist eine der verträglichsten Teigalternativen bei Histaminintoleranz — ohne Hefe, ohne Gluten, ohne Fermentation. Heidelbeeren sind die histaminärmste Beere."*
+
+### Seite 130 · Beeren-Tiramisu (Kategorie TIRAMISU)
+✎ Rezeptname → besser **„BEEREN-TIRAMISU"** oder **„MINI-TIRAMISU MIT HEIDELBEEREN"**.
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Statt klassischem Mascarpone (lang gereift, histaminreich) nutzen wir hier Magerquark als Basis — frisch verarbeitet ist er gut verträglich. Koffeinfreier Kaffee hemmt das DAO-Enzym nicht."*
+
+### Seite 132 · Eiskaffee (Kategorie EIS KAFFE)
+✎ Rezeptname **„EIS KAFFE"** → **„EIS-KAFFEE"** (Bindestrich + zwei „e")
+✎ „Kaffeee" → **„Kaffee"** (ein „e" zu viel)
+✎ „Es ist kein Typischer Eiskaffe" → **„Es ist kein typischer Eiskaffee"** (klein + zwei „e")
+✓ Histamin-Info gut.
+
+### Seite 134 · Koffeinfreie Mocca-Pancakes (Kategorie PANCAKES)
+✎ Rezeptname → vorschlagen **„MOCCA-PANCAKES"** (präziser als nur „PANCAKES").
+✓ Histamin-Info gut (DAO + Koffein).
+
+### Seite 136 · Aprikosen-Dessert (Kategorie DESSERT)
+✎ Rezeptname → besser **„APRIKOSEN-DESSERT"** oder **„APRIKOSEN-VANILLE-DESSERT"**.
+✎ „verrrühren" → **„verrühren"** (ein „r" zu viel)
+✎ „In vier Dessertglas die Creme verteilen" → **„In vier Dessertgläsern die Creme verteilen"** (Dativ Plural, Umlaut + -ern)
+✎ „den Quark, die Sahne (wenn verträglich), mit dem Vanillepuddingpulver" → Komma vor „mit" verwirrt. Besser: **„den Quark, die Sahne (wenn verträglich) und das Vanillepuddingpulver mit dem Ahornsirup verrühren."**
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Aprikosen sind in frischer Form bedingt verträglich — nicht als Histaminliberator klassifiziert, aber bei individueller Empfindlichkeit nur in kleinen Mengen testen. Ceylon-Zimt wirkt entzündungshemmend."*
+
+### Seite 138 · Käsekuchen ohne Boden (Kategorie KUCHEN)
+✎ Rezeptname → besser **„KÄSEKUCHEN OHNE BODEN"** (eindeutiger).
+✎ „Vanillepuddinpulver" (2×) → **„Vanillepuddingpulver"**
+✎ „Ober- Unterhitze" → **„Ober-/Unterhitze"**
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Dieser Käsekuchen kommt ohne Eier aus — gut für alle, die auf Eiklar reagieren (Eiklar gilt als Histaminliberator). Frischer Magerquark liefert viel Protein und wenig Histamin."*
+
+### Seite 140 · Mango-Nicecream (Kategorie EIS)
+✎ Rezeptname → besser **„MANGO-NICECREAM"** oder **„FRUCHT-NICECREAM"**.
+✎ „Provitalmin A" → **„Provitamin A"** (das „l" ist falsch)
+✓ Histamin-Info gut.
+
+### Seite 142 · Kokosmakronen (Kategorie MAKRONEN)
+✎ Rezeptname → besser **„KOKOSMAKRONEN"** (eindeutiger).
+✎ „gleichgroße" → **„gleich große"** (getrennt)
+✎ „Ober- Unterhitze" → **„Ober-/Unterhitze"**
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Vegane Version (ohne Butter) ist am besten verträglich und auch problemlos einzufrieren. Kokosraspeln bitte individuell testen — bei einigen bedingt verträglich."*
+
+### Seite 143 · Kapitel-Opener „& BRÖTCHEN"
+✎ Wie Seite 55 und 78 — nur die Hälfte sichtbar. Vermutlich fehlt **„BROT"** davor.
+
+### Seite 145 · Teff-Quark-Brötchen (Kategorie BRÖTCHEN)
+✎ Rezeptname → besser **„TEFF-QUARK-BRÖTCHEN"** (eindeutiger).
+✎ „Gebe eine Schüssel …" → **„Gib eine Schüssel …"** (Imperativ)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Teffmehl ist glutenfrei und reich an Eisen und Kalzium. Da Hefe ein Histaminbildner ist, nutzen wir Weinsteinbackpulver — bleibt die Brötchen trotzdem fluffig und ist deutlich verträglicher."*
+
+### Seite 147 · Kürbiskern-Saatenbrot (Kategorie BROT)
+✎ Rezeptname → besser **„KÜRBISKERN-SAATENBROT"** oder **„VEGANES SAATENBROT"**.
+✎ „direkt gefroren Essen" → **„essen"** (klein, Verb)
+✎ „Alternativ Luftdicht aufbewahren." → **„luftdicht"** (klein)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Komplett vegan, komplett hefefrei. Kürbiskerne liefern Magnesium — ein Co-Faktor für die DAO-Produktion. Dieses Brot ist perfekt für die ersten Wochen einer histaminarmen Ernährung."*
+
+### Seite 149 · Quark-Hafer-Brot (Kategorie BROT)
+✎ Rezeptname → besser **„QUARK-HAFER-BROT"**.
+✎ „1kg" → **„1 kg"** (Leerzeichen)
+✎ „wegen den Milchprodukten" → **„wegen der Milchprodukte"** (Genitiv — ggf. umgangssprachlich Dativ OK)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Hafer unterstützt den Darm und liefert Vitamin B6 für DAO. Quark macht das Brot saftig und proteinreich. Wichtig: nach dem Backen schnell schneiden und einfrieren — tiefgefroren bleibt es histaminstabil."*
+
+### Seite 151 · Dreifach-Mehl-Brot (Kategorie BROT)
+✎ Rezeptname → besser **„DREIFACH-MEHL-BROT"** oder **„MAIS-REIS-HAFER-BROT"**.
+✎ Zutaten „100g" sitewide → **„100 g"**
+✎ Hinweis-Text „wegen den Milchprodukten" → **„wegen der Milchprodukte"**
+📌 **Histamin-Info fehlt.** Vorschlag siehe S. 149.
+
+### Seite 153 · Kräuter-Baguette (Kategorie BAGUETTE)
+✎ Rezeptname → besser **„KRÄUTER-BAGUETTE"**.
+✎ „2 El" → **„2 EL"**  ·  „1 Tl" → **„1 TL"**
+✎ „2cm" → **„2 cm"**
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Durch den Verzicht auf Hefe und die Zugabe von HistaFood Kräutersalz bleibt dieses Baguette histaminarm. Direkt frisch essen oder einfrieren."*
+
+### Seite 155 · Quark-Brezen (Kategorie BREZE)
+✎ Rezeptname → besser **„QUARK-BREZEN"** oder **„SCHNELLE BREZEN"**.
+✓ Histamin-Info gut (Flohsamenschalen bei Reizdarm).
+
+### Seite 157 · Hafer-Mais-Brot (Kategorie BROT)
+✎ Rezeptname → besser **„HAFER-MAIS-BROT"** (eindeutiger als nur „BROT").
+✎ Zutaten: „150g Hafermehl, glutenfrei Reismehl, glutenfrei" → vermutlich **„Hafermehl oder Reismehl"** gemeint (das „oder" fehlt oder Zeilenumbruch verschluckt).
+📌 **Histamin-Info fehlt.**
+
+### Seite 159 · Veganes Saatenbrot (Kategorie BROT)
+✎ Rezeptname → besser **„VEGANES SAATENBROT"**.
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Dieses hefefreie Saatenbrot ist komplett vegan und ohne Milchprodukte. Chia- und Leinsamen liefern Omega-3-Fettsäuren, die entzündungshemmend wirken."*
+
+### Seite 161 · Karotten-Käse-Brötchen (Kategorie BRÖTCHEN)
+✎ Rezeptname → besser **„KAROTTEN-KÄSE-BRÖTCHEN"**.
+✎ „Junger Gouda" (Zutatenliste, groß) → **„junger Gouda"** (klein, Adjektiv)
+
+### Seite 163 · Zucchini-Karotten-Brötchen (Kategorie BRÖTCHEN)
+✎ Rezeptname → besser **„ZUCCHINI-KAROTTEN-BRÖTCHEN"**.
+✎ „im mixer kurz pulsieren" → **„im Mixer"** (groß, Substantiv)
+✎ „goldbaun" → **„goldbraun"** (r fehlt)
+✎ „30 sek." → besser **„30 Sek."** (konsistent als Abkürzung)
+
+### Seite 165 · Zucchini-Hüttenkäse-Brötchen (Kategorie BRÖTCHEN)
+✎ Rezeptname → besser **„ZUCCHINI-HÜTTENKÄSE-BRÖTCHEN"**.
+✎ „ausrücken, dass wir die meiste Flüssigkeit verlieren" → **„ausdrücken, damit wir …"** (ausdrücken + damit, nicht dass)
+✎ „Ober- Unterhitze" → **„Ober-/Unterhitze"**
+
+### Seite 166 · Kapitel-Opener „& AUFSTRICHE"
+✎ Vermutlich fehlt **„SUPPEN"** davor (siehe Muster der anderen Opener).
+
+### Seite 168 · Zucchini-Basilikum-Suppe (Kategorie SUPPE)
+✎ Rezeptname → besser **„ZUCCHINI-BASILIKUM-SUPPE"**.
+✎ „in einem Topf aufkochen und die kleingeschnittene Zucchini sowie Pastinke reingeben" → **„Pastinake"** (-e am Ende). Außerdem: „in ein Hochleistungsmixer" → **„in einen Hochleistungsmixer"** (Akkusativ).
+✎ „solange, bis dein Gemüse weich ist" → **„so lange, bis …"** (getrennt, temporal)
+
+### Seite 170 · Zucchini-Aufstrich (Kategorie SUPPE)
+❌ **Kategorie-Fehler:** Steht als „SUPPE" markiert, ist aber laut Beschreibung ein **Aufstrich** → Kategorie korrigieren.
+✎ „Pastinke" → **„Pastinake"** (Pastinake kommt in Zubereitung vor, ist aber nicht in Zutatenliste!)
+✎ „Zuaten" → **„Zutaten"** (Buchstabendreher)
+✎ „zum snacken" → **„zum Snacken"** (groß, substantiviert)
+✎ „zum verfeinern" → **„zum Verfeinern"**
+📌 **Histamin-Info fehlt.**
+
+### Seite 172 · Butternut-Kürbis-Suppe (Kategorie SUPPE)
+✎ Rezeptname → besser **„BUTTERNUT-KÜRBIS-SUPPE"**.
+✎ „1kg" → **„1 kg"**
+✎ „Olivenöl von Olive Plus" vs. andere Seiten **„O'Liv"** — vereinheitlichen.
+✎ „aufkochen den geschälten und entkernten Kürbis reingeben" → Komma: **„aufkochen, den geschälten und entkernten Kürbis dazugeben"** (dazu**geben** passt besser als „reingeben")
+✓ Histamin-Info sehr umfangreich (Polyphenole) — super.
+
+### Seite 174 · Tomaten-Ersatz-Suppe/Soße
+✎ Rezeptname **„TOMATEN SUPPE/SOSSE"** → besser **„TOMATEN-ERSATZ (SUPPE ODER SOSSE)"** — der Clou ist ja, dass es *ohne* Tomaten geht.
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Diese Alternative sieht aus wie Tomatensoße, kommt aber ohne die histaminreichen Tomaten aus. Rote Paprika und Butternut liefern die rötlich-orange Farbe und sind viel verträglicher."*
+
+### Seite 176 · Selbst gemachte Gemüsebrühe (Kategorie SUPPE)
+❌ **Kategorie-Fehler:** Steht „SUPPE", ist aber eine **Gemüsebrühe (Pulver)** → Kategorie korrigieren.
+✎ „Das zerkleinerte Gemüser mit Backpapier" → **„Das zerkleinerte Gemüse auf mit Backpapier ausgelegte Backbleche verteilen"** („Gemüser" nicht Plural; „auf" fehlt).
+
+### Seite 177 · Kapitel-Opener „& HAUPTSPEISEN"
+✎ Gleiches Muster — vermutlich **„SALATE & HAUPTSPEISEN"** o. ä. im Original.
+
+### Seite 179 · Gurken-Karotten-Salat (Kategorie SALAT)
+✎ Rezeptname → besser **„GURKEN-KAROTTEN-SALAT"**.
+✎ **„Cocos Aminos"** vs. **„Coco Aminos"** vs. **„Kokos-Aminos"** (auf verschiedenen Seiten) — **einheitlich benennen**. Standard-Produkt heißt **„Coconut Aminos"**, eingedeutscht **„Kokos-Aminos"**.
+✎ Zutaten „½ Frühlingszwiebel", Zubereitung „Frühlingszwiebeln" → vereinheitlichen (Numerus).
+
+### Seite 181 · Rotkohl-Pfanne mit Feta (Kategorie MIT FETA)
+✎ Rezeptname → besser **„ROTKOHL-PFANNE MIT FETA"** (eindeutiger als nur „MIT FETA").
+✎ Histamin-Info-Ende fehlt Punkt: **„…unterstützen kann."**
+
+### Seite 183 · Asia-Pfanne mit Reisnudeln (Kategorie PFANNE)
+✎ Rezeptname → besser **„ASIA-GEMÜSE-PFANNE"** oder **„BUNTE REISNUDEL-PFANNE"**.
+✎ „Coco Aminos Soße" → siehe oben, einheitlich benennen.
+✓ Histamin-Info sehr spannend (Wachteleier → Mastzellstabilisierung).
+
+### Seite 185 · Gemüse-Eintopf (Kategorie EINTOPF)
+✎ Rezeptname → besser **„BUNTER GEMÜSE-EINTOPF"**.
+✓ Histamin-Info gut (Romana-Salat).
+
+### Seite 187 · Döner-Wrap (Kategorie DÖNER)
+✓ Zubereitung fehlt in meinem Auszug (gekürzt). Prüfen, dass Schritte 1–x vollständig sind.
+✎ „Paprika Edelsüß" → im Rezept konsistent entweder „Edelsüß" oder einheitlich kleingeschrieben.
+
+### Seite 189 · Hafer-Schnitzel mit Süßkartoffel-Pommes (Kategorie SCHNITZEL)
+✎ Rezeptname → besser **„HAFER-SCHNITZEL MIT POMMES"** oder **„GEMÜSE-BRATLINGE MIT SÜSSKARTOFFEL-POMMES"**.
+✎ „1 kleine Süßkartoffeln" → **„1 kleine Süßkartoffel"** (Singular, da „1 kleine")
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Haferflocken sind von Natur aus histaminarm und liefern komplexe Kohlenhydrate. Süßkartoffeln beruhigen den Darm mit sanfter Stärke."*
+
+### Seite 191 · Käse-Baby-Boo-Kürbis (Kategorie IM KÜRBIS)
+✎ Rezeptname → besser **„KÄSE-BABY-BOO-KÜRBIS"** oder **„OFEN-KÜRBIS MIT KÄSEFÜLLUNG"**.
+✎ Zutaten **„½ ½ Mozzarella"** → doppeltes „½" (Tippfehler), vermutlich einfach **„½ Mozzarella"**.
+📌 **Histamin-Info fehlt.**
+
+### Seite 193 · Süßkartoffel-Gemüse-Bowl (Kategorie BOWL)
+✎ Rezeptname → besser **„SÜSSKARTOFFEL-GEMÜSE-BOWL"**.
+📌 **Histamin-Info fehlt.**
+
+### Seite 195 · Mozzarella-Kartoffel-Salat (Kategorie SALAT)
+✎ Rezeptname → besser **„MOZZARELLA-KARTOFFEL-SALAT"**.
+✎ **„Mozarella"** → **„Mozzarella"** (zwei „z")
+✎ **„200ml 200ml Wasser"** → **„200 ml Wasser"** (Doppelung)
+✎ **„Gemüsbrühe"** → **„Gemüsebrühe"** (e fehlt)
+✎ „Protein Creme" → **„Protein-Creme"** oder **„Proteincreme"**
+✎ Mehrere Schritte ohne Satzpunkt am Ende → ergänzen.
+✓ Histamin-Info gut.
+
+### Seite 197 · Süßkartoffel-Dill-Salat (Kategorie KARTOFFEL SALAT)
+✎ Rezeptname **„KARTOFFEL SALAT"** (getrennt) → **„SÜSSKARTOFFEL-DILL-SALAT"**.
+✎ **„n großen Mengen"** → **„In großen Mengen"** (das „I" fehlt am Satzanfang!)
+✓ Histamin-Info gut (Dill-Hinweis).
+
+### Seite 199 · Pizza (Kategorie PIZZA)
+✎ **„Anschließen"** → **„Anschließend"** (d fehlt)
+✓ Histamin-Info sehr gut (gereifter Käse vs. Mozzarella/Gouda).
+
+### Seite 201 · Flammkuchen (Kategorie KUCHEN)
+✎ Rezeptname → besser **„FLAMMKUCHEN"** oder **„GEMÜSE-FLAMMKUCHEN"**.
+✎ **„joungen Gouda"** → **„jungen Gouda"**
+✎ **„Währendessen"** → **„Währenddessen"** (d fehlt)
+📌 **Histamin-Info fehlt.**
+
+### Seite 203 · Käsespätzle (Kategorie SPÄTZLE)
+✎ Rezeptname → besser **„KÄSESPÄTZLE"**.
+✎ **„Käse fäden zieht"** → **„Fäden zieht"** (groß, Substantiv)
+✓ Histamin-Info gut (Gouda vs. Mozzarella).
+
+### Seite 205 · Honig-Karotten mit Maronenaufstrich (Kategorie KAROTTEN)
+✎ Rezeptname → besser **„HONIG-KAROTTEN MIT MARONENAUFSTRICH"**.
+✎ „waschen und Schälen" → **„schälen"** (klein, Verb)
+? Rezeptverweis **„Siehe Seite 192"** — Maronenaufstrich war aber auf **Seite 63**. **Verweis prüfen und korrigieren.**
+📌 **Histamin-Info fehlt.**
+
+### Seite 207 · Basilikum-Pesto (Kategorie PESTO)
+✎ Rezeptname → besser **„BASILIKUM-PINIEN-PESTO"**.
+✎ **„von Dm"** → **„von dm"** (klein, Markenschreibweise)
+✎ **„Buratta"** → **„Burrata"** (zwei „r")
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Frisches Basilikum ist bei den meisten gut verträglich — gereifte Pesto-Zutaten wie Parmesan oder gereifter Hartkäse werden hier bewusst weggelassen. Pinienkerne gelten als histaminarm."*
+
+### Seite 209 · One-Pot-Käsepfanne (Kategorie KÄSEPFANNE)
+✓ Zubereitung sauber.
+✎ „ca. 300ml" → **„ca. 300 ml"**
+✓ Küchenhinweis zur Zucchini-Bitterkeit → wertvoll, bitte so lassen.
+📌 **Histamin-Info fehlt** (am Ende).
+
+### Seite 211 · Reis mit Pesto (Kategorie REIS)
+✎ Rezeptname → besser **„REIS MIT HAUSGEMACHTEM PESTO"**.
+✎ **„zum kochen bringen"** → **„zum Kochen bringen"**
+✎ **„Nach belieben"** → **„Nach Belieben"**
+✎ Verweis **„auf Seite 194"** — Pesto war aber auf **Seite 207**. **Verweis korrigieren.**
+✓ Histamin-Info gut (Coconut Aminos vs. Soja).
+
+### Seite 213 · Gemüse-Reis-Auflauf (Kategorie AUFLAUF)
+✎ Rezeptname → besser **„GEMÜSE-REIS-AUFLAUF"**.
+✎ **„zum kochen bringen"** → **„zum Kochen bringen"**
+✎ „2 Karotten gewürfelt" → **„2 Karotten, gewürfelt"** (Komma für Konsistenz mit anderen Zutaten)
+✎ „zum Überbacken." → **„zum Überbacken"** (ohne Punkt in der Zutatenliste)
+📌 **Histamin-Info fehlt.**
+
+### Seite 215 · Kürbis-Risotto (Kategorie RISOTTO)
+✎ Rezeptname → besser **„KÜRBIS-RISOTTO"**.
+✎ „die Mozzarella" → **„den Mozzarella"** (der Mozzarella — maskulin)
+✎ „300ml" → **„300 ml"**
+📌 **Histamin-Info fehlt.**
+
+### Seite 217 · Spargel mit Mais-Couscous & Grünkohl (Kategorie SPARGEL)
+✎ Rezeptname → besser **„SPARGEL MIT MAIS-COUSCOUS"**.
+✎ **„Couscous aus Mias"** → **„Couscous aus Mais"** (Buchstabendreher)
+📌 **Histamin-Info fehlt.** Vorschlag:
+> *„Grüner Spargel ist in Maßen gut verträglich (SIGHI 1 — als Histaminliberator eingestuft, aber mild). Grünkohl ist von Natur aus histaminarm und reich an Vitamin K und Folsäure."*
+
+### Seite 219 · Kürbis-Gnocchi (Kategorie GNOCCIES)
+✎ Rezeptname **„GNOCCIES"** → **„GNOCCHI"** (italienische Standardschreibweise, konsequent im Rezept überall ersetzen — kommt mehrfach vor!)
+✎ „Butternut Kürbis" → **„Butternutkürbis"** oder **„Butternut-Kürbis"**
+✎ **„Flohsameschalen"** → **„Flohsamenschalen"** (n fehlt)
+✎ „aus dem Teig 4 Teile teilen" → **„den Teig in 4 Teile teilen"**
+✎ **„Jeweil"** → **„Jeweils"** (s fehlt)
+✎ „Eine Pfanne erhitzen die Butter zusammen …" → Komma: **„Eine Pfanne erhitzen, die Butter zusammen …"**
+📌 **Histamin-Info fehlt.**
+
+### Seite 220 · Abschluss-Seite „Mein Weg · Nicht nur Essen"
+✓ Inhaltlich sehr schön als Abschluss. Nur eine ungewöhnliche einzelne „." auf einer Zeile — vermutlich Layout-Artefakt.
+
+---
+
+
+## Inhaltsverzeichnis (Vorschlag)
+
+Basierend auf dem durchgelesenen Buch. Seitenzahlen entsprechen der Fließtext-Position im PDF — bei finalen Layout-Anpassungen prüfen und ggf. aktualisieren.
+
+### Vor den Rezepten
+
+| Seite | Inhalt |
+|---:|---|
+| 1 | Titel |
+| 2 | Untertitel |
+| 3 | Impressum |
+| 4–7 | Zu beachten · Marken, Alternativen, Mehle (ggf. kürzen – Dopplung mit S. 9) |
+| 8 | Mein Zutaten-Einkauf |
+| 9 | Zu beachten (Dopplung von S. 4) |
+| 10 | Backzutaten & Süße |
+| 11 | Mehle |
+| 12 | Nüsse & Saaten |
+| 13–14 | Lebensmittel, die Probleme machen können |
+| 15 | Verträgliche Grundlebensmittel · SIGHI-Erläuterung |
+| 16 | Milchprodukte, Fette, Trockenware |
+| 17 | Weitere Zutaten + Einkaufsliste „Da kaufe ich gerne ein" |
+| 18 | Spar-Codes |
+| 19–20 | Meal Prep & Histamin |
+| 21 | Meine Histamin-Skala |
+| 22–43 | Austausch-Tabellen (Milchprodukte, Käse, Milchalternativen, Gemüse, Nüsse/Saaten, Mehle, Backzutaten, Gewürze, Süße, Dips, Eier) |
+| 44 | Steckbrief |
+| 45–54 | Geschichte |
+
+### Kapitel 1 · Vorspeisen & Snacks
+
+| Seite | Rezept |
+|---:|---|
+| 55 | Kapitel-Opener |
+| 57 | Rote-Bete-Carpaccio aus dem Ofen |
+| 59 | Geröstete Kürbiskerne |
+| 61 | Selbstgemachte Kräuterbutter |
+| 63 | Kürbis-Maronen-Aufstrich |
+| 65 | Seelenbauch-Lunchbox |
+| 67 | Süßkartoffel-Sandwich |
+| 69 | Heidelbeer-Quark-Brot |
+| 71 | Frischkäse-Kugeln |
+| 73 | Käse-Gurken-Roulade |
+| 75 | Radieschen-Kräuterbutter |
+| 77 | Quark-Rote-Bete-Wrap |
+| 78 | Kapitel-Opener (zweite Hälfte) |
+| 80 | Heidelbeer-Maiswaffel |
+| 82 | Kokos-Protein-Bällchen |
+
+### Kapitel 2 · Süßes & Snacks
+
+| Seite | Rezept |
+|---:|---|
+| 84 | Dattel-Kokos-Kugeln |
+| 86 | Karotten-Kokos-Bällchen mit Schokolade |
+| 88 | Apfel-Wolken |
+| 90 | Kokos-Kuchen |
+| 92 | Vanille-Zimt-Donuts |
+| 94 | Knuspriges Granola |
+| 96 | Quark-Zimtschnecken |
+| 98 | Mohn-Dampfnudeln mit Vanillesoße |
+| 100 | Quark-Kaiserschmarrn mit Apfelmark |
+| 102 | Quark-Kaiserschmarrn mit Vanillesoße |
+| 104 | Veganer Kaiserschmarrn |
+| 106 | Tiramisu-Törtchen |
+| 108 | Reis-Mais-Pancakes |
+| 110 | Hafer-Mais-Pancakes |
+| 112 | Vanille-Quark-Schnecken |
+| 114 | Schoko-Cookies |
+| 116 | Teff-Pfannkuchen |
+| 118 | Lockere Waffeln |
+| 120 | Sticky Reis mit Mango oder Kürbis |
+| 122 | Karotten-Quark-Kuchen |
+| 124 | Karotten-Vanille-Dampfnudeln |
+| 126 | Apfel-Hüttenkäse-Snackteller |
+| 128 | Heidelbeer-Reispapier-Tasche |
+| 130 | Beeren-Tiramisu |
+| 132 | Eis-Kaffee |
+| 134 | Mocca-Pancakes |
+| 136 | Aprikosen-Dessert |
+| 138 | Käsekuchen ohne Boden |
+| 140 | Mango-Nicecream |
+| 142 | Kokosmakronen |
+
+### Kapitel 3 · Brot & Brötchen
+
+| Seite | Rezept |
+|---:|---|
+| 143 | Kapitel-Opener |
+| 145 | Teff-Quark-Brötchen |
+| 147 | Kürbiskern-Saatenbrot (vegan) |
+| 149 | Quark-Hafer-Brot |
+| 151 | Dreifach-Mehl-Brot |
+| 153 | Kräuter-Baguette |
+| 155 | Quark-Brezen |
+| 157 | Hafer-Mais-Brot |
+| 159 | Veganes Saatenbrot |
+| 161 | Karotten-Käse-Brötchen |
+| 163 | Zucchini-Karotten-Brötchen |
+| 165 | Zucchini-Hüttenkäse-Brötchen |
+
+### Kapitel 4 · Suppen & Aufstriche
+
+| Seite | Rezept |
+|---:|---|
+| 166 | Kapitel-Opener |
+| 168 | Zucchini-Basilikum-Suppe |
+| 170 | Zucchini-Aufstrich |
+| 172 | Butternut-Kürbis-Suppe |
+| 174 | Tomaten-Ersatz (Suppe oder Soße) |
+| 176 | Selbstgemachte Gemüsebrühe (Pulver) |
+
+### Kapitel 5 · Salate & Hauptspeisen
+
+| Seite | Rezept |
+|---:|---|
+| 177 | Kapitel-Opener |
+| 179 | Gurken-Karotten-Salat |
+| 181 | Rotkohl-Pfanne mit Feta |
+| 183 | Asia-Gemüse-Pfanne mit Reisnudeln |
+| 185 | Bunter Gemüse-Eintopf |
+| 187 | Döner-Wrap |
+| 189 | Hafer-Schnitzel mit Süßkartoffel-Pommes |
+| 191 | Käse-Baby-Boo-Kürbis |
+| 193 | Süßkartoffel-Gemüse-Bowl |
+| 195 | Mozzarella-Kartoffel-Salat |
+| 197 | Süßkartoffel-Dill-Salat |
+| 199 | Pizza |
+| 201 | Flammkuchen |
+| 203 | Käsespätzle |
+| 205 | Honig-Karotten mit Maronenaufstrich |
+| 207 | Basilikum-Pinien-Pesto |
+| 209 | One-Pot-Käsepfanne |
+| 211 | Reis mit hausgemachtem Pesto |
+| 213 | Gemüse-Reis-Auflauf |
+| 215 | Kürbis-Risotto |
+| 217 | Spargel mit Mais-Couscous |
+| 219 | Kürbis-Gnocchi |
+
+### Abschluss
+
+| Seite | Inhalt |
+|---:|---|
+| 220 | Mein Weg · Nicht nur Essen |
+
+---
+
+## Übergreifende Hinweise für die Überarbeitung
+
+1. **Fast alle Rezepte haben nur eine Kategorie statt eines Rezeptnamens** (z. B. „BROT", „KUCHEN", „BOWL"). Vorschlag: Kategorie als Zeile 1 lassen (sortiert nach Kapitel), und Zeile 2 den konkreten Rezeptnamen hinzufügen (siehe Vorschläge oben).
+
+2. **„Zutaten:" vor den Nummerierungen 1., 2., 3., … steht fast überall statt „Zubereitung:"** — bitte in einem Durchgang überall ersetzen.
+
+3. **„Gebe …" als Imperativ** steht häufig — der korrekte Imperativ-Singular von „geben" ist **„Gib …"**.
+
+4. **Mengenangaben inkonsistent:** mal „100g", mal „100 g". DIN-Standard ist mit Leerzeichen: **„100 g"**. In einem Durchgang vereinheitlichen.
+
+5. **„Ober-Unterhitze" vs. „Ober-/Unterhitze"** — bitte eine Variante wählen (Standard: mit Schrägstrich).
+
+6. **„Vanillepuddinpulver" (ohne g)** erscheint mehrfach — immer **„Vanillepuddingpulver"**.
+
+7. **„Cocos Aminos" / „Coco Aminos" / „Kokos-Aminos"** — bitte für ein konsistentes Vokabular entscheiden. Vorschlag: **„Kokos-Aminos"** (eingedeutscht) oder **„Coconut Aminos"** (Produkt-Original).
+
+8. **„DM" / „Dm"** → **„dm"** (Markenschreibweise, klein).
+
+9. **Anführungszeichen inkonsistent** — mal englisch `"…"` oder `'…'`, mal deutsch `„…"` — konsequent **deutsche Anführungszeichen** `„…"` verwenden.
+
+10. **Seitenverweise im Buch sind teils falsch** (z. B. S. 65 „siehe Seite )" ohne Zahl, S. 205 verweist auf „Seite 192" für den Maronenaufstrich, der aber auf Seite 63 ist). **Alle Querverweise im finalen Layout nochmal gegen das Inhaltsverzeichnis prüfen.**
+
+11. **Fehlende Histamin-Infos** bei etwa 15 Rezepten (siehe oben) — Vorschläge sind formuliert, können 1:1 übernommen oder angepasst werden.
+
+12. **Kapitel-Opener-Seiten (55, 78, 143, 166, 177)** zeigen alle nur die zweite Hälfte des Titels (z. B. „& SNACKS"). Erster Teil fehlt → Layout prüfen.
+
+13. **Doppelung Seite 4 ↔ Seite 9**: Der „Zu beachten"-Text steht zweimal identisch. Eine der beiden Stellen entfernen.
+
+14. **Inhaltsverzeichnis-Seiten (5, 6, 7)** sind praktisch leer („VERZEICHNIS:" ohne Einträge). Das obige Inhaltsverzeichnis kann als Vorlage dienen.
+
