@@ -2,7 +2,98 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-21 (Seelenbauch-Retreat Nº 01 komplett aufgesetzt — 4 neue Seiten, Formspree-Anmeldung, Städte-Abstimmung, sitewide Nav).
+> Letzte Aktualisierung: 2026-10-25 (Kochbuch-Review komplett + 6 neue Zusatz-Seiten geplant + Druck-Planung läuft).
+
+---
+
+## ⚡ Aktueller Stand · 2026-10-25 · Seelenküche-Kochbuch — Review, Zusatz-Seiten & Druck
+
+### Das Kochbuch
+
+| | |
+|---|---|
+| **Titel** | Seelenküche — +80 Rezepte für die Seele |
+| **Umfang** | 220 Seiten (PDF-Review) → wird nach Zusatz-Seiten ~230-234 Seiten |
+| **Format** | DIN A4 hoch (210 × 297 mm) |
+| **Zielgruppe** | Frauen mit Histaminintoleranz, sensiblem Darm & Zyklusbeschwerden |
+| **Verkaufspreis** | 32,99 € (ggf. anheben auf 34,99 €) |
+| **Vertrieb** | smacado.de (Vorbestellung, später regulär) |
+
+### Review-Dokument komplett erstellt
+
+`docs/seelenkueche-review.md` (875 Zeilen) enthält:
+- **Seite-für-Seite-Lektorat** aller 220 Seiten (Rechtschreibung, Grammatik, Satzbau)
+- **~15 fehlende Histamin-Infos** mit konkreten Formulierungsvorschlägen pro Rezept
+- **Inhaltsverzeichnis-Vorschlag** mit Seitenzahlen für alle 5 Kapitel + ~80 Rezepte
+- **14 übergreifende Hinweise** für systematische Fehler (siehe unten)
+
+**Systematische Fehler, die sich durchziehen:**
+1. „Zutaten:" statt „Zubereitung:" fast überall
+2. „Gebe …" statt korrektem Imperativ „Gib …"
+3. „100g" statt „100 g" (Leerzeichen vor Einheit fehlt)
+4. „Vanillepuddinpulver" statt „Vanillepuddingpulver" (g fehlt)
+5. Englische `'...'` statt deutsche `„..."` Anführungszeichen
+6. Kapitel-Opener zeigen nur zweite Hälfte („& SNACKS", „& BRÖTCHEN")
+7. Dopplung Seite 4 ↔ Seite 9 (identischer „Zu beachten"-Text)
+8. Inhaltsverzeichnis-Seiten 5-7 leer
+
+**Konkrete Rechtschreibfehler:**
+Camembert (statt „Camenbert"), Cheddar („Cheaddar"), Champignons („Champions" — bei Pilzen!), Thymian („Tymian"), Kardamom („Kardamon"), Lorbeerblatt („Loorbeer Blatt"), Mozzarella („Mozarella"), Burrata („Buratta"), Gnocchi („Gnoccies"), Flohsamenschalen („Flohsameschalen"), Guarkernmehl („Guakernmehl"), Berchtesgadener Land („Berchtesgader"), Kokosraspeln („Kokosrapseln"), Mais („Mias"), Anschließend („Anschließen"), Währenddessen („Währendessen"), Provitamin A („Provitalmin A"), willensstark („willensstarkt"), verrannt („verannt"), Kaiserschmarrn („Kaiserschmarnn") …
+
+### 6 geplante Zusatz-Seiten für den Buch-Abschluss
+
+**Entwurf-Texte stehen im Chat (Session 25.10.), noch nicht in Review-Dokument übernommen:**
+
+| Position | Seite | Inhalt | Status |
+|---|---:|---|---|
+| vor Rezepten | ~ 22 | **„So liest du die Tabellen"** — Erklärung Zeichen (leer/—/X), Spalten, Haftungsausschluss | ✎ Entwurf fertig |
+| vor Rezepten | ~ 54 | **„Warum du hier keine Nährwerte findest"** — Julias Statement: bewusst keine Nährwerte, intuitive Ernährung, Food Focus losgeworden, Verweis TerraLuna-App | ✎ Entwurf fertig |
+| Ende | ~ 221 | **„Wenn du tiefer gehen möchtest"** — Teaser Seelenbauch Workbook (12 Wochen) + Code VIPSEELE5 (5 % Rabatt im Shop) | ✎ Entwurf fertig |
+| Ende | ~ 222 | **Danke-Seite** — Baukasten mit Vorlagen für: Partner / Eltern / Marken (HistaFood, Histaminikus, Aho.bio, NoCoffee, GoodMoodFood, O'Liv, Nigela) / Community / Leserin / Signatur | ✎ Baukasten fertig, Julia muss persönliche Namen einsetzen |
+| Ende | ~ 223 | **Meine App (TerraLuna)** — Nährwerte-Verweis, Zyklustracking, Symptomtagebuch | ✎ Entwurf fertig |
+| Ende | ~ 224 | **„Deine Welt"** — Alle Angebote (Instagram, Kurs, App, Retreat, Workbook, Buch, Spar-Codes) | ⏳ noch zu entwerfen |
+
+**Spar-Code neu:** **VIPSEELE5** → 5 % auf alles im Shop.
+
+### Druck-Planung läuft
+
+**Testexemplar bestellt** (vermutlich wirmachendruck.de / diedruckerei.de):
+- Softcover 300 g Umschlag, ohne Cellophanierung
+- 90 g Innenseiten, 4/4 CMYK
+- 234 Seiten, DIN A4
+- 1 Stück
+- Lieferung: **04.11.2026**
+
+**Entscheidungs-Thema:**
+- **Hardcover vs. Softcover:** tendiert zu Softcover (deutlich günstiger)
+- **Papierstärke:** 90 g (im Test) könnte zu dünn sein für dunkle Food-Fotos → ggf. upgraden auf 100 g
+- **Cellophanierung:** dringend matte Cellophanierung ergänzen (Kochbuch = fettige Finger)
+- **Impressum sagt „Hardcover"** → bei Softcover-Entscheidung Impressum anpassen
+
+**Druckereien im Vergleich (bei 100 Stück Softcover 234 S. A4):**
+| Druckerei | Preis/Buch (90g + Cello) | Besonderheit |
+|---|---:|---|
+| Flyeralarm.de | ~9-11 € | Günstigster, Massendruck |
+| Diedruckerei.de | ~9-11 € | Gleicher Konzern wie Flyeralarm |
+| Wirmachendruck.de | ~10-12 € | Breites Sortiment |
+| Sedruck.de | ~10-12 € | Spezialist für Selbstverleger-Bücher |
+| Mochaccini.de | ~30 € | Kochbuch-Spezialist, Lay-Flat-Bindung (Premium) |
+| Saal Digital | ~40 € | Fotobuch-Qualität, ab 1 Stück (für Testdruck ideal) |
+| BoD on-demand | ~15-18 € | Null Vorab-Investment, Amazon-Vertrieb inkl. |
+
+**Favorit:** 100 Stück Softcover + 90 g + matte Cello bei Flyeralarm/Diedruckerei = ~1.000 € Vorab-Investment. Verkaufspreis 34,99 € → Marge ~17 €/Buch → nach ~60 Verkäufen Druckkosten raus.
+
+**Alternativ konservativ:** 50 Stück = ~700 € Investment, dünnere Marge, aber weniger Risiko.
+
+### Noch offen
+
+- [ ] Druckerei + Config finale Entscheidung (nach Testexemplar-Begutachtung am 04.11.)
+- [ ] Fehler aus `docs/seelenkueche-review.md` ins PDF einarbeiten (Layout-Durchgang)
+- [ ] 6 Zusatz-Seiten layouten und ins PDF einfügen
+- [ ] Danke-Seite mit persönlichen Namen füllen (Partner, Eltern)
+- [ ] Impressum anpassen falls Softcover statt Hardcover
+- [ ] Verkaufspreis-Entscheidung: 32,99 € lassen oder auf 34,99 € erhöhen?
+- [ ] Verweise im Buch korrigieren (z.B. S. 65 „siehe Seite )" ohne Zahl, S. 205 → „192" statt 63, S. 211 → „194" statt 207)
 
 ---
 
