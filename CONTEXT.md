@@ -2,11 +2,129 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-25 (Kochbuch-Review komplett + 6 neue Zusatz-Seiten geplant + Druck-Planung läuft).
+> Letzte Aktualisierung: 2026-10-26 (Seelenbauchbuch + Workbook Reviews fertig, Druck-Entscheidung Softcover 90g bei Sedruck, Gutscheinkarten geplant).
 
 ---
 
-## ⚡ Aktueller Stand · 2026-10-25 · Seelenküche-Kochbuch — Review, Zusatz-Seiten & Druck
+## ⚡ Aktueller Stand · 2026-10-26 · 3 Bücher parallel in der Druck-Vorbereitung
+
+### Die 3 Bücher-Projekte (Status-Übersicht)
+
+| Buch | Umfang | Status | Review-Dokument |
+|---|---:|---|---|
+| **Seelenküche Kochbuch** | 220 S. | Review komplett, 6 Zusatz-Seiten geplant | `docs/seelenkueche-review.md` |
+| **Seelenbauchbuch (Oktober)** | 178 S. (PDF) | TOC korrigiert (altes war an fast allen Stellen falsch!) | Chat 25.10. |
+| **Seelenbauch Workbook (Druck)** | 212 S. (PDF) → 234 S. (geplant) | TOC korrigiert + Fehlerliste erstellt | Chat 26.10. |
+
+### Testexemplar wird am 04.11. erwartet
+
+Softcover + 300 g Umschlag + 90 g Innen + ohne Cellophanierung + DIN A4 + 234 Seiten.
+Vermutlich Druckerei: wirmachendruck.de oder diedruckerei.de.
+→ Nach Erhalt entscheiden ob Config für Hauptauflage reicht.
+
+### Druck-Entscheidung getroffen
+
+- **Format:** DIN A4 hoch, Softcover (Hardcover zu teuer für Erstauflage)
+- **Papier:** 90-100 g (Julia hat sich gegen 115 g entschieden — Budget-Thema)
+- **Veredelung:** matte Cellophanierung empfohlen (dringend!)
+- **Druckerei:** vermutlich **Sedruck.de** oder **Flyeralarm.de** (Preis-Leistung-Favoriten)
+- **Alternativen geprüft:** Mochaccini (Premium, zu teuer), Saal Digital (Premium für Testdruck), BoD (für Amazon-Vertrieb)
+- **Preisrichtwerte:** 100 Stück Softcover 234 S. + 90 g + Cello = ~1.000 € Vorab-Investment
+- **Marge** bei 32,99 € Verkaufspreis: ~17 €/Buch → nach ~60 Verkäufen Druckkosten raus
+
+### Seelenbauchbuch (178 S.) — korrigiertes Inhaltsverzeichnis
+
+**Alte Seitenzahlen im PDF stimmten an fast allen Stellen nicht**, u. a.:
+- „Kapitel 1 · Deine Reise" sagte Seite 55, war aber Seite 73
+- „Leaky Gut" sagte 16, war aber 47
+- „Supplemente & Probiotika" sagte 33, war aber 59
+- „Impressum" sagte 142, steht aber vorne auf Seite 3-4
+
+Komplettes neues TOC in Chat 25.10.
+
+### Seelenbauch Workbook (212 S.) — korrigiertes TOC + Fehlerliste
+
+**TOC-Verschiebungen:**
+- Modul 3 Opener sagte 58 → tatsächlich 59
+- Modul 4 Opener sagte 64 → tatsächlich 65
+- Modul 7 Opener (fehlte im TOC) → tatsächlich 111
+- Modul 11 Opener (fehlte) → tatsächlich 183
+- Modul 12 Opener (fehlte) → tatsächlich 199
+
+**Systematische Fehler im Workbook:**
+- Mehrfache Dopplungen: „Verantwortlich für den Verantwortlich für den" (S. 109), „ich ich daran gearbeitet" (S. 151)
+- Englische Anführungszeichen `'...'` statt deutsche `„..."` durchgängig
+- „Glutensensivitität" → „Glutensensitivität" (S. 13)
+- „willensstarkt" → „willensstark" (S. 11)
+- „verannt" → „verrannt" (S. 13)
+- „Vetrau" → „Vertrau" (S. 178)
+- „Transgutaminase" → „Transglutaminase" (S. 72, großer Fachfehler!)
+- „Hyposensibilisierungvorzunehmen" → fehlendes Leerzeichen (S. 71)
+- „Bauchspeicheldrüsen Erkrankung" → Bindestrich oder zusammen (S. 69)
+- „Dieses Jahr" statt „Diese Jahr" (S. 147)
+- „geschrotetet" → „geschrotete" (S. 125)
+- „Aifryer" → „Airfryer" (S. 39)
+- „Bauschmerzen" → „Bauchschmerzen" (S. 19)
+- „verpeillt" → „verpeilt" (S. 20)
+- „persönliche Empfehlung" (3× in Notfall-Seiten) → Plural „Empfehlungen"
+- Komplette Fehlerliste in Chat 26.10.
+
+### 6 geplante Zusatz-Seiten für Kochbuch-Abschluss (Entwürfe fertig)
+
+| Position | Thema | Status |
+|---|---|---|
+| vor Rezepten (~ S. 22) | „So liest du die Tabellen" — Zeichen-Erklärung | ✎ Entwurf fertig |
+| vor Rezepten (~ S. 54) | „Warum du hier keine Nährwerte findest" — Intuitive-Ernährung-Statement | ✎ Entwurf fertig |
+| Ende (~ S. 221) | „Wenn du tiefer gehen möchtest" — Workbook-Teaser + Code VIPSEELE5 | ✎ Entwurf fertig |
+| Ende (~ S. 222) | **Danke-Seite** — Baukasten | ✎ Baukasten fertig, Julia muss Namen einsetzen |
+| Ende (~ S. 223) | Meine App (TerraLuna) — Nährwerte-Verweis | ✎ Entwurf fertig |
+| Ende (~ S. 224) | „Deine Welt" — Alle Angebote übersichtlich | ⏳ noch zu entwerfen |
+
+### Spar-Code
+
+**VIPSEELE5** → 5 % auf alles im Shop. Wird in allen 3 Büchern erwähnt (Workbook-Teaser, Kochbuch-Deine-Welt, zukünftige Flyer).
+
+### Flyer-Planung
+
+- **Format:** DIN A5 (14,8 × 21 cm)
+- **Papier:** **170 g matt** + matte Cellophanierung
+- **Nutzung:** Beileger im Kochbuch-Versand + Marketing/Events
+- Konzept: Hierarchie-Struktur (Flaggschiff groß → feste Angebote mittel → kommende Produkte klein)
+
+### Gutscheinkarten-Planung
+
+- **Format:** DIN A6 (10,5 × 14,8 cm)
+- **Papier:** **350 g matt** + matte Cellophanierung + optional abgerundete Ecken
+- **Werte:** 10 € / 25 € / 50 € / 75 € / 100 € oder individuell
+- **Formate:** gedruckte Postkarte + digitales PDF
+- **Gültigkeit:** 2 Jahre ab Kauf
+- **Nicht kombinierbar** mit VIPSEELE5
+- Verkauft über **smacado.de** (Webador-Shop)
+- Shop-Seiten-Text-Entwurf in Chat 26.10.
+
+### Neue Memory-Erkenntnisse
+
+- Julia bevorzugt **Softcover + weniger Papier** über Hardcover (Budget-Entscheidung)
+- Julia will beim Kochbuch **bewusst keine Nährwerte** (intuitive Ernährung, Weggang vom Food Focus) — Nährwerte nur in TerraLuna-App
+- Spar-Code **VIPSEELE5** = 5 % auf alles — als sitewide Vokabular etabliert
+
+### Noch offen
+
+- [ ] Testexemplar am 04.11. prüfen → finale Druckerei-Entscheidung
+- [ ] Fehler aus `docs/seelenkueche-review.md` ins Kochbuch-Layout einarbeiten
+- [ ] Fehler aus Workbook-Chat-Liste ins Workbook-Layout einarbeiten
+- [ ] 6 Zusatz-Seiten fürs Kochbuch layouten
+- [ ] Danke-Seite mit persönlichen Namen füllen
+- [ ] „Deine Welt"-Seite entwerfen
+- [ ] Alte Seitenzahlen in Seelenbauchbuch korrigieren
+- [ ] Alte Seitenzahlen + Modul-Opener in Workbook korrigieren
+- [ ] Flyer-Design umsetzen (DIN A5, 170 g, hierarchische Struktur)
+- [ ] Gutscheinkarten-Design + Shop-Seite auf smacado.de einrichten
+- [ ] Verkaufspreis-Entscheidung Kochbuch: 32,99 € lassen oder auf 34,99 € erhöhen?
+
+---
+
+## ⚡ Vorherige Session · 2026-10-25 · Seelenküche-Kochbuch — Review, Zusatz-Seiten & Druck
 
 ### Das Kochbuch
 
