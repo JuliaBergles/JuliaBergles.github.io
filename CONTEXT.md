@@ -2,7 +2,103 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-10-26 (Seelenbauchbuch + Workbook Reviews fertig, Druck-Entscheidung Softcover 90g bei Sedruck, Gutscheinkarten geplant).
+> Letzte Aktualisierung: 2026-11-02 (Shop erweitert: App + Seelenweihnacht + Seelenzyklus-Info-Seite live, Weihnachtskochbuch mit 23 Rezepten 24,99 €).
+
+---
+
+## ⚡ Aktueller Stand · 2026-11-02 · Shop-Erweiterung + Seelenweihnacht + Seelenzyklus-Freebook
+
+### Shop-Übersicht `ebooks.html` ausgebaut
+
+Drei neue Produkte auf der Shop-Übersicht sichtbar:
+
+1. **Seelenbauch App** — als „kostenlos"-Featured-Karte zwischen Notizbuch und Bundles (nutzt `images/app-v1.2/01-heute.png` als Cover, verlinkt auf `app.html`)
+2. **Seelenweihnacht · Weihnachtskochbuch** — als Vorbestell-Karte direkt nach dem Kochbuch (Platzhalter-Cover, 24,99 € · 23 Rezepte)
+3. **Seelenzyklus · Freebook** — Karte um Erklär-Zeile ergänzt, Link führt jetzt zur neuen Info-Seite `seelenzyklus.html` statt direkt zu WhatsApp
+
+Nav-Dropdown „Shop" entsprechend erweitert (nur auf `ebooks.html`, `seelenweihnacht.html`, `seelenzyklus.html` — nicht sitewide).
+
+### Seelenweihnacht · Weihnachtskochbuch — neue Seite `seelenweihnacht.html`
+
+**Erst „Seelenbäckerei" genannt** → umbenannt zu „Seelenweihnacht", weil's **nicht nur Backen** ist, sondern komplettes Weihnachtsmenü mit süß + herzhaft. Datei war kurzzeitig `seelenbaeckerei.html` → `seelenweihnachten.html` → final **`seelenweihnacht.html`**.
+
+**23 Rezepte**:
+
+| Nº 01 · Süß (8) | Nº 02 · Herzhaft (15) |
+|---|---|
+| Butterplätzchen | Wirsingroulade mit Polenta |
+| Spekulatius | Weihnachtssuppe mit Maronen |
+| Vanillekipferl | Schupfnudeln |
+| Lebkuchen | Ideen für Raclette |
+| Bratapfel | Gemüse-Quiche |
+| Spritzgebäck | Wintersalat |
+| Zimtsterne | Chinakohl-Salat |
+| Kürbiskuchen | Rote-Bete-Feldsalat |
+| | Kartoffelklöße mit Soße und Salat |
+| | Flammkuchen mit Feta, Rotkohl und Kürbis |
+| | Maronen-Gemüse-Sterne |
+| | Käse-Kräuter-Schnecken aus Reispapier |
+| | Kartoffeln mit Mangold |
+| | Kürbissoße mit Pellkartoffeln, Prinzessbohnen und Dip |
+| | Gefüllte Süßkartoffel |
+
+**Signatur**: ausgewogen, ohne Industriezucker, histaminarm und glutenfrei.
+
+**Preis-Entwicklung**: 14,99 € (initial, zu teuer bei nur Bäckerei) → 7,99 € (Impulskauf nach Julias „ist teuer") → **24,99 €** (final, als klar wurde: 23 Rezepte, komplettes Weihnachtsmenü, nicht nur 20 Plätzchen).
+
+**Noch offen auf der Seite**:
+- Echtes Cover (aktuell Platzhalter-Gradient)
+- Julias eigener Einführungstext (Platzhalter deutlich markiert)
+- Elopage-Bestelllink
+- Nav-Eintrag auf allen anderen 60+ Seiten (bisher nur auf 3 Seiten)
+
+### Seelenzyklus · Freebook — neue Seite `seelenzyklus.html`
+
+**Zweck**: Vorher war das Freebook nur per WhatsApp-Link auf `ebooks.html` greifbar. Jetzt eigene Shop-Info-Seite, die den Histamin-Zyklus-Zusammenhang erklärt und auf WhatsApp verweist.
+
+**Design**: Blauer Editorial-Ton (statt Copper) — passt zum ruhigen/aufklärenden Thema, Mint-BG für die Erklär-Sektion.
+
+**Inhalt (3-Spalten-Erklärung)**:
+- Nº 01 · Östrogen & Histamin — Östrogen regt Mastzellen an + hemmt DAO
+- Nº 02 · Progesteron als Gegenspieler — stabilisiert Mastzellen
+- Nº 03 · Die kritischen Tage — Flare-ups rund um Eisprung + vor der Periode
+
+**CTA**: WhatsApp mit vorformuliertem Text, Disclaimer am Ende.
+
+### Kochbuch-Rückseite — Entwurf besprochen (nicht umgesetzt)
+
+Für die Rückseite vom gedruckten Seelenküche-Kochbuch:
+- Struktur: Hook → Geschichte → Was drin ist → Für wen → Autorin-Zeile → ISBN/Barcode
+- Entwurf-Text geschrieben, Julia soll in ihre Stimme bringen
+- **Extra Punkt eingebaut**: soziale Ausgrenzung („Essen ist mehr als Überleben" — Kuchen bei Oma, Grillen, Geburtstag im Restaurant)
+- Als Bullet in „Was dich erwartet"-Liste des Rückseitentexts positioniert
+
+### E-Book-Verkauf — Beratung
+
+Julia wollte wissen wie sie E-Books verkaufen soll (direkt verschicken? Canva verschlüsseln?).
+
+**Empfehlung**: **Elopage** (DE-Plattform, ~2,9 % + 0,25 € pro Verkauf).
+- Macht automatisch: Zahlung + Rechnung mit USt + Download-Link + Watermark mit Käufer-Mail
+- Keine Hard-DRM/Passwort-Verschlüsselung (nervt Käufer, in Minuten geknackt, Käufer teilen alle dasselbe Passwort)
+- Soft-DRM via Watermark ist Standard
+
+**Preis-Empfehlungen pro Produkt** (zur Erinnerung):
+- Seelenküche-Kochbuch: 32,99 € ✓ (bereits so)
+- Seelenweihnacht: 24,99 € ✓ (neu gesetzt)
+- Workbook: 29,99 € ✓
+- Seelenbauchbuch: 24,99 € ✓
+- Ängste-E-Book (geplant): 14,99 – 19,99 €
+- Reise-E-Book (geplant): 4,99 € (Impulskauf, Reinschnupper-Produkt)
+- Freebooks (Familie, Seelenzyklus): 0 € → Mail-Adresse
+
+### Noch offen aus dieser Session
+
+- [ ] Echtes Cover für `seelenweihnacht.html` liefern
+- [ ] Julias eigener Einführungstext auf `seelenweihnacht.html` (Platzhalter ersetzen)
+- [ ] Elopage-Bestelllink auf `seelenweihnacht.html` einbauen
+- [ ] Entscheiden ob Nav sitewide um „Seelenweihnacht" + „Seelenzyklus · Freebook" ergänzt wird
+- [ ] Rückseite Seelenküche-Kochbuch: Julia bringt den Text in ihre Stimme
+- [ ] Elopage-Account einrichten (Konzept besprochen, Umsetzung offen)
 
 ---
 
@@ -51,23 +147,46 @@ Komplettes neues TOC in Chat 25.10.
 - Modul 11 Opener (fehlte) → tatsächlich 183
 - Modul 12 Opener (fehlte) → tatsächlich 199
 
-**Systematische Fehler im Workbook:**
-- Mehrfache Dopplungen: „Verantwortlich für den Verantwortlich für den" (S. 109), „ich ich daran gearbeitet" (S. 151)
-- Englische Anführungszeichen `'...'` statt deutsche `„..."` durchgängig
-- „Glutensensivitität" → „Glutensensitivität" (S. 13)
+**Systematische Fehler im Workbook — Seitenzahlen am 26.10. (nachmittags) gegen PDF verifiziert und korrigiert.**
+
+Wichtig: Alle linken Seiten (gerade PDF-Zahlen) tragen keine sichtbare Seitennummer. Mit ⚠ markierte Seiten sind solche — zählen trotzdem mit, sie liegen jeweils rechts von der sichtbaren Nummer darüber.
+
+Rechtschreibung / Grammatik / Dopplungen (erste Review-Runde):
 - „willensstarkt" → „willensstark" (S. 11)
+- „Glutensensivitität" → „Glutensensitivität" (S. 13)
 - „verannt" → „verrannt" (S. 13)
-- „Vetrau" → „Vertrau" (S. 178)
-- „Transgutaminase" → „Transglutaminase" (S. 72, großer Fachfehler!)
-- „Hyposensibilisierungvorzunehmen" → fehlendes Leerzeichen (S. 71)
-- „Bauchspeicheldrüsen Erkrankung" → Bindestrich oder zusammen (S. 69)
-- „Dieses Jahr" statt „Diese Jahr" (S. 147)
-- „geschrotetet" → „geschrotete" (S. 125)
-- „Aifryer" → „Airfryer" (S. 39)
 - „Bauschmerzen" → „Bauchschmerzen" (S. 19)
-- „verpeillt" → „verpeilt" (S. 20)
-- „persönliche Empfehlung" (3× in Notfall-Seiten) → Plural „Empfehlungen"
-- Komplette Fehlerliste in Chat 26.10.
+- „verpeillt" → „verpeilt" (S. 20 ⚠)
+- „Aifryer" → „Airfryer" (S. 40 ⚠ — nicht S. 39 wie vorher notiert)
+- „Bauchspeicheldrüsen Erkrankung" → Bindestrich/zusammen (S. 71 — nicht 69)
+- „Hyposensibilisierungvorzunehmen" → fehlendes Leerzeichen (S. 73 — nicht 71)
+- „Transgutaminase" → „Transglutaminase" (S. 74 ⚠ — nicht 72, großer Fachfehler!)
+- Dopplung „Verantwortlich für den Verantwortlich für den" (S. 113 — nicht 109)
+- „geschrotetet" → „geschrotete" (S. 130 ⚠ — nicht 125)
+- „persönliche Empfehlung" → Plural „Empfehlungen" (S. 149, 150 ⚠, 151 — je 1× in Notfall-Karten Blähbauch / Durchfall / Verstopfung)
+- „Diese Jahr" → „Dieses Jahr" (S. 153 — nicht 147)
+- Dopplung „wie lange ich ich daran gearbeitet habe" (S. 157 — nicht 151)
+- „Vetrau" → „Vertrau" (S. 186 ⚠ — nicht 178)
+
+Zweite Review-Runde (auch korrigiert):
+- „zu viel gleichzeitig ausprobiert" / „geht meistens oft gedünstet" (doppelt gemoppelt) / „etwas neues vertrage" → „Neues" groß (alle S. 187 — nicht 179)
+- „einfach jemanden zum Reden brauchst" — Punkt fehlt am Ende (S. 191 — nicht 183)
+- „Fahrrad oder wenn es besser ist mit E-Bike" → Kommas (S. 201 — nicht 192)
+- „Reflexionsfragen" + „Was würde dein Körper dir gerade sagen" (S. 202 ⚠ — nicht 193)
+- Telefonseelsorge-Hinweis 0800 111 0 111 (S. 205 — nicht 196; sehr gut, dass er drin ist!)
+- „viel Tränen" → „viele Tränen" / „Du bist eine Maschine, meine Liebe" / „wie krass wir sind" (alle S. 206 ⚠ — nicht 197)
+
+Allgemeine systematische Themen:
+- Englische Anführungszeichen `'...'` statt deutsche `„..."` durchgängig
+- „HistaFood" vs. „Histafood" — einheitlich mit großem F
+- Mengen-Angaben ohne Leerzeichen („3kg", „30min") → immer „3 kg", „30 min"
+- „essen" (Verb klein) vs. „Essen" (Substantiv groß) inkonsistent
+- Komma vor „dass"-Sätzen fehlt öfter mal
+- Imperativ „Halt" vs. „Halte" nicht einheitlich
+
+**Warum die alten Seitenzahlen falsch waren:** Beim ersten Durchgang wurde pro Modul vermutlich an einer früheren Seite angesetzt und dann hochgezählt — mit der Zeit verschoben sich die Zahlen immer stärker (bis zu +9 Seiten in Modul 11-12). Jetzt sind alle gegen das PDF verifiziert.
+
+Komplette Fehlerliste siehe Chat 26.10.
 
 ### 6 geplante Zusatz-Seiten für Kochbuch-Abschluss (Entwürfe fertig)
 
