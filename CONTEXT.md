@@ -2,11 +2,71 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-11-02 (Shop erweitert: App + Seelenweihnacht + Seelenzyklus-Info-Seite live, Weihnachtskochbuch mit 23 Rezepten 24,99 €).
+> Letzte Aktualisierung: 2026-11-07 (App-Screenshots auf app.html komplett ausgetauscht, 8 neue aktuelle Screenshots mit object-position top Fix).
 
 ---
 
-## ⚡ Aktueller Stand · 2026-11-02 · Shop-Erweiterung + Seelenweihnacht + Seelenzyklus-Freebook
+## ⚡ Aktueller Stand · 2026-11-07 · App-Screenshots ausgetauscht + Massage-Beratung + offene Kochtipps-Frage
+
+### App-Screenshots auf `app.html` komplett erneuert
+
+Julia hat 18 neue iPhone-Screenshots aus der aktuellen TerraLuna-App-Version in `Screenshots App/` (iCloud-Ordner im Repo-Root) geliefert (`IMG_4526.PNG`, `IMG_4550–4567`). Davon 8 ausgewählt + in `images/app-v1.2/` mit sprechenden Namen kopiert und in `app.html` überall verdrahtet (Hero, Feature-Grid mit 8 Karten, Preis-Sektion).
+
+| Position auf app.html | Alter Pfad | Neuer Pfad | Quelle |
+|---|---|---|---|
+| Hero + Preis-Mockup | `home-neu.png` | `nov-home.jpg` | IMG_4550 (Guten Abend Julia · Retreat-Banner · Zutatenliste scannen · Empfehlung/Sport/Lernen/Nervensystem) |
+| Feature „Home" | `home-neu.png` | `nov-home.jpg` | dito |
+| Feature „Scanner & Tracker" | `03-lebensmittel.png` | `nov-scanner.png` | IMG_4526 (Zutaten-Analyse mit SIGHI pro Zutat, individuell-testen-Status) |
+| Feature „Profil & Welten" | `06-profil-welten.png` | `nov-profil.png` | IMG_4564 (Food Tools · Dein Histamin-Fass 30 % moderat mit Zyklus-Hinweis Östrogen sinkt) |
+| Feature „Reisen" | `reisen-neu.png` | `nov-reisen.jpg` | IMG_4555 (Reise mit Histamin · Ljubljana · Reiseguide + Notfalllisten + Restaurantkommunikation) |
+| Feature „Einkaufen" | `home-neu-2.png` | `nov-einkauf.jpg` | IMG_4551 (Lebensmittel · Mein Grundvorrat · Meine Einkaufsliste · Kategorien Gemüse/Obst) |
+| Feature „Rezepte" | `rezepte-neu.png` | `nov-rezepte.jpg` | IMG_4552 (Rezepte · Wochenplan · Einkaufsliste · Rezepte von Maria @histaminfoodstory · Alle 84 · Kochtipps-Button) |
+| Feature „Lernbibliothek" | `Lernen.PNG` | `nov-lernen.png` | IMG_4565 (Mein Workbook · Seelenweg · Histamin-Einführung + Wechseljahre verstehen + Seelenweg-Workbook 12 Module 0 von 11 gelernt) |
+| Feature „SOS-Hilfe" | `08-profil-plan.png` | `nov-sos.png` | IMG_4567 (Bewegung · „Passend zur Menstruation — Sanft und ohne Stress" · Soforthilfe-Karten „Bei Bauchschmerzen" + „Atemübungen") |
+
+Alte Screenshots bleiben im Ordner liegen (nicht gelöscht) als Fallback.
+
+### Fix: `object-position: top` für Feature-Phones
+
+Beim ersten Mal war das Verhältnis Problem: iPhone-Screenshot ist ~9:19.45, der Phone-Mockup-Container `aspect-ratio: 9/19` → bei `object-fit: cover` wurde oben + unten je ~1-2 % abgeschnitten. Julia hat's beim Einkaufen-Screenshot gemerkt: Header mit „Mein Grundvorrat" + Teller-Foto fehlte oben.
+
+Fix: `.feature-phone img { object-position: top; }` zusätzlich gesetzt. Jetzt beginnt jedes Bild oben, unten wird minimal abgeschnitten (OK, dort steht meist nur noch die Tab-Bar). Gilt für alle 8 Feature-Cards.
+
+### Google Play & App Store — Screenshots aktualisieren
+
+Julia fragt wie sie die Screenshots in den Stores ändert. Zusammengefasst:
+- **Play Console** → App auswählen → Wachstum → Store-Präsenz → Hauptpräsenz im Store → Grafiken → Telefon-Screenshots → alte löschen, neue hochladen (16:9 oder 9:16, min. 320 px, max. 3840 px), Reihenfolge per Drag, Speichern → Zur Überprüfung senden. Google prüft 1–3 Tage.
+- **App Store Connect** → App → iOS App → Version → App-Vorschau und Screenshots.
+- Die neuen Screenshots liegen ab sofort auch lokal in `images/app-v1.2/nov-*.jpg/png` — direkt hochladbar.
+
+### Massage-Beratung bei Histamin/MCAS (durchgesprochen)
+
+Julia hat Massage-Programme eines Studios bekommen und wollte Einschätzung. Besprochen:
+
+- **Abdomen „Vital" (Bauchmassage)** → eher NICHT empfohlen bei MCAS. Mastzellen sitzen in der Darmwand, mechanischer Druck kann Degranulation triggern (Flush, Kopfschmerz, Blähungen am Folgetag). „Darmperistaltik stimulieren" klingt gut, aber bei Reizdarm/MCAS ist der Darm nicht träge, sondern überreizt.
+- **Schulter/Nacken** → empfohlen als sicherster Erststart. Vagusnerv-Stimulation → Parasympathikus → beruhigt Darm indirekt. Löst Alltags-Verspannung (Handy/Laptop), hilft bei Spannungskopfschmerz, Kiefer, Faszien.
+- **Lymphdrainage** → guter Deal, aber mit Startklippe. Sehr sanfter Druck, triggert Mastzellen kaum, transportiert Histamin aus Gewebe ab. Kann aber am Folgetag Pseudo-Schub auslösen (Histamin mobilisiert ins Blut). Erstes Mal nur 30 Min, nicht Ganzkörper, manuelle MLD nicht Gerät/Vakuum, Therapeutin vorher informieren, danach viel Wasser.
+
+Ranking für Julia: Schulter/Nacken > Lymphdrainage (mit Vorsicht) > Abdomen.
+
+### 🟡 Offene Rückfrage: Header-Bilder bei Kochtipps/Süßungsmittel/Einfrieren/Mehl Prep
+
+Julia hat am Ende der Session Änderungswünsche geschickt:
+- „Bei den Kochtipps bitte einander Header-Bild und bei den Süßungsmitteln kein Bild"
+- „Bei Einfrieren und Mehl prep bitte einander Bild"
+
+**Ich finde die Seite nicht.** Durchsucht: `seelenkueche.html` (hat Text-Sektionen „Mehl" + „Süßen" aber keine Bilder dort), `rezepte/mealprep/` (leer, „folgt in Kürze"), `rezepte/alternativen/` (Alternativen zu Kakao/Spinat/Süßigkeiten etc., aber nicht die genannten Sektionen), `blog/was-mir-geholfen-hat/` (hat „Meal Prep und Aufbewahrung" als H2 ohne Bild). Keine Seite hat „Kochtipps", „Süßungsmittel", „Einfrieren" und „Mehl Prep" nebeneinander als Bild-Sektionen.
+
+**Hypothesen**:
+- Vielleicht meint Julia eine Seite im Kochbuch-/Workbook-PDF (Druckvorlage), nicht die Website?
+- Oder eine Seite, die noch nicht committed ist (lokaler Draft)?
+- Oder eine Elopage-/Canva-Seite außerhalb des Repos?
+
+**Action beim nächsten Mal**: Julia nach der URL oder dem Seitennamen fragen, bevor Bilder ausgetauscht werden.
+
+---
+
+## Aktueller Stand · 2026-11-02 · Shop-Erweiterung + Seelenweihnacht + Seelenzyklus-Freebook
 
 ### Shop-Übersicht `ebooks.html` ausgebaut
 
