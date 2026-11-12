@@ -17,3 +17,11 @@ images/seelenkueche/Kochbuch.zip
 
 # Retreat-Rohbilder (HEIC) — nur die konvertierten JPGs in images/retreat/ ins Repo
 /Retreat/
+
+# Rohdaten-Sammelordner — Druck-PDFs, Produktbild-ZIPs, Screenshots-Uploads.
+# Nur lokal, wird nie deployed.
+/_rohdaten/
+
+# Alte Cover-Backups (Muster: *-OLD-pre-*)
+**/*-OLD-pre-*.png
+**/*-OLD-pre-*.jpg
