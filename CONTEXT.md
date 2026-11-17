@@ -2,7 +2,118 @@
 
 > Was diese Website ist, wo sie hin soll, was gerade in Arbeit ist.
 > Bei jeder Session zuerst hier reinschauen.
-> Letzte Aktualisierung: 2026-11-07 (App-Screenshots auf app.html komplett ausgetauscht, 8 neue aktuelle Screenshots mit object-position top Fix).
+> Letzte Aktualisierung: 2026-11-17 (Produkt-Rebranding: Seelenweihnacht → Seelenbäckerei, Seelenbauch Workbook → Seelenweg, neue Cover sitewide, Preise werden entfernt weil Shop jetzt über smacado.de läuft).
+
+---
+
+## ⚡ Aktueller Stand · 2026-11-17 · Produkt-Rebranding + neue Cover + Preise raus
+
+### Website-Rolle verschiebt sich
+
+**Entscheidung:** Website juliabergles.de wird nicht mehr als Shop/Verkaufsseite genutzt — alle Preise, Versandkosten und Bestellinfos sind jetzt **nur noch auf smacado.de**. Die juliabergles.de bleibt als Info-/Themen-Portal (Histamin, MCAS, Reizdarm, Blog, Infos zu Büchern und Angeboten).
+
+**Folge für Website:**
+- Alle € Angaben raus (189 Vorkommen über 32 Dateien gefunden)
+- Statt Preis → CTA „Zum Shop · smacado.de" oder „Preis & Bestellen auf smacado.de"
+- Buttons „Jetzt vorbestellen · XX,XX €" → „Jetzt vorbestellen"
+- Versandkosten-Hinweise raus, Verweis auf smacado.de
+- Rechtstexte (AGB, Widerruf) bleiben unangetastet — Preis-Angaben dort haben rechtliche Bedeutung
+
+**Status Preis-Entfernung:**
+- ✅ ebooks.html (Shop-Übersicht Preise raus)
+- ✅ seelenbaeckerei.html (Meta + Preis-Zeile)
+- 🟡 In Arbeit: seelenbauchbuch, seelenkueche, seelenweg, bundles, tagebuch, notizbuch, index, retreat, retreat-anmelden, retreat-faq, histamin-masterclass, app, gespraech, live-calls, schulen, was-kommt
+
+### Rebranding Nº 1: Seelenweihnacht → Seelenbäckerei
+
+- Datei umbenannt: `seelenweihnacht.html` → `seelenbaeckerei.html`
+- Vorbestell-Button geht jetzt zu `https://www.smacado.de/seelenbaeckerei`
+- Hero-Titel + alle sichtbaren Erwähnungen auf „Seelenbäckerei"
+- Cover-Placeholder entfernt und durch echtes Cover ersetzt (siehe unten)
+- Nav-Dropdown-Shop auf allen Seiten angepasst
+- Grund: Julia will den kompakten Namen „Seelenbäckerei" (passt besser zur URL auf smacado.de, auch wenn es nicht nur Backen ist — herzhafte Rezepte sind auch drin)
+
+### Rebranding Nº 2: Seelenbauch Workbook → Seelenweg
+
+- Datei umbenannt: `seelenbauch-workbook.html` → `seelenweg.html`
+- Titel: „Seelenweg · Workbook bei Histamin"
+- Hero, Meta-Description, alle Cross-Sell-Karten (retreat, ebooks, seelenkueche, seelenbauchbuch, seelenbaeckerei) angepasst
+- Nav sitewide auf „Seelenweg · Workbook" umgestellt
+- Alle href-Verweise `seelenbauch-workbook.html` → `seelenweg.html` sitewide
+- Workbook-Innenseiten-Bilder bleiben unter `images/seelenbauch-workbook/seelenbauch-workbook-N.png` (Dateipfad historisch, nur Cover getauscht)
+
+### Neue Produkt-Cover sitewide (ZIP „Meine Produkte Kopie" von Julia)
+
+10 PNGs (einheitliches Design, großes Serif „SEELEN…"-Label, Pfingstrosen-Wasserfarben, Julia auf Cover-Foto) liegen jetzt in `images/produkte-2026-11/`:
+
+| Datei | Verwendung |
+|---|---|
+| `seelenkueche-cover.png` | Seelenküche Cover (SATT. GLÜCKLICH. BESCHWERDEFREI.) |
+| `seelenbaeckerei-cover.png` | Seelenbäckerei (histaminarm DURCH DIE WEIHNACHTSZEIT · 20+ REZEPTE) |
+| `seelenweg-cover.png` | Seelenweg Workbook (IN 12 WOCHEN ZURÜCK ZU DEINEM SEELENBAUCH) |
+| `seelenbauchbuch-cover.png` | Seelenbauchbuch (EIN LEBEN OHNE BAUCHSCHMERZEN) |
+| `seelenzyklus-cover.png` | Seelenzyklus Freebook (WIE HÄNGT MEIN ZYKLUS UND HISTAMIN ZUSAMMEN?) |
+| `pfingstrosen-innen.png` | Pfingstrosen-Illustration (Buchseite innen, als Deko nutzbar) |
+| `collage-3.png` | 3-Cover-Ensemble (Seelenweg + Seelenbauch + Seelenbäckerei) |
+| `collage-4.png` | 4-Cover-Ensemble (die 3 + Seelenküche) |
+| `werbung-seelenbauch.png` | Werbe-Grafik Seelenbauch mit QR + Julia-Fotos (Instagram) |
+| `werbung-weg.png` | Werbe-Grafik „Dein Weg zurück zum Seelenbauch" (Instagram) |
+
+**Pragmatik:** Alte Cover-Pfade (`images/seelenbauchbuch/cover.png`, `images/seelenkueche/cover.jpg`, `images/seelenbauch-workbook/seelenbauch-workbook-cover.png`, `images/seelenzyklus-cover.png`) wurden mit den neuen überschrieben — alle bestehenden 40+ Verweise sitewide zeigen automatisch die neuen Cover. Alte Backups als `*-OLD-pre-2026-11-12.*` lokal gesichert (in `.gitignore`).
+
+### Ordner aufgeräumt
+
+Alles Rohdaten-/Backup-Gerümpel aus dem Root nach `_rohdaten/` verschoben (430 MB):
+- `Meine Produkte Kopie.zip` + entpackter Ordner
+- `Screenshots App/` (18 iPhone-Screenshots vom 06.11.)
+- `Seelenbauch Buch Neu Kopie.png`
+- `Seelenbauch Oktober l Kopie.pdf` (295 MB!)
+- `Seelenbauch Workbook Druck  Kopie.pdf` (36 MB)
+- `Seelenküche Kochbuch.pdf` (47 MB)
+
+**`.gitignore` erweitert:** `/_rohdaten/` + `**/*-OLD-pre-*.png/jpg` — bleibt alles lokal verfügbar, deployt aber nichts davon.
+
+### Google-Business-Beschreibung besprochen (nicht umgesetzt)
+
+Julia fragte nach Beschreibung für Google-Business-Profil. Drei Entwürfe gemacht (kurz 250 / mittel 400 / lang 745 Zeichen), alle mit zwei Standbeinen:
+- **Erfahrungsaustausch Histamin/MCAS/Reizdarm/Gluten** (Betroffenen-Perspektive — nicht „Spezialistin", Heilpraktiker-Gesetz!)
+- **Webdesign · Mediendesign · Social Media Management** (Agentur-Standbein)
+
+Mit dezenten Funkel-Sternen ✨. Julia hat noch keine Variante final gewählt.
+
+**Positionierung geklärt:** „Spezialistin" wäre heikel (medizinisch) → besser „Erfahrungsexpertin" oder „als Betroffene". Smacado ist der Firmenname.
+
+### Instagram-Shop-Beschreibungen besprochen
+
+Für jedes Produkt 2 Varianten (kurz 300 Zeichen / lang 600 Zeichen) geliefert — Julia muss noch wählen und in ihre Stimme bringen:
+- Seelenküche Kochbuch
+- Seelenbäckerei
+- TerraLuna App
+- Seelenweg Workbook
+
+### HistaFood-Integration = App-Auftrag, nicht Website
+
+Julia hat einen sehr detaillierten Briefing-Prompt geschickt: HistaFood als Markenpartner in TerraLuna App integrieren (eigener Rezeptbereich wie bei Maria, Produktverknüpfungen, Supplement-Erweiterung, Design-Integration). **WICHTIG:** Das ist der **App-Code**, nicht die Website — das Repo hier kann das nicht umsetzen.
+
+**Offene Fragen an Julia:**
+- Wo liegt der App-Code? (separates Repo, welche Technologie — React Native/Flutter/Swift?)
+- HistaFood-Freigabe schon eingeholt (Rezepte, Logo, Produktbilder)?
+- Als Plan/Konzept-Dok gewünscht oder im App-Repo tatsächlich umsetzen?
+
+### iCloud-Fotos-Frage (nicht Website)
+
+Julia fragte nach iCloud-Fotos-Settings (Mac/Handy sync, Originale vs. Optimieren). Kurze Erklärung gegeben. Sie hat noch nicht gesagt wie viel Speicher sie am Mac frei hat — ohne das keine finale Empfehlung.
+
+### Noch offen aus heute
+
+- [ ] Preis-Entfernung fertigstellen (15 Dateien noch — siehe Status oben)
+- [ ] Startseite-Journey „So kam ich zurück zu MIR" bauen (Seelenbauchbuch → Kochbuch → Kurs → App) — braucht noch ein Kurs-Cover (hat Julia keins, nehm ich Platzhalter)
+- [ ] Masterclass-Seiten (`masterclass/landing.html` + `pitch.html`): Bezeichnung „Seelenbauch Workbook (139 Seiten)" auf „Seelenweg · Workbook" updaten + checken ob 139 Seiten noch stimmt (Druck-Version hat >200)
+- [ ] Produkttext Seelenbäckerei (Platzhalter in `seelenbaeckerei.html` — Julia soll in ihrer Stimme schreiben)
+- [ ] Google-Business-Beschreibung — Julia muss Variante wählen
+- [ ] Instagram-Shop-Beschreibungen — Julia muss Variante wählen pro Produkt
+- [ ] HistaFood-App-Integration — braucht App-Repo-Kontext + HistaFood-Freigabe
+- [ ] iCloud-Setup — Mac-Speicherstand nötig
 
 ---
 
